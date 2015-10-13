@@ -9,13 +9,18 @@
 \usepackage{graphicx}%?????
 \usepackage{paralist}%enumerate mit roemischen Zahlen
 \usepackage{float}%fuer H Positionierung
-\author{Christoph Fritz, djangonightfall, puenka}
+
+\author{Christoph Fritz, djangonightfall, puenka} 
 \title{Skript Lineare Algebra \& Geometrie 1, Hertrich-Jeromin}
-\setcounter{section}{-1}
+
+\setcounter{section}{-1}%Grundlagen bei 0
+
 \begin{document}
 \maketitle
 \tableofcontents
+
 \section{Grundlagen}
+
 \subsection{Vorbereitungen, logische Symbolik}
 Es existieren zwei Methoden zur präzisen Formulierung:
 \begin{itemize}
@@ -46,6 +51,7 @@ f & f & w & f & f & w & w\\
 \end{tabular}
 \caption{Wahrheitstafel}
 \end{figure}
+
 Beispiele:
 \begin{itemize}
 \item Implikation: Für $x,y\in\mathbb{R}: xy = 0 \Rightarrow (x = 0\lor y = 0)$
@@ -61,6 +67,7 @@ f & f & w & w & w & w \\
 \end{tabular}
 \caption{Beweis durch Wahrheitstafel}
 \end{figure}
+
 \paragraph{Bemerkung (Kommutativität):} $\land$, $\lor$, und $\Leftrightarrow$ sind kommutativ (symmetisch), $\Rightarrow$ jedoch nicht, d.h.:
 \begin{center}
 $(A\land B)\Leftrightarrow (B\land A)$\\
@@ -69,6 +76,7 @@ $(A\Leftrightarrow B)\Leftrightarrow (B\Leftrightarrow A)$\\
 $(A\Rightarrow B)\nLeftrightarrow (B\Rightarrow A)$\\
 \end{center}
 weil beispielsweise formal gilt: $x,y\in\mathbb{R}: x = 0 \Rightarrow xy = 0$, aber nicht $xy = 0 \Rightarrow x = 0$
+
 \paragraph{Bemerkung (Beweisformen der Implikation):}
 Um eine Implikation $A\Rightarrow B$ zu zeigen, bedient man sich häufig auch folgender Äquivalenzen:
 \begin{center}
@@ -78,6 +86,7 @@ $(A\Rightarrow B)\Leftrightarrow \left\{
 \lnot (A\land \lnot B)&\text{(Widerspruchsbeweis)}
 \end{array}\right.$
 \end{center}
+
 \paragraph{Beispiel} Für reelle Zahlen $x,y\in\mathbb{R}$ gilt:
 \begin{center}
 $\left((xy = 0)\Rightarrow (x=0 \lor y=0)\right) \Leftrightarrow \left((xy=0 \land x \neq 0)\Rightarrow (y =0)\right)$
@@ -86,6 +95,7 @@ bzw. allgemein:
 \begin{center}
 $(A\Rightarrow (B\lor C))\Leftrightarrow ((A\land\lnot B)\Rightarrow C)$
 \end{center}
+
 \paragraph{Bemerkung (Mengenlehre)} Die Ähnlichkeit mit der Mengensymbolik ist nicht zufällig, z.B. Mengen X, Y:
 \begin{center}
 $(x\in X\cap Y)\Leftrightarrow (x\in X\land x\in Y)$\\
@@ -93,6 +103,7 @@ $(x\in X\cup Y)\Leftrightarrow (x\in X\lor x\in Y)$\\
 $(X\subset Y) \Leftrightarrow \{\forall x : (x\in X \Rightarrow x\in Y)\}$
 \end{center}
 \subsection{Abbildungen}
+
 \paragraph{Definition:} Eine Zuordnung $f: X\to Y$ zwischhen zwei Mengen X und Y heißt eine Abbildung, falls $\forall x\in X: \exists ! y\in Y: y=f(x)$.
 
 X heißt der Definitionsbereich der Abbildung und $f(X):=\{f(x)\mid x\in X \}\subseteq Y$ das Bild.
@@ -103,6 +114,7 @@ Eine Abbildung $f: X\to Y$ heißt
 \item surjektiv, falls $\forall y\in Y:\exists x\in X: y = f(x)$
 \item bijektiv, falls $\forall y\in Y:\exists !x\in X: y = f(x)$
 \end{itemize}
+
 \paragraph{Beispiel} Mit $X=Y=\mathbb{R}$ definiert
 \begin{itemize}
 \item die Relation $x^2 = y$ eine Abbildung $f:X\to Y, x\mapsto f(x)=x^2$
@@ -117,6 +129,7 @@ Eine Abbildung $f: X\to Y$ heißt
 \paragraph{Bemerkung} Eine Abbildung ist genau dann bijektiv, wenn sie injektiv und surjektiv ist.
 \paragraph{Definition} Sind $ f:X\to Y $ und $ g:Y\to Z$ Abbildungen, so ist ihre Komposition/Verkettung die Abbildung $ g\circ f:X\to Z, x\mapsto (g\circ f)(x):= g(f(x)) $.
 \paragraph{Beispiel} Seien $ X = Y = Z = \mathbb{R} $ und $ f:X\to Y, x\mapsto f(x) :=x^2 $, $ g:Y\to Z, y\mapsto g(x):=y^3 + y $, so ist die Verkettung $ g\circ f: X\to Z, x\mapsto (g\circ f)(x) = (x^2)^3+x^2 = x^6 + x^2 $.
+
 \subsection{Inverse}
 \paragraph{Lemma} Seien $ f:X\to Y $ und $ g:Y\to X $ Abbildungen. Dann gilt:
 \begin{enumerate}[i)]
@@ -124,6 +137,7 @@ Eine Abbildung $f: X\to Y$ heißt
 \item ist $ g $ Rechtsinverse von $ f $, d.h. $ f\circ g = id_Y$, so ist f surjektiv
 \item ist $ g $ Links- und Rechtsinverse von $ f $, so heißt $ g =f^{-1}$ Inverse von $ f $
 \end{enumerate}
+
 \paragraph{Beispiel} $ f:\mathbb{N}\to \mathbb{N}, n\mapsto f(n):= n+1 $ hat Linksinverse 
 \begin{center}
 $ g:\mathbb{N} \to \mathbb{N}, n\mapsto g(n):=\left\{
@@ -137,17 +151,24 @@ Tatsächlich ist $ f $ injektiv, da
 $ \forall n,n'\in \mathbb{N} : n+1 = f(n) = f(n') = n'+1 \Rightarrow n=n' $
 \end{center}
 jedoch $ f(\mathbb{N}) = \mathbb{N}\setminus \{0\} $, daher kann keine Rechtsinverse existieren.
+
 \paragraph{Beweis (Lemma)} Zwei Aussagen sind zu beweisen:
 \begin{enumerate}[i)]
 \item Sei $ g $ Linksinverse von $ f $. Dann gilt für $ x,x'\in X $ mit \\$ f(x) = f(x'): x = g(f(x)) = g(f(x')) = x' $, also ist $ f $ injektiv.
 \item Sei $g $ Rechtsinverse von $ f $ und $ y\in Y $. Setze $ x:= g(y)\in X $, dann gilt f(x) = f(g(y)) = y. Damit existiert zu jedem $ y\in Y $ (mindestens) ein $ x = g(y) $, sodass  $ y=f(x) $.
 \end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%SECTION-ENDE%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \section{Lineare Räume und Abbildungen}
 \subsection{Von Geometrie zu Algebra}
 Euklids führte in den \glqq Elementen\grqq{} (ca. 300 v. Chr.) das bis heute gültige Schema ein:
 \begin{itemize}
 \item Definition\item Axiom/Postulat\item Lehrsatz\item Beweis
 \end{itemize}
+
 \paragraph{Parallelenaxiom/-problem (Euklid, Formulierung nach Playfair)} Es existiert genau eine Parallele $ g' $ zum Punkt $ P \notin g $ zur Geraden $ g $.
 
 
@@ -184,4 +205,4 @@ Kann das Axiom aus den anderen Axiomen hergeleitet/bewiesen werden? Nein, denn e
 \end{figure}
 
 \paragraph{Was ist eine Geometrie?} Eine Geometrie ist durch eine Menge X und eine auf X operierende Transformationsgruppe gegeben.
-\end{document}%
+\end{document}
