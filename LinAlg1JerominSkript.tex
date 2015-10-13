@@ -3,8 +3,8 @@
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}%schoeneres Schriftbild
 \usepackage[ngerman]{babel}%deutsche Silbentrennung
-\usepackage{tikz}%Zeichnungen
-\usetikzlibrary{arrows}
+%\usepackage{tikz}%Zeichnungen
+%\usetikzlibrary{arrows}
 \usepackage{amsmath,amsfonts,amssymb}%Mathematik-Pakete
 \usepackage{graphicx}%?????
 \usepackage{paralist}%enumerate mit roemischen Zahlen
@@ -69,42 +69,41 @@ f & f & w & w & w & w \\
 \end{figure}
 
 \paragraph{Bemerkung (Kommutativität):} $\land$, $\lor$, und $\Leftrightarrow$ sind kommutativ (symmetisch), $\Rightarrow$ jedoch nicht, d.h.:
-\begin{center}
-$(A\land B)\Leftrightarrow (B\land A)$\\
-$(A\lor B)\Leftrightarrow (B\lor A)$\\
-$(A\Leftrightarrow B)\Leftrightarrow (B\Leftrightarrow A)$\\
-$(A\Rightarrow B)\nLeftrightarrow (B\Rightarrow A)$\\
-\end{center}
-weil beispielsweise formal gilt: $x,y\in\mathbb{R}: x = 0 \Rightarrow xy = 0$, aber nicht $xy = 0 \Rightarrow x = 0$
+\begin{align*}
+(A\land B)&\Leftrightarrow (B\land A)\\
+(A\lor B)&\Leftrightarrow (B\lor A)\\
+(A\Leftrightarrow B)&\Leftrightarrow (B\Leftrightarrow A)\\
+(A\Rightarrow B)&\nLeftrightarrow (B\Rightarrow A)\\
+\end{align*}
+weil beispielsweise formal gilt: $x,y\in\mathbb{R}: x = 0 \Rightarrow xy = 0$, aber nicht $xy = 0 \Rightarrow x = 0$.
 
 \paragraph{Bemerkung (Beweisformen der Implikation):}
 Um eine Implikation $A\Rightarrow B$ zu zeigen, bedient man sich häufig auch folgender Äquivalenzen:
-\begin{center}
-$(A\Rightarrow B)\Leftrightarrow \left\{
-\begin{array}{cl}
+\begin{equation*}
+(A\Rightarrow B)\Leftrightarrow
+\begin{cases}
 \lnot B\Rightarrow \lnot A&\text{(Indirekter Schluss)}\\
 \lnot (A\land \lnot B)&\text{(Widerspruchsbeweis)}
-\end{array}\right.$
-\end{center}
+\end{cases}\end{equation*}
 
 \paragraph{Beispiel} Für reelle Zahlen $x,y\in\mathbb{R}$ gilt:
-\begin{center}
-$\left((xy = 0)\Rightarrow (x=0 \lor y=0)\right) \Leftrightarrow \left((xy=0 \land x \neq 0)\Rightarrow (y =0)\right)$
-\end{center}
+\begin{equation*}
+\left((xy = 0)\Rightarrow (x=0 \lor y=0)\right) \Leftrightarrow \left((xy=0 \land x \neq 0)\Rightarrow (y =0)\right)
+\end{equation*}
 bzw. allgemein:
-\begin{center}
-$(A\Rightarrow (B\lor C))\Leftrightarrow ((A\land\lnot B)\Rightarrow C)$
-\end{center}
+\begin{equation*}
+(A\Rightarrow (B\lor C))\Leftrightarrow ((A\land\lnot B)\Rightarrow C)
+\end{equation*}
 
-\paragraph{Bemerkung (Mengenlehre)} Die Ähnlichkeit mit der Mengensymbolik ist nicht zufällig, z.B. Mengen X, Y:
-\begin{center}
-$(x\in X\cap Y)\Leftrightarrow (x\in X\land x\in Y)$\\
-$(x\in X\cup Y)\Leftrightarrow (x\in X\lor x\in Y)$\\
-$(X\subset Y) \Leftrightarrow \{\forall x : (x\in X \Rightarrow x\in Y)\}$
-\end{center}
+\paragraph{Bemerkung (Mengenlehre)} Die Ähnlichkeit mit der Mengensymbolik ist nicht zufällig, z.B. Mengen $X, Y$:
+\begin{align*}
+(x\in X\cap Y)&\Leftrightarrow (x\in X\land x\in Y)\\
+(x\in X\cup Y)&\Leftrightarrow (x\in X\lor x\in Y)\\
+(X\subset Y) \Leftrightarrow \{&\forall x : (x\in X \Rightarrow x\in Y)\}
+\end{align*}
+
 \subsection{Abbildungen}
-
-\paragraph{Definition:} Eine Zuordnung $f: X\to Y$ zwischhen zwei Mengen X und Y heißt eine Abbildung, falls $\forall x\in X: \exists ! y\in Y: y=f(x)$.
+\paragraph{Definition:} Eine Zuordnung $f: X\to Y$ zwischen zwei Mengen $X$ und $Y$ heißt eine Abbildung, falls $\forall x\in X: \exists ! y\in Y: y=f(x)$.
 
 X heißt der Definitionsbereich der Abbildung und $f(X):=\{f(x)\mid x\in X \}\subseteq Y$ das Bild.
 
@@ -119,10 +118,10 @@ Eine Abbildung $f: X\to Y$ heißt
 \begin{itemize}
 \item die Relation $x^2 = y$ eine Abbildung $f:X\to Y, x\mapsto f(x)=x^2$
 \item die Relation $x=y^2$ keine Abbildung $f:X\to Y$, denn
-\begin{itemize}
-\item für ein x gibt es zwei y-Werte
-\item $x < 0$ ist nicht definiert
-\end{itemize}
+	\begin{itemize}
+	\item für ein $x$ gibt es zwei $y$-Werte
+	\item $x < 0$ ist nicht definiert
+	\end{itemize}
 \end{itemize}
 
 \paragraph{Beispiel} Die Identität $id_X :X\to X, x\mapsto id_X(x):= x$ ist eine bijektive Abbildung.
@@ -139,17 +138,18 @@ Eine Abbildung $f: X\to Y$ heißt
 \end{enumerate}
 
 \paragraph{Beispiel} $ f:\mathbb{N}\to \mathbb{N}, n\mapsto f(n):= n+1 $ hat Linksinverse 
-\begin{center}
-$ g:\mathbb{N} \to \mathbb{N}, n\mapsto g(n):=\left\{
-\begin{array}{cl}
+\begin{equation*}
+g:\mathbb{N} \to \mathbb{N}, n\mapsto g(n):=
+\begin{cases}
 15700, & \text{falls } n=0\\
 n-1, & \text{falls } n\neq 0
-\end{array} \right. $
-\end{center}
+\end{cases} 
+\end{equation*}
+
 Tatsächlich ist $ f $ injektiv, da
-\begin{center}
-$ \forall n,n'\in \mathbb{N} : n+1 = f(n) = f(n') = n'+1 \Rightarrow n=n' $
-\end{center}
+\begin{equation*}
+\forall n,n'\in \mathbb{N} : n+1 = f(n) = f(n') = n'+1 \Rightarrow n=n'
+\end{equation*}
 jedoch $ f(\mathbb{N}) = \mathbb{N}\setminus \{0\} $, daher kann keine Rechtsinverse existieren.
 
 \paragraph{Beweis (Lemma)} Zwei Aussagen sind zu beweisen:
@@ -166,43 +166,45 @@ jedoch $ f(\mathbb{N}) = \mathbb{N}\setminus \{0\} $, daher kann keine Rechtsinv
 \subsection{Von Geometrie zu Algebra}
 Euklids führte in den \glqq Elementen\grqq{} (ca. 300 v. Chr.) das bis heute gültige Schema ein:
 \begin{itemize}
-\item Definition\item Axiom/Postulat\item Lehrsatz\item Beweis
+\item Definition
+\item Axiom/Postulat
+\item Lehrsatz
+\item Beweis
 \end{itemize}
 
 \paragraph{Parallelenaxiom/-problem (Euklid, Formulierung nach Playfair)} Es existiert genau eine Parallele $ g' $ zum Punkt $ P \notin g $ zur Geraden $ g $.
 
+Kann das Axiom aus den anderen Axiomen hergeleitet/bewiesen werden? Nein, denn es existieren nichteuklidische, hyperbolische Geometrien (18. Jh.) in denen es mehrere derartige Parallelen gibt. Als Beispiel lässt sich eine Geometrie anführen, die nicht auf einer Ebene sondern auf einem Kreis operiert. Dort lassen sich zu einer Sekante mehrere parallele Sekanten betrachten (also Sekanten, die die ursprüngliche nicht schneiden).
 
-Kann das Axiom aus den anderen Axiomen hergeleitet/bewiesen werden? Nein, denn es existieren nichteuklidische, hyperbolische Geometrien (18. Jh.) in denen es mehrere derartige Parallelen gibt.
-
-\begin{figure}[H]
-\begin{minipage}{.45\textwidth}
-\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
-\clip(-1.69,-0.64) rectangle (4.14,2.83);
-\draw [domain=-1.69:4.14] plot(\x,{(-1--1*\x)/1});
-\draw [domain=-1.69:4.14] plot(\x,{(-0--1*\x)/1});
-\draw (0.6,1) node[] {P};
-\draw (1.58,0.16) node[] {g};
-\draw (1.52,1.78) node[] {g'};
-\begin{scriptsize}
-\fill [color=blue] (1,1) circle (2pt);
-\end{scriptsize}
-\end{tikzpicture}
-\end{minipage}
-\begin{minipage}{.45\textwidth}
-\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
-\clip(-2.24,-3.38) rectangle (3.15,1.76);
-\draw(0,0) circle (1cm);
-\draw (-0.94,0.35)-- (0.66,0.75);
-\draw (-0.13,0.74) node[] {g};
-\draw (0.32,-0.56) node[] {P};
-\draw (-1,-0.02)-- (0.88,-0.48);
-\draw (-0.35,-0.94)-- (0.91,0.42);
-\begin{scriptsize}
-\fill [color=blue] (0.22,-0.32) circle (1.5pt);
-\end{scriptsize}
-\end{tikzpicture}
-\end{minipage}
-\end{figure}
+%\begin{figure}[H]
+%\begin{minipage}{.45\textwidth}
+%\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+%\clip(-1.69,-0.64) rectangle (4.14,2.83);
+%\draw [domain=-1.69:4.14] plot(\x,{(-1--1*\x)/1});
+%\draw [domain=-1.69:4.14] plot(\x,{(-0--1*\x)/1});
+%\draw (0.6,1) node[] {P};
+%\draw (1.58,0.16) node[] {g};
+%\draw (1.52,1.78) node[] {g'};
+%\begin{scriptsize}
+%\fill [color=blue] (1,1) circle (2pt);
+%\end{scriptsize}
+%\end{tikzpicture}
+%\end{minipage}
+%\begin{minipage}{.45\textwidth}
+%\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+%\clip(-2.24,-3.38) rectangle (3.15,1.76);
+%\draw(0,0) circle (1cm);
+%\draw (-0.94,0.35)-- (0.66,0.75);
+%\draw (-0.13,0.74) node[] {g};
+%\draw (0.32,-0.56) node[] {P};
+%\draw (-1,-0.02)-- (0.88,-0.48);
+%\draw (-0.35,-0.94)-- (0.91,0.42);
+%\begin{scriptsize}
+%\fill [color=blue] (0.22,-0.32) circle (1.5pt);
+%\end{scriptsize}
+%\end{tikzpicture}
+%\end{minipage}
+%\end{figure}
 
 \paragraph{Was ist eine Geometrie?} Eine Geometrie ist durch eine Menge X und eine auf X operierende Transformationsgruppe gegeben.
 %%%%%%%%%%%%%%%%% BEGINN VO3-20151013 %%%%%%%%%%%%%%%%%%%%%
@@ -216,24 +218,25 @@ Kann das Axiom aus den anderen Axiomen hergeleitet/bewiesen werden? Nein, denn e
 \end{enumerate}
 
 Die Gruppe heißt kommutativ oder abelsch, falls zusätzlich gilt:
-\begin{center}$\forall g,h\in G: g\circ h = h\circ g$ (Kommutativität)\end{center}
+\begin{equation*}
+\forall g,h\in G: g\circ h = h\circ g \text{ (Kommutativität)} 
+\end{equation*}
 
 \paragraph{Bemerkung:} Das ist eine axiomatische Definition, d.h. der Begriff \glqq Gruppe\grqq{} wird durch (aus vielen (!) Beispielen abstrahierten) \glqq Rechenregeln\grqq{} definiert.
 \paragraph{Beispiel:} Die rationalen Zahlen $\mathbb{Q}$ bilden mit der Addition eine Gruppe $(\mathbb{Q} ,+)$.\\
 Die rationalen Zahlen ohne $0$, $\mathbb{Q}^{\times} := \mathbb{Q}\setminus \{D\}$, bilden mit der Multiplikation eine Gruppe $(\mathbb{Q}^\times ,\cdot)$.
 
 \paragraph{Definition:} Sind $(G,\circ )$ eine Gruppe und $X$ eine Menge, so heißt eine Abbildung 
-\begin{center}$\cdot : G\times X\to X, (g,x)\mapsto g\cdot x$\end{center}
+\begin{equation*}\cdot : G\times X\to X, (g,x)\mapsto g\cdot x\end{equation*}
 eine Gruppenoperation (von $(G,\circ )$ auf $X$), falls
 \begin{enumerate}[(i)]
 \item $\forall g,h\in G :\forall x\in X: g\cdot (h\cdot x) = (g\circ h)\cdot x$ (entspricht nicht der Assoziativität!)
 \item $\forall x\in X: e\cdot x = x$ für das neutrale Element $e$ der Gruppe $(G,\circ )$
 \end{enumerate}
-
-\paragraph{Definition:} $(G,\circ )$ heißt dann Transformationsgruppe von X.
+$(G,\circ )$ heißt dann Transformationsgruppe von X.
 
 \paragraph{Bemerkung:} Operiert $G$ (kurz für $(G,\circ )$, aus dem Zusammenhang ersichtlich) auf $X$, so ist für jedes $g\in G$ die Abbildung $g:X\to X, x\mapsto g\cdot x$ eine bijektive Abbildung von $X$ auf sich. Wegen der Axiome (i) und (ii) aus der Definition erhält man $g^{-1}: X\to X$ als Inverse der Abbildung.
-\paragraph{Beispiel und Definition:} Die bijektiven Abbildungen einer Menge $X$ auf sich, $G:= \{g:X\to X\mid g \text{bijektiv}\}$, bilden (mit der Komposition $\circ$) eine (Transformations-)Gruppe $(G,\circ )$ (die auf $X$ operiert): die Permutationsgruppe oder symmetrische Gruppe $S_X$ von $X$. Für $X=\{1,2,...,n\}$ schreibt man auch $S_n$ statt $S_{\{1,...,n\}}$.
+\paragraph{Beispiel und Definition:} Die bijektiven Abbildungen einer Menge $X$ auf sich, $G:= \{g:X\to X\mid g \text{ bij}\}$, bilden (mit der Komposition $\circ$) eine (Transformations-)Gruppe $(G,\circ )$ (die auf $X$ operiert): die Permutationsgruppe oder symmetrische Gruppe $S_X$ von $X$. Für $X=\{1,2,...,n\}$ schreibt man auch $S_n$ statt $S_{\{1,...,n\}}$.
 \paragraph{Bemerkung:} Im Gegensatz zu allgemeinen Abbildungen stimmen in (Permutations-)Gruppen Links- und Rechtsinverse stets überein.
 \paragraph{Lemma:} Das neutrale Element einer Gruppe $(G,\circ )$ ist eindeutig und $\forall g\in G: g\circ e = g$. Weiters: \begin{equation*}\forall g\in G \exists ! g^{-1} \in G: g^{-1}\circ g = g \circ g^{-1} = e\end{equation*}
 
@@ -250,7 +253,7 @@ und
 \begin{equation*}
 ge = g(hg) = (gh)g = eg
 \end{equation*}
-Jedes (Links-)Neutrale e ist also auch rechtsneutral:
+Jedes (links-)neutrale Element $e$ ist also auch rechtsneutral:
 \begin{equation*}
 \forall g\in G: eg = ge = g
 \end{equation*}
@@ -267,6 +270,7 @@ und sind $h,h'\in G$ Inverse von $g\in G$, so gilt:
 h' = h'(gh) = (h'g)h = h
 \end{equation*}
 d.h. Eindeutigkeit des Inversen.
+
 \paragraph{Definition (Körper):} Ein Tripel $(K,+,\cdot)$, bestehend aus einer Menge $K$ und zwei Verknüpfungen
 \begin{align*}
 +:&K\times K\to K,(x,y)\mapsto x+y\\
@@ -274,7 +278,7 @@ d.h. Eindeutigkeit des Inversen.
 \end{align*}
 heißt Körper, falls:
 \begin{enumerate}[(i)]
-\item $(K,+)$ ist abelsche Gruppe (mit neutralem Element $0$ und inversem Element $-x$ von $x$
+\item $(K,+)$ ist abelsche Gruppe (mit neutralem Element $0$ und inversem Element $-x$ von $x$)
 \item $(K^\times,\cdot)$ ist abelsche Gruppe (mit neutralem Element $1$ und inversem Element $\frac{1}{x} = x^{-1}$ von $x\in K^\times$)
 \item die Distributivgesetze gelten:
 \end{enumerate}
