@@ -1,15 +1,17 @@
 \documentclass[12pt,a4paper,parskip=half-,DIV=15]{scrartcl}
-\usepackage[utf8]{inputenc} 
+\usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{lmodern}%schoeneres Schriftbild
-\usepackage[ngerman]{babel} %deutsche Silbentrennung
-\usepackage{tikz}%Zeichnungen
+\usepackage{lmodern}
+\usepackage[ngerman]{babel}
+\usepackage{tikz}
 \usetikzlibrary{arrows}
-\usepackage{amsmath,amsfonts,amssymb}%
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{paralist}
 \usepackage{float}
-\author{Christoph Fritz, djangonightfall, puenka}
+\author{Christoph Fritz, Alexander Grosz}
 \title{Skript Lineare Algebra \& Geometrie 1, Hertrich-Jeromin}
 \setcounter{section}{-1}
 \begin{document}
@@ -23,7 +25,7 @@ Es existieren zwei Methoden zur präzisen Formulierung:
 	\begin{itemize}
 	\item Definition: Begriffsklärung
 	\item Satz (Lemma, Proposition, Korollar): Aussage über einen (mathematischen) Sachverhalt
-	\item Beweis : eine (logische) Argumentationskette, die erklärt, warum ein Satz wahr ist
+	\item Beweis : eine (logische) Argumentationskette, die erklärt, warum ein Satz/Lemma wahr ist
 	\item Bemerkung, Beispiel: zusätzliche Information/Illustration, die oft Eigenarbeit (Beweis) erfordert
 	\end{itemize}
 \item Formeln und (logische) Symbole werden verwendet:
@@ -61,7 +63,7 @@ f & f & w & w & w & w \\
 \end{tabular}
 \caption{Beweis durch Wahrheitstafel}
 \end{figure}
-\paragraph{Bemerkung (Kommutativität):} $\land$, $\lor$, und $\Leftrightarrow$ sind kommutativ, $\Rightarrow$ jedoch nicht, d.h.:
+\paragraph{Bemerkung (Kommutativität):} $\land$, $\lor$, und $\Leftrightarrow$ sind kommutativ (symmetisch), $\Rightarrow$ jedoch nicht, d.h.:
 \begin{center}
 $(A\land B)\Leftrightarrow (B\land A)$\\
 $(A\lor B)\Leftrightarrow (B\lor A)$\\
@@ -77,7 +79,7 @@ $(A\Rightarrow B)\Leftrightarrow \left\{
 \begin{array}{cl}
 \lnot B\Rightarrow \lnot A&\text{(Indirekter Schluss)}\\
 
-\lnot (A\land \lnot B)&\text{(Widerspruch)}
+\lnot (A\land \lnot B)&\text{(Widerspruchsbeweis)}
 \end{array}\right.$
 \end{center}
 \paragraph{Beispiel} Für reelle Zahlen $x,y\in\mathbb{R}$ gilt:
@@ -92,7 +94,7 @@ $(A\Rightarrow (B\lor C))\Leftrightarrow ((A\land\lnot B)\Rightarrow C)$
 \begin{center}
 $(x\in X\cap Y)\Leftrightarrow (x\in X\land x\in Y)$\\
 $(x\in X\cup Y)\Leftrightarrow (x\in X\lor x\in Y)$\\
-$X\subset Y \Leftrightarrow \{\forall x : (x\in X \Rightarrow x\in Y)\}$
+$(X\subset Y) \Leftrightarrow \{\forall x : (x\in X \Rightarrow x\in Y)\}$
 \end{center}
 \subsection{Abbildungen}
 \paragraph{Definition:} Eine Zuordnung $f: X\to Y$ zwischhen zwei Mengen X und Y heißt eine Abbildung, falls $\forall x\in X: \exists ! y\in Y: y=f(x)$.
@@ -186,7 +188,4 @@ Kann das Axiom aus den anderen Axiomen hergeleitet/bewiesen werden? Nein, denn e
 \end{figure}
 
 \paragraph{Was ist eine Geometrie?} Eine Geometrie ist durch eine Menge X und eine auf X operierende Transformationsgruppe gegeben.
-
-%%%%%%%%%%%%%%% VO3 2015-10-13 %%%%%%%%%%%%%%%%%
-
 \end{document}%
