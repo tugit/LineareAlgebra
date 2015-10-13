@@ -205,4 +205,107 @@ Kann das Axiom aus den anderen Axiomen hergeleitet/bewiesen werden? Nein, denn e
 \end{figure}
 
 \paragraph{Was ist eine Geometrie?} Eine Geometrie ist durch eine Menge X und eine auf X operierende Transformationsgruppe gegeben.
+%%%%%%%%%%%%%%%%% BEGINN VO3-20151013 %%%%%%%%%%%%%%%%%%%%%
+
+\paragraph{Definition:} Ein Paar $(G,\circ)$ bestehend aus einer Menge $G$ und einer Verknüpfung $(\circ : G\times G \to G)$ heißt Gruppe, falls:
+
+\begin{enumerate}[(i)]
+\item $\forall g,h\in G : f\circ (g\circ h) = (f\circ g)\circ h$ (Assoziativität)
+\item $\exists e\in G\forall g\in G : e\circ g = g$ (Existenz eines neutralen Elements)
+\item $\forall g \in G \exists g^{-1} \in G : g^{-1}\circ g = e$ (Existenz eines inversen Elements)
+\end{enumerate}
+
+Die Gruppe heißt kommutativ oder abelsch, falls zusätzlich gilt:
+\begin{center}$\forall g,h\in G: g\circ h = h\circ g$ (Kommutativität)\end{center}
+
+\paragraph{Bemerkung:} Das ist eine axiomatische Definition, d.h. der Begriff \glqq Gruppe\grqq{} wird durch (aus vielen (!) Beispielen abstrahierten) \glqq Rechenregeln\grqq{} abstrahiert.
+\paragraph{Beispiel:} Die rationalen Zahlen $\mathbb{Q}$ bilden mit der Addition eine Gruppe $(\mathbb{Q} ,+)$.\\
+Die rationalen Zahlen ohne $0$, $\mathbb{Q}^{\times} := \mathbb{Q}\setminus \{D\}$, bilden mit der Multiplikation eine Gruppe $(\mathbb{Q}^\times ,\cdot)$.
+
+\paragraph{Definition:} Sind $(G,\circ )$ eine Gruppe und $X$ eine Menge, so heißt eine Abbildung 
+\begin{center}$\cdot : G\times X\to X, g\mapsto g\cdot x$\end{center}
+eine Gruppenoperation (von $(G,\circ )$ auf $X$), falls
+\begin{enumerate}[(i)]
+\item $\forall g,h\in G :\forall x\in X: g\cdot (h\cdot x) = (g\circ h)\cdot x$ (entspricht nicht der Assoziativität!)
+\item $\forall x\in X: e\cdot x = x$ für das neutrale Element $e$ der Gruppe $(G,\circ )$
+\end{enumerate}
+
+\paragraph{Definition:} Ein Paar $(G,\circ)$ bestehend aus einer Menge $G$ und einer Verknüpfung $(\circ : G\times G \to G)$ heißt Gruppe, falls:
+
+\begin{enumerate}[(i)]
+\item $\forall g,h\in G : f\circ (g\circ h) = (f\circ g)\circ h$ (Assoziativität)
+\item $\exists e\in G\forall g\in G : e\circ g = g$ (Existenz eines neutralen Elements)
+\item $\forall g \in G \exists g^{-1} \in G : g^{-1}\circ g = e$ (Existenz eines inversen Elements)
+\end{enumerate}
+
+Die Gruppe heißt kommutativ oder abelsch, falls zusätzlich gilt:
+\begin{center}$\forall g,h\in G: g\circ h = h\circ g$ (Kommutativität)\end{center}
+
+\paragraph{Bemerkung:} Das ist eine axiomatische Definition, d.h. der Begriff \glqq Gruppe\grqq{} wird durch (aus vielen (!) Beispielen abstrahierten) \glqq Rechenregeln\grqq{} abstrahiert.
+\paragraph{Beispiel:} Die rationalen Zahlen $\mathbb{Q}$ bilden mit der Addition eine Gruppe $(\mathbb{Q} ,+)$.\\
+Die rationalen Zahlen ohne $0$, $\mathbb{Q}^{\times} := \mathbb{Q}\setminus \{D\}$, bilden mit der Multiplikation eine Gruppe $(\mathbb{Q}^\times ,\cdot)$.
+
+\paragraph{Definition:} Si
+$(G,\circ )$ heißt dann Transformationsgruppe von X.
+
+\paragraph{Bemerkung:} Operiert $G$ (kurz für $(G,\circ )$, da aus dem Zusammenhang ersichtlich) auf $X$, so ist für jedes $g\in G$ die Abbildung $g:X\to X, x\mapsto g\cdot x$ eine bijektive Abbildung von $X$ auf sich. Wegen der Axiome (i) und (ii) aus der Definition erhält man $g^{-1}: X\to X$ als Inverse der Abbildung.
+\paragraph{Beispiel und Definition:} Die bijektiven Abbildungen einer Menge $X$ auf sich, $G:= \{g:X\to X\mid g \text{bijektiv}\}$, bilden (mit der Komposition $\circ$) eine (Transformations-)Gruppe $(G,\circ )$ (die auf $X$ operiert): die Permutationsgruppe oder symmetrische Gruppe $S_X$ von $X$. Für $X=\{1,2,...,n\}$ schreibt man auch $S_n$ statt $S_{\{1,...,n\}}$.
+\paragraph{Bemerkung:} Im Gegensatz zu allgemeinen Abbildungen stimmen in (Permutations-)Gruppen Links- und Rechtsinverse stets überein.
+\paragraph{Lemma:} Das neutrale Element einer Gruppe ist eindeutig und $\forall g\in G: g\circ e = g$. Weiters: \begin{equation*}\forall g\in G \exists ! g^{-1} \in G: g^{-1}\circ g = g \circ g^{-1} = e\end{equation*}
+
+\paragraph{Beweis:} Sei $g\in G$ gegeben und (gemäß Gruppenaxiom (iii)):
+\begin{itemize}
+\item $h:= g^{-1}$ (Linksinverse von $g$)
+\item $k:= h^{-1}$ (Linksinverse von $h$)
+\end{itemize}
+Damit berechnen wir (multiplikative Schreibweise: $a\circ b = ab$):
+\begin{equation*}
+hg = e = kh = k((hg)h) = k(h(gh)) = (kh)(gh) = gh
+\end{equation*}
+und
+\begin{equation*}
+ge = g(hg) = (gh)g = eg
+\end{equation*}
+Jedes (Links-)Neutrale e ist also auch rechtsneutral:
+\begin{equation*}
+\forall g\in G: eg = ge = g
+\end{equation*}
+und ist $e'\in G$ auch neutrales Element, dann:
+\begin{equation*}
+e' = ee' = e'e = e
+\end{equation*}
+Weiters ist jedes (Links-)Inverse auch rechtsinvers:
+\begin{equation*}
+\forall g \in G: gg^{-1}=g^{-1}g = e
+\end{equation*}
+und sind $k,k'\in G$ Inverse von $g\in G$, so gilt:
+\begin{equation*}
+k' = k'(gk) = (k'g)k = k
+\end{equation*}
+d.h. Eindeutigkeit des Inversen.
+\paragraph{Definition (Körper):} Ein Tripel $(K,+,\cdot)$, bestehend aus einer Menge $K$ und zwei Verknüpfungen
+\begin{align*}
++:&K\times K\to K,(x,y)\mapsto x+y\\
+\cdot : &K\times K\to K, (x,y)\mapsto xy
+\end{align*}
+heißt Körper, falls:
+\begin{enumerate}[(i)]
+\item $(K,+)$ ist abelsche Gruppe (mit neutralem Element $0$ und inversem Element $-x$ von $x$
+\item $(K^\times,\cdot)$ ist abelsche Gruppe (mit neutralem Element $1$ und inversem Element $\frac{1}{x} = x^{-1}$ von $x\in K^\times$
+\item die Distributivgesetze gelten:
+\end{enumerate}
+\begin{equation*}
+\forall x,y,z\in K :\begin{cases}x\cdot (y+z) = xy+xz\\ (x+y)\cdot z = xz+yz \end{cases}
+\end{equation*}
+
+\paragraph{Bemerkung} In einem Körper gilt stets:
+\begin{align*}
+0\cdot x = x\cdot 0 &= 0\\
+0\cdot x = (0+0)\cdot x = 0\cdot &x + 0\cdot x \Rightarrow\\
+0 = 0\cdot x + (-(0\cdot &x)) \Rightarrow 0 = 0\cdot x
+\end{align*}
+Insbesondere folgt damit: $\forall x,y\in K: xy = yx$ (nicht nur für $K^\times$ (Axiom)).
+\paragraph{Beispiel:} $\mathbb{Q,R,C}$ bilden mit den üblichen Verknüpfungen Körper.
+
+%%%%%%%%%%%%%%%%% BEGINN VO4-20151015 %%%%%%%%%%%%%%%%%%%%%
 \end{document}
