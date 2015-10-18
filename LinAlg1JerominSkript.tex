@@ -1,8 +1,9 @@
-\documentclass[12pt,a4paper,parskip=half-,DIV=15]{scrartcl}
+\documentclass[12pt,a4paper,parskip=half-,DIV=15]{scrreprt}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}%schoeneres Schriftbild
 \usepackage[ngerman]{babel}%deutsche Silbentrennung
+\usepackage[onehalfspacing]{setspace}
 \usepackage{tikz}%Zeichnungen
 \usetikzlibrary{arrows}
 \usepackage{amsmath,amsfonts,amssymb}%Mathematik-Pakete
@@ -13,15 +14,15 @@
 \author{Christoph Fritz, djangonightfall, puenka}
 \title{Skript Lineare Algebra \& Geometrie 1, Hertrich-Jeromin}
 
-\setcounter{section}{-1}%Grundlagen bei 0
+\setcounter{chapter}{-1}%Grundlagen bei 0
 
 \begin{document}
 \maketitle
 \tableofcontents
 
-\section{Grundlagen}
+\chapter{Grundlagen}
 
-\subsection{Vorbereitungen, logische Symbolik}
+\section{Vorbereitungen, logische Symbolik}
 Es existieren zwei Methoden zur präzisen Formulierung:
 \begin{itemize}
 \item Funktion einer Formulierung wird präzisiert durch:
@@ -102,7 +103,7 @@ bzw. allgemein:
 (X\subset Y) \Leftrightarrow \{\forall x : (x\in X \Rightarrow x\in Y)\}
 \end{gather*}
 
-\subsection{Abbildungen}
+\section{Abbildungen}
 \paragraph{Definition:} Eine Zuordnung $f: X\to Y$ zwischen zwei Mengen $X$ und $Y$ heißt eine Abbildung, falls $\forall x\in X: \exists ! y\in Y: y=f(x)$.
 
 X heißt der Definitionsbereich der Abbildung und $f(X):=\{f(x)\mid x\in X \}\subseteq Y$ das Bild.
@@ -129,7 +130,7 @@ Eine Abbildung $f: X\to Y$ heißt
 \paragraph{Definition} Sind $ f:X\to Y $ und $ g:Y\to Z$ Abbildungen, so ist ihre Komposition/Verkettung die Abbildung $ g\circ f:X\to Z, x\mapsto (g\circ f)(x):= g(f(x)) $.
 \paragraph{Beispiel} Seien $ X = Y = Z = \mathbb{R} $ und $ f:X\to Y, x\mapsto f(x) :=x^2 $, $ g:Y\to Z, y\mapsto g(x):=y^3 + y $, so ist die Verkettung $ g\circ f: X\to Z, x\mapsto (g\circ f)(x) = (x^2)^3+x^2 = x^6 + x^2 $.
 
-\subsection{Inverse}
+\section{Inverse}
 \paragraph{Lemma} Seien $ f:X\to Y $ und $ g:Y\to X $ Abbildungen. Dann gilt:
 \begin{enumerate}[i)]
 \item ist $ g $ Linksinverse von $ f $, d.h. $ g\circ f = id_X $, so ist f injektiv
@@ -162,8 +163,8 @@ jedoch $ f(\mathbb{N}) = \mathbb{N}\setminus \{0\} $, daher kann keine Rechtsinv
 %%%%%%%%%%%%%%SECTION-ENDE%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Lineare Räume und Abbildungen}
-\subsection{Von Geometrie zu Algebra}
+\chapter{Lineare Räume und Abbildungen}
+\section{Von Geometrie zu Algebra}
 Euklids führte in den \glqq Elementen\grqq{} (ca. 300 v. Chr.) das bis heute gültige Schema ein:
 \begin{itemize}
 \item Definition
@@ -271,7 +272,7 @@ h' = h'(gh) = (h'g)h = h
 \end{equation*}
 d.h. Eindeutigkeit des Inversen.
 
-\subsection{Körper}
+\section{Körper}
 \paragraph{Definition (Körper):} Ein Tripel $(K,+,\cdot)$, bestehend aus einer Menge $K$ und zwei Verknüpfungen
 \begin{align*}
 +:&K\times K\to K,(x,y)\mapsto x+y\\
@@ -296,7 +297,7 @@ heißt Körper, falls:
 Insbesondere folgt damit: $\forall x,y\in K: xy = yx$ (nicht nur für $K^\times$ (Axiom)).
 \paragraph{Beispiel:} Die rationalen Zahlen $\mathbb{Q}$, die reellen Zahlen $\mathbb{R}$ und die komplexen Zahlen $\mathbb{C}$ bilden mit den üblichen Verknüpfungen Körper.
 
-\paragraph{Bemerkung und Beispiel} Aufgrund der Axiome i) und ii) enthält K mindestens 2 Elemente.
+\paragraph{Bemerkung und Beispiel} Aufgrund der Axiome (i) und (ii) enthält $ K $ mindestens 2 Elemente.
 
 \begin{equation*}
 \# K \geq Z,
@@ -304,11 +305,11 @@ Insbesondere folgt damit: $\forall x,y\in K: xy = yx$ (nicht nur für $K^\times$
 
 nämlich:
 \begin{itemize}
-\item 0, das neutrale Elemente bezüglich $+$
-\item 1 $(\neq 0)$, das neutrale Elemente (in $K\times$ = $K\setminus\{0\}$) bezüglich $\cdot$
+\item $ 0 $, das neutrale Elemente bezüglich $+$
+\item $1 (\neq 0)$, das neutrale Elemente (in $K^\times$ = $K\setminus\{0\}$) bezüglich $\cdot$
 \end{itemize}
 
-Es gibt auch einen Körper mit genau 2 Elementen $({0,1},+,*)$, wobei
+Es gibt auch einen Körper mit genau 2 Elementen $({0,1},+,\cdot)$, wobei
 
 \begin{minipage}{0.45\textwidth}
 \begin{equation*}
@@ -322,16 +323,16 @@ Es gibt auch einen Körper mit genau 2 Elementen $({0,1},+,*)$, wobei
 \begin{minipage}{0.45\textwidth}
 \begin{equation*}
 \begin{tabular}{c|c|c}
-$*$ & 0 & 1\\\hline
+$\cdot$ & 0 & 1\\\hline
 0 & 0 & 1\\
-1 & 1 & 0\\
+1 & 1 & 1\\
 \end{tabular}
 \end{equation*}
 \end{minipage}
 
 Dieser Körper wird auch $\mathbb{Z}_2$ bezeichnet.
 
-\paragraph{Bemerkung und Definition} In $\mathbb{Z}_2: 1 + 1 = 0$. Allgemeiner definiert man die Charakteristik eines Körpers $(K,+,\cdot)$ (mit neutralen Elementen 0 und 1 von + und $\cdot$) durch
+\paragraph{Bemerkung und Definition} In $\mathbb{Z}_2: 1 + 1 = 0$. Allgemeiner definiert man die Charakteristik eines Körpers $(K,+,\cdot)$ (mit neutralen Elementen 0 und 1 von + bzw. $\cdot$) durch
 
 \begin{equation*}
 Char(K):=
@@ -341,21 +342,17 @@ Char(K):=
 \end{cases}
 \end{equation*}
 
-z.B. $Char(\mathbb{Z}_2): = \mathbb{Z}:$, da
+z.B. $Char(\mathbb{Z}_2) = 2$, da
 \begin{gather*}
 \{n\in\mathbb{N}^\times\mid 1+...+1=0\}=\\
 =\{n\in\mathbb{N}^\times\mid n=0 \text{ mod } 2\}=\\
-=\{n\in\mathbb{N}^\times\mid n \text{ gerade}\}
+=\{n\in\mathbb{N}^\times\mid n \text{ gerade}\}\\
+\text{und damit: }	\min\{n\in\mathbb{N}^\times\mid 1+...+1=0\}=2
 \end{gather*}
-
-und damit
-\begin{equation*}
-	min\{n\in\mathbb{N}^\times\mid 1+...+1=0\}=2
-\end{equation*}
 
 Wir werden mitunter $Char(K,+,\cdot)\neq 0$ oder (öfter) $Char(K,+,\cdot)=2$ ausschließen (müssen).
 
-\subsection{Translationen und Vektoren}
+\section{Translationen und Vektoren}
 
 \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=1.5]
 \clip(-0.1,-0.1) rectangle (9,4);
@@ -430,20 +427,20 @@ heißt Vektorraum über K (K=VR), falls gilt:
 \paragraph{Beispiel:} Jeder Körper $ K $ ist ein $ K $-VR (Vektorraum über sich selbst): das ist ein (trivialer) Spezialfall des folgenden...
 \paragraph{Beispiel und Definition} Ist $ I $ eine Menge und $ K $ ein Körper, so bilden die $ K $-wertigen Abbildungen
 \begin{equation*}
-v: I \to K: i \mapsto v
+v: I \to K: i \mapsto v_i
 \end{equation*}
 
 einen Vektorraum mit der punktweise definierten Addition und Skalarmultiplikation:
 \begin{gather*}
 I\ni i \mapsto (v+w)_i := v_i+w_i\in K_i\\
-I\ni i \mapsto (vx)_i := v_ix \in K_i
+i \mapsto (vx)_i := v_ix \in K_i
 \end{gather*}
 
 Dieser Vektorraum wird mit $K^{I}$ bezeichnet und Standardvektorraum (über I und K) genannt. Im Falle $ I=\{1,...,n\} $ schreibt man auch $K^{n} := K^{\{1,...,n\}}$
 
 \paragraph{Bemerkung und Definition:} Anstelle der normalen Schreibweise
 \begin{equation*}
-I\ni i \mapsto (i) \in K
+I\ni i \mapsto v(i) \in K
 \end{equation*}
 
 für die Auswertung einer Abbildung  $v: I \to K$ um einen Punkt $i\in I$ haben wir die Indexschreibweise verwendet.
@@ -455,19 +452,19 @@ Wir haben damit eine Abbildung $v: I \to K$ als Familie von
 \begin{equation*}
 (v_i)_{i\in I}
 \end{equation*}
-über der Indexmenge I aufgefasst: Der Begriff Familie ist ein \glqq alternativer\grqq{} Begriff für Abbildungen.
-\paragraph{Beispiel:} Sei i eine \glqq Zahl\grqq mit $i^2=-1$ ($i$ entspricht nicht dem Element der Indexmenge aus dem vorherigen Abschnitt). Die komplexen Zahlen
- \begin{equation*}
- \mathbb{C}:=\{{x+iy\mid x,y\in \mathbb{R}}\}
- \end{equation*}
+über der Indexmenge I aufgefasst -- der Begriff Familie ist ein \glqq alternativer\grqq{} Begriff für Abbildungen.
+\paragraph{Beispiel:} Sei i eine \glqq Zahl\grqq{} mit $i^2=-1$ ($i$ entspricht nicht dem Element der Indexmenge aus dem vorherigen Abschnitt). Die komplexen Zahlen
+\begin{equation*}
+\mathbb{C}:=\{{x+iy\mid x,y\in \mathbb{R}}\}
+\end{equation*}
  
 bilden mit der Addition und Multiplikation einen Körper:
 \begin{align*}
 +&:\mathbb{C}\times \mathbb{C} \to \mathbb{C}: ((x+y),(x'+y')) \mapsto ((x+y)+(x'+y')) := (x+x')+i(y+y')\\
-\cdot &:\mathbb{C}\times \mathbb{C} \to \mathbb{C}: ((x+iy)(x'+iy'))\mapsto (x+iy)\cdot (x'+iy') :=(xx'-yy')+i(xy'+x'y)
+\cdot &:\mathbb{C}\times \mathbb{C} \to \mathbb{C}: ((x+iy),(x'+iy'))\mapsto (x+iy)\cdot (x'+iy') :=(xx'-yy')+i(xy'+x'y)
 \end{align*}
 
-$\mathbb{C}$ bildet einen $\mathbb{R}$-VR mit
+Die komplexen Zahlen $\mathbb{C}$ bilden einen $\mathbb{R}$-VR mit
 \begin{equation*}
 +:\mathbb{C}\times\mathbb{C}\to\mathbb{C}
 \end{equation*}
