@@ -1,0 +1,159 @@
+% % % %Kapitel 0 - Grundlagen % % % %
+\chapter{Grundlagen}
+
+\section{Vorbereitungen, logische Symbolik}
+	Es existieren zwei Methoden zur präzisen Formulierung:
+	\begin{itemize}
+	\item Funktion einer Formulierung wird präzisiert durch:
+		\begin{itemize}
+			\item Definition: Begriffsklärung
+			\item Satz (Lemma, Proposition, Korollar): Aussage über einen (mathematischen) Sachverhalt
+			\item Beweis: eine (logische) Argumentationskette, die erklärt, warum ein Satz/Lemma wahr ist
+			\item Bemerkung, Beispiel: zusätzliche Information/Illustration, die oft Eigenarbeit (Beweis) erfordert
+		\end{itemize}
+	\item Formeln und (logische) Symbole werden verwendet:
+		\begin{itemize}
+			\item $\forall$ -- All-Quantor: \glqq für alle\grqq
+			\item $\exists(!)$ -- Existenz-Quantor: \glqq es existiert (genau) ein\grqq
+			\item $\lnot$ -- logische Verneinung: $\lnot A$ ist wahr, wenn $A$ falsch ist
+			\item $\land ,\lor$ -- logisches \glqq und\grqq{} und \glqq oder\grqq
+			\item $\Rightarrow ,\Leftrightarrow$ -- Implikation und Äquivalenz
+		\end{itemize}
+	\end{itemize}
+
+	\begin{figure}[H]\centering
+		\begin{tabular}{c|c|c|c|c|c|c}
+			$A$ & $B$ & $\lnot A$ & $A\land B$ &$A\lor B$&$A \Rightarrow B$ & $A\Leftrightarrow B$\\\hline
+			w & w & f & w & w & w & w\\
+			w & f & f & f & w & f & f\\
+			f & w & w & f & w & w & f\\
+			f & f & w & f & f & w & w\\
+		\end{tabular}
+	\caption{Wahrheitstafel}
+	\end{figure}
+
+	Beispiele:
+	\begin{itemize}
+		\item Implikation: Für $x,y\in\mathbb{R}: xy = 0 \Rightarrow (x = 0\lor y = 0)$
+		\item Für Aussagen $ A $ und $ B $ gilt: $(A\Rightarrow B)\Leftrightarrow (\lnot A \lor B)$, Beweis durch Wahrheitstafel
+	\end{itemize}
+	
+	\begin{figure}[H]\centering
+		\begin{tabular}{c|c|c|c|c|c}
+			$A$ & $B$ & $\lnot A$ & $\lnot A\lor B$ & $A \Rightarrow B$ & $(A\Rightarrow B)\Leftrightarrow (\lnot A \lor B)$\\\hline
+			w & w & f & w & w & w \\
+			w & f & f & f & f & w \\
+			f & w & w & w & w & w \\
+			f & f & w & w & w & w \\
+		\end{tabular}
+	\caption{Beweis durch Wahrheitstafel}
+	\end{figure}
+
+\paragraph{Bemerkung (Kommutativität):}
+	$\land$, $\lor$, und $\Leftrightarrow$ sind kommutativ (symmetisch), $\Rightarrow$ jedoch nicht, d.h.:
+	\begin{gather*}
+		(A\land B)\Leftrightarrow (B\land A)\\
+		(A\lor B)\Leftrightarrow (B\lor A)\\
+		(A\Leftrightarrow B)\Leftrightarrow (B\Leftrightarrow A)\\
+		(A\Rightarrow B)\nLeftrightarrow (B\Rightarrow A)\\
+	\end{gather*}
+	
+	weil beispielsweise formal gilt: $x,y\in\mathbb{R}: x = 0 \Rightarrow xy = 0$, aber nicht $xy = 0 \Rightarrow x = 0$.
+
+\paragraph{Bemerkung (Beweisformen der Implikation):}
+	Um eine Implikation $A\Rightarrow B$ zu zeigen, bedient man sich häufig auch folgender Äquivalenzen:
+	\begin{equation*}
+		(A\Rightarrow B)\Leftrightarrow
+		\begin{cases}
+			\lnot B\Rightarrow \lnot A&\text{(Indirekter Schluss)}\\
+			\lnot (A\land \lnot B)&\text{(Widerspruchsbeweis)}
+		\end{cases}
+	\end{equation*}
+
+\paragraph{Beispiel:}
+	Für reelle Zahlen $x,y\in\mathbb{R}$ gilt:
+	\begin{equation*}
+		\left((xy = 0)\Rightarrow (x=0 \lor y=0)\right) \Leftrightarrow \left((xy=0 \land x \neq 0)\Rightarrow (y =0)\right)
+	\end{equation*}
+	
+	bzw. allgemein:
+	\begin{equation*}
+		(A\Rightarrow (B\lor C))\Leftrightarrow ((A\land\lnot B)\Rightarrow C)
+	\end{equation*}
+
+\paragraph{Bemerkung (Mengenlehre):}
+	Die Ähnlichkeit mit der Mengensymbolik ist nicht zufällig, z.B. Mengen $X, Y$:
+	\begin{gather*}
+		(x\in X\cap Y)\Leftrightarrow (x\in X\land x\in Y)\\
+		(x\in X\cup Y)\Leftrightarrow (x\in X\lor x\in Y)\\
+		(X\subset Y) \Leftrightarrow \{\forall x : (x\in X \Rightarrow x\in Y)\}
+	\end{gather*}
+
+\section{Abbildungen}
+\paragraph{Definition:}
+	Eine Zuordnung $f: X\to Y$ zwischen zwei Mengen $X$ und $Y$ heißt eine Abbildung, falls $\forall x\in X: \exists ! y\in Y: y=f(x)$.
+
+	X heißt der Definitionsbereich der Abbildung und $f(X):=\{f(x)\mid x\in X \}\subseteq Y$ das Bild.
+
+	Eine Abbildung $f: X\to Y$ heißt
+	\begin{itemize}
+		\item injektiv, falls $\forall x,x'\in X:f(x) = f(x') \Rightarrow x=x'$
+		\item surjektiv, falls $\forall y\in Y:\exists x\in X: y = f(x)$
+		\item bijektiv, falls $\forall y\in Y:\exists !x\in X: y = f(x)$
+	\end{itemize}
+
+\paragraph{Beispiel:}
+	Mit $X=Y=\mathbb{R}$ definiert
+	\begin{itemize}
+		\item die Relation $x^2 = y$ eine Abbildung $f:X\to Y, x\mapsto f(x)=x^2$
+		\item die Relation $x=y^2$ keine Abbildung $f:X\to Y$, denn
+		\begin{itemize}
+			\item für ein $x$ gibt es zwei $y$-Werte
+			\item $x < 0$ ist nicht definiert
+		\end{itemize}
+	\end{itemize}
+
+\paragraph{Beispiel:}
+	Die Identität $id_X :X\to X, x\mapsto id_X(x):= x$ ist eine bijektive Abbildung.
+	
+\paragraph{Bemerkung:}
+	Eine Abbildung ist genau dann bijektiv, wenn sie injektiv und surjektiv ist.
+	
+\paragraph{Definition:}
+	Sind $ f:X\to Y $ und $ g:Y\to Z$ Abbildungen, so ist ihre Komposition/Verkettung die Abbildung $ g\circ f:X\to Z, x\mapsto (g\circ f)(x):= g(f(x)) $.
+	
+\paragraph{Beispiel:}
+	Seien $ X = Y = Z = \mathbb{R} $ und $ f:X\to Y, x\mapsto f(x) :=x^2 $, $ g:Y\to Z, y\mapsto g(x):=y^3 + y $, so ist die Verkettung $ g\circ f: X\to Z, x\mapsto (g\circ f)(x) = (x^2)^3+x^2 = x^6 + x^2 $.
+
+\section{Inverse}
+\paragraph{Lemma:}
+	Seien $ f:X\to Y $ und $ g:Y\to X $ Abbildungen. Dann gilt:
+	\begin{enumerate}[i)]
+		\item ist $ g $ Linksinverse von $ f $, d.h. $ g\circ f = id_X $, so ist f injektiv
+		\item ist $ g $ Rechtsinverse von $ f $, d.h. $ f\circ g = id_Y$, so ist f surjektiv
+		\item ist $ g $ Links- und Rechtsinverse von $ f $, so heißt $ g =f^{-1}$ Inverse von $ f $
+	\end{enumerate}
+
+\paragraph{Beispiel:}
+	$ f:\mathbb{N}\to \mathbb{N}, n\mapsto f(n):= n+1 $ hat Linksinverse
+	\begin{equation*}
+		g:\mathbb{N} \to \mathbb{N}, n\mapsto g(n):=
+		\begin{cases}
+			15700, & \text{falls } n=0\\
+			n-1, & \text{falls } n\neq 0
+		\end{cases}
+	\end{equation*}
+
+	Tatsächlich ist $ f $ injektiv, da
+	\begin{equation*}
+		\forall n,n'\in \mathbb{N} : n+1 = f(n) = f(n') = n'+1 \Rightarrow n=n'
+	\end{equation*}
+	
+	jedoch $ f(\mathbb{N}) = \mathbb{N}\setminus \{0\} $, daher kann keine Rechtsinverse existieren.
+
+\paragraph{Beweis (Lemma):}
+	Zwei Aussagen sind zu beweisen:
+	\begin{enumerate}[i)]
+		\item Sei $ g $ Linksinverse von $ f $. Dann gilt für $ x,x'\in X $ mit \\$ f(x) = f(x'): x = g(f(x)) = g(f(x')) = x' $, also ist $ f $ injektiv.
+		\item Sei $g $ Rechtsinverse von $ f $ und $ y\in Y $. Setze $ x:= g(y)\in X $, dann gilt f(x) = f(g(y)) = y. Damit existiert zu jedem $ y\in Y $ (mindestens) ein $ x = g(y) $, sodass  $ y=f(x) $.
+	\end{enumerate}
