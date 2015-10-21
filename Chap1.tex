@@ -66,7 +66,6 @@
 	Das ist eine axiomatische Definition, d.h. der Begriff \glqq Gruppe\grqq{} wird durch (aus vielen (!) Beispielen abstrahierten) \glqq Rechenregeln\grqq{} definiert.
 \paragraph{Beispiel:}
 	Die rationalen Zahlen $\mathbb{Q}$ bilden mit der Addition eine Gruppe $(\mathbb{Q} ,+)$.
-
 	Die rationalen Zahlen ohne $0$, $\mathbb{Q}^{\times} := \mathbb{Q}\setminus \{D\}$, bilden mit der Multiplikation eine Gruppe $(\mathbb{Q}^\times ,\cdot)$.
 
 \paragraph{Definition:}
@@ -74,6 +73,7 @@
 	\begin{equation*}
 		\cdot : G\times X\to X, (g,x)\mapsto g\cdot x
 	\end{equation*}
+	
 	eine Gruppenoperation (von $(G,\circ )$ auf $X$), falls
 
 	\begin{enumerate}[(i)]
@@ -102,38 +102,27 @@
 	\end{itemize}
 	
 	Damit berechnen wir (multiplikative Schreibweise: $a\circ b = ab$):
-	\begin{equation*}
-		hg = e = kh = k((hg)h) = k(h(gh)) = (kh)(gh) = gh
-	\end{equation*}
+	\begin{gather*}
+		hg = e = kh = k((hg)h) = k(h(gh)) = (kh)(gh) = gh\\
+	\text{und }	ge = g(hg) = (gh)g = eg
+	\end{gather*}
 	
-	und
-	\begin{equation*}
-		ge = g(hg) = (gh)g = eg
-	\end{equation*}
+	Jedes (links-)neutrale Element $e$ ist also auch rechtsneutral:\hfill
+	$\forall g\in G: eg = ge = g$
 	
-	Jedes (links-)neutrale Element $e$ ist also auch rechtsneutral:
-	\begin{equation*}
-		\forall g\in G: eg = ge = g
-	\end{equation*}
-	
-	und ist $e'\in G$ auch neutrales Element, dann:
-	\begin{equation*}
-		e' = ee' = e'e = e
-	\end{equation*}
-	
-	Weiters ist jedes (Links-)Inverse auch rechtsinvers:
-	\begin{equation*}
-		\forall g \in G: gg^{-1}=g^{-1}g = e
-	\end{equation*}
-	
-	und sind $h,h'\in G$ Inverse von $g\in G$, so gilt:
-	\begin{equation*}
-		h' = h'(gh) = (h'g)h = h
-	\end{equation*}
+	und ist $e'\in G$ auch neutrales Element, dann:\hfill
+	$ e' = ee' = e'e = e $
+
+	Weiters ist jedes (Links-)Inverse auch rechtsinvers:\hfill
+	$ \forall g \in G: gg^{-1}=g^{-1}g = e $
+
+	und sind $h,h'\in G$ Inverse von $g\in G$, so gilt:\hfill
+	$ h' = h'(gh) = (h'g)h = h $
+
 	
 	d.h. Eindeutigkeit des Inversen.
 
-\section{Körper}
+\subsection{Körper}
 \paragraph{Definition (Körper):}
 	Ein Tripel $(K,+,\cdot)$, bestehend aus einer Menge $K$ und zwei Verknüpfungen
 	\begin{align*}
@@ -166,9 +155,8 @@
 
 \paragraph{Bemerkung und Beispiel}
 	Aufgrund der Axiome (i) und (ii) enthält $ K $ mindestens 2 Elemente.
-
 	\begin{equation*}
-		\# K \geq Z,
+		\# K \geq 2,
 	\end{equation*}
 	
 	nämlich:
@@ -357,7 +345,7 @@
 % % % %VO5 % % % %
 \subsection{Untervektorräume \& lineare Hülle}
 \paragraph{Definition:}
-	Eine Teilmenge $U\subset V$ eines $K$-VR $V$ heisst Unter(vektor)raum (UVR), falls $U$ mit der eingeschränkten Addition und Skalarmultiplikation
+	Eine Teilmenge $U\subset V$ eines $K$-VR $V$ heißt Unter(vektor)raum (UVR), falls $U$ mit der eingeschränkten Addition und Skalarmultiplikation
 	\begin{align*}
 		 ^+    & \mid_{U\times U}: U\times U \to V,(v,w) \mapsto v+w \\
 		 \cdot & \mid_{K\times U}: K\times U \to V,(x,v) \mapsto vx
