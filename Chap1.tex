@@ -583,7 +583,7 @@
 	Eine Teilmenge $S\subset V$ oder eine Familie $(v_i| i\in I)$ in $ V $ heißt:
 	\begin{itemize}
 		\item Erzeugendensystem von $ V $, falls $[S] = V$ bzw. $[(v_i)_{i\in I}] = V$
-		\item linear unabhängig, falls $\forall v\in S: v \in [S\setminus\{{u\}}]$ bzw. $\forall i\in I: v_i \notin [(v_j)_{j\in I\setminus\{{i\}}}]$
+		\item linear unabhängig, falls $\forall v\in S: v \notin [S\setminus\{{v\}}]$ bzw. $\forall i\in I: v_i \notin [(v_j)_{j\in I\setminus\{{i\}}}]$
 	\end{itemize}
 
 	und sonst linear abhängig. Eine Basis ist ein linear unabhängiges Erzeugendensystem.
@@ -606,14 +606,14 @@
 \paragraph{Beispiel und Definition:}
 	Für $V = K^n$ ist $(e_i, ... , e_n)$,
 	\begin{equation*}
-		e_i:\{{1, ... ,n\}} =: I = \{1,...,n\} \to K: j\mapsto e_i(j)= \delta_{ij}=
+		e_i:\{{1, ... ,n\}} =: I\to K: j\mapsto e_i(j)= \delta_{ij}=
 		\begin{cases}
 			1,& \text{falls } i=j\\
 			0,& \text{sonst}
 		\end{cases}
 	\end{equation*}
 
-	eine Basis -- die Standardbasis des (Standard-)Vektorraumes $K^n$
+	eine Basis -- die Standardbasis des (Standard-)Vektorraumes $K^n$.
 
 \paragraph{Beweis:}
 	Z.z.: $ (e_i)_{i\in I} $ ist ein linear unabhängiges Erzeugendensystem. Bekannt ist: $ [(e_i)_{i\in I}] = K^n $. Andererseits gilt für jedes $i\in I$ und jede Familie $(x_j| j\in I)$ in K
@@ -630,7 +630,7 @@
 \paragraph{Lemma:}
 	Eine Familie $(v_i)_{i\in I}$ ist linear unabhängig gdw. für jede Linearkombination
 	\begin{equation*}
-		0 = \sum_{i\in I} v_ix_i \Rightarrow \forall i\in I: x_i = 0
+		0 = \sum_{i\in I} v_ix_i \Rightarrow \forall i\in I: x_i = 0.
 	\end{equation*}
 
 \paragraph{Beweis:}
@@ -646,7 +646,7 @@
 
 	Für $(y_i)_{i\in I}, y_i := - \frac{xi}{y_i}$ ist dann
 	\begin{equation*}
-		0 = v_jx_j + \sum_{i\in I\setminus\{i\}} v_ix_i \Rightarrow v_j = -(\sum_{i\in I\setminus\{j\}})x_j^{-1} = \sum_{i\in I\setminus\{j\}} v_iy_i \in [(v_i)_{i\in I\setminus\{j\}}],
+		0 = v_jx_j + \sum_{i\in I\setminus\{j\}} v_ix_i \Rightarrow v_j = -(\sum_{i\in I\setminus\{j\}})x_j^{-1} = \sum_{i\in I\setminus\{j\}} v_iy_i \in [(v_i)_{i\in I\setminus\{j\}}],
 	\end{equation*}
 
 	insbesondere ist also $(v_i)_{i\in I}$ linear abhängig.
