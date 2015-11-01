@@ -453,16 +453,16 @@
 \paragraph{Bemerkung}
     $[S]$ ist ein UVR (nach Lemma) -- der \glqq kleinste\grqq{} UVR, der S enthält, d.h. ist $U\subset V$ UVR mit $S\subset U$, so gilt $[S]\subset U$; da aber $[S] = \bigcap_{S\subset \tilde{U}  \text{UVR}}\tilde{U}\subset U$,
     da $S\subset U$, also $U$ am Schnitt beteiligt ist.
-    
+
 \paragraph{Bemerkung}
 	$[\emptyset ] = \{o\}$ und $[V] = V$.
-	
+
 \paragraph{Beispiel}
-	Ist $U\subset V$ UVR, so gilt $[U] = U$
-	
+	Ist $U\subset V$ UVR, so gilt $[U] = U$.
+
 \paragraph{Beispiel}
-	$N=\{v:I\to K\mid v_1v_2=0\} \subset K^n,I=\{1,...,n\},n\geq 2$, hat lineare Hülle $[N]=K^n$
-	
+	$N=\{v:I\to K\mid v_1v_2=0\} \subset K^n,I=\{1,...,n\},n\geq 2$, hat lineare Hülle $[N]=K^n$.
+
 \paragraph{Beispiel}
 	Für $I=\{1,...,n\}$ und $i\in I$ definiere
 	$e_i:I\to K , j\mapsto e_i(j):= \delta_{ij}$, wobei 
@@ -494,7 +494,7 @@
 	\begin{equation*}
 		\forall j\in I: \left(\sum^n_{i=1} e_iv(i)\right)(j) = \sum^n_{i=1}e_i(j)v(i) = (\delta_{ij}) v(j) = v(j)
 	\end{equation*}
-	
+
 	damit ist gezeigt, dass die beiden Abbildungen übereinstimmen; da $v\in K^n$ beliebig war, folgt $K^n \subset [(e_i)_{i\in I}]$
 	
 \paragraph{Definition}
@@ -519,11 +519,13 @@
 	garantiert, dass die Summe wohldefiniert ist $\rightarrow$ vgl. Reihen in der Analysis.
 		
 \paragraph{Lemma}
-	Ist $(v_i)_{i\in I}$ $I \neq \emptyset$, Familie in einem K-VR, so gilt 
+	Ist $(v_i)_{i\in I}$ $I \neq \emptyset$, Familie in einem K-VR, so gilt: 
 	\begin{equation*}
-		[(v_i)_{i\in I}] = \{\sum_{i\in I} v_ix_i| x: I\to K: \# \{i\in I| x_i \neq 0\}< \infty\}.
+		[(v_i)_{i\in I}] = \left\{\sum_{i\in I} v_ix_i| x: I\to K: \# \{i\in I| x_i \neq 0\}< \infty\right\},
 	\end{equation*}
 	
+	d.h. die lineare Hülle der Familie ist die Menge aller Linearkombinationen der Familie.
+
 \paragraph{Beweis}
 	Wir zeigen (wie üblich) zwei Inklusionen:	
 
@@ -639,14 +641,14 @@
 		(v_i)_{i\in I} \text{ linear abhängig } \Leftrightarrow \exists(x_i)_{i\in I} \neq (0)_{i\in I}: \sum_{i\in I} v_ix_i = 0.
 	\end{equation*}
 
-	$\Leftarrow$: Wir nehmen an, es gebe eine nicht-triviale Linearkombination der Null,
+	$\Leftarrow$: Wir nehmen an, es gäbe eine nicht-triviale Linearkombination der Null,
 	\begin{equation*}
 		0 = \sum_{i\in I} v_ix_i, \text{ wobei } \exists j\in I: x_j \neq 0.
 	\end{equation*}
 
 	Für $(y_i)_{i\in I}, y_i := - \frac{xi}{y_i}$ ist dann
 	\begin{equation*}
-		0 = v_jx_j + \sum_{i\in I\setminus\{j\}} v_ix_i \Rightarrow v_j = -(\sum_{i\in I\setminus\{j\}})x_j^{-1} = \sum_{i\in I\setminus\{j\}} v_iy_i \in [(v_i)_{i\in I\setminus\{j\}}],
+		0 = v_jx_j + \sum_{i\in I\setminus\{j\}} v_ix_i \Rightarrow v_j = -\left(\sum_{i\in I\setminus\{j\}}v_ix_i\right)x_j^{-1} = \sum_{i\in I\setminus\{j\}} v_iy_i \in [(v_i)_{i\in I\setminus\{j\}}],
 	\end{equation*}
 
 	insbesondere ist also $(v_i)_{i\in I}$ linear abhängig.
@@ -712,10 +714,10 @@
 
 \paragraph{Beispiel}
     Für $K^3=K^I$ mit $I=\{1,2,3\}$ betrachte die Standardbasisvektoren 
-    \begin{gather*}
-        e_i:I\to K, j\mapsto e_i(j) = \delta_{ij}\text{, und }\\
-        f_i: I\to K, j\mapsto f_i(j):= 1-\delta_{ij};
-    \end{gather*}
+    \begin{align*}
+        e_i &:I\to K, j\mapsto e_i(j) = \delta_{ij}\text{, und}\\
+        f_i &: I\to K, j\mapsto f_i(j):= 1-\delta_{ij};
+    \end{align*}
 
     dann sind $S:= \{e_1,f_1\}$ und $E:= \{e_i,f_i\mid i\in I\}$ lin. unabh. bzw. Erzeugendensystem von $K^3$. Ergänzung von $S$ durch einen Vektor $e_i$ oder $f_i, i = 2,3$ liefert eine Basis $B$ mit $S\subset B\subset E$.
     
