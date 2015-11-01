@@ -847,3 +847,36 @@
 	Sei $V = \mathbb{C} = \{z = x+iy\mid x,y\in \mathbb{R}$ dann ist die komplexe Konjugation $\mathbb{C}\ni z = x+iy \mapsto x-iy =: \bar{z} \in \mathbb{C}$ kein Homomorphismus von $\mathbb{C}$ in sich, wenn man $\mathbb{C}$ als $\mathbb{C}$-VR auffasst. Hingegen ist sie ein Homomorphismus von $\mathbb{C}$ in sich, wenn man $\mathbb{C}$ als R-VR auffasst.
 \paragraph{Lemma:}
 	$f:V\to W$ ist genau dann ein Homomorphismus, wenn für jede beliebige Linearkombination gilt: $f(\sum_{i\in I}v_ix_i) = \sum_{i\in I}f(v_ix_i)$
+
+\paragraph{Beweis:} Eine Richtung ist trivial die andere mit Vollständiger Induktion. Fortsetzungssatz: Seien V und W K-VR $(b_i)_{i\in I}$ eine Basis von V und $(c_i)_{i\in I}$ eine Familie in W. Dann gilt: $\exists!f\in \hom(V,W) \forall i\in I f(b_i) = c_i$
+    
+    \paragraph{Bemerkung:} Anders ausgedrückt: ist $B\subset V$ eine Basis von V, so kann jede Abbildung $f: B\to C\subset W$ Eindeutig zu einem Homomorphismus $f: V\to W$ fortgesetzt werden.
+    
+    \paragraph{Beweis:} Wir beweisen die Existenz und die Eindeutigkeit getrennt. Sei $f:\in \hom(V,W)$ so, dass $\forall i\in I: f(b_i)=c_i$. Sei $v\in V$ beliebig. Da B Erzeugenden System ist, lässt sich v als Linearkombination in $(b_i)_{i\in I}$ mit geeigneten Koeffizienten $(x_i)_{i\in I}$ in K darstellen.
+    \begin{gather*}
+    v=\sum_{i\in I}b_ix_i \Rightarrow f(v) = \sum_{i\in I} f(b_ix_i) = \sum_{i\in I}c_ix_i
+    \end{gather*}
+    Damit ist f(v) eindeutig durch V und die $c_i = (b_ix_i)$ bestimmt.
+    
+    Existenz: Da $(b_i)_{i\in I}$ auch linear abhängig ist, ist jedes $v\in V$ eindeutig als Linear Kombination in $(b_i)_{i\in I}$ dargestellt, damit ist durch $f:V\to W: v=\sum_{i\in I}v_ix_i \mapsto f(v):=\sum_{i\in I}c_iv_i$ eine Abbildung wohldefiniert.
+    
+    Weiters ist $f\in\hom(V,W)$ wegen
+    
+     \begin{gather*}
+     f(v+w) =\sum_{i\in I}(x_iy_i)=\sum_{i\in I}c_ix_i+ \sum_{i\in I}c_iy_i\Rightarrow f(x) + f(y) für alle\left\{
+     \begin{array}{l}
+     v=\sum_{i\in I}b_ix_i \in V\\
+     v=\sum_{i\in I}b_iy_i \in V
+     \end{array}
+     \right.
+     \end{gather*}
+    
+    und
+    \begin{gather*}
+    f(vx) =\sum_{i\in I}c_i(v_ix)\Rightarrow\sum_{i\in I}(c_ix_i)x = (\sum_{i\in I}c_ix_i)x= f(v)x für x\in K und v= \sum_{i\in I}b_ix_i \in V_i
+    \end{gather*}
+    Damit ist die Linearität von f gezeigt.
+    
+    \paragraph{Beispiel und Definition:} Der Dualraum $V^\ast := \hom(V,K)$ eines K-VRs, V ist ein K-VR $(\subset K^U)$. Ist $dimV=:n<\infty, \text{ so ist } dimV^\ast=n$. Nämlich: ist $B=(b_i, ... ,b_n)$ eine Basis von V, so definieren wir für i = 1, ... ,n (nach Fortsetzungssatz) $b_i^\ast\in V^\ast$ durch $\forall j\in{1,...,n}:b_i^\ast(b_j)=\delta_{ij}$ eine Basis $B^\ast=(b_i^\ast,...,b_n^\ast)$ von $V^\ast$, die zu B duale Basis $B^\ast$ von $V^\ast$ mit $\forall j\in I:b_i^\ast(b_j)=\delta_{ij}$ eine lineare unabhängige Familie. Diese ist jedoch kein Erzeugenden System von $V^\ast$ ist: $f\in\hom(V,K)=V^\ast$ mit $\forall j\in I:f(b_j)=1$ lässt sich nicht in $B^\ast$ linear kombinieren. Wäre $f=\sum_{i\in I}b_i^\ast x_i$, so gälte $\forall j\in I: xj =\sum_{i\in I}b_i^\ast(b_j)^{(*1)}x_j= f(b_j) = 1$; Ergänzung: $*1= \delta_{ij}$; 
+    
+    Das heißt, $(x_i)_{i\in I}$ wäre eine Familie in K mit $\#\{i\in I\mid x_i\neq0\}=\infty$, woraus folgt, dass $\sum_{i\in I}b_i^\ast x_i$ keine Linearkombination ist.
