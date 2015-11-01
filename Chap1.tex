@@ -713,7 +713,7 @@
     Wir werden das Lemma auch im Falle $\#E = \infty$ benutzen!
 
 \paragraph{Beispiel}
-    Für $K^3=K^I$ mit $I=\{1,2,3\}$ betrachte die Standardbasisvektoren 
+    Für $V=K^3=K^I$ mit $I=\{1,2,3\}$ betrachte die Standardbasisvektoren 
     \begin{align*}
         e_i &:I\to K, j\mapsto e_i(j) = \delta_{ij}\text{, und}\\
         f_i &: I\to K, j\mapsto f_i(j):= 1-\delta_{ij};
@@ -740,7 +740,7 @@
     was nicht der Fall ist.
 
 \paragraph{Basisergänzungssatz}
-    Jede lin. unabh. Menge $S\subset V$ kann zu einer Basis $B$ von $V$ ergänzt werden: Es existiert eine Basis $B$ von $V$ mit $S\subset V$.
+    Jede lin. unabh. Menge $S\subset V$ kann zu einer Basis $B$ von $V$ ergänzt werden: Es existiert eine Basis $B$ von $V$ mit $S\subset B$.
 
 \paragraph{Beweis}
     Sei $E\subset V$ ein Erzeugendensystem von $V$ (z.B. $E=V$). Dann ist $S\cup E$ ein Erzeugendensystem von $V$ mit $S\subset S\cup E$, das Basislemma liefert dann die gesuchte Basis.
@@ -793,3 +793,53 @@
     Nach dem Basissatz hängt $\dim V = \#B$ (falls $V$ endlich erz.) nicht von der Basis $B$ ab, d.h. $\dim V$ ist wohldefiniert.
 \paragraph{Beispiel}
     $\dim K^n = \#\{e_1,...,e_n\} = n$ nach Standardbasis.
+
+\paragraph{Korollar:} Ist V K-VR mit dim $V =: n\in \mathbb{N}$. Dann gilt:
+    \begin{enumerate}[(i)]
+    	\item Ist $S \subset V$ linear unabhängig, so ist $\# S \subseteq n$ und $\# S = n$ genau dann, wenn S Basis ist
+    	\item Ist $E \subset V$ Erzeugendensystem, so ist ($\#E \geq n$ genau dann, wenn E eine Basis ist).
+    \end{enumerate}
+    \paragraph{Bemerkung:} Insbesondere: Ist $U\subset V$ ein Unterraumvektor mit $dimU-dimV < \infty$, so gilt U=V.
+   
+    \paragraph{Beweis:} (Korollar:)
+    \begin{enumerate}[(i)]
+    	\item Ist S linear unabhängig, so existiert (nach BES) eine Basis B von V mit 
+			 \begin{gather*}
+			    S\subset B\Leftrightarrow \left\{
+				    \begin{array}{l}
+					    \#S \leq \#B\\
+						\#S = \#B \Leftrightarrow S = B
+					\end{array}
+			    \right.
+		    \end{gather*}
+		    \item Analog so (mit Basislemma), siehe Aufgabe 23.
+	 \end{enumerate}   
+
+\section{Homomorphismen}
+\paragraph{Definition:}
+	Sind V und W K-VR, so heißt eine Abbildung $f: V \rightarrow W$ (K-)Linear oder ein (Vektorraum-)Homomorphismus $f\in Hom(V,W)$, falls gilt:
+
+\begin{enumerate}[(i)]
+	\item $\forall v,w \in V: f(v+w) = f(v) + f(w)$;
+	\item $\forall v\in V \forall x\in K: f(vx) = f(v)x$
+	\item Zusätzliches Beispiel für die Multiplikation $f(vw) = f(v) * f(w)$
+\end{enumerate}
+    das heißt, f ist verträglich mit den Vektorraumoperationen in V und W.
+\paragraph{Bemerkung:} Damit die Verträglichkeit mit der Skalarmultiplikation sinnvoll ist, müssen V und W VR über demselben Körper K sein.
+   \paragraph{Bemerkung:} Für $f\in Hom(V,W)$ gilt stets $f(0_1) = f(0_10_2) =* f(0_1)0_2 = 0_3$
+   \begin{enumerate}
+   	\item * unter Berücksichtigung von $ii)$
+   	\item für $0_1$ gilt $\in V$
+	\item für $0_2$ gilt $\in K$
+	\item für $0_3$ gilt $\in W$
+   \end{enumerate}
+  Ebenso erklärt man zum Beispiel Gruppenhomomorphismen und Körperhomomorphismen. Sind etwa $(G,\circ)$ und $(H,*)$ Gruppen, so ist eine Abbildung $f: G \to H$ ein Gruppenhomomorphismus, falls $\forall g,h \in G: f:(g\circ h) = f(g) * f(h)$
+\paragraph{Beispiel:}
+	Ist $f\in Hom(V,W)$ ein Vektorraumhomomorphismus so ist f(nach i) in der Definition oben) Gruppenhomomorphismen von (V,+) in (W,+).
+  
+\paragraph{Beispiel:}
+	Sei V ein K-VR und $y\in K$ fest, dann ist die Streckung um y $y_y:V\to V: v\mapsto y_y(v) := y$ ein Homomorphismus von V in sich, $y_y\in Hom(V,V)$. Eine Streckung nennt man auch Homothetie.
+  	
+\paragraph{Beispiel:}
+	Sei $V = \mathbb{C} = \{z = x+iy\mid x,y\in \mathbb{R}$ dann ist die komplexe Konjugation $\mathbb{C}\ni z = x+iy \mapsto x-iy =: \bar{z} \in \mathbb{C}$ kein Homomorphismus von $\mathbb{C}$ in sich, wenn man $\mathbb{C}$ als $\mathbb{C}$-VR auffasst. Hingegen ist sie ein Homomorphismus von $\mathbb{C}$ in sich, wenn man $\mathbb{C}$ als R-VR auffasst.
+\paragraph{Lemma:} $f:V\to W$ ist genau dann ein Homomorphismus, wenn für jede beliebige Linearkombination gilt: $f(\sum_{i\in I}v_ix_i) = \sum_{i\in I}f(v_ix_i)$
