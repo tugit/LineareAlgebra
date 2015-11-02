@@ -732,12 +732,7 @@
     	\right.
     \end{gather*}
 
-    Dass $B$ lin. unabh. folgt dann; Wäre $B$ lin. abh., so würde folgen
-    \begin{equation*}
-        f_2\in [\{e_1,f_1\}]\Rightarrow [B] \subset [\{e_1,f_1\}] \neq K^3,
-    \end{equation*}
-
-    was nicht der Fall ist.
+    Dass $B$ lin. unabh. folgt dann; Wäre $B$ lin. abh., so würde folgen $f_2\in [\{e_1,f_1\}]\Rightarrow [B] \subset [\{e_1,f_1\}] \neq K^3$, was nicht der Fall ist.
 
 \paragraph{Basisergänzungssatz}
     Jede lin. unabh. Menge $S\subset V$ kann zu einer Basis $B$ von $V$ ergänzt werden: Es existiert eine Basis $B$ von $V$ mit $S\subset B$.
@@ -762,7 +757,7 @@
     Sei $b\in B$ beliebig gewählt und $S:= B\setminus \{b\}$. Da $B$ lin. unabh. ist, gilt $b\notin [S] \Rightarrow \emptyset \neq V\setminus [S] = [B']\setminus [S] \Rightarrow B' \not\subset [S]$, d.h. es existiert $b' \in B'$ mit $b' \notin [S]$. Wir zeigen, dass $B'' := S\cup \{b'\} = (B\setminus\{b\})\cup \{b'\}$ Basis ist. $B''$ ist Erzeugendensystem: Da $b'\in [B]$ existiert $(x_j)_{j\in B}$ mit $$b' = \sum_{j\in B} jx_j $$ mit $x_b \neq 0$, da $b' \notin [S]$.
 
     Damit ist $b=(b'-\sum_{j\in B} jx_j)\frac{1}{x_b} \in [B'] \Rightarrow V = [B] \subset [B'' \cup \{b\}] \subset [B'']$.
-    $B''$ ist lin. unabh.. $B''$ ist Erz. Syst. und $S\subset B' = S \cup \{b'\}$ lin unabh., dann also (nach Basislemma) erg"anzt werden zu einer Basis $\tilde{B}$ mit $S\subset \tilde{B}\subset B''$.
+    $B''$ ist lin. unabh.. $B''$ ist Erz. Syst. und $S\subset B' = S \cup \{b'\}$ lin unabh., kann also (nach Basislemma) erg"anzt werden zu einer Basis $\tilde{B}$ mit $S\subset \tilde{B}\subset B''$.
     Da $[S] \neq V$ gilt $\tilde{B} \neq S$ und damit $\tilde{B} = B''$ Basis, insbesondere lin. unabh.
     
 \paragraph{Bemerkung}
@@ -792,18 +787,18 @@
 \paragraph{Bemerkung}
     Nach dem Basissatz hängt $\dim V = \#B$ (falls $V$ endlich erz.) nicht von der Basis $B$ ab, d.h. $\dim V$ ist wohldefiniert.
 \paragraph{Beispiel}
-    $\dim K^n = \#\{e_1,...,e_n\} = n$ nach Standardbasis.
+    $\dim K^n = \#\{e_1,...,e_n\} = n$ (Standardbasis).
 
 \paragraph{Korollar:} Ist $ V $ ein $ K $-VR mit $\dim V =: n\in \mathbb{N}$. Dann gilt:
     \begin{enumerate}[(i)]
     	\item Ist $S \subset V$ linear unabhängig, so ist $\# S \subseteq n$ und $\# S = n$ genau dann, wenn $ S $ Basis ist
-    	\item Ist $E \subset V$ Erzeugendensystem, so ist ($\#E \geq n$ genau dann, wenn $ E $ eine Basis ist).
+    	\item Ist $E \subset V$ Erzeugendensystem, so ist $\#E \geq n$, bzw. $\#E = n$ genau dann, wenn $ E $ eine Basis ist.
     \end{enumerate}
     
 \paragraph{Bemerkung:}
-	Insbesondere: Ist $U\subset V$ ein Unterraumvektor mit $\dim U-\dim V < \infty$, so gilt $ U=V $.
+	Insbesondere: Ist $U\subset V$ UVR mit $\dim U=\dim V < \infty$, so gilt $ U=V $.
    
-\paragraph{Beweis:} (Korollar:)
+\paragraph{Beweis (Korollar):}
     \begin{enumerate}[(i)]
     	\item Ist $ S $ linear unabhängig, so existiert (nach BES) eine Basis $ B $ von $ V $ mit 
 			 \begin{gather*}
@@ -824,68 +819,71 @@
 \begin{enumerate}[(i)]
 	\item $\forall v,w \in V: f(v+w) = f(v) + f(w)$;
 	\item $\forall v\in V \forall x\in K: f(vx) = f(v)x$
-	\item Zusätzliches Beispiel für die Multiplikation $f(vw) = f(v) * f(w)$
 \end{enumerate}
 
     das heißt, f ist verträglich mit den Vektorraumoperationen in V und W.
     
 \paragraph{Bemerkung:}
-	Damit die Verträglichkeit mit der Skalarmultiplikation sinnvoll ist, müssen $ V $ und $ W $ VR über demselben Körper $ K $ sein.
+	Damit die Verträglichkeit mit der Skalarmultiplikation sinnvoll ist, müssen $ V $ und $ W $ Vektorräume über demselben Körper $ K $ sein.
 \paragraph{Bemerkung:}
-	Für $f\in \hom(V,W)$ gilt stets $f(0_1) = f(0_10_2) =* f(0_1)0_2 = 0_3$
-	\begin{enumerate}
-   	\item * unter Berücksichtigung von (ii)
-   	\item für $0_1$ gilt $\in V$
-	\item für $0_2$ gilt $\in K$
-	\item für $0_3$ gilt $\in W$
-   \end{enumerate}
+	Für $f\in \hom(V,W)$ gilt stets $f(0_V) = f(0_V0_K) = f(0_V)0_K = 0_W$
   
   Ebenso erklärt man zum Beispiel Gruppenhomomorphismen und Körperhomomorphismen. Sind etwa $(G,\circ)$ und $(H,*)$ Gruppen, so ist eine Abbildung $f: G \to H$ ein Gruppenhomomorphismus, falls $\forall g,h \in G: f:(g\circ h) = f(g) * f(h)$
   
 \paragraph{Beispiel:}
-	Ist $f\in Hom(V,W)$ ein Vektorraumhomomorphismus so ist $ f $ nach (i) Gruppenhomomorphismus von $ (V,+) $ in $ (W,+) $.
+	Ist $f\in \hom(V,W)$ ein Vektorraumhomomorphismus so ist $ f $ nach (i) Gruppenhomomorphismus von $ (V,+) $ in $ (W,+) $.
   
 \paragraph{Beispiel:}
-	Sei $ V $ ein $ K $-VR und $y\in K$ fest, dann ist die Streckung um y $y_y:V\to V: v\mapsto y_y(v) := y$ ein Homomorphismus von $ V $ in sich, $y_y\in Hom(V,V)$. Eine Streckung nennt man auch Homothetie.
+	Sei $ V $ ein $ K $-VR und $y\in K$ fest, dann ist die Streckung um $y: \eta_y:V\to V: v\mapsto \eta_y(v) := v_y$ ein Homomorphismus von $ V $ in sich, $\eta_y\in \hom(V,V)$. Eine Streckung nennt man auch Homothetie.
   	
 \paragraph{Beispiel:}
-	Sei $V = \mathbb{C} = \{z = x+iy\mid x,y\in \mathbb{R}$ dann ist die komplexe Konjugation $\mathbb{C}\ni z = x+iy \mapsto x-iy =: \bar{z} \in \mathbb{C}$ kein Homomorphismus von $\mathbb{C}$ in sich, wenn man $\mathbb{C}$ als $\mathbb{C}$-VR auffasst. Hingegen ist sie ein Homomorphismus von $\mathbb{C}$ in sich, wenn man $\mathbb{C}$ als $ \mathbb{R} $-VR auffasst.
+	Sei $V = \mathbb{C} = \{z = x+iy\mid x,y\in \mathbb{R}\}$, dann ist die komplexe Konjugation $\mathbb{C}\ni z = x+iy \mapsto x-iy =: \bar{z} \in \mathbb{C}$ kein Homomorphismus von $\mathbb{C}$ in sich, wenn man $\mathbb{C}$ als $\mathbb{C}$-VR auffasst. Hingegen ist sie ein Homomorphismus von $\mathbb{C}$ in sich, wenn man $\mathbb{C}$ als $ \mathbb{R} $-VR auffasst.
 \paragraph{Lemma:}
-	$f:V\to W$ ist genau dann ein Homomorphismus, wenn für jede beliebige Linearkombination gilt: $f(\sum_{i\in I}v_ix_i) = \sum_{i\in I}f(v_ix_i)$
+	$f:V\to W$ ist genau dann ein Homomorphismus, wenn für jede beliebige Linearkombination gilt: $f(\sum_{i\in I}v_ix_i) = \sum_{i\in I}f(v_i)x_i$
 
 \paragraph{Beweis:}
-	Eine Richtung ist trivial, die andere mit vollständiger Induktion zu zeigen. Fortsetzungssatz: Seien $ V $ und $ W $ K-VR $(b_i)_{i\in I}$ eine Basis von $ V $ und $(c_i)_{i\in I}$ eine Familie in $ W $. Dann gilt: $\exists!f\in \hom(V,W) \forall i\in I f(b_i) = c_i$
+	Eine Richtung ist trivial, die andere mit vollständiger Induktion zu zeigen.
+\paragraph{Fortsetzungssatz:} 
+	Seien $ V $ und $ W $ $K$-VR, $(b_i)_{i\in I}$ eine Basis von $ V $ und $(c_i)_{i\in I}$ eine Familie in $ W $. Dann gilt: $\exists!f\in \hom(V,W) \forall i\in I f(b_i) = c_i$
     
 \paragraph{Bemerkung:}
     Anders ausgedrückt: ist $B\subset V$ eine Basis von $ V $, so kann jede Abbildung $f: B\to C\subset W$ Eindeutig zu einem Homomorphismus $f: V\to W$ fortgesetzt werden.
     
 \paragraph{Beweis:}
-	Wir beweisen die Existenz und die Eindeutigkeit getrennt. Sei $f:\in \hom(V,W)$ so, dass $\forall i\in I: f(b_i)=c_i$. Sei $v\in V$ beliebig. Da $ B $ Erzeugendensystem ist, lässt sich $ v $ als Linearkombination in $(b_i)_{i\in I}$ mit geeigneten Koeffizienten $(x_i)_{i\in I}$ in $ K $ darstellen.
-    \begin{gather*}
-    v=\sum_{i\in I}b_ix_i \Rightarrow f(v) = \sum_{i\in I} f(b_ix_i) = \sum_{i\in I}c_ix_i
-    \end{gather*}
+	Wir beweisen die Existenz und die Eindeutigkeit getrennt. 
+	\begin{enumerate}
+		\item Eindeutigkeit: Sei $f\in \hom(V,W)$ so, dass $\forall i\in I: f(b_i)=c_i$. Sei $v\in V$ beliebig. Da $ B $ Erzeugendensystem ist, lässt sich $ v $ als Linearkombination in $(b_i)_{i\in I}$ mit geeigneten Koeffizienten $(x_i)_{i\in I}$ in $ K $ darstellen.
+			\begin{gather*}
+    				v=\sum_{i\in I}b_ix_i \Rightarrow f(v) = \sum_{i\in I} f(b_i)x_i = \sum_{i\in I}c_ix_i
+    			\end{gather*}
     
-    Damit ist $ f(v) $ eindeutig durch $ V $ und die $c_i = (b_ix_i)$ bestimmt.
+    		Damit ist $ f(v) $ eindeutig durch $ v $ und die $c_i = f(b_i)x_i$ bestimmt.
     
-    Existenz: Da $(b_i)_{i\in I}$ auch linear abhängig ist, ist jedes $v\in V$ eindeutig als Linear Kombination in $(b_i)_{i\in I}$ dargestellt, damit ist durch $f:V\to W: v=\sum_{i\in I}v_ix_i \mapsto f(v):=\sum_{i\in I}c_iv_i$ eine Abbildung wohldefiniert.
+    		\item Existenz: Da $(b_i)_{i\in I}$ auch linear unabhängig ist, ist jedes $v\in V$ eindeutig als Linearkombination in $(b_i)_{i\in I}$ dargestellt, damit ist durch $f:V\to W: v=\sum_{i\in I}b_ix_i \mapsto f(v):=\sum_{i\in I}c_iv_i$ eine Abbildung wohldefiniert.
     
 	Weiters ist $f\in\hom(V,W)$ wegen
 	\begin{gather*}
-		f(v+w) =\sum_{i\in I}(x_iy_i)=\sum_{i\in I}c_ix_i+ \sum_{i\in I}c_iy_i\Rightarrow f(x) + f(y) für alle\left\{
+		f(v+w) =\sum_{i\in I}c_i(x_i+y_i)=\sum_{i\in I}c_ix_i+ \sum_{i\in I}c_iy_i\Rightarrow f(x) + f(y) \text{ für alle }\left\{
 			\begin{array}{l}
 				v=\sum_{i\in I}b_ix_i \in V\\
-     			v=\sum_{i\in I}b_iy_i \in V
-     		\end{array}
-     	\right.
+     				w=\sum_{i\in I}b_iy_i \in V
+     			\end{array}
+     		\right.
      \end{gather*}
     
     und
     \begin{gather*}
-    	f(vx) =\sum_{i\in I}c_i(v_ix)\Rightarrow\sum_{i\in I}(c_ix_i)x = (\sum_{i\in I}c_ix_i)x= f(v)x für x\in K und v= \sum_{i\in I}b_ix_i \in V_i
+    	f(vx) =\sum_{i\in I}c_i(x_ix)\Rightarrow\sum_{i\in I}(c_ix_i)x = (\sum_{i\in I}c_ix_i)x= f(v)x \text{ für }  x\in K\text{ und }v= \sum_{i\in I}b_ix_i \in V_i
     \end{gather*}
     Damit ist die Linearität von $ f $ gezeigt.
+    \end{enumerate}
     
 \paragraph{Beispiel und Definition:}
-    Der Dualraum $V^\ast := \hom(V,K)$ eines K-VRs, V ist ein $ K $-VR $(\subset K^U)$. Ist $\dim V=:n<\infty, \text{ so ist } \dim V^\ast=n$. Nämlich: ist $B=(b_i, ... ,b_n)$ eine Basis von $ V $, so definieren wir für $ i = \{1, ... ,n\} $ (nach Fortsetzungssatz): $b_i^\ast\in V^\ast$ durch $\forall j\in{1,...,n}:b_i^\ast(b_j)=\delta_{ij}$ eine Basis $B^\ast=(b_i^\ast,...,b_n^\ast)$ von $V^\ast$, die zu $ B $ duale Basis $B^\ast$ von $V^\ast$ mit $\forall j\in I:b_i^\ast(b_j)=\delta_{ij}$ eine lineare unabhängige Familie. Diese ist jedoch kein Erzeugendensystem von $V^\ast$ ist: $f\in\hom(V,K)=V^\ast$ mit $\forall j\in I:f(b_j)=1$ lässt sich nicht in $B^\ast$ linear kombinieren. Wäre $f=\sum_{i\in I}b_i^\ast x_i$, so gälte $\forall j\in I: xj =\sum_{i\in I}b_i^\ast(b_j)^{(*1)}x_j= f(b_j) = 1$; Ergänzung: $*1= \delta_{ij}$; 
+    Der Dualraum $V^\ast := \hom(V,K)$ eines $K$-VRs, V ist ein $ K $-VR $(\subset K^V)$. Ist $\dim V=:n<\infty, \text{ so ist } \dim V^\ast=n$.
     
-    Das heißt, $(x_i)_{i\in I}$ wäre eine Familie in $ K $ mit $\#\{i\in I\mid x_i\neq0\}=\infty$, woraus folgt, dass $\sum_{i\in I}b_i^\ast x_i$ keine Linearkombination ist.
+    Nämlich: ist $B=(b_i, ... ,b_n)$ eine Basis von $ V $, so definieren wir für $ i = \{1, ... ,n\} $ (nach Fortsetzungssatz): $b_i^\ast\in V^\ast$ durch $\forall j\in \{1,...,n\}:b_i^\ast(b_j)=\delta_{ij}$ eine Basis $B^\ast=(b_i^\ast,...,b_n^\ast)$ von $V^\ast$, die zu $ B $ duale Basis $B^\ast$ von $V^\ast$
+
+\paragraph{Bemerkung:}
+   Ist $\dim V = \infty$ und $B=(b_i)_{i\in I}$ eine Basis von $V$, so liefert $B\ast=(b_i^\ast)_{i\in I}$ mit $\forall j\in I:b_i^\ast(b_j)=\delta_{ij}$ eine lineare unabhängige Familie. Diese ist jedoch kein Erzeugendensystem von $V^\ast$ ist: $f\in\hom(V,K)=V^\ast$ mit $\forall j\in I:f(b_j)=1$ lässt sich nicht in $B^\ast$ linear kombinieren. Wäre $f=\sum_{i\in I}b_i^\ast x_i$, so gälte $\forall j\in I: x_j =\sum_{i\in I}b_i^\ast(b_j)x_j= \sum_{i\in I} \delta_{ij}x_j = f(b_j) = 1$; 
+    
+    Das heißt, $(x_i)_{i\in I}$ wäre eine Familie in $ K $ mit $\#\{i\in I\mid x_i\neq 0\}=\infty$.
