@@ -1,0 +1,210 @@
+% % % %Kapitel 1 - Lineare Räume und Abbildungen % % % %
+\chapter{Lineare Räume und Abbildungen}
+\section{Von Geometrie zu Algebra}
+	Euklids führte in den \glqq Elementen\grqq{} (ca. 300 v. Chr.) das bis heute gültige Schema ein:
+	\begin{itemize}
+		\item Definition
+		\item Axiom/Postulat
+		\item Lehrsatz
+		\item Beweis
+	\end{itemize}
+
+\paragraph{Parallelenaxiom/-problem (Euklid, Formulierung nach Playfair)}
+	Es existiert genau eine Parallele $ g' $ zum Punkt $ P \notin g $ zur Geraden $ g $.
+
+	Kann das Axiom aus den anderen Axiomen hergeleitet/bewiesen werden? Nein, denn es existieren nichteuklidische, hyperbolische Geometrien (18. Jh.) in denen es mehrere derartige Parallelen gibt. Als Beispiel lässt sich eine Geometrie anführen, die nicht auf einer Ebene sondern auf einem Kreis operiert. Dort lassen sich zu einer Sekante mehrere parallele Sekanten betrachten (also Sekanten, die die ursprüngliche nicht schneiden).
+
+	\begin{figure}[H]
+		\begin{minipage}{.45\textwidth}
+			\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+				\clip(-1.69,-0.64) rectangle (4.14,2.83);
+				\draw [domain=-1.69:4.14] plot(\x,{(-1--1*\x)/1});
+				\draw [domain=-1.69:4.14] plot(\x,{(-0--1*\x)/1});
+				\draw (0.6,1) node[] {P};
+				\draw (1.58,0.16) node[] {g};
+				\draw (1.52,1.78) node[] {g'};
+				\begin{scriptsize}
+				\fill [color=blue] (1,1) circle (2pt);
+				\end{scriptsize}
+			\end{tikzpicture}
+		\end{minipage}
+		\begin{minipage}{.45\textwidth}
+			\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+				\clip(-2.24,-3.38) rectangle (3.15,1.76);
+				\draw(0,0) circle (1cm);
+				\draw (-0.94,0.35)-- (0.66,0.75);
+				\draw (-0.13,0.74) node[] {g};
+				\draw (0.32,-0.56) node[] {P};
+				\draw (-1,-0.02)-- (0.88,-0.48);
+				\draw (-0.35,-0.94)-- (0.91,0.42);
+				\begin{scriptsize}
+				\fill [color=blue] (0.22,-0.32) circle (1.5pt);
+				\end{scriptsize}
+			\end{tikzpicture}
+		\end{minipage}
+	\end{figure}
+
+\paragraph{Was ist eine Geometrie?}
+	Eine Geometrie ist durch eine Menge X und eine auf X operierende Transformationsgruppe gegeben.
+%%%%%%%%%%%%%%%%% BEGINN VO3-20151013 %%%%%%%%%%%%%%%%%%%%%
+
+\paragraph{Definition}
+	Ein Paar $(G,\circ)$ bestehend aus einer Menge $G$ und einer Verknüpfung $(\circ : G\times G \to G) : (g,h) \mapsto g \circ h$ heißt Gruppe, falls:
+
+	\begin{enumerate}[(i)]
+		\item $\forall f,g,h\in G : f\circ (g\circ h) = (f\circ g)\circ h$ (Assoziativität)
+		\item $\exists e\in G\forall g\in G : e\circ g = g$ (Existenz eines neutralen Elements)
+		\item $\forall g \in G \exists g^{-1} \in G : g^{-1}\circ g = e$ (Existenz eines inversen Elements)
+	\end{enumerate}
+	
+	Die Gruppe heißt kommutativ oder abelsch, falls zusätzlich gilt:
+	\begin{equation*}
+		\forall g,h\in G: g\circ h = h\circ g \text{ (Kommutativität)}
+	\end{equation*}
+
+\paragraph{Bemerkung}
+	Das ist eine axiomatische Definition, d.h. der Begriff \glqq Gruppe\grqq{} wird durch (aus vielen (!) Beispielen abstrahierten) \glqq Rechenregeln\grqq{} definiert.
+\paragraph{Beispiel}
+	Die rationalen Zahlen $\mathbb{Q}$ bilden mit der Addition eine Gruppe $(\mathbb{Q} ,+)$.
+	Die rationalen Zahlen ohne $0$, $\mathbb{Q}^{\times} := \mathbb{Q}\setminus \{D\}$, bilden mit der Multiplikation eine Gruppe $(\mathbb{Q}^\times ,\cdot)$.
+
+\paragraph{Definition}
+	Sind $(G,\circ )$ eine Gruppe und $X$ eine Menge, so heißt eine Abbildung
+	\begin{equation*}
+		\cdot : G\times X\to X, (g,x)\mapsto g\cdot x
+	\end{equation*}
+	
+	eine Gruppenoperation (von $(G,\circ )$ auf $X$), falls
+
+	\begin{enumerate}[(i)]
+		\item $\forall g,h\in G :\forall x\in X: g\cdot (h\cdot x) = (g\circ h)\cdot x$ (entspricht nicht der Assoziativität!)
+		\item $\forall x\in X: e\cdot x = x$ für das neutrale Element $e$ der Gruppe $(G,\circ )$
+	\end{enumerate}
+	$(G,\circ )$ heißt dann Transformationsgruppe von X.
+
+\paragraph{Bemerkung}
+	Operiert $G$ (kurz für $(G,\circ )$, aus dem Zusammenhang ersichtlich) auf $X$, so ist für jedes $g\in G$ die Abbildung $g:X\to X, x\mapsto g\cdot x$ eine bijektive Abbildung von $X$ auf sich. Wegen der Axiome (i) und (ii) aus der Definition erhält man $g^{-1}: X\to X$ als Inverse der Abbildung.
+\paragraph{Beispiel und Definition}
+	Die bijektiven Abbildungen einer Menge $X$ auf sich, $G:= \{g:X\to X\mid g \text{ bij}\}$, bilden (mit der Komposition $\circ$) eine (Transformations-)Gruppe $(G,\circ )$ (die auf $X$ operiert): die Permutationsgruppe oder symmetrische Gruppe $S_X$ von $X$. Für $X=\{1,2,...,n\}$ schreibt man auch $S_n$ statt $S_{\{1,...,n\}}$.
+\paragraph{Bemerkung}
+	Im Gegensatz zu allgemeinen Abbildungen stimmen in (Permutations-)Gruppen Links- und Rechtsinverse stets überein.
+\paragraph{Lemma}
+	Das neutrale Element einer Gruppe $(G,\circ )$ ist eindeutig und $\forall g\in G: g\circ e = g$. Weiters: 
+	\begin{equation*}
+		\forall g\in G \exists ! g^{-1} \in G: g^{-1}\circ g = g \circ g^{-1} = e
+	\end{equation*}
+
+\paragraph{Beweis}
+	Sei $g\in G$ gegeben und (gemäß Gruppenaxiom (iii)):
+	\begin{itemize}
+		\item $h:= g^{-1}$ (Linksinverse von $g$)
+		\item $k:= h^{-1}$ (Linksinverse von $h$)
+	\end{itemize}
+	
+	Damit berechnen wir (multiplikative Schreibweise: $a\circ b = ab$):
+	\begin{gather*}
+		hg = e = kh = k((hg)h) = k(h(gh)) = (kh)(gh) = gh\\
+	\text{und }	ge = g(hg) = (gh)g = eg
+	\end{gather*}
+	
+	Jedes (links-)neutrale Element $e$ ist also auch rechtsneutral:\hfill
+	$\forall g\in G: eg = ge = g$
+	
+	und ist $e'\in G$ auch neutrales Element, dann:\hfill
+	$ e' = ee' = e'e = e $
+
+	Weiters ist jedes (Links-)Inverse auch rechtsinvers:\hfill
+	$ \forall g \in G: gg^{-1}=g^{-1}g = e $
+
+	und sind $h,h'\in G$ Inverse von $g\in G$, so gilt:\hfill
+	$ h' = h'(gh) = (h'g)h = h $
+
+	
+	d.h. Eindeutigkeit des Inversen.
+
+\subsection{Körper}
+\paragraph{Definition (Körper)}
+	Ein Tripel $(K,+,\cdot)$, bestehend aus einer Menge $K$ und zwei Verknüpfungen
+	\begin{align*}
+		+:&K\times K\to K,(x,y)\mapsto x+y\\
+		\cdot : &K\times K\to K, (x,y)\mapsto xy
+	\end{align*}
+	
+	heißt Körper, falls:
+	\begin{enumerate}[(i)]
+		\item $(K,+)$ ist abelsche Gruppe (mit neutralem Element $0$ und inversem Element $-x$ von $x$)
+		\item $(K^\times,\cdot)$ ist abelsche Gruppe (mit neutralem Element $1$ und inversem Element $\frac{1}{x} = x^{-1}$ von $x\in K^\times$)
+		\item die Distributivgesetze gelten:
+	\end{enumerate}
+	
+	\begin{equation*}
+		\forall x,y,z\in K :\begin{cases}x\cdot (y+z) = xy+xz\\ (x+y)\cdot z = xz+yz \end{cases}
+	\end{equation*}
+
+\paragraph{Bemerkung}
+	In einem Körper gilt stets:
+	\begin{equation*}
+		0\cdot x = x\cdot 0 = 0 \Rightarrow
+		0\cdot x = (0+0)\cdot x = 0\cdot x + 0\cdot x \Rightarrow
+		0 = 0\cdot x + (-(0\cdot x)) \Rightarrow 0 = 0\cdot x
+	\end{equation*}
+	
+	Insbesondere folgt damit: $\forall x,y\in K: xy = yx$ (nicht nur für $K^\times$ (Axiom)).
+\paragraph{Beispiel}
+	Die rationalen Zahlen $\mathbb{Q}$, die reellen Zahlen $\mathbb{R}$ und die komplexen Zahlen $\mathbb{C}$ bilden mit den üblichen Verknüpfungen Körper.
+
+\paragraph{Bemerkung und Beispiel}
+	Aufgrund der Axiome (i) und (ii) enthält $ K $ mindestens 2 Elemente.
+	\begin{equation*}
+		\# K \geq 2,
+	\end{equation*}
+	
+	nämlich:
+	\begin{itemize}
+		\item $ 0 $, das neutrale Elemente bezüglich $+$
+		\item $1 (\neq 0)$, das neutrale Elemente (in $K^\times$ = $K\setminus\{0\}$) bezüglich $\cdot$
+	\end{itemize}
+	
+	Es gibt auch einen Körper mit genau 2 Elementen $(\{0,1\},+,\cdot)$, wobei
+
+	\begin{minipage}{0.45\textwidth}
+		\begin{equation*}
+			\begin{tabular}{c|c|c}
+				$+$ & 0 & 1\\\hline
+				0 & 0 & 1\\
+				1 & 1 & 0\\
+			\end{tabular}
+		\end{equation*}
+	\end{minipage}
+	\begin{minipage}{0.45\textwidth}
+		\begin{equation*}
+			\begin{tabular}{c|c|c}
+				$\cdot$ & 0 & 1\\\hline
+				0 & 0 & 1\\
+				1 & 1 & 1\\
+			\end{tabular}
+		\end{equation*}
+	\end{minipage}
+	
+	Dieser Körper wird auch $\mathbb{Z}_2$ bezeichnet.
+
+\paragraph{Bemerkung und Definition}
+	In $\mathbb{Z}_2: 1 + 1 = 0$. Allgemeiner definiert man die Charakteristik eines Körpers $(K,+,\cdot)$ (mit neutralen Elementen 0 und 1 von + bzw. $\cdot$) durch
+
+	\begin{equation*}
+		Char(K):=
+		\begin{cases}
+			0,\text{falls } \forall n \in \mathbb{N}^\times: \sum_{j = 1}^{n} 1 \neq 0\\
+			\min\{n \in \mathbb{N}^\times\mid \sum_{j = 1}^{n} 1 = 1+ ... + 1 = 0\}
+		\end{cases}
+	\end{equation*}
+	
+	z.B. $Char(\mathbb{Z}_2) = 2$, da
+	\begin{gather*}
+		\{n\in\mathbb{N}^\times\mid 1+...+1=0\}=\\
+		=\{n\in\mathbb{N}^\times\mid n=0 \text{ mod } 2\}=\\
+		=\{n\in\mathbb{N}^\times\mid n \text{ gerade}\}\\
+		\text{und damit: }	\min\{n\in\mathbb{N}^\times\mid 1+...+1=0\}=2
+	\end{gather*}
+	
+	Wir werden mitunter $Char(K,+,\cdot)\neq 0$ oder (öfter) $Char(K,+,\cdot)=2$ ausschließen (müssen).
