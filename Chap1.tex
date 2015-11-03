@@ -844,7 +844,7 @@
 \paragraph{Beweis:}
 	Eine Richtung ist trivial, die andere mit vollständiger Induktion zu zeigen.
 \paragraph{Fortsetzungssatz:} 
-	Seien $ V $ und $ W $ $K$-VR, $(b_i)_{i\in I}$ eine Basis von $ V $ und $(c_i)_{i\in I}$ eine Familie in $ W $. Dann gilt: $\exists!f\in \hom(V,W) \forall i\in I f(b_i) = c_i$
+	Seien $ V $ und $ W $ $K$-VR, $(b_i)_{i\in I}$ eine Basis von $ V $ und $(c_i)_{i\in I}$ eine Familie in $ W $. Dann gilt: $\exists!f\in \hom(V,W) \forall i\in I f(b_i) = c_i$.
     
 \paragraph{Bemerkung:}
     Anders ausgedrückt: ist $B\subset V$ eine Basis von $ V $, so kann jede Abbildung $f: B\to C\subset W$ Eindeutig zu einem Homomorphismus $f: V\to W$ fortgesetzt werden.
@@ -880,16 +880,50 @@
     
 \paragraph{Beispiel und Definition:}
 	Der Dualraum $V^\ast := \hom(V,K)$ eines $K$-VRs $V$ ist ein $ K $-VR $(\subset K^V)$. Ist $\dim V=:n<\infty$ so ist $\dim V^\ast=n$.
-	Nämlich: ist $B=(b_i, ... ,b_n)$ eine Basis von $ V $, so definieren wir für $ i = \{1, ... ,n\} $ (nach Fortsetzungssatz): $b_i^\ast\in V^\ast$ durch $\forall j\in \{1,...,n\}:b_i^\ast(b_j)=\delta_{ij}$ eine Basis $B^\ast=(b_i^\ast,...,b_n^\ast)$ von $V^\ast$, die zu $ B $ duale Basis $B^\ast$ von $V^\ast$
+	Ist $B=(b_i, ... ,b_n)$ eine Basis von $ V (\dim V < \infty)$, so definieren wir für $ i = \{1, ... ,n\} $ die Linearform (nach Fortsetzungssatz):
+	\begin{equation*}
+		b_i^\ast\in V^*:V\to K, \forall j\in \{1,...,n\}:b_i^*(b_j)=\delta_{ij}
+	\end{equation*} die zu $ B $ duale Basis $ B^* $ von $V^\ast$.
 
+	Nämlich:
+	\begin{itemize}
+	\item $ V^* $ ist $ K $-VR. Wir zeigen $ V^*\subset K^V $ ist UVR.
+	\begin{enumerate}
+		\item $ 0: V\to K $ ist linear, d.h. $ 0 \in V^* \Rightarrow V^* \neq \emptyset $
+		\item Seien $ f,g \in V^* $ und $ x\in K $; dann gilt
+			\begin{gather*}
+				\forall v,w\in V: (fx+g)(v+w) = f(v+w)x+g(v+w)=(f(v)+ f(w))x+(g(v)+g(w))=\\
+				=(f(v)x+g(v))+(f(w)x+g(w)) = (fx+g)(v)+(fx+g)(w)\\
+				\text{genauso: } \forall v\in V, y\in K: (fx+g)(vy) = f(vy)x+g(vy) = f(v)yx + g(v)y =\\ =(f(v)x +g )y = ((fx+g)y)(v)
+			\end{gather*}
+			
+			Damit gilt: $ fx+g\in \hom (V,K) = V^* $
+	\end{enumerate}
+	
+	Da $ f,g\in V^* $ und $ x\in K $ beliebig waren, zeigt das UR-Kriterium, dass $ V^*\subset K^V $ ein UVR ist und damit selbst $ K $-VR ist.
+	\item $ B^* $ ist linear unabhängig: Seien $ x_1,...,x_n $ so, dass
+		\begin{equation*}
+		0 = \sum_{i=1}^{n}b_i^*x_i \Rightarrow \forall j=\{1,...,n\}:0=(\sum_{i=1}^{n}b_i^*x_i)(b_j) = \sum_{i=1}^{n}b_i^*(b_j)x_i = \sum_{i=1}^{n}\delta_{ij}x_i = x_j
+		\end{equation*}
+	Also $ x_1 = ... = x_n = 0 $ und damit ist $ B^* $ linear unabhängig.
+	\item $ B^* $ ist Erzeugendensystem: Sei $ f\in V^* $ beliebig, dann gilt:
+	\begin{equation*}
+		\forall j = \{1,...,n\}:f(b_i) = \sum_{i=1}^{n}b_i^*(b_j)f(b_i) = (\sum_{i=1}^{n}b_i^*f(b_i))b_j \Rightarrow f = \sum_{i=1}^{n}b_i^*f(b_i)\in [B^*]
+	\end{equation*}
+	
+	Da $ f\in V^* $ beliebig war, ist also $ V^* = [B^*]$.
+	\end{itemize}
+	
+	Damit ist $ B^* = \{b_1^*,...,b_n^*\}$ eine Basis von $ V^* $ -- insbesondere also $ \dim V^* = n = \dim V = \dim K\cdot \dim V $.
+	
 \paragraph{Bemerkung:}
 	Ist $\dim V = \infty$ und $B=(b_i)_{i\in I}$ eine Basis von $V$, so liefert $B\ast=(b_i^\ast)_{i\in I}$ mit $\forall j\in I:b_i^\ast(b_j)=\delta_{ij}$ eine lineare unabhängige Familie. Diese ist jedoch kein Erzeugendensystem von $V^\ast: f\in\hom(V,K)=V^\ast$ mit $\forall j\in I:f(b_j)=1$ lässt sich nicht in $B^\ast$ linear kombinieren. Wäre $f=\sum_{i\in I}b_i^\ast x_i$, so gälte $\forall j\in I: x_j =\sum_{i\in I}b_i^\ast(b_j)x_j= \sum_{i\in I} \delta_{ij}x_j = f(b_j) = 1$; 
 
 	Das heißt, $(x_i)_{i\in I}$ wäre eine Familie in $ K $ mit $\#\{i\in I\mid x_i\neq 0\}=\infty$.
-ERGÄNZUNG durch Wiederholung
 
 \paragraph{Satz:}
-	$\dim\hom (V,W) = m\cdot n$, falls $m:=\dim W<\infty, n:=\dim V< \infty$
+	$ \hom (V,W) $ ist ein VR. $\dim\hom (V,W) = m\cdot n$, falls $m:=\dim W<\infty, n:=\dim V< \infty$
+	
 \paragraph{Beweis:}
 	Addition und Skalarmultiplikation in $\hom (V,W)$ werde (wie für $K$-wertige Abbildungen oder in $V^*$) punktweise definiert:
 	\begin{itemize}
@@ -905,36 +939,9 @@ ERGÄNZUNG durch Wiederholung
 	Wir wählen (nach BES) Basen $B = (b_1,...,b_n)$ von $V$ und $C=(c_1,...,c_m)$ von $W$ und definieren
 		\begin{equation*}
 			f_{ij}\in \hom (V,W) mit f_{ij}:= c_i\cdot b_j^* \text{ für } 
-				\begin{cases}\paragraph{Beispiel und Definition:}
-	Der Dualraum $V^\ast := \hom(V,K)$ eines $K$-VRs $V$ ist ein $ K $-VR $(\subset K^V)$. Ist $\dim V=:n<\infty$ so ist $\dim V^\ast=n$.
-	Nämlich: ist $B=(b_i, ... ,b_n)$ eine Basis von $ V $, so definieren wir für $ i = \{1, ... ,n\} $ (nach Fortsetzungssatz): $b_i^\ast\in V^\ast$ durch $\forall j\in \{1,...,n\}:b_i^\ast(b_j)=\delta_{ij}$ eine Basis $B^\ast=(b_i^\ast,...,b_n^\ast)$ von $V^\ast$, die zu $ B $ duale Basis $B^\ast$ von $V^\ast$
-
-\paragraph{Bemerkung:}
-	Ist $\dim V = \infty$ und $B=(b_i)_{i\in I}$ eine Basis von $V$, so liefert $B\ast=(b_i^\ast)_{i\in I}$ mit $\forall j\in I:b_i^\ast(b_j)=\delta_{ij}$ eine lineare unabhängige Familie. Diese ist jedoch kein Erzeugendensystem von $V^\ast: f\in\hom(V,K)=V^\ast$ mit $\forall j\in I:f(b_j)=1$ lässt sich nicht in $B^\ast$ linear kombinieren. Wäre $f=\sum_{i\in I}b_i^\ast x_i$, so gälte $\forall j\in I: x_j =\sum_{i\in I}b_i^\ast(b_j)x_j= \sum_{i\in I} \delta_{ij}x_j = f(b_j) = 1$; 
-
-	Das heißt, $(x_i)_{i\in I}$ wäre eine Familie in $ K $ mit $\#\{i\in I\mid x_i\neq 0\}=\infty$.
-ERGÄNZUNG durch Wiederholung
-
-\paragraph{Satz:}
-	$\dim\hom (V,W) = m\cdot n$, falls $m:=\dim W<\infty, n:=\dim V< \infty$
-\paragraph{Beweis:}
-	Addition und Skalarmultiplikation in $\hom (V,W)$ werde (wie für $K$-wertige Abbildungen oder in $V^*$) punktweise definiert:
-	\begin{itemize}
-		\item für $f,g \in \hom (V,W)$ setzt man $(f+g)(v) := f(v) + g(v)$ für alle $v\in V$,
-		\item für $f\in \hom (V,W)$ und $x\in K$ setzt man $(fx)(v) := f(v)x$ für alle $v\in V$.
-	\end{itemize}
-	Die so definierten Abbildungen $f+g,fx: V\to W$ sind linear, $f+g, fx\in \hom (V,W)$, aufgrund der VR-Eigenschaften von $V$.
-	
-	Damit zeigt man: $\hom (V,W)$ ist $K$-VR (siehe Aufgabe 27).
-	
-	Seien nun $\dim V = n < \infty$ und $\dim W = m < \infty$.
-	
+				\begin{cases}
 					i\in I := \{1,...,m\}\\
-					j\in J := \{1,...,n\}\paragraph{Beispiel und Definition:}
-	Der Dualraum $V^\ast := \hom(V,K)$ eines $K$-VRs $V$ ist ein $ K $-VR $(\subset K^V)$. Ist $\dim V=:n<\infty$ so ist $\dim V^\ast=n$.
-	Nämlich: ist $B=(b_i, ... ,b_n)$ eine Basis von $ V $, so definieren wir für $ i = \{1, ... ,n\} $ (nach Fortsetzungssatz): $b_i^\ast\in V^\ast$ durch $\forall j\in \{1,...,n\}:b_i^\ast(b_j)=\delta_{ij}$ eine Basis $B^\ast=(b_i^\ast,...,b_n^\ast)$ von $V^\ast$, die zu $ B $ duale Basis $B^\ast$ von $V^\ast$
-
-\paragraph{Bemerkung:}
+					j\in J := \{1,...,n\}
 				\end{cases}
 		\end{equation*}
 	Behauptung: $F=(f_{ij})_{I,J}$ ist Basis von $\hom (V,W)$.
@@ -950,24 +957,29 @@ ERGÄNZUNG durch Wiederholung
 		\begin{gather*}
 		\forall k\in J: f(b_k) = \sum_{i\in I} c_i x_{ik} \text{ (da $(c_i)_{i\in I}$ Erzeugendensystem)}\\
 		= \sum_{I,J}c_ib_j^*(b_k)x_{ij} = \left(\sum_{IJ} f_{ij}x_{ij}\right)(b_k)\\
-		\text{also (Fortsetzungssatz): } f=\sum_{I,J}f_{ij}x_{ij} \in [F]\\
+		\text{also (Fortsetzungssatz): } f=\sum_{I,J}f_{ij}x_{ij} \in [F]
 		\end{gather*}
-		Da $f\in\hom (V,W)$ beliebig war, gilt also $\hom (V,W) = [F]$. Damit ist $F$ Basis von $\hom (V,W)$ und $\dim\hom (V,W) = \# F = m\cdot n$.
+	
+	Da $f\in\hom (V,W)$ beliebig war, gilt also $\hom (V,W) = [F]$. Damit ist $F$ Basis von $\hom (V,W)$ und $\dim\hom (V,W) = \# F = m\cdot n$.
+	
 \paragraph{Lemma und Definition}
 	Sei $f\in \hom (V,W)$. Dann sind Bild und Kern von f:
 		\begin{equation*}
 			f(V) = \{f(v)\in W\mid v\in V \}\subset W \text{ bzw. } \ker (f) := \{v\in V\mid f(v) = 0 \} \subset V
 		\end{equation*}
+	
 	UVR von $W$ bzw. $V$. Ihre Dimensionen heißen Rang und Defekt von $f$:
 		\begin{equation*}
 			\text{rg} f := \dim f(V) \text{ bzw. } \text{def} f := \dim \ker f
 		\end{equation*}
+
 \paragraph{Bemerkung: }
 	Da $f(0)=0$ für  $f\in \hom (V,W)$ gilt $\{o_V \}\in \ker f$ und $\{o_W \}\in f(V)$.
+
 \paragraph{Beweis: }
-	Zu zeigen: $f(V)\subset W$ und $\ker f\subset V$ sind UVR. Nach Bemerkung gilt $f(V)\neq \emptyset$ und $\ker f \neq \emptyset$ -- wir verwenden dann das UR-Kriterium.
+	Zu zeigen: Das Bild $f(V)\subset W$ und $\ker f\subset V$ sind UVR. Nach Bemerkung gilt $f(V)\neq \emptyset$ und $\ker f \neq \emptyset$ -- wir verwenden dann das UR-Kriterium.
 	
-	$f(V)$ ist UVR: $f(V) \neq \emptyset$. Es bleibt zu zeigen:
+	Das Bild $f(V)$ ist UVR: $f(V) \neq \emptyset$. Es bleibt zu zeigen:
 		\begin{equation*}
 			\forall w_1,w_2\in f(V), \forall x\in K: w_1x+w_2 \in f(V).
 		\end{equation*}
@@ -977,7 +989,7 @@ ERGÄNZUNG durch Wiederholung
 			w_1x+w_2 = f(v_1)x+f(v_2) = f(v_1x+v_2)\in f(V)
 		\end{equation*}
 		
-	$\ker f$ ist UVR: $\ker f\neq \emptyset$; seien $v_1,v_2\in \ker f$ und $x\in K$, dann gilt:
+	Der Kern $\ker f$ ist UVR: $\ker f\neq \emptyset$; seien $v_1,v_2\in \ker f$ und $x\in K$, dann gilt:
 		\begin{equation*}
 			f(v_1x+v_2) = f(v_1)x+f(v_2) = 0\cdot x + 0 = 0 \Rightarrow v_1x+v_2\in \ker f
 		\end{equation*}
@@ -987,10 +999,23 @@ ERGÄNZUNG durch Wiederholung
 			\item ist $U\subset V$ UVR, so ist $f(U)\subset W$ UVR
 			\item ist $U\subset V$ UVR, so ist $f^{-1}(U) = \{v\in V\mid f(v) \in U \}\subset V$ ein UVR
 		\end{enumerate}
+		
 \paragraph{Bemerkung: }
-	$f\in \hom (V,W)$ ist genau dann injektiv, wenn $\ker f = \{o\}$. Nämlich:
+	Die Funktion $f\in \hom (V,W)$ ist genau dann injektiv, wenn $\ker f = \{o\}$. Nämlich:
 		\begin{itemize}
 			\item ist $f$ injektiv und $v\in \ker f$, so gilt $f(v) = 0 = f(0) \Rightarrow v=0$
 			\item ist $\ker f = \{ o \}$ und sind $v,w \in V$ mit $f(v) = f(w)$, so folgt\\
 				$0=f(v)-f(w) = f(v-w) \Rightarrow v-w\in \ker f = \{o\} \Rightarrow v = w$
 		\end{itemize}
+
+\paragraph{Bemerkung: }
+	Eine lineare Abbildung $ f\in \hom (V,W) $ ist genau dann
+		\begin{enumerate}[(i)]
+			\item injektiv, wenn $ \forall S\subset V: S$ lin. unabh. $ \Rightarrow f(S) $ lin. unabh.
+			\item surjektiv, wenn $ \forall E \subset V:E $ Erz. Syst. $ \Rightarrow f(E)$ Erz. Syst.
+			\item bijektiv, wenn $ \forall B\subset V: B$ Basis $ \Rightarrow f(B)$ Basis
+		\end{enumerate}
+
+	Ist $ f\in \hom (V,W) $ bijektiv, so ist $ f^{-1}\in \hom (W,V) $.
+\paragraph{Rangsatz: }
+	Sei $ f\in \hom (V,W) $. Ist $ \dim V = n < \infty $,  so gilt $\text{rg} f + \text{def} f = \dim V$.  Ist $ \dim V = \infty $, so gilt $ \text{rg} f = \infty $ oder $ \text{def} f = \infty $.
