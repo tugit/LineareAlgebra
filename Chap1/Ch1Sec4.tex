@@ -34,7 +34,7 @@
 	Seien $ V $ und $ W $ $K$-VR, $(b_i)_{i\in I}$ eine Basis von $ V $ und $(c_i)_{i\in I}$ eine Familie in $ W $. Dann gilt: $\exists!f\in \hom(V,W), \forall i\in I: f(b_i) = c_i$.
     
 \paragraph{Bemerkung:}
-    Anders ausgedrückt: ist $B\subset V$ eine Basis von $ V $, so kann jede Abbildung $f: B\to C\subset W$ Eindeutig zu einem Homomorphismus $f: V\to W$ fortgesetzt werden.
+        Anders ausgedrückt: ist $B\subset V$ eine Basis von $ V $, so kann jede Abbildung $f: B\to C\subset W$ Eindeutig zu einem Homomorphismus $f: V\to W$ fortgesetzt werden.
     
 \paragraph{Beweis:}
 	Wir beweisen die Existenz und die Eindeutigkeit getrennt. 
@@ -44,26 +44,26 @@
     				v=\sum_{i\in I}b_ix_i \Rightarrow f(v) = \sum_{i\in I} f(b_i)x_i = \sum_{i\in I}c_ix_i
     			\end{gather*}
     
-    		Damit ist $ f(v) $ eindeutig durch $ v $ und die $c_i = f(b_i)x_i$ bestimmt.
+                        Damit ist $ f(v) $ eindeutig durch $ v $ und die $c_i = f(b_i)x_i$ bestimmt.
     
     		\item Existenz: Da $(b_i)_{i\in I}$ auch linear unabhängig ist, ist jedes $v\in V$ eindeutig als Linearkombination in $(b_i)_{i\in I}$ dargestellt, damit ist durch $f:V\to W: v=\sum_{i\in I}b_ix_i \mapsto f(v):=\sum_{i\in I}c_iv_i$ eine Abbildung wohldefiniert.
     
-	Weiters ist $f\in\hom(V,W)$ wegen
-	\begin{gather*}
-		f(v+w) =\sum_{i\in I}c_i(x_i+y_i)=\sum_{i\in I}c_ix_i+ \sum_{i\in I}c_iy_i\Rightarrow f(x) + f(y) \text{ für alle }\left\{
-			\begin{array}{l}
-				v=\sum_{i\in I}b_ix_i \in V\\
-     				w=\sum_{i\in I}b_iy_i \in V
-     			\end{array}
-     		\right.
-     \end{gather*}
+                        Weiters ist $f\in\hom(V,W)$ wegen
+                        \begin{gather*}
+                                f(v+w) =\sum_{i\in I}c_i(x_i+y_i)=\sum_{i\in I}c_ix_i+ \sum_{i\in I}c_iy_i\Rightarrow f(x) + f(y) \text{ für alle }\left\{
+                                        \begin{array}{l}
+                                                v=\sum_{i\in I}b_ix_i \in V\\
+                                                w=\sum_{i\in I}b_iy_i \in V
+                                        \end{array}
+                                \right.
+                        \end{gather*}
     
-    und
-    \begin{gather*}
-    	f(vx) =\sum_{i\in I}c_i(x_ix)\Rightarrow\sum_{i\in I}(c_ix_i)x = (\sum_{i\in I}c_ix_i)x= f(v)x \text{ für }  x\in K\text{ und }v= \sum_{i\in I}b_ix_i \in V_i
-    \end{gather*}
-    Damit ist die Linearität von $ f $ gezeigt.
-    \end{enumerate}
+                        und
+                        \begin{gather*}
+                            f(vx) =\sum_{i\in I}c_i(x_ix)\Rightarrow\sum_{i\in I}(c_ix_i)x = (\sum_{i\in I}c_ix_i)x= f(v)x \text{ für }  x\in K\text{ und }v= \sum_{i\in I}b_ix_i \in V_i
+                        \end{gather*}
+                        Damit ist die Linearität von $ f $ gezeigt.
+        \end{enumerate}
     
 \paragraph{Beispiel und Definition:}
 	Der Dualraum $V^\ast := \hom(V,K)$ eines $K$-VRs $V$ ist ein $ K $-VR $(\subset K^V)$. Ist $\dim V=:n<\infty$ so ist $\dim V^\ast=n$.
