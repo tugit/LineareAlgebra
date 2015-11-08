@@ -75,20 +75,24 @@
 	\end{equation*} die zu $ B $ duale Basis $ B^* $ von $V^\ast$.
 
 %ADB_VO_03.11.15
-	Nämlich:
-	\begin{itemize}
-	\item $ V^* $ ist $ K $-VR. Wir zeigen $ V^*\subset K^V $ ist UVR.
-	\begin{enumerate}
-		\item $ 0: V\to K $ ist linear, d.h. $ 0 \in V^* \Rightarrow V^* \neq \emptyset $
-		\item Seien $ f,g \in V^* $ und $ x\in K $; dann gilt
-			\begin{gather*}
-				\forall v,w\in V: (fx+g)(v+w) = f(v+w)x+g(v+w)=(f(v)+ f(w))x+(g(v)+g(w))=\\
-				=(f(v)x+g(v))+(f(w)x+g(w)) = (fx+g)(v)+(fx+g)(w)\\
-				\text{genauso: } \forall v\in V, y\in K: (fx+g)(vy) = f(vy)x+g(vy) = f(v)yx + g(v)y =\\ =(f(v)x +g )y = ((fx+g)y)(v)
-			\end{gather*}
-			
-			Damit gilt: $ fx+g\in \hom (V,K) = V^* $
-	\end{enumerate}
+        Nämlich:
+        \begin{itemize}
+        \item $ V^* $ ist $ K $-VR. Wir zeigen $ V^*\subset K^V $ ist UVR.
+        \begin{enumerate}
+                \item $ 0: V\to K $ ist linear, d.h. $ 0 \in V^* \Rightarrow V^* \neq \emptyset $
+                \item Seien $ f,g \in V^* $ und $ x\in K $; dann gilt
+			\begin{align*}
+				\forall v,w\in V: (fx+g)(v+w) &= f(v+w)x+g(v+w)\\
+                                                              &= (f(v)+ f(w))x+(g(v)+g(w))\\
+                                                              &= (f(v)x+g(v))+(f(w)x+g(w))\\
+                                                              &= (fx+g)(v)+(fx+g)(w)
+			\intertext{genauso:}
+                                \forall v\in V, y\in K: (fx+g)(vy) &= f(vy)x+g(vy)\\
+                                                                   &= f(v)yx + g(v)y\\ 
+                                                                   &= (f(v)x +g)y = ((fx+g)y)(v)
+                        \end{align*}
+                        Damit gilt: $ fx+g\in \hom (V,K) = V^* $
+        \end{enumerate}
 	
 	Da $ f,g\in V^* $ und $ x\in K $ beliebig waren, zeigt das UR-Kriterium, dass $ V^*\subset K^V $ ein UVR ist und damit selbst $ K $-VR ist.
 	\item $ B^* $ ist linear unabhängig: Seien $ x_1,...,x_n $ so, dass
