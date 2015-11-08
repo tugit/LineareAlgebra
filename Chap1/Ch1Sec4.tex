@@ -75,10 +75,8 @@
 	\end{equation*} die zu $ B $ duale Basis $ B^* $ von $V^\ast$.
 
 %ADB_VO_03.11.15
-        Nämlich:
+        \paragraph{Beweis:} $ V^* $ ist $ K $-VR. Wir zeigen $ V^*\subset K^V $ ist UVR.
         \begin{itemize}
-        \item $ V^* $ ist $ K $-VR. Wir zeigen $ V^*\subset K^V $ ist UVR.
-        \begin{enumerate}
                 \item $ 0: V\to K $ ist linear, d.h. $ 0 \in V^* \Rightarrow V^* \neq \emptyset $
                 \item Seien $ f,g \in V^* $ und $ x\in K $; dann gilt
 			\begin{align*}
@@ -92,20 +90,23 @@
                                                                    &= (f(v)x +g)y = ((fx+g)y)(v)
                         \end{align*}
                         Damit gilt: $ fx+g\in \hom (V,K) = V^* $
-        \end{enumerate}
+        \end{itemize}
 	
 	Da $ f,g\in V^* $ und $ x\in K $ beliebig waren, zeigt das UR-Kriterium, dass $ V^*\subset K^V $ ein UVR ist und damit selbst $ K $-VR ist.
-	\item $ B^* $ ist linear unabhängig: Seien $ x_1,...,x_n $ so, dass
-		\begin{equation*}
-		0 = \sum_{i=1}^{n}b_i^*x_i \Rightarrow \forall j=\{1,...,n\}:0=(\sum_{i=1}^{n}b_i^*x_i)(b_j) = \sum_{i=1}^{n}b_i^*(b_j)x_i = \sum_{i=1}^{n}\delta_{ij}x_i = x_j
-		\end{equation*}
-	Also $ x_1 = ... = x_n = 0 $ und damit ist $ B^* $ linear unabhängig.
-	\item $ B^* $ ist Erzeugendensystem: Sei $ f\in V^* $ beliebig, dann gilt:
-	\begin{equation*}
-		\forall j = \{1,...,n\}:f(b_i) = \sum_{i=1}^{n}b_i^*(b_j)f(b_i) = (\sum_{i=1}^{n}b_i^*f(b_i))b_j \Rightarrow f = \sum_{i=1}^{n}b_i^*f(b_i)\in [B^*]
-	\end{equation*}
 	
-	Da $ f\in V^* $ beliebig war, ist also $ V^* = [B^*]$.
+	\paragraph{Beweis:} $B^*$ ist Basis. Wir zeigen $B^*$ ist linear unabhängig und Erzeugendensystem.
+	\begin{itemize}
+            \item $ B^* $ ist linear unabhängig: Seien $ x_1,...,x_n $ so, dass
+                    \begin{equation*}
+                    0 = \sum_{i=1}^{n}b_i^*x_i \Rightarrow \forall j=\{1,...,n\}:0=(\sum_{i=1}^{n}b_i^*x_i)(b_j) = \sum_{i=1}^{n}b_i^*(b_j)x_i = \sum_{i=1}^{n}\delta_{ij}x_i = x_j
+                    \end{equation*}
+            Also $ x_1 = ... = x_n = 0 $ und damit ist $ B^* $ linear unabhängig.
+            \item $ B^* $ ist Erzeugendensystem: Sei $ f\in V^* $ beliebig, dann gilt:
+            \begin{equation*}
+                    \forall j = \{1,...,n\}:f(b_i) = \sum_{i=1}^{n}b_i^*(b_j)f(b_i) = (\sum_{i=1}^{n}b_i^*f(b_i))b_j \Rightarrow f = \sum_{i=1}^{n}b_i^*f(b_i)\in [B^*]
+            \end{equation*}
+            
+            Da $ f\in V^* $ beliebig war, ist also $ V^* = [B^*]$.
 	\end{itemize}
 	
 	Damit ist $ B^* = \{b_1^*,...,b_n^*\}$ eine Basis von $ V^* $ -- insbesondere also $ \dim V^* = n = \dim V = \dim K\cdot \dim V $.
