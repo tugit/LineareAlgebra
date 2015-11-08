@@ -1,4 +1,4 @@
-% % % % Chapter 1 Section 4 % % % %
+%VO_29.10.15
 \section{Homomorphismen}
 \paragraph{Definition:}
 	Sind $ V $ und $ W $ $ K $-VR, so heißt eine Abbildung $f: V \rightarrow W$ ($ K $-)Linear oder ein (Vektorraum-)Homomorphismus $f\in \hom(V,W)$, falls gilt:
@@ -12,6 +12,7 @@
     
 \paragraph{Bemerkung:}
 	Damit die Verträglichkeit mit der Skalarmultiplikation sinnvoll ist, müssen $ V $ und $ W $ Vektorräume über demselben Körper $ K $ sein.
+
 \paragraph{Bemerkung:}
 	Für $f\in \hom(V,W)$ gilt stets $f(0_V) = f(0_V0_K) = f(0_V)0_K = 0_W$.
   
@@ -30,6 +31,7 @@
 
 \paragraph{Beweis:}
 	Eine Richtung ist trivial, die andere mit vollständiger Induktion zu zeigen.
+
 \paragraph{Fortsetzungssatz:} 
 	Seien $ V $ und $ W $ $K$-VR, $(b_i)_{i\in I}$ eine Basis von $ V $ und $(c_i)_{i\in I}$ eine Familie in $ W $. Dann gilt: $\exists!f\in \hom(V,W), \forall i\in I: f(b_i) = c_i$.
     
@@ -108,6 +110,7 @@
 
 	Das heißt, $(x_i)_{i\in I}$ wäre eine Familie in $ K $ mit $\#\{i\in I\mid x_i\neq 0\}=\infty$.
 
+%VO_03.11.15
 \paragraph{Satz:}
 	$ \hom (V,W) $ ist ein VR. $\dim\hom (V,W) = m\cdot n$, falls $m:=\dim W<\infty, n:=\dim V< \infty$.
 	
@@ -180,13 +183,14 @@
 		\begin{equation*}
 			f(v_1x+v_2) = f(v_1)x+f(v_2) = 0\cdot x + 0 = 0 \Rightarrow v_1x+v_2\in \ker f
 		\end{equation*}
+
 \paragraph{Bemerkung: }
 	Allgemeiner kann man für $f\in \hom (V,W)$ zeigen:
 		\begin{enumerate}
 			\item ist $U\subset V$ UVR, so ist $f(U)\subset W$ UVR
 			\item ist $U\subset V$ UVR, so ist $f^{-1}(U) = \{v\in V\mid f(v) \in U \}\subset V$ ein UVR
 		\end{enumerate}
-		
+
 \paragraph{Bemerkung: }
 	Die Funktion $f\in \hom (V,W)$ ist genau dann injektiv, wenn $\ker f = \{o\}$. Nämlich:
 		\begin{itemize}
@@ -204,5 +208,8 @@
 		\end{enumerate}
 
 	Ist $ f\in \hom (V,W) $ bijektiv, so ist $ f^{-1}\in \hom (W,V) $.
+
 \paragraph{Rangsatz: }
 	Sei $ f\in \hom (V,W) $. Ist $ \dim V = n < \infty $,  so gilt $\rg f + \dfkt f = \dim V$.  Ist $ \dim V = \infty $, so gilt $ \rg f = \infty $ oder $ \dfkt f = \infty $.
+
+%VO_05.11.15
