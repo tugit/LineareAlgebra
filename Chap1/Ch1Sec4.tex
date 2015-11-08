@@ -221,128 +221,133 @@
 
 %VO_05.11.15
 \paragraph{Behauptung: }
-	$(c_i)_{c\in I}$ ist eine Basis von $f(V)$.	Lineare Unabhängigkeit: gilt für eine Lineare-Kombination in $(c_i)_{i\in I}$:
+	$(c_i)_{c\in I}$ ist eine Basis von $f(V)$.	Lineare Unabhängigkeit: gilt für eine Linearkombination in $(c_i)_{i\in I}$:
 	\begin{equation*}
 		0=\sum_{i\in I}c_ix_i = \sum_{i\in I}f(b_i)x_i = f(\sum_{i\in I}b_ix_i)
-		\end{equation*}
-		so folgt
-		\begin{equation*}
+	\end{equation*}
+	so folgt
+	
+	\begin{equation*}
 		\sum_{i\in I}b_ix_i \in \ker f
-		\end{equation*}
-		\begin{enumerate}[$\Rightarrow$]
-			\item $\exists y_1,...,y_n\in K:\sum_{i\in I}b_ix_i=\sum_{j=1}^{K}b_jy_j$\\
-			\item $0 = \sum_{i\in I}b_ix_i - \sum_{j=1}^{K}b_jy_j$
-		\end{enumerate}
-		
-			\begin{equation*}
-			\text{da } (b_j)_{j\in J} \text{ linear unabhängig ist}
-			\begin{cases}
+	\end{equation*}
+	
+	\begin{enumerate}[$\Rightarrow$]
+		\item $\exists y_1,...,y_n\in K:\sum_{i\in I}b_ix_i=\sum_{j=1}^{K}b_jy_j$\\
+		\item $0 = \sum_{i\in I}b_ix_i - \sum_{j=1}^{K}b_jy_j$
+	\end{enumerate}
+
+	\begin{equation*}
+		\text{da } (b_j)_{j\in J} \text{ linear unabhängig ist}
+		\begin{cases}
 			\forall j = 1, ... ,k:y_j=0\\
 			\forall i\in I: x_i = 0
-			\end{cases}
-			\end{equation*}
+		\end{cases}
+	\end{equation*}
 			
 	Insbesondere gilt also $\forall i\in I: x_i = 0$ damit folgt die Lineare Unabhängigkeit nach Lemma.
 	
-	\paragraph{Erzeugendensystem:}
-		Sei $w\in f(V)$, also Existiert $v\in V$ mit $w = f(v)$. Da $(b_j)_{j\in J}$ Basis von $V$ ist, existiert eine Familie $(x_j)_{j\in J}$ in $K$ so, dass 
-		\begin{equation*}
-			V = \sum_{j\in J} b_jx_j
-		\end{equation*}
-		Dann gilt
+\paragraph{Erzeugendensystem:}
+	Sei $w\in f(V)$, also Existiert $v\in V$ mit $w = f(v)$. Da $(b_j)_{j\in J}$ Basis von $V$ ist, existiert eine Familie $(x_j)_{j\in J}$ in $K$ so, dass 
+	\begin{equation*}
+		V = \sum_{j\in J} b_jx_j
+	\end{equation*}
+	
+	Dann gilt
 	\begin{gather*}
-			w = f(v) = f(\sum_{j\in J} b_jx_j) = \sum_{j\in J}f(b_jx_j)\\
-			J=I \cup\{{1,...,k\}} = \sum_{j=1}^{K}f(b_j)^{=0}x_j + \sum_{i\in I}f(b_i)^{=c_i}x_i = \sum_{i\in I}c_ix_i\in[(c_i)_{i\in I}]
+		w = f(v) = f(\sum_{j\in J} b_jx_j) = \sum_{j\in J}f(b_jx_j)\\
+		J=I \cup\{{1,...,k\}} = \sum_{j=1}^{K}f(b_j)^{=0}x_j + \sum_{i\in I}f(b_i)^{=c_i}x_i = \sum_{i\in I}c_ix_i\in[(c_i)_{i\in I}]
 	\end{gather*}
 			
 	Da $(c_i)_{i\in I}$ also Basis von $f(V)$ ist folgt:
 			
 	\begin{enumerate}
-				\item Fall $(\dim V = n<\infty)$ dann ist $\# J = n$ und $\# I = \# J-K$, also $\rg f = n-k = \dim V -\dfkt f.$\\
-				\item Fall $(\dim V = \infty)$, dann ist $\# J = \infty $ und damit auch $\#I =\#(J\{{1,...,k\}})=\infty $, also $\rg f= \infty$
-				
+		\item Fall $(\dim V = n<\infty)$ dann ist $\# J = n$ und $\# I = \# J-K$, also $\rg f = n-k = \dim V -\dfkt f.$\\
+		\item Fall $(\dim V = \infty)$, dann ist $\# J = \infty $ und damit auch $\#I =\#(J\{{1,...,k\}})=\infty $, also $\rg f= \infty$
 	\end{enumerate}
-			
-	\paragraph{Bemerkung: } Die Annahme $\dfkt f = k<\infty$, im Beweis ist keine Einschränkung:
 	
+\paragraph{Bemerkung: }
+	Die Annahme $\dfkt f = k<\infty$, im Beweis ist keine Einschränkung:
 	\begin{enumerate}
-				\item ist $\dim V < \infty, so folgt \dfkt f<\infty$, da $\ker f\subset V$ Untervektorraum ist,				
-				\item $\dim V = \infty$, so ist man mit den Beweis fertig, falls $\dfkt f = \infty$;
+		\item ist $\dim V < \infty, so folgt \dfkt f<\infty$, da $\ker f\subset V$ Untervektorraum ist,				
+		\item $\dim V = \infty$, so ist man mit den Beweis fertig, falls $\dfkt f = \infty$;
 	\end{enumerate}
 			
-	\paragraph{Korollar: } 
+\paragraph{Korollar: } 
 	Sei $f\in \hom(V,W)$ und $\dim W = \dim V = n<\infty$. Dann gilt: Ist $f$ injektiv oder surjektiv, so ist $f$ bijektiv.
 	
-	\paragraph{Beweis: } 
-		Der Rangsatz folgt:
-		\begin{enumerate}
-			\item $\ker f = \{{0\}} \Rightarrow \dfkt f = 0 \Rightarrow \rg f = \dim V-0 = 0 \Rightarrow f(V) = W \Leftrightarrow f$ surjektiv
-			\item $f(V) = W = \rg f = \dim W = \dim V \Rightarrow \dfkt f= \dim V - \rg f=0 \Rightarrow \ker f = \{{0}\}$
-		\end{enumerate}
+\paragraph{Beweis: } 
+	Der Rangsatz folgt:
+	\begin{enumerate}
+		\item $\ker f = \{{0\}} \Rightarrow \dfkt f = 0 \Rightarrow \rg f = \dim V-0 = 0 \Rightarrow f(V) = W \Leftrightarrow f$ surjektiv
+		\item $f(V) = W = \rg f = \dim W = \dim V \Rightarrow \dfkt f= \dim V - \rg f=0 \Rightarrow \ker f = \{{0}\}$
+	\end{enumerate}
 	
-	\paragraph{Beispiel: }
-		Der Shiftoperator für Folgen$(x_i)_{i\in \mathbb{N}}$ in $K$, $s: K^{\mathbb{N}} \rightarrow K^{\mathbb{N}}: (x_i)_{i\in \mathbb{N}} \mapsto (y_i)_{i\in \mathbb{N}}$ wobei
-		
-		\begin{equation*}
+\paragraph{Beispiel: }
+	Der Shiftoperator für Folgen $(x_i)_{i\in \mathbb{N}}$ in $K$, $s: K^{\mathbb{N}} \to K^{\mathbb{N}}: (x_i)_{i\in \mathbb{N}} \mapsto (y_i)_{i\in \mathbb{N}}$ wobei
+	
+	\begin{equation*}
 		y_i :={
 		\begin{cases}
-		0 \text{ für } i = 0\\
-		x_i-1 \text{ für } i \neq 0
+			0 \text{ für } i = 0\\
+			x_i-1 \text{ für } i \neq 0
 		\end{cases}}
-		\end{equation*}
+	\end{equation*}
 			
 	ist ein injektiver Homomorphismus, $s\in \hom(K^\mathbb{N},K^\mathbb{N})$ von $K^\mathbb{N}$ in sich (damit gilt $\dim \text{Def - Bereich} = \dim K^\mathbb{N}= \dim \text{Werte Bereich}$). Aber $s$ ist nicht surjektiv, also auch nicht bijektiv.
 	
-	\paragraph{Übrigens: }
-		Damit folgt $\dim K^\mathbb{N} =\infty$ (sonst hätte man Widerspruch zum Korollar)
+\paragraph{Übrigens: }
+	Damit folgt $\dim K^\mathbb{N} =\infty$ (sonst hätte man Widerspruch zum Korollar)
 		
-	\paragraph{Definition: }
-		Sei $f\in \hom(V,W)$ ein Homomorphismus, dann heißt $f$:
-			\begin{enumerate}
-				\item Endomorphismusm, $f\in End(V)$, falls W = V;
-				\item Isomorphismus, $f\in Iso(V,W)$, falls f bijektiv ist;
-				\item Antomorphismus, $f\in Ant(V)$, falls W=V und f bijektiv ist
-			\end{enumerate}
-		Zwei K-VR V und W heißen isomorph, W $\cong$ V, falls $(V,W) \neq \emptyset$
-	\paragraph{Bemerkung: }
-			
-			Ein Isomorphismus $f\in Iso(V,W)$ bildet jede Basis $B$ von $V$ auf eine Basis $C= f(B)$ von $W$ ab.\\
-			Andererseits: Bildet eine lineare Abbildung$f\in \hom(V,W)$, eine Basis $B$ von $V$ auf eine Basis $C = f(B)$ von $W$ ab, so ist $f$ ein Isomorphismus.\\
-			Nämlich: Ist $B$ Basis von $V$ und $ C = f(B)$ Erzeugenden System, so ist $f$ surjektiv, da $f(V) = f ([B]) = [f(B)] = [C] = W$; ist $C =f(B)$ linear unabhängig, sonst ist $f$ injektiv, den für
+\paragraph{Definition: }
+	Sei $f\in \hom(V,W)$ ein Homomorphismus, dann heißt $f$:
+	\begin{enumerate}
+		\item Endomorphismusm, $f\in End(V)$, falls W = V;
+		\item Isomorphismus, $f\in Iso(V,W)$, falls f bijektiv ist;
+		\item Automorphismus, $f\in Ant(V)$, falls W=V und f bijektiv ist
+	\end{enumerate}
+	
+	Zwei K-VR V und W heißen isomorph, W $\cong$ V, falls $(V,W) \neq \emptyset$
+
+\paragraph{Bemerkung: }
+	Ein Isomorphismus $f\in Iso(V,W)$ bildet jede Basis $B$ von $V$ auf eine Basis $C= f(B)$ von $W$ ab.
+	
+	Andererseits: Bildet eine lineare Abbildung $f\in \hom(V,W)$, eine Basis $B$ von $V$ auf eine Basis $C = f(B)$ von $W$ ab, so ist $f$ ein Isomorphismus.
+	
+	Nämlich: Ist $B$ Basis von $V$ und $ C = f(B)$ Erzeugenden System, so ist $f$ surjektiv, da $f(V) = f ([B]) = [f(B)] = [C] = W$; ist $C =f(B)$ linear unabhängig, sonst ist $f$ injektiv, den für
 			
 	\begin{gather*}
-	V = \sum_{b\in B} bx_b \in \ker f \Rightarrow 0 = f(V) = f(\sum_{b\in B}bx_b) = \sum_{b\in B}f(b)x_b\\
-	\Rightarrow \forall b \in B: x_b = 0 \Rightarrow V = 0, \text{ d.h., } \ker f=\{{0}\}
+		V = \sum_{b\in B} bx_b \in \ker f \Rightarrow 0 = f(V) = f(\sum_{b\in B}bx_b) = \sum_{b\in B}f(b)x_b\\
+		\Rightarrow \forall b \in B: x_b = 0 \Rightarrow V = 0, \text{ d.h., } \ker f=\{{0}\}
 	\end{gather*}
 			
-	\paragraph{Isomorphismu: }
-		Seien $V$ und $W$ K-VR mit $\dim V, \dim W < \infty$. Dann gilt: $V \cong W \Leftrightarrow \dim V = \dim W$.
+\paragraph{Isomorphismus: }
+	Seien $V$ und $W$ K-VR mit $\dim V, \dim W < \infty$. Dann gilt: $V \cong W \Leftrightarrow \dim V = \dim W$.
 	
-	\paragraph{Beweis: }
-		Folgt aus obiger Bemerkung.
-	
-	\paragraph{Beweis: } (ausführlich)
+\paragraph{Beweis: }
+	Folgt aus obiger Bemerkung.
+
+\paragraph{Beweis: } (ausführlich)
 		
-	$"\Rightarrow"$ Annahme: $V \cong W$, in $f\in Iso(V,W)(\neq 0)$ Wähle eine Basis $B = \{{b_1, ... b_n\}}$ von $V$ (BES), da $f$ bijektiv ist dann:
+	$\Rightarrow$ Annahme: $V \cong W$, in $f\in Iso(V,W)(\neq 0)$ Wähle eine Basis $B = \{{b_1, ... b_n\}}$ von $V$ (BES), da $f$ bijektiv ist dann:
 	\begin{equation*}
 		C = f(B) = (f(b_i), ... , f(b_n))
 	\end{equation*}
-		eine Basis von W, damit ist $\dim W = n = \dim V$.
 	
-	$"\Leftarrow"$ Sei $\dim W = \dim V = n$; wähle Basen $B = (b_1, ... ,b_n)$ von $V$ und $C = (c_1, ... ,c_n)$ von $W$ (BES und Basissatz) und definiere $f\in \hom(V,W)$ durch (Fortsetzungssatz)
+	eine Basis von W, damit ist $\dim W = n = \dim V$.
 	
+	$\Leftarrow$ Sei $\dim W = \dim V = n$; wähle Basen $B = (b_1, ... ,b_n)$ von $V$ und $C = (c_1, ... ,c_n)$ von $W$ (BES und Basissatz) und definiere $f\in \hom(V,W)$ durch (Fortsetzungssatz)
 	\begin{equation*}
-	\forall i = 1, ... ,n = f(b_i) = c_i
+		\forall i = 1, ... ,n = f(b_i) = c_i
 	\end{equation*}
-		
+
 	Da $f$ eine Basis auf eine Basis abbildet ist $f\in Iso(V,W)$. Damit folgt also $Iso(V,W) \neq \emptyset \Rightarrow V \cong W$
 			
-	\paragraph{Beispiel: }
-		Ist $V$ K-VR mit, $\dim V < \infty$, so ist $V^\ast \cong V$. (Achtung: Ee gibt aber viele Isomorphismen, keiner ist besonders d.h., "kanonisch")
+\paragraph{Beispiel: }
+	Ist $V$ $K$-VR mit, $\dim V < \infty$, so ist $V^\ast \cong V$. (Achtung: Es gibt aber viele Isomorphismen, keiner ist besonders d.h., \glqq kanonisch\grqq )
 	
-	\paragraph{Bemerkung: }
-		Ist $f\in Iso(V,W)$, so ist $f^{-1}\in Iso(W,V)$, denn
-			\begin{gather*}
-			(f\circ f^{-1})(\sum_{i\in I}v_ix_i) = f(\sum_{i\in I}f^{-1}(v_i)x_i) = \sum_{i\in I}(f\circ f^{-1})^{(= id)}(v_i)x_i\\
-			\Rightarrow f^{-1}(\sum_{i\in I}v_ix_i) = \sum_{i\in I}f^{-1}(v_i)x_i
-			\end{gather*}
+\paragraph{Bemerkung: }
+	Ist $f\in Iso(V,W)$, so ist $f^{-1}\in Iso(W,V)$, denn
+	\begin{gather*}
+		(f\circ f^{-1})(\sum_{i\in I}v_ix_i) = f(\sum_{i\in I}f^{-1}(v_i)x_i) = \sum_{i\in I}(f\circ f^{-1})^{(= id)}(v_i)x_i\\
+		\Rightarrow f^{-1}(\sum_{i\in I}v_ix_i) = \sum_{i\in I}f^{-1}(v_i)x_i
+	\end{gather*}
