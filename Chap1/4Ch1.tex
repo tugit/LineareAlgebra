@@ -52,7 +52,7 @@
     
                         Weiters ist $f\in\hom(V,W)$ wegen
                         \begin{gather*}
-                                f(v+w) =\sum_{i\in I}c_i(x_i+y_i)=\sum_{i\in I}c_ix_i+ \sum_{i\in I}c_iy_i\Rightarrow f(x) + f(y) \text{ für alle }\left\{
+                                f(v+w) =\sum_{i\in I}c_i(x_i+y_i)=\sum_{i\in I}c_ix_i+ \sum_{i\in I}c_iy_i =  f(v) + f(w) \text{ für alle }\left\{
                                         \begin{array}{l}
                                                 v=\sum_{i\in I}b_ix_i \in V\\
                                                 w=\sum_{i\in I}b_iy_i \in V
@@ -62,7 +62,7 @@
     
                         und
                         \begin{gather*}
-                            f(vx) =\sum_{i\in I}c_i(x_ix)\Rightarrow\sum_{i\in I}(c_ix_i)x = (\sum_{i\in I}c_ix_i)x= f(v)x \text{ für }  x\in K\text{ und }v= \sum_{i\in I}b_ix_i \in V_i
+                            f(vx) =\sum_{i\in I}c_i(x_ix)\Rightarrow\sum_{i\in I}(c_ix_i)x = (\sum_{i\in I}c_ix_i)x= f(v)x \text{ für }  x\in K\text{ und }v= \sum_{i\in I}b_ix_i \in V.
                         \end{gather*}
                         Damit ist die Linearität von $ f $ gezeigt.
         \end{enumerate}
@@ -103,7 +103,7 @@
             Also $ x_1 = ... = x_n = 0 $ und damit ist $ B^* $ linear unabhängig.
             \item $ B^* $ ist Erzeugendensystem: Sei $ f\in V^* $ beliebig, dann gilt:
             \begin{equation*}
-                    \forall j = \{1,...,n\}:f(b_i) = \sum_{i=1}^{n}b_i^*(b_j)f(b_i) = (\sum_{i=1}^{n}b_i^*f(b_i))b_j \Rightarrow f = \sum_{i=1}^{n}b_i^*f(b_i)\in [B^*]
+                    \forall j = \{1,...,n\}:f(b_i) = \sum_{i=1}^{n}b_i^*(b_j)f(b_i) = (\sum_{i=1}^{n}b_i^*f(b_i))b_j \Rightarrow f(b_i) = \sum_{i=1}^{n}b_i^*f(b_i)\in [B^*]
             \end{equation*}
             
             Da $ f\in V^* $ beliebig war, ist also $ V^* = [B^*]$.
