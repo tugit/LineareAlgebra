@@ -1,0 +1,214 @@
+\section{Summen, Produkte und Quotienten}
+\paragraph{Definition: }
+	Die Summe einer Familie $ (U_i)_{i\in I} $ von UVR $ U\subset V $ eines $ K $-VR ist die Menge
+		\begin{equation*}
+		\sum_{i\in I} U_i := \{\sum_{i \in I}u_i\mid \forall i\in I: u_i\in U_i \land \# \{i\in I\mid u_i \neq 0\}<\infty\}
+		\end{equation*}
+		
+\paragraph{Bemerkung: }
+	Offenbar ist $ \sum_{i\in I} U_i\subset V $ UVR mit $ \bigcup_{i\in I}U_i \subset \sum_{i\in I} U_i \Rightarrow [\bigcup_{i\in I}U_i]\subset \sum_{i\in I} U_i $;
+	andererseits gilt: $ \sum_{i\in I}U_i \subset \{\sum_{j\in J}v_jx_j\mid \forall j\in Jv_j\in \bigcup_{i\in I}U_i \land \#\{j\in J\mid x_j\neq 0\}<\infty\}\subset [\bigcup_{i\in I}U_i] $.
+	
+	Damit ist die Summe einer Familie $ (U_i)_{i\in I} $ gerade die lineare Hülle ihrer Vereinigung $ \bigcup_{i\in I}U_i $,
+		\begin{equation*}
+		 \sum_{i\in I}U_i= [\bigcup_{i\in I}U_i].
+		\end{equation*}
+		
+\paragraph{Beispiel: }
+	Sei $ V=\mathbb{R}^\mathbb{N} $ der Raum der reellen Folgen. Für $ n\in \mathbb{N} $ setze
+		\begin{equation*}
+		U_n := \{v\in \mathbb{R}^\mathbb{N}\mid \forall j\in \mathbb{N}: j>n\Rightarrow v_j = 0 \} \subset \mathbb{R}^\mathbb{N};
+		\end{equation*}
+		
+	dann gilt $ \forall n\in \mathbb{N}: U_n\subset U_{n+1} $, und damit auch
+		\begin{gather*}
+		\sum_{i\leq n} U_i = U_n = \bigcup_{i\in I}U_i, \text{, aber}\\
+		\sum_{i\in \mathbb{N}}U_i = \bigcup_{i\in I}U_i \neq V
+		\end{gather*}
+		
+	Nun setze für $ i\in \{0,1\} $
+		\begin{equation*}
+		\tilde{U}_i := \{v\in \mathbb{R}^\mathbb{N}\mid \forall j\in \mathbb{N}: j=i\operatorname{mod} 2\Rightarrow v_j = 0\}
+		\end{equation*}
+		
+	dann ist 
+		\begin{equation*}
+		\bigcup_{i\in \{0,1\}}\tilde{U}_i \neq \sum_{i\in \{0,1\}}\tilde{U}_i = V.
+		\end{equation*}
+\paragraph{Dimensionssatz: }
+	Sind $ U_i \subset V $ UVR mit $ \dim U_i < \infty $ für $ i\in \{1,2\} $, so ist
+		\begin{equation*}
+		\dim (U_1+U_2) + \dim (U_1\cap U_2) = \dim U_1 + \dim U_2
+		\end{equation*}
+	Ist $ \dim U_1 = \infty$ oder $ \dim U_2=\infty $, so ist auch $ \dim (U_1+U_2)=\infty $.
+\paragraph{Beweis: }
+	Seien
+		\begin{itemize}
+		\item $ B_0 \subset U_1\cap U_2 $ eine Basis von $ U_0 := U_1\cap U_2 $;
+		\item $ S_i \subset U_i $ lin. unabh., sodass $ B_i = B_0 \cup S_i $ Basen von $ U_i $ sind ($ i = 1,2; $ BES).
+		\end{itemize}
+	
+	Offenbar gilt dann, da $ B_i = B_0\cup S_i $ lin. unabh. sind,
+		\begin{equation*}
+		B_0\cap S_1 = \emptyset \text{ und } B_0\cap S_2 = \emptyset
+		\end{equation*}
+	und 
+		\begin{equation*}
+		S_1\cap S_2 \subset U_1\cap U_2 = [B_0] \Rightarrow S_1\cap S_2 = \emptyset
+		\end{equation*}
+	Wir zeigen, dass $ B:= B_0\cup S_1\cup S_2 $ Basis von $ U_1 + U_2 =: U $ ist. 
+	$ B\subset U $ ist Erz. Syst. nach Konstruktion:
+		\begin{gather*}
+		\forall i\in \{1,2\} : U_i=[B_i]\subset [B]\\
+		\Rightarrow U_1+U_2 = [U_1\cup U_2]\subset [B]
+		\end{gather*}
+	
+	$ B $ lin. unabh.: Gegeben sei eine Linearkombination von $ 0\in U $,
+		\begin{gather*}
+		0 = \sum_{b\in B}bx_b = \sum_{b\in B_0}bx_b + \sum_{b\in S_1}bx_b + \sum_{b\in S_2}bx_b =: b_0 + s_1+ s_2\\
+		\text{mit } b_0\in [B_0] = U_0 \text{ und } s_i\in [S_i] \text{ für } i= 1,2;
+		\end{gather*}
+		
+	dann gilt etwa, $ B_1 = B_0 \cup S_1 $ lin. unabh.,
+		\begin{equation*}
+		b_0+s_1 = -s_2 \in U_1\cap [S_2]\subset U_0 \Rightarrow s_1 = 0
+		\end{equation*}
+		
+	und damit, da $ B_2 = B_0 \cup S_2 $ lin. unabh. ist,
+		\begin{equation*}
+		0 = b_0 + s_1 + s_2 \Rightarrow b_0=s_2 = 0
+		\end{equation*}
+	
+	Mit der lin. Unabhängigkeit von $ B_0, S_1 $ und $ S_2 $ folgt dann
+		\begin{equation*}
+		0 = \sum_{b\in B_0}bx_b = \sum_{b\in S_1}bx_b = \sum_{b\in S_2}bx_b \Rightarrow \forall b\in B: x_b = 0\\
+		\end{equation*}
+	
+	Mit
+		\begin{gather*}
+		\#B + \#B_0 = (\#B_0 + \#S_1 + \#S_2) + \#B_0\\
+		= (\#B_0+\#S_1)+(\#B_0 + \#S_2) = \#B_1+\#B_2
+		\end{gather*}
+	
+	folgt dann die Behauptung.
+
+\paragraph{Bemerkung: }
+	Im Beweis haben wir benutzt: 
+	
+	Ist z.B. $ B_1 = B_0\cup S_1 $ lin. unabh., und $ b_0\in [B_0] $ und $ s_1\in [S_1] $ mit $ b_0 + s_1 = 0 $, so folgt $ b_0 = s_1 = 0 $:
+	sind nämlich $ b_0 = \sum_{b\in B_0} bx_b $ und $ s_1 = \sum_{b\in S_1}bx_b $, so gilt 
+		\begin{equation*}
+		0 = b_0+s_1 = \sum_{b\in B_0} bx_b+\sum_{b\in S_1} bx_b = \sum_{b\in B_1} bx_b \Rightarrow \forall b\in B_1: x_b = 0\Rightarrow b_0 = s_1 = 0.
+		\end{equation*}
+
+\paragraph{Bemerkung: }
+	Ist $ U_1\cap U_2 = \{o\} $ bzw. $ \dim (U_1\cap U_2)  = 0 $, so zeigt der Beweis auch:
+		\begin{equation*}
+		\forall v\in U_1+U_2\exists ! u_1 \in U_1\exists ! u_2\in U_2: v= u_1+u_2
+		\end{equation*}
+
+\paragraph{Definition: }
+	Zwei UVR $ U_1,U_2 \subset V $ heißen komplementär in $ V $, falls
+		\begin{equation*}
+		U_1+U_2=V\text{ und } U_1\cap U_2 = \{o\}
+		\end{equation*}
+		
+\paragraph{Lemma: }
+	Zu jedem UVR $ U\subset V $ existiert ein (in $ V $) komplementärer UVR.
+\paragraph{Beweis: }
+	Sei $ U\subset V $ UVR eines $ K $-VR $ V $.
+	Seien 
+		\begin{itemize}
+		\item $ B\subset U $ eine Basis von $ U $;
+		\item $ S\subset V $ lin. unahb., sodass $ C=B\cup S $ Basis von $ V $ ist (BES).
+		\end{itemize}
+	
+	Definiere $ U':= [S] $. Dann ist $ U'\subset V $ UVR mit
+		\begin{enumerate}[(i)]
+		\item $ U+U' \supset [C] = V $, da $ C\subset U\cup U' $ Erz. Syst. von $ V $ ist;
+		\item $ U\cap U' = [B]\cap [S] = \{o\}$, da $ C=B\cup S $ lin. unabh.
+		\end{enumerate}
+\paragraph{Bemerkung: }
+	Zu einem UVR $ U\subset V $ gibt es normalerweise viele komplementäre UVR $ U'\subset V $.
+	Z.B.: Zu
+		\begin{equation*}
+		U:= \{v\in K^2\mid v_2 = 0\}
+		\end{equation*}
+	
+	ist jeder UVR $ U' = [u']$ mit $u'_2\neq 0 $ komplementär in $ K^2 $.
+	
+\paragraph{Lemma \& Definition: }
+	Sei $ U= \sum_{i\in I}U_i\subset V $ Summe einer Familie von UVR $ U_i\in V $; dann besitzt jeder Vektor $ u\in U $ eine eindeutige Zerlegung als Summe von $ u_i $, genau dann, wenn
+		\begin{equation*}
+		\forall i\in I: U_i\cap \sum_{j\in I\setminus \{i\}}U_j = \{o\}
+		\end{equation*}
+		
+	In diesem Falle heißt die Summe "`direkt"' und man schreibt
+		\begin{equation*}
+		U = \bigoplus_{i\in I} U_i
+		\end{equation*}
+\paragraph{Bemerkung: }
+	Eine Summe $ V = \sum_{i\in I} U_i $ ist genau dann direkt, wenn
+		\begin{equation*}
+		\forall i\in I: U_i, \sum_{j\in I\setminus\{i\}}U_j \subset V
+		\end{equation*}
+		
+	komplementäre UVR in $ V $ sind.
+
+\paragraph{Beweis: }
+	Zu zeigen ist die Eindeutigkeitsaussage. Sei also $ u \in \bigoplus_{i\in I}U_i $,
+		\begin{gather*}
+		u = \sum_{i\in I} u_i = \sum_{i\in I} u_i' \text{ mit } \forall i\in I: n_i,n'_i\in U_i;
+		\end{gather*}
+	dann gilt für jedes $ i\in I$:
+		\begin{equation*}
+		u'_i-u_i = \sum _{j\neq i}u_j-\sum_{j\neq i} u'_j = \sum_{j\neq i}u_j-u'_j \in U_i\cap \sum_{j\neq i} U_j = \{o\},
+		\end{equation*}
+	da die Summe als direkt angenommen wurde; damit folgt $ \forall i \in I: u_i = u'_i $, d.h. die Zerlegung ist eindeutig.
+	
+	Die Umkehrung ist trivial:
+		\begin{gather*}
+		\exists i\in I:U_i\cap \sum_{j\neq i} U_j \neq \{o\} \Rightarrow \exists i\in I\exists u_i\in U_i\setminus\{o\}\exists (u_j)_{j\in I\setminus\{i\}}:\\
+		(\forall j\in I\setminus\{i\}:u_j \in U_j)\land u_i = \sum_{j\neq i} u_j,
+		\end{gather*}
+		
+	d.h., die Zerlegung von $ u_i\in \sum_{i\in I}U_i $ ist nicht eindeutig.
+
+\paragraph{Bemerkung: }
+	Sind $ \dim V <\infty $ und $ \# I < \infty $ so gilt
+		\begin{equation*}
+		\forall i\in I: \dim U_i < \infty
+		\end{equation*}
+		
+	und es gilt die Dimensionsformel für direkte Summen (Beweis in Aufgabe 35):
+		\begin{equation*}
+		\dim \bigoplus_{i\in I}U_i = \sum_{i\in I} \dim U_i.
+		\end{equation*}
+	
+	Ist insbesondere $ B=(b_1,...,b_n) $ eine Basis von $ V $, so gilt
+		\begin{equation*}
+		\dim V = \dim \bigoplus_{i=1}^n [b_i]=\sum_{i=1}^{n}1 = n.
+		\end{equation*}
+\paragraph{Bemerkung: }
+	Seien $ U,U'\subset V $ komplementäre UVR, also $ V = U \oplus U' $, dann werden durch
+		\begin{equation*}
+		v = u+u' \mapsto
+			\begin{cases}
+			p(v):=u\\
+			p':= u'
+			\end{cases}
+		\end{equation*}
+	
+	Endomorphismen $ p,p'\in \operatorname{End}(V) $ (wohl-)definiert, da $ n,n' $ durch $ v $ eindeutig bestimmt sind (Linearität von $ p,p' $ ist klar).
+	Offenbar ist 
+		\[ p(V) = U \text{ und } \ker p = U'\]
+	und es gilt
+		\[ p^2 := p\circ p = p \]
+	und analog für $ p' $; außerdem gilt ($ \circ $ ausgelassen)
+		\[ p+p' = id_V \text{ und } p'p = 0 = pp'\]
+\paragraph{Definition: }
+	$ p\in \operatorname{End}(V) $ heißt Projektion, falls $ p^2 = p $ (d.h. falls $ p $ idempotent ist).
+\paragraph{Satz: }
+	Sei $ p\in \operatorname{End}(V) $ Projektion, dann ist $ p'= id_V-p $ Projektion mit $ pp' = p'p = 0 $. Gilt $ p+p' = id_V $ und $ pp' = 0 $ für $ p,p' \in \operatorname{End}(V) $, so sind $ p,p' $ Projektionen mit
+		\[ V = p(V)\oplus p'(V) = \ker p \oplus \ker p'. \]
+\paragraph{Beispiel \& Definition: }
