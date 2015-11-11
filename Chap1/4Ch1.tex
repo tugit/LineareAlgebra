@@ -99,12 +99,12 @@
 	\begin{itemize}
             \item $ B^* $ ist linear unabhängig: Seien $ x_1,...,x_n $ so, dass
                     \begin{equation*}
-                    0 = \sum_{i=1}^{n}b_i^*x_i \Rightarrow \forall j=\{1,...,n\}:0=(\sum_{i=1}^{n}b_i^*x_i)(b_j) = \sum_{i=1}^{n}b_i^*(b_j)x_i = \sum_{i=1}^{n}\delta_{ij}x_i = x_j
+                    0 = \sum_{i=1}^{n}b_i^*x_i \Rightarrow \forall j=\{1,...,n\}:0=(\sum_{i=1}^{n}b_i^*x_i)(b_j) = \sum_{i=1}^{n}b_i^*(b_j)x_i = \sum_{i=1}^{n}\delta_{ij}x_i = x_j.
                     \end{equation*}
             Also $ x_1 = ... = x_n = 0 $ und damit ist $ B^* $ linear unabhängig.
             \item $ B^* $ ist Erzeugendensystem: Sei $ f\in V^* $ beliebig, dann gilt:
             \begin{equation*}
-                    \forall j = \{1,...,n\}:f(b_i) = \sum_{i=1}^{n}b_i^*(b_j)f(b_i) = (\sum_{i=1}^{n}b_i^*f(b_i))b_j \Rightarrow f = \sum_{i=1}^{n}b_i^*f(b_i)\in [B^*]
+                    \forall j = \{1,...,n\}:f(b_i) = \sum_{i=1}^{n}b_i^*(b_j)f(b_i) = (\sum_{i=1}^{n}b_i^*f(b_i))b_j \Rightarrow f = \sum_{i=1}^{n}b_i^*f(b_i)\in [B^*].
             \end{equation*}
             
             Da $ f\in V^* $ beliebig war, ist also $ V^* = [B^*]$.
@@ -114,7 +114,7 @@
 %ADE_VO_03.11.15
 
 \paragraph{Bemerkung:}
-	Ist $\dim V = \infty$ und $B=(b_i)_{i\in I}$ eine Basis von $V$, so liefert $B^\ast=(b_i^\ast)_{i\in I}$ mit $\forall j\in I:b_i^\ast(b_j)=\delta_{ij}$ eine lineare unabhängige Familie. Diese ist jedoch kein Erzeugendensystem von $V^\ast: f\in\hom(V,K)=V^\ast$ mit $\forall j\in I:f(b_j)=1$ lässt sich nicht in $B^\ast$ linear kombinieren. Wäre $f=\sum_{i\in I}b_i^\ast x_i$, so gälte $\forall j\in I: x_j =\sum_{i\in I}b_i^\ast(b_j)x_j= \sum_{i\in I} \delta_{ij}x_j = f(b_j) = 1$; 
+	Ist $\dim V = \infty$ und $B=(b_i)_{i\in I}$ eine Basis von $V$, so liefert $B^\ast=(b_i^\ast)_{i\in I}$ mit $\forall j\in I:b_i^\ast(b_j)=\delta_{ij}$ eine lineare unabhängige Familie. Diese ist jedoch kein Erzeugendensystem von $V^\ast: f\in\hom(V,K)=V^\ast$ mit $\forall j\in I:f(b_j)=1$ lässt sich nicht in $B^\ast$ linear kombinieren. Wäre $f=\sum_{i\in I}b_i^\ast x_i$, so gälte $\forall j\in I: x_j =\sum_{i\in I}b_i^\ast(b_j)x_j= \sum_{i\in I} \delta_{ij}x_j = f(b_j) = 1$.
 
 	Das heißt, $(x_i)_{i\in I}$ wäre eine Familie in $ K $ mit $\#\{i\in I\mid x_i\neq 0\}=\infty$.
 
@@ -155,7 +155,7 @@
 		\begin{gather*}
 		\forall k\in J: f(b_k) = \sum_{i\in I} c_i x_{ik} \text{ (da $(c_i)_{i\in I}$ Erzeugendensystem)}\\
 		= \sum_{I,J}c_ib_j^*(b_k)x_{ij} = \left(\sum_{IJ} f_{ij}x_{ij}\right)(b_k)\\
-		\text{also (Fortsetzungssatz): } f=\sum_{I,J}f_{ij}x_{ij} \in [F]
+		\text{also (Fortsetzungssatz): } f=\sum_{I,J}f_{ij}x_{ij} \in [F].
 		\end{gather*}
 	
 	Da $f\in\hom (V,W)$ beliebig war, gilt also $\hom (V,W) = [F]$. Damit ist $F$ Basis von $\hom (V,W)$ und $\dim\hom (V,W) = \# F = m\cdot n$.
@@ -259,14 +259,14 @@
 	Dann gilt
 	\begin{gather*}
 		w = f(v) = f(\sum_{j\in J} b_jx_j) = \sum_{j\in J}f(b_jx_j)\\
-		J=I \cup\{{1,...,k\}} \Rightarrow \sum_{j=1}^{k}f(b_j)^{=0}x_j + \sum_{i\in I}f(b_i)^{=c_i}x_i = \sum_{i\in I}c_ix_i\in[(c_i)_{i\in I}]
+		J=I \cup\{{1,...,k\}} \Rightarrow \sum_{j=1}^{k}f(b_j)^{=0}x_j + \sum_{i\in I}f(b_i)^{=c_i}x_i = \sum_{i\in I}c_ix_i\in[(c_i)_{i\in I}].
 	\end{gather*}
 			
 	Da $(c_i)_{i\in I}$ also Basis von $f(V)$ ist folgt:
 			
 	\begin{enumerate}[1.{ Fall}]
 		\item $(\dim V = n<\infty)$ dann ist $\# J = n$ und $\# I = \# J-k$, also $\rg f = n-k = \dim V - \dfkt f.$\\
-		\item $(\dim V = \infty)$, dann ist $\# J = \infty $ und damit auch $\#I =\#(J\{{1,...,k\}})=\infty $, also $\rg f= \infty$
+		\item $(\dim V = \infty)$, dann ist $\# J = \infty $ und damit auch $\#I =\#(J\{{1,...,k\}})=\infty $, also $\rg f= \infty$.
 	\end{enumerate}
 	
 \paragraph{Bemerkung: }
@@ -355,10 +355,10 @@
 	Damit folgt also $Iso(V,W) \neq \emptyset \Rightarrow V \cong W$.
 			
 \paragraph{Beispiel: }
-	Ist $V$ $K$-VR mit, $\dim V < \infty$, so ist $V^\ast \cong V$. (Achtung: Es gibt aber viele Isomorphismen, keiner ist besonders d.h., \glqq kanonisch\grqq )
+	Ist $V$ $K$-VR mit $\dim V < \infty$, so ist $V^\ast \cong V$. (Achtung: Es gibt aber viele Isomorphismen, keiner ist besonders d.h., \glqq kanonisch\grqq )
 	
 \paragraph{Bemerkung: }
-	Ist $f\in \operatorname{Iso}(V,W)$, so ist $f^{-1}\in Iso(W,V)$, denn
+	Ist $f\in \operatorname{Iso}(V,W)$, so ist $f^{-1}\in \operatorname{Iso}(W,V)$, denn
 	\begin{gather*}
 		(f\circ f^{-1})(\sum_{i\in I}v_ix_i) = f(\sum_{i\in I}f^{-1}(v_i)x_i) = \sum_{i\in I}(f\circ f^{-1})^{(= id)}(v_i)x_i\\
 		\Rightarrow f^{-1}(\sum_{i\in I}v_ix_i) = \sum_{i\in I}f^{-1}(v_i)x_i
