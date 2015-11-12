@@ -195,8 +195,8 @@
 \paragraph{Bemerkung: }
 	Allgemeiner kann man für $f\in \hom (V,W)$ zeigen:
 		\begin{enumerate}
-			\item ist $U\subset V$ UVR, so ist $f(U)\subset W$ UVR
-			\item ist $U\subset V$ UVR, so ist $f^{-1}(U) = \{v\in V\mid f(v) \in U \}\subset V$ ein UVR
+			\item Ist $U\subset V$ UVR, so ist $f(U)\subset W$ UVR.
+			\item Ist $U\subset W$ UVR, so ist $f^{-1}(U) = \{v\in V\mid f(v) \in U \}\subset V$ ein UVR.
 		\end{enumerate}
 
 \paragraph{Bemerkung: }
@@ -230,11 +230,9 @@
 	Behauptung: $(c_i)_{c\in I}$ ist eine Basis von $f(V)$.
 	
 	-- Lineare Unabhängigkeit: gilt für eine Linearkombination in $(c_i)_{i\in I}$:
-	\begin{equation*}
-		0=\sum_{i\in I}c_ix_i = \sum_{i\in I}f(b_i)x_i = f(\sum_{i\in I}b_ix_i)
-	\end{equation*}
+		\[ 0=\sum_{i\in I}c_ix_i = \sum_{i\in I}f(b_i)x_i = f(\sum_{i\in I}b_ix_i)
+		 \]
 	so folgt
-	
 	\begin{gather*}
 		\sum_{i\in I}b_ix_i \in \ker f\\
 		\Rightarrow \exists y_1,...,y_n\in K:\sum_{i\in I}b_ix_i=\sum_{j=1}^{k}b_jy_j\\
@@ -242,16 +240,16 @@
 		\Rightarrow
 		\begin{cases}
 			\forall j = 1, ... ,k:y_j=0\\
-			\forall i\in I: x_i = 0
+			\forall i\in I: x_i = 0,
 		\end{cases}
-		\text{da $(b_j)_{j\in J}$ linear unabhängig ist}
+		\text{da $(b_j)_{j\in J}$ linear unabhängig ist.}
 	\end{gather*}
 			
-	Insbesondere gilt also $\forall i\in I: x_i = 0$ damit folgt die Lineare Unabhängigkeit nach Lemma.
+	Insbesondere gilt also $\forall i\in I: x_i = 0$ damit folgt die lineare Unabhängigkeit nach Lemma.
 	
 	-- Erzeugendensystem:
 	
-	Sei $w\in f(V)$, also Existiert $v\in V$ mit $w = f(v)$. Da $(b_j)_{j\in J}$ Basis von $V$ ist, existiert eine Familie $(x_j)_{j\in J}$ in $K$ so, dass 
+	Sei $w\in f(V)$, also existiert $v\in V$ mit $w = f(v)$. Da $(b_j)_{j\in J}$ Basis von $V$ ist, existiert eine Familie $(x_j)_{j\in J}$ in $K$ so, dass 
 	\begin{equation*}
 		v = \sum_{j\in J} b_jx_j
 	\end{equation*}
@@ -306,15 +304,15 @@
 \paragraph{Definition: }
 	Sei $f\in \hom(V,W)$ ein Homomorphismus, dann heißt $f$:
 	\begin{itemize}
-		\item Endomorphismus, $f\in \operatorname{End} (V)$, falls W = V;
-		\item Isomorphismus, $f\in \operatorname{Iso}(V,W)$, falls f bijektiv ist;
-		\item Automorphismus, $f\in \operatorname{Aut}(V)$, falls W=V und f bijektiv ist.
+		\item Endomorphismus, $f\in \End (V)$, falls W = V;
+		\item Isomorphismus, $f\in \Iso(V,W)$, falls f bijektiv ist;
+		\item Automorphismus, $f\in \Aut(V)$, falls W=V und f bijektiv ist.
 	\end{itemize}
 	
-	Zwei K-VR V und W heißen isomorph, W $\cong$ V, falls $\operatorname{Iso}(V,W) \neq \emptyset$
+	Zwei K-VR V und W heißen isomorph, W $\cong$ V, falls $\Iso(V,W) \neq \emptyset$.
 
 \paragraph{Bemerkung: }
-	Ein Isomorphismus $f\in \operatorname{Iso}(V,W)$ bildet jede Basis $B$ von $V$ auf eine Basis $C = f(B)$ von $W$ ab.
+	Ein Isomorphismus $f\in \Iso(V,W)$ bildet jede Basis $B$ von $V$ auf eine Basis $C = f(B)$ von $W$ ab.
 	
 	Andererseits: Bildet eine lineare Abbildung $f\in \hom(V,W)$, eine Basis $B$ von $V$ auf eine Basis $C = f(B)$ von $W$ ab, so ist $f$ ein Isomorphismus.
 	
@@ -335,7 +333,7 @@
 		
 	$\Rightarrow$:
 	
-	Annahme: $V \cong W$; sei $f\in \operatorname{Iso}(V,W)(\neq 0)$.
+	Annahme: $V \cong W$; sei $f\in \Iso(V,W)(\neq 0)$.
 	Wähle eine Basis $B = (b_1, ... b_n)$ von $V$ (BES); da $f$ bijektiv, ist dann:
 	\begin{equation*}
 		C = f(B) = (f(b_i), ... , f(b_n))
@@ -351,17 +349,17 @@
 		\forall i = 1, ... ,n : f(b_i) = c_i
 	\end{equation*}
 
-	Da $f$ eine Basis auf eine Basis abbildet ist $f\in \operatorname{Iso}(V,W)$.
-	Damit folgt also $Iso(V,W) \neq \emptyset \Rightarrow V \cong W$.
+	Da $f$ eine Basis auf eine Basis abbildet ist $f\in \Iso(V,W)$.
+	Damit folgt also $\Iso(V,W) \neq \emptyset \Rightarrow V \cong W$.
 			
 \paragraph{Beispiel: }
-	Ist $V$ $K$-VR mit $\dim V < \infty$, so ist $V^\ast \cong V$. (Achtung: Es gibt aber viele Isomorphismen, keiner ist besonders d.h., \glqq kanonisch\grqq )
+	Ist $V$ $K$-VR mit $\dim V < \infty$, so ist $V^\ast \cong V$. (Achtung: Es gibt aber viele Isomorphismen, keiner ist besonders d.h., \glqq kanonisch\grqq .)
 	
 \paragraph{Bemerkung: }
-	Ist $f\in \operatorname{Iso}(V,W)$, so ist $f^{-1}\in \operatorname{Iso}(W,V)$, denn
+	Ist $f\in \Iso(V,W)$, so ist $f^{-1}\in \Iso(W,V)$, denn
 	\begin{gather*}
 		(f\circ f^{-1})(\sum_{i\in I}v_ix_i) = f(\sum_{i\in I}f^{-1}(v_i)x_i) = \sum_{i\in I}(f\circ f^{-1})^{(= id)}(v_i)x_i\\
-		\Rightarrow f^{-1}(\sum_{i\in I}v_ix_i) = \sum_{i\in I}f^{-1}(v_i)x_i
+		\Rightarrow f^{-1}(\sum_{i\in I}v_ix_i) = \sum_{i\in I}f^{-1}(v_i)x_i.
 	\end{gather*}
 
 %VO_10.11.15
