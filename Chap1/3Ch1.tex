@@ -178,7 +178,7 @@
 \paragraph{Beweis}
     Sei $b\in B$ beliebig gewählt und $S:= B\setminus \{b\}$. Da $B$ lin. unabh. ist, gilt $b\notin [S] \Rightarrow \emptyset \neq V\setminus [S] = [B']\setminus [S] \Rightarrow B' \not\subset [S]$, d.h. es existiert $b' \in B'$ mit $b' \notin [S]$. Wir zeigen, dass $B'' := S\cup \{b'\} = (B\setminus\{b\})\cup \{b'\}$ Basis ist. $B''$ ist Erzeugendensystem: Da $b'\in [B]$ existiert $(x_j)_{j\in B}$ mit $$b' = \sum_{j\in B} jx_j $$ mit $x_b \neq 0$, da $b' \notin [S]$.
 
-    Damit ist $b=(b'-\sum_{j\in S} jx_j)\frac{1}{x_b} \in [B'] \Rightarrow V = [B] \subset [B'' \cup \{b\}] \subset [B'']$.
+    Damit ist $b=(b'-\sum_{j\in S} jx_j)\frac{1}{x_b} \in [B''] \Rightarrow V = [B] \subset [B'' \cup \{b\}] \subset [B'']$.
     
     $B''$ ist linear unabhängig. $B''$ ist Erz. Syst. und $S\subset B' = S \cup \{b'\}$ lin unabh., kann also (nach Basislemma) erg"anzt werden zu einer Basis $\tilde{B}$ mit $S\subset \tilde{B}\subset B''$.
     Da $[S] \neq V$ gilt $\tilde{B} \neq S$ und damit $\tilde{B} = B''$ Basis, insbesondere linear unabhängig.
