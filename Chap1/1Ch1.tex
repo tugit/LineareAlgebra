@@ -66,13 +66,11 @@
 	Das ist eine axiomatische Definition, d.h. der Begriff \glqq Gruppe\grqq{} wird durch (aus vielen (!) Beispielen abstrahierten) \glqq Rechenregeln\grqq{} definiert.
 \paragraph{Beispiel}
 	Die rationalen Zahlen $\mathbb{Q}$ bilden mit der Addition eine Gruppe $(\mathbb{Q} ,+)$.
-	Die rationalen Zahlen ohne $0$, $\mathbb{Q}^{\times} := \mathbb{Q}\setminus \{D\}$, bilden mit der Multiplikation eine Gruppe $(\mathbb{Q}^\times ,\cdot)$.
+	Die rationalen Zahlen ohne $0$, $\mathbb{Q}^{\times} := \mathbb{Q}\setminus \{0\}$, bilden mit der Multiplikation eine Gruppe $(\mathbb{Q}^\times ,\cdot)$.
 
 \paragraph{Definition}
 	Sind $(G,\circ )$ eine Gruppe und $X$ eine Menge, so heißt eine Abbildung
-	\begin{equation*}
-		\cdot : G\times X\to X, (g,x)\mapsto g\cdot x
-	\end{equation*}
+		\[ \cdot : G\times X\to X, (g,x)\mapsto g\cdot x \]
 	
 	eine Gruppenoperation (von $(G,\circ )$ auf $X$), falls
 
@@ -83,9 +81,14 @@
 	$(G,\circ )$ heißt dann Transformationsgruppe von X.
 
 \paragraph{Bemerkung}
-	Operiert $G$ (kurz für $(G,\circ )$, aus dem Zusammenhang ersichtlich) auf $X$, so ist für jedes $g\in G$ die Abbildung $g:X\to X, x\mapsto g\cdot x$ eine bijektive Abbildung von $X$ auf sich. Wegen der Axiome (i) und (ii) aus der Definition erhält man $g^{-1}: X\to X$ als Inverse der Abbildung.
+	Operiert $G$ (kurz für $(G,\circ )$, aus dem Zusammenhang ersichtlich) auf $X$, so ist für jedes $g\in G$ die Abbildung
+		\[ g:X\to X, x\mapsto g\cdot x \]
+	eine bijektive Abbildung von $X$ auf sich. Wegen der Axiome (i) und (ii) aus der Definition erhält man $g^{-1}: X\to X$ als Inverse der Abbildung.
+	
 \paragraph{Beispiel und Definition}
-	Die bijektiven Abbildungen einer Menge $X$ auf sich, $G:= \{g:X\to X\mid g \text{ bij}\}$, bilden (mit der Komposition $\circ$) eine (Transformations-)Gruppe $(G,\circ )$ (die auf $X$ operiert): die Permutationsgruppe oder symmetrische Gruppe $S_X$ von $X$. Für $X=\{1,2,...,n\}$ schreibt man auch $S_n$ statt $S_{\{1,...,n\}}$.
+	Die bijektiven Abbildungen einer Menge $X$ auf sich, 
+		\[ G:= \{g:X\to X\mid g \text{ bij}\}, \]
+	bilden (mit der Komposition $\circ$) eine (Transformations-)Gruppe $(G,\circ )$ (die auf $X$ operiert): die Permutationsgruppe oder symmetrische Gruppe $S_X$ von $X$. Für $X=\{1,2,...,n\}$ schreibt man auch $S_n$ statt $S_{\{1,...,n\}}$.
 \paragraph{Bemerkung}
 	Im Gegensatz zu allgemeinen Abbildungen stimmen in (Permutations-)Gruppen Links- und Rechtsinverse stets überein.
 \paragraph{Lemma}
@@ -119,7 +122,6 @@
 	und sind $h,h'\in G$ Inverse von $g\in G$, so gilt:\hfill
 	$ h' = h'(gh) = (h'g)h = h $
 
-	
 	d.h. Eindeutigkeit des Inversen.
 
 \subsection{Körper}
@@ -135,38 +137,31 @@
 		\item $(K,+)$ ist abelsche Gruppe (mit neutralem Element $0$ und inversem Element $-x$ von $x$)
 		\item $(K^\times,\cdot)$ ist abelsche Gruppe (mit neutralem Element $1$ und inversem Element $\frac{1}{x} = x^{-1}$ von $x\in K^\times$)
 		\item die Distributivgesetze gelten:
+			\[ \forall x,y,z\in K :\begin{cases}x\cdot (y+z) = xy+xz\\ (x+y)\cdot z = xz+yz \end{cases} \]
 	\end{enumerate}
-	
-	\begin{equation*}
-		\forall x,y,z\in K :\begin{cases}x\cdot (y+z) = xy+xz\\ (x+y)\cdot z = xz+yz \end{cases}
-	\end{equation*}
 
 \paragraph{Bemerkung}
 	In einem Körper gilt stets:
-	\begin{equation*}
-		0\cdot x = x\cdot 0 = 0 \Rightarrow
-		0\cdot x = (0+0)\cdot x = 0\cdot x + 0\cdot x \Rightarrow
-		0 = 0\cdot x + (-(0\cdot x)) \Rightarrow 0 = 0\cdot x
-	\end{equation*}
+	\begin{gather*}
+		0\cdot x = x\cdot 0 = 0 \Rightarrow\\
+		0\cdot x = (0+0)\cdot x = 0\cdot x + 0\cdot x\\
+		\Rightarrow 0 = 0\cdot x + (-(0\cdot x)) \Rightarrow 0 = 0\cdot x.
+	\end{gather*}
 	
 	Insbesondere folgt damit: $\forall x,y\in K: xy = yx$ (nicht nur für $K^\times$ (Axiom)).
+	
 \paragraph{Beispiel}
 	Die rationalen Zahlen $\mathbb{Q}$, die reellen Zahlen $\mathbb{R}$ und die komplexen Zahlen $\mathbb{C}$ bilden mit den üblichen Verknüpfungen Körper.
 
 \paragraph{Bemerkung und Beispiel}
-	Aufgrund der Axiome (i) und (ii) enthält $ K $ mindestens 2 Elemente.
-	\begin{equation*}
-		\# K \geq 2,
-	\end{equation*}
-	
-	nämlich:
+	Aufgrund der Axiome (i) und (ii) enthält $ K $ mindestens 2 Elemente, also $ \# K \geq 2 $, nämlich:
 	\begin{itemize}
 		\item $ 0 $, das neutrale Elemente bezüglich $+$
 		\item $1 (\neq 0)$, das neutrale Elemente (in $K^\times$ = $K\setminus\{0\}$) bezüglich $\cdot$
 	\end{itemize}
 	
 	Es gibt auch einen Körper mit genau 2 Elementen $(\{0,1\},+,\cdot)$, wobei
-
+	
 	\begin{minipage}{0.45\textwidth}
 		\begin{equation*}
 			\begin{tabular}{c|c|c}
@@ -192,14 +187,14 @@
 	In $\mathbb{Z}_2: 1 + 1 = 0$. Allgemeiner definiert man die Charakteristik eines Körpers $(K,+,\cdot)$ (mit neutralen Elementen 0 und 1 von + bzw. $\cdot$) durch
 
 	\begin{equation*}
-		Char(K):=
+		\Char(K):=
 		\begin{cases}
 			0,\text{falls } \forall n \in \mathbb{N}^\times: \sum_{j = 1}^{n} 1 \neq 0\\
 			\min\{n \in \mathbb{N}^\times\mid \sum_{j = 1}^{n} 1 = 1+ ... + 1 = 0\}
 		\end{cases}
 	\end{equation*}
 	
-	z.B. $Char(\mathbb{Z}_2) = 2$, da
+	z.B. $\Char(\mathbb{Z}_2) = 2$, da
 	\begin{gather*}
 		\{n\in\mathbb{N}^\times\mid 1+...+1=0\}=\\
 		=\{n\in\mathbb{N}^\times\mid n=0 \text{ mod } 2\}=\\
@@ -207,4 +202,4 @@
 		\text{und damit: }	\min\{n\in\mathbb{N}^\times\mid 1+...+1=0\}=2
 	\end{gather*}
 	
-	Wir werden mitunter $Char(K,+,\cdot)\neq 0$ oder (öfter) $Char(K,+,\cdot)=2$ ausschließen (müssen).
+	Wir werden mitunter $\Char(K,+,\cdot)\neq 0$ oder (öfter) $\Char(K,+,\cdot)=2$ ausschließen (müssen).

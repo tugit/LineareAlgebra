@@ -43,9 +43,8 @@
 	\draw (5,3) node[text width = 7cm] {Translationen kann man \glqq strecken\grqq{}, sodass gewisse Rechengesetze gelten.};
 \end{tikzpicture}
 
-\paragraph{Definition}
+\paragraph{Definition: }
 	Sei $K$ ein Körper. Eine Menge $V$ mit zwei Abbildungen
-
 	\begin{align*}
 		 +&: V \times V \to V:(v,u)\mapsto v+w,\\
 		 \cdot &: K \times V \to V:(x,v)\mapsto vx,
@@ -60,56 +59,37 @@
                       $\forall x\in K\ \forall v,w\in V: (v+w)x = vx + wx$
 	\end{enumerate}
 
-\paragraph{Bemerkung}
+\paragraph{Bemerkung: }
 	Wir notieren die Skalarmultiplikation als Rechtsmultiplikation (Skalar steht rechts):
-	\begin{equation*}
-		\cdot: K \times V \to V : (x,v) \mapsto vx
-	\end{equation*}
+		\[ \cdot: K \times V \to V : (x,v) \mapsto vx \]
 
-\paragraph{Beispiel}
+\paragraph{Beispiel: }
 	Die Translationen eines affinen Raumes bilden einen Vektorraum (vgl. mit der Skizze oben): Diese Beispiel wird im nächsten Kapitel repräsentiert.
 	
-\paragraph{Beispiel}
+\paragraph{Beispiel: }
 	Jeder Körper $ K $ ist ein $ K $-VR (Vektorraum über sich selbst): das ist ein (trivialer) Spezialfall des folgenden...
 	
-\paragraph{Beispiel und Definition}
+\paragraph{Beispiel und Definition: }
 	Ist $ I $ eine Menge und $ K $ ein Körper, so bilden die $ K $-wertigen Abbildungen
-	\begin{equation*}
-		v: I \to K: i \mapsto v_i
-	\end{equation*}
-
+		\[ v: I \to K: i \mapsto v_i \]
 	einen Vektorraum mit der punktweise definierten Addition und Skalarmultiplikation:
-	\begin{gather*}
-		I\ni i \mapsto (v+w)_i := v_i+w_i\in K\\
-		i \mapsto (vx)_i := v_ix \in K
-	\end{gather*}
+	\begin{align*}
+		I\ni i \mapsto (v+w)_i &:= v_i+w_i\in K\\
+		i \mapsto (vx)_i &:= v_ix \in K
+	\end{align*}
 
 	Dieser Vektorraum wird mit $K^{I}$ bezeichnet und Standardvektorraum (über I und K) genannt. Im Falle $ I=\{1,...,n\} $ schreibt man auch $K^{n} := K^{\{1,...,n\}}$
 
-\paragraph{Bemerkung und Definition}
+\paragraph{Bemerkung und Definition: }
 	Anstelle der normalen Schreibweise
-	\begin{equation*}
-		I\ni i \mapsto v(i) \in K
-	\end{equation*}
-
-	für die Auswertung einer Abbildung  $v: I \to K$ um einen Punkt $i\in I$ haben wir die Indexschreibweise verwendet.
-	\begin{equation*}
-		I\ni i \mapsto v_i \in K
-	\end{equation*}
-
-	Wir haben damit eine Abbildung $v: I \to K$ als Familie von
-	\begin{equation*}
-		(v_i)_{i\in I}
-	\end{equation*}
-
-	über der Indexmenge I aufgefasst -- der Begriff Familie ist ein \glqq alternativer\grqq{} Begriff für Abbildungen.
+		\[ I\ni i \mapsto v(i) \in K \]
+	für die Auswertung einer Abbildung  $v: I \to K$ um einen Punkt $i\in I$ haben wir die Indexschreibweise verwendet.	
+		\[ I\ni i \mapsto v_i \in K \]
+	Wir haben damit eine Abbildung $v: I \to K$ als Familie von $ (v_i)_{i\in I} $ über der Indexmenge $ I $ aufgefasst -- der Begriff Familie ist ein \glqq alternativer\grqq{} Begriff für Abbildungen.
 	
-\paragraph{Beispiel}
+\paragraph{Beispiel: }
 	Sei $i$ eine \glqq Zahl\grqq{} mit $i^2=-1$ ($i$ entspricht nicht dem Element der Indexmenge aus dem vorherigen Abschnitt). Die komplexen Zahlen
-	\begin{equation*}
-		\mathbb{C}:=\{{x+iy\mid x,y\in \mathbb{R}}\}
-	\end{equation*}
- 
+		\[ \mathbb{C}:=\{{x+iy\mid x,y\in \mathbb{R}}\} \]
 	bilden mit der Addition und Multiplikation einen Körper:
 	\begin{align*}
 		+&:\mathbb{C}\times \mathbb{C} \to \mathbb{C}: ((x+y),(x'+y')) \mapsto ((x+iy)+(x'+iy')) := (x+x')+i(y+y')\\
@@ -117,24 +97,15 @@
 	\end{align*}
 
 	Die komplexen Zahlen $\mathbb{C}$ bilden einen $\mathbb{R}$-VR mit
-	\begin{equation*}
-		+:\mathbb{C}\times\mathbb{C}\to\mathbb{C}
-	\end{equation*}
-
+		\[ +:\mathbb{C}\times\mathbb{C}\to\mathbb{C} \]
 	wie oben und der Skalarmultiplikation
-	\begin{equation*}
-		\cdot:\mathbb{R}\times\mathbb{C}\to\mathbb{C}:(x',(x+iy))\mapsto(x+iy)x':=xx'+iyx'
-	\end{equation*}
-
+		\[ \cdot:\mathbb{R}\times\mathbb{C}\to\mathbb{C}:(x',(x+iy))\mapsto(x+iy)x':=xx'+iyx' \]
 	Diese Skalarmultiplikation ist also gerade die Einschränkung der komplexen Multiplikation auf $\mathbb{R}\times\mathbb{C}$ wobei die Identifikation
-	\begin{equation*}
-		\mathbb{R}\cong \{{x+iy\in\mathbb{C}\mid y=0}\}
-	\end{equation*}
-
+		\[ \mathbb{R}\cong \{{x+iy\in\mathbb{C}\mid y=0}\} \]
 	verwendet wird.
 % % % %VO5 % % % %
 \subsection{Untervektorräume \& lineare Hülle}
-\paragraph{Definition}
+\paragraph{Definition: }
 	Eine Teilmenge $U\subset V$ eines $K$-VR $V$ heißt Unter(vektor)raum (UVR), falls $U$ mit der eingeschränkten Addition und Skalarmultiplikation
 	\begin{align*}
 		 ^+    & \mid_{U\times U}: U\times U \to V,(v,w) \mapsto v+w \\
@@ -147,7 +118,7 @@
 		\forall x\in K\forall v\in U: vx\in U.
 	\end{gather*}
 
-\paragraph{Bemerkung}
+\paragraph{Bemerkung: }
 	Eine nicht-leere Teilmenge $U\subset V, U\neq\emptyset$, ist genau dann ein UVR, wenn die auf U eingeschränkten Operationen wohldefiniert sind, d.h. wenn $ U $ bzgl. $ + $ und $ \cdot $ abgeschlossen ist.
 
 	Dies kann zum Unterraumkriterium zusammengefasst werden:
@@ -159,12 +130,9 @@
  		 \end{cases}
 	\end{equation*}
 
-\paragraph{Beispiel}
+\paragraph{Beispiel: }
 	Sei $I=\{1,...,n\}$. Für jedes (feste) $i\in I$ ist
-	\begin{equation*}
-		U_i := \{v:I\to K\mid v_i =0\}
-	\end{equation*}
-
+		\[ U_i := \{v:I\to K\mid v_i =0\} \]
 	ein UVR von $K^n$, denn
 	\begin{enumerate}
 		\item $v = 0 \in U_i\text{, also } U_i \neq \emptyset$
@@ -172,10 +140,7 @@
 	\end{enumerate}
 	
 	Kein UVR von $K^n, n\geq 2$, ist jedoch die Menge
-	\begin{equation*}
-		N:=\{v:I\to K\mid v_1\cdot v_2 = 0\},
-	\end{equation*}
-  
+		\[ N:=\{v:I\to K\mid v_1\cdot v_2 = 0\}, \]
 	denn 
 	\begin{enumerate}
 		\item $N$ ist zwar nicht-leer, $N\neq \emptyset$, aber
@@ -191,13 +156,11 @@
 		(v+w)_1 = v_1 + w_1 = 0+1=1\\
 		(v+w)_2 = v_2 + w_2 = 1+0 = 1
 	\end{gather*}
-
+	
 	und damit
-	\begin{equation*}
-		(v+w)_1(v+w)_2 = 1 \Rightarrow v+w\notin N
-	\end{equation*}
+		\[ (v+w)_1(v+w)_2 = 1 \Rightarrow v+w\notin N. \]
 
-\paragraph{Bemerkung und Beispiel}
+\paragraph{Bemerkung und Beispiel: }
 	In analoger Weise definiert man die Begriffe
 	\begin{itemize}
 		\item einer Untergruppe $H\subset G$ einer Gruppe $(G,\cdot)$, bzw.
@@ -221,39 +184,31 @@
         \item $\mathbb{Q}\subset\mathbb{R}$ und $\mathbb{R}\cong \{x+iy\mid y=0\}\subset\mathbb{C}$ bilden Teilkörper von $\mathbb{R}$ bzw. $\mathbb{C}$.
      \end{itemize}
 
-\paragraph{Lemma}
+\paragraph{Lemma: }
     Ist $(U_i)_{i\in I}$ eine Familie von UVR $U_i\subset V$ eines $K$-VR $V$, so ist ihr Schnitt
-    \begin{equation*}
-        U:= \bigcap_{i\in I}U_i =\{ u\in V\mid \forall i\in I: u\in U_i\}
-    \end{equation*}
-        
-    ein UVR von $V$. (Beweis in Aufgabe 17)
+        \[ U:= \bigcap_{i\in I}U_i =\{ u\in V\mid \forall i\in I: u\in U_i\} \]
+	ein UVR von $V$. (Beweis in Aufgabe 17)
     
-\paragraph{Definition}
+\paragraph{Definition: }
 	Die lineare Hülle $[S]$ einer Teilmenge $S\subset V$ eines $ K $-VR $ V $ ist der Schnitt aller S enthaltenden UVR $U\subset V$:
-	\begin{equation*}
-		[S] := \bigcap_{S\subset U \text{UVR}} U
-	\end{equation*}
-
+		\[ [S] := \bigcap_{S\subset U \text{UVR}} U \]
 	Die lineare Hülle einer Familie $(v_i)_{i\in I}$ von Vektoren $v_i\in V$ in einem $ K $-VR $ V $ ist:
-        \begin{equation*}
-        	[(v_i)_{i\in I}] := [\{v_i\mid i\in I\}]
-        \end{equation*}
+		\[ [(v_i)_{i\in I}] := [\{v_i\mid i\in I\}] \]
 
-\paragraph{Bemerkung}
+\paragraph{Bemerkung: }
     $[S]$ ist ein UVR (nach Lemma) -- der \glqq kleinste\grqq{} UVR, der S enthält, d.h. ist $U\subset V$ UVR mit $S\subset U$, so gilt $[S]\subset U$; da aber $[S] = \bigcap_{S\subset \tilde{U}  \text{UVR}}\tilde{U}\subset U$,
     da $S\subset U$, also $U$ am Schnitt beteiligt ist.
 
-\paragraph{Bemerkung}
+\paragraph{Bemerkung: }
 	$[\emptyset ] = \{o\}$ und $[V] = V$.
 
-\paragraph{Beispiel}
+\paragraph{Beispiel: }
 	Ist $U\subset V$ UVR, so gilt $[U] = U$.
 
-\paragraph{Beispiel}
+\paragraph{Beispiel: }
 	$N=\{v:I\to K\mid v_1v_2=0\} \subset K^n,I=\{1,...,n\},n\geq 2$, hat lineare Hülle $[N]=K^n$.
 
-\paragraph{Beispiel}
+\paragraph{Beispiel: }
 	Für $I=\{1,...,n\}$ und $i\in I$ definiere
 	$e_i:I\to K , j\mapsto e_i(j):= \delta_{ij}$, wobei 
 	\begin{equation*}
@@ -266,9 +221,7 @@
 	das Kroneckersymbol bezeichnet.
 	
 	Dann ist die lineare Hülle der Familie $(e_i)_{i\in I}$
-	\begin{equation*}
-		[(e_i)_{i\in I}] = K^n
-	\end{equation*}
+		\[ [(e_i)_{i\in I}] = K^n. \]
 	
 	Nämlich: Da $[(e_i)_{i\in I}]\subset K^n$ ist, gilt für beliebige $x_1,...,x_n\in K$
 	\begin{gather*}
@@ -276,53 +229,34 @@
 	\end{gather*}
 	
 	da $[(e_i)_{i\in I}] \subset K^n$ UVR ist. Andererseits gilt für beliebiges $v\in K^n$:
-	\begin{equation*}
-		v=\sum^n_{i=1}e_iv(i): I\to K,
-	\end{equation*}
-	
+		\[ v=\sum^n_{i=1}e_iv(i): I\to K, \]	
 	denn
-	\begin{equation*}
-		\forall j\in I: \left(\sum^n_{i=1} e_iv(i)\right)(j) = \sum^n_{i=1}e_i(j)v(i) = (\delta_{ij}) v(j) = v(j)
-	\end{equation*}
-
+		\[ \forall j\in I: \left(\sum^n_{i=1} e_iv(i)\right)(j) = \sum^n_{i=1}e_i(j)v(i) = (\delta_{ij}) v(j) = v(j) \]
 	damit ist gezeigt, dass die beiden Abbildungen übereinstimmen; da $v\in K^n$ beliebig war, folgt $K^n \subset [(e_i)_{i\in I}]$
 	
-\paragraph{Definition}
+\paragraph{Definition: }
 	Seien $(v_i)_{i\in I}$ und $(x_i)_{i\in I}$ Familien in einem $ K $-VR bzw. dem Körper $ K $, wobei
 	\begin{gather*}
 		\# \{i\in I\mid x_i \neq 0\} < \infty\text{ ,also}\\
-		\{ i\in I \mid x_i \neq 0\} = \{i_1,...,i_n\}\text{ für ein geeignetes } n\in \mathbb{N}
+		\{ i\in I \mid x_i \neq 0\} = \{i_1,...,i_n\}\text{ für ein geeignetes } n\in \mathbb{N}\\
+    	\text{Dann heißt die endliche Summe }\sum_{i\in I} v_ix_i:= \sum^n_{j=1}v_{i_j}x_{i_j}\text{ eine Linearkombination.}
 	\end{gather*}
 	
-	
-	Dann heißt die endliche Summe
-	\begin{equation*}
-    	\sum_{i\in I} v_ix_i:= \sum^n_{j=1}v_{i_j}x_{i_j}\text{ eine Linearkombination.}
-	\end{equation*}
-
-\paragraph{Bemerkung}
+\paragraph{Bemerkung: }
 	Die Bedingung
-	\begin{equation*}
-		\#\{i\in I \mid x_i\neq 0\} <\infty
-	\end{equation*}
-	
+		\[ \#\{i\in I \mid x_i\neq 0\} <\infty \]
 	garantiert, dass die Summe wohldefiniert ist $\rightarrow$ vgl. Reihen in der Analysis.
 		
-\paragraph{Lemma}
+\paragraph{Lemma: }
 	Ist $(v_i)_{i\in I}$ $I \neq \emptyset$, Familie in einem $K$-VR, so gilt: 
-	\begin{equation*}
-		[(v_i)_{i\in I}] = \left\{\sum_{i\in I} v_ix_i| x: I\to K: \# \{i\in I| x_i \neq 0\}< \infty\right\},
-	\end{equation*}
-	
+		\[ [(v_i)_{i\in I}] = \left\{\sum_{i\in I} v_ix_i| x: I\to K: \# \{i\in I| x_i \neq 0\}< \infty\right\}, \]
 	d.h. die lineare Hülle der Familie ist die Menge aller Linearkombinationen der Familie.
 
-\paragraph{Beweis}
+\paragraph{Beweis: }
 	Wir zeigen (wie üblich) zwei Inklusionen:	
 
 	$\supseteq$: z.z.: jede Linearkombination liegt in der Linearen Hülle. Sei also $(x_i)_{i\in I}$ eine geeignete Familie in $ K $, dann gilt:
-	\begin{equation*}
-		\sum_{i\in I} v_i x_i = v_{i_1} x_{i_1} + ... + (v_{i_n}x_{i_n}+0)
-	\end{equation*}
+		\[ \sum_{i\in I} v_i x_i = v_{i_1} x_{i_1} + ... + (v_{i_n}x_{i_n}+0) \]
 
 	\begin{enumerate}[(i)]
 		\item $\text{für } (v_{i_n}x_{i_n}+0) \in [...] \text{ nach UR-Kriterium}$
@@ -330,41 +264,38 @@
 	\end{enumerate}
 
 	$\subseteq$: Z.z.: Lineare Hülle der Familie ist Teilmenge von U. Setze die Menge der Linearkombinationen einer Familie U $:= \{{\sum_{i\in I} v_ix_i| x: I\to K \text{ mit } \#\{{i\in I| x_i \neq 0\}} < \infty\}}$, offenbar gilt:
-	\begin{equation*}
-		\forall i\in I: v_i\in U
-	\end{equation*}
-
-	Wir zeigen, dass U ein Untervektorraum ist. Das heißt,
+		\[ \forall i\in I: v_i\in U \]
+	Wir zeigen, dass U ein Untervektorraum ist. Das heißt:
 	\begin{align*}
-	^+    & \mid_{U\times U}: U\times U \to U \subset V;\\
-	\cdot & \mid_{K\times U}: K\times U \to U \subset V;
+	^+    & \mid_{U\times U}: U\times U \to U \subset V\\
+	\cdot & \mid_{K\times U}: K\times U \to U \subset V,
 	\end{align*}
 	
-	d.h. die Addition und Skalarmultiplikation vererben sich auf $ U $.
+	also die Addition und Skalarmultiplikation vererben sich auf $ U $.
 
-\paragraph{Zur Skalarmultiplikation}
-	Sind $(x_i)_{i\in I}$ mit $\#\{i\in I| x_i \neq 0\}<\infty$ eine Familie in $ K $ und $x\in K$, so gilt für ein geeignetes $n\in \mathbb{N}$:
-	\begin{equation*}
-		\{i\in I| x_i \neq 0\} = \{i_1, ... , i_n\}
-	\end{equation*}
+\paragraph{Zur Skalarmultiplikation: }
+	Sind $(x_i)_{i\in I}$ mit $\#\{i\in I| x_i \neq 0\}<\infty$ eine Familie in $ K $ und $x\in K$, so gilt für ein geeignetes $n\in \mathbb{N}$
+		\[ \{i\in I| x_i \neq 0\} = \{i_1, ... , i_n\} \]
 
 	und damit 
 	\begin{equation*}
 		\{i\in I| x_ix\neq 0\} =
 		\begin{cases}
 			\{{i_1,...,i_n\}},& \text{falls }x \neq 0\\
-			\emptyset,& \text{falls }x = 0
+			\emptyset,& \text{falls }x = 0.
 		\end{cases}
 	\end{equation*}
 
 	Also folgt
-	\begin{equation*}
-		(\sum_{i\in I}v_i x_i) x = (\sum_{j=1}^{n} v_{i_j}x_{i_j})x \Rightarrow \sum_{j=1}^{n} v_{i_j}(x_{i_j}x) = \sum_{i\in I} v_i(x_ix) \in U_i,
-	\end{equation*}
+	\begin{gather*}
+		(\sum_{i\in I}v_i x_i) x = (\sum_{j=1}^{n} v_{i_j}x_{i_j})x\\
+		\Rightarrow \sum_{j=1}^{n} v_{i_j}(x_{i_j}x) = \sum_{i\in I} v_i(x_ix) \in U_i,
+	\end{gather*}
 
 	da $\sum_{i\in I} v_i(x_ix)$ Linearkombination (mit der Familie $(x_ix)_{i\in I}$ in K) ist.
 
-\paragraph{Zur Addition}
+\paragraph{Zur Addition: }
 	Ähnlich (Vereinigung zweier Mengen, ist endlich), siehe Aufgabe.
-\paragraph{Bemerkung}
+	
+\paragraph{Bemerkung: }
 	Um triviale Diskussionen zu vermeiden, setzt man $\sum_{i\in \emptyset} ?:=0$.
