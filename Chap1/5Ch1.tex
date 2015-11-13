@@ -1,3 +1,4 @@
+%VO_10.11.15
 \section{Summen, Produkte und Quotienten}
 \paragraph{Definition: }
 	Die Summe einer Familie $ (U_i)_{i\in I} $ von UVR $ U\subset V $ eines $ K $-VR ist die Menge
@@ -129,6 +130,7 @@
 	
 	Definiere $ U':= [S] $. Dann ist $ U'\subset V $ UVR mit
 		\begin{enumerate}[(i)]
+		% TODO: wir zeigen, dass U+U' übermenge ist, wollen aber Gleichheit zeigen ... wo ist die andere inklusion?
 		\item $ U+U' \supset [C] = V $, da $ C\subset U\cup U' $ Erz. Syst. von $ V $ ist;
 		\item $ U\cap U' = [B]\cap [S] = \{o\}$, da $ C=B\cup S $ linear unabhängig ist.
 		\end{enumerate}
@@ -165,6 +167,7 @@
 		\end{gather*}
 	dann gilt für jedes $ i\in I$:
 		\begin{equation*}
+		% TODO: sollte es nicht u_i-u-u_i' sein?
 		u'_i-u_i = \sum _{j\neq i}u_j-\sum_{j\neq i} u'_j = \sum_{j\neq i}u_j-u'_j \in U_i\cap \sum_{j\neq i} U_j = \{o\},
 		\end{equation*}
 	da die Summe als direkt angenommen wurde; damit folgt $ \forall i \in I: u_i = u'_i $, d.h. die Zerlegung ist eindeutig.
