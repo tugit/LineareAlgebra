@@ -220,4 +220,86 @@
 	Sei $ p\in \operatorname{End}(V) $ Projektion, dann ist $ p'= id_V-p $ Projektion mit $ pp' = p'p = 0 $. Gilt $ p+p' = id_V $ und $ pp' = 0 $ für $ p,p' \in \operatorname{End}(V) $, so sind $ p,p' $ Projektionen mit
 		\[ V = p(V)\oplus p'(V) = \ker p \oplus \ker p'. \]
 		
-\paragraph{Beispiel \& Definition: }
+\paragraph{Beweis: }
+	Seien $p\in \operatorname{End}(V)$ Projektion und $p^\prime := id_V -p$; dann gilt:
+		\[p\circ p^\prime = p(id_V-p)=p-p^{2} = 0; (p^{2} = p\circ p)\]
+		\[p\circ p = (id_V-p)\circ p = p - p^{2} = 0\]
+		und
+			\[p^\prime \circ p^\prime = p^{1,2}=p^\prime \circ(id_V-p)=p^\prime-p^\prime\circ p = p^{\prime\prime},\]
+		d.h., $p^\prime\in\operatorname{End}(V)$ ist Projektion.
+		Anderseits: Seien $p,p^\prime = id_V \text{ und } p^\prime p = 0$.
+		
+		Dann gilt:
+		\[p-p^2 = p(id_V-p) = pp^\prime = 0\]
+		d.h., $p\in\operatorname{End}(V)$ ist Projektion, damit ist auch $p^\prime$ Projektion (erster Teil)
+		
+		und $p^\prime p = 0 $. Weiters liefert \[\forall v\in V: v=id_v(v) = p(v) + p^\prime(v) \Rightarrow V = p(V)+p^\prime(V)\],
+		
+		und ist $w = p(V)= p^\prime(v^\prime)$ für geeignete $v,v^\prime\in V$ (d.h., $w  = p(V)\cap p^\prime(V))$ so gilt \[w = p(v) = p^2(v) = p(p(v)) = p(w) = p(p^\prime(v^\prime)) = pp^\prime(v^\prime) = 0 (pp^\prime = 0)\],
+		
+		also $p(V)\cap p^\prime(V) = {0}$ und damit $V = p(V)\oplus p^\prime(V)$. Weiters gilt
+		\[0 = p \circ p^\prime \rightarrow p^\prime(V)\subset \ker p\]
+		und ist $v\in \ker p$, so folgt
+		\[v = p(v) + p^\prime(v) = 0 + p^\prime(v)\in p^\prime(V) \Rightarrow \ker p \subset p^\prime(V)\]
+		
+		Für $p^\prime$ gilt das Gleiche und wir haben $\ker p = p^\prime(V)$ und $\ker p^\prime = p(V)$. Damit folgt die letzte Behauptung 
+		\[V = \ker p \oplus\ker p^\prime\].
+	
+	\paragraph{Bemerkung: }
+		Im Beweis haben wir etwas mehr bewiesen als behauptet - nämlich: $\ker p = p^\prime(V)$ und $\ker p^\prime = p(V)$
+		
+	\paragraph{Beispiel und Definition: }	
+		Sei $s\in \operatorname{End}(V)$ eine Involution d.h., 
+		\[s^2 = id_v\] 
+		und 
+		\[p\pm := 1/2(id_v\pm s)\].
+		Offenbar gilt dann
+		\[p_{+} + p_{-} = id_V\] 
+		und 
+		\[p + p_{-} = 1/4(id_V +s)(id_V -s) = 1/4(id_v^2-s^2)=0\]
+		also (Satz) sind $p\pm\in\operatorname{End}(V)$ Projektionen mit komplementären Bildern bzw. Kernen.
+	\paragraph{Lemma und Definition: }
+		Ist $(V_i)_{i\in I}$ eine Familie von K-VR $V_i$, so wird das (mengenthoretische) Produkt:
+		\[V:= \prod_{i\in I}V_i=\{(v_i)_{i\in I}\mid\forall i\in I:v_i\in V_i\}\]
+		mit der Komponentenweise definierten VR-Operationen zu einem K-VR. Dies ist der Produktraum der $\operatorname{Fam}(V_i)_{i\in I}$.
+	\paragraph{Beweis: } Aufgabe!
+	\paragraph{Bemerkung: } 
+		Ist $V = \prod_{i\in I} V_i$ ein Produktraum, so erhält man einen kanonischen UVR
+		\[U_i:=\{v=(v_i)_{i\in I}\in V\mid\forall j = i:v_j = 0\}\subset V,\]
+		die isomorph zu $\dim(V_i)$ sind der Faktorprojektionen,
+		\[\prod_i:V\to V_i:(v_j)_{j\in I} \mapsto v_i,\]
+		mittels Faktor-Injektionen
+		\[\iota_i:V_i\to V: v_i \mapsto(v_j)_{j\in I},\]
+		wobei
+		\[v_j :=
+		\begin{cases}
+		v_i \text{ falls } j=i\\
+		0 \text{ sonst}
+		\end{cases}\]
+		Ist dann $\# I < \infty$, so erhält man
+		\[\prod_{i\in I} V_i\cong \oplus_{i\in I}U_i (=: \oplus_{i\in I}V_i),\]
+		ist $\#I=\infty$, so ist diese Identifikation im Allgemeinen falsch!
+		\paragraph{Beispiel: }
+			Für einen Körper K liefert das n-fache Produkt den Standardraum
+			\[\prod_{i=1}^{n}K = \{(x_i)_{i = 1,...,n}\mid\forall i \in \{1,...,n\}: x_i \in K\} = K^n \cong \oplus_{i=1}^n\{(x_i)_{i\in {1,...,n}}\mid\forall j\neq i: x_j = 0\};\]
+			für den Raum der K-wertigen Folgen ist jedoch
+			\[\prod_{i\in \mathbb{N}}K=K^{\mathbb{N}}\neq\oplus_{i\in \mathbb{N}}\{(x_i)_{i\in \mathbb{N}}\mid\forall j\neq i: x_j=0\}\]
+		\paragraph{Lemma und Definition: }
+			Sei $U\subset V$ UVR. Die Menge der Nebenklassen 
+			\[V/U := \{v+U\mid v\in V\},\]
+			wobei
+			\[v+U:=\{v+u\mid u\in U\}\]
+			die Nebenklasse zu $v\in V$ bezeichnet, wird mit den durch
+			\[(v+U)+(w*U):=(v+w)+U\]
+			und
+			\[(V+U)x := Vx + U\]
+			definierten Operationen ein Vektorraum: der Quotientenraum $V/u$.
+			
+		\paragraph{Beweisen: }
+			Zu zeigen: Wohldefiniertheit der Operationen und VR-Axiome. Wohldefiniertheit der Skalarmultiplikation: Ist $x\in K$ und sind $(v+U),(v^\prime+U)\in V/U$ gleich, $v+U = v^\prime + U$, so gilt
+			\[v+U = v^\prime+U \Leftrightarrow v = v^\prime\in U\] \[\Rightarrow (v-v^\prime)x \in U\]
+			\[\Rightarrow vx+U=v^\prime x+U\]
+			
+			Das Resultat der Skalarmultiplikation bringt also nicht von dem "Repräsentanten" $v$ einer Nebenklasse $v+U$ ab, sondern nur von der Nebenklasse.
+			Die Wohldefiniertheit der Addition ist analog.
+				VR-Axiome = langweilig, nachrechnen.
