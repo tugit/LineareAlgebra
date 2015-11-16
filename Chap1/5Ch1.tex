@@ -199,8 +199,8 @@
 		\begin{equation*}
 		v = u+u' \mapsto
 			\begin{cases}
-			p(v):=u\\
-			p':= u'
+				p(v):=u\\
+				p':= u'
 			\end{cases}
 		\end{equation*}
 	
@@ -213,37 +213,34 @@
 		\[ p+p' = id_V \text{ und } p'p = 0 = pp'.\]
 		
 \paragraph{Definition: }
-	$ p\in \operatorname{End}(V) $ heißt Projektion, falls $ p^2 = p $ (d.h. falls $ p $ idempotent ist).
+	$ p\in \End(V) $ heißt Projektion, falls $ p^2 = p $ (d.h. falls $ p $ idempotent ist).
 	
 \paragraph{Satz: }
-	Sei $ p\in \operatorname{End}(V) $ Projektion, dann ist $ p'= id_V-p $ Projektion mit $ pp' = p'p = 0 $. Gilt $ p+p' = id_V $ und $ pp' = 0 $ für $ p,p' \in \operatorname{End}(V) $, so sind $ p,p' $ Projektionen mit
+	Sei $ p\in \End(V) $ Projektion, dann ist $ p'= id_V-p $ Projektion mit $ pp' = p'p = 0 $. Gilt $ p+p' = id_V $ und $ pp' = 0 $ für $ p,p' \in \End(V) $, so sind $ p,p' $ Projektionen mit
 		\[ V = p(V)\oplus p'(V) = \ker p \oplus \ker p'. \]
 		
 \paragraph{Beweis: }
 	Seien $p\in \operatorname{End}(V)$ Projektion und $p' := id_V -p$; dann gilt:
 		\[p\circ p' = p(id_V-p)=p-p^{2} = 0; (p^{2} = p\circ p)\]
-		\[p\circ p = (id_V-p)\circ p = p - p^{2} = 0\]
+		\[p\circ p = (\id_V-p)\circ p = p - p^{2} = 0\]
 	und
-		\[p' \circ p' = p^{1,2}=p' \circ(id_V-p)=p'-p'\circ p = p^{\prime\prime},\]
+		\[p' \circ p' = p'^2 = p' \circ(\id_V-p)=p'-p'\circ p = p'',\]
 	d.h., $p'\in\operatorname{End}(V)$ ist Projektion.
 	Anderseits: Seien $p,p' = id_V \text{ und } p' p = 0$.
 		
 	Dann gilt:
 		\[p-p^2 = p(id_V-p) = pp' = 0\]
-	d.h., $p\in\operatorname{End}(V)$ ist Projektion, damit ist auch $p'$ Projektion (erster Teil)
-
-	und $p' p = 0 $. Weiters liefert
+	d.h., $p\in\operatorname{End}(V)$ ist Projektion, damit ist auch $p'$ Projektion (erster Teil) und $p' p = 0 $. Weiters liefert
 		\[\forall v\in V: v=id_v(v) = p(v) + p'(v) \Rightarrow V = p(V)+p'(V),\]
 
-	und ist $w = p(V)= p'(v')$ für geeignete $v,v'\in V$ (d.h., $w  = p(V)\cap p'(V))$ so gilt
-		\[w = p(v) = p^2(v) = p(p(v)) = p(w) = p(p'(v')) = pp'(v') = 0 (pp' = 0),\]
-		
+	und ist $w = p(V)= p'(v')$ für geeignete $v,v'\in V$ (d.h., $w  = p(V)\cap p'(V)$), so gilt
+		\[ w = p(v) = p^2(v) = p(p(v)) = p(w) = p(p'(v')) = pp'(v') = 0 (pp' = 0), \]
 	also $p(V)\cap p'(V) = {0}$ und damit $V = p(V)\oplus p'(V)$. Weiters gilt
 		\[0 = p \circ p' \rightarrow p'(V)\subset \ker p\]
 	und ist $v\in \ker p$, so folgt
 		\[v = p(v) + p'(v) = 0 + p'(v)\in p'(V) \Rightarrow \ker p \subset p'(V).\]
-		
-	Für $p'$ gilt das Gleiche und wir haben $\ker p = p'(V)$ und $\ker p' = p(V)$. Damit folgt die letzte Behauptung 
+	Für $p'$ gilt das Gleiche und wir haben $\ker p = p'(V)$ und $\ker p' = p(V)$.
+	Damit folgt die letzte Behauptung 
 		\[V = \ker p \oplus\ker p'.\]
 	
 \paragraph{Bemerkung: }
@@ -252,14 +249,14 @@
 		
 \paragraph{Beispiel und Definition: }	
 		Sei $s\in \operatorname{End}(V)$ eine Involution d.h., 
-			\[s^2 = id_v\] 
+			\[ s^2 = \id_v \] 
 		und 
-			\[p\pm := 1/2(id_v\pm s).\]
+			\[ p_\pm := 1/2(\id_v\pm s). \]
 		Offenbar gilt dann
-			\[p_{+} + p_{-} = id_V\] 
+			\[ p_{+} + p_{-} = id_V \] 
 		und 
-			\[p + p_{-} = 1/4(id_V +s)(id_V -s) = 1/4(id_v^2-s^2)=0\]
-		also (Satz) sind $p_\pm\in\operatorname{End}(V)$ Projektionen mit komplementären Bildern bzw. Kernen.
+			\[ p + p_{-} = 1/4(\id_V +s)(\id_V -s) = 1/4(id_v^2-s^2)=0 \]
+		also (Satz) sind $p_\pm\in\End(V)$ Projektionen mit komplementären Bildern bzw. Kernen.
 		
 \paragraph{Lemma und Definition: }
 		Ist $(V_i)_{i\in I}$ eine Familie von K-VR $V_i$, so wird das (mengenthoretische) Produkt:
@@ -283,7 +280,7 @@
 				\end{cases}
 			\]
 		Ist dann $\# I < \infty$, so erhält man
-			\[\prod_{i\in I} V_i\cong \oplus_{i\in I}U_i (=: \oplus_{i\in I}V_i);\]
+			\[\prod_{i\in I} V_i\cong \bigoplus_{i\in I}U_i (=: \bigoplus_{i\in I}V_i);\]
 		ist $\#I=\infty$, so ist diese Identifikation im Allgemeinen falsch!
 	
 \paragraph{Beispiel: }
@@ -304,10 +301,11 @@
 	definierten Operationen ein Vektorraum: der Quotientenraum $V/u$.
 			
 \paragraph{Beweisen: }
-	Zu zeigen: Wohldefiniertheit der Operationen und VR-Axiome. Wohldefiniertheit der Skalarmultiplikation: Ist $x\in K$ und sind $(v+U),(v'+U)\in V/U$ gleich, $v+U = v' + U$, so gilt
+	Zu zeigen: Wohldefiniertheit der Operationen und VR-Axiome (werden übergangen).
+	
+	Wohldefiniertheit der Skalarmultiplikation: Ist $x\in K$ und sind $(v+U),(v'+U)\in V/U$ gleich, $v+U = v' + U$, so gilt
 		\[v+U = v'+U \Leftrightarrow v = v'\in U\] \[\Rightarrow (v-v')x \in U\]
 		\[\Rightarrow vx+U=v' x+U\]
-	Das Resultat der Skalarmultiplikation bringt also nicht von dem "Repräsentanten" $v$ einer Nebenklasse $v+U$ ab, sondern nur von der Nebenklasse.
+	Das Resultat der Skalarmultiplikation bringt also nicht von dem Repräsentanten $v$ einer Nebenklasse $v+U$ ab, sondern nur von der Nebenklasse.
 	
 	Die Wohldefiniertheit der Addition ist analog.
-	VR-Axiome = langweilig, nachrechnen.
