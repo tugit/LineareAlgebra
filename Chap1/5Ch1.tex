@@ -220,35 +220,35 @@
 		\[ V = p(V)\oplus p'(V) = \ker p \oplus \ker p'. \]
 		
 \paragraph{Beweis: }
-	Seien $p\in \operatorname{End}(V)$ Projektion und $p^\prime := id_V -p$; dann gilt:
-		\[p\circ p^\prime = p(id_V-p)=p-p^{2} = 0; (p^{2} = p\circ p)\]
+	Seien $p\in \operatorname{End}(V)$ Projektion und $p' := id_V -p$; dann gilt:
+		\[p\circ p' = p(id_V-p)=p-p^{2} = 0; (p^{2} = p\circ p)\]
 		\[p\circ p = (id_V-p)\circ p = p - p^{2} = 0\]
 	und
-		\[p^\prime \circ p^\prime = p^{1,2}=p^\prime \circ(id_V-p)=p^\prime-p^\prime\circ p = p^{\prime\prime},\]
-	d.h., $p^\prime\in\operatorname{End}(V)$ ist Projektion.
-	Anderseits: Seien $p,p^\prime = id_V \text{ und } p^\prime p = 0$.
+		\[p' \circ p' = p^{1,2}=p' \circ(id_V-p)=p'-p'\circ p = p^{\prime\prime},\]
+	d.h., $p'\in\operatorname{End}(V)$ ist Projektion.
+	Anderseits: Seien $p,p' = id_V \text{ und } p' p = 0$.
 		
 	Dann gilt:
-		\[p-p^2 = p(id_V-p) = pp^\prime = 0\]
-	d.h., $p\in\operatorname{End}(V)$ ist Projektion, damit ist auch $p^\prime$ Projektion (erster Teil)
+		\[p-p^2 = p(id_V-p) = pp' = 0\]
+	d.h., $p\in\operatorname{End}(V)$ ist Projektion, damit ist auch $p'$ Projektion (erster Teil)
 
-	und $p^\prime p = 0 $. Weiters liefert
-		\[\forall v\in V: v=id_v(v) = p(v) + p^\prime(v) \Rightarrow V = p(V)+p^\prime(V),\]
+	und $p' p = 0 $. Weiters liefert
+		\[\forall v\in V: v=id_v(v) = p(v) + p'(v) \Rightarrow V = p(V)+p'(V),\]
 
-	und ist $w = p(V)= p^\prime(v^\prime)$ für geeignete $v,v^\prime\in V$ (d.h., $w  = p(V)\cap p^\prime(V))$ so gilt
-		\[w = p(v) = p^2(v) = p(p(v)) = p(w) = p(p^\prime(v^\prime)) = pp^\prime(v^\prime) = 0 (pp^\prime = 0),\]
+	und ist $w = p(V)= p'(v')$ für geeignete $v,v'\in V$ (d.h., $w  = p(V)\cap p'(V))$ so gilt
+		\[w = p(v) = p^2(v) = p(p(v)) = p(w) = p(p'(v')) = pp'(v') = 0 (pp' = 0),\]
 		
-	also $p(V)\cap p^\prime(V) = {0}$ und damit $V = p(V)\oplus p^\prime(V)$. Weiters gilt
-		\[0 = p \circ p^\prime \rightarrow p^\prime(V)\subset \ker p\]
+	also $p(V)\cap p'(V) = {0}$ und damit $V = p(V)\oplus p'(V)$. Weiters gilt
+		\[0 = p \circ p' \rightarrow p'(V)\subset \ker p\]
 	und ist $v\in \ker p$, so folgt
-		\[v = p(v) + p^\prime(v) = 0 + p^\prime(v)\in p^\prime(V) \Rightarrow \ker p \subset p^\prime(V).\]
+		\[v = p(v) + p'(v) = 0 + p'(v)\in p'(V) \Rightarrow \ker p \subset p'(V).\]
 		
-	Für $p^\prime$ gilt das Gleiche und wir haben $\ker p = p^\prime(V)$ und $\ker p^\prime = p(V)$. Damit folgt die letzte Behauptung 
-		\[V = \ker p \oplus\ker p^\prime.\]
+	Für $p'$ gilt das Gleiche und wir haben $\ker p = p'(V)$ und $\ker p' = p(V)$. Damit folgt die letzte Behauptung 
+		\[V = \ker p \oplus\ker p'.\]
 	
 \paragraph{Bemerkung: }
 		Im Beweis haben wir etwas mehr bewiesen als behauptet - nämlich:
-			\[ ker p = p^\prime(V)\text{ und }\ker p^\prime = p(V) \]
+			\[ ker p = p'(V)\text{ und }\ker p' = p(V) \]
 		
 \paragraph{Beispiel und Definition: }	
 		Sei $s\in \operatorname{End}(V)$ eine Involution d.h., 
@@ -304,9 +304,9 @@
 	definierten Operationen ein Vektorraum: der Quotientenraum $V/u$.
 			
 \paragraph{Beweisen: }
-	Zu zeigen: Wohldefiniertheit der Operationen und VR-Axiome. Wohldefiniertheit der Skalarmultiplikation: Ist $x\in K$ und sind $(v+U),(v^\prime+U)\in V/U$ gleich, $v+U = v^\prime + U$, so gilt
-		\[v+U = v^\prime+U \Leftrightarrow v = v^\prime\in U\] \[\Rightarrow (v-v^\prime)x \in U\]
-		\[\Rightarrow vx+U=v^\prime x+U\]
+	Zu zeigen: Wohldefiniertheit der Operationen und VR-Axiome. Wohldefiniertheit der Skalarmultiplikation: Ist $x\in K$ und sind $(v+U),(v'+U)\in V/U$ gleich, $v+U = v' + U$, so gilt
+		\[v+U = v'+U \Leftrightarrow v = v'\in U\] \[\Rightarrow (v-v')x \in U\]
+		\[\Rightarrow vx+U=v' x+U\]
 	Das Resultat der Skalarmultiplikation bringt also nicht von dem "Repräsentanten" $v$ einer Nebenklasse $v+U$ ab, sondern nur von der Nebenklasse.
 	
 	Die Wohldefiniertheit der Addition ist analog.
