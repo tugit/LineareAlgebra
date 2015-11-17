@@ -246,7 +246,7 @@
 	
 \paragraph{Bemerkung: }
 		Im Beweis haben wir etwas mehr bewiesen als behauptet - nämlich:
-			\[ ker p = p'(V)\text{ und }\ker p' = p(V) \]
+			\[ \ker p = p'(V)\text{ und }\ker p' = p(V) \]
 		
 \paragraph{Beispiel und Definition: }	
 		Sei $s\in \operatorname{End}(V)$ eine Involution d.h., 
@@ -312,3 +312,67 @@
 	Die Wohldefiniertheit der Addition ist analog.
 
 %VO_17.11.15
+
+\paragraph{WDH.}
+	Sei $ U\subset V $ UVR eines VR $ V $. Die Menge der Nebenklassen
+		\[ V/U := \{v+U\mid v\in V\}, \]
+	wobei
+		\[ v+U := \{v+u\mid u\in U\} \]
+	eine Nebenklasse bezeichnet, wird mit den durch
+		\begin{align*}
+		+&: V/U \times V/U \to ((v+U),(w+U))\mapsto (v+w)+U,\\
+		\cdot &: K\times V/U \to V/U, (x,(v+U))\mapsto (vx)+U,
+		\end{align*}
+	definierten Operationen ein Vektorraum: der Quotientenvektorraum $ V/U $.
+	
+\paragraph{Bemerkung \& Definition}
+	Der Definition von $ V/U $ liegt ein allgemeineres Prinzip zugrunde:
+		\begin{align*}
+		v\sim w :	&\Leftrightarrow (v+U)= (w+U)\\
+					&\Leftrightarrow w-v \in U
+		\end{align*}
+	
+	definiert für jeden UVR $ U\subset V $ eines $ K $-VR $ V $ eine Äquivalenzrelation auf $ V $, d.h.:
+		\begin{enumerate}[(i)]
+			\item $ \forall v\in V: v\sim v $ (Reflexivität;)
+			\item $ \forall v,w\in V: v\sim w\Leftrightarrow w\sim v $ (Symmetrie);
+			\item $ \forall u,v,w\in V: u\sim v\land v\sim w\Rightarrow u\sim w $ (Transitivität)
+		\end{enumerate}
+		
+	Nämlich ($ v\sim w:\Leftrightarrow w-v\in U $ definiert Äquivalenzrelation):
+	
+	\begin{itemize}
+		\item Reflexivität: Sei $ v\in V $ beliebig, dann gilt $ v-v=0\in U $, da $ U $ UVR;
+		\item Symmetrie: Seien $ v,w\in V $ beliebig, dann gilt
+			\begin{align*}
+			v\sim w 	&\Leftrightarrow w-v\in U\\
+						&\Leftrightarrow v-w\in U \Leftrightarrow w\sim v;
+			\end{align*}
+		\item Transivitität: Seien $ u,v,w\in V $ beliebig; gilt nun
+			\[  u\sim v \text{, d.h. } v-u\in U \text{, und: } v\sim w\text{, d.h. } w-v\in U\]
+		so gilt auch
+			\[ w-u=(w-v)+(v-u)\in U \Leftrightarrow u\sim w. \]
+	\end{itemize}
+	
+	Ist dann $ \sim $ eine Äquivalenzrelation auf einer Menge $ X $, so zerfällt $ X $ in Äquivalenzklassen
+		\[ X_a = \{y\in X\mid y\sim a\} \]
+	d.h., X ist disjunkte Vereinigung der Äquivalenzklassen:
+		\[ x = \bigcup_{a\in X}X_a \text{ und } X_a \cap X_b \neq \emptyset \Rightarrow X_a = X_b \]
+		
+	Insbesondere zerfällt also ein VR $ V $ in Äquivalenzklassen ("`Nebenklassen"')
+		\[ v+U (= V_v)\subset V \]
+	wenn $ U $ ein UVR von $ V $ ist -- nach Lemma wird die Menge der Neben- bzw. Äquivalenzklassen wird dann wieder ein VR. Ähnlich wie den Quotientenvektorraum definiert man (z.B.) die Faktorgruppe.
+\paragraph{Bemerkung: }
+	Allgemeiner definiert man eine (binäre) Relation $ (X,Y,\Gamma) $ zwischen Mengen $ X, Y $ durch den Graph den Relation, eine Teilmenge
+		\[ \Gamma \subset X\times Y = \{(x,y)\mid x\in X \land y\in Y\} \]
+	Zum Beispiel ist eine Abbildung $ f:X\to Y $ eine Relation $ (X,Y,\Gamma_f) $, sodass
+		\[ \forall x\in X\exists ! y\in Y:(x,y)\in \Gamma_f. \]
+	Ein anderes Beispiel ist die Ordnungsrelation auf $ \mathbb{Z} $, definiert durch
+		\[ x\leq y :\Leftrightarrow \{(x,y)\in \mathbb{Z}^2\mid y-x\in \mathbb{N}\}, \]
+	eine Ordnungsrelation ist reflexiv, transitiv und antisymmetrisch (also $ \forall x,y\in \mathbb{Z}: x\leq y\land y\leq x\Rightarrow x=y $).
+	Die Teilmengenrelation
+		\[ Y\subset\tilde{Y} \text{ für } Y,\tilde{Y}\in \mathcal{P}(X):= \{Y\mid Y\subset X\} \]
+	liefert auch eine Ordnungsrelation auf der Potenzmenge $ \mathcal{P}(X) $ von $ X $, jedoch nur eine Halbordnung -- im Gegensatz zur Totalordnung auf $ \mathbb{Z} $, wo je zwei Elemente vergleichbar sind, d.h.,
+		\[ \forall x,y\in \mathbb{Z}: x\leq y\lor y\leq x \]
+	Auf $ \mathcal{P}(X) $ gilt dies im Allgemeinen nicht, denn z.B. in $ \mathcal{P}(\{0,1\}) $ sind $ \{0\},\{1\} $ nicht vergleichbar, denn
+		\[ \{0\}\not\subset\{1\}\land \{1\}\not\subset \{0\} \]
