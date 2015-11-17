@@ -256,7 +256,7 @@
 		Offenbar gilt dann
 			\[ p_{+} + p_{-} = id_V \] 
 		und 
-			\[ p + p_{-} = 1/4(\id_V +s)(\id_V -s) = 1/4(id_v^2-s^2)=0 \]
+			\[ p_+ p_{-} = 1/4(\id_V +s)(\id_V -s) = 1/4(id_v^2-s^2)=0 \]
 		also (Satz) sind $p_\pm\in\End(V)$ Projektionen mit komplementären Bildern bzw. Kernen.
 		
 \paragraph{Lemma und Definition: }
@@ -356,7 +356,7 @@
 	
 	Ist dann $ \sim $ eine Äquivalenzrelation auf einer Menge $ X $, so zerfällt $ X $ in Äquivalenzklassen
 		\[ X_a = \{y\in X\mid y\sim a\} \]
-	d.h., X ist disjunkte Vereinigung der Äquivalenzklassen:
+	d.h., $ X $ ist disjunkte Vereinigung der Äquivalenzklassen:
 		\[ x = \bigcup_{a\in X}X_a \text{ und } X_a \cap X_b \neq \emptyset \Rightarrow X_a = X_b \]
 		
 	Insbesondere zerfällt also ein VR $ V $ in Äquivalenzklassen ("`Nebenklassen"')
@@ -376,3 +376,71 @@
 		\[ \forall x,y\in \mathbb{Z}: x\leq y\lor y\leq x \]
 	Auf $ \mathcal{P}(X) $ gilt dies im Allgemeinen nicht, denn z.B. in $ \mathcal{P}(\{0,1\}) $ sind $ \{0\},\{1\} $ nicht vergleichbar, denn
 		\[ \{0\}\not\subset\{1\}\land \{1\}\not\subset \{0\} \]
+		
+%VO 2015-11-17 Teil 2
+
+\paragraph{Lemma: }
+	Ist $ U\subset V $ UVR und $ U' $ komplementärer UVR zu $ U $ in $ V $, so gilt
+		\[ U'\cong V/U \]
+	vermöge
+		\[ U'\ni u' \overset{\phi}{\mapsto} u'+U\in V/U. \]
+	Ist $ \dim V<\infty $, so gilt $ \dim U+\dim V/U = \dim V $.
+\subparagraph{Beweis: }
+	Zu zeigen: $ \phi $ ist Isomorphismus. Dass $ \phi $ Homomorphismus ist, folgt aus der Definition der VR-Operationen auf $ V/U $.
+
+	Injektivität: Sei $ u'\in \ker \phi $, d.h.
+		\begin{gather*}
+		\phi(u')=u'+U=0\in V/U\\
+		\Rightarrow u'\in U'\cap U = \{0\}\\
+		\Rightarrow u'=0
+		\end{gather*}
+		
+	Surjektivität: Sei $ v+U\in V/U $ mit $ v\in V = U \oplus U' $; mit der Projektion
+	\begin{gather*}
+		p':V\to V, v=u+u' \mapsto p'(v) := u'\\
+		\text{ist } v + U = u' + u + U = u' + U \phi(p'(v)),\\
+		\text{also }V/U = \phi(U').
+	\end{gather*}
+	
+	Die Dimensionsformel folgt dann aus der für direkte Summen:
+		\[ \dim U' = \dim V/U \Rightarrow \dim V/U = \dim V-\dim U \]
+		
+\subparagraph{Beispiel: }
+	Ist $ p\in \End(V) $ eine Projektion, so auch $ p':= \id_V-p $ und es gilt
+		\[ V= \ker p \oplus \ker p' = \ker p \oplus p(V), \]
+	also gilt
+		\[ p(V)\cong V/\ker p \]
+
+\paragraph{Homomorphiesatz für lineare Abbildungen: }
+	Für $ f\in \hom(V,W) $ ist $ f(V)\cong V/\ker f $ vermöge
+		\[ V/\ker f\ni v+\ker f \overset{\phi}{\mapsto} f(v)\in f(V) \]
+
+\subparagraph{Beweis: }
+	Wohldefiniertheit von $ \phi $: 
+	
+	Sind $ v+\ker f, v'+\ker f \in V/\ker f$ und $ v+\ker f = v'+\ker f $, so gilt 
+		\begin{gather*}
+		v'-v \in \ker f \Rightarrow f(v')-f(v) = f(v'-v) = 0 \\
+			\Rightarrow f(v') = f(v)
+		\end{gather*}
+	
+	d.h. $ \phi $ ist wohldefiniert.
+	
+	Linearität:
+		\begin{itemize}
+		\item Für $ x\in K $ und $ v+\ker f \in V/\ker f $ ist $ \phi( (v+\ker f)x) =f(vx) = f(v)x = \phi (v+\ker f)\cdot x $
+		\item Für $ v+\ker f, w+\ker f\in V/\ker f $ ist 
+			\begin{gather*}
+			\phi ((v+\ker f)+(w+\ker f) ) = \phi((v+w)+\ker f) =\\
+			f(v+w) = f(v)+f(w)=\phi(v+\ker f)+\phi(w+\ker f)
+			\end{gather*}
+		\end{itemize}
+	
+	Injektivität:
+	Sei $ v+\ker f\in \ker \phi $, also 
+		\[ \phi(v+\ker f)= f(v) = 0; \]
+	dann folgt
+		\[ v\in \ker f \Rightarrow v+\ker f = \ker f = 0\in V/\ker f. \]
+	
+	Surjektivität:
+	folgt direkt aus der Definition.		
