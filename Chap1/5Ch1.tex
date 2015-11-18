@@ -163,7 +163,7 @@
 \paragraph{Beweis: }
 	Zu zeigen ist die Eindeutigkeitsaussage. Sei also $ u \in \bigoplus_{i\in I}U_i $,
 		\begin{gather*}
-		u = \sum_{i\in I} u_i = \sum_{i\in I} u_i' \text{ mit } \forall i\in I: n_i,n'_i\in U_i;
+		u = \sum_{i\in I} u_i = \sum_{i\in I} u_i' \text{ mit } \forall i\in I: u_i,u'_i\in U_i;
 		\end{gather*}
 	dann gilt für jedes $ i\in I$:
 		\begin{equation*}
@@ -204,7 +204,7 @@
 			\end{cases}
 		\end{equation*}
 	
-	Endomorphismen $ p,p'\in \operatorname{End}(V) $ (wohl-)definiert, da $ n,n' $ durch $ v $ eindeutig bestimmt sind (Linearität von $ p,p' $ ist klar).
+	Endomorphismen $ p,p'\in \operatorname{End}(V) $ (wohl-)definiert, da $ u,u' $ durch $ v $ eindeutig bestimmt sind (Linearität von $ p,p' $ ist klar).
 	Offenbar ist 
 		\[ p(V) = U \text{ und } \ker p = U'\]
 	und es gilt
@@ -216,26 +216,29 @@
 	$ p\in \End(V) $ heißt Projektion, falls $ p^2 = p $ (d.h. falls $ p $ idempotent ist).
 	
 \paragraph{Satz: }
-	Sei $ p\in \End(V) $ Projektion, dann ist $ p'= id_V-p $ Projektion mit $ pp' = p'p = 0 $. Gilt $ p+p' = id_V $ und $ pp' = 0 $ für $ p,p' \in \End(V) $, so sind $ p,p' $ Projektionen mit
-		\[ V = p(V)\oplus p'(V) = \ker p \oplus \ker p'. \]
+	Sei $ p\in \End(V) $ Projektion, dann ist $ p'= \id_V-p $ Projektion mit $ pp' = p'p = 0 $. Gilt andererseits $ p+p' = id_V $ und $ pp' = 0 $ für $ p,p' \in \End(V) $, so sind $ p,p' $ Projektionen mit
+		\[ V = p(V)\oplus p'(V) = \ker p' \oplus \ker p. \]
 
 %VO_12.11.15
 \paragraph{Beweis: }
 	Seien $p\in \operatorname{End}(V)$ Projektion und $p' := id_V -p$; dann gilt:
-		\[p\circ p' = p(id_V-p)=p-p^{2} = 0; (p^{2} = p\circ p)\]
-		\[p\circ p = (\id_V-p)\circ p = p - p^{2} = 0\]
+		\begin{gather*}
+		p\circ p' = p(id_V-p)=p-p^{2} = 0; (p^{2} = p\circ p)\\
+		p'\circ p = (\id_V-p)\circ p = p - p^{2} = 0
+		\end{gather*}
 	und
 		\[p' \circ p' = p'^2 = p' \circ(\id_V-p)=p'-p'\circ p = p',\]
-	d.h., $p'\in\operatorname{End}(V)$ ist Projektion.
-	Anderseits: Seien $p,p' = id_V \text{ und } p' p = 0$.
+	d.h., $p'\in\End(V)$ ist Projektion.
+	
+	Anderseits: Seien $p+p' = \id_V \text{ und } pp' = 0$.
 		
 	Dann gilt:
 		\[p-p^2 = p(id_V-p) = pp' = 0\]
 	d.h., $p\in\operatorname{End}(V)$ ist Projektion, damit ist auch $p'$ Projektion (erster Teil) und $p' p = 0 $. Weiters liefert
 		\[\forall v\in V: v=id_v(v) = p(v) + p'(v) \Rightarrow V = p(V)+p'(V),\]
 
-	und ist $w = p(V)= p'(v')$ für geeignete $v,v'\in V$ (d.h., $w  = p(V)\cap p'(V)$), so gilt
-		\[ w = p(v) = p^2(v) = p(p(v)) = p(w) = p(p'(v')) = pp'(v') = 0 (pp' = 0), \]
+	und ist $w = p(v)= p'(v')$ für geeignete $v,v'\in V$ (d.h., $w \in p(V)\cap p'(V)$), so gilt
+		\[ w = p(v) = p^2(v) = p(p(v)) = p(w) = p(p'(v')) = pp'(v') = 0, \]
 	also $p(V)\cap p'(V) = {0}$ und damit $V = p(V)\oplus p'(V)$. Weiters gilt
 		\[0 = p \circ p' \rightarrow p'(V)\subset \ker p\]
 	und ist $v\in \ker p$, so folgt
@@ -250,34 +253,28 @@
 		
 \paragraph{Beispiel und Definition: }	
 		Sei $s\in \operatorname{End}(V)$ eine Involution d.h., 
-			\[ s^2 = \id_v \] 
-		und 
-			\[ p_\pm := 1/2(\id_v\pm s). \]
+			\[ s^2 = \id_V \text{ und } p_\pm := \frac{1}{2}(\id_v\pm s). \]
 		Offenbar gilt dann
-			\[ p_{+} + p_{-} = id_V \] 
-		und 
-			\[ p_+ p_{-} = 1/4(\id_V +s)(\id_V -s) = 1/4(id_v^2-s^2)=0 \]
+			\[ p_{+} + p_{-} = \id_V \text{ und } p_+ p_{-} = \frac{1}{4}(\id_V +s)(\id_V -s) =  \frac{1}{4}(\id_v^2-s^2)=0 \]
 		also (Satz) sind $p_\pm\in\End(V)$ Projektionen mit komplementären Bildern bzw. Kernen.
 		
 \paragraph{Lemma und Definition: }
-		Ist $(V_i)_{i\in I}$ eine Familie von K-VR $V_i$, so wird das (mengenthoretische) Produkt:
+		Ist $(V_i)_{i\in I}$ eine Familie von $ K $-VR $V_i$, so wird das (mengenthoretische) Produkt:
 			\[V:= \prod_{i\in I}V_i=\{(v_i)_{i\in I}\mid\forall i\in I:v_i\in V_i\}\]
 		mit den komponentenweise definierten VR-Operationen zu einem $ K $-VR. Dies ist der Produktraum der Familie	$(V_i)_{i\in I}$.
 		
 \paragraph{Beweis: } Aufgabe!
 
 \paragraph{Bemerkung: } 
-		Ist $V = \prod_{i\in I} V_i$ ein Produktraum, so erhält man einen kanonischen UVR
-			\[U_i:=\{v=(v_i)_{i\in I}\in V\mid\forall j = i:v_j = 0\}\subset V,\]
-		die isomorph zu $\dim(V_i)$ sind der Faktorprojektionen,
-			\[\prod_i:V\to V_i:(v_j)_{j\in I} \mapsto v_i,\]
-		mittels Faktor-Injektionen
-			\[\iota_i:V_i\to V: v_i \mapsto(v_j)_{j\in I},\]
-		wobei
-			\[v_j :=
+		Ist $V = \prod_{i\in I} V_i$ ein Produktraum, so erhält man kanonische UVR
+			\[U_i:=\{v=(v_i)_{i\in I}\in V\mid\forall j \neq i:v_j = 0\}\subset V,\]
+		die isomorph zu den $V_i$ sind vermittels der Faktorprojektionen
+			\[\pi_i:V\to V_i:(v_j)_{j\in I} \mapsto v_i,\]
+		bzw.  Faktor-Injektionen
+			\[\iota_i:V_i\to V: v_i \mapsto(v_j)_{j\in I}\text{, wobei }v_j :=
 				\begin{cases}
-					v_i \text{ falls } j=i\\
-					0 \text{ sonst}
+					v_i &\text{ falls } j=i\\
+					0 &\text{ sonst.}
 				\end{cases}
 			\]
 		Ist dann $\# I < \infty$, so erhält man
@@ -285,10 +282,10 @@
 		ist $\#I=\infty$, so ist diese Identifikation im Allgemeinen falsch!
 	
 \paragraph{Beispiel: }
-	Für einen Körper K liefert das n-fache Produkt den Standardraum
-		\[\prod_{i=1}^{n}K = \{(x_i)_{i = 1,...,n}\mid\forall i \in \{1,...,n\}: x_i \in K\} = K^n \cong \oplus_{i=1}^n\{(x_i)_{i\in {1,...,n}}\mid\forall j\neq i: x_j = 0\};\]
+	Für einen Körper $ K $ liefert das $ n $-fache Produkt den Standardraum
+		\[\prod_{i=1}^{n}K = \{(x_i)_{i = 1,...,n}\mid\forall i \in \{1,...,n\}: x_i \in K\} = K^n \cong \bigoplus_{i=1}^n\{(x_i)_{i\in {1,...,n}}\mid\forall j\neq i: x_j = 0\};\]
 	für den Raum der K-wertigen Folgen ist jedoch
-		\[\prod_{i\in \mathbb{N}}K=K^{\mathbb{N}}\neq\oplus_{i\in \mathbb{N}}\{(x_i)_{i\in \mathbb{N}}\mid\forall j\neq i: x_j=0\}.\]
+		\[\prod_{i\in \mathbb{N}}K=K^{\mathbb{N}}\neq\bigoplus_{i\in \mathbb{N}}\{(x_i)_{i\in \mathbb{N}}\mid\forall j\neq i: x_j=0\}.\]
 			
 \paragraph{Lemma und Definition: }
 	Sei $U\subset V$ UVR. Die Menge der Nebenklassen 
@@ -296,75 +293,67 @@
 	wobei
 		\[v+U:=\{v+u\mid u\in U\}\]
 	die Nebenklasse zu $v\in V$ bezeichnet, wird mit den durch
-		\[(v+U)+(w*U):=(v+w)+U\]
-	und
-		\[(V+U)x := Vx + U\]
-	definierten Operationen ein Vektorraum: der Quotientenraum $V/u$.
+		\[(v+U)+(w+U):=(v+w)+U \text{ und }(v+U)x := vx + U\]
+	bzw.
+		\begin{align*}
+			+&: V/U \times V/U \to ((v+U),(w+U))\mapsto (v+w)+U,\\
+			\cdot &: K\times V/U \to V/U, (x,(v+U))\mapsto (vx)+U,
+		\end{align*}
+	definierten Operationen ein Vektorraum: der Quotientenraum $V/U$.
 			
-\paragraph{Beweisen: }
+\subparagraph{Beweis: }
 	Zu zeigen: Wohldefiniertheit der Operationen und VR-Axiome (werden übergangen).
 	
-	Wohldefiniertheit der Skalarmultiplikation: Ist $x\in K$ und sind $(v+U),(v'+U)\in V/U$ gleich, $v+U = v' + U$, so gilt
-		\[v+U = v'+U \Leftrightarrow v = v'\in U\] \[\Rightarrow (v-v')x \in U\]
-		\[\Rightarrow vx+U=v' x+U\]
+	Wohldefiniertheit der Skalarmultiplikation:
+	
+	Ist $x\in K$ und sind $(v+U),(v'+U)\in V/U$ gleich, also $v+U = v'+U$, so gilt
+		\begin{gather*}
+		v+U = v'+U \Leftrightarrow v - v'\in U\\
+		\Rightarrow (v-v')x \in U \Rightarrow vx+U=v' x+U
+		\end{gather*}
 	Das Resultat der Skalarmultiplikation bringt also nicht von dem Repräsentanten $v$ einer Nebenklasse $v+U$ ab, sondern nur von der Nebenklasse.
 	
-	Die Wohldefiniertheit der Addition ist analog.
+	Die Wohldefiniertheit der Addition ist analog zu beweisen.
 
 %VO_17.11.15
-
-\paragraph{WDH.}
-	Sei $ U\subset V $ UVR eines VR $ V $. Die Menge der Nebenklassen
-		\[ V/U := \{v+U\mid v\in V\}, \]
-	wobei
-		\[ v+U := \{v+u\mid u\in U\} \]
-	eine Nebenklasse bezeichnet, wird mit den durch
-		\begin{align*}
-		+&: V/U \times V/U \to ((v+U),(w+U))\mapsto (v+w)+U,\\
-		\cdot &: K\times V/U \to V/U, (x,(v+U))\mapsto (vx)+U,
-		\end{align*}
-	definierten Operationen ein Vektorraum: der Quotientenvektorraum $ V/U $.
 	
 \paragraph{Bemerkung \& Definition}
-	Der Definition von $ V/U $ liegt ein allgemeineres Prinzip zugrunde:
-		\begin{align*}
-		v\sim w :	&\Leftrightarrow (v+U)= (w+U)\\
-					&\Leftrightarrow w-v \in U
-		\end{align*}
-	
+	Der Definition von $ V/U $ liegt ein allgemeineres Prinzip zugrunde:	
+		\[ v\sim w :\Leftrightarrow (v+U)= (w+U) \Leftrightarrow w-v \in U \]
 	definiert für jeden UVR $ U\subset V $ eines $ K $-VR $ V $ eine Äquivalenzrelation auf $ V $, d.h.:
 		\begin{enumerate}[(i)]
 			\item $ \forall v\in V: v\sim v $ (Reflexivität;)
 			\item $ \forall v,w\in V: v\sim w\Leftrightarrow w\sim v $ (Symmetrie);
-			\item $ \forall u,v,w\in V: u\sim v\land v\sim w\Rightarrow u\sim w $ (Transitivität)
+			\item $ \forall u,v,w\in V: u\sim v\land v\sim w\Rightarrow u\sim w $ (Transitivität).
 		\end{enumerate}
 		
 	Nämlich ($ v\sim w:\Leftrightarrow w-v\in U $ definiert Äquivalenzrelation):
 	
 	\begin{itemize}
-		\item Reflexivität: Sei $ v\in V $ beliebig, dann gilt $ v-v=0\in U $, da $ U $ UVR;
+		\item Reflexivität: Sei $ v\in V $ beliebig, dann gilt $ v-v=0\in U $, da $ U $ UVR.
 		\item Symmetrie: Seien $ v,w\in V $ beliebig, dann gilt
 			\begin{align*}
 			v\sim w 	&\Leftrightarrow w-v\in U\\
-						&\Leftrightarrow v-w\in U \Leftrightarrow w\sim v;
+						&\Leftrightarrow v-w\in U \Leftrightarrow w\sim v.
 			\end{align*}
 		\item Transivitität: Seien $ u,v,w\in V $ beliebig; gilt nun
-			\[  u\sim v \text{, d.h. } v-u\in U \text{, und: } v\sim w\text{, d.h. } w-v\in U\]
-		so gilt auch
-			\[ w-u=(w-v)+(v-u)\in U \Leftrightarrow u\sim w. \]
+			\begin{gather*}
+			u\sim v \text{, d.h. } v-u\in U \text{, und: } v\sim w\text{, d.h. } w-v\in U,\\
+			\text{so gilt auch: }(w-v)+(v-u)= w-u\in U \Leftrightarrow u\sim w.
+			\end{gather*}
 	\end{itemize}
 	
 	Ist dann $ \sim $ eine Äquivalenzrelation auf einer Menge $ X $, so zerfällt $ X $ in Äquivalenzklassen
 		\[ X_a = \{y\in X\mid y\sim a\} \]
 	d.h., $ X $ ist disjunkte Vereinigung der Äquivalenzklassen:
-		\[ x = \bigcup_{a\in X}X_a \text{ und } X_a \cap X_b \neq \emptyset \Rightarrow X_a = X_b \]
+		\[ X = \dot{\bigcup}_{a\in X}X_a \text{ und } X_a \cap X_b \neq \emptyset \Rightarrow X_a = X_b. \]
 		
 	Insbesondere zerfällt also ein VR $ V $ in Äquivalenzklassen ("`Nebenklassen"')
-		\[ v+U (= V_v)\subset V \]
-	wenn $ U $ ein UVR von $ V $ ist -- nach Lemma wird die Menge der Neben- bzw. Äquivalenzklassen wird dann wieder ein VR. Ähnlich wie den Quotientenvektorraum definiert man (z.B.) die Faktorgruppe.
+		\[ v+U (= V_v)\subset V, \]
+	wenn $ U $ ein UVR von $ V $ ist -- nach Lemma wird die Menge der Neben- bzw. Äquivalenzklassen wird dann wieder ein VR. Ähnlich wie den Quotientenvektorraum definiert man (z.B.) die Faktorgruppe [Havlicek 1.11.11].
 \paragraph{Bemerkung: }
 	Allgemeiner definiert man eine (binäre) Relation $ (X,Y,\Gamma) $ zwischen Mengen $ X, Y $ durch den Graph den Relation, eine Teilmenge
-		\[ \Gamma \subset X\times Y = \{(x,y)\mid x\in X \land y\in Y\} \]
+		\[ \Gamma \subset X\times Y = \{(x,y)\mid x\in X \land y\in Y\}. \]
 	Zum Beispiel ist eine Abbildung $ f:X\to Y $ eine Relation $ (X,Y,\Gamma_f) $, sodass
 		\[ \forall x\in X\exists ! y\in Y:(x,y)\in \Gamma_f. \]
 	Ein anderes Beispiel ist die Ordnungsrelation auf $ \mathbb{Z} $, definiert durch
@@ -391,14 +380,13 @@
 	Injektivität: Sei $ u'\in \ker \phi $, d.h.
 		\begin{gather*}
 		\phi(u')=u'+U=0\in V/U\\
-		\Rightarrow u'\in U'\cap U = \{0\}\\
-		\Rightarrow u'=0
+		\Rightarrow u'\in U'\cap U = \{0\} \Rightarrow u'=0
 		\end{gather*}
 		
 	Surjektivität: Sei $ v+U\in V/U $ mit $ v\in V = U \oplus U' $; mit der Projektion
 	\begin{gather*}
 		p':V\to V, v=u+u' \mapsto p'(v) := u'\\
-		\text{ist } v + U = u' + u + U = u' + U \phi(p'(v)),\\
+		\text{ist } v + U = u' + u + U = u' + U = \phi(p'(v)),\\
 		\text{also }V/U = \phi(U').
 	\end{gather*}
 	
