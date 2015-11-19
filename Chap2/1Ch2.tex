@@ -1,0 +1,116 @@
+% % 2015-11-19 % %
+\chapter{Affine Geometrie}
+\begin{tikzpicture}[scale=1.5,>=triangle 45]
+	\draw[->,color=black] (-0.1,0) -- (10,0);
+	\draw[->,color=black] (0,-0.1) -- (0.,4);
+	
+	\coordinate[label=left:$x$] (x) at (1,1);
+	\coordinate[label=below:$\tau_v(x)$] (y) at (5,1.5);
+	\coordinate[label=above:$\tau_w(x)$] (y') at (2,2.5);
+	\coordinate (z) at (6,3);
+	
+	\draw [fill] (x) circle (.5pt);
+	\draw [fill] (y') circle (.5pt);
+	\draw [fill] (y) circle (.5pt);
+	\draw [fill] (z) circle (.5pt);
+	
+	\draw [->] (x) to node[below left]{$ v $} (y);
+	\draw [->] (x) --node[above left]{$ w $} (y');
+	\draw [->] (y) --node[below right]{$ w $} (z);
+	\draw [->] (y') --node[above right]{$ v $} (z);
+	
+	\draw (z) node[above right] {$\tau_w(\tau_v(x))=(\tau_w\circ\tau_v)(x)=\tau_{w+v}(x)$};
+	\draw (z) node[below right] {$\tau_v(\tau_w(x))=(\tau_v\circ\tau_w)(x) = \tau_{v+w}(x)$};
+\end{tikzpicture}
+\paragraph{Definition (nach Klein): }
+	Eine Geometrie besteht aus einer Menge $ A $ (z.B. Punktmenge) und einer darauf operierenden Gruppe $ (G,*) $, d.h.,
+	es gibt eine Gruppenoperation
+		\[ \rho: G\times A\to A,(g,a)\mapsto \rho_g(a)  \]
+	wobei gilt
+		\begin{enumerate}[(i)]
+			\item $ \forall a\in A\forall g,h,\in G:(\rho_g\circ \rho_h)(a) = \rho_{g*h}(a) $
+			\item $ \forall a\in A:\rho_e(a) = a $ für das neutrale Element $ e \in G $
+		\end{enumerate}
+
+\paragraph{Definition: }
+	Sei $ K $ ein Körper. Ein affiner Raum (AR) $ (A,V,\tau) $ über $ K $ besteht aus einer Menge $ A $, einem $ K $-Vektorraum $ V $ und einer Gruppenoperation
+		\[ \tau:V\times A\to A,(v,a)\mapsto \tau_v(a) \]
+	von $ V $ (als additive Gruppe $ (V,+) $) auf $ A $, die einfach transitiv ist, d.h.
+		\[ \forall a,b\in A\exists!v\in V:b=\tau_v(a) \]
+\begin{figure}\centering
+\begin{tikzpicture}[scale=1.5,>=triangle 45]
+	\draw[->,color=black] (-0.1,0) -- (5,0);
+	\draw[->,color=black] (0,-0.1) -- (0.,2);
+	
+	\coordinate[label=left:$a$] (x) at (1,0.5);
+	\coordinate[label=right:${b=\tau_v(a)}$] (y) at (3,1.5);
+
+	\draw [fill] (x) circle (.5pt);
+	\draw [fill] (y) circle (.5pt);
+	
+	\draw [->] (x) to node[below]{$ v $} (y);
+	\draw (5,0.5) node[] {Der Verbindungsvektor ist eindeutig.};
+	
+\end{tikzpicture}
+\end{figure}
+
+	Weiters nennen wir
+		\begin{itemize}
+			\item Elemente von $ A $ Punkte,
+			\item $ V $ den Richtungsvektorraum oder Tangentialraum von $ A $,
+			\item $ v $ mit $ \tau_v(a)=b $ den Verbindungsvektor von $ a $ nach $ b $,
+			\item $ \tau_v:A\to A, a\mapsto \tau_v(a) $ die Translation von $ v $
+			\item und $ \dim V $ die Dimension des affinen Raums $ A $
+		\end{itemize}
+		
+\subparagraph{Bemerkung: }
+	Die Translationen eines AR $ A $ bilden eine abelsche Gruppe.
+	
+	Alternative Notation:
+		\[ a+v:=\tau_v(a) \text{ und } b-a:= v\text{, falls } b=\tau_v(a) \]
+	Mit dieser alternativen Schreibweise für die Operation von $ (V,+) $ auf $ A $, erscheinen die Bedingungen, dass $ V=(V,+) $ einfach transitiv auf $ A $ operiert, "`offensichtlich"'.
+	
+	Gruppenoperation:
+		\begin{enumerate}[(i)]
+			\item $ \forall a\in A\forall v,w,\in V: (a+v)+w = a+(v+w) $ ist kurz für $ \tau_w(\tau_v(a)) = \tau_{v+w}(a) $, entspricht also nicht der Assoziativität.
+			\item $ \forall a\in A:a+0=a $ entspricht $ \tau_0(a) = a $
+		\end{enumerate}
+	Transitivität:
+		\[ \forall a,b\in A\exists v\in V: b=a+v \]
+	Nämlich: sind $ a,b\in A $ gegeben, so liefert $ v:=b-a $ (weil $ V $ einfach transitiv operiert) eindeutig den gesuchten Vektor.
+
+\paragraph{Beispiel \& Definition: }
+	Jeder $ K $-VR liefert einen affinen Raum $ (V,V,\tau) $ mit der Operation
+		\[ \tau: V\times V\to V, (v,a)\mapsto \tau_v(a):= a+v \]
+	von $ V $ auf sich selbst -- die Unterscheidung zwischen Punkten und Vektoren wird dann etwas undurchsichtig.
+	
+	Der affine Standardraum $ (K^n,K^n,\tau) $ wird mit $ A^n $ bezeichnet.
+\paragraph{Beispiel \& Definition}
+	Sei $ (A,V,\tau) $ AR, für jede Wahl eines Ursprungs $ o\in A $ ist
+		\[ \tau(o) :V\to A,v\mapsto \tau_v(o) \]
+	eine Bijektion -- ein VR ist also ein "`AR mit Ursprung"'.
+	
+\subparagraph{Beispiel: }
+	Auf einem Zylinder
+	\[ Z^2 := S^1\times \mathbb{R}:= (\mathbb{R}/2\pi\mathbb{Z})\times \mathbb{R} \]
+	liefert die Operation
+		\[ \tau:\mathbb{R}^2\times Z^2\to Z^2,(v,a)\mapsto a+v \]
+	keinen affinen Raum, da diese Operation nicht einfach transitiv ist: zu je zwei Punkten gibt es unendlich viele "`Verbindungsvektoren"'.
+\paragraph{Beispiel \& Definition: }
+	Ist $ U\subset V $ UVR eines $ K $-VR $ V $, so liefert jedes $ v\in V $ die Nebenklasse
+		\[ A = v+U \]
+	einen affinen Raum $ (A,U,\tau) $ mit 
+		\[ \tau:U\times A\to A,(u,a)\mapsto \tau_u(a):= a+u; \]
+	offensichtlich ist die Operation wohldefiniert (operiert auf der Nebenklasse) und einfach transitiv.
+	
+	Eine Nebenklasse $ A= v+U\subset V $ nennt man daher auch einen affinen Unterraum des VR $ V $.
+\paragraph{Definition: }
+	$ A'\subset A $ ist affiner Unterraum (AUR) des affinen Raumes $ (A,V,\tau) $, falls
+		\[ \exists a\in A\exists U\subset V \text{UVR}:A' = a+U = \{\tau_u(a)\mid u\in U\}.\]
+	Ist $ \dim A' =1 $ oder $ \dim A' = 2 $, so heißt $ A' $ (affine) Gerade bzw. Ebene; ist $ \dim A' < \infty $ und $ \dim A' = \dim A-1 $, so heißt $ A' $ (affine) Hyperebene.
+\subparagraph{Bemerkung: }
+	Jeder AUR ist selbst AR mit der "`geerbten"' (eingeschränkten) Operation.
+\subparagraph{Beispiel: }
+	Ist $ f\in \hom(V,W) $ und $ w\in f(V) $, so erhält man einen affinen Raum
+		\[ (f^{-1}(\{w\}),\ker f,\tau) \text{ mit }\tau_u(a):= a+u.\]
+	Ist $ f\in V^*\setminus \{o\} $ (und $ \dim V<\infty $), so wird $ f^{-1}(\{x\})\subset V $ für jedes $ x\in K (=f(V)) $ eine affine Hyperebene in $ (V,V,\tau) $ -- nach Rangsatz.
