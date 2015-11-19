@@ -6,7 +6,7 @@
 		\sum_{i\in I} U_i := \{\sum_{i \in I}u_i\mid \forall i\in I: u_i\in U_i \land \# \{i\in I\mid u_i \neq 0\}<\infty\}.
 		\end{equation*}
 		
-\paragraph{Bemerkung: }
+\subparagraph{Bemerkung: }
 	Offenbar ist $ \sum_{i\in I} U_i\subset V $ UVR mit
 	\[  \bigcup_{i\in I}U_i \subset \sum_{i\in I} U_i \Rightarrow [\bigcup_{i\in I}U_i]\subset \sum_{i\in I} U_i; \]
 	andererseits gilt:
@@ -15,7 +15,7 @@
 	Damit ist die Summe einer Familie $ (U_i)_{i\in I} $ gerade die lineare Hülle ihrer Vereinigung $ \bigcup_{i\in I}U_i $,
 	\[ \sum_{i\in I}U_i= [\bigcup_{i\in I}U_i]. \]
 		
-\paragraph{Beispiel: }
+\subparagraph{Beispiel: }
 	Sei $ V=\mathbb{R}^\mathbb{N} $ der Raum der reellen Folgen. Für $ n\in \mathbb{N} $ setze
 		\begin{equation*}
 		U_n := \{v\in \mathbb{R}^\mathbb{N}\mid \forall j\in \mathbb{N}: j>n\Rightarrow v_j = 0 \} \subset \mathbb{R}^\mathbb{N};
@@ -43,7 +43,7 @@
 		\end{equation*}
 		
 	Ist $ \dim U_1 = \infty$ oder $ \dim U_2=\infty $, so ist auch $ \dim (U_1+U_2)=\infty $.
-\paragraph{Beweis: }
+\subparagraph{Beweis: }
 	Seien
 		\begin{itemize}
 		\item $ B_0 \subset U_1\cap U_2 $ eine Basis von $ U_0 := U_1\cap U_2 $;
@@ -96,7 +96,7 @@
 	
 	folgt dann die Behauptung.
 
-\paragraph{Bemerkung: }
+\subparagraph{Bemerkung: }
 	Im Beweis haben wir benutzt: 
 	
 	Ist z.B. $ B_1 = B_0\cup S_1 $ lin. unabh., und $ b_0\in [B_0] $ und $ s_1\in [S_1] $ mit $ b_0 + s_1 = 0 $, so folgt $ b_0 = s_1 = 0 $:
@@ -105,7 +105,7 @@
 		0 = b_0+s_1 = \sum_{b\in B_0} bx_b+\sum_{b\in S_1} bx_b = \sum_{b\in B_1} bx_b \Rightarrow \forall b\in B_1: x_b = 0\Rightarrow b_0 = s_1 = 0.
 		\end{equation*}
 
-\paragraph{Bemerkung: }
+\subparagraph{Bemerkung: }
 	Ist $ U_1\cap U_2 = \{o\} $ bzw. $ \dim (U_1\cap U_2)  = 0 $, so zeigt der Beweis auch:
 		\begin{equation*}
 		\forall v\in U_1+U_2\exists ! u_1 \in U_1\exists ! u_2\in U_2: v= u_1+u_2
@@ -120,7 +120,7 @@
 \paragraph{Lemma: }
 	Zu jedem UVR $ U\subset V $ existiert ein (in $ V $) komplementärer UVR.
 	
-\paragraph{Beweis: }
+\subparagraph{Beweis: }
 	Sei $ U\subset V $ UVR eines $ K $-VR $ V $.
 	Seien 
 		\begin{itemize}
@@ -134,7 +134,7 @@
 		\item $ U+U' \supset [C] = V $, da $ C\subset U\cup U' $ Erz. Syst. von $ V $ ist;
 		\item $ U\cap U' = [B]\cap [S] = \{o\}$, da $ C=B\cup S $ linear unabhängig ist.
 		\end{enumerate}
-\paragraph{Bemerkung: }
+\subparagraph{Bemerkung: }
 	Zu einem UVR $ U\subset V $ gibt es normalerweise viele komplementäre UVR $ U'\subset V $.
 	Z.B.: Zu
 		\begin{equation*}
@@ -152,7 +152,7 @@
 	In diesem Falle heißt die Summe "`direkt"' und man schreibt
 	\[ U = \bigoplus_{i\in I} U_i. \]
 		
-\paragraph{Bemerkung: }
+\subparagraph{Bemerkung: }
 	Eine Summe $ V = \sum_{i\in I} U_i $ ist genau dann direkt, wenn
 		\begin{equation*}
 		\forall i\in I: U_i, \sum_{j\in I\setminus\{i\}}U_j \subset V
@@ -160,7 +160,7 @@
 		
 	komplementäre UVR in $ V $ sind.
 
-\paragraph{Beweis: }
+\subparagraph{Beweis: }
 	Zu zeigen ist die Eindeutigkeitsaussage. Sei also $ u \in \bigoplus_{i\in I}U_i $,
 		\begin{gather*}
 		u = \sum_{i\in I} u_i = \sum_{i\in I} u_i' \text{ mit } \forall i\in I: u_i,u'_i\in U_i;
@@ -179,7 +179,7 @@
 		
 	d.h., die Zerlegung von $ u_i\in \sum_{i\in I}U_i $ ist nicht eindeutig.
 
-\paragraph{Bemerkung: }
+\subparagraph{Bemerkung: }
 	Sind $ \dim V <\infty $ und $ \# I < \infty $ so gilt
 		\begin{equation*}
 		\forall i\in I: \dim U_i < \infty
@@ -194,7 +194,7 @@
 		\begin{equation*}
 		\dim V = \dim \bigoplus_{i=1}^n [b_i]=\sum_{i=1}^{n}1 = n.
 		\end{equation*}
-\paragraph{Bemerkung: }
+\subparagraph{Bemerkung: }
 	Seien $ U,U'\subset V $ komplementäre UVR, also $ V = U \oplus U' $, dann werden durch
 		\begin{equation*}
 		v = u+u' \mapsto
@@ -220,7 +220,7 @@
 		\[ V = p(V)\oplus p'(V) = \ker p' \oplus \ker p. \]
 
 %VO_12.11.15
-\paragraph{Beweis: }
+\subparagraph{Beweis: }
 	Seien $p\in \operatorname{End}(V)$ Projektion und $p' := id_V -p$; dann gilt:
 		\begin{gather*}
 		p\circ p' = p(id_V-p)=p-p^{2} = 0; (p^{2} = p\circ p)\\
@@ -247,7 +247,7 @@
 	Damit folgt die letzte Behauptung 
 		\[V = \ker p \oplus\ker p'.\]
 	
-\paragraph{Bemerkung: }
+\subparagraph{Bemerkung: }
 		Im Beweis haben wir etwas mehr bewiesen als behauptet - nämlich:
 			\[ \ker p = p'(V)\text{ und }\ker p' = p(V) \]
 		
@@ -263,9 +263,9 @@
 			\[V:= \prod_{i\in I}V_i=\{(v_i)_{i\in I}\mid\forall i\in I:v_i\in V_i\}\]
 		mit den komponentenweise definierten VR-Operationen zu einem $ K $-VR. Dies ist der Produktraum der Familie	$(V_i)_{i\in I}$.
 		
-\paragraph{Beweis: } Aufgabe!
+\subparagraph{Beweis: } Aufgabe!
 
-\paragraph{Bemerkung: } 
+\subparagraph{Bemerkung: } 
 		Ist $V = \prod_{i\in I} V_i$ ein Produktraum, so erhält man kanonische UVR
 			\[U_i:=\{v=(v_i)_{i\in I}\in V\mid\forall j \neq i:v_j = 0\}\subset V,\]
 		die isomorph zu den $V_i$ sind vermittels der Faktorprojektionen
@@ -281,7 +281,7 @@
 			\[\prod_{i\in I} V_i\cong \bigoplus_{i\in I}U_i (=: \bigoplus_{i\in I}V_i);\]
 		ist $\#I=\infty$, so ist diese Identifikation im Allgemeinen falsch!
 	
-\paragraph{Beispiel: }
+\subparagraph{Beispiel: }
 	Für einen Körper $ K $ liefert das $ n $-fache Produkt den Standardraum
 		\[\prod_{i=1}^{n}K = \{(x_i)_{i = 1,...,n}\mid\forall i \in \{1,...,n\}: x_i \in K\} = K^n \cong \bigoplus_{i=1}^n\{(x_i)_{i\in {1,...,n}}\mid\forall j\neq i: x_j = 0\};\]
 	für den Raum der K-wertigen Folgen ist jedoch
@@ -351,7 +351,7 @@
 	Insbesondere zerfällt also ein VR $ V $ in Äquivalenzklassen ("`Nebenklassen"')
 		\[ v+U (= V_v)\subset V, \]
 	wenn $ U $ ein UVR von $ V $ ist -- nach Lemma wird die Menge der Neben- bzw. Äquivalenzklassen wird dann wieder ein VR. Ähnlich wie den Quotientenvektorraum definiert man (z.B.) die Faktorgruppe [Havlicek 1.11.11].
-\paragraph{Bemerkung: }
+\subparagraph{Bemerkung: }
 	Allgemeiner definiert man eine (binäre) Relation $ (X,Y,\Gamma) $ zwischen Mengen $ X, Y $ durch den Graph den Relation, eine Teilmenge
 		\[ \Gamma \subset X\times Y = \{(x,y)\mid x\in X \land y\in Y\}. \]
 	Zum Beispiel ist eine Abbildung $ f:X\to Y $ eine Relation $ (X,Y,\Gamma_f) $, sodass
