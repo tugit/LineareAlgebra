@@ -11,7 +11,7 @@ Grundsätzliche Formatierungsrichtlinien:
 - Beispiel, Beweis und Bemerkung werden als \subparagraph strukturiert.
 - Einzeilige Formeln werden als \[ \] gesetzt, mehrzeilige je nach Ausrichtung als gather* oder align* (also nicht nummeriert)
 - Commits sind folgende Kürzel vorzustellen:
-	KO ... Korrektur
-	VO ... neue Vorlesung
-	ST ... Strukturänderung
-	FO ... Formatierung
+	- KO ... Korrektur
+	- VO ... neue Vorlesung
+	- ST ... Strukturänderung
+	- FO ... Formatierung
