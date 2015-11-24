@@ -184,3 +184,120 @@
 	Ist $ f\in \hom(V,W) $ und $ w\in f(V) $, so erhält man einen affinen Raum
 		\[ (f^{-1}(\{w\}),\ker f,\tau) \text{ mit }\tau_u(a):= a+u.\]
 	Ist $ f\in V^*\setminus \{o\} $ (und $ \dim V<\infty $), so wird $ f^{-1}(\{x\})\subset V $ für jedes $ x\in K (=f(V)) $ eine affine Hyperebene in $ (V,V,\tau) $ -- nach Rangsatz.
+	
+% % % 2015-11-24
+
+\subparagraph{Bemerkung: }
+	Ist $ A' = a+U\subset A $ AUR des AR $ (A,V,\tau) $, so gilt
+		\[ \forall b\in A'\exists u\in U:b=\tau_n(a)\]
+	und damit
+	\begin{align*}
+		b+U&=\{\tau_{u'}(b)\mid u'\in U\}\\
+		&=\{(\tau_{u'}\circ \tau_u)(a)=\tau_{u'+u}(a)\mid u'\in U\}\\
+		&= \{\tau_{u''}(a)\mid u'' \in U\} = a+U = A'
+	\end{align*}
+	Damit zeigt man: Ist $ (A'_i)_{i\in I} $ eine Familie AUR $ A'_i\subset A $ eines AR $ A $, so ist der Schnitt leer oder ein affiner Unterraum. Ist nämlich der Schnitt nicht leer, d.h.,
+	\[ \exists a\in A\forall i\in I:a\in A'_i, \]
+	so erhält man
+	\begin{gather*}
+		\forall i\in I:A'_i = a+U_i \text{ mit einem geeigneten UVR } U_i\subset V\\
+		\Rightarrow \bigcap_{i\in I}A'_i = a+\bigcap_{i\in I}U_i \text{ und } U:= \bigcap_{i\in I}U_i\subset V \text{ ist UVR.}
+	\end{gather*}
+\paragraph{Definition: }
+	\begin{Definition}{Affine Hülle}
+		Die affine Hülle $ [S] $ einer Teilmenge eines affinen Raumes $ A $ ist der Schnitt aller $ S $ enthaltenden AUR $ A'\subset A $,
+		\[ [S] = \bigcap_{S\subset A' \text{AUR}}A'. \]
+	\end{Definition}
+\subparagraph{Bemerkung: }
+	Die affine Hülle einer Teilmenge $ S\subset A $ ist also der kleinste $ S $ enthaltende affine Unterraum von $ A $.
+	
+	Achtung: In einem $ K $-VR $ V $ (den kann man auch als AR auffassen, siehe Beispiel vorher) sind die lineare Hülle und die affine Hülle (in $ V $ aufgefasst als AR) im Allgemeinen verschieden:
+		\[ [S]_{\text{lin}} = \bigcap_{S\subset U\text{ UVR}}U \neq \bigcap_{S\subset A \text{ AUR}}A = [S]_{\text{aff}} \]
+\subparagraph{Beispiel: }
+	Für $ S=\{a\}\subset V $ mit $ a\neq 0 $ gilt
+		\[ [S]_{\text{lin}} = \{ax\in A = V\mid x\in K\} \neq \{a\} = [S]_{\text{aff}} \]
+	allgemein gilt:
+		\[ [S]_{\text{aff}}\subset [S\cup \{0\}]_{\text{aff}}=[S]_{\text{lin}} \]
+	Beweis in Aufgabe 45.
+\paragraph{Lemma \& Definition (baryzentrischer Kalkül): }
+	\begin{Definition}{Affinkombination/Baryzentrum}
+		Seien $ (a_i)_{i\in I} $ und $ (x_i)_{i\in I} $ Familien in einem AR $ A $ über $ K $ bzw. in $ K $, wobei
+		\[ \#\{i\in I\mid x_i\neq 0\}<\infty \text{ und } \sum_{i\in I}x_i=1; \]
+		dann ist die mit einem beliebigen Ursprung $ o\in A $ definierte Affinkombination	
+		\[ \sum_{i\in I}a_ix_i := o+\sum_{i\in I} (a_i-o)x_i \]
+		wohldefiniert, d.h. unabhängig von der Wahl des Ursprungs $ o\in A $.
+		Dann heißt 
+		\[ s:= \sum_{i\in I} a_ix_i \]
+		Schwerpunkt oder Baryzentrum der Punkte $ a_i $ mit Gewichten $ x_i $.
+	\end{Definition}
+\subparagraph{Beispiel: }
+	Sind etwa $ K=\mathbb{R} $ und $ I = \{1,...,n\} $, so erhält man mit $ x_i = \frac{1}{n} $ für $ {i\in I} $ den üblichen geometrischen Schwerpunkt der (endlichen) Punktmenge,
+		\[ s =\sum_{i=1}^{n}a_i\frac{1}{n}. \]
+	Achtung: Die Ausdrücke
+		\[ \frac{\sum_{i =1}^{n}a_i}{n}\text{ oder } \frac{1}{n}\sum_{i=1}^{n}a_i \]
+	sind sinnlos, da nicht definiert.
+\subparagraph{Beweis: }
+	Zu zeigen: Sind $ o,o'\in A $, so gilt
+	\[ o'+\sum_{i\in I} v'_ix_i = o+\sum_{i\in I} v_ix_i \text{, wobei }
+		\begin{cases}
+		v_i := a_i-o\\
+		v'_i := a_i-o'
+		\end{cases}\]
+	Zunächst bemerken wir, dass mit $ w:= o'-o $ für $ {i\in I} $ gilt: $ v'_i+w=v_i $, denn:
+	\begin{gather*}
+		\tau_{v'_i+w}(o) = \tau_{v'_i}(\tau_w(o)) = \tau_{v'_i}(o')\\
+		= a_i = \tau_{v_i}(o),
+	\end{gather*}
+	also
+	\begin{gather*}
+		o+\sum_{i\in I}v_ix_i = o+\sum_{i\in I} (w+v'_i)_{x_i} = o+ \sum_{i\in I}wx_i + \sum_{i\in I}v'_ix_i\\
+		= o+ w\cdot \sum_{i\in I}x_i + \sum_{i\in I}v'_i x_i = o+w + \sum_{i\in I}v'_ix_i = o' + \sum_{i\in I}v'_i x_i
+	\end{gather*}
+\paragraph{Lemma}
+	\begin{Lemma}
+		Ist $ S\subset A $ Teilmenge eines AR $ A $, so ist ihre affine Hülle
+		\[ [S] = \{\sum_{a\in S}ax_a\mid \#\{a\in S\mid x_a\neq 0\}<\infty \land \sum_{a\in S}x_a = 1 \}. \]
+	\end{Lemma}
+\subparagraph{Beweis: }
+	Wir setzen $ S\neq \emptyset $ voraus und wählen $ o\in S $, dann ist
+	\[ [S] = o+[\{a-o\mid a\in S\}] \]
+	und die Behauptung folgt aus der entsprechenden für die lineare Hülle.
+\subparagraph{Beispiel: }
+	Die affine Hülle zweier Punkte $ a,b\in A, a\neq b $ ist die (affine) Gerade
+	\[ [ab] := [\{a,b\}] = \{a(1-t)+bt\mid t\in K\}. \]
+	Die affine Hülle von drei verschiedenen Punkten $ a,b,c\in A $ ist eine Gerade oder Ebene, je nachdem, ob $ \dim[\{a,b,c\}] $ gleich 1 oder 2 ist. Im zweiten Fall sagen wir: das Dreieck $ \{a,b,c\} $ sei nicht-degeneriert.
+\paragraph{Definition: }
+	\begin{Definition}{Allgemeine Lage}
+		Eine Familie $ (a_i)_{i\in I} $ von Punkten $ a_i\in A $ eines AR $ A $ ist affin unabhängig, bzw. in allgemeiner Lage, falls
+		\[ \forall i\in I:a_i\notin [\{a_j\mid j\in I\setminus \{i\}\}], \]
+		und sonst affin abhängig; Punkte heißen kolinear bzw. koplanar, falls sie in einer Geraden oder einer Ebene liegen.
+	\end{Definition}
+\paragraph{Lemma}
+	\begin{Lemma}{Affine und lineare (Un-)Abhängigkeit}
+		Eine Familie $ (a_i)_{i\in I} $ ist genau dann affin unabhängig, wenn für jedes $ i\in I $ die Familie $ (a_j-a_i)_{j\in I\setminus \{i\}} $ linear unabhängig ist.
+	\end{Lemma}
+\subparagraph{Beweis: }
+	Die Familie $ (a_i)_{i\in I} $ ist genau dann affin abhängig, wenn
+	\begin{gather*}
+		\exists i\in I:a_i\in [\{a_j\mid j\in I\setminus \{i\}\}] \Leftrightarrow \exists i\in I\exists(x_j)_{j\in I\setminus \{i\}}:a_i=\sum_{j\neq i}a_jx_j\land 1=\sum_{j\neq i}x_j\\
+		\Leftrightarrow \exists i\in I\exists (x_j)_(j\in I\setminus \{i\}):0=\sum_{j\neq i}(a_j-a_i)x_j \land 1=\sum_{j\neq i}x_j,
+	\end{gather*}
+	d.h., wenn die Familie $ (a_j-a_i)_{j\in I\setminus \{i\}} $ eine nicht-triviale Linearkombination von 0 erlaubt, also linear abhängig ist.
+\paragraph{Lemma: }
+	\begin{Lemma}
+		Eine Familie $ (a_i)_{i\in I} $ ist genau dann affin unabhängig, wenn jeder Punkt ihrer affinen Hülle eine eindeutige Affinkombination hat,
+		\[ \forall a\in [\{a_i\mid i\in I\}]\exists!(x_i)_{i\in I}:
+			\begin{cases}
+			1 = \sum_{i\in I}x_i\\
+			a = \sum_{i\in I}a_ix_i
+			\end{cases}\]
+	\end{Lemma}
+	\subparagraph{Beweis: }
+	Hat jeder Punkt $ a\in [\{a_i\mid i\in I\}] $ eine eindeutige Affinkombination, so gilt insbesondere
+		\[ \forall i\in I: a_i = a_i\cdot 1 \notin [\{a_j\mid j\neq i\}]. \]
+	Hat andererseits der Punkt $ a $ zwei Affindarstellungen,
+		\[ a = \sum_{i\in I} a_ix_i = \sum_{i\in I}a_iy_i, \]
+	so folgt mit einem Ursprung $ o\in A $ und $ v_i = a_i-o $
+		\[ a=o+\sum_{i\in I}v_ix_i=o+\sum_{i\in I}v_iy_i \Rightarrow 0 = \sum_{i\in I}v_i(y_i-x_i). \]
+	Ist $ (a_i)_{i\in I} $ affin unabhängig, so ist $ (v_j)_{j\in I\setminus \{i\}} $ linear unabhängig für ein beliebiges $ i\in I $ und $ o:= a_i $. Es folgt:
+		\[ \forall j\in I\setminus \{i\}:x_j=y_j \Rightarrow x_i = 1-\sum_{j\neq i}x_j = 1-\sum_{j\neq i}y_j = y_i \]
