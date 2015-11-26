@@ -1,0 +1,60 @@
+% % % 2015-11-26 Teil 2 % % %
+
+\section{Affine Abbildungen \& Transformationen}
+\paragraph{Definition}
+	\begin{Definition}[Affine Abbildung/Affinität]
+		Eine Abbildung $ \alpha:A\to A' $ zwischen affinen Räumen $ A $ und $ A' $ (über dem gleichen Körper $ K $) heißt affin, falls sie
+			\begin{enumerate}[(i)]
+				\item geradentreu ist, d.h. die Bilder kollinearer Punkte sind kollinear;
+				\item teilverhältnistreu ist, d.h. das Teilverhältnis kollinearer Punkte wird erhalten (solange die Punkte nicht alle zusammenfallen).
+			\end{enumerate}
+		Eine bijektive affine Abbildung $ \alpha:A\to A $ heißt Affinität oder affine Transformation.
+	\end{Definition}
+\subparagraph{Bemerkung}
+	Sei $ \alpha:A\to A' $ und $ a,b\in A $ sodass $ \alpha(a)\neq \alpha(b) $; insbesondere ist dann auch $ a\neq b $. Ist $ \alpha $ geradentreu, so gilt für jeden Punkt
+		\[ c_s = a(1-s)+bs;\ s=(ca:ba), \]
+	dass $ c_s\in [\{a,b\}] $, d.h.
+		\[ \forall s\in K\exists t\in K:\alpha(c_s) = \alpha(a(1-s)+bs) = \alpha(a)(1-t)+\alpha(b)t \in [\{\alpha(a),\alpha(b)\}] \]
+	Ist $ \alpha $ dann auch teilverhältnistreu, so folgt
+		\[ \frac{-t}{1-t} = (\alpha(a)\alpha(c_s):\alpha(b)\alpha(c_s)) = (ac_s:bc_s) = \frac{-s}{1-s} \Rightarrow t = s. \]
+	Insbesondere bildet $ \alpha $ die Gerade $ [ab] $ dann bijektiv auf die Gerade $ [\alpha(a),\alpha(b)] $ durch die Bildpunkte von $ a $ und $ b $ ab, und 
+		\[ \forall s\in K:\alpha(a(1-s)+bs)=\alpha(a)(1-s)+\alpha(b)s. \]
+	Enthält die Gerade durch $ a $ und $ b $, $ a\neq b $ keine Punkte, deren Bilder verschieden sind, so wird die Gerade auf einen einzigen Punkt abgebildet -- und die vorherige Gleichung gilt ebenfalls.
+\subparagraph{Beispiel}
+	Die Translationen eines affinen Raumes sind Affinitäten, denn für
+		\[ c_s = a(1-s)+bs = a + ws, \text{ mit } w:=b-a \]
+	gilt, mit Translationsvektor $ v\in V $,
+		\[ \tau_v(c_s) = \tau_v(a+ws) = \tau_v(\tau_{ws}(a)) = \tau_{v+ws}(a) = \tau_{ws+v}(a) = \tau_{ws}(\tau_v(a)) =  \tau_v(a) + ws, \]
+	insbesondere gilt also
+		\[ \tau_v(b) = \tau_v(a)+w \]
+	und damit
+		\[ \tau_v(c_s) = \tau_v(a)+ws = \tau_v(a)+(\tau_v(b)-\tau_v(a))s = \tau_v(a)(1-s)+\tau_v(b)s.\]
+	Also sind $ \tau_v(a),\tau_v(b) $ und $ \tau_v(c_s) $ kollinear und erhalten das Teilverhältnis
+		\[ (\tau_v(a)\tau_v(c_s):\tau_v(b)\tau_v(c_s)) = (ac_s:bc_s). \]
+\paragraph{Lemma}
+	\begin{Lemma}
+		$ \alpha:A\to A' $ ist genau dann affin, wenn für jede Affinkombination in $ A $ gilt:
+			\[ \alpha(\sum_{i\in I}a_ix_i) = \sum_{i\in I} \alpha(a_i)x_i. \]
+	\end{Lemma}
+\subparagraph{Beweis}
+	Wir haben schon gesehen: $ \alpha:A\to A' $ ist affin genau dann, wenn
+		\[ \forall a,b,\in A\forall x\in K:\alpha(a(1-s)+bs) = \alpha(a)(1-s)+\alpha(b)s \]
+	Offenbar ist die vorherige Bemerkung ein Spezialfall des Lemmas. Es bleibt die andere Richtung zu zeigen. Wir benutzen vollständige Induktion über $k = \#\{{i\in I}\mid x_i\neq 0\}<\infty $.
+	
+	Induktionsanfang:
+	
+	Für $ k=1 $ trivial.
+
+	Induktionsannahme:
+	
+	Für $ a_1,...,a_k\in A $ und $ x_1,...,x_k \in K^\times$ mit $ \sum_{i=1}^{k}=1 $ gelte
+		\[ \alpha(\sum_{i=1}^{k}a_ix_i) = \sum_{i=1}^{k}\alpha(a_i)x_i. \]
+	
+	Induktionsschluss:
+
+	Seien $ a_1,...,a_{k+1} \in A$ und $ x_1,...,x_{k+1} \in K^\times$ Gewichte, sodass $ \sum_{i=1}^{k+1}x_i = 1 $, o.B.d.A. $ x_{k+1}\neq 1 $; dann gilt
+		\[ \alpha(\sum_{i=1}^{k+1}a_ix_i) = \alpha((\sum_{i=1}^{k}a_i\frac{x_i}{1-x_{k+1}})(1-x_{k+1})+a_{k+1}x_{k+1}) \]
+		\[ = \alpha(\sum_{i=1}^{k}a_i\frac{x_i}{1-x_{k+1}})(1-x_{k+1})+\alpha(a_k+1)x_{k+1} \]
+		\[ = \sum_{i=1}^{k}\alpha(a_i)\frac{x_i}{1-x_{k+1}}(1-x_{k+1})+\alpha(a_{k+1})x_{k+1} \]
+		\[ = \sum_{i=1}^{k+1}\alpha(a_i)x_i. \]
+	Damit ist die Behauptung für affine Abbildungen $ \alpha $ bewiesen. 

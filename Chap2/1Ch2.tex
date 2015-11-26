@@ -1,5 +1,6 @@
 % % 2015-11-19 % %
 \chapter{Affine Geometrie}
+\section{Affine Räume}
 \begin{tikzpicture}[scale=1.5,>=triangle 45]
 	\draw[->,color=black] (-0.1,0) -- (10,0);
 	\draw[->,color=black] (0,-0.1) -- (0.,4);
@@ -22,7 +23,7 @@
 	\draw (z) node[above right] {$\tau_w(\tau_v(x))=(\tau_w\circ\tau_v)(x)=\tau_{w+v}(x)$};
 	\draw (z) node[below right] {$\tau_v(\tau_w(x))=(\tau_v\circ\tau_w)(x) = \tau_{v+w}(x)$};
 \end{tikzpicture}
-\paragraph{Definition (nach Klein): }
+\paragraph{Definition (nach Klein)}
 \begin{Definition}[Geometrie]
 	Eine Geometrie besteht aus einer Menge $ A $ (z.B. Punktmenge) und einer darauf operierenden Gruppe $ (G,*) $, d.h.,
 	es gibt eine Gruppenoperation
@@ -34,7 +35,7 @@
 		\end{enumerate}
 \end{Definition}
 
-\paragraph{Definition: }
+\paragraph{Definition}
 \begin{Definition}[Affiner Raum (AR)]
 	Sei $ K $ ein Körper. Ein affiner Raum (AR) $ (A,V,\tau) $ über $ K $ besteht aus einer Menge $ A $, einem $ K $-Vektorraum $ V $ und einer Gruppenoperation
 		\[ \tau:V\times A\to A,(v,a)\mapsto \tau_v(a) \]
@@ -68,7 +69,7 @@
 			\item und $ \dim V $ die Dimension des affinen Raums $ A $
 		\end{itemize}
 		
-\subparagraph{Bemerkung: }
+\subparagraph{Bemerkung}
 	Die Translationen eines AR $ A $ bilden eine abelsche Gruppe.
 	
 	Alternative Notation:
@@ -84,7 +85,7 @@
 		\[ \forall a,b\in A\exists v\in V: b=a+v \]
 	Nämlich: sind $ a,b\in A $ gegeben, so liefert $ v:=b-a $ (weil $ V $ einfach transitiv operiert) eindeutig den gesuchten Vektor.
 
-\paragraph{Beispiel \& Definition: }
+\paragraph{Beispiel \& Definition}
 	Jeder $ K $-VR liefert einen affinen Raum $ (V,V,\tau) $ mit der Operation
 		\[ \tau: V\times V\to V, (v,a)\mapsto \tau_v(a):= a+v \]
 	von $ V $ auf sich selbst -- die Unterscheidung zwischen Punkten und Vektoren wird dann etwas undurchsichtig.
@@ -95,7 +96,7 @@
 		\[ \tau(o) :V\to A,v\mapsto \tau_v(o) \]
 	eine Bijektion -- ein VR ist also ein "`AR mit Ursprung"'.
 	
-\subparagraph{Beispiel: }
+\subparagraph{Beispiel}
 	Auf einem Zylinder
 	\[ Z^2 := S^1\times \mathbb{R}:= (\mathbb{R}/2\pi\mathbb{Z})\times \mathbb{R} \]
 	liefert die Operation
@@ -171,7 +172,7 @@
 \end{tikzpicture}
 %-----------------------------------------------------------------------
 
-\paragraph{Beispiel \& Definition: }
+\paragraph{Beispiel \& Definition}
 	Ist $ U\subset V $ UVR eines $ K $-VR $ V $, so liefert jedes $ v\in V $ die Nebenklasse
 		\[ A = v+U \]
 	einen affinen Raum $ (A,U,\tau) $ mit 
@@ -179,22 +180,22 @@
 	offensichtlich ist die Operation wohldefiniert (operiert auf der Nebenklasse) und einfach transitiv.
 	
 	Eine Nebenklasse $ A= v+U\subset V $ nennt man daher auch einen affinen Unterraum des VR $ V $.
-\paragraph{Definition: }
+\paragraph{Definition}
 \begin{Definition}[Affiner Unterraum (AUR)]
 	$ A'\subset A $ ist affiner Unterraum (AUR) des affinen Raumes $ (A,V,\tau) $, falls
 		\[ \exists a\in A\exists U\subset V \text{UVR}:A' = a+U = \{\tau_u(a)\mid u\in U\}.\]
 	Ist $ \dim A' =1 $ oder $ \dim A' = 2 $, so heißt $ A' $ (affine) Gerade bzw. Ebene; ist $ \dim A' < \infty $ und $ \dim A' = \dim A-1 $, so heißt $ A' $ (affine) Hyperebene.
 \end{Definition}
-\subparagraph{Bemerkung: }
+\subparagraph{Bemerkung}
 	Jeder AUR ist selbst AR mit der "`geerbten"' (eingeschränkten) Operation.
-\subparagraph{Beispiel: }
+\subparagraph{Beispiel}
 	Ist $ f\in \hom(V,W) $ und $ w\in f(V) $, so erhält man einen affinen Raum
 		\[ (f^{-1}(\{w\}),\ker f,\tau) \text{ mit }\tau_u(a):= a+u.\]
 	Ist $ f\in V^*\setminus \{o\} $ (und $ \dim V<\infty $), so wird $ f^{-1}(\{x\})\subset V $ für jedes $ x\in K (=f(V)) $ eine affine Hyperebene in $ (V,V,\tau) $ -- nach Rangsatz.
 	
 % % % 2015-11-24
 
-\subparagraph{Bemerkung: }
+\subparagraph{Bemerkung}
 	Ist $ A' = a+U\subset A $ AUR des AR $ (A,V,\tau) $, so gilt
 		\[ \forall b\in A'\exists u\in U:b=\tau_n(a)\]
 	und damit
@@ -210,24 +211,24 @@
 		\forall i\in I:A'_i = a+U_i \text{ mit einem geeigneten UVR } U_i\subset V\\
 		\Rightarrow \bigcap_{i\in I}A'_i = a+\bigcap_{i\in I}U_i \text{ und } U:= \bigcap_{i\in I}U_i\subset V \text{ ist UVR.}
 	\end{gather*}
-\paragraph{Definition: }
+\paragraph{Definition}
 	\begin{Definition}[Affine Hülle]
 		Die affine Hülle $ [S] $ einer Teilmenge eines affinen Raumes $ A $ ist der Schnitt aller $ S $ enthaltenden AUR $ A'\subset A $,
 		\[ [S] = \bigcap_{S\subset A' \text{AUR}}A'. \]
 	\end{Definition}
-\subparagraph{Bemerkung: }
+\subparagraph{Bemerkung}
 	Die affine Hülle einer Teilmenge $ S\subset A $ ist also der kleinste $ S $ enthaltende affine Unterraum von $ A $.
 	
 	Achtung: In einem $ K $-VR $ V $ (den kann man auch als AR auffassen, siehe Beispiel vorher) sind die lineare Hülle und die affine Hülle (in $ V $ aufgefasst als AR) im Allgemeinen verschieden:
 		\[ [S]_{\text{lin}} = \bigcap_{S\subset U\text{ UVR}}U \neq \bigcap_{S\subset A \text{ AUR}}A = [S]_{\text{aff}} \]
-\subparagraph{Beispiel: }
+\subparagraph{Beispiel}
 	Für $ S=\{a\}\subset V $ mit $ a\neq 0 $ gilt
 		\[ [S]_{\text{lin}} = \{ax\in A = V\mid x\in K\} \neq \{a\} = [S]_{\text{aff}} \]
 	allgemein gilt:
 		\[ [S]_{\text{aff}}\subset [S\cup \{0\}]_{\text{aff}}=[S]_{\text{lin}} \]
 	Beweis in Aufgabe 45.
-\paragraph{Lemma \& Definition (baryzentrischer Kalkül): }
-	\begin{Definition}[Affinkombination / Baryzentrum]
+\paragraph{Lemma \& Definition (baryzentrischer Kalkül)}
+	\begin{Definition}[Affinkombination/Baryzentrum]
 		Seien $(a_i)_{i\in I}$ und $(x_i)_{i\in I}$ Familien in einem AR $ A $ über $ K $ bzw. in $ K $, wobei
 		\[ \#\{i\in I\mid x_i\neq 0\}<\infty \text{ und } \sum_{i\in I}x_i=1; \]
 		dann ist die mit einem beliebigen Ursprung $ o\in A $ definierte Affinkombination	
@@ -295,13 +296,13 @@
 \end{figure}
 %-------------------------End Grafik Affinkombination-------------------------------------- 
 
-\subparagraph{Beispiel: }
+\subparagraph{Beispiel}
 	Sind etwa $ K=\mathbb{R} $ und $ I = \{1,...,n\} $, so erhält man mit $ x_i = \frac{1}{n} $ für $ {i\in I} $ den üblichen geometrischen Schwerpunkt der (endlichen) Punktmenge,
 		\[ s =\sum_{i=1}^{n}a_i\frac{1}{n}. \]
 	Achtung: Die Ausdrücke
 		\[ \frac{\sum_{i =1}^{n}a_i}{n}\text{ oder } \frac{1}{n}\sum_{i=1}^{n}a_i \]
 	sind sinnlos, da nicht definiert.
-\subparagraph{Beweis: }
+\subparagraph{Beweis}
 	Zu zeigen: Sind $ o,o'\in A $, so gilt
 	\[ o'+\sum_{i\in I} v'_ix_i = o+\sum_{i\in I} v_ix_i \text{, wobei }
 		\begin{cases}
@@ -318,37 +319,37 @@
 		o+\sum_{i\in I}v_ix_i = o+\sum_{i\in I} (w+v'_i)_{x_i} = o+ \sum_{i\in I}wx_i + \sum_{i\in I}v'_ix_i\\
 		= o+ w\cdot \sum_{i\in I}x_i + \sum_{i\in I}v'_i x_i = o+w + \sum_{i\in I}v'_ix_i = o' + \sum_{i\in I}v'_i x_i
 	\end{gather*}
-\paragraph{Lemma: }
+\paragraph{Lemma}
 	\begin{Lemma}{}
 		Ist $ S\subset A $ Teilmenge eines AR $ A $, so ist ihre affine Hülle
 		\[ [S] = \{\sum_{a\in S}ax_a\mid \#\{a\in S\mid x_a\neq 0\}<\infty \land \sum_{a\in S}x_a = 1 \}. \]
 	\end{Lemma}
-\subparagraph{Beweis: }
+\subparagraph{Beweis}
 	Wir setzen $ S\neq \emptyset $ voraus und wählen $ o\in S $, dann ist
 	\[ [S] = o+[\{a-o\mid a\in S\}] \]
 	und die Behauptung folgt aus der entsprechenden für die lineare Hülle.
-\subparagraph{Beispiel: }
+\subparagraph{Beispiel}
 	Die affine Hülle zweier Punkte $ a,b\in A, a\neq b $ ist die (affine) Gerade
 	\[ [ab] := [\{a,b\}] = \{a(1-t)+bt\mid t\in K\}. \]
 	Die affine Hülle von drei verschiedenen Punkten $ a,b,c\in A $ ist eine Gerade oder Ebene, je nachdem, ob $ \dim[\{a,b,c\}] $ gleich 1 oder 2 ist. Im zweiten Fall sagen wir: das Dreieck $ \{a,b,c\} $ sei nicht-degeneriert.
-\paragraph{Definition: }
+\paragraph{Definition}
 	\begin{Definition}[Allgemeine Lage]
 		Eine Familie $ (a_i)_{i\in I} $ von Punkten $ a_i\in A $ eines AR $ A $ ist affin unabhängig, bzw. in allgemeiner Lage, falls
 		\[ \forall i\in I:a_i\notin [\{a_j\mid j\in I\setminus \{i\}\}], \]
-		und sonst affin abhängig; Punkte heißen kolinear bzw. koplanar, falls sie in einer Geraden oder einer Ebene liegen.
+		und sonst affin abhängig; Punkte heißen kollinear bzw. koplanar, falls sie in einer Geraden oder einer Ebene liegen.
 	\end{Definition}
 \paragraph{Lemma}
 	\begin{Lemma}[Affine und lineare (Un-)Abhängigkeit]
 		Eine Familie $ (a_i)_{i\in I} $ ist genau dann affin unabhängig, wenn für jedes $ i\in I $ die Familie $ (a_j-a_i)_{j\in I\setminus \{i\}} $ linear unabhängig ist.
 	\end{Lemma}
-\subparagraph{Beweis: }
+\subparagraph{Beweis}
 	Die Familie $ (a_i)_{i\in I} $ ist genau dann affin abhängig, wenn
 	\begin{gather*}
 		\exists i\in I:a_i\in [\{a_j\mid j\in I\setminus \{i\}\}] \Leftrightarrow \exists i\in I\exists(x_j)_{j\in I\setminus \{i\}}:a_i=\sum_{j\neq i}a_jx_j\land 1=\sum_{j\neq i}x_j\\
 		\Leftrightarrow \exists i\in I\exists (x_j)_(j\in I\setminus \{i\}):0=\sum_{j\neq i}(a_j-a_i)x_j \land 1=\sum_{j\neq i}x_j,
 	\end{gather*}
 	d.h., wenn die Familie $ (a_j-a_i)_{j\in I\setminus \{i\}} $ eine nicht-triviale Linearkombination von 0 erlaubt, also linear abhängig ist.
-\paragraph{Lemma: }
+\paragraph{Lemma}
 	\begin{Lemma}
 		Eine Familie $ (a_i)_{i\in I} $ ist genau dann affin unabhängig, wenn jeder Punkt ihrer affinen Hülle eine eindeutige Affinkombination hat:
 		\[ \forall a\in [\{a_i\mid i\in I\}]\exists!(x_i)_{i\in I}:
@@ -357,7 +358,7 @@
 			a = \sum_{i\in I}a_ix_i
 			\end{cases}\]
 	\end{Lemma}
-	\subparagraph{Beweis: }
+\subparagraph{Beweis}
 	Hat jeder Punkt $ a\in [\{a_i\mid i\in I\}] $ eine eindeutige Affinkombination, so gilt insbesondere
 		\[ \forall i\in I: a_i = a_i\cdot 1 \notin [\{a_j\mid j\neq i\}]. \]
 	Hat andererseits der Punkt $ a $ zwei Affindarstellungen,
@@ -369,4 +370,43 @@
         \forall j\in I\setminus \{i\}:x_j=y_j \Rightarrow x_i = 1-\sum_{j\neq i}x_j = 1-\sum_{j\neq i}y_j = y_i 
         \\ \text{ also } (x_{i})_{i \in I} = (y_{i})_{i \in I}
 	\end{gather*}
-       
+
+% % % 2015-11-26 % % %
+\paragraph{Definition}
+	\begin{Definition}[Affines/baryzentrisches Bezugssystem]
+	Ein affines Bezugssystem $ (o;B) $ eines affinen Raumes $ (A,V,\tau) $ besteht aus einem Ursprung $ o\in A $ und einer Basis $ B $ von $ V $;
+	ein baryzentrisches Bezugssystem $ (a_i)_{i\in I} $ ist eine affin unabhängige Familie von Punkten, sodass 
+		\[ [\{a_i\mid {i\in I}\}] = A. \]
+	\end{Definition}
+\subparagraph{Bemerkung}
+	Ist $ n=\dim A $, so enthält
+		\begin{itemize}
+		\item ein affines Bezugssystem $ (o;b_1,...,b_n) $ einen Punkt und $ n $ Vektoren;
+		\item ein baryzentrisches Bezugssystem $ (a_0,...,a_n) $ $ n+1 $ Punkte (und keinen Vektor).
+		\end{itemize}
+\subparagraph{Beispiel}
+	Drei Punkte $ a_0,a_1,a_2 \in A $ sind genau dann in allgemeiner Lage, wenn sie die Ecken eines nicht degenerierten Dreiecks sind. Sie bilden dann ein baryzentrisches Bezugssystem der Ebene des Dreiecks. Andernfalls sind sie kollinear.
+\paragraph{Definition}
+	Sind $ a,b,c\in A $ kollinear, $ c\neq b $, so ist ihr Teilverhältnis
+		\[ (ac:bc) = t :\Leftrightarrow a=bt+c(1-t). \]
+\subparagraph{Bemerkung}
+	Sind $ a,b\in A,a\neq b $ gegeben, so bestimmt das Teilverhältnis $ t $ die Lage eines Punktes $ c $ auf der Verbindungsgeraden $ [\{a,b\}] $ eindeutig:
+		\begin{gather*}
+		(ac:bc) = t \Leftrightarrow a=bt+c(1-t) = c+ (b-c)t + (c-c)(1-t)\text{ (nach Affinkomb. mit $ o = c $)}\\
+		\Leftrightarrow a=\tau_{(b-c)t}(c)\Leftrightarrow a-c = (b-c)t\\
+		\Leftrightarrow a-b \overset{*}{=} (a-c)+(c-b) = (b-c)t + (c-b) \overset{*}{=} (c-b)(1-t)\\
+		\Leftrightarrow (a-b)\frac{1}{1-t} = c-b \Leftrightarrow \tau_{(a-b)\frac{1}{1-t}}(b) = c\\
+		\Leftrightarrow c = b+(a-b)\frac{1}{1-t} + (b-b)(1-\frac{1}{1-t}) = a\frac{1}{1-t}+b(1-\frac{1}{1-t})
+		=a\frac{1}{1-t}+b\frac{-t}{1-t}
+		\end{gather*}
+	Dabei erhält man $ c = a $ mit $ t = 0 $, wegen $ a\neq b $ muss $ t=1 $ ausgeschlossen werden und $ c = b $ wird durch kein Teilverhältnis realisiert. (* vgl. Beweis baryzentrischer Kalkül)
+	
+	Ist $ K=\mathbb{R} $, so ist $ t<0 $ genau dann, wenn der Punkt $ c $ "`zwischen"' $ a $ und $ b $ liegt, d.h. wenn
+		\[ c\in \{a(1-s)+bs\mid s\in (0,1)\}. \]
+	Man sagt daher auch: "`$ c $ teilt die Strecke $ \overline{ab} $ im Verhältnis $ (ac:bc) $."'
+	
+	Bei nicht geordneten Körpern ist diese Aussage sinnlos!
+\subparagraph{Bemerkung}
+	Das Teilungsverhältnis $ t = (ac:bc) = -\frac{s}{1-s} $ für $ c=a(1-s)+bs $.
+
+% % % Ende Abschnitt 2.1 % % %
