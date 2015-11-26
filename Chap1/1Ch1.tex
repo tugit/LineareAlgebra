@@ -9,7 +9,7 @@
 		\item Beweis
 	\end{itemize}
 
-\paragraph{Parallelenaxiom/-problem (Euklid, Formulierung nach Playfair)}
+\subsection{Parallelenaxiom/-problem (Euklid, Formulierung nach Playfair)}
 	Es existiert genau eine Parallele $ g' $ zum Punkt $ P \notin g $ zur Geraden $ g $.
 
 	Kann das Axiom aus den anderen Axiomen hergeleitet/bewiesen werden? Nein, denn es existieren nichteuklidische, hyperbolische Geometrien (18. Jh.) in denen es mehrere derartige Parallelen gibt. Als Beispiel lässt sich eine Geometrie anführen, die nicht auf einer Ebene sondern auf einem Kreis operiert. Dort lassen sich zu einer Sekante mehrere parallele Sekanten betrachten (also Sekanten, die die ursprüngliche nicht schneiden).
@@ -48,8 +48,9 @@
 	Eine Geometrie ist durch eine Menge X und eine auf X operierende Transformationsgruppe gegeben.
 %%%%%%%%%%%%%%%%% BEGINN VO3-20151013 %%%%%%%%%%%%%%%%%%%%%
 
-\paragraph{Definition}
-	Ein Paar $(G,\circ)$ bestehend aus einer Menge $G$ und einer Verknüpfung $(\circ : G\times G \to G) : (g,h) \mapsto g \circ h$ heißt Gruppe, falls:
+\subsection{Definition (Gruppe)}
+	\begin{Definition}[Gruppe]
+		Ein Paar $(G,\circ)$ bestehend aus einer Menge $G$ und einer Verknüpfung $(\circ : G\times G \to G) : (g,h) \mapsto g \circ h$ heißt Gruppe, falls:
 
 	\begin{enumerate}[(i)]
 		\item $\forall f,g,h\in G : f\circ (g\circ h) = (f\circ g)\circ h$ (Assoziativität)
@@ -61,6 +62,7 @@
 	\begin{equation*}
 		\forall g,h\in G: g\circ h = h\circ g \text{ (Kommutativität)}
 	\end{equation*}
+	\end{Definition}
 
 \paragraph{Bemerkung}
 	Das ist eine axiomatische Definition, d.h. der Begriff \glqq Gruppe\grqq{} wird durch (aus vielen (!) Beispielen abstrahierten) \glqq Rechenregeln\grqq{} definiert.
@@ -68,8 +70,9 @@
 	Die rationalen Zahlen $\mathbb{Q}$ bilden mit der Addition eine Gruppe $(\mathbb{Q} ,+)$.
 	Die rationalen Zahlen ohne $0$, $\mathbb{Q}^{\times} := \mathbb{Q}\setminus \{0\}$, bilden mit der Multiplikation eine Gruppe $(\mathbb{Q}^\times ,\cdot)$.
 
-\paragraph{Definition}
-	Sind $(G,\circ )$ eine Gruppe und $X$ eine Menge, so heißt eine Abbildung
+\subsection{Definition (Gruppenoperation)}
+	\begin{Definition}[Gruppenoperation]
+		Sind $(G,\circ )$ eine Gruppe und $X$ eine Menge, so heißt eine Abbildung
 		\[ \cdot : G\times X\to X, (g,x)\mapsto g\cdot x \]
 	
 	eine Gruppenoperation (von $(G,\circ )$ auf $X$), falls
@@ -79,23 +82,28 @@
 		\item $\forall x\in X: e\cdot x = x$ für das neutrale Element $e$ der Gruppe $(G,\circ )$
 	\end{enumerate}
 	$(G,\circ )$ heißt dann Transformationsgruppe von X.
+	\end{Definition}
 
 \paragraph{Bemerkung}
 	Operiert $G$ (kurz für $(G,\circ )$, aus dem Zusammenhang ersichtlich) auf $X$, so ist für jedes $g\in G$ die Abbildung
 		\[ g:X\to X, x\mapsto g\cdot x \]
 	eine bijektive Abbildung von $X$ auf sich. Wegen der Axiome (i) und (ii) aus der Definition erhält man $g^{-1}: X\to X$ als Inverse der Abbildung.
 	
-\paragraph{Beispiel und Definition}
-	Die bijektiven Abbildungen einer Menge $X$ auf sich, 
+\subsection{Beispiel und Definition (Permutationsgruppe)}
+	\begin{Definition}[Permutationsgruppe]
+		Die bijektiven Abbildungen einer Menge $X$ auf sich, 
 		\[ G:= \{g:X\to X\mid g \text{ bij}\}, \]
 	bilden (mit der Komposition $\circ$) eine (Transformations-)Gruppe $(G,\circ )$ (die auf $X$ operiert): die Permutationsgruppe oder symmetrische Gruppe $S_X$ von $X$. Für $X=\{1,2,...,n\}$ schreibt man auch $S_n$ statt $S_{\{1,...,n\}}$.
+	\end{Definition}
 \paragraph{Bemerkung}
 	Im Gegensatz zu allgemeinen Abbildungen stimmen in (Permutations-)Gruppen Links- und Rechtsinverse stets überein.
-\paragraph{Lemma}
-	Das neutrale Element einer Gruppe $(G,\circ )$ ist eindeutig und $\forall g\in G: g\circ e = g$. Weiters: 
+\subsection{Lemma (Eindeutigkeit des neutralen Elements)}
+	\begin{Lemma}[Eindeutigkeit des neutralen Elements]
+		Das neutrale Element einer Gruppe $(G,\circ )$ ist eindeutig und $\forall g\in G: g\circ e = g$. Weiters: 
 	\begin{equation*}
 		\forall g\in G \exists ! g^{-1} \in G: g^{-1}\circ g = g \circ g^{-1} = e
 	\end{equation*}
+	\end{Lemma}
 
 \paragraph{Beweis}
 	Sei $g\in G$ gegeben und (gemäß Gruppenaxiom (iii)):
@@ -124,9 +132,9 @@
 
 	d.h. Eindeutigkeit des Inversen.
 
-\subsection{Körper}
-\paragraph{Definition (Körper)}
-	Ein Tripel $(K,+,\cdot)$, bestehend aus einer Menge $K$ und zwei Verknüpfungen
+\subsection{Definition (Körper)}
+	\begin{Definition}[Körper]
+		Ein Tripel $(K,+,\cdot)$, bestehend aus einer Menge $K$ und zwei Verknüpfungen
 	\begin{align*}
 		+:&K\times K\to K,(x,y)\mapsto x+y\\
 		\cdot : &K\times K\to K, (x,y)\mapsto xy
@@ -139,6 +147,7 @@
 		\item die Distributivgesetze gelten:
 			\[ \forall x,y,z\in K :\begin{cases}x\cdot (y+z) = xy+xz\\ (x+y)\cdot z = xz+yz \end{cases} \]
 	\end{enumerate}
+	\end{Definition}
 
 \paragraph{Bemerkung}
 	In einem Körper gilt stets:
@@ -183,8 +192,9 @@
 	
 	Dieser Körper wird auch $\mathbb{Z}_2$ bezeichnet.
 
-\paragraph{Bemerkung und Definition}
-	In $\mathbb{Z}_2: 1 + 1 = 0$. Allgemeiner definiert man die Charakteristik eines Körpers $(K,+,\cdot)$ (mit neutralen Elementen 0 und 1 von + bzw. $\cdot$) durch
+\subsection{Bemerkung und Definition (Charakteristik)}
+	\begin{Definition}[Charakteristik]
+		In $\mathbb{Z}_2: 1 + 1 = 0$. Allgemeiner definiert man die Charakteristik eines Körpers $(K,+,\cdot)$ (mit neutralen Elementen 0 und 1 von + bzw. $\cdot$) durch
 
 	\begin{equation*}
 		\Char(K):=
@@ -193,6 +203,7 @@
 			\min\{n \in \mathbb{N}^\times\mid \sum_{j = 1}^{n} 1 = 1+ ... + 1 = 0\}
 		\end{cases}
 	\end{equation*}
+	\end{Definition}
 	
 	z.B. $\Char(\mathbb{Z}_2) = 2$, da
 	\begin{gather*}

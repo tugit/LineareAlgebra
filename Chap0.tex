@@ -1,7 +1,6 @@
 % % % %Kapitel 0 - Grundlagen % % % %
 \chapter{Grundlagen}
-
-\section*{Vorbereitungen, logische Symbolik}
+\section*{Einleitung}
 	Es existieren zwei Methoden zur präzisen Formulierung:
 	\begin{itemize}
 	\item Funktion einer Formulierung wird präzisiert durch:
@@ -49,7 +48,7 @@
 	\caption{Beweis durch Wahrheitstafel}
 	\end{figure}
 
-\paragraph{Bemerkung (Kommutativität):}
+\paragraph{Bemerkung}
 	$\land$, $\lor$, und $\Leftrightarrow$ sind kommutativ (symmetisch), $\Rightarrow$ jedoch nicht, d.h.:
 	\begin{gather*}
 		(A\land B)\Leftrightarrow (B\land A)\\
@@ -60,7 +59,7 @@
 	
 	weil beispielsweise formal gilt: $x,y\in\mathbb{R}: x = 0 \Rightarrow xy = 0$, aber nicht $xy = 0 \Rightarrow x = 0$.
 
-\paragraph{Bemerkung (Beweisformen der Implikation):}
+\paragraph{Bemerkung (Beweisformen der Implikation)}
 	Um eine Implikation $A\Rightarrow B$ zu zeigen, bedient man sich häufig auch folgender Äquivalenzen:
 	\begin{equation*}
 		(A\Rightarrow B)\Leftrightarrow
@@ -70,7 +69,7 @@
 		\end{cases}
 	\end{equation*}
 
-\paragraph{Beispiel:}
+\paragraph{Beispiel}
 	Für reelle Zahlen $x,y\in\mathbb{R}$ gilt:
 	\begin{equation*}
 		\left((xy = 0)\Rightarrow (x=0 \lor y=0)\right) \Leftrightarrow \left((xy=0 \land x \neq 0)\Rightarrow (y =0)\right)
@@ -81,7 +80,7 @@
 		(A\Rightarrow (B\lor C))\Leftrightarrow ((A\land\lnot B)\Rightarrow C)
 	\end{equation*}
 
-\paragraph{Bemerkung (Mengenlehre):}
+\paragraph{Bemerkung (Mengenlehre)}
 	Die Ähnlichkeit mit der Mengensymbolik ist nicht zufällig, z.B. Mengen $X, Y$:
 	\begin{gather*}
 		(x\in X\cap Y)\Leftrightarrow (x\in X\land x\in Y)\\
@@ -89,9 +88,9 @@
 		(X\subset Y) \Leftrightarrow \{\forall x : (x\in X \Rightarrow x\in Y)\}
 	\end{gather*}
 
-\section*{Abbildungen}
-\paragraph{Definition:}
-	Eine Zuordnung $f: X\to Y$ zwischen zwei Mengen $X$ und $Y$ heißt eine Abbildung, falls $\forall x\in X: \exists ! y\in Y: y=f(x)$.
+\section*{Definition (Abbildung)}
+	\begin{Definition}[Abbildung]
+		Eine Zuordnung $f: X\to Y$ zwischen zwei Mengen $X$ und $Y$ heißt eine Abbildung, falls $\forall x\in X: \exists ! y\in Y: y=f(x)$.
 
 	X heißt der Definitionsbereich der Abbildung und $f(X):=\{f(x)\mid x\in X \}\subseteq Y$ das Bild.
 
@@ -101,8 +100,9 @@
 		\item surjektiv, falls $\forall y\in Y:\exists x\in X: y = f(x)$
 		\item bijektiv, falls $\forall y\in Y:\exists !x\in X: y = f(x)$
 	\end{itemize}
+	\end{Definition}
 
-\paragraph{Beispiel:}
+\paragraph{Beispiel}
 	Mit $X=Y=\mathbb{R}$ definiert
 	\begin{itemize}
 		\item die Relation $x^2 = y$ eine Abbildung $f:X\to Y, x\mapsto f(x)=x^2$
@@ -113,28 +113,31 @@
 		\end{itemize}
 	\end{itemize}
 
-\paragraph{Beispiel:}
+\paragraph{Beispiel}
 	Die Identität $id_X :X\to X, x\mapsto id_X(x):= x$ ist eine bijektive Abbildung.
 	
-\paragraph{Bemerkung:}
+\paragraph{Bemerkung}
 	Eine Abbildung ist genau dann bijektiv, wenn sie injektiv und surjektiv ist.
 	
-\paragraph{Definition:}
-	Sind $ f:X\to Y $ und $ g:Y\to Z$ Abbildungen, so ist ihre Komposition/Verkettung die Abbildung $ g\circ f:X\to Z, x\mapsto (g\circ f)(x):= g(f(x)) $.
+\section*{Definition (Komposition)}
+	\begin{Definition}[Komposition]
+		Sind $ f:X\to Y $ und $ g:Y\to Z$ Abbildungen, so ist ihre Komposition/Verkettung die Abbildung $ g\circ f:X\to Z, x\mapsto (g\circ f)(x):= g(f(x)) $.
+	\end{Definition}
 	
 \paragraph{Beispiel:}
 	Seien $ X = Y = Z = \mathbb{R} $ und $ f:X\to Y, x\mapsto f(x) :=x^2 $, $ g:Y\to Z, y\mapsto g(x):=y^3 + y $, so ist die Verkettung $ g\circ f: X\to Z, x\mapsto (g\circ f)(x) = (x^2)^3+x^2 = x^6 + x^2 $.
 
-\section*{Inverse}
-\paragraph{Lemma:}
-	Seien $ f:X\to Y $ und $ g:Y\to X $ Abbildungen. Dann gilt:
+\section*{Lemma}
+	\begin{Lemma}[Inverse]
+		Seien $ f:X\to Y $ und $ g:Y\to X $ Abbildungen. Dann gilt:
 	\begin{enumerate}[i)]
 		\item ist $ g $ Linksinverse von $ f $, d.h. $ g\circ f = id_X $, so ist f injektiv
 		\item ist $ g $ Rechtsinverse von $ f $, d.h. $ f\circ g = id_Y$, so ist f surjektiv
 		\item ist $ g $ Links- und Rechtsinverse von $ f $, so heißt $ g =f^{-1}$ Inverse von $ f $
 	\end{enumerate}
+	\end{Lemma}
 
-\paragraph{Beispiel:}
+\paragraph{Beispiel}
 	$ f:\mathbb{N}\to \mathbb{N}, n\mapsto f(n):= n+1 $ hat Linksinverse
 	\begin{equation*}
 		g:\mathbb{N} \to \mathbb{N}, n\mapsto g(n):=
@@ -151,7 +154,7 @@
 	
 	jedoch $ f(\mathbb{N}) = \mathbb{N}\setminus \{0\} $, daher kann keine Rechtsinverse existieren.
 
-\paragraph{Beweis (Lemma):}
+\paragraph{Beweis}
 	Zwei Aussagen sind zu beweisen:
 	\begin{enumerate}[i)]
 		\item Sei $ g $ Linksinverse von $ f $. Dann gilt für $ x,x'\in X $ mit \\$ f(x) = f(x'): x = g(f(x)) = g(f(x')) = x' $, also ist $ f $ injektiv.
