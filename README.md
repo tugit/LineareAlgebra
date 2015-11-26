@@ -7,8 +7,8 @@ Wir sind dankbar für jede Art von konstruktiver Kritik an Form, Inhalt und Spra
 
 Grundsätzliche Formatierungsrichtlinien:
 - Struktur beginnt bei \chapter und richtet sich nach dem Vorlesungsaufbau.
-- Satz, Lemma, Korollar und Definition sind als \paragraph einzeln strukturiert und zusätzlich die wesentliche Inhalte in die entsprechende Umgebung zu schachteln.
-- Beispiel, Beweis und Bemerkung werden als \subparagraph strukturiert.
+- Satz, Lemma, Korollar und Definition sind als \subsection einzeln strukturiert und zusätzlich die wesentliche Inhalte in die entsprechende Umgebung zu schachteln.
+- Beispiel, Beweis und Bemerkung werden als \paragraph strukturiert.
 - Einzeilige Formeln werden als \\[ \\] gesetzt, mehrzeilige je nach Ausrichtung als gather* oder align* (also nicht nummeriert).
 - Commits sind folgende Kürzel vorzustellen:
 	- KO ... Korrektur
