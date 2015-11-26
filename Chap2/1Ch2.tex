@@ -23,6 +23,7 @@
 	\draw (z) node[below right] {$\tau_v(\tau_w(x))=(\tau_v\circ\tau_w)(x) = \tau_{v+w}(x)$};
 \end{tikzpicture}
 \paragraph{Definition (nach Klein): }
+\begin{Definition}{Geometrie}
 	Eine Geometrie besteht aus einer Menge $ A $ (z.B. Punktmenge) und einer darauf operierenden Gruppe $ (G,*) $, d.h.,
 	es gibt eine Gruppenoperation
 		\[ \rho: G\times A\to A,(g,a)\mapsto \rho_g(a)  \]
@@ -31,12 +32,16 @@
 			\item $ \forall a\in A\forall g,h,\in G:(\rho_g\circ \rho_h)(a) = \rho_{g*h}(a) $
 			\item $ \forall a\in A:\rho_e(a) = a $ für das neutrale Element $ e \in G $
 		\end{enumerate}
+\end{Definition}
 
 \paragraph{Definition: }
+\begin{Definition}{Affiner Raum (AR)}
 	Sei $ K $ ein Körper. Ein affiner Raum (AR) $ (A,V,\tau) $ über $ K $ besteht aus einer Menge $ A $, einem $ K $-Vektorraum $ V $ und einer Gruppenoperation
 		\[ \tau:V\times A\to A,(v,a)\mapsto \tau_v(a) \]
 	von $ V $ (als additive Gruppe $ (V,+) $) auf $ A $, die einfach transitiv ist, d.h.
 		\[ \forall a,b\in A\exists!v\in V:b=\tau_v(a) \]
+\end{Definition}
+
 \begin{figure}\centering
 \begin{tikzpicture}[scale=1.5,>=triangle 45]
 	\draw[->,color=black] (-0.1,0) -- (5,0);
@@ -175,9 +180,11 @@
 	
 	Eine Nebenklasse $ A= v+U\subset V $ nennt man daher auch einen affinen Unterraum des VR $ V $.
 \paragraph{Definition: }
+\begin{Definition}{Affiner Unterraum (AUR)}
 	$ A'\subset A $ ist affiner Unterraum (AUR) des affinen Raumes $ (A,V,\tau) $, falls
 		\[ \exists a\in A\exists U\subset V \text{UVR}:A' = a+U = \{\tau_u(a)\mid u\in U\}.\]
-	Ist $ \dim A' =1 $ oder $ \dim A' = 2 $, so heißt $ A' $ (affine) Gerade bzw. Ebene; ist $ \dim A' < \infty $ und $ \dim A' = \dim A-1 $, so heißt $ A' $ (affine) Hyperebene.
+	Ist $ \dim A' =1 $ oder $ \dim A' = 2 $, so heißt $ A' $ (affine) Gerade bzw. Ebene; ist $ \dim A' < \infty $ und $ \dim A' = \dim A-1 $, so heißt $ A' $ \emph{(affine) Hyperebene}.
+\end{Definition}
 \subparagraph{Bemerkung: }
 	Jeder AUR ist selbst AR mit der "`geerbten"' (eingeschränkten) Operation.
 \subparagraph{Beispiel: }
@@ -220,7 +227,7 @@
 		\[ [S]_{\text{aff}}\subset [S\cup \{0\}]_{\text{aff}}=[S]_{\text{lin}} \]
 	Beweis in Aufgabe 45.
 \paragraph{Lemma \& Definition (baryzentrischer Kalkül): }
-	\begin{Definition}[Affinkombination/Baryzentrum]
+	\begin{Definition}[Affinkombination / Baryzentrum]
 		Seien $(a_i)_{i\in I}$ und $(x_i)_{i\in I}$ Familien in einem AR $ A $ über $ K $ bzw. in $ K $, wobei
 		\[ \#\{i\in I\mid x_i\neq 0\}<\infty \text{ und } \sum_{i\in I}x_i=1; \]
 		dann ist die mit einem beliebigen Ursprung $ o\in A $ definierte Affinkombination	
@@ -230,6 +237,64 @@
 		\[ s:= \sum_{i\in I} a_ix_i \]
 		Schwerpunkt oder Baryzentrum der Punkte $ a_i $ mit Gewichten $ x_i $.
 	\end{Definition}
+%-------------------------Begin Grafik Affinkombination---------------------------------    
+\begin{figure}\centering
+\tdplotsetmaincoords{0}{-27} %-27
+\begin{tikzpicture}[scale=1,tdplot_main_coords]
+ 
+\def\xstart{0}
+\def\ystart{0}
+
+\def\xstartdraw{(\xstart + 2)}
+\def\ystartdraw{(\ystart + 1)}
+
+\def\xlength{3.5}
+\def\ylength{1.7}
+
+%---------Begin Balken----------
+\def\drehwinkel{-27}
+\def\balkenbreite{0.4}
+\def\balkenhoehe{(\ylength*2+2)}
+\def\balkenlaenge{(\xlength*2+3)}
+
+\node (VekV) at ({\xstart+0.5*cos(\drehwinkel)-\balkenbreite*sin(\drehwinkel)},{\ystart+0.5*sin(\drehwinkel)+\balkenbreite*cos(\drehwinkel)})[color=blue] {$V$};
+\node (AffA) at ({\xstart+(\balkenlaenge-1)*cos(\drehwinkel)},{\ystart+(\balkenlaenge-1)*sin(\drehwinkel)+\balkenbreite*cos(\drehwinkel)})[color=red] {$A$};
+
+\path[ shade, top color=white, bottom color=blue, opacity=.6] 
+    ({\xstart},{\ystart},0)  -- ({\xstart - \balkenbreite * cos(\drehwinkel)- (-\balkenbreite+0)*sin(\drehwinkel)},{\ystart - \balkenbreite * sin(\drehwinkel)+ (-\balkenbreite+0)*cos(\drehwinkel)},0)  -- ({\xstart - \balkenbreite * cos(\drehwinkel)- (\balkenhoehe+0.5)*sin(\drehwinkel)},{\ystart - \balkenbreite * sin(\drehwinkel)+ (\balkenhoehe+0.5)*cos(\drehwinkel)},0) -- ({\xstart - 0 * cos(\drehwinkel)- (\balkenhoehe+0)*sin(\drehwinkel)},{\ystart - 0 * sin(\drehwinkel)+ (\balkenhoehe+0)*cos(\drehwinkel)},0) -- cycle;
+        
+\path[ shade, right color=white, left color=blue, opacity=.6] 
+	({\xstart},{\ystart},0)  -- ({\xstart - \balkenbreite * cos(\drehwinkel)- (-\balkenbreite+0)*sin(\drehwinkel)},{\ystart - \balkenbreite * sin(\drehwinkel)+ (-\balkenbreite+0)*cos(\drehwinkel)},0) --
+    ({\xstart + (\balkenlaenge+0.5) * cos(\drehwinkel)- (-\balkenbreite+0)*sin(\drehwinkel)},{\ystart + (\balkenlaenge+0.5) * sin(\drehwinkel)+ (-\balkenbreite+0)*cos(\drehwinkel)},0) --   
+    ({\xstart + \balkenlaenge * cos(\drehwinkel)},{\ystart + \balkenlaenge * sin(\drehwinkel)},0)--
+    cycle;       
+%---------End Balken----------
+%Punkte Definition
+\node (pointo) at ({\xstartdraw},{\ystartdraw}) {};
+\node (pointostrich) at ({\xstartdraw+2*\xlength},{\ystartdraw}) {};
+\node (pointmiddle) at ({\xstartdraw+\xlength},{\ystartdraw}) {};
+\node (pointa1) at ({\xstartdraw+\xlength},{\ystartdraw+\ylength}) {};
+\node (pointa2) at ({\xstartdraw+\xlength},{\ystartdraw-\ylength}) {};
+
+%Vektoren
+\draw[-{>[scale=1,length=10,width=6]},shorten >=4pt, shorten <=4pt,line width=1pt,color=blue] (pointo) -- (pointostrich) node[xshift=5, yshift=-30]{$(a_{1}-o)+(a_{2}-o)$} ;
+\draw[-{>[scale=1,length=10,width=6]},shorten >=4pt, shorten <=4pt,line width=1pt,color=blue] (pointo) -- (pointa1) node[midway, left]{$a_{1}-o$} ;
+\draw[-{>[scale=1,length=10,width=6]},shorten >=4pt, shorten <=4pt,line width=1pt,color=blue] (pointo) -- (pointa2) node[midway, below]{$a_{2}-o$} ;
+\draw[-{>[scale=1,length=10,width=6]},shorten >=4pt, shorten <=4pt,line width=1pt,color=blue] (pointo) -- (pointmiddle) node[xshift=10, yshift=-28]{$(a_{1}-o)\frac{1}{2}+(a_{2}-o)\frac{1}{2}$};
+%Hilfslinien
+\draw[-,shorten >=3pt, shorten <=3pt,line width=0.3pt,color=blue] (pointa1) -- (pointostrich) ;
+\draw[-,shorten >=3pt, shorten <=3pt,line width=0.3pt,color=blue] (pointa2) -- (pointostrich) ;
+
+%Punkte malen
+\draw[fill,color=red] (pointo) circle [x=1cm,y=1cm,radius=0.08]node[ xshift=-10]{$o$};
+\draw[fill,color=red] (pointostrich) circle [x=1cm,y=1cm,radius=0.08]node[xshift=10]{$o'$};
+\draw[fill,color=red] (pointa1) circle [x=1cm,y=1cm,radius=0.08]node[ xshift=-10]{$a_{1}$};
+\draw[fill,color=red] (pointa2) circle [x=1cm,y=1cm,radius=0.08]node[ yshift=-10]{$a_{2}$};
+\draw[fill,color=red] (pointmiddle) circle [x=1cm,y=1cm,radius=0.08]node[xshift=-8, yshift=15]{$a_{1}\frac{1}{2}+a_{2}\frac{1}{2}$};
+\end{tikzpicture}
+\end{figure}
+%-------------------------End Grafik Affinkombination-------------------------------------- 
+
 \subparagraph{Beispiel: }
 	Sind etwa $ K=\mathbb{R} $ und $ I = \{1,...,n\} $, so erhält man mit $ x_i = \frac{1}{n} $ für $ {i\in I} $ den üblichen geometrischen Schwerpunkt der (endlichen) Punktmenge,
 		\[ s =\sum_{i=1}^{n}a_i\frac{1}{n}. \]
@@ -254,7 +319,7 @@
 		= o+ w\cdot \sum_{i\in I}x_i + \sum_{i\in I}v'_i x_i = o+w + \sum_{i\in I}v'_ix_i = o' + \sum_{i\in I}v'_i x_i
 	\end{gather*}
 \paragraph{Lemma: }
-	\begin{Lemma}
+	\begin{Lemma}{}
 		Ist $ S\subset A $ Teilmenge eines AR $ A $, so ist ihre affine Hülle
 		\[ [S] = \{\sum_{a\in S}ax_a\mid \#\{a\in S\mid x_a\neq 0\}<\infty \land \sum_{a\in S}x_a = 1 \}. \]
 	\end{Lemma}
@@ -284,7 +349,7 @@
 	\end{gather*}
 	d.h., wenn die Familie $ (a_j-a_i)_{j\in I\setminus \{i\}} $ eine nicht-triviale Linearkombination von 0 erlaubt, also linear abhängig ist.
 \paragraph{Lemma: }
-	\begin{Lemma}
+	\begin{Lemma}{}
 		Eine Familie $ (a_i)_{i\in I} $ ist genau dann affin unabhängig, wenn jeder Punkt ihrer affinen Hülle eine eindeutige Affinkombination hat,
 		\[ \forall a\in [\{a_i\mid i\in I\}]\exists!(x_i)_{i\in I}:
 			\begin{cases}
@@ -300,4 +365,8 @@
 	so folgt mit einem Ursprung $ o\in A $ und $ v_i = a_i-o $
 		\[ a=o+\sum_{i\in I}v_ix_i=o+\sum_{i\in I}v_iy_i \Rightarrow 0 = \sum_{i\in I}v_i(y_i-x_i). \]
 	Ist $ (a_i)_{i\in I} $ affin unabhängig, so ist $ (v_j)_{j\in I\setminus \{i\}} $ linear unabhängig für ein beliebiges $ i\in I $ und $ o:= a_i $. Es folgt:
-		\[ \forall j\in I\setminus \{i\}:x_j=y_j \Rightarrow x_i = 1-\sum_{j\neq i}x_j = 1-\sum_{j\neq i}y_j = y_i \]
+	\begin{gather*}
+        \forall j\in I\setminus \{i\}:x_j=y_j \Rightarrow x_i = 1-\sum_{j\neq i}x_j = 1-\sum_{j\neq i}y_j = y_i 
+        \\ \text{ also } (x_{i})_{i \in I} = (y_{i})_{i \in I}
+	\end{gather*}
+       
