@@ -23,7 +23,7 @@
 	\draw (z) node[below right] {$\tau_v(\tau_w(x))=(\tau_v\circ\tau_w)(x) = \tau_{v+w}(x)$};
 \end{tikzpicture}
 \paragraph{Definition (nach Klein): }
-\begin{Definition}{Geometrie}
+\begin{Definition}[Geometrie]
 	Eine Geometrie besteht aus einer Menge $ A $ (z.B. Punktmenge) und einer darauf operierenden Gruppe $ (G,*) $, d.h.,
 	es gibt eine Gruppenoperation
 		\[ \rho: G\times A\to A,(g,a)\mapsto \rho_g(a)  \]
@@ -35,7 +35,7 @@
 \end{Definition}
 
 \paragraph{Definition: }
-\begin{Definition}{Affiner Raum (AR)}
+\begin{Definition}[Affiner Raum (AR)]
 	Sei $ K $ ein Körper. Ein affiner Raum (AR) $ (A,V,\tau) $ über $ K $ besteht aus einer Menge $ A $, einem $ K $-Vektorraum $ V $ und einer Gruppenoperation
 		\[ \tau:V\times A\to A,(v,a)\mapsto \tau_v(a) \]
 	von $ V $ (als additive Gruppe $ (V,+) $) auf $ A $, die einfach transitiv ist, d.h.
@@ -180,10 +180,10 @@
 	
 	Eine Nebenklasse $ A= v+U\subset V $ nennt man daher auch einen affinen Unterraum des VR $ V $.
 \paragraph{Definition: }
-\begin{Definition}{Affiner Unterraum (AUR)}
+\begin{Definition}[Affiner Unterraum (AUR)]
 	$ A'\subset A $ ist affiner Unterraum (AUR) des affinen Raumes $ (A,V,\tau) $, falls
 		\[ \exists a\in A\exists U\subset V \text{UVR}:A' = a+U = \{\tau_u(a)\mid u\in U\}.\]
-	Ist $ \dim A' =1 $ oder $ \dim A' = 2 $, so heißt $ A' $ (affine) Gerade bzw. Ebene; ist $ \dim A' < \infty $ und $ \dim A' = \dim A-1 $, so heißt $ A' $ \emph{(affine) Hyperebene}.
+	Ist $ \dim A' =1 $ oder $ \dim A' = 2 $, so heißt $ A' $ (affine) Gerade bzw. Ebene; ist $ \dim A' < \infty $ und $ \dim A' = \dim A-1 $, so heißt $ A' $ (affine) Hyperebene.
 \end{Definition}
 \subparagraph{Bemerkung: }
 	Jeder AUR ist selbst AR mit der "`geerbten"' (eingeschränkten) Operation.
@@ -211,7 +211,7 @@
 		\Rightarrow \bigcap_{i\in I}A'_i = a+\bigcap_{i\in I}U_i \text{ und } U:= \bigcap_{i\in I}U_i\subset V \text{ ist UVR.}
 	\end{gather*}
 \paragraph{Definition: }
-	\begin{Definition}{Affine Hülle}
+	\begin{Definition}[Affine Hülle]
 		Die affine Hülle $ [S] $ einer Teilmenge eines affinen Raumes $ A $ ist der Schnitt aller $ S $ enthaltenden AUR $ A'\subset A $,
 		\[ [S] = \bigcap_{S\subset A' \text{AUR}}A'. \]
 	\end{Definition}
@@ -332,13 +332,13 @@
 	\[ [ab] := [\{a,b\}] = \{a(1-t)+bt\mid t\in K\}. \]
 	Die affine Hülle von drei verschiedenen Punkten $ a,b,c\in A $ ist eine Gerade oder Ebene, je nachdem, ob $ \dim[\{a,b,c\}] $ gleich 1 oder 2 ist. Im zweiten Fall sagen wir: das Dreieck $ \{a,b,c\} $ sei nicht-degeneriert.
 \paragraph{Definition: }
-	\begin{Definition}{Allgemeine Lage}
+	\begin{Definition}[Allgemeine Lage]
 		Eine Familie $ (a_i)_{i\in I} $ von Punkten $ a_i\in A $ eines AR $ A $ ist affin unabhängig, bzw. in allgemeiner Lage, falls
 		\[ \forall i\in I:a_i\notin [\{a_j\mid j\in I\setminus \{i\}\}], \]
 		und sonst affin abhängig; Punkte heißen kolinear bzw. koplanar, falls sie in einer Geraden oder einer Ebene liegen.
 	\end{Definition}
 \paragraph{Lemma}
-	\begin{Lemma}{Affine und lineare (Un-)Abhängigkeit}
+	\begin{Lemma}[Affine und lineare (Un-)Abhängigkeit]
 		Eine Familie $ (a_i)_{i\in I} $ ist genau dann affin unabhängig, wenn für jedes $ i\in I $ die Familie $ (a_j-a_i)_{j\in I\setminus \{i\}} $ linear unabhängig ist.
 	\end{Lemma}
 \subparagraph{Beweis: }
@@ -349,8 +349,8 @@
 	\end{gather*}
 	d.h., wenn die Familie $ (a_j-a_i)_{j\in I\setminus \{i\}} $ eine nicht-triviale Linearkombination von 0 erlaubt, also linear abhängig ist.
 \paragraph{Lemma: }
-	\begin{Lemma}{}
-		Eine Familie $ (a_i)_{i\in I} $ ist genau dann affin unabhängig, wenn jeder Punkt ihrer affinen Hülle eine eindeutige Affinkombination hat,
+	\begin{Lemma}
+		Eine Familie $ (a_i)_{i\in I} $ ist genau dann affin unabhängig, wenn jeder Punkt ihrer affinen Hülle eine eindeutige Affinkombination hat:
 		\[ \forall a\in [\{a_i\mid i\in I\}]\exists!(x_i)_{i\in I}:
 			\begin{cases}
 			1 = \sum_{i\in I}x_i\\
