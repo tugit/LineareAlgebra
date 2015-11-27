@@ -212,6 +212,30 @@
 		&=\{(\tau_{u'}\circ \tau_u)(a)=\tau_{u'+u}(a)\mid u'\in U\}\\
 		&= \{\tau_{u''}(a)\mid u'' \in U\} = a+U = A'
 	\end{align*}
+	
+	\begin{figure}[H]\centering
+	\begin{tikzpicture}[scale=1.5,>=triangle 45]
+		\draw[->,color=black] (-0.1,0) -- (5,0);
+		\draw[->,color=black] (0,-0.1) -- (0.,2);
+		
+	
+		\coordinate[label=below:$u$] (x) at (1,1);
+		\coordinate (y) at (3,0.5);
+		\coordinate[label=right:${A'}$] (A) at (3,1.25);
+		\coordinate[label=below:$b$] (b) at (2,1.5);
+		\coordinate[label=above right:$ {c=a+u'} $] (c) at (1.5,1.625);
+		\coordinate[label=above:$a$] (a) at (1,1.75);
+		\draw [-] (a) to (A);
+		\draw [-] (x) to (y);
+		\draw [->] (a) to node[below]{$ u'$} (c);
+		\draw[fill] (b) circle (0.5pt);
+		\draw[fill] (a) circle (0.5pt);
+		\draw[fill] (c) circle (0.5pt);
+		\draw (4,0.5) node[] {$ A $};
+		\draw (0.25,0.25) node[] {$ V $};
+	\end{tikzpicture}
+	\end{figure}
+	
 	Damit zeigt man: Ist $ (A'_i)_{i\in I} $ eine Familie AUR $ A'_i\subset A $ eines AR $ A $, so ist der Schnitt leer oder ein affiner Unterraum. Ist nämlich der Schnitt nicht leer, d.h.,
 	\[ \exists a\in A\forall i\in I:a\in A'_i, \]
 	so erhält man
@@ -293,8 +317,8 @@
 \draw[-{>[scale=1,length=10,width=6]},shorten >=4pt, shorten <=4pt,line width=1pt,color=blue] (pointo) -- (pointa2) node[midway, below]{$a_{2}-o$} ;
 \draw[-{>[scale=1,length=10,width=6]},shorten >=4pt, shorten <=4pt,line width=1pt,color=blue] (pointo) -- (pointmiddle) node[xshift=10, yshift=-28]{$(a_{1}-o)\frac{1}{2}+(a_{2}-o)\frac{1}{2}$};
 %Hilfslinien
-\draw[-,shorten >=3pt, shorten <=3pt,line width=0.3pt,color=blue] (pointa1) -- (pointostrich) ;
-\draw[-,shorten >=3pt, shorten <=3pt,line width=0.3pt,color=blue] (pointa2) -- (pointostrich) ;
+%\draw[-,shorten >=3pt, shorten <=3pt,line width=0.3pt,color=blue] (pointa1) -- (pointostrich) ;
+%\draw[-,shorten >=3pt, shorten <=3pt,line width=0.3pt,color=blue] (pointa2) -- (pointostrich) ;
 
 %Punkte malen
 \draw[fill,color=red] (pointo) circle [x=1cm,y=1cm,radius=0.08]node[ xshift=-10]{$o$};
