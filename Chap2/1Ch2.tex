@@ -468,6 +468,26 @@
 		\end{itemize}
 		
 \paragraph{Beispiel}
+	% % % % Baryzentrisches Bezugssystem
+	\begin{figure}[H]\centering
+		\begin{tikzpicture}[scale=1.5,>=triangle 45]
+			\draw[->,color=black] (-0.1,0) -- (5,0);
+			\draw[->,color=black] (0,-0.1) -- (0.,2);
+				
+			\coordinate[label=above:$ a_0 $] (a0) at (2.5,1.5);
+			\coordinate[label=left:$a_1  $] (a1) at (1.5,0.5);
+			\coordinate[label=above:$a_2$] (a2) at (4,1);
+			
+			\draw [-] (a0) to node[above right]{${ a_1 \notin [\{a_2,a_0\}] }$} (a2);
+			\draw [-] (a1) to node[above left]{${ a_2 \notin [\{a_1,a_0\}] }$} (a0);
+			\draw [-] (a2) to node[below right]{${ a_0 \notin [\{a_1,a_2\}] }$} (a1);
+
+			\draw[fill] (a0) circle (0.5pt);
+			\draw[fill] (a1) circle (0.5pt);
+			\draw[fill] (a2) circle (0.5pt);
+		\end{tikzpicture}
+	\end{figure}
+			
 	Drei Punkte $ a_0,a_1,a_2 \in A $ sind genau dann in allgemeiner Lage, wenn sie die Ecken eines nicht degenerierten Dreiecks sind. Sie bilden dann ein baryzentrisches Bezugssystem der Ebene des Dreiecks. Andernfalls sind sie kollinear.
 	
 \subsection{Definition (Teilverhältnis)}
