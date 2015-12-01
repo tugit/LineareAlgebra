@@ -49,7 +49,7 @@
 	Für $ k=1 $ trivial.
 
 \subparagraph{Induktionsannahme}
-	Für $ a_1,...,a_k\in A $ und $ x_1,...,x_k \in K^\times$ mit $ \sum_{i=1}^{k}=1 $ gelte
+	Für $ a_1,...,a_k\in A $ und $ x_1,...,x_k \in K^\times$ mit $ \sum_{i=1}^{k}x_i=1 $ gelte
 		\[ \alpha(\sum_{i=1}^{k}a_ix_i) = \sum_{i=1}^{k}\alpha(a_i)x_i. \]
 	
 \subparagraph{Induktionsschluss}
@@ -58,4 +58,110 @@
 		\[ = \alpha(\sum_{i=1}^{k}a_i\frac{x_i}{1-x_{k+1}})(1-x_{k+1})+\alpha(a_k+1)x_{k+1} \]
 		\[ = \sum_{i=1}^{k}\alpha(a_i)\frac{x_i}{1-x_{k+1}}(1-x_{k+1})+\alpha(a_{k+1})x_{k+1} \]
 		\[ = \sum_{i=1}^{k+1}\alpha(a_i)x_i. \]
-	Damit ist die Behauptung für affine Abbildungen $ \alpha $ bewiesen. 
+	Damit ist die Behauptung für affine Abbildungen $ \alpha $ bewiesen.
+
+\paragraph{Bemerkung}
+	Im Beweis wurde benutzt: für Affinkombinationen ist (falls $ x_j \neq 1$)
+		\[ \sum_{i\in I}a_ix_i = \left(\sum_{i\neq j}a_i\frac{x_i}{1-x_j}\right)(1-x_j)+a_jx_j \]
+\paragraph{Bemerkung}
+	Mit der Verträglichkeit affiner Abbildungen mit Affinkombinationen folgt, dass die Inverse $ \alpha^{-1}:A'\to A $ einer bijektiven affinen Abbildung $ \alpha:A\to A' $ ebenfalls affin ist:
+		\begin{gather*}
+		\alpha\left(\sum_{i\in I} \alpha^{-1}(a_i')x_i\right)=\sum_{i\in I}(\alpha\circ\alpha')(a_i')x_i = \sum_{i\in I}a_i'x_i = \alpha\left(\alpha^{-1}(\sum_{i\in I}a_i'x_i)\right) \\
+		\Rightarrow \sum_{i\in I} \alpha^{-1}(a_i')x_i =\alpha^{-1}(\sum_{i\in I}a_i'x_i),
+		\end{gather*}
+	da die Affinkombination $ \sum_{i\in I}a_i'x_i\in A' $ beliebig war, folgt damit die Behauptung. Insbesondere sind damit auch die Inversen von Affinitäten Affinitäten.
+\paragraph{Bemerkung}
+	Sind $ \alpha:A \to A' $ und $ \beta:A'\to A'' $ geraden- und teilverhältnistreu, so ist auch
+		\[ \beta\circ\alpha:A\to A'' \]
+	geraden- und teilverhältnistreu, d.h. die Komposition affiner Abbildungen ist affin. Insbesondere ist damit die Menge $ G $ aller affinen Transformationen eines affinen Raumes $ A $ abgeschlossen unter der Komposition
+		\[ \circ: G\times G\to G; \]
+	außerdem ist $ G $ abgeschlossen unter Inversenbildung. Damit folgt: $ G $ ist Untergruppe der Permutationsgruppe (der symmetrischen Gruppe) des affinen Raumes $ A $: Diese Gruppe bezeichnet man als \emph{affine Gruppe}.
+\subsection{Definition}
+	\begin{Definition}[Affine Geometrie]
+	Die auf einem affinen Raum $ A $ operierende Gruppe $ G $ der Affinitäten von $ A $ bestimmt eine \emph{affine Geometrie}.
+	\end{Definition}
+	
+\paragraph{Bemerkung}
+	Die Verträglichkeit einer affinen Abbildung $ \alpha:A\to A' $ mit Affinkombinationen lässt sich auch mithilfe von Vektoren formulieren (unabhängig von der Wahl des Ursprungs $ o \in A$):
+		\begin{gather*}
+		v_i = a_i-o \Rightarrow \alpha\left(\sum_{i\in I}a_ix_i\right)=\alpha\left(o+\sum_{i\in I}v_ix_i\right)\\
+		\sum_{i\in I}\alpha(a_i)x_i = \sum_{i\in I}\alpha(o+v_i)x_i\\
+		\Rightarrow \alpha\left(o+\sum_{i\in I}v_ix_i\right)-\alpha(o) = \sum_{i\in I}\alpha(o+v_i)x_i-\alpha(o)\sum_{i\in I}x_i = \sum_{i\in I}(\alpha(o-v_i)-\alpha(o))x_i,
+		\end{gather*}
+	setzt man also
+		\[ \lambda:V\to V',v\mapsto \lambda(v):= \alpha(o+v)-\alpha(o),  \]
+	wobei $ V $ und $ V' $ die zu $ A $ bzw. $ A' $ gehörenden Richtungsvektorräume sind, so erhält man einen Homomorphismus $ \lambda\in \hom(V,V') $, da sie mit Linearkombinationen verträglich ist:
+		\[ \lambda\left(\sum_{i\in I}v_ix_i\right)=\alpha\left(o+\sum_{i\in I}v_ix_i\right)-\alpha(o)= \sum_{i\in I}\left(\alpha(o+v_i)-\alpha(o)\right) = \sum_{i\in I}\lambda(v_i)x_i\]
+		
+\subsection{Lemma \& Definition}
+	\begin{Lemma}
+	Seien $ A $ und $ A' $ AR mit RVR $ V $ bzw. $ V' $; dann ist eine Abbildung $ \alpha:A\to A' $ genau dann affin, wenn es $ \lambda\in\hom(V,V') $ gibt, sodass 
+		\[ \forall a\in A\forall v\in V:\alpha(a+v)=\alpha(a)+\lambda(v). \]
+	\end{Lemma}
+	\begin{Definition}
+	Wir nennen $ \lambda $ den \emph{linearen Anteil} einer affinen Abbildung $ \alpha $.
+	\end{Definition}
+\paragraph{Beweis}
+	Es sind zwei Richtungen zu zeigen:
+	
+	$ \Rightarrow: $ Sei $ \alpha:A\to A' $ affin. Zu zeigen ist nun die Existenz eines geeigneten $ \lambda \in\hom(V,V') $. Nämlich: Wähle $ o\in A $ und definiere
+		\[ \lambda:V\to V',v\mapsto \lambda(v):=\alpha(o+v)-\alpha(o). \]
+	Wegen der Verträglichkeit von $ \alpha $ mit Affinkombinationen ist $ \lambda $ linear. Für $ a\in A,v\in V $ gilt dann mit $ w:=a-o $:
+		\begin{gather*}
+		\alpha(a+v) = \alpha(o+w+v) = \alpha(o)+\lambda(w+v) =\\ \alpha(o)+\lambda(w)+\lambda(v) = \alpha(o+w)+\lambda(v) = \alpha(a)+\lambda(v)
+		\end{gather*}
+	Insbesondere ist der lineare Anteil $ \lambda \in\hom(V,V')$ von $ \alpha $ wohldefiniert, d.h. unabhängig von der Wahl des Ursprungs.
+	
+	$ \Leftarrow: $ Für $ \alpha:A\to A' $ gilt mit einem $ \lambda\in\hom(V,V') $
+		\[ \forall a\in A\forall v\in V:\alpha(a+v)=\alpha(a)+\lambda(v) \]
+	Wegen der Verträglichkeit von $ \lambda $ mit Linearkombinationen ist $ \alpha $ verträglich mit Affinkombinationen (siehe oben) und damit affin.
+\paragraph{Bemerkung}
+	Jede affine Transformation setzt sich also zusammen aus einer Translation und und einem Automorphismus $ \lambda \in \Aut(V) $. Insbesondere: Ist $ \tau_w:A\to A' $ Translation eines affinen Raumes $ A $ über $ V $, so ist für $ a\in A $ und $ v\in V $
+		\[ \tau_w(a+v) = (a+v)+w = a+(v+w) = a+(w+v) = (a+w)+v = \tau_w(a)+v = \tau_w(a)+\id_V(v), \]
+		d.h. der lineare Anteil einer Translation ist trivial -- also die Identität auf $ V $.
+\subsection{Definition}
+	\begin{Definition}[Allgemeine lineare Gruppe]
+	Die Automorphismen eines VR $ V $ bilden seine \emph{allgemeine lineare Gruppe}
+		\[ Gl(V):= \{\lambda\in \End(V)\mid \lambda \text{ invertierbar}\}. \]
+	\end{Definition}
+\subsection{Bemerkung \& Definition}
+	\begin{Definition}[Parallele Geraden]
+	Sind $ g_i = [a_ib_i]=a_i + [v] $ mit $ b_i = a_i + v $ für $ i = 1,2 $ zwei Geraden mit dem gleichen RVR $ [v] $, d.h. \emph{parallel}, so sind auch ihre Bilder unter einer affinen Transformation $ \alpha $ parallele Geraden,
+		\[ \alpha(g_i) = \alpha(a_i) + [\lambda(v)] \text{ mit } \lambda\in Gl(V). \]
+	\end{Definition}
+\subsection{Beispiel \& Definition}
+	\begin{Definition}[Streckung]
+	Sei $ (A,V,\tau) $ ein AR über $ K $ und $ \lambda\in\End(V) $ eine \emph{Homothetie},\hfill
+		$ \lambda= \id_V\cdot c \text{ für ein }c\in K. $
+		
+	Ist die zugehörige affine Abbildung\hfill
+		$ \alpha:A\to A,o+v\mapsto \alpha(o+v):= o+v\cdot c $
+		
+	eine affine Transformation, d.h.,\hfill
+		$ \lambda \in Gl(V)\Leftrightarrow c\in K^\times, $
+	
+	so nennt man $ \alpha $ eine \emph{Streckung} mit \emph{Zentrum} $ o\in A $. Ist $ c\neq 1 $, d.h. $ \alpha \neq \id_A $, so gilt 
+		\[ \alpha(a) = a\Leftrightarrow a = o. \]
+	also hat die Abbildung $ \alpha $ genau einen \emph{Fixpunkt} $ a = o $.
+	\end{Definition}
+\subsection{Beispiel \& Definition}
+	\begin{Definition}[Parallelprojektion]
+	Sind $ p\in \End(V) $ eine Projektion ($ p^2 = p $) und $ o\in A $, so liefert
+		\[ \pi:A\to A,o+v\mapsto \pi(o+v):= o+p(v) \]
+	eine Parallelprojektion von $ A $ auf dem affinen Unterraum $ o+p(V) $. Ist $ p\neq \id_V $, so ist $ p\notin Gl(V) $ und also $ \pi $ keine affine Transformation (sondern eine nicht bijektive Affinität), so hat $ \pi $ nicht-triviale \emph{Fasern} 
+		\[ \pi^{-1}(\{a'\})\subset A \text{ für } a'\in \pi(A), \]
+	wobei $ \dim\pi^{-1}(\{a'\}) = \dfkt p \geq 1 $.
+	\end{Definition}
+\subsection{Beispiel \& Definition}
+	\begin{Definition}[Scherung]
+	Seien $ \omega\in V^* $ und $ w\in \ker \omega $, sei $ o\in A $; die \emph{Scherung}
+		\[ \sigma:A\to A, o+v\mapsto \sigma(o+v):= o+v+w\omega(v) \]
+	ist dann eine affine Transformation, denn\hfill
+		$ \lambda = \id_V + w\cdot \omega \in Gl(V) $
+		
+	mit\hfill
+		$ \lambda^{-1} = \id_v - w\cdot \omega. $
+	
+	Ist $ w\cdot\omega\in\End(V)\setminus\{o\} $, so hat $ \sigma $ Fixpunktmenge $ \text{Fix}_\sigma = o+\ker\omega $ und jeder Punkt und sein Bild liegen auf einer zu $ o+[w] $ parallelen Geraden:
+		\[ \forall a\in A\setminus \text{Fix}_\sigma : [a\sigma(a)] \parallel o+[w] \]
+	\end{Definition}
