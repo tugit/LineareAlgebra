@@ -219,7 +219,7 @@
 		\draw[->,color=black] (0,-0.1) -- (0.,2);
 		
 	
-		\coordinate[label=below:$u$] (x) at (1,1);
+		\coordinate[label=below:$U$] (x) at (1,1);
 		\coordinate (y) at (3,0.5);
 		\coordinate[label=right:${A'}$] (A) at (3,1.25);
 		\coordinate[label=below:$b$] (b) at (2,1.5);
@@ -254,6 +254,26 @@
 	
 	Achtung: In einem $ K $-VR $ V $ (den kann man auch als AR auffassen, siehe Beispiel vorher) sind die lineare Hülle und die affine Hülle (in $ V $ aufgefasst als AR) im Allgemeinen verschieden:
 		\[ [S]_{\text{lin}} = \bigcap_{S\subset U\text{ UVR}}U \neq \bigcap_{S\subset A \text{ AUR}}A = [S]_{\text{aff}} \]
+% % % % Grafik affine Hülle
+	\begin{figure}[H]\centering
+		\begin{tikzpicture}[scale=1.5,>=triangle 45]
+			\draw[->,color=black] (-0.1,0) -- (5,0);
+			\draw[->,color=black] (0,-0.1) -- (0.,2);
+			
+		
+			\coordinate[label=below right:${V =[\{\vec{a},\vec{b}\}]_\text{lin}}$] (v) at (0.5,0.5);
+			\coordinate[label=above:$ a $] (a) at (1,1.5);
+			\coordinate[label=below:$b$] (b) at (3,1);
+
+			\draw [->] (v) to node[left]{$ \vec{a}$} (a);
+			\draw [->] (v) to node[above]{$ \vec{b}$} (b);
+			\draw [-] (0.5,1.63) to node[above right]{${[\{a,b\}]_\text{aff}}$ Gerade} (4,0.76);
+			\draw[fill] (v) circle (0.5pt);
+			\draw[fill] (a) circle (0.5pt);
+			\draw[fill] (b) circle (0.5pt);
+			\draw (4,0.25) node[] {$ A $};
+		\end{tikzpicture}
+		\end{figure}
 \paragraph{Beispiel}
 	Für $ S=\{a\}\subset V $ mit $ a\neq 0 $ gilt
 		\[ [S]_{\text{lin}} = \{ax\in A = V\mid x\in K\} \neq \{a\} = [S]_{\text{aff}} \]
