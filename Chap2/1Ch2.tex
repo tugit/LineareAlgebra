@@ -409,7 +409,26 @@
 		\Leftrightarrow \exists i\in I\exists (x_j)_(j\in I\setminus \{i\}):0=\sum_{j\neq i}(a_j-a_i)x_j \land 1=\sum_{j\neq i}x_j,
 	\end{gather*}
 	d.h., wenn die Familie $ (a_j-a_i)_{j\in I\setminus \{i\}} $ eine nicht-triviale Linearkombination von 0 erlaubt, also linear abhängig ist.
-	
+% % % % Nicht degeneriertes 3-Eck
+	\begin{figure}[H]\centering
+		\begin{tikzpicture}[scale=1.5,>=triangle 45]
+			\draw[->,color=black] (-0.1,0) -- (5,0);
+			\draw[->,color=black] (0,-0.1) -- (0.,2);
+			
+		
+			\coordinate[label=left:$a  $] (a) at (0.5,0.5);
+			\coordinate[label=above:$ c $] (c) at (1,1.5);
+			\coordinate[label=below:$b$] (b) at (3,1);
+
+			\draw [->] (a) to node[right]{$ c-a $} (c);
+			\draw [->] (a) to node[below]{$ b-a$} (b);
+
+			\draw[fill] (v) circle (0.5pt);
+			\draw[fill] (a) circle (0.5pt);
+			\draw[fill] (b) circle (0.5pt);
+			\draw (5,1.5) node[] {$ \{a,b,c\}$ nicht deg. $\Delta$ gdw. Vektoren lin. unab.};
+		\end{tikzpicture}
+		\end{figure}	
 \subsection{Lemma (Eindeutigkeit der Punktdarstellung)}
 	\begin{Lemma}[Eindeutigkeit der Punktdarstellung]
 		Eine Familie $ (a_i)_{i\in I} $ ist genau dann affin unabhängig, wenn jeder Punkt ihrer affinen Hülle eine eindeutige Affinkombination hat:
