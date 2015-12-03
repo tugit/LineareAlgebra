@@ -148,7 +148,7 @@
 	\begin{Definition}[Parallelprojektion]
 	Sind $ p\in \End(V) $ eine Projektion ($ p^2 = p $) und $ o\in A $, so liefert
 		\[ \pi:A\to A,o+v\mapsto \pi(o+v):= o+p(v) \]
-	eine \emph{Parallelprojektion} von $ A $ auf dem affinen Unterraum $ o+p(V) $. Ist $ p\neq \id_V $, so ist $ p\notin Gl(V) $ und also $ \pi $ keine affine Transformation (sondern eine nicht bijektive Affinität), so hat $ \pi $ nicht-triviale \emph{Fasern} 
+	eine \emph{Parallelprojektion} von $ A $ auf dem affinen Unterraum $ o+p(V) $. Ist $ p\neq \id_V $, so ist $ p\notin Gl(V) $ und also $ \pi $ keine affine Transformation (sondern eine nicht bijektive affine Abbildung), so hat $ \pi $ nicht-triviale \emph{Fasern} 
 		\[ \pi^{-1}(\{a'\})\subset A \text{ für } a'\in \pi(A), \]
 	wobei $ \dim\pi^{-1}(\{a'\}) = \dfkt p \geq 1 $.
 	\end{Definition}
@@ -163,5 +163,43 @@
 		$ \lambda^{-1} = \id_v - w\cdot \omega. $
 	
 	Ist $ w\cdot\omega\in\End(V)\setminus\{o\} $, so hat $ \sigma $ Fixpunktmenge $ \text{Fix}_\sigma = o+\ker\omega $ und jeder Punkt und sein Bild liegen auf einer zu $ o+[w] $ parallelen Geraden:
-		\[ \forall a\in A\setminus \text{Fix}_\sigma : [a\sigma(a)] \parallel o+[w] \]
+		\[ \forall a\in A\setminus \text{Fix}_\sigma : [a,\sigma(a)] \parallel o+[w] \]
 	\end{Definition}
+\subsection{Korollar (Fortsetzungssatz für affine Abbildungen)}
+	\begin{Korollar}[Fortsetzungssatz für affine Abbildungen]
+		Eine affine Abbildung $ \alpha:A\to A' $ ist durch die (beliebige) Angabe der Bilder $ a_i' = \alpha(a_i) $ der Punkte eines baryzentrischen Bezugssystems $ (a_i)_{i\in I} $ von $ A $ eindeutig bestimmt.
+	\end{Korollar}
+	Beweis ist analog dem des Fortsetzungssatzes für lineare Abbildungen: Mit der Verträglichkeit der gesuchten affinen Abbildung mit Affinkombinationen muss gelten:
+		\[ \alpha\left(\sum_{i\in I}a_ix_i\right)=\sum_{i\in I}\alpha(a_i)x_i \text{ für } a =\sum_{i\in I}a_ix_i \text{ mit } \sum_{i\in I}x_i = 1 \]
+	Eindeutigkeit folgt, da jeder Punkt $ a\in A $ eine Affindarstellung $ a = \sum_{i\in I}a_ix_i $ besitzt. Existenz von $ \alpha $ folgt aus der Eindeutigkeit der Affindarstellung jedes Punktes $ a\in A $ im baryzentrischen Bezugssystem $ (a_i)_{i\in I} $.
+	
+	\paragraph{Beispiel}
+		% % % % Baryzentrisches Bezugssystem mit affiner Abbildung
+		\begin{figure}[H]\centering
+			\begin{tikzpicture}[scale=1.5,>=triangle 45]
+				\draw[->,color=black] (-0.1,0) -- (5,0);
+				\draw[->,color=black] (0,-0.1) -- (0.,2);
+					
+				\coordinate[label=above:$ a $] (a) at (2.5,1.5);
+				\coordinate[label=left:$b $] (b) at (1.5,0.5);
+				\coordinate[label=above:$c$] (c) at (3,1);
+				
+				\coordinate[label=right:$ a' $] (a') at (6,1);
+				\coordinate[label=right:$b' $] (b') at (3.5,0.5);
+				\coordinate[label=right:$c'$] (c') at (4,1.5);
+				
+				\draw [->] (a) to node[above right]{$ $} (a');
+				\draw [->] (b) to node[above left]{${}$} (b');
+				\draw [->] (c) to node[below right]{${ }$} (c');
+	
+				\draw[fill] (a) circle (0.5pt);
+				\draw[fill] (b) circle (0.5pt);
+				\draw[fill] (c) circle (0.5pt);
+				
+				\draw[fill] (a') circle (0.5pt);
+				\draw[fill] (b') circle (0.5pt);
+				\draw[fill] (c') circle (0.5pt);
+			\end{tikzpicture}
+		\end{figure}
+		
+		Gegeben sind die Ecken eines nicht-degenerierten Dreiecks $ a,b,c\in A^2 $ und drei Punkte $ a',b',c'\in A^2 $; es existiert genau eine affine Abbildung $ \alpha:A^2\to A^2 $ mit $ (a,b,c)\mapsto (a',b',c') $. Dieses $ \alpha $ ist genau dann eine affine Transformation von $ A^2 $, wenn das Bilddreieck $ \{a',b',c'\} $ nicht-degeneriert ist, d.h. $ (a',b',c') $ ein baryzentrisches Bezugssystem ist (dann bekommt man die Inverse mittels Fortsetzungssatz durch $ (a',b',c') \overset{\alpha^{-1}}{\mapsto} (a,b,c) $).				
