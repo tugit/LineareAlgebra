@@ -176,32 +176,90 @@
 	Eindeutigkeit folgt, da jeder Punkt $ a\in A $ eine Affindarstellung $ a = \sum_{i\in I}a_ix_i $ besitzt. Existenz von $ \alpha $ folgt aus der Eindeutigkeit der Affindarstellung jedes Punktes $ a\in A $ im baryzentrischen Bezugssystem $ (a_i)_{i\in I} $.
 	
 	\paragraph{Beispiel}
-		% % % % Baryzentrisches Bezugssystem mit affiner Abbildung
-		\begin{figure}[H]\centering
-			\begin{tikzpicture}[scale=1.5,>=triangle 45]
-				\draw[->,color=black] (-0.1,0) -- (5,0);
-				\draw[->,color=black] (0,-0.1) -- (0.,2);
-					
-				\coordinate[label=above:$ a $] (a) at (2.5,1.5);
-				\coordinate[label=left:$b $] (b) at (1.5,0.5);
-				\coordinate[label=above:$c$] (c) at (3,1);
-				
-				\coordinate[label=right:$ a' $] (a') at (6,1);
-				\coordinate[label=right:$b' $] (b') at (3.5,0.5);
-				\coordinate[label=right:$c'$] (c') at (4,1.5);
-				
-				\draw [->] (a) to node[above right]{$ $} (a');
-				\draw [->] (b) to node[above left]{${}$} (b');
-				\draw [->] (c) to node[below right]{${ }$} (c');
+    
+%-------------------Begin Fortsetzungssatz für affine Abbildungen----------------  
+\begin{figure}\centering
+\tdplotsetmaincoords{0}{0} %-27
+\begin{tikzpicture}[scale=1,tdplot_main_coords]
+ 
+\def\xstart{0}
+\def\ystart{0}
+\def\myscale{0.03}
+
+\def\xstartdraw{(\xstart + 1)}
+\def\ystartdraw{(\ystart + 2.5)}
+
+\def\xlength{3.5}
+\def\ylength{1.7}
+
+%---------Begin Balken----------
+\def\drehwinkel{0}
+\def\balkenbreite{0.4}
+\def\balkenhoehe{(\ylength*2+2)}
+\def\balkenlaenge{(\xlength*2+3)}
+
+\node (VekV) at ({\xstart+1*cos(\drehwinkel)-\balkenbreite*sin(\drehwinkel)},{\ystart+0.5*sin(\drehwinkel)+\balkenbreite*cos(\drehwinkel)})[color=blue] {$V=K^2$};
+\node (AffA) at ({\xstart+(\balkenlaenge-1)*cos(\drehwinkel)},{\ystart+(\balkenlaenge-1)*sin(\drehwinkel)+\balkenbreite*cos(\drehwinkel)})[color=red] {$A$};
+
+\path[ shade, top color=white, bottom color=blue, opacity=.6] 
+    ({\xstart},{\ystart},0)  -- ({\xstart - \balkenbreite * cos(\drehwinkel)- (-\balkenbreite+0)*sin(\drehwinkel)},{\ystart - \balkenbreite * sin(\drehwinkel)+ (-\balkenbreite+0)*cos(\drehwinkel)},0)  -- ({\xstart - \balkenbreite * cos(\drehwinkel)- (\balkenhoehe+0.5)*sin(\drehwinkel)},{\ystart - \balkenbreite * sin(\drehwinkel)+ (\balkenhoehe+0.5)*cos(\drehwinkel)},0) -- ({\xstart - 0 * cos(\drehwinkel)- (\balkenhoehe+0)*sin(\drehwinkel)},{\ystart - 0 * sin(\drehwinkel)+ (\balkenhoehe+0)*cos(\drehwinkel)},0) -- cycle;
+        
+\path[ shade, right color=white, left color=blue, opacity=.6] 
+	({\xstart},{\ystart},0)  -- ({\xstart - \balkenbreite * cos(\drehwinkel)- (-\balkenbreite+0)*sin(\drehwinkel)},{\ystart - \balkenbreite * sin(\drehwinkel)+ (-\balkenbreite+0)*cos(\drehwinkel)},0) --
+    ({\xstart + (\balkenlaenge+0.5) * cos(\drehwinkel)- (-\balkenbreite+0)*sin(\drehwinkel)},{\ystart + (\balkenlaenge+0.5) * sin(\drehwinkel)+ (-\balkenbreite+0)*cos(\drehwinkel)},0) --   
+    ({\xstart + \balkenlaenge * cos(\drehwinkel)},{\ystart + \balkenlaenge * sin(\drehwinkel)},0)--
+    cycle;       
+%---------End Balken----------
+%Punkte Definition
+\node (pointa) at ({\xstartdraw},{\ystartdraw}) {};
+\node (pointc) at ({\xstartdraw+(10 *\myscale)},{\ystartdraw+(95*\myscale)}) {};
+\node (pointb) at ({\xstartdraw+(90*\myscale)},{\ystartdraw-(30*\myscale)}) {};
+
+\node (pointas) at ({\xstartdraw+(245 *\myscale)},{\ystartdraw+(75*\myscale)}) {};
+\node (pointbs) at ({\xstartdraw+(275*\myscale)},{\ystartdraw-(5*\myscale)}) {};
+\node (pointcs) at ({\xstartdraw+(205 *\myscale)},{\ystartdraw-(65*\myscale)}) {};
+
+\node [color=blue!70!red!50] (pointlabel) at ($(pointc)!0.5!(pointas)$) {$\exists ! \alpha$} ;
+
+%Geraden
+\draw[-,shorten >=-20pt, shorten <=-20pt,line width=0.2pt,color=red] (pointa) -- (pointc) ;
+\draw[-,shorten >=-20pt, shorten <=-20pt,line width=0.2pt,color=red] (pointa) --  (pointb) ;
+\draw[-,shorten >=-20pt, shorten <=-20pt,line width=0.2pt,color=red] (pointc) -- (pointb) ;
+
+\draw[-,shorten >=-20pt, shorten <=-20pt,line width=0.2pt,color=red] (pointas) -- (pointcs) ;
+\draw[-,shorten >=-20pt, shorten <=-20pt,line width=0.2pt,color=red] (pointas) --  (pointbs) ;
+\draw[-,shorten >=-20pt, shorten <=-20pt,line width=0.2pt,color=red] (pointcs) -- (pointbs) ;
+
+%Abbildung alpha
+\draw [-{>[scale=1,length=10,width=6]},shorten >=7pt, shorten <=7pt,line width=0.4pt,color=blue!70!red!50] (pointa) to [bend right=25] (pointas);
+\draw [-{>[scale=1,length=10,width=6]},shorten >=7pt, shorten <=7pt,line width=0.4pt,color=blue!70!red!50] (pointb) to [bend right=-25] (pointbs);
+\draw [-{>[scale=1,length=10,width=6]},shorten >=7pt, shorten <=7pt,line width=0.4pt,color=blue!70!red!50] (pointc) to [bend right=-25] (pointcs);
+
+\draw [-{>[scale=1,length=10,width=6]},shorten >=7pt, shorten <=7pt,line width=0.4pt,color=blue!70!red!50] ($(pointc)!0.3!(pointas)$)  to [bend right=-25] ($(pointc)!0.7!(pointas)$) ;
+
+
+%Punkte malen
+\draw[fill,color=white] (pointa) circle [x=1cm,y=1cm,radius=0.18];
+\draw[fill,color=white] (pointb) circle [x=1cm,y=1cm,radius=0.18];
+\draw[fill,color=white] (pointc) circle [x=1cm,y=1cm,radius=0.18];
+
+\draw[fill,color=red] (pointa) circle [x=1cm,y=1cm,radius=0.08]node[ xshift=-10, yshift=-10]{$a$};
+\draw[fill,color=red] (pointb) circle [x=1cm,y=1cm,radius=0.08]node[ yshift=-10]{$b$};
+\draw[fill,color=red] (pointc) circle [x=1cm,y=1cm,radius=0.08]node[ xshift=-10]{$c$};
+
+\draw[fill,color=white] (pointas) circle [x=1cm,y=1cm,radius=0.18];
+\draw[fill,color=white] (pointbs) circle [x=1cm,y=1cm,radius=0.18];
+\draw[fill,color=white] (pointcs) circle [x=1cm,y=1cm,radius=0.18];
+
+\draw[fill,color=red] (pointas) circle [x=1cm,y=1cm,radius=0.08]node[ xshift=10,yshift=5 ]{$a'$};
+\draw[fill,color=red] (pointbs) circle [x=1cm,y=1cm,radius=0.08]node[ xshift=10,yshift=-2]{$b'$};
+\draw[fill,color=red] (pointcs) circle [x=1cm,y=1cm,radius=0.08]node[ xshift=-10]{$c'$};
+
+\end{tikzpicture}
+\end{figure}
+%-------------------End Fortsetzungssatz für affine Abbildungen----------------  
+
+
+
 	
-				\draw[fill] (a) circle (0.5pt);
-				\draw[fill] (b) circle (0.5pt);
-				\draw[fill] (c) circle (0.5pt);
-				
-				\draw[fill] (a') circle (0.5pt);
-				\draw[fill] (b') circle (0.5pt);
-				\draw[fill] (c') circle (0.5pt);
-			\end{tikzpicture}
-		\end{figure}
-		
 		Gegeben sind die Ecken eines nicht-degenerierten Dreiecks $ a,b,c\in A^2 $ und drei Punkte $ a',b',c'\in A^2 $; es existiert genau eine affine Abbildung $ \alpha:A^2\to A^2 $ mit $ (a,b,c)\mapsto (a',b',c') $. Dieses $ \alpha $ ist genau dann eine affine Transformation von $ A^2 $, wenn das Bilddreieck $ \{a',b',c'\} $ nicht-degeneriert ist, d.h. $ (a',b',c') $ ein baryzentrisches Bezugssystem ist (dann bekommt man die Inverse mittels Fortsetzungssatz durch $ (a',b',c') \overset{\alpha^{-1}}{\mapsto} (a,b,c) $).
