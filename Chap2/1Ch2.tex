@@ -28,11 +28,11 @@
 \begin{Definition}[Geometrie]
 	Eine Geometrie besteht aus einer Menge $ A $ (z.B. Punktmenge) und einer darauf operierenden Gruppe $ (G,*) $, d.h.,
 	es gibt eine Gruppenoperation
-		\[ \rho: G\times A\to A,(g,a)\mapsto \rho_g(a)  \]
+		\[ \rho: G\times A\to A,(g,a)\mapsto \rho_g(a),  \]
 	wobei gilt
 		\begin{enumerate}[(i)]
 			\item $ \forall a\in A\forall g,h,\in G:(\rho_g\circ \rho_h)(a) = \rho_{g*h}(a) $
-			\item $ \forall a\in A:\rho_e(a) = a $ für das neutrale Element $ e \in G $
+			\item $ \forall a\in A:\rho_e(a) = a $ für das neutrale Element $ e \in G $.
 		\end{enumerate}
 \end{Definition}
 
@@ -44,7 +44,7 @@
 		\[ \forall a,b\in A\exists!v\in V:b=\tau_v(a) \]
 \end{Definition}
 
-\begin{figure}\centering
+\begin{figure}[H]\centering
 \begin{tikzpicture}[scale=1.5,>=triangle 45]
 	\draw[->,color=black] (-0.1,0) -- (5,0);
 	\draw[->,color=black] (0,-0.1) -- (0.,2);
@@ -293,7 +293,7 @@
 		Schwerpunkt oder Baryzentrum der Punkte $ a_i $ mit Gewichten $ x_i $.
 	\end{Definition}
 %-------------------------Begin Grafik Affinkombination---------------------------------    
-\begin{figure}\centering
+\begin{figure}[H]\centering
 \tdplotsetmaincoords{0}{-27} %-27
 \begin{tikzpicture}[scale=1,tdplot_main_coords]
  
