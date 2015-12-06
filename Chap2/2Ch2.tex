@@ -180,24 +180,21 @@
 %-------------------Begin Fortsetzungssatz für affine Abbildungen----------------  
 \begin{figure}[H]\centering
 \tdplotsetmaincoords{0}{0} %-27
-\begin{tikzpicture}[yscale=0.8,tdplot_main_coords]
+\begin{tikzpicture}[yscale=1,tdplot_main_coords]
 
-\def\xstart{0}
-\def\ystart{0}
-\def\myscale{0.03}
+\def\xstart{0} %x Koordinate der Startposition der Grafik
+\def\ystart{0} %y Koordinate der Startposition der Grafik
+\def\myscale{0.022} %ändert die Größe der Grafik (Skalierung der Grafik) 
 
-\def\xstartdraw{(\xstart + 1)}
-\def\ystartdraw{(\ystart + 2.5)}
+\def\xstartdraw{(\xstart + 1.5)} %xKoordinate des Referenzstartpunktes (in dieser Zeichnung: a)
+\def\ystartdraw{(\ystart + 2.0)}%yKoordinate des Referenzstartpunktes (in dieser Zeichnung: a)
 
-\def\xlength{3.5}
-\def\ylength{1.7}
+\def\balkenhoehe{(4.3)}% Länge des vertikalen blauen Balkens
+\def\balkenlaenge{(10)}% Länge des horizontalen blauen Balkens
+\def\balkenbreite{0.4} %Balkenbreite
 
 %---------Begin Balken----------
 \def\drehwinkel{0}
-\def\balkenbreite{0.4}
-\def\balkenhoehe{(\ylength*2+2)}
-\def\balkenlaenge{(\xlength*2+3)}
-
 \node (VekV) at ({\xstart+1*cos(\drehwinkel)-\balkenbreite*sin(\drehwinkel)},{\ystart+0.5*sin(\drehwinkel)+\balkenbreite*cos(\drehwinkel)})[color=blue] {$V=K^2$};
 \node (AffA) at ({\xstart+(\balkenlaenge-1)*cos(\drehwinkel)},{\ystart+(\balkenlaenge-1)*sin(\drehwinkel)+\balkenbreite*cos(\drehwinkel)})[color=red] {$A$};
 
@@ -210,14 +207,17 @@
     ({\xstart + \balkenlaenge * cos(\drehwinkel)},{\ystart + \balkenlaenge * sin(\drehwinkel)},0)--
     cycle;       
 %---------End Balken----------
+
+\def\xdistanz{20} %Abstand zwischen den beiden Dreiecken
+
 %Punkte Definition
 \node (pointa) at ({\xstartdraw},{\ystartdraw}) {};
 \node (pointc) at ({\xstartdraw+(10 *\myscale)},{\ystartdraw+(95*\myscale)}) {};
 \node (pointb) at ({\xstartdraw+(90*\myscale)},{\ystartdraw-(30*\myscale)}) {};
 
-\node (pointas) at ({\xstartdraw+(245 *\myscale)},{\ystartdraw+(75*\myscale)}) {};
-\node (pointbs) at ({\xstartdraw+(275*\myscale)},{\ystartdraw-(5*\myscale)}) {};
-\node (pointcs) at ({\xstartdraw+(205 *\myscale)},{\ystartdraw-(65*\myscale)}) {};
+\node (pointas) at ({\xstartdraw+((245+\xdistanz) *\myscale)},{\ystartdraw+(75*\myscale)}) {};
+\node (pointbs) at ({\xstartdraw+((275+\xdistanz)*\myscale)},{\ystartdraw-(5*\myscale)}) {};
+\node (pointcs) at ({\xstartdraw+((205+\xdistanz) *\myscale)},{\ystartdraw-(65*\myscale)}) {};
 
 \node [color=blue!70!red!50] (pointlabel) at ($(pointc)!0.5!(pointas)$) {$\exists ! \alpha$} ;
 
@@ -231,12 +231,11 @@
 \draw[-,shorten >=-20pt, shorten <=-20pt,line width=0.2pt,color=red] (pointcs) -- (pointbs) ;
 
 %Abbildung alpha
-\draw [-{>[scale=1,length=10,width=6]},shorten >=7pt, shorten <=7pt,line width=0.4pt,color=blue!70!red!50] (pointa) to [bend right=25] (pointas);
+\draw [-{>[scale=1,length=10,width=6]},shorten >=7pt, shorten <=7pt,line width=0.4pt,color=blue!70!red!50] (pointa) to [bend right=15] (pointas);
 \draw [-{>[scale=1,length=10,width=6]},shorten >=7pt, shorten <=7pt,line width=0.4pt,color=blue!70!red!50] (pointb) to [bend right=-25] (pointbs);
 \draw [-{>[scale=1,length=10,width=6]},shorten >=7pt, shorten <=7pt,line width=0.4pt,color=blue!70!red!50] (pointc) to [bend right=-25] (pointcs);
 
 \draw [-{>[scale=1,length=10,width=6]},shorten >=7pt, shorten <=7pt,line width=0.4pt,color=blue!70!red!50] ($(pointc)!0.3!(pointas)$)  to [bend right=-25] ($(pointc)!0.7!(pointas)$) ;
-
 
 %Punkte malen
 \draw[fill,color=white] (pointa) circle [x=1cm,y=1cm,radius=0.18];
@@ -259,7 +258,5 @@
 \end{figure}
 %-------------------End Fortsetzungssatz für affine Abbildungen----------------  
 
-
-
 	
-		Gegeben sind die Ecken eines nicht-degenerierten Dreiecks $ a,b,c\in A^2 $ und drei Punkte $ a',b',c'\in A^2 $; es existiert genau eine affine Abbildung $ \alpha:A^2\to A^2 $ mit $ (a,b,c)\mapsto (a',b',c') $. Dieses $ \alpha $ ist genau dann eine affine Transformation von $ A^2 $, wenn das Bilddreieck $ \{a',b',c'\} $ nicht-degeneriert ist, d.h. $ (a',b',c') $ ein baryzentrisches Bezugssystem ist (dann bekommt man die Inverse mittels Fortsetzungssatz durch $ (a',b',c') \overset{\alpha^{-1}}{\mapsto} (a,b,c) $).
+		Gegeben sind die Ecken eines nicht-degenerierten Dreiecks $ a,b,c\in A^2 := (A,K^2,\tau) $ und drei Punkte $ a',b',c'\in A^2 $; es existiert genau eine affine Abbildung $ \alpha:A^2\to A^2 $ mit $ (a,b,c)\mapsto (a',b',c') $. Dieses $ \alpha $ ist genau dann eine affine Transformation von $ A^2 $, wenn das Bilddreieck $ \{a',b',c'\} $ nicht-degeneriert ist, d.h. $ (a',b',c') $ ein baryzentrisches Bezugssystem ist (dann bekommt man die Inverse mittels Fortsetzungssatz durch $ (a',b',c') \overset{\alpha^{-1}}{\mapsto} (a,b,c) $).
