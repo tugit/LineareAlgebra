@@ -63,6 +63,66 @@
 \paragraph{Bemerkung}
 	Im Beweis wurde benutzt: für Affinkombinationen ist (falls $ x_j \neq 1$)
 		\[ \sum_{i\in I}a_ix_i = \left(\sum_{i\neq j}a_i\frac{x_i}{1-x_j}\right)(1-x_j)+a_jx_j \]
+%-------------------Begin affin Kombinationen Aufteilungsbeispiel----------------  
+\begin{figure}[H]\centering
+\tdplotsetmaincoords{0}{0} %-27
+\begin{tikzpicture}[yscale=1,tdplot_main_coords]
+
+\def\xstart{0} %x Koordinate der Startposition der Grafik
+\def\ystart{0} %y Koordinate der Startposition der Grafik
+\def\myscale{0.015} %ändert die Größe der Grafik (Skalierung der Grafik) 
+
+\def\xstartdraw{(\xstart + 2.0)} %xKoordinate des Referenzstartpunktes (in dieser Zeichnung: a)
+\def\ystartdraw{(\ystart + 1.0)}%yKoordinate des Referenzstartpunktes (in dieser Zeichnung: a)
+
+\def\balkenhoehe{(4.3)}% Länge des vertikalen blauen Balkens
+\def\balkenlaenge{(10)}% Länge des horizontalen blauen Balkens
+\def\balkenbreite{0.4} %Balkenbreite
+
+%---------Begin Balken----------
+\def\drehwinkel{0}
+\node (VekV) at ({\xstart+0.7*cos(\drehwinkel)-\balkenbreite*sin(\drehwinkel)},{\ystart+0.5*sin(\drehwinkel)+\balkenbreite*cos(\drehwinkel)})[color=blue] {$V$};
+\node (AffA) at ({\xstart+(\balkenlaenge-1)*cos(\drehwinkel)},{\ystart+(\balkenlaenge-1)*sin(\drehwinkel)+\balkenbreite*cos(\drehwinkel)})[color=red] {$A$};
+
+\path[ shade, top color=white, bottom color=blue, opacity=.6] 
+    ({\xstart},{\ystart},0)  -- ({\xstart - \balkenbreite * cos(\drehwinkel)- (-\balkenbreite+0)*sin(\drehwinkel)},{\ystart - \balkenbreite * sin(\drehwinkel)+ (-\balkenbreite+0)*cos(\drehwinkel)},0)  -- ({\xstart - \balkenbreite * cos(\drehwinkel)- (\balkenhoehe+0.5)*sin(\drehwinkel)},{\ystart - \balkenbreite * sin(\drehwinkel)+ (\balkenhoehe+0.5)*cos(\drehwinkel)},0) -- ({\xstart - 0 * cos(\drehwinkel)- (\balkenhoehe+0)*sin(\drehwinkel)},{\ystart - 0 * sin(\drehwinkel)+ (\balkenhoehe+0)*cos(\drehwinkel)},0) -- cycle;
+        
+\path[ shade, right color=white, left color=blue, opacity=.6] 
+	({\xstart},{\ystart},0)  -- ({\xstart - \balkenbreite * cos(\drehwinkel)- (-\balkenbreite+0)*sin(\drehwinkel)},{\ystart - \balkenbreite * sin(\drehwinkel)+ (-\balkenbreite+0)*cos(\drehwinkel)},0) --
+    ({\xstart + (\balkenlaenge+0.5) * cos(\drehwinkel)- (-\balkenbreite+0)*sin(\drehwinkel)},{\ystart + (\balkenlaenge+0.5) * sin(\drehwinkel)+ (-\balkenbreite+0)*cos(\drehwinkel)},0) --   
+    ({\xstart + \balkenlaenge * cos(\drehwinkel)},{\ystart + \balkenlaenge * sin(\drehwinkel)},0)--
+    cycle;       
+%---------End Balken----------
+
+%Punkte Definition
+\node (pointa0) at ({\xstartdraw},{\ystartdraw}) {};
+\node (pointa2) at ({\xstartdraw+(-20 *\myscale)},{\ystartdraw+(200*\myscale)}) {};
+\node (pointa1) at ({\xstartdraw+(270*\myscale)},{\ystartdraw+(103*\myscale)}) {};
+\node (pointax) at ($(pointa0)!0.6!(pointa1)$) {};
+\node (pointa) at ($(pointa2)!0.5!(pointax)$) {};
+
+%Geraden
+\draw[-,shorten >=-20pt, shorten <=-20pt,line width=0.2pt,color=red] (pointa0) -- (pointa1) ;
+\draw[-,shorten >=-20pt, shorten <=-20pt,line width=0.2pt,color=red] (pointa2) --  (pointax) ;
+
+%Punkte malen
+\draw[fill,color=white] (pointa0) circle [x=1cm,y=1cm,radius=0.18];
+\draw[fill,color=white] (pointa1) circle [x=1cm,y=1cm,radius=0.18];
+\draw[fill,color=white] (pointa2) circle [x=1cm,y=1cm,radius=0.18];
+\draw[fill,color=white] (pointax) circle [x=1cm,y=1cm,radius=0.18];
+\draw[fill,color=white] (pointa) circle [x=1cm,y=1cm,radius=0.18];
+
+\draw[fill,color=red] (pointa0) circle [x=1cm,y=1cm,radius=0.08]node[ xshift=1, yshift=-10]{$a_0$};
+\draw[fill,color=red] (pointa1) circle [x=1cm,y=1cm,radius=0.08]node[ xshift=5, yshift=-10]{$a_1$};
+\draw[fill,color=red] (pointa2) circle [x=1cm,y=1cm,radius=0.08]node[ xshift=-10]{$a_2$};
+\draw[fill,color=red] ([xshift=-2pt,yshift=-2pt]pointax) rectangle ++(4pt,4pt) node[xshift=40, yshift=-20]{$\displaystyle a_s = \sum_{i=0}^{1}a_i \frac{x_i}{1-x_2}$};
+\draw[fill,color=red] (pointa) circle [x=1cm,y=1cm,radius=0.08]node[above right,xshift=0, yshift=-10]{$\displaystyle a = \sum_{i=0}^{2}a_i x_i = a_s (1-x_2) + a_2 x_2 $};
+
+\end{tikzpicture}
+\end{figure}
+%-------------------End affin Kombinationen Aufteilungsbeispiel----------------
+
+        
 \paragraph{Bemerkung}
 	Mit der Verträglichkeit affiner Abbildungen mit Affinkombinationen folgt, dass die Inverse $ \alpha^{-1}:A'\to A $ einer bijektiven affinen Abbildung $ \alpha:A\to A' $ ebenfalls affin ist:
 		\begin{gather*}
