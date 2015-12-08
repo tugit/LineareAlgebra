@@ -189,6 +189,104 @@
 	Sind $ g_i = [a_ib_i]=a_i + [v] $ mit $ b_i = a_i + v $ für $ i = 1,2 $ zwei Geraden mit dem gleichen RVR $ [v] $, d.h. \emph{parallel}, so sind auch ihre Bilder unter einer affinen Transformation $ \alpha $ parallele Geraden,
 		\[ \alpha(g_i) = \alpha(a_i) + [\lambda(v)] \text{ mit } \lambda\in Gl(V). \]
 	\end{Definition}
+	%-------------------Begin parallele Geraden ----------------  
+\begin{figure}[H]\centering
+\tdplotsetmaincoords{0}{0} %-27
+\begin{tikzpicture}[yscale=1,tdplot_main_coords]
+
+\def\xstart{0} %x Koordinate der Startposition der Grafik
+\def\ystart{0} %y Koordinate der Startposition der Grafik
+\def\myscale{0.20} %ändert die Größe der Grafik (Skalierung der Grafik) 
+
+\def\xstartdraw{(\xstart + 2.0)} %xKoordinate des Referenzstartpunktes (in dieser Zeichnung: a)
+\def\ystartdraw{(\ystart + 1.5)}%yKoordinate des Referenzstartpunktes (in dieser Zeichnung: a)
+
+\def\balkenhoehe{(5.3)}% Länge des vertikalen blauen Balkens
+\def\balkenlaenge{(10)}% Länge des horizontalen blauen Balkens
+\def\balkenbreite{0.4} %Balkenbreite
+
+%---------Begin Balken----------
+\def\drehwinkel{0}
+\node (VekV) at ({\xstart+0.7*cos(\drehwinkel)-\balkenbreite*sin(\drehwinkel)},{\ystart+0.5*sin(\drehwinkel)+\balkenbreite*cos(\drehwinkel)})[color=blue] {$V$};
+\node (AffA) at ({\xstart+(\balkenlaenge-1)*cos(\drehwinkel)},{\ystart+(\balkenlaenge-1)*sin(\drehwinkel)+\balkenbreite*cos(\drehwinkel)})[color=red] {$A$};
+
+\path[ shade, top color=white, bottom color=blue, opacity=.6] 
+    ({\xstart},{\ystart},0)  -- ({\xstart - \balkenbreite * cos(\drehwinkel)- (-\balkenbreite+0)*sin(\drehwinkel)},{\ystart - \balkenbreite * sin(\drehwinkel)+ (-\balkenbreite+0)*cos(\drehwinkel)},0)  -- ({\xstart - \balkenbreite * cos(\drehwinkel)- (\balkenhoehe+0.5)*sin(\drehwinkel)},{\ystart - \balkenbreite * sin(\drehwinkel)+ (\balkenhoehe+0.5)*cos(\drehwinkel)},0) -- ({\xstart - 0 * cos(\drehwinkel)- (\balkenhoehe+0)*sin(\drehwinkel)},{\ystart - 0 * sin(\drehwinkel)+ (\balkenhoehe+0)*cos(\drehwinkel)},0) -- cycle;
+        
+\path[ shade, right color=white, left color=blue, opacity=.6] 
+	({\xstart},{\ystart},0)  -- ({\xstart - \balkenbreite * cos(\drehwinkel)- (-\balkenbreite+0)*sin(\drehwinkel)},{\ystart - \balkenbreite * sin(\drehwinkel)+ (-\balkenbreite+0)*cos(\drehwinkel)},0) --
+    ({\xstart + (\balkenlaenge+0.5) * cos(\drehwinkel)- (-\balkenbreite+0)*sin(\drehwinkel)},{\ystart + (\balkenlaenge+0.5) * sin(\drehwinkel)+ (-\balkenbreite+0)*cos(\drehwinkel)},0) --   
+    ({\xstart + \balkenlaenge * cos(\drehwinkel)},{\ystart + \balkenlaenge * sin(\drehwinkel)},0)--
+    cycle;       
+%---------End Balken----------
+\def\lightoffset{0.2*\myscale} %offeset der Vektoren
+
+%Punkte Definition
+\node (pointa1) at ({\xstartdraw},{\ystartdraw}) {};
+\node (pointa2) at ({\xstartdraw+(-3 *\myscale)},{\ystartdraw+(6*\myscale)}) {};
+\node (pointb1) at ($(pointa1) + (7*\myscale,2.0*\myscale) $) {};
+\node (pointb2) at ($(pointa2) + (7*\myscale,2.0*\myscale) $) {};
+
+\node (pointaa1) at ($(pointa1) + (18*\myscale,-2*\myscale) $) {};
+\node (pointaa2) at ($(pointa1) + (9*\myscale,11*\myscale) $) {};
+\node (pointab1) at ($(pointaa1) + (4*\myscale,8*\myscale) $) {};
+\node (pointab2) at ($(pointaa2) + (4*\myscale,8*\myscale) $) {};
+
+%Geraden
+\draw[-,shorten >=-60pt, shorten <=-50pt,line width=0.2pt,color=red] (pointa1) -- (pointb1) ;
+\draw[-,shorten >=-80pt, shorten <=-30pt,line width=0.2pt,color=red] (pointa2) -- (pointb2) ;
+\draw[-,shorten >=-90pt, shorten <=-30pt,line width=0.2pt,color=red] (pointaa1) -- (pointab1) ;
+\draw[-,shorten >=-20pt, shorten <=-110pt,line width=0.2pt,color=red] (pointaa2) -- (pointab2) ;
+
+\node [color=red] (pointlabelg1) at ($(pointa1)+2.2*(pointb1)-2.2*(pointa1)$) [below, xshift=0, yshift=0] {$g_1$} ;
+\node [color=red] (pointlabelg2) at ($(pointa2)+2.7*(pointb2)-2.7*(pointa2)$) [below, xshift=0, yshift=0] {$g_2$} ;
+
+\node [color=red] (pointlabelag1) at ($(pointaa1)+2.2*(pointab1)-2.2*(pointaa1)$) [right, xshift=0, yshift=0] {$\alpha(g_1)$} ;
+\node [color=red] (pointlabelag2) at ($(pointaa2)-2.1*(pointab2)+2.1*(pointaa2)$) [right, xshift=0, yshift=0] {$\alpha(g_2)$} ;
+
+%Abbildung alpha
+\draw [-{>[scale=1,length=10,width=6]},shorten >=8pt, shorten <=8pt,line width=0.4pt,color=blue!70!red!50] (pointa1) to [bend right=19] (pointaa1);
+\draw [-{>[scale=1,length=10,width=6]},shorten >=8pt, shorten <=8pt,line width=0.4pt,color=blue!70!red!50] (pointa2) to [bend right=-25] (pointaa2);
+\node [color=blue!70!red!50] (pointlabel1) at ($(pointa1)!0.5!(pointaa1)$) [below, xshift=0, yshift=2] {$\alpha$} ;
+\node [color=blue!70!red!50] (pointlabel2) at ($(pointa2)!0.5!(pointaa2)$) [above, xshift=-10, yshift=10]{$\alpha$} ;
+
+%Punkte malen
+\draw[fill,color=white] (pointa1) circle [x=1cm,y=1cm,radius=0.18];
+\draw[fill,color=white] (pointb1) circle [x=1cm,y=1cm,radius=0.18];
+\draw[fill,color=white] (pointa2) circle [x=1cm,y=1cm,radius=0.18];
+\draw[fill,color=white] (pointb2) circle [x=1cm,y=1cm,radius=0.18];
+\draw[fill,color=white] (pointaa1) circle [x=1cm,y=1cm,radius=0.18];
+\draw[fill,color=white] (pointaa2) circle [x=1cm,y=1cm,radius=0.18];
+\draw[fill,color=white] (pointab1) circle [x=1cm,y=1cm,radius=0.18];
+\draw[fill,color=white] (pointab2) circle [x=1cm,y=1cm,radius=0.18];
+
+
+\draw[fill,color=red] (pointa1) circle [x=1cm,y=1cm,radius=0.08]node[above, xshift=0, yshift=0]{$a_1$};
+\draw[fill,color=red] (pointb1) circle [x=1cm,y=1cm,radius=0.08]node[above, xshift=0, yshift=0]{$b_1$};
+\draw[fill,color=red] (pointa2) circle [x=1cm,y=1cm,radius=0.08]node[below, xshift=5, yshift=0]{$a_2$};
+\draw[fill,color=red] (pointb2) circle [x=1cm,y=1cm,radius=0.08]node[below, xshift=5, yshift=0]{$b_2$};
+\draw[fill,color=red] (pointaa1) circle [x=1cm,y=1cm,radius=0.08]node[right, xshift=0, yshift=0]{$\alpha(a_1)$};
+\draw[fill,color=red] (pointab1) circle [x=1cm,y=1cm,radius=0.08]node[right, xshift=0, yshift=0]{$\alpha(b_1)$};
+\draw[fill,color=red] (pointaa2) circle [x=1cm,y=1cm,radius=0.08]node[right, xshift=2, yshift=5]{$\alpha(a_2)$};
+\draw[fill,color=red] (pointab2) circle [x=1cm,y=1cm,radius=0.08]node[right, xshift=2, yshift=5]{$\alpha(b_2)$};
+
+%Richtungsvektoren
+\draw [-{>[scale=1,length=10,width=6]},shorten >=5pt, shorten <=5pt,line width=0.4pt,color=blue] ($(pointa1)+(\lightoffset,\lightoffset)$) to  ($(pointb1)+(\lightoffset,\lightoffset)$);
+\node (pointa1b1v) at ($(pointa1)!0.5!(pointb1)$) [above,color=blue]{$v$};
+
+\draw [-{>[scale=1,length=10,width=6]},shorten >=5pt, shorten <=5pt,line width=0.4pt,color=blue] ($(pointa2)+(\lightoffset,\lightoffset)$) to  ($(pointb2)+(\lightoffset,\lightoffset)$);
+\node (pointa1b1v) at ($(pointa2)!0.5!(pointb2)$) [below,color=blue]{$v$};
+
+\draw [-{>[scale=1,length=10,width=6]},shorten >=5pt, shorten <=5pt,line width=0.4pt,color=blue] ($(pointaa2)+(\lightoffset,\lightoffset)$) to  ($(pointab2)+(\lightoffset,\lightoffset)$);
+\node (pointa1b1v) at ($(pointaa2)!0.5!(pointab2)$) [left,color=blue]{$\lambda(v)$};
+
+\draw [-{>[scale=1,length=10,width=6]},shorten >=5pt, shorten <=5pt,line width=0.4pt,color=blue] ($(pointaa1)+(\lightoffset,\lightoffset)$) to  ($(pointab1)+(\lightoffset,\lightoffset)$);
+\node (pointa1b1v) at ($(pointaa1)!0.5!(pointab1)$) [right,color=blue]{$\lambda(v)$};
+
+\end{tikzpicture}
+\end{figure}
+%-------------------End parallele Geraden ----------------
+	
 \subsection{Beispiel \& Definition}
 	\begin{Definition}[Streckung]
 	Sei $ (A,V,\tau) $ ein AR über $ K $ und $ \lambda\in\End(V) $ eine \emph{Homothetie},\hfill
