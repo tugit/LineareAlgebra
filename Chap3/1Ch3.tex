@@ -1,0 +1,109 @@
+\chapter{Buchhaltung}
+	Dieses Kapitel zeigt eine Art "`Tabellenkalkül"' -- eine effiziente Rechenmethode in der linearen Algebra.
+	
+	Vorteil: Selbst durch einen Trottel (e.g. einen Computer) ausführbar. 
+	
+	Nachteil: Selbst durch einen Trottel ausführbar.
+	
+\paragraph{Generalvoraussetzung} Alle VR haben in diesem Kapitel endliche Dimension.
+\section{Matrizen}
+\paragraph{Idee}
+	Ein Homomorphismus $ f\in \hom(V,W) $ wird (nach Fortsetzungssatz) durch die Bilder $ f(b_j) $ der Vektoren einer Basis $ (b_j){j\in J} $ eindeutig festgelegt, ist $ (c_i)_{i\in I} $ eine Basis von $ W $, so hat jeder dieses $ f(b_j) $ eine eindeutige Basisdarstellung.
+		\[ \forall {j\in J}\exists! (x_i)_{i\in I}:f(b_j) = \sum_{i\in I}c_ix_{ij} \]
+	Sind $ n=\dim V $ und $ m=\dim W $ endlich, so kann man also $ f $ mithilfe der Basen $ (b_j)_{j\in J} $ von $ V $ und $ (c_i)_{i\in I} $ von $ W $ komplett durch die Tabelle der Koeffizienten beschreiben.
+	
+	\begin{figure}[H]\centering
+		$ \begin{array}{c|cccccc}
+		f		& f(b_1) 	& f(b_2) 	& \dots 	& f(b_j)	& \dots	& f(b_n) \\\hline
+		c_1  	& x_{11}  	& x_{12}	& \dots		& x_{1j}	& \dots	& x_{1n} \\
+		c_2		& x_{21}	& x_{22}	& \dots		& x_{2j}	& \dots	& x_{2n} \\
+		\vdots  &  \vdots	&  \vdots	&			&  \vdots	&		&  \vdots \\
+		c_i		&  x_{i1}	&  x_{i2}	& \dots		&  x_{ij}	&\dots  &  c_{in} \\
+		\vdots	&  \vdots	&  \vdots	&			&  \vdots	&		&  \vdots \\
+		c_m		&  x_{m1}	&  x_{m2}	& \dots		&  x_{mj}	& \dots	&  c_{mn} 
+		\end{array} $
+	\end{figure}
+	
+	Daher spielt es prinzipiell keine Rolle, ob die Bilder $ f(b_j) $ der Basisvektoren in den Spalten stehen (wie oben) oder in den Zeilen der Tabelle -- es ist aber wichtig, dass dies konsistent gemacht wird.
+	
+	In dieser LVA: Bilder $ f(b_j) $ der Basisvektoren werden durch Spalten beschrieben.
+
+\subsection{Definition}
+	\begin{Definition}[Matrix]
+		Eine Matrix $ X\in K^{m\times n} $ ist eine Tabelle von Elementen $ x_{ij}\in K $ mit $ m $ Zeilen und $ n $ Spalten,
+			\[ X = \begin{pmatrix}
+			x_{11} 		& \dots 	& x_{1n}\\
+			\vdots 		& 			& \vdots\\
+			x_{m1} 		& \dots		& x_{mn}
+			\end{pmatrix} \]
+		Die (Darstellungs-)Matrix eines Homomorphismus $ f\in \hom(V,W) $, bzgl. Basen $ B= (b_1,\dots,b_n) $ und $ C=(c_1,\dots,c_m) $ von $ V $ bzw. $ W $, ist die Matrix
+			\[ X = \xi^C_B(f)\in K^{m\times n}\text{ mit }\forall j=1,\dots,n:f(b_j) = \sum_{i=1}^{m}c_ix_ij \]
+	\end{Definition}
+	
+\paragraph{Bemerkung}
+	Mit $ I:= \{1,\dots,m\} $ und $ J:= \{1,\dots,n\} $ kann eine Matrix auch als Abbildung aufgefasst werden
+		\[ X = (x_{ij})_{i\in I,j\in J}\text{ bzw. }X:I\times J\to K,(i,j)\mapsto x_{ij}. \]
+	Sind $ f\in \hom(V,W) $ und $ B=(b_1,\dots,b_n) $ und $ C=(c_1,\dots,c_m) $ Basen von $ V $ bzw. $ W $, so sind
+		\[ x_{ij} = c_i^*(f(b_j)) \]
+	die Komponenten der Darstellungsmatrix $ \xi_B^C(f) $ von $ f $ bzgl. der Basen $ B $ und $ C $, mit der zu $ C $ dualen Basis $ C^*=(c_1^*,\dots c_m^*) $ von $ W^* $. Mit der zu $ B $ dualen Basis $ B^*= (b_1^*,\dots,b_n^*) $ von $ V^* $ ist dann auch
+		\[ f=\sum_{i=1}^{m}\sum_{j=1}^{n} c_ix_{ij}b_j^*. \]
+\subsection{Lemma}
+	\begin{Lemma}[Matrix ist Vektorraum]
+	Mit der komponentenweisen Addition und Skalarmultiplikation auf $ K^{m\times n} $,
+		\[ (x_{ij})+(y_{ij}) := (x_{ij}+y_{ij}) \text{ und } (x_{ij})\cdot z := (x_{ij}\cdot z), \]
+	wird $ K^{m\times n} $ ein Vektorraum und man erhält einen Isomorphismus
+		\[ \xi_B^C:\hom(V,W)\to K^{m\times n},f\mapsto \xi_B^C(f). \]
+	\end{Lemma}
+\paragraph{Bemerkung}
+	Die komponentenweise Addition und Skalarmultiplikation sind gerade die Addition und Skalarmultiplikation von Matrizen als Abbildungen.
+	
+	Wir wissen schon, dass $ \hom(V,W) $ ein $ K $-VR ist.
+\paragraph{Beweis}
+	Dass $ \hom(V,W) $ und $ K^{m\times n} \ K $-VR sind, ist bekannt. Die Linearität von $ \xi_B^C $ folgt direkt, da mit der zu $ C $ dualen Basis $ C^* $ von $ W^* $
+		\[ \forall i=1,\dots,m\forall j=1,\dots,n:x_{ij}= c_i^*(f(b_j)). \]
+	Nämlich: für $ f,g\in \hom(V,W) $ und $ x,y\in K $ ist dann
+		\begin{gather*}
+			\forall i= 1,\dots,m\forall j=1,\dots, n:c_i^*((fx+gy)(b_j))\\
+			= c_i^*(f(b_j)x+g(b_j)y) = c_i^*(f(b_j))x+c_i^*(g(b_j))y
+		\end{gather*}
+	Die Abbildung
+		\[ K^{m\times n}\ni X=(x_{ij})\mapsto \sum_{i=1}^{m}\sum_{j=1}^{n}c_ix_{ij}b_j^* = f\in \hom(V,W) \]
+	liefert die Inverse von $ f\mapsto\xi_B^C(f) $, also ist $ \xi_B^C $ ein Isomorphismus.
+\paragraph{Bemerkung}
+	Damit folgt $ \dim \hom(V,W) = \dim K^{m\times n} = m\cdot n $.
+\subsection{Lemma \& Definition}
+	\begin{Lemma}[Darstellungsmatrix einer Komposition]
+	Sind $ U,V,W \ K$-VR mit Basen $ A=(u_1,\dots,u_p),B=(v_1,\dots,v_n),C=(w_1,\dots,w_m) $, so gilt für $ g\in \hom(U,V) $ und $ f\in \hom(V,W) $
+		\[ \xi_A^C(f\circ g) = \xi_B^C(f)\cdot \xi_A^B(g), \]
+	\end{Lemma}
+	\begin{Definition}
+	wobei die Matrixmultiplikation
+		\[ \cdot:K^{m\times n}\times K^{n\times p} \to K^{m\times p}, (X,Y)\mapsto X\cdot Y = Z \]
+	definiert ist durch
+		\[ z_{ik} := \sum_{j=1}^{n}x_{ij}y_{jk}. \]
+	\end{Definition}
+\paragraph{Bemerkung}
+	Das Element $ z_{ik} $ in der $ i $-ten Zeile und $ k $-ten Spalte von $ Z = XY $ wird also aus der $ i $-ten Zeile von $ X $ und der $k$-ten Spalte von $ Y $ berechnet.
+\paragraph{Beweis}
+	Wir verwenden die Darstellungsmatrizen
+		\[ \begin{cases}
+		X = \xi^C_B(f)\in K^{m\times n} &\text{ von } f\in \hom(V,W)\\
+		Y = \xi_A^B(g)\in K^{n\times p} &\text{ von } g\in \hom(U,V)
+		\end{cases} \]
+	bezüglich $ B $ und $ C $ bzw. $ A $ und $ B $, dann gilt für $ k=1,\dots,p $
+		\[ (f\circ g)(u_k)=f(\sum_{j=1}^{n}v_jy_{jk}) = \sum_{j=1}^{n}f(v_j)y_{jk} = \sum_{j=1}^{n}\sum_{i=1}^{m}w_ix_{ij}y_{jk} = \sum_{i=1}^{m}w_i\left(\sum_{j=1}^{n}x_{ij}y_{jk}\right), \]
+	d.h. durch $ I=\{1,\dots,m\},J=\{1,\dots,n\},K=\{1,\dots,p\} $ und 
+		\[ \xi_A^C(f\circ g) = Z = (z_{ik})_{i\in I,k\in K} \text{ mit }\forall i\in I\forall k\in K: z_{ik}= \sum_{j=1}^{n}x_{ij}y_{jk} \]
+	erhält man die Darstellungsmatrix
+		\[ \xi_A^C(f\circ g) = \xi_B^C(f)\xi_A^B(g) \]
+	der Komposition als Produkt der Darstellungsmatrizen von $ f $ und $ g $.
+\paragraph{Notation \& Definition}
+	Wir notieren die definierende Gleichung einer Darstellungsmatrix $ X=\xi_B^C(f) $ von $ f\in \hom(V,W) $ auch in Kurzform
+		\[ CX=(c_1,\dots,c_m)X = (f(b_1),\dots,f(b_n)) = f(B). \]
+	\begin{Definition}[Koordinatenspalte]
+	Für die Koordinatenspalten eines Vektors
+		\[ Y\in K^{n\times 1} \text{ mit } v=\sum_{j=1}^{n}b_jy_{j1} \]
+	ist dann
+		\[ f(v) = (f(b_1),\dots,f(b_n))Y = (c_1,\dots,c_m)XY \]
+	\end{Definition}
+	Die Familien $ (c_i,\dots,c_m) $ und $ (f(b_1),\dots,f(b_n)) $ sind keine Matrizen, denn die Elemente sind Vektoren!
