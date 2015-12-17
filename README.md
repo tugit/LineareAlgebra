@@ -5,6 +5,8 @@ Das Skriptum deckt den Vorlesungsstoff nicht verbindlich vollständig ab!
 
 Wir sind dankbar für jede Art von konstruktiver Kritik an Form, Inhalt und Sprache. Helft uns, das Skriptum fehlerfrei zu bekommen!
 
+Um das PDF herunterzuladen: der 
+
 Grundsätzliche Formatierungsrichtlinien:
 - Struktur beginnt bei \chapter und richtet sich nach dem Vorlesungsaufbau.
 - Satz, Lemma, Korollar und Definition sind als \subsection einzeln strukturiert und zusätzlich die wesentliche Inhalte in die entsprechende Umgebung zu schachteln.
