@@ -145,29 +145,32 @@
 	
 	Wir wählen (nach BES) Basen $B = (b_1,...,b_n)$ von $V$ und $C=(c_1,...,c_m)$ von $W$ und definieren
 		\begin{equation*}
-			f_{ij}\in \hom (V,W) mit f_{ij}:= c_i\cdot b_j^* \text{ für } 
+			\hom (V,W) \ni f_{ij}:= c_i\cdot b_j^* \text{ für } 
 				\begin{cases}
 					i\in I := \{1,...,m\}\\
 					j\in J := \{1,...,n\}
 				\end{cases}
 		\end{equation*}
-	Behauptung: $F=(f_{ij})_{I,J}$ ist Basis von $\hom (V,W)$.
+	Behauptung: $F=(f_{ij})_{\substack{i\in I\\j \in J}}$ ist Basis von $\hom (V,W)$.
 	
 	Da $(c_i)_{i\in I}$ linear unabhängig in $W$ ist, gilt für jede Famlilie $(x_{ij})_{I,J}$ in $K$:
-		\begin{gather*}
-			0 = \sum_{I,J} f_{ij}x_{ij} \Rightarrow \forall k \in J: 0 = \sum (f_{ij}x_{ij})(b_k)\\
-			= \sum c_i b_j^* (b_k) x_{ij} = \sum_{i\in I} c_ix_{ik} \Rightarrow \forall k\in J\forall i\in I:x_{ik} = 0
-		\end{gather*}
+		\begin{align*}
+			0 &= \sum_{\substack{i\in I\\j \in J}} f_{ij}x_{ij} \\
+			\Rightarrow \forall k \in J: 0 &= \sum_{\substack{i\in I\\j \in J}} (f_{ij}x_{ij})(b_k) = \sum_{\substack{i\in I\\j \in J}} c_i b_j^* (b_k) x_{ij} = \sum_{i\in I} c_ix_{ik} \\
+			&\Rightarrow \forall k\in J\forall i\in I:x_{ik} = 0
+		\end{align*}
 	Also ist $F$ linear unabhängig.
 	
 	Da $(c_i)_{i\in I}$ Erzeugendensystem von $W$ ist, existiert zu jedem (fest gegebenen) $f\in\hom (V,W)$ eine Familie $(x_{ij})_{IJ}$ in $K$, sodass
-		\begin{gather*}
-		\forall k\in J: f(b_k) = \sum_{i\in I} c_i x_{ik} \text{ (da $(c_i)_{i\in I}$ Erzeugendensystem)}\\
-		= \sum_{I,J}c_ib_j^*(b_k)x_{ij} = \left(\sum_{IJ} f_{ij}x_{ij}\right)(b_k)\\
-		\text{also (Fortsetzungssatz): } f=\sum_{I,J}f_{ij}x_{ij} \in [F].
-		\end{gather*}
+		\begin{align*}
+                    \forall k\in J: f(b_k) &= \sum_{i\in I} c_i x_{ik} \quad\text{(da $(c_i)_{i\in I}$ Erzeugendensystem)}\\
+                    &= \sum_{\substack{i\in I\\j \in J}}c_ib_j^*(b_k)x_{ij}\\ 
+                    &= (\sum_{\substack{i\in I\\j \in J}} f_{ij}x_{ij})(b_k)
+                    \intertext{also (nach Fortsetzungssatz):}
+                    f&=\sum_{\substack{i\in I\\j \in J}}f_{ij}x_{ij} \in [F]
+                \end{align*}
+	Da $f\in\hom (V,W)$ beliebig war, gilt also $\hom (V,W) = [F]$. Damit ist $F$ Basis von $\hom (V,W)$ und $\dim\hom (V,W) = \# F = m\cdot n$
 	
-	Da $f\in\hom (V,W)$ beliebig war, gilt also $\hom (V,W) = [F]$. Damit ist $F$ Basis von $\hom (V,W)$ und $\dim\hom (V,W) = \# F = m\cdot n$.
 	
 \subsection{Lemma und Definition (Bild, Kern, Rang \& Defekt)}
 	\begin{Definition}[Bild, Kern, Rang \& Defekt]
