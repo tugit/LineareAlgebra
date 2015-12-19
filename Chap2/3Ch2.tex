@@ -36,7 +36,7 @@
 		\coordinate (a) at (1.36,2.12);
 		\coordinate (b) at (3,4);
 		\coordinate (c) at (4.56,0.82);
-		\fill[color=zzttqq,fill=zzttqq,fill opacity=0.1] (a) -- (b) -- (c) -- cycle;
+		%\fill[color=zzttqq,fill=zzttqq,fill opacity=0.1] (a) -- (b) -- (c) -- cycle;
 		\draw [color=zzttqq] (a)-- (b);
 		\draw [color=zzttqq] (b)-- (c);
 		\draw [color=zzttqq] (c)-- (a);
@@ -101,7 +101,7 @@
 	\definecolor{qqqqff}{rgb}{0,0,1}
 	\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
 	\clip(1.05,-0.85) rectangle (9.76,4.01);
-	\fill[color=zzttqq,fill=zzttqq,fill opacity=0.1] (2.1,0.26) -- (6.42,0.81) -- (4.5,3) -- cycle;
+	%\fill[color=zzttqq,fill=zzttqq,fill opacity=0.1] (2.1,0.26) -- (6.42,0.81) -- (4.5,3) -- cycle;
 	\draw [color=zzttqq] (2.1,0.26)-- (6.42,0.81);
 	\draw [color=zzttqq] (6.42,0.81)-- (4.5,3);
 	\draw [color=zzttqq] (4.5,3)-- (2.1,0.26);
@@ -109,18 +109,18 @@
 	\draw [domain=1.05:9.76] plot(\x,{(-13.58--1.45*\x)/-3.33});
 
 	\fill [color=qqqqff] (2.1,0.26) circle (1.5pt);
-	\draw[color=qqqqff] (2.14,0.33) node {$A$};
+	\draw[color=qqqqff] (2.14,0.33) node[below] {$A$};
 	\fill [color=qqqqff] (6.42,0.81) circle (1.5pt);
-	\draw[color=qqqqff] (6.46,0.88) node {$B$};
+	\draw[color=qqqqff] (6.46,0.8) node[below] {$B$};
 	\fill [color=qqqqff] (4.5,3) circle (1.5pt);
-	\draw[color=qqqqff] (4.54,3.07) node {$C$};
+	\draw[color=qqqqff] (4.54,3.07) node[above] {$C$};
 	\fill (3.94,2.36) circle (1.5pt);
-	\draw (3.99,2.43) node {$b'$};
+	\draw (3.99,2.43) node[above] {$b'$};
 	\fill (7.28,0.92) circle (1.5pt);
-	\draw (7.33,0.99) node {$c'$};
+	\draw (7.33,0.99) node[above] {$c'$};
 	\draw[color=black] (1.33,3.19) node {$g$};
 	\fill (5.74,1.59) circle (1.5pt);
-	\draw (5.78,1.66) node {$a'$};
+	\draw (5.78,1.66) node[above right] {$a'$};
 	\end{tikzpicture}
 	\end{figure}
 	
@@ -152,7 +152,7 @@
 	\definecolor{qqqqff}{rgb}{0,0,1}
 	\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
 	\clip(0.25,0.33) rectangle (9.57,6.25);
-	\fill[color=zzttqq,fill=zzttqq,fill opacity=0.1] (1.5,1.52) -- (6.8,1.78) -- (4.08,5.58) -- cycle;
+	%\fill[color=zzttqq,fill=zzttqq,fill opacity=0.1] (1.5,1.52) -- (6.8,1.78) -- (4.08,5.58) -- cycle;
 	\draw [color=zzttqq] (1.5,1.52)-- (6.8,1.78);
 	\draw [color=zzttqq] (6.8,1.78)-- (4.08,5.58);
 	\draw [color=zzttqq] (4.08,5.58)-- (1.5,1.52);
@@ -160,17 +160,17 @@
 	\draw [domain=0.25:9.57] plot(\x,{(-13.46--3.96*\x)/0.48});
 	\draw [domain=0.25:9.57] plot(\x,{(--1.82--1.03*\x)/2.21});
 	\fill [color=qqqqff] (1.5,1.52) circle (1.5pt);
-	\draw[color=qqqqff] (1.58,1.64) node {$a$};
+	\draw[color=qqqqff] (1.5,1.64) node[left] {$a$};
 	\fill [color=qqqqff] (6.8,1.78) circle (1.5pt);
-	\draw[color=qqqqff] (6.88,1.9) node {$b$};
+	\draw[color=qqqqff] (6.88,1.9) node[right] {$b$};
 	\fill [color=qqqqff] (4.08,5.58) circle (1.5pt);
-	\draw[color=qqqqff] (4.14,5.7) node {$c$};
+	\draw[color=qqqqff] (4.14,5.7) node[right] {$c$};
 	\fill (2.37,2.88) circle (1.5pt);
-	\draw (2.45,3.01) node {$b'$};
+	\draw (2.45,3.01) node[above left] {$b'$};
 	\fill (3.6,1.62) circle (1.5pt);
-	\draw (3.68,1.75) node {$c'$};
+	\draw (3.68,1.75) node[below right] {$c'$};
 	\fill (5.62,3.43) circle (1.5pt);
-	\draw (5.7,3.56) node {$a'$};
+	\draw (5.7,3.56) node[above] {$a'$};
 	\end{tikzpicture}
 	\end{figure}
 	Beweis in Aufgabe 59.
