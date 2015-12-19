@@ -18,8 +18,11 @@
 \paragraph{Bemerkung}
 	Für $f\in \hom(V,W)$ gilt stets $f(0_V) = f(0_V0_K) = f(0_V)0_K = 0_W$.
 
-\paragraph{Bemerkung \& Definition}
-        Ebenso erklärt man zum Beispiel Gruppenhomomorphismen und Körperhomomorphismen. Sind etwa $(G,\circ)$ und $(H,*)$ Gruppen, so ist eine Abbildung $f: G \to H$ ein Gruppenhomomorphismus, falls $\forall g,h \in G: f(g\circ h) = f(g) * f(h)$
+\subsection{Bemerkung \& Definition}
+        Ebenso erklärt man zum Beispiel \emph{Gruppenhomomorphismen} oder \emph{Körperhomomorphismen}. Sind etwa $(G,\circ)$ und $(H,\cdot)$ Gruppen, so ist eine Abbildung $f: G \to H$ ein Gruppenhomomorphismus, falls
+        \begin{equation*}
+            \forall g,h \in G: f(g\circ h) = f(g) \cdot f(h)
+        \end{equation*}
   
 \paragraph{Beispiel}
 	Ist $f\in \hom(V,W)$ ein Vektorraumhomomorphismus so ist $ f $ nach (i) Gruppenhomomorphismus von $ (V,+) $ in $ (W,+) $.
@@ -32,7 +35,10 @@
 	
 \subsection{Lemma (Linearkombinationen und Homomorphismen)}
 	\begin{Lemma}[Linearkombinationen und Homomorphismen]
-		$f:V\to W$ ist genau dann ein Homomorphismus, wenn für jede beliebige Linearkombination gilt: $f(\sum_{i\in I}v_ix_i) = \sum_{i\in I}f(v_i)x_i$
+		$f:V\to W$ ist genau dann ein Homomorphismus, wenn für jede beliebige Linearkombination gilt:
+		\begin{equation*}
+                    f\left(\sum_{i\in I}v_ix_i\right) = \sum_{i\in I}f(v_i)x_i
+		\end{equation*}
 	\end{Lemma}
 
 \paragraph{Beweis}
