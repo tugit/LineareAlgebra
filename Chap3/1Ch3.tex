@@ -30,14 +30,14 @@
 
 \subsection{Definition}
 	\begin{Definition}[Matrix]
-		Eine Matrix $ X\in K^{m\times n} $ ist eine Tabelle von Elementen $ x_{ij}\in K $ mit $ m $ Zeilen und $ n $ Spalten,
+		Eine Matrix $ X\in K^{m\times n} $ ist eine Tabelle von Elementen $ x_{ij}\in K $ mit $ m $ Zeilen und $ n $ Spalten:
 			\[ X = \begin{pmatrix}
 			x_{11} 		& \dots 	& x_{1n}\\
 			\vdots 		& 			& \vdots\\
 			x_{m1} 		& \dots		& x_{mn}
 			\end{pmatrix} \]
 		Die (Darstellungs-)Matrix eines Homomorphismus $ f\in \hom(V,W) $, bzgl. Basen $ B= (b_1,\dots,b_n) $ und $ C=(c_1,\dots,c_m) $ von $ V $ bzw. $ W $, ist die Matrix
-			\[ X = \xi^C_B(f)\in K^{m\times n}\text{ mit }\forall j=1,\dots,n:f(b_j) = \sum_{i=1}^{m}c_ix_{ij} \]
+			\[ X = \xi^C_B(f)\in K^{m\times n}\text{ mit }\forall j=1,\dots,n:f(b_j) = \sum_{i=1}^{m}c_ix_{ij}. \]
 	\end{Definition}
 	
 \paragraph{Bemerkung}
@@ -57,14 +57,14 @@
 \paragraph{Bemerkung}
 	Die komponentenweise Addition und Skalarmultiplikation sind gerade die Addition und Skalarmultiplikation von Matrizen als Abbildungen.
 	
-	Wir wissen schon, dass $ \hom(V,W) $ ein $ K $-VR ist.
+	Wir wissen bereits, dass $ \hom(V,W) $ ein $ K $-VR ist.
 \paragraph{Beweis}
 	Dass $ \hom(V,W) $ und $ K^{m\times n} \ K $-VR sind, ist bekannt. Die Linearität von $ \xi_B^C $ folgt direkt, da mit der zu $ C $ dualen Basis $ C^* $ von $ W^* $
 		\[ \forall i=1,\dots,m\forall j=1,\dots,n:x_{ij}= c_i^*(f(b_j)). \]
 	Nämlich: für $ f,g\in \hom(V,W) $ und $ x,y\in K $ ist dann
 		\begin{gather*}
 			\forall i= 1,\dots,m\forall j=1,\dots, n:c_i^*((fx+gy)(b_j))\\
-			= c_i^*(f(b_j)x+g(b_j)y) = c_i^*(f(b_j))x+c_i^*(g(b_j))y
+			= c_i^*(f(b_j)x+g(b_j)y) = c_i^*(f(b_j))x+c_i^*(g(b_j))y.
 		\end{gather*}
 	Die Abbildung
 		\[ K^{m\times n}\ni X=(x_{ij})\mapsto \sum_{i=1}^{m}\sum_{j=1}^{n}c_ix_{ij}b_j^* = f\in \hom(V,W) \]
@@ -98,17 +98,17 @@
 		\[ \xi_A^C(f\circ g) = \xi_B^C(f)\xi_A^B(g) \]
 	der Komposition als Produkt der Darstellungsmatrizen von $ f $ und $ g $.
 \subsection{Notation \& Definition}
+	\begin{Definition}[Kurzform der def. Gleichung einer Darst.-Matrix]
 	Wir notieren die definierende Gleichung einer Darstellungsmatrix $ X=\xi_B^C(f) $ von $ f\in \hom(V,W) $ auch in Kurzform
 		\[ CX=(c_1,\dots,c_m)X = (f(b_1),\dots,f(b_n)) = f(B). \]
-	\begin{Definition}[Koordinatenspalte]
 	Für die Koordinatenspalten eines Vektors
 		\[ Y\in K^{n\times 1} \text{ mit } v=\sum_{j=1}^{n}b_jy_{j1} \]
 	ist dann
-		\[ f(v) = (f(b_1),\dots,f(b_n))Y = (c_1,\dots,c_m)XY \]
+		\[ f(v) = (f(b_1),\dots,f(b_n))Y = (c_1,\dots,c_m)XY. \]
 	\end{Definition}
 	Die Familien $ (c_i,\dots,c_m) $ und $ (f(b_1),\dots,f(b_n)) $ sind keine Matrizen, denn die Elemente sind Vektoren!
 \paragraph{Bemerkung}
-	Wir schreiben Skalarmultiplikation als Rechts-Multiplikation.
+	Wir schreiben die Skalarmultiplikation als Rechts-Multiplikation.
 \paragraph{Beispiel}
 	Die neue Notation liefert einen "`alternativen Beweis"' für $ \xi_A^C(f\circ g) = \xi_B^C(f)\xi_A^B(g) $:
 	
@@ -138,6 +138,7 @@
 		\vdots & \ddots &&&&\\
 		0 & 0 & 0 & 0 & 0 & 0
 		\end{array}\right) \]
+		
 	Nämlich -- wie im Beweis des Rangsatzes: Die Basen $ B $ und $ C $ werden so gewählt, dass
 		 \begin{enumerate}[(i)]
 		 	\item $ (b_{r+1},\dots,b_n) $ Basis von $ \ker f $ ist, und dann
@@ -153,7 +154,7 @@
 				0 & 0 & 0 & 0 & 0 & 0\\
 				\end{pmatrix}X = CX. \]
 	Umgekehrt: gibt es eine Darstellungmatrix von $ f $ dieser Form, so ist $ \rg f = r $.
-\subsection{Beispiel\& Definition}
+\subsection{Beispiel \& Definition}
 	\begin{Definition}[Einheitsmatrix]
 	Ist $ B=(b_1,\dots,b_n) $ Basis von $ V $, so hat der Isomorphismus
 		\[ \phi:V\to K^n \text{ mit } \forall j=1,\dots,n:\phi(b_j)=e_j \]
@@ -171,27 +172,29 @@
 	Ist $ f\in \Iso(V,W) $ und Basen $ B $ und $ C $ von $ V $ bzw. $ W $, so gilt (mit $ n=\dim V = \dim W $)
 		\[ \xi_C^B(f^{-1})\cdot \xi_B^C(f) = \xi_B^B(f^{-1}\circ f) = \xi_B^B(\id_V) = E_n \]
 	und
-		\[ \xi_B^C(f)\cdot \xi_C^B(f^{-1})=\xi_C^C(f\circ f^{-1}) = \xi_C^C(\id_W)=E_n.s \]
+		\[ \xi_B^C(f)\cdot \xi_C^B(f^{-1})=\xi_C^C(f\circ f^{-1}) = \xi_C^C(\id_W)=E_n. \]
+		
 	\begin{Definition}[Invertierbare Matrix]
 	Eine Matrix $ X\in K^{n\times n} $ nennt man invertierbar mit Inverser $ X^{-1} $, falls
-		\[ \exists X^{-1}\in K^{n\times n}:X^{-1}X = E_n \]
+		\[ \exists X^{-1}\in K^{n\times n}:X^{-1}X = E_n. \]
 	Damit ist die Darstellungsmatrix der Inversen die Inverse der Darstellungsmatrix:
 		\[ \xi_C^B(f^{-1}) = (\xi_B^C(f))^{-1} \]
 	\end{Definition}
 \subsection{Bemerkung \& Definition}
 	Jedes $ X\in K^{m\times n} $ liefert (eindeutig) $ f_X\in \hom(K^n,K^m) $ nach Fortsetzungssatz via
-		\[ f_X:K^n\to K^m, f_X(e_j) = \sum_{i=1}^{m} e'_jx_{ij} \text{ für } j=1,\dots,n; \]
-	bezüglich der Standardbasen $ E = (e_1,\dots,e_n) $ von $ K^n $ und $ E'=(e'_1,\dots,e'_m) $ von $ K^m $ ist dann
+		\[ f_X:K^n\to K^m, f_X(e_j) = \sum_{i=1}^{m} e'_jx_{ij} \text{ für } j=1,\dots,n. \]
+	Bezüglich der Standardbasen $ E = (e_1,\dots,e_n) $ von $ K^n $ und $ E'=(e'_1,\dots,e'_m) $ von $ K^m $ ist dann
 		\[ \xi_E^{E'}(f_X) = X. \]
+
 	\begin{Definition}[Rang einer Matrix]
 	Damit definiert man den Rang einer Matrix $ X\in K^{m\times n} $ als 
 		\[ \rg X:=\rg f_X \]
 	Eine Matrix $ X\in K^{n\times n} $ ist genau dann invertierbar, wenn $ \rg X = n $. Man setzt
-		\[ Gl(n):= \{X\in K^{n\times n}\}. \]
+		\[ Gl(n):= \{X\in K^{n\times n}\mid X\text{ ist invertierbar}\}. \]
 	\end{Definition}
 \subsection{Bemerkung \& Definition}
 	Nach der Transformationsformel für Darstellungsmatrizen gilt bei Basiswechseln in $ V $ und $ W $ für $ f\in \hom(V,W) $
-		\[ \xi_{B'}^{C'}(f) = \xi_C^{C'}(\id_W)\cdot \xi_B^C(f)\cdot \xi_{B'}^B(\id_V) \]
+		\[ \xi_{B'}^{C'}(f) = \xi_C^{C'}(\id_W)\cdot \xi_B^C(f)\cdot \xi_{B'}^B(\id_V). \]
 	Dabei sind $ \xi_{B'}^B(\id_V)\in Gl(n) $ und $ \xi_C^{C'}(\id_W)\in Gl(m) $ invertierbar, da etwa
 		\[ \xi^B_{B'}(\id_V)\xi_B^{B'}(\id_V) = \xi_B^B(\id_V)=E_n; \]
 	sind andererseits die Basis $ B $ und $ P\in Gl(n) $ gegeben, so ist
@@ -200,5 +203,5 @@
 	
 	\begin{Definition}[Äquivalente Matrizen]
 	Daher definiert man auch Matrizen $ X,X'\in K^{m\times n} $ als äquivalent,
-		\[ X\sim X' \text{, falls }\exists P\in Gl(n)\exists Q\in Gl(m):X' = QXP^{-1}.  \]
+		\[ X\sim X',\quad \text{falls }\exists P\in Gl(n)\exists Q\in Gl(m):X' = QXP^{-1}.  \]
 	\end{Definition}
