@@ -16,7 +16,7 @@
 	Damit die Verträglichkeit mit der Skalarmultiplikation sinnvoll ist, müssen $ V $ und $ W $ Vektorräume über demselben Körper $ K $ sein.
 
 \paragraph{Bemerkung}
-	Für $f\in \hom(V,W)$ gilt stets $f(0_V) = f(0_V0_K) = f(0_V)0_K = 0_W$.
+	Für $f\in \hom(V,W)$ gilt stets $f(0_V) = f(0_V\cdot0_K) = f(0_V)\cdot0_K = 0_W$.
 
 \subsection{Bemerkung \& Definition}
         Ebenso erklärt man zum Beispiel \emph{Gruppenhomomorphismen} oder \emph{Körperhomomorphismen}. Sind etwa $(G,\circ)$ und $(H,\cdot)$ Gruppen, so ist eine Abbildung $f: G \to H$ ein Gruppenhomomorphismus, falls
@@ -47,7 +47,10 @@
 \subsection{Fortsetzungssatz} 
 	\begin{Satz}[Fortsetzungssatz]
 		Seien $ V $ und $ W $ $K$-VR, $(b_i)_{i\in I}$ eine Basis von $ V $ und $(c_i)_{i\in I}$ eine Familie in $ W $.
-	Dann gilt: $\exists!f\in \hom(V,W), \forall i\in I: f(b_i) = c_i$.
+	Dann gilt:
+	\begin{equation*}
+            \exists!f\in \hom(V,W), \forall i\in I: f(b_i) = c_i
+        \end{equation*}
 	\end{Satz}
     
 \paragraph{Bemerkung}
@@ -63,22 +66,18 @@
     
                         Damit ist $ f(v) $ eindeutig durch $ v $ und die $c_i = f(b_i)x_i$ bestimmt.
     
-    		\item Existenz: Da $(b_i)_{i\in I}$ auch linear unabhängig ist, ist jedes $v\in V$ eindeutig als Linearkombination in $(b_i)_{i\in I}$ dargestellt, damit ist durch $f:V\to W: v=\sum_{i\in I}b_ix_i \mapsto f(v):=\sum_{i\in I}c_iv_i$ eine Abbildung wohldefiniert.
+    		\item Existenz: Da $(b_i)_{i\in I}$ auch linear unabhängig ist, ist jedes $v\in V$ eindeutig als Linearkombination in $(b_i)_{i\in I}$ dargestellt, damit ist durch
+    		\begin{equation*}
+                    f:V\to W,\ v=\sum_{i\in I}b_ix_i \mapsto f(v):=\sum_{i\in I}c_iv_i
+                \end{equation*}
+    		eine Abbildung wohldefiniert.
     
                         Weiters ist $f\in\hom(V,W)$ wegen
-                        \begin{gather*}
-                                f(v+w) =\sum_{i\in I}c_i(x_i+y_i)=\sum_{i\in I}c_ix_i+ \sum_{i\in I}c_iy_i =  f(v) + f(w) \text{ für alle }\left\{
-                                        \begin{array}{l}
-                                                v=\sum_{i\in I}b_ix_i \in V\\
-                                                w=\sum_{i\in I}b_iy_i \in V
-                                        \end{array}
-                                \right.
-                        \end{gather*}
-    
-                        und
-                        \begin{gather*}
-                            f(vx) =\sum_{i\in I}c_i(x_ix)\Rightarrow\sum_{i\in I}(c_ix_i)x = (\sum_{i\in I}c_ix_i)x= f(v)x \text{ für }  x\in K\text{ und }v= \sum_{i\in I}b_ix_i \in V.
-                        \end{gather*}
+                        \begin{align*}
+                                f(v+w) &=\sum_{i\in I}c_i(x_i+y_i)= f(v) + f(w) \text{ für alle } v=\sum_{i\in I}b_ix_i \in V, w=\sum_{i\in I}b_iy_i \in V    
+                        \intertext{und}
+                                f(vx) &=\sum_{i\in I}c_i(x_ix)=\sum_{i\in I}(c_ix_i)x = (\sum_{i\in I}c_ix_i)x= f(v)x \text{ für }  x\in K\text{ und }v= \sum_{i\in I}b_ix_i \in V.
+                        \end{align*}
                         Damit ist die Linearität von $ f $ gezeigt.
         \end{enumerate}
     
@@ -171,8 +170,8 @@
 	Da $(c_i)_{i\in I}$ Erzeugendensystem von $W$ ist, existiert zu jedem (fest gegebenen) $f\in\hom (V,W)$ eine Familie $(x_{ij})_{IJ}$ in $K$, sodass
 		\begin{align*}
                     \forall k\in J: f(b_k) &= \sum_{i\in I} c_i x_{ik} \quad\text{(da $(c_i)_{i\in I}$ Erzeugendensystem)}\\
-                    &= \sum_{\substack{i\in I\\j \in J}}c_ib_j^*(b_k)x_{ij}\\ 
-                    &= (\sum_{\substack{i\in I\\j \in J}} f_{ij}x_{ij})(b_k)
+                    &= \sum_{\substack{i\in I\\j \in J}}c_ib_j^*(b_k)x_{ij}
+                    = (\sum_{\substack{i\in I\\j \in J}} f_{ij}x_{ij})(b_k)
                     \intertext{also (nach Fortsetzungssatz):}
                     f&=\sum_{\substack{i\in I\\j \in J}}f_{ij}x_{ij} \in [F]
                 \end{align*}
