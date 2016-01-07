@@ -35,7 +35,7 @@
 
   \indexspace
 
-  \item Darstellungsmatrix einer Komposition, \hyperpage{76}
+  \item Darstellungsmatrix einer Komposition, \hyperpage{77}
   \item Definition, \hyperpage{45}
   \item Dilatationsgruppe, \hyperpage{71}
   \item Dimension, \hyperpage{27}
@@ -49,7 +49,7 @@
 
   \item Eindeutigkeit der Punktdarstellung, \hyperpage{59}
   \item Eindeutigkeit des neutralen Elements, \hyperpage{10}
-  \item Einheitsmatrix, \hyperpage{79}
+  \item Einheitsmatrix, \hyperpage{80}
   \item Erweiterte Koeffizientenmatrix, \hyperpage{83}
 
   \indexspace
@@ -83,13 +83,14 @@
   \item K\IeC {\"o}rper, \hyperpage{11}
   \item Komplement\IeC {\"a}re UVR, \hyperpage{41}
   \item Komposition, \hyperpage{6}
-  \item Kurzform der def. Gleichung einer Darst.-Matrix, \hyperpage{77}
+  \item Kurzform der def. Gleichung einer Darst.-Matrix, \hyperpage{78}
 
   \indexspace
 
   \item L\IeC {\"o}sungsraum, \hyperpage{83}
   \item Lineare H\IeC {\"u}lle und Linearkombinationen, \hyperpage{20}
   \item Lineares Gleichungssystem, \hyperpage{82}
+  \item Linearform/Determinantenform, \hyperpage{88}
   \item Linearkombinationen und Homomorphismen, \hyperpage{29}
 
   \indexspace
@@ -123,6 +124,7 @@
   \item Scherung, \hyperpage{68}
   \item Schnitt von UVR, \hyperpage{18}
   \item Schwerpunktsatz, \hyperpage{70}
+  \item Signum einer Permutation, \hyperpage{91}
   \item Spezielle Homomorphismen, \hyperpage{36}
   \item Standardbasis, \hyperpage{22}
   \item Standardvektorraum, \hyperpage{14}
@@ -132,6 +134,7 @@
   \indexspace
 
   \item Teilverh\IeC {\"a}ltnis, \hyperpage{61}
+  \item Transposition, \hyperpage{90}
 
   \indexspace
 
@@ -144,6 +147,6 @@
 
   \indexspace
 
-  \item Zeilenstufenform, \hyperpage{84}
+  \item Zeilenstufenform, \hyperpage{85}
 
 \end{theindex}
