@@ -220,12 +220,12 @@
 	Nach der Transformationsformel für Darstellungsmatrizen gilt bei Basiswechseln in $ V $ und $ W $ für $ f\in \hom(V,W) $
 		\[ \xi_{B'}^{C'}(f) = \xi_C^{C'}(\id_W)\cdot \xi_B^C(f)\cdot \xi_{B'}^B(\id_V). \]
 	Dabei sind $ \xi_{B'}^B(\id_V)\in Gl(n) $ und $ \xi_C^{C'}(\id_W)\in Gl(m) $ invertierbar, da etwa
-		\[ \xi^B_{B'}(\id_V)\xi_B^{B'}(\id_V) = \xi_B^B(\id_V)=E_n; \]
+		\[ \xi^B_{B'}(\id_V)\cdot\xi_B^{B'}(\id_V) = \xi_B^B(\id_V)=E_n; \]
 	Sind andererseits die Basis $ B $ und $ P\in Gl(n) $ gegeben, so ist
 		\[ \xi_B^{B'}(\id_V)=P^{-1} \text{ für } B':= BP, \]
 	d.h. jedes $ P\in Gl(n) $ realisiert einen Basiswechsel in $ V $, kommt also in der Transformationsformel vor.
 	
 	\begin{Definition}[Äquivalente Matrizen]
-	Daher definiert man auch Matrizen $ X,X'\in K^{m\times n} $ als äquivalent,
+	Daher definiert man auch Matrizen $ X,X'\in K^{m\times n} $ als \emph{äquivalent},
 		\[ X\sim X',\quad \text{falls }\exists P\in Gl(n)\exists Q\in Gl(m):X' = QXP^{-1}.  \]
 	\end{Definition}
