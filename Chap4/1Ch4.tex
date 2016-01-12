@@ -210,9 +210,120 @@
 	\begin{Definition}[Signum einer Permutation]
 	Das Signum einer Permutation $ \sigma\in S_m $ ist die Zahl
 		\[ \operatorname{sgn}\sigma := \prod_{i<j} \frac{\sigma(i)-\sigma(j)}{i-j}\in \{\pm 1\}; \]
-	ist $ \operatorname{sgn}\sigma = 1 $, so heißt $ \sigma $ gerade, sonst ungerade. Signum liefert einen Gruppenhomomorphismus
-		\[ \operatorname{sgn}: S_m\to (\{\pm 1\},\cdot). \]
+	ist $ \sgn\sigma = 1 $, so heißt $ \sigma $ gerade, sonst ungerade. Signum liefert einen Gruppenhomomorphismus
+		\[ \sgn: S_m\to (\{\pm 1\},\cdot). \]
 	\end{Definition}
 \paragraph{Beispiel}
 	Eine Transposition $ \tau_{ij} $ ist eine ungerade Permutation, da
-		\[ \operatorname{sgn}\tau_{ij} = \prod_{k<l}\frac{\tau_{ij}(k)-\tau_{ij}(l)}{k-l} = \frac{j-i}{i-j}\prod_{k\neq i,j}\frac{i-k}{j-k}\frac{j-k}{i-k} = -1 \]
+		\[ \sgn\tau_{ij} = \prod_{k<l}\frac{\tau_{ij}(k)-\tau_{ij}(l)}{k-l} = \frac{j-i}{i-j}\prod_{k\neq i,j}\frac{i-k}{j-k}\frac{j-k}{i-k} = -1 \]
+\paragraph{Beweis}
+	Seien $ \sigma,\tau\in S_m $ beliebig, dann gilt
+	\[ \sgn(\tau\circ\sigma) = \prod_{i<j}\frac{\tau(\sigma(i))-\tau(\sigma(j))}{\sigma(i)-\sigma(j)}\frac{\sigma(i)-\sigma(j)}{i-j} = \prod_{i<j}\frac{\tau(\sigma(i))-\tau(\sigma(j))}{\sigma(i)-\sigma(j)}\prod_{i<j}\frac{\sigma(i)-\sigma(j)}{i-j} \]
+	mit $ i'=\sigma(i)j'=\sigma(j) $ folgt
+	\[ \prod_{i'<j'}\frac{\tau(i')-\tau(j')}{i'-j'}\prod_{i<j}\frac{\sigma(i)-\sigma(j)}{i-j} = \sgn(\tau)\cdot \sgn(\sigma). \]
+	Da jede Permutation Komposition von Transpositionen ist, folgt daraus
+		\[ \forall \sigma \in S_m:\sgn(\sigma) = \pm 1 \]
+	und dass
+		\[ \sgn:S_m \to (\{\pm 1\},\cdot) \]
+	Gruppenhomomorphismus ist.
+\paragraph{Bemerkung}
+	Damit folgt für $ \omega\in \Lambda^mV^* $ und $ \sigma \in S_m $
+		\[ \omega(v_{\sigma(1)},\dots,v_{\sigma(m)}) =\omega(v_1,\dots,v_m)\sgn\sigma. \]
+\subsection{Leibniz-Formel}
+	\begin{Satz}[Leibniz-Formel]
+		Seien $ \omega\in \Lambda^mV* $, $ (b_i)_{i\in \{1,\dots,m\}} $ linear unabhängig und $ (v_j)_{j\in \{1,\dots,m\}} $ eine Familie in $ [(b_i)_{i\in\{1,\dots,m\}}] \subset V$,
+		\[ \forall j=1,\dots,m: v_j = \sum_{i=1}^{m}b_ix_{ij} \]
+	dann gilt
+		\[ \omega(v_1,\dots,v_m)=\omega(b_1,\dots,b_m)\sum_{\sigma\in S_m}\sgn(\sigma)x_{\sigma(1)1} \cdots x_{\sigma(m)m} \]
+	\end{Satz}
+\paragraph{Beweis}
+	Ausmultiplizieren ergibt:
+		\[ \omega(v_1,\dots,v_m)=\sum_{i_i=1}^{m}\cdots \sum_{i_m=1}^{m}\omega(b_{i_1},\dots,b_{i_m})x_{i_11}\cdots x_{i_mm} \]
+	wegen $ \omega(\dots)=0 $, wenn zwei $ b $'s gleich sind, d.h. wann immer $ \{1,\dots,m \}\ni j\mapsto i_j \in \{1,\dots,m\} $ nicht injektiv ist, also keine Permutation ist.
+		\[ = \sum_{\sigma\in S_m}\omega(b_{\sigma(1)},\dots,b_{\sigma(m)})x_{\sigma(1)1}\cdots x_{\sigma(m)m} = \sum_{\sigma\in S_m}\omega(b_1,\dots,b_m)\sgn(\sigma)x_{\sigma(1)1}\cdots x_{\sigma(m)m}\]
+\paragraph{Beispiel}
+	Ist die Koeffizientenmatrix $ x=(x_{ij})_{i,j\in\{1,\dots,m\}} $ in der Leibniz-Formel eine obere Dreiecksmatrix, d.h.
+		\[ X= \begin{pmatrix}
+		x_{11} & \cdots & \cdots & x_{1m}\\
+		0 & x_{22} & &\vdots\\
+		\vdots & \ddots & \ddots &\vdots\\
+		0 & \cdots & 0 & x_{mm}
+		\end{pmatrix}
+		\text{ und } \forall j=1,\dots,m :v_j=\sum_{i=1}^{j}b_ix_{ij} \]
+	so gilt für jede Permutation $ \sigma\in S_m $ von $ I=\{1,\dots,m \} $
+		\[ x_{\sigma(1)1},\dots,x_{\sigma(m)m}\neq 0 \Rightarrow \forall j\in I:\sigma(j)\leq j \Rightarrow \sigma = \id_I \]
+	und damit 
+		\[ \omega(v_1,\dots,v_m) = \omega(b_1,\dots,b_m) x_{11}\cdots x_{mm}. \]
+\subsection{Buchhaltung}
+	\begin{Definition}[Determinante]
+		Mit 
+		\[ A:= (v_1,\dots,v_m)=(b_1,\dots,b_m)X = BX \]
+	und der Determinante
+		\[ \det X := \sum_{\sigma\in S_m}\sgn(\sigma)x_{\sigma(1)1}\cdots x_{\sigma(m)m} \]
+	der Koeffizientenmatrix $ X\in K^{m\times m} $ lässt sich die Leibniz-Formel auch kürzer schreiben als
+		\[ \omega(A) = \omega(B)\det X. \]
+	\end{Definition}
+	Für $ m=2 $ und $ m=3 $ lässt sich $ \det X $ einfach berechnen:
+		\begin{itemize}
+			\item für $ m=2 $ ist
+				\[ \det \begin{pmatrix}
+						x_{11}& x_{12}\\ x_{21} & x_{22}
+					\end{pmatrix}
+					= x_{11}x_{22}-x_{21}x_{12}
+				\]
+			\item für $ m=3 $ mit Hilfe der Regel von Sarrus (zuerst zyklische (gerade) Permutationen, dann mit einem Fixpunkt, also Transpositionen)
+				\[ \det \begin{pmatrix}
+					x_{11} & x_{12} & x_{13}\\
+					x_{21} & x_{22} & x_{23}\\
+					x_{31} & x_{32} & x_{33}
+				\end{pmatrix}
+				 = 	 \begin{matrix}
+				 x_{11}x_{22}x_{33}
+				 +x_{21}x_{32}x_{13}
+				 +x_{31}x_{12}x_{23}\\
+				 -x_{11}x_{23}x_{32}
+				 -x_{21}x_{33}x_{12}
+				 -x_{31}x_{22}x_{13}
+				 \end{matrix} \]
+			\end{itemize}
+	Für $ m>3 $ liefert der Laplacesche Entwicklungssatz eine Methode, die Terme (Permutationen) zu sortieren: Für fest gewähltes $ j\in \{1,\dots, m \} $ gilt
+		\[ \det X = \sum_{i=1}^{m}(-1)^{m+j}\det X_{ij} \]
+	mit
+		\[ X_{ij} = (x_{kl})_{k\neq i, l\neq j} = 
+		\begin{pmatrix}
+			x_{11} & \cdots & x_{1(j-1)} & x_{1j} & x_{1(j+1)} & \cdots & x_{1m} \\ 
+			\vdots & \ddots &  	&  	&  	&  	&  \\ 
+			x_{(i-1)1} 	&  	&  	&  	&  	&  	& x_{(i-1)m} \\ 
+			x_{i1} 	&	&  	& x_{ij} &  &  	& x_{im} \\ 
+			x_{(i+1)1} &  &  &  &  &  & x_{(i+1)m} \\ 
+			\vdots &  &  &  &  &  &  \\ 
+			x_{m1} &  &  & x_{mj} &  &  & x_{mm}
+			\end{pmatrix}  \]
+	Nämlich: Ist z.B: $ v_m=b_i $ in der Leibniz-Formel, also $ x_{km}=\delta_{ik} $, so erhält man
+		\[ \det X = \sum_{\sigma\in S_m}\sgn(\sigma)\prod_{j=1}^{m}x_{\sigma(j)j}=\sum_{\sigma\in S_m}\sgn(\sigma)\left(\prod_{j=1}^{m-1}x_{\sigma(j)j}\right)x_{\sigma(m)m} \]
+	wobei $ x_{\sigma(m)m} = 0 $ für $ \sigma(m)\neq i $ und $ =1 $ für $ \sigma(m) = 1 $,
+		\[ = \sum_{\sigma\in S_m, \sigma(m)=i}\sgn(\sigma)\prod_{j=1}^{m-1}x_{\sigma(j)j} = \sum_{\sigma\in S_{m-1}}(-1)^{m-i}\sgn(\sigma')\prod_{j=1}^{m-1}x_{\sigma'(j)j} = (-1)^{m-i}\det X_{im}. \]
+	Im letzten Schritt werden die Transpositionen berücksichtigt die notwendig sind, um die nun "`gelöschte"' Zeile ans Ende zu verschieben. Ausmultiplizieren des o.B.d.A $ m $-ten Eintrags in einer alternierenden $ m $-Form $ \omega\in \Lambda^mV* $ liefert also 
+		\[ \omega(v_1,\dots,v_m) = \sum_{i=1}^{m}\omega(v_1,\dots,v_{m-1},b_i)x_{im} = \omega(b_1,\dots,b_m)\sum_{i=1}^{m}(-1)^{m-1}x_{im}\det X_{im} \]
+	und damit die Behauptung, da $ \omega(b_1,\dots,b_m)\neq 0 $ angemonnen werden kann (siehe unten).
+	Da wegen $ \sgn(\sigma^{-1})=(\sgn(\sigma))^{-1} = \sgn(\sigma) $
+		\begin{gather*}
+		\sum_{\sigma\in S_m}\sgn(\sigma)\prod_{j=1}^{m}x_{j\sigma(j)} =
+		\sum_{\sigma\in S_m} \sgn(\sigma^{-1})\prod_{j=1}^{m}x_{\sigma^{-1}(j)j} =\\
+		\sum_{\sigma^{-1}\in S_m} \sgn(\sigma^{-1})\prod_{j=1}^{m}x_{\sigma(j)j} =
+		\sum_{\sigma\in S_m} \sgn(\sigma^{-1})\prod_{j=1}^{m}x_{\sigma(j)j}
+		\end{gather*}
+	\begin{Definition}[Transponierte Matrix]
+		gleicht die Determinante einer Matrix $ X $ der ihrer Transponierten:
+		\[ \det X^t = \det X \text{ mit } X^t := (x_{ji})_{i,j\in \{i,\dots, m \}} \]
+	\end{Definition}
+	Damit gilt der Laplacesche Entwicklungssatz auch für die Entwicklung nach einer Zeile von $ X $, anstelle nach einer Spalte, wie oben.
+	
+	Eine andere Möglichkeit zur Bestimmung von $ \det X $ liefert das Gausssche Eliminationsverfahren (hier mit elementaren Spaltenumformungen; es wird von rechts multipliziert), da (vgl. oben)
+		\begin{align*}
+		\det XD_i &= d\cdot \det X. (\Leftrightarrow \det D_iX^t = d\cdot \det X^t)\\
+		\det XT_{ij} &= -\det X, (\Leftrightarrow\dots)\\
+		\det XS_{ij} &= \det X.
+		\end{align*}
+\paragraph{Bemerkung}
+	Diese "`Rechenmethoden"' sind von historischer Bedeutung, manchmal sind sie theoretisch praktisch, aber von beschränkter praktischer Bedeutung (seit man Computer hat).

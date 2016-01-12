@@ -1,152 +1,153 @@
 \begin{theindex}
 
-  \item \IeC {\"A}quivalente LGS, \hyperpage{84}
-  \item \IeC {\"A}quivalente Matrizen, \hyperpage{81}
-  \item \IeC {\"A}quivalenzrelation, \hyperpage{47}
+  \item \IeC {\"A}quivalente LGS, \hyperpage{82}
+  \item \IeC {\"A}quivalente Matrizen, \hyperpage{79}
+  \item \IeC {\"A}quivalenzrelation, \hyperpage{44}
 
   \indexspace
 
   \item Abbildung, \hyperpage{5}
-  \item Affine Abbildung/Affinit\IeC {\"a}t, \hyperpage{61}
-  \item Affine Geometrie, \hyperpage{65}
-  \item Affine H\IeC {\"u}lle, \hyperpage{56}
-  \item Affine H\IeC {\"u}lle und Affinkombination, \hyperpage{58}
-  \item Affine und lineare (Un-)Abh\IeC {\"a}ngigkeit, \hyperpage{59}
-  \item Affiner Raum, \hyperpage{52}
-  \item Affiner Standardraum, \hyperpage{53}
-  \item Affiner Unterraum, \hyperpage{54}
-  \item Affines/baryzentrisches Bezugssystem, \hyperpage{60}
-  \item Affinkombination/Baryzentrum, \hyperpage{56}
-  \item Allgemeine Lage, \hyperpage{58}
-  \item Allgemeine lineare Gruppe, \hyperpage{66}
-  \item Austauschlemma, \hyperpage{25}
+  \item Affine Abbildung/Affinit\IeC {\"a}t, \hyperpage{59}
+  \item Affine Geometrie, \hyperpage{63}
+  \item Affine H\IeC {\"u}lle, \hyperpage{54}
+  \item Affine H\IeC {\"u}lle und Affinkombination, \hyperpage{56}
+  \item Affine und lineare (Un-)Abh\IeC {\"a}ngigkeit, \hyperpage{57}
+  \item Affiner Raum, \hyperpage{50}
+  \item Affiner Standardraum, \hyperpage{51}
+  \item Affiner Unterraum, \hyperpage{52}
+  \item Affines/baryzentrisches Bezugssystem, \hyperpage{58}
+  \item Affinkombination/Baryzentrum, \hyperpage{54}
+  \item Allgemeine Lage, \hyperpage{56}
+  \item Allgemeine lineare Gruppe, \hyperpage{64}
+  \item Austauschlemma, \hyperpage{24}
 
   \indexspace
 
-  \item Basis, \hyperpage{21}
-  \item Basiserg\IeC {\"a}nzungssatz, \hyperpage{25}
-  \item Basislemma, \hyperpage{23}
-  \item Basissatz, \hyperpage{26}
-  \item Bild, Kern, Rang \& Defekt, \hyperpage{33}
+  \item Basis, \hyperpage{19}
+  \item Basiserg\IeC {\"a}nzungssatz, \hyperpage{23}
+  \item Basislemma, \hyperpage{22}
+  \item Basissatz, \hyperpage{24}
+  \item Bild, Kern, Rang \& Defekt, \hyperpage{31}
 
   \indexspace
 
-  \item Charakteristik, \hyperpage{12}
+  \item Charakteristik, \hyperpage{11}
 
   \indexspace
 
-  \item Darstellungsmatrix einer Komposition, \hyperpage{77}
-  \item Definition, \hyperpage{45}
-  \item Dilatationsgruppe, \hyperpage{71}
-  \item Dimension, \hyperpage{27}
-  \item Dimension und Teilmengen, \hyperpage{27}
-  \item Dimensionen von komplement\IeC {\"a}ren UVR, \hyperpage{49}
-  \item Dimensionssatz, \hyperpage{39}
-  \item Direkte Summe, \hyperpage{42}
-  \item Dualraum, \hyperpage{30}
+  \item Darstellungsmatrix einer Komposition, \hyperpage{74}
+  \item Definition, \hyperpage{42}
+  \item Dilatationsgruppe, \hyperpage{69}
+  \item Dimension, \hyperpage{25}
+  \item Dimension und Teilmengen, \hyperpage{25}
+  \item Dimensionen von komplement\IeC {\"a}ren UVR, \hyperpage{46}
+  \item Dimensionssatz, \hyperpage{37}
+  \item Direkte Summe, \hyperpage{39}
+  \item Dualraum, \hyperpage{28}
 
   \indexspace
 
-  \item Eindeutigkeit der Punktdarstellung, \hyperpage{59}
-  \item Eindeutigkeit des neutralen Elements, \hyperpage{10}
-  \item Einheitsmatrix, \hyperpage{80}
-  \item Erweiterte Koeffizientenmatrix, \hyperpage{83}
+  \item Eindeutigkeit der Punktdarstellung, \hyperpage{57}
+  \item Eindeutigkeit des neutralen Elements, \hyperpage{9}
+  \item Einheitsmatrix, \hyperpage{77}
+  \item Erweiterte Koeffizientenmatrix, \hyperpage{81}
 
   \indexspace
 
-  \item Fortsetzungssatz, \hyperpage{29}
+  \item Fortsetzungssatz, \hyperpage{27}
   \item Fortsetzungssatz f\IeC {\"u}r affine Abbildungen, 
-		\hyperpage{68}
+		\hyperpage{66}
 
   \indexspace
 
-  \item Geometrie, \hyperpage{51}
-  \item Gruppe, \hyperpage{9}
-  \item Gruppenoperation, \hyperpage{9}
+  \item Geometrie, \hyperpage{49}
+  \item Gruppe, \hyperpage{8}
+  \item Gruppenoperation, \hyperpage{8}
 
   \indexspace
 
   \item Homomorphiesatz f\IeC {\"u}r lineare Abbildungen, 
-		\hyperpage{50}
-  \item Homomorphismen als VR, \hyperpage{31}
-  \item Homomorphismen zwischen gleichdimensionalen VR, \hyperpage{36}
-  \item Homomorphismus, \hyperpage{28}
+		\hyperpage{47}
+  \item Homomorphismen als VR, \hyperpage{29}
+  \item Homomorphismen zwischen gleichdimensionalen VR, \hyperpage{34}
+  \item Homomorphismus, \hyperpage{26}
 
   \indexspace
 
   \item Inverse, \hyperpage{6}
-  \item Invertierbare Matrix, \hyperpage{80}
-  \item Isomorphielemma, \hyperpage{37}
+  \item Invertierbare Matrix, \hyperpage{78}
+  \item Isomorphielemma, \hyperpage{35}
 
   \indexspace
 
-  \item K\IeC {\"o}rper, \hyperpage{11}
-  \item Komplement\IeC {\"a}re UVR, \hyperpage{41}
-  \item Komposition, \hyperpage{6}
-  \item Kurzform der def. Gleichung einer Darst.-Matrix, \hyperpage{78}
+  \item K\IeC {\"o}rper, \hyperpage{10}
+  \item Komplement\IeC {\"a}re UVR, \hyperpage{38, 39}
+  \item Komposition, \hyperpage{5}
+  \item Kurzform der def. Gleichung einer Darst.-Matrix, \hyperpage{76}
 
   \indexspace
 
-  \item L\IeC {\"o}sungsraum, \hyperpage{83}
-  \item Lineare H\IeC {\"u}lle und Linearkombinationen, \hyperpage{20}
-  \item Lineares Gleichungssystem, \hyperpage{82}
-  \item Linearform/Determinantenform, \hyperpage{88}
-  \item Linearkombinationen und Homomorphismen, \hyperpage{29}
+  \item L\IeC {\"o}sungsraum, \hyperpage{81}
+  \item Leibniz-Formel, \hyperpage{89}
+  \item Lineare H\IeC {\"u}lle und Linearkombinationen, \hyperpage{18}
+  \item Lineares Gleichungssystem, \hyperpage{80}
+  \item Linearform/Determinantenform, \hyperpage{86}
+  \item Linearkombinationen und Homomorphismen, \hyperpage{27}
 
   \indexspace
 
-  \item Matrix, \hyperpage{75}
-  \item Matrizen als VR, \hyperpage{76}
-  \item Mittelpunkt, \hyperpage{69}
+  \item Matrix, \hyperpage{73}
+  \item Matrizen als VR, \hyperpage{74}
+  \item Mittelpunkt, \hyperpage{67}
 
   \indexspace
 
-  \item Nebenklassen, \hyperpage{46}
+  \item Nebenklassen, \hyperpage{44}
 
   \indexspace
 
-  \item Parallele Geraden, \hyperpage{67}
-  \item Parallelprojektion, \hyperpage{67}
-  \item Permutationsgruppe, \hyperpage{10}
-  \item Produkt von VR, \hyperpage{45}
-  \item Projektion, \hyperpage{43}
-  \item Projektionen, \hyperpage{44}
+  \item Parallele Geraden, \hyperpage{64}
+  \item Parallelprojektion, \hyperpage{65}
+  \item Permutationsgruppe, \hyperpage{9}
+  \item Produkt von VR, \hyperpage{43}
+  \item Projektion, \hyperpage{41}
+  \item Projektionen, \hyperpage{41}
 
   \indexspace
 
-  \item Rang einer Matrix, \hyperpage{81}
-  \item Rangsatz, \hyperpage{34}
+  \item Rang einer Matrix, \hyperpage{79}
+  \item Rangsatz, \hyperpage{32}
 
   \indexspace
 
-  \item Satz von Ceva, \hyperpage{73}
-  \item Satz von Menelaos, \hyperpage{71}
-  \item Scherung, \hyperpage{68}
-  \item Schnitt von UVR, \hyperpage{18}
-  \item Schwerpunktsatz, \hyperpage{70}
-  \item Signum einer Permutation, \hyperpage{91}
-  \item Spezielle Homomorphismen, \hyperpage{36}
-  \item Standardbasis, \hyperpage{22}
-  \item Standardvektorraum, \hyperpage{14}
-  \item Streckung, \hyperpage{67}
-  \item Summe von UVR, \hyperpage{38}
+  \item Satz von Ceva, \hyperpage{70}
+  \item Satz von Menelaos, \hyperpage{69}
+  \item Scherung, \hyperpage{66}
+  \item Schnitt von UVR, \hyperpage{16}
+  \item Schwerpunktsatz, \hyperpage{67}
+  \item Signum einer Permutation, \hyperpage{88}
+  \item Spezielle Homomorphismen, \hyperpage{34}
+  \item Standardbasis, \hyperpage{20}
+  \item Standardvektorraum, \hyperpage{13}
+  \item Streckung, \hyperpage{65}
+  \item Summe von UVR, \hyperpage{36}
 
   \indexspace
 
-  \item Teilverh\IeC {\"a}ltnis, \hyperpage{61}
-  \item Transposition, \hyperpage{90}
+  \item Teilverh\IeC {\"a}ltnis, \hyperpage{59}
+  \item Transposition, \hyperpage{88}
 
   \indexspace
 
-  \item Untervektorraum, \hyperpage{16}
-  \item Ursprung, \hyperpage{53}
+  \item Untervektorraum, \hyperpage{14}
+  \item Ursprung, \hyperpage{51}
 
   \indexspace
 
-  \item Vektorraum, \hyperpage{13}
+  \item Vektorraum, \hyperpage{12}
 
   \indexspace
 
-  \item Zeilenstufenform, \hyperpage{85}
+  \item Zeilenstufenform, \hyperpage{83}
 
 \end{theindex}
