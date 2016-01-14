@@ -1,0 +1,19 @@
+\section{Äquiaffine Geometrie}
+\subsection{Definition}
+	\begin{Definition}[Parallelotop im affinen Raum]
+		Seien $ (A,V,\tau) $ ein $ n $-dimensionaler affiner Raum und $ p_0\in A $; das von einer Familie $ (v_j)_{j\in \{1,\dots,n\}} $ in $ V $ aufgespannte Parallelotop oder Spat ist die (über dem abstrakten Würfel $ \mathbb{Z}_2^n $ indizierte) Familie
+			\[ p: \mathbb{Z}_2^n\to A, \epsilon \mapsto p_\epsilon := p_0 +\sum_{j=1}^{n}v_j\epsilon_j. \]
+		Ist $ \omega\in\Lambda^nV^*\setminus\{0\} $, so ist das zugehörige (Spat-)Volumen von $ (p_\epsilon)_{\epsilon \in \mathbb{Z}_2^n} $
+			\[ \vol(p):= \omega(v_1,\dots,v_n). \]
+	\end{Definition}
+\subsection{Bemerkung \& Definition}
+	\begin{Definition}[Parallelogramm/Flächeninhalt]
+		Im Falle $ n=2 $ heißt ein Parallelotop $ p $ auch Parallelogramm, sein Spatvolumen auch sein Flächeninhalt. Der Flächeninhalt ist orientiert:
+		Mit
+			\[ \epsilon = (\epsilon_j)_{j\in \{1,2\}}\cong (\epsilon_1,\epsilon_2) \]
+		und
+			\[ v_1 = p_{(1,0)}-p_{(0,0)}\text{ und } v_2 = p_{(0,1)}-p_{(0,0)} \]
+		ändert der Flächeninhalt das Vorzeichen, wenn man die Kantenvektoren vertauscht:
+			\[ \vol(p) = \omega(v_1,v_2) = -\omega(v_2,v_1) = \vol(p') \]
+		mit $ p'_\epsilon = p_\epsilon \circ \tau_{12} $.
+	\end{Definition}

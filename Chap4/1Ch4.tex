@@ -287,7 +287,7 @@
 				 \end{matrix} \]
 			\end{itemize}
 	Für $ m>3 $ liefert der Laplacesche Entwicklungssatz eine Methode, die Terme (Permutationen) zu sortieren: Für fest gewähltes $ j\in \{1,\dots, m \} $ gilt
-		\[ \det X = \sum_{i=1}^{m}(-1)^{m+j}\det X_{ij} \]
+		\[ \det X = \sum_{i=1}^{m}(-1)^{i+j}x_{ij}\det X_{ij} \]
 	mit
 		\[ X_{ij} = (x_{kl})_{k\neq i, l\neq j} = 
 		\begin{pmatrix}
@@ -327,3 +327,137 @@
 		\end{align*}
 \paragraph{Bemerkung}
 	Diese "`Rechenmethoden"' sind von historischer Bedeutung, manchmal sind sie theoretisch praktisch, aber von beschränkter praktischer Bedeutung (seit man Computer hat).
+\subsection{Beispiel \& Definition (Blockmatrix)}
+	\begin{Definition}[Blockmatrix]
+		Für eine Blockmatrix
+			\[ X = \begin{pmatrix}
+			X_{11} & X_{12}\\ 0 & X_{22}
+			\end{pmatrix}\]
+		mit
+			\[ X_{11}\in K^{m\times m},\ X_{12}\in K^{m\times n},\ X_{22}\in K^{n\times n} \]
+		gilt
+			\[ \det X = \det X_{11} \cdot \det X_{22} \]
+		Beweis in Übung.
+	\end{Definition}
+\subsection{Beispiel \& Definition (Vandermonde-Determinante)}
+	\begin{Definition}[Vandermonde-Determinante]
+		Für $ x_1,\dots, x_k\in K $ hat die Vandermonde-Matrix
+			\[ X= (x_i^{k-j})i,j\in \{1,\dots, k \} =
+				\begin{pmatrix}
+					x_1^{k-1}&x_1^{k-2}&\cdots & x_1^0\\
+					x_2^{k-1}&x_2^{k-2}&\cdots & x_2^0\\
+					\vdots & \vdots & \ddots&\vdots \\
+					x_k^{k-1}&x_k^{k-2}&\cdots & x_k^0
+				\end{pmatrix} \in K^{k\times k}\]
+		(Vandermonde-)Determinante:
+			\[ \det X = \det (x_i^{k-j})_{i,j = 1,\dots, k} = \prod_{i<j}x_i-x_j \]
+		Denn: Für $ k=2 $ gilt
+			\[ \det \begin{pmatrix}
+				x_1&1\\x_2&1
+			\end{pmatrix} = x_1-x_2\]
+		also ist die Induktionsvoraussetzung wahr. Für $ k>2 $ gilt
+			\[ XS_{21}(-x_k)\cdots S_{k(k-1)}(-x_k) = 
+			\begin{pmatrix}
+				x_1^{k-1} &\cdots & x_1 & 1\\
+				\vdots & & \vdots & \vdots\\
+				x_k^{k-1} & \cdots & x_k & 1
+			\end{pmatrix}\begin{pmatrix}
+				1 & 0 & \cdots & \\
+				-x_k & 1 & 0 & \cdots\\
+				0 & \ddots & \ddots & \\
+				\vdots & & & 1
+			\end{pmatrix}\begin{pmatrix}
+			1 & 0 & \cdots & \\
+			0 & 1& \ddots1&\\
+			\vdots & 0 &1 & 0 \\
+			\cdots & & -x_k & 1			
+			\end{pmatrix}\]
+			\[ = \begin{pmatrix}
+			x_1^{k-1}-x_1^{k-2}x_k & x_1^{k-2}-x_1^{k-3}x_k & \cdots & x_1-x_k & 1 \\ 
+			\vdots & \vdots &  & \vdots & \vdots \\ 
+			x_{k-1}^{k-1}-x_{k-1}^{k-2}x_k & x_{k-1}^{k-2}-x_{k-1}^{k-3}x_k & \cdots & x_{k-1}-x_k & 1 \\ 
+			0 & 0 & \cdots & 0 & 1
+			\end{pmatrix}  \]
+			\[ = \begin{pmatrix}
+			(x_1-x_k)x_1^{k-2} & (x_1-x_k)x_1^{k-3} & \cdots & x_1-x_k & 1 \\ 
+			\vdots & \vdots &  & \vdots & \vdots \\ 
+			(x_{k-1}-x_k)x_{k-1}^{k-2}& (x_{k-1}-x_k)x_{k-1}^{k-3} & \cdots & x_{k-1}-x_k & 1 \\ 
+			0 & 0 & \cdots & 0 & 1
+			\end{pmatrix}  \]
+		also ist (Laplacescher Entwicklungssatz nach letzter Zeile):
+			\[ \det X = 0+(-1)^{k+k}\det 
+				\begin{pmatrix}
+					(x_1-x_k)x_1^{k-2} & (x_1-x_k)x_1^{k-3} & \cdots & x_1-x_k \\ 
+					\vdots & \vdots &  & \vdots  \\ 
+					(x_{k-1}-x_k)x_{k-1}^{k-2}& (x_{k-1}-x_k)x_{k-1}^{k-3} & \cdots & x_{k-1}-x_k  \\ 
+				\end{pmatrix} \]
+			\[ = 1\cdot(x_1-x_k)\cdots (x_{k-1}-x_k)\det
+				\begin{pmatrix}
+				x_1^{k-2} & \cdots & 1 \\ 
+				\vdots &  & \vdots \\ 
+				x_{k-1}^{k-2} & \cdots & 1
+				\end{pmatrix} = \]
+				\[ (x_1-x_k)\cdots(x_{k-1}-x_k)\prod_{i<j,\ i,j\in\{1,\dots, k-1 \}}(x_i-x_j) = \prod_{i<j,\ i,j\in \{1,\dots,k\}}(x_i-x_j) \]
+		Also folgt die Behauptung mit Induktion.
+	\end{Definition}
+\subsection{Fortsetzungssatz für Determinantenformen}
+	\begin{Satz}[Fortsetzungssatz für Determinantenformen]
+		Ist $ (b_i)_{i\in \{1,\dots,n\}} $ eine Basis von $ V $ (also $ \dim V = n $) und $ d\in K $, so gilt:
+		\[ \exists! \omega\in\Lambda^nV^*:\omega(b_1,\dots,b_n) = d \]
+	\end{Satz}
+\paragraph{Beweis}
+	Eindeutigkeit folgt aus der Leibniz-Formel und der Tatsache, dass $ V=[(b_i)_{i\in\{1,\dots,n\}}] $.
+	
+	Existenz: Gegeben sind eine Basis $ (b_i)_{i\in \{1,\dots, n\}} $ von $ V $ und $ d\in K $. Wir definieren $ \omega $ durch die Leibniz-Formel:
+		\[ \omega: V\times \overset{n}{\dots} \times V \to K, \omega(v_1,\dots,v_n):=d\cdot\det X \]
+	wobei $ X\in K^{n\times n} $ die Koeffizientenmatrix für die Basisdarstellung der $ (v_i) $ ist,
+		\[ (v_1,\dots,v_n)=(b_1,\dots,b_n)\cdot X. \]
+	Dann gilt:
+		\begin{itemize}
+			\item $ \omega $ ist wohldefiniert, da $ (b_i)_{i\in \{i,\dots,n\}} $ linear unabhängig ist, womit die Koeffizienten $ x_{ij},\ i=1,\dots,n $ für jedes $ j=1,\dots,n $ eindeutig sind.
+			\item $ \omega $ ist $ n $-Form, d.h.
+				\[ \forall j=1,\dots,n: v_j\mapsto d\cdot\det X\]
+			ist linear; offensichtlich!
+			\item $ \omega $ ist alternierend, d.h.
+				\[ \omega(v_1,\dots,v_n)=0\text{ falls } v_i = v_j \text{ für }i\neq j; \]
+			ist aber $ v_i = v_j $ für ein Paar $ (i,j) $ mit $ i\neq j $, so gilt:
+				\[ \sgn(\sigma)x_{\sigma(1)1}\cdots x_{\sigma(n)n} + \sgn(\tau_{ij}\circ \sigma) x_{(\tau_{ij}\circ \sigma)(1)1}\cdots x_{(\tau_{ij}\circ \sigma)(n)n} = 0,  \]
+			denn
+				\[ \sgn(\tau_{ij}\circ \sigma) = -\sgn(\sigma),\text{ und } x_{(\tau_{ij}\circ\sigma)(1)1}\cdots x_{(\tau_{ij}\circ\sigma)(n)n} = x_{\sigma(1)1}\cdots x_{\sigma(n)n} \]
+			da $ v_i = v_j $
+			
+			Damit folgt:
+				\[ \sum_{\sigma\in S_n}\sgn(\sigma)x_{\sigma(1)1}\cdots x_{\sigma(n)n}=0, \]
+			da mit $ \sigma\in S_n $ auch $ \tau\circ\sigma\in S_n $ in der Summe vorkommt.
+		\end{itemize}	
+\subsection{Korollar}
+	\begin{Korollar}[Dimension der Determinantenform]
+		Ist $ \dim V = n $, so ist $ \dim\Lambda^nV^* = 1 $. Beweis in der Übung.
+	\end{Korollar}
+\subsection{Korollar}
+	Ist $ \omega(v_1,\dots,v_n)=0 $ für eine Determinantenform $ \omega\in\Lambda^nV^*\setminus\{0\}, $ so ist die Familie $ (v_i)_{i\in \{1,\dots, n\}} $ linear abhängig.
+\paragraph{Beweis}
+	Ist $ \omega\neq 0 $, so existiert eine Basis $ (b_i)_{i=1,\dots,n} $ von $ V $ mit $ \omega(b_1,\dots,b_n)=d\neq 0 $. Mit
+		\[ (v_1,\dots,v_n)=(b_1,\dots,b_n)\cdot X \]
+	folgt nun (Leibniz-Formel)
+		\[ \omega(v_1,\dots,v_n)=\omega(b_1,\dots,b_n)\det X = d\cdot \det X \]
+	Annahme: $ (v_i)_{i\in \{1,\dots,n\}} $ ist linear unabhängig, d.h. $ (v_i) $ ist Basis und damit existiert $ Y\in K^{n\times n} $ mit
+		\[ (b_1,\dots,b_n)=(v_1,\dots,v_n)Y, \]
+	nach Leibniz-Formel ist damit
+		\[ 0\neq d = \omega(b_1,\dots,b_n)=\omega(v_1,\dots,v_n)\cdot \det Y. \]
+	Damit folgt
+		\[ \omega(v_1,\dots,v_n)\neq 0 \text{ (und }\det Y \neq 0) \]
+\paragraph{Verkürzung des Beweises}
+	Der Beweis ist zu verkürzen, indem man für die linear unabhängige Familie gleich die Basis $ (b_i) $ verwendet.
+\paragraph{Bemerkung}
+	Ist also $ \dim V=n $ und sind $ \omega\in Lambda^nV^* $ und $ (b_i)_{i\in \{1,\dots,n\}} $ eine Familie in $ V $, so folgt aus zwei der folgenden Aussagen die dritte:
+		\begin{enumerate}[(i)]
+			\item $ \omega\neq 0 $
+			\item $ \omega(b_1,\dots,b_n)\neq 0 $
+			\item $ (b_i)_{i\in\{1,\dots,n\}} $ ist Basis von $ V $.
+		\end{enumerate}
+\paragraph{Bemerkung}
+	Weiter folgt damit: Sind $ f\in \End(V),\ (b_i)_{i\in \{1,\dots,n\}} $ Basis von $ V $ und $ \omega\in \Lambda^nV^*\setminus\{0\}, $ so gilt:
+		\[ f\in Gl(V)\Leftrightarrow \omega(f(b_1),\dots,f(b_n))\neq 0 \]
+	bzw.
+		\[ Gl(V)=\{f\in \End(V)\mid \omega(f(b_1),\dots,f(b_n))\neq 0\} \]
