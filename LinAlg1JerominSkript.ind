@@ -1,5 +1,7 @@
 \begin{theindex}
 
+  \item \IeC {\"A}quiaffine Geometrie, \hyperpage{99}
+  \item \IeC {\"A}quiaffine Transformation, \hyperpage{98}
   \item \IeC {\"A}quivalente LGS, \hyperpage{82}
   \item \IeC {\"A}quivalente Matrizen, \hyperpage{79}
   \item \IeC {\"A}quivalenzrelation, \hyperpage{44}
@@ -28,6 +30,7 @@
   \item Basislemma, \hyperpage{22}
   \item Basissatz, \hyperpage{24}
   \item Bild, Kern, Rang \& Defekt, \hyperpage{31}
+  \item Blockmatrix, \hyperpage{92}
 
   \indexspace
 
@@ -37,8 +40,12 @@
 
   \item Darstellungsmatrix einer Komposition, \hyperpage{74}
   \item Definition, \hyperpage{42}
+  \item Determinante, \hyperpage{90}
+  \item Determinante eines Endomorphismus, \hyperpage{99}
+  \item Determinantenmultiplikationssatz, \hyperpage{100}
   \item Dilatationsgruppe, \hyperpage{69}
   \item Dimension, \hyperpage{25}
+  \item Dimension der Determinantenform, \hyperpage{95}
   \item Dimension und Teilmengen, \hyperpage{25}
   \item Dimensionen von komplement\IeC {\"a}ren UVR, \hyperpage{46}
   \item Dimensionssatz, \hyperpage{37}
@@ -57,6 +64,8 @@
   \item Fortsetzungssatz, \hyperpage{27}
   \item Fortsetzungssatz f\IeC {\"u}r affine Abbildungen, 
 		\hyperpage{66}
+  \item Fortsetzungssatz f\IeC {\"u}r Determinantenformen, 
+		\hyperpage{94}
 
   \indexspace
 
@@ -107,6 +116,8 @@
   \indexspace
 
   \item Parallele Geraden, \hyperpage{64}
+  \item Parallelogramm/Fl\IeC {\"a}cheninhalt, \hyperpage{97}
+  \item Parallelotop im affinen Raum, \hyperpage{96}
   \item Parallelprojektion, \hyperpage{65}
   \item Permutationsgruppe, \hyperpage{9}
   \item Produkt von VR, \hyperpage{43}
@@ -135,6 +146,7 @@
   \indexspace
 
   \item Teilverh\IeC {\"a}ltnis, \hyperpage{59}
+  \item Transponierte Matrix, \hyperpage{92}
   \item Transposition, \hyperpage{88}
 
   \indexspace
@@ -144,7 +156,9 @@
 
   \indexspace
 
+  \item Vandermonde-Determinante, \hyperpage{93}
   \item Vektorraum, \hyperpage{12}
+  \item Volumenverzerrung, \hyperpage{99}
 
   \indexspace
 
