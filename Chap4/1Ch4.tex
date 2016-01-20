@@ -5,7 +5,7 @@
 \section{Determinantenformen}
 	Idee: Für den Flächeninhalt $ F(v,w) $ eines von zwei Vektoren $ v,w\in V $ aufgespannten Parallelogramms gilt
 	\begin{gather*}
-		F{(vx,w)} = F{(v,w)}x\\
+		F{(vx,w)} = F{(v,w)}\cdot x\\
 		F(v+v',w) = F(v,w)+F(v',w)
 	\end{gather*}
 	und entsprechend für das zweite Argument; außerdem verschwindet der Flächeninhalt, wenn das Parallelogramm "`zusammenklappt"', also insbesondere gilt
@@ -98,7 +98,7 @@
 \draw[-{>[scale=1,length=10,width=6]},shorten >=4pt, shorten <=4pt,line width=0.2pt,color=green] (pointa1) -- (pointc1);
 \draw[-{>[scale=1,length=10,width=6]},shorten >=4pt, shorten <=4pt,line width=0.2pt,color=green] (pointa2) -- (pointc2);
 \node [color=green] (pointlabelac1) at ($(pointa1)!0.5!(pointc1)$) [above, xshift=0, yshift=0] {$v+v'$} ;
-\node [color=green] (pointlabelac2) at ($(pointa2)!0.5!(pointc2)$) [above, xshift=0.5, yshift=0] {$v+v'$} ;
+\node [color=green] (pointlabelac2) at ($(pointa2)!0.5!(pointc2)$) [below, xshift=10, yshift=5] {$v+v'$} ;
 
 %Punkte malen
 \draw[fill,color=red] (pointa1) circle [x=1cm,y=1cm,radius=0.08]node[above, xshift=0, yshift=0]{};
@@ -149,7 +149,7 @@
 	Seien $ v_1,\dots,v_m\in V $ und $ i,j\in \{1,\dots,m\} $ mit $ i\neq j $. Dann gilt:
 		\begin{align*}
 			0 &= \omega(\dots,v_i+v_j,\dots,v_i+v_j,\dots)\\
-			&= \omega(\dots,v_i,\dots,v_i,\dots)+\omega(\dots,v_j,\dots,v_j)+\omega(\dots,v_i,\dots,v_j,\dots)+\omega(\dots,v_j,\dots,v_i,\dots)\\
+			&= \omega(\dots,v_i,\dots,v_i,\dots)+\omega(\dots,v_j,\dots,v_j,\dots)+\omega(\dots,v_i,\dots,v_j,\dots)+\omega(\dots,v_j,\dots,v_i,\dots)\\
 			&= \omega(\dots,v_i,\dots,v_j,\dots)+\omega(\dots,v_j,\dots,v_i,\dots)
 		\end{align*}
 	und
@@ -171,7 +171,7 @@
 	(i) liefert eine äquivalente Formulierung von "`alternierend"' für $ m $-Linearformen, wenn $ \Char (K)\neq 2 $.
 	Nämlich: sind $ v_1,\dots,v_m\in V $ mit $ v_i=v_j $ für $ i\neq j $, so gilt
 		\begin{align*}
-		0 &= \omega(\dots,v_i\dots,v_j)+\omega(\dots,v_j,\dots,v_i,\dots)\\
+		0 &= \omega(\dots,v_i\dots,v_j,\dots)+\omega(\dots,v_j,\dots,v_i,\dots)\\
 		&= 2\omega(\dots,v_i,\dots,v_j,\dots) \Rightarrow 0 = \omega(\dots,v_i,\dots,v_j,\dots)
 		\end{align*}
 \paragraph{Buchhaltung}
