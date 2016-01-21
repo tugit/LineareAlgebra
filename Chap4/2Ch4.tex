@@ -50,7 +50,7 @@
 		\[ p(0,0) = 0, p(1,0) = b, p(0,1) = c \text{ und } p(1,1) = a(-1)+b\cdot 1+c\cdot 1. \]
 	Dieser Flächeninhalt ist wohldefiniert, d.h. er hängt nur vom Dreieck und der gewählten Orientierung ab -- insbesondere ist für Permutationen $ \sigma $ von $ \{a,b,c\} $ mit $ \sgn(\sigma) = +1 $ der Flächeninhalt gleich dem ursprünglichen. (Siehe Aufgabe)
 \paragraph{Bemerkung}
-	Ist $ A $ eine affine Ebene mit Flächenmessung $ \vol $ und $ \{a,b,c\} $ ein nicht-degeneriertes Dreieck, also ein baryzentrisches Bezugssystem, so gilt (Cramersche Regel)
+	Ist $ A $ eine affine Ebene mit Flächenmessung $ \vol $ und $ \{a,b,c\} $ ein nicht-de"-ge"-nerier"-tes Dreieck, also ein baryzentrisches Bezugssystem, so gilt (Cramersche Regel)
 		\[ \forall s\in A: s=a\cdot \frac{F(s,b,c)}{F(a,b,c)}+ b\cdot\frac{F(a,s,c)}{F(a,b,c)} +c\cdot\frac{F(a,b,s)}{F(a,b,c)}\]
 	Diese Flächenformel für die baryzentrischen Koordinaten eines Punktes $ s $ ist unabhängig von der (gewählten) Flächenmessung, das sich verschiedene Flächenmessungen nur um einen Faktor unterscheiden (der unabhängig vom Dreieck ist): $ \dim \Lambda^2V^*=1 $
 %%% Grafik Dreieck mit Punkt s %%%%%
@@ -112,7 +112,7 @@
 		\[ f^*\omega: V^n\to K, (v_1,\dots,v_n)\mapsto \omega(f(v_1),\dots,f(v_n)). \]
 	\end{Definition}
 \paragraph{Bemerkung}
-	Offenbar ist $ f^*\omega\in \Lambda^nV^* = [\omega] $ wegen $ \dim Lambda^nV*=1 $, d.h.
+	Offenbar ist $ f^*\omega\in \Lambda^nV^* = [\omega] $ wegen $ \dim \Lambda^nV^*=1 $, d.h.
 		\[ \exists! x\in K: f^*\omega = \omega \cdot x \text{ ($(\omega) $ ist Basis von $ \Lambda^nV^* $)} \]
 	dieses $ x $ ist die Determinante von $ f $, also $ \det f = x $.
 	
@@ -120,7 +120,7 @@
 		\[ B\mapsto  \frac{f^*\omega(B)}{\omega(B)}\in K\]
 	ist konstant $ \equiv x $, unabhängig von der Basis $ B $.
 \paragraph{Bemerkung}
-	Da $ f^*(\omega x) = (f^*\omega)x $ für $ x\in K $, liefert jedes $ \omega \in Lambda^nV^*\setminus\{0\} $ die gleiche Determinante $ \det f $: die Determinante bzw. Volumenverzerrung ist unabhängig von der gewählten Volumenform $ \omega\in \Lambda^nV^*\setminus \{0\} $, d.h. der "`Referenzvolumenmessung"'.
+	Da $ f^*(\omega x) = (f^*\omega)x $ für $ x\in K $, liefert jedes $ \omega \in \Lambda^nV^*\setminus\{0\} $ die gleiche Determinante $ \det f $: die Determinante bzw. Volumenverzerrung ist unabhängig von der gewählten Volumenform $ \omega\in \Lambda^nV^*\setminus \{0\} $, d.h. der "`Referenzvolumenmessung"'.
 \subsection{Determinantenmultiplikationssatz}
 	\begin{Satz}[Determinantenmultiplikationssatz]
 		Für $ f,g\in \End(V) $ gilt
@@ -129,3 +129,100 @@
 \paragraph{Beweis}
 	Mit $ \omega\in\Lambda^nV^*\setminus\{0\} $ berechnet man
 		\[ (f\circ g)^*\omega = g^*(f^*\omega) = g^*(\omega\cdot \det f) = (g^*\omega)\det f = \omega \det g\cdot \det f \]
+		
+%%%%% VO 21-01-2016 %%%%%		
+\paragraph{Wiederholung \& Bemerkung}
+	Sind $ \omega\in \Lambda^nV^*\setminus \{0\} $ und $ B $ eine Basis von $ V $, so gilt
+		\[ Gl(V) = \{f\in \operatorname{End}(V)\mid 0\neq \omega(f(B))=f*\omega(B)\}. \]
+	Damit folgt also
+		\[ Gl(V) = \{f\in\operatorname{End}(V)\mid \det f \neq 0\} \]
+	Mit dem Determinantenmultiplikationssatz folgt dann:	
+\subsection{Korollar}
+\begin{Korollar}
+	\[ \det : Gl(V)\to (K^\times,\cdot) \]
+	ist Gruppenhomomorphismus.
+\end{Korollar}
+\subsection{Korollar \& Definition}
+\begin{Definition}[Spezielle lineare Gruppe]
+	\[ \det\text{}^{-1}(\{1\}) = \{f\in Gl(V)\mid \det f = 1\} \subset Gl(V) \]
+	liefert eine Untergruppe von $ Gl(V) $, die \emph{spezielle lineare Gruppe}
+	\[ Sl(V):= \{f\in Gl(V)\mid \det f = 1 \} \]
+\end{Definition}
+\paragraph{Beweis}
+	Für $ g\in Gl(V) $ gilt nach DMS:
+		\[ 1 = \det \id_V = \det(g^{-1}\circ g) = \det g^{-1}\cdot \det g\Rightarrow \det g^{-1} = (\det g)^{-1} \]
+	damit folgt
+		\[ g\in Sl(V)\Rightarrow g^{-1} \in Sl(V), \]
+	also mit DMS
+		\[ \forall f,g\in Sl(V):g^{-1}\circ f\in Sl(V), \]
+	d.h. $ Sl(V)\subset Gl(V) $ ist eine Untergruppe nach Untergruppenkriterium.
+\subsection{Korollar}
+	Eine Affinität ist genau dann eine äquiaffine Transformation, wenn ihr linearer Anteil eine spezielle lineare Transformation ist.
+\paragraph{Beweis}
+	Ist $ \lambda \in \End(V) $ linearer Anteil der Affinität $ \alpha:A\to A $ eines AR $ A  $ über $ V $, und ist $ p $ ein von einer Basis $ B=(b_j)_{j\in \{1,\dots,n\}} $ von $ V $ aufgespanntes Parallelotop, so gilt
+		\[ (\alpha\circ p)_\epsilon = \alpha(p_0)+\sum_{j=1}^{n}\lambda(b_j)\epsilon_j, \]
+	also für eine durch $ \omega\in \Lambda^nV^*\setminus \{0\} $ gegebene Volumenmessung
+		\[ \frac{\vol(\alpha\circ p)}{\vol(p)} = \frac{\omega(\lambda(b_1),\dots,\lambda(b_n))}{\omega(b_1,\dots,b_n)}=\det \lambda, \]
+	d.h. $ \alpha $ ist volumentreu genau dann, wenn $ \lambda \in Sl(V) $. ($ \rightarrow $ vgl. Idee der Definition $ \det f $)
+\paragraph{Bemerkung}
+	Dies liefert einen alternativen Beweis, dass die äquiaffinen Transformationen eine Gruppe (Untergruppe der Affinitäten) bilden:
+	
+	Der lineare Anteil einer Komposition von Affinitäten ist die Komposition ihrer linearen Anteile -- und $ Sl(V) $ ist eine Gruppe (Untergruppe von $ Gl(V) $).
+\paragraph{Beispiel}
+	Ist $ \lambda = \id_V + w\cdot \psi $ mit $ \psi\in V^* $ und $ w\in \ker \psi $ linearer Anteil einer Scherung
+		\[ \sigma:A\to A, o+v\mapsto \sigma(o+v) = o+\lambda(v), \]
+	wobei $ w\cdot\psi\neq 0 $, so wähle eine Basis $ B = (b_j)_{j\in\{1,\dots,n\}}$ von $ V $ mit
+		\[ w=b_1 \text{ und }  \ker \psi = [(b_j)_{j\in \{1,\dots,n-1\}}]. \]
+	Dann ist
+		\[ \xi_B^B(\lambda) =
+			\begin{pmatrix}
+				1 & 0 & \cdots & \psi(b_n)\\
+				0 & 1 & 0 & 0 \\
+				\vdots &\ddots & \ddots & \vdots\\
+				0 &\cdots& 0 & 1
+			\end{pmatrix} = S_{1n}(\psi(b_n)) \]
+	und mit einer Determinantenform $ \omega\in \Lambda^nV^*\setminus\{0\} $
+		\[ \det \lambda = \frac{\lambda^*\omega(B)}{\omega(B)} = \frac{\omega(\lambda(B))}{\omega(B)} = \frac{\omega(BS_{1n}(\psi(b_n)))}{\omega(B)} = \frac{\omega(B)}{\omega(B)} = 1.\]
+	Jede Scherung ist also äquiaffine Transformation.
+\paragraph{Bemerkung (Dreischerungssatz)}
+	Jede äquiaffine Transformation einer affinen Ebene (mit Flächenmessung) ist Komposition von (höchstens drei) Scherungen.
+	
+	Mit dem Fortsetzungssatz für affine Abbildungen kann der Dreischerungssatz rein konstruktiv bewiesen werden.
+\subsection{Lemma}
+	Sind $ f\in \End(V) $ und $ B $ eine Basis von $ V $, so gilt
+		\[ \det f = \det \xi_B^B(f) \]
+\paragraph{Beweis}
+	Mit Leibniz-Formel (LF): Für $ \omega\in \Lambda^nV^*\setminus\{0\} $ mit $ n=\dim V $, gilt
+		\[ f^*\omega(B) = \omega(f(B)) \overset{\text{Def. }\xi}{=} \omega(B\cdot \xi_B^B(f))
+		\overset{\text{LF}}{=} \omega(B)\cdot \det \xi_B^B(f).\]
+\paragraph{Achtung:}
+	Im Allgemeinen ist für unterschiedliche Basen $ B,C $ von $ V $
+		\[ \det f \neq \det \xi_B^C(f). \]
+	Zum Beispiel: Sei $ f\in Gl(V) $ und $ B $ eine beliebige Basis, dann ist $ C:=f(B) $ auch eine Basis -- und 
+		\[ \xi_B^C(f) = E_n = \det \xi_B^C(f) = 1 \]
+	Für $ f=2\cdot \id_V $ etwa gilt also
+		\[ \det f = 2^n \cdot 1\neq 1 \]
+\subsection{Buchhaltung}
+	Aus obigem Lemma folgt auch:
+	Für $ X\in K^{n\times n} $ gilt
+		\[ \xi_E^E(f_X) = X \Rightarrow \det X = \det \xi_E^E(f_X) = \det f_X. \]
+	Der DMS für Endomorphismen liefert also einen Determinantenmultiplikationssatz für Matrizen: Für $ X,Y\in K^{n\times n} $ gilt
+		\[ \det XY = \det f_{XY} = \det(f_X\circ f_Y) = \det f_X\cdot \det f_Y = \det X\cdot \det Y. \]
+	Ebenso lassen sich nun andere Tatsachen auf die Determinante für Matrizen von der für Endomorphismen übertragen. Insbesondere definiert man
+		\[ Sl(n) := \{X\in K^{n\times n}\mid \det X=1 \} = \{X\in K^{n\times n}\mid f_X\in Sl(K^n)\}, \]
+	und nennt sie die \emph{spezielle lineare Gruppe in $n$ Variablen}. $ Sl(n) $ ist Untergruppe von $ Gl(n) $.
+\paragraph{Neuer Begriff der Äquivalenz}
+	Definiert man zwei Matrizen $ X,X' \in K^{n\times n}$ als \emph{äquivalent},
+		\[ X\sim X' :\Leftrightarrow \exists P\in Gl(n): X' =PXP^{-1}, \]
+	so erhält man:
+		\[ X\sim X' \Rightarrow \det X = \det X' \]
+	Nämlich: Sind $ f\in \End(V) $ und $ B $ und $ B'=BP^{-1} $ (mit $ P\in Gl(n) $) Basen von $ V $, so gilt
+		\[ \xi_{B'}^{B'}(f) = \xi_{B}^{B'}(\id_V)\cdot \xi_B^B(f)\cdot \xi_{B'}^{B}(\id_V) =
+		\xi_{B}^{B'}(\id_V)\cdot \xi_B^B(f)\cdot \left(\xi^{B'}_{B}(\id_V)\right)^{-1} \]
+	mit
+		\[ \xi_B^{B'}(\id_V) = P \text{, da } B' = \id_(B') = BP^{-1} \]
+	Insbesondere gilt also für $ X,X' = PXP^{-1}\in K^{n\times n} $ mit $ P\in Gl(n) $:
+		\[ \det X' = \det f_{X'} = \det f_P \circ f_X \circ f_{P^{-1}} =\]
+		\[=\det f_P \circ f_X \circ (f_P)^{-1} = \det f_P \cdot \det f_X \cdot \det f_P^{-1} = \det f_X = \det X\]
+\paragraph{Achtung}
+	Dies ist ein zweiter Begriff der Äquivalenz von Matrizen -- für Darstellungsmatrizen von Ednomorphismen, im Gegensatz zur Äquivalenz für Darstellungsmatrizen von Homomorphismen (im Allgemeinen nicht Quadratisch).
