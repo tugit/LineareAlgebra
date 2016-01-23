@@ -184,6 +184,91 @@
 	und mit einer Determinantenform $ \omega\in \Lambda^nV^*\setminus\{0\} $
 		\[ \det \lambda = \frac{\lambda^*\omega(B)}{\omega(B)} = \frac{\omega(\lambda(B))}{\omega(B)} = \frac{\omega(BS_{1n}(\psi(b_n)))}{\omega(B)} = \frac{\omega(B)}{\omega(B)} = 1.\]
 	Jede Scherung ist also äquiaffine Transformation.
+    
+%-------------------Begin Scherung ist äquiaffine Transformation ----------------  
+\begin{figure}[H]\centering
+\tdplotsetmaincoords{0}{0} %-27
+\begin{tikzpicture}[yscale=1,tdplot_main_coords]
+
+\def\xstart{0} %x Koordinate der Startposition der Grafik
+\def\ystart{0} %y Koordinate der Startposition der Grafik
+\def\myscale{1.1} %ändert die Größe der Grafik (Skalierung der Grafik) 
+
+\def\xstartdraw{(\xstart + 1.0)} %xKoordinate des Referenzstartpunktes (in dieser Zeichnung: a)
+\def\ystartdraw{(\ystart + 0.6)}%yKoordinate des Referenzstartpunktes (in dieser Zeichnung: a)
+
+\def\balkenhoehe{(5.3)}% Länge des vertikalen blauen Balkens
+\def\balkenlaenge{(10)}% Länge des horizontalen blauen Balkens
+\def\balkenbreite{0.4} %Balkenbreite
+
+%---------Begin Balken----------
+\def\drehwinkel{0}
+\node (VekV) at ({\xstart+0.7*cos(\drehwinkel)-\balkenbreite*sin(\drehwinkel)},{\ystart+0.5*sin(\drehwinkel)+\balkenbreite*cos(\drehwinkel)})[right, xshift=-8,color=blue] {$V$};
+\node (AffA) at ({\xstart+(\balkenlaenge-1)*cos(\drehwinkel)},{\ystart+(\balkenlaenge-1)*sin(\drehwinkel)+\balkenbreite*cos(\drehwinkel)})[color=red] {$A^2$};
+
+\path[ shade, top color=white, bottom color=blue, opacity=.6] 
+    ({\xstart},{\ystart},0)  -- ({\xstart - \balkenbreite * cos(\drehwinkel)- (-\balkenbreite+0)*sin(\drehwinkel)},{\ystart - \balkenbreite * sin(\drehwinkel)+ (-\balkenbreite+0)*cos(\drehwinkel)},0)  -- ({\xstart - \balkenbreite * cos(\drehwinkel)- (\balkenhoehe+0.5)*sin(\drehwinkel)},{\ystart - \balkenbreite * sin(\drehwinkel)+ (\balkenhoehe+0.5)*cos(\drehwinkel)},0) -- ({\xstart - 0 * cos(\drehwinkel)- (\balkenhoehe+0)*sin(\drehwinkel)},{\ystart - 0 * sin(\drehwinkel)+ (\balkenhoehe+0)*cos(\drehwinkel)},0) -- cycle;
+        
+\path[ shade, right color=white, left color=blue, opacity=.6] 
+	({\xstart},{\ystart},0)  -- ({\xstart - \balkenbreite * cos(\drehwinkel)- (-\balkenbreite+0)*sin(\drehwinkel)},{\ystart - \balkenbreite * sin(\drehwinkel)+ (-\balkenbreite+0)*cos(\drehwinkel)},0) --
+    ({\xstart + (\balkenlaenge+0.5) * cos(\drehwinkel)- (-\balkenbreite+0)*sin(\drehwinkel)},{\ystart + (\balkenlaenge+0.5) * sin(\drehwinkel)+ (-\balkenbreite+0)*cos(\drehwinkel)},0) --   
+    ({\xstart + \balkenlaenge * cos(\drehwinkel)},{\ystart + \balkenlaenge * sin(\drehwinkel)},0)--
+    cycle;       
+%---------End Balken----------
+
+%Punkte Definition
+
+\node (pointol) at ({\xstartdraw},{\ystartdraw}) {};
+\node (pointor) at ({\xstartdraw+(6.2 *\myscale)},{\ystartdraw+(1.8 *\myscale)}) {};
+
+\node (pointo1) at ($(pointol)!0.2!(pointor)$) {};
+\node (pointo2) at ($(pointol)!0.9!(pointor)$) {};
+
+\node (offset) at ($(0.2*\myscale,2.5*\myscale) $) {}; %just an offset
+
+\node (pointov) at ($(pointo1) + (offset) $) {};
+\node (pointol2) at ($(pointol) + (offset) $) {};
+\node (pointor2) at ($(pointor) + (offset) $) {};
+
+\node (pointolambdav) at ($(pointov)!0.5!(pointor2)$) {};
+
+\node (pointa1) at ({\xstartdraw},{\ystartdraw}) {};
+\node (point02) at ({\xstartdraw},{\ystartdraw}) {};
+
+
+%Gerade rot
+\draw[-,line width=0.2pt,color=red,shorten <=-30pt] (pointor) -- (pointol);
+\draw[-,line width=0.4pt,color=red,dotted,shorten >=-30pt] (pointor2) -- (pointol2);
+
+%Vektoren blau
+\draw[-{>[scale=1,length=10,width=6]},shorten >=2pt, shorten <=2pt,line width=0.5pt,color=blue] (pointo1) -- (pointo2);
+\node (pointvekw) at ($(pointo1)!0.5!(pointo2)$) [below,color=blue]{$w$};
+
+\draw[-{>[scale=1,length=10,width=6]},shorten >=2pt, shorten <=2pt,line width=0.5pt,color=blue] (pointo1) -- (pointov);
+\node (pointvekv) at ($(pointo1)!0.5!(pointov)$) [left,color=blue]{$v$};
+
+\draw[-{>[scale=1,length=10,width=6]},shorten >=2pt, shorten <=2pt,line width=0.5pt,color=blue] (pointov) -- (pointolambdav);
+\node (pointvekws) at ($(pointov)!0.4!(pointolambdav)$) [above,color=blue,yshift=2]{$\stackrel{\text{mit } s=\psi(v)}{w\cdot s}$};
+
+\draw[-{>[scale=1,length=10,width=6]},shorten >=2pt, shorten <=2pt,line width=0.5pt,color=blue] (pointo1) -- (pointolambdav);
+\node (pointa1b1v) at ($(pointo1)!0.5!(pointolambdav)$) [right,color=blue]{$\lambda(v)$};
+
+%Abbildung sigma
+\draw [-{>[scale=1,length=10,width=6]},shorten >=8pt, shorten <=8pt,line width=0.4pt,color=blue!20!red!80] (pointov) to [bend right=15] (pointolambdav);
+\node (pointveksigma) at ($(pointov)!0.5!(pointolambdav)$) [below,color=blue!20!red!80,yshift=-7]{$\sigma$};
+
+%Punkte malen
+\draw[fill,color=white] (pointo1) circle [x=1cm,y=1cm,radius=0.18];
+\draw[fill,color=red] (pointo1) circle [x=1cm,y=1cm,radius=0.08]node[below, xshift=0, yshift=0]{$o$};
+\draw[fill,color=red] (pointov) circle [x=1cm,y=1cm,radius=0.08]node[above, xshift=-20, yshift=-5]{$o+v$};
+
+\draw[fill,color=white] (pointolambdav) circle [x=1cm,y=1cm,radius=0.18];
+\draw[fill,color=red] (pointolambdav) circle [x=1cm,y=1cm,radius=0.08]node[below, xshift=55, yshift=5]{$\sigma(o+v)=o+\lambda(v)$};
+
+\end{tikzpicture}
+\end{figure}
+%-------------------End Scherung ist äquiaffine Transformation ----------------
+
 \paragraph{Bemerkung (Dreischerungssatz)}
 	Jede äquiaffine Transformation einer affinen Ebene (mit Flächenmessung) ist Komposition von (höchstens drei) Scherungen.
 	
