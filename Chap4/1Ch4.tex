@@ -301,7 +301,7 @@
 			\end{pmatrix}  \]
 	Nämlich: Ist z.B: $ v_m=b_i $ in der Leibniz-Formel, also $ x_{km}=\delta_{ik} $, so erhält man
 		\[ \det X = \sum_{\sigma\in S_m}\sgn(\sigma)\prod_{j=1}^{m}x_{\sigma(j)j}=\sum_{\sigma\in S_m}\sgn(\sigma)\left(\prod_{j=1}^{m-1}x_{\sigma(j)j}\right)x_{\sigma(m)m} \]
-	wobei $ x_{\sigma(m)m} = 0 $ für $ \sigma(m)\neq i $ und $ =1 $ für $ \sigma(m) = 1 $,
+	wobei $ x_{\sigma(m)m} = 0 $ für $ \sigma(m)\neq i $ und $ =1 $ für $ \sigma(m) = i $,
 		\[ = \sum_{\sigma\in S_m, \sigma(m)=i}\sgn(\sigma)\prod_{j=1}^{m-1}x_{\sigma(j)j} = \sum_{\sigma\in S_{m-1}}(-1)^{m-i}\sgn(\sigma')\prod_{j=1}^{m-1}x_{\sigma'(j)j} = (-1)^{m-i}\det X_{im}. \]
 	Im letzten Schritt werden die Transpositionen berücksichtigt die notwendig sind, um die nun "`gelöschte"' Zeile ans Ende zu verschieben. Ausmultiplizieren des o.B.d.A $ m $-ten Eintrags in einer alternierenden $ m $-Form $ \omega\in \Lambda^mV* $ liefert also 
 		\[ \omega(v_1,\dots,v_m) = \sum_{i=1}^{m}\omega(v_1,\dots,v_{m-1},b_i)x_{im} = \omega(b_1,\dots,b_m)\sum_{i=1}^{m}(-1)^{m-1}x_{im}\det X_{im} \]
