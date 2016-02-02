@@ -219,7 +219,7 @@
 \paragraph{Beweis}
 	Seien $ \sigma,\tau\in S_m $ beliebig, dann gilt
 	\[ \sgn(\tau\circ\sigma) = \prod_{i<j}\frac{\tau(\sigma(i))-\tau(\sigma(j))}{\sigma(i)-\sigma(j)}\frac{\sigma(i)-\sigma(j)}{i-j} = \prod_{i<j}\frac{\tau(\sigma(i))-\tau(\sigma(j))}{\sigma(i)-\sigma(j)}\prod_{i<j}\frac{\sigma(i)-\sigma(j)}{i-j} \]
-	mit $ i'=\sigma(i)j'=\sigma(j) $ folgt
+	mit $ i'=\sigma(i), j'=\sigma(j) $ folgt
 	\[ \prod_{i'<j'}\frac{\tau(i')-\tau(j')}{i'-j'}\prod_{i<j}\frac{\sigma(i)-\sigma(j)}{i-j} = \sgn(\tau)\cdot \sgn(\sigma). \]
 	Da jede Permutation Komposition von Transpositionen ist, folgt daraus
 		\[ \forall \sigma \in S_m:\sgn(\sigma) = \pm 1 \]
@@ -299,11 +299,11 @@
 			\vdots &  &  &  &  &  &  \\ 
 			x_{m1} &  &  & x_{mj} &  &  & x_{mm}
 			\end{pmatrix}  \]
-	Nämlich: Ist z.B: $ v_m=b_i $ in der Leibniz-Formel, also $ x_{km}=\delta_{ik} $, so erhält man
+	Nämlich: Ist o.B.d.A. $ v_m=b_i $ in der Leibniz-Formel, also $ x_{km}=\delta_{ik} $, so erhält man
 		\[ \det X = \sum_{\sigma\in S_m}\sgn(\sigma)\prod_{j=1}^{m}x_{\sigma(j)j}=\sum_{\sigma\in S_m}\sgn(\sigma)\left(\prod_{j=1}^{m-1}x_{\sigma(j)j}\right)x_{\sigma(m)m} \]
 	wobei $ x_{\sigma(m)m} = 0 $ für $ \sigma(m)\neq i $ und $ =1 $ für $ \sigma(m) = i $,
 		\[ = \sum_{\sigma\in S_m, \sigma(m)=i}\sgn(\sigma)\prod_{j=1}^{m-1}x_{\sigma(j)j} = \sum_{\sigma\in S_{m-1}}(-1)^{m-i}\sgn(\sigma')\prod_{j=1}^{m-1}x_{\sigma'(j)j} = (-1)^{m-i}\det X_{im}. \]
-	Im letzten Schritt werden die Transpositionen berücksichtigt die notwendig sind, um die nun "`gelöschte"' Zeile ans Ende zu verschieben. Ausmultiplizieren des o.B.d.A $ m $-ten Eintrags in einer alternierenden $ m $-Form $ \omega\in \Lambda^mV* $ liefert also 
+	Im letzten Schritt werden die Transpositionen berücksichtigt die notwendig sind, um die nun "`gelöschte"' Zeile ans Ende zu verschieben. Ausmultiplizieren des o.B.d.A. $ m $-ten Eintrags in einer alternierenden $ m $-Form $ \omega\in \Lambda^mV^* $ liefert also 
 		\[ \omega(v_1,\dots,v_m) = \sum_{i=1}^{m}\omega(v_1,\dots,v_{m-1},b_i)x_{im} = \omega(b_1,\dots,b_m)\sum_{i=1}^{m}(-1)^{m-1}x_{im}\det X_{im} \]
 	und damit die Behauptung, da $ \omega(b_1,\dots,b_m)\neq 0 $ angenommen werden kann (siehe unten).
 	Da wegen $ \sgn(\sigma^{-1})=(\sgn(\sigma))^{-1} = \sgn(\sigma) $
@@ -428,7 +428,7 @@
 			
 			Damit folgt:
 				\[ \sum_{\sigma\in S_n}\sgn(\sigma)x_{\sigma(1)1}\cdots x_{\sigma(n)n}=0, \]
-			da mit $ \sigma\in S_n $ auch $ \tau\circ\sigma\in S_n $ in der Summe vorkommt.
+			da mit $ \sigma\in S_n $ auch $ \tau_{ij}\circ\sigma\in S_n $ in der Summe vorkommt.
 		\end{itemize}	
 \subsection{Korollar}
 	\begin{Korollar}[Dimension der Determinantenform]
