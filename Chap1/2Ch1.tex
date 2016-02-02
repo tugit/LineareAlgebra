@@ -213,7 +213,7 @@
     da $S\subset U$, also $U$ am Schnitt beteiligt ist.
 
 \paragraph{Bemerkung}
-	$[\emptyset ] = \{o\}$ und $[V] = V$.
+	$[\emptyset ] = \{0\}$ und $[V] = V$.
 
 \paragraph{Beispiel}
 	Ist $U\subset V$ UVR, so gilt $[U] = U$.
@@ -244,7 +244,7 @@
 	da $[(e_i)_{i\in I}] \subset K^n$ UVR ist. Andererseits gilt für beliebiges $v\in K^n$:
 		\[ v=\sum^n_{i=1}e_iv(i): I\to K, \]	
 	denn
-		\[ \forall j\in I: \left(\sum^n_{i=1} e_iv(i)\right)(j) = \sum^n_{i=1}e_i(j)v(i) = (\delta_{ij}) v(j) = v(j) \]
+		\[ \forall j\in I: \left(\sum^n_{i=1} e_iv(i)\right)(j) = \sum^n_{i=1}e_i(j)v(i) = \sum_{i=1}^n \delta_{ij} v(j) = v(j) \]
 	damit ist gezeigt, dass die beiden Abbildungen übereinstimmen; da $v\in K^n$ beliebig war, folgt $K^n \subset [(e_i)_{i\in I}]$
 	
 \subsection{Definition (Linearkombination)}
@@ -272,7 +272,7 @@
 \paragraph{Beweis}
 	Wir zeigen (wie üblich) zwei Inklusionen:	
 
-	$\supseteq$: z.z.: jede Linearkombination liegt in der Linearen Hülle. Sei also $(x_i)_{i\in I}$ eine geeignete Familie in $ K $, dann gilt:
+	$\supset$: z.z.: jede Linearkombination liegt in der Linearen Hülle. Sei also $(x_i)_{i\in I}$ eine geeignete Familie in $ K $, dann gilt:
 		\[ \sum_{i\in I} v_i x_i = v_{i_1} x_{i_1} + ... + (v_{i_n}x_{i_n}+0) \]
 
 	\begin{enumerate}[(i)]
@@ -280,7 +280,7 @@
 		\item für $v_{i_1}x_{i_1} + ... + (v_{i_n}x_{i_n}+0) \in [...]$ nach UR-Kriterium (nach n-Schritten)
 	\end{enumerate}
 
-	$\subseteq$: Z.z.: Lineare Hülle der Familie ist Teilmenge von U. Setze die Menge der Linearkombinationen einer Familie U $:= \{{\sum_{i\in I} v_ix_i| x: I\to K \text{ mit } \#\{{i\in I| x_i \neq 0\}} < \infty\}}$, offenbar gilt:
+	$\subset$: Z.z.: Lineare Hülle der Familie ist Teilmenge von U. Setze die Menge der Linearkombinationen einer Familie U $:= \{{\sum_{i\in I} v_ix_i| x: I\to K \text{ mit } \#\{{i\in I| x_i \neq 0\}} < \infty\}}$, offenbar gilt:
 		\[ \forall i\in I: v_i\in U \]
 	Wir zeigen, dass U ein Untervektorraum ist. Das heißt:
 	\begin{align*}

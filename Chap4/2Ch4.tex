@@ -97,7 +97,7 @@
 	\end{Definition}
 \subsection{Bemerkung \& Definition}
 	\begin{Definition}[Volumenverzerrung]
-		Ist $ \alpha: A\to A $ Affinität eines AR $ A $ mit Volumenmessung $ \vol $, so gibt es genau eine Zahl $ \delta(\alpha)\in K^x $, sodass für jedes Parallelotop $ p $ in $ A $ gilt
+		Ist $ \alpha: A\to A $ Affinität eines AR $ A $ mit Volumenmessung $ \vol $, so gibt es genau eine Zahl $ \delta(\alpha)\in K^{\times} $, sodass für jedes Parallelotop $ p $ in $ A $ gilt
 			\[ \vol(\alpha\circ p) = \delta(\alpha)\vol(p), \]
 		wobei $ \delta(\alpha) $ die \emph{Volumenverzerrung} genannt wird.
 		
@@ -133,7 +133,7 @@
 %%%%% VO 21-01-2016 %%%%%		
 \paragraph{Wiederholung \& Bemerkung}
 	Sind $ \omega\in \Lambda^nV^*\setminus \{0\} $ und $ B $ eine Basis von $ V $, so gilt
-		\[ Gl(V) = \{f\in \operatorname{End}(V)\mid 0\neq \omega(f(B))=f*\omega(B)\}. \]
+		\[ Gl(V) = \{f\in \operatorname{End}(V)\mid 0\neq \omega(f(B))=f^*\omega(B)\}. \]
 	Damit folgt also
 		\[ Gl(V) = \{f\in\operatorname{End}(V)\mid \det f \neq 0\} \]
 	Mit dem Determinantenmultiplikationssatz folgt dann:	
@@ -305,7 +305,7 @@
 		\[ \xi_{B'}^{B'}(f) = \xi_{B}^{B'}(\id_V)\cdot \xi_B^B(f)\cdot \xi_{B'}^{B}(\id_V) =
 		\xi_{B}^{B'}(\id_V)\cdot \xi_B^B(f)\cdot \left(\xi^{B'}_{B}(\id_V)\right)^{-1} \]
 	mit
-		\[ \xi_B^{B'}(\id_V) = P \text{, da } B' = \id_(B') = BP^{-1} \]
+		\[ \xi_B^{B'}(\id_V) = P \text{, da } B' = \id_V(B') = BP^{-1} \]
 	Insbesondere gilt also für $ X,X' = PXP^{-1}\in K^{n\times n} $ mit $ P\in Gl(n) $:
 		\[ \det X' = \det f_{X'} = \det f_P \circ f_X \circ f_{P^{-1}} =\]
 		\[=\det f_P \circ f_X \circ (f_P)^{-1} = \det f_P \cdot \det f_X \cdot \det f_P^{-1} = \det f_X = \det X\]

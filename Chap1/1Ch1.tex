@@ -1,7 +1,7 @@
 % % % %Kapitel 1 - Lineare Räume und Abbildungen % % % %
 \chapter{Lineare Räume und Abbildungen}
 \section{Von Geometrie zu Algebra}
-	Euklids führte in den \glqq Elementen\grqq{} (ca. 300 v. Chr.) das bis heute gültige Schema ein:
+	Euklid führte in den \glqq Elementen\grqq{} (ca. 300 v. Chr.) das bis heute gültige Schema ein:
 	\begin{itemize}
 		\item Definition
 		\item Axiom/Postulat
@@ -152,9 +152,12 @@
 \paragraph{Bemerkung}
 	In einem Körper gilt stets:
 	\begin{gather*}
-		0\cdot x = x\cdot 0 = 0 \Rightarrow\\
+		0\cdot x = x\cdot 0 = 0
+		\end{gather*}
+		Denn:
+		\begin{gather*}
 		0\cdot x = (0+0)\cdot x = 0\cdot x + 0\cdot x\\
-		\Rightarrow 0 = 0\cdot x + (-(0\cdot x)) \Rightarrow 0 = 0\cdot x.
+		\Rightarrow 0 = 0\cdot x + (-(0\cdot x))=0\cdot x+0\cdot x+(-(0\cdot x)) \Rightarrow 0 = 0\cdot x.
 	\end{gather*}
 	
 	Insbesondere folgt damit: $\forall x,y\in K: xy = yx$ (nicht nur für $K^\times$ (Axiom)).
@@ -173,7 +176,7 @@
 	
 	\begin{minipage}{0.45\textwidth}
 		\begin{equation*}
-			\begin{tabular}{c|c|c}
+			\begin{tabular}{c|cc}
 				$+$ & 0 & 1\\\hline
 				0 & 0 & 1\\
 				1 & 1 & 0\\
@@ -182,7 +185,7 @@
 	\end{minipage}
 	\begin{minipage}{0.45\textwidth}
 		\begin{equation*}
-			\begin{tabular}{c|c|c}
+			\begin{tabular}{c|cc}
 				$\cdot$ & 0 & 1\\\hline
 				0 & 0 & 1\\
 				1 & 1 & 1\\
