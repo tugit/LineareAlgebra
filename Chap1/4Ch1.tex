@@ -103,7 +103,7 @@
 			\intertext{genauso:}
                                 \forall v\in V, y\in K: (fx+g)(vy) &= f(vy)x+g(vy)\\
                                                                    &= f(v)yx + g(v)y\\ 
-                                                                   &= (f(v)x +g)y = ((fx+g)y)(v)
+                                                                   &= (f(v)x +g(v))y = (fx+g)(v)y
                         \end{align*}
                         Damit gilt: $ fx+g\in \hom (V,K) = V^* $
         \end{itemize}
@@ -167,7 +167,7 @@
 		\end{align*}
 	Also ist $F$ linear unabhängig.
 	
-	Da $(c_i)_{i\in I}$ Erzeugendensystem von $W$ ist, existiert zu jedem (fest gegebenen) $f\in\hom (V,W)$ eine Familie $(x_{ij})_{IJ}$ in $K$, sodass
+	Da $(c_i)_{i\in I}$ Erzeugendensystem von $W$ ist, existiert zu jedem (fest gegebenen) $f\in\hom (V,W)$ eine Familie $(x_{ij})_{I,J}$ in $K$, sodass
 		\begin{align*}
                     \forall k\in J: f(b_k) &= \sum_{i\in I} c_i x_{ik} \quad\text{(da $(c_i)_{i\in I}$ Erzeugendensystem)}\\
                     &= \sum_{\substack{i\in I\\j \in J}}c_ib_j^*(b_k)x_{ij}
@@ -192,7 +192,7 @@
 	\end{Definition}
 
 \paragraph{Bemerkung}
-	Da $f(0)=0$ für  $f\in \hom (V,W)$ gilt $\{o_V \}\in \ker f$ und $\{o_W \}\in f(V)$.
+	Da $f(0)=0$ für  $f\in \hom (V,W)$ gilt $\{0_V \}\in \ker f$ und $\{0_W \}\in f(V)$.
 
 \paragraph{Beweis}
 	Zu zeigen: Das Bild $f(V)\subset W$ und $\ker f\subset V$ sind UVR. Nach Bemerkung gilt $f(V)\neq \emptyset$ und $\ker f \neq \emptyset$ -- wir verwenden dann das UR-Kriterium.
@@ -220,11 +220,11 @@
 		\end{enumerate}
 
 \paragraph{Bemerkung}
-	Die Funktion $f\in \hom (V,W)$ ist genau dann injektiv, wenn $\ker f = \{o\}$. Nämlich:
+	Die Funktion $f\in \hom (V,W)$ ist genau dann injektiv, wenn $\ker f = \{0\}$. Nämlich:
 		\begin{itemize}
 			\item ist $f$ injektiv und $v\in \ker f$, so gilt $f(v) = 0 = f(0) \Rightarrow v=0$
-			\item ist $\ker f = \{ o \}$ und sind $v,w \in V$ mit $f(v) = f(w)$, so folgt\\
-				$0=f(v)-f(w) = f(v-w) \Rightarrow v-w\in \ker f = \{o\} \Rightarrow v = w$
+			\item ist $\ker f = \{ 0 \}$ und sind $v,w \in V$ mit $f(v) = f(w)$, so folgt\\
+				$0=f(v)-f(w) = f(v-w) \Rightarrow v-w\in \ker f = \{0\} \Rightarrow v = w$
 		\end{itemize}
 
 \paragraph{Bemerkung}
@@ -287,7 +287,7 @@
 			
 	\begin{enumerate}[1.{ Fall}]
 		\item $(\dim V = n<\infty)$ dann ist $\# J = n$ und $\# I = \# J-k$, also $\rg f = n-k = \dim V - \dfkt f.$
-		\item $(\dim V = \infty)$, dann ist $\# J = \infty $ und damit auch $\#I =\#(J\{{1,...,k\}})=\infty $, also $\rg f= \infty$.
+		\item $(\dim V = \infty)$, dann ist $\# J = \infty $ und damit auch $\#I =\#(J\setminus \{{1,...,k\}})=\infty $, also $\rg f= \infty$.
 	\end{enumerate}
 	
 \paragraph{Bemerkung}
