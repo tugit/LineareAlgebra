@@ -1,8 +1,8 @@
-%VO_29.10.15
+%VO08-2015-10-29
 \section{Homomorphismen}
 \subsection{Definition}
 	\begin{Definition}[Homomorphismus]
-		Sind $ V $ und $ W $ $ K $-VR, so heißt eine Abbildung $f: V \rightarrow W$ ($ K $-)linear oder ein (Vektorraum-)Homomorphismus $f\in \hom(V,W)$, falls gilt:
+		Sind $ V $ und $ W $ $ K $-VR, so heißt eine Abbildung $f: V \rightarrow W$ \emph{($K$-)linear} oder ein \emph{(Vektorraum-)Homomorphismus} $f\in \hom(V,W)$, falls gilt:
 	
 
 \begin{enumerate}[(i)]
@@ -74,9 +74,9 @@
     
                         Weiters ist $f\in\hom(V,W)$ wegen
                         \begin{align*}
-                                f(v+w) &=\sum_{i\in I}c_i(x_i+y_i)= f(v) + f(w) \text{ für alle } v=\sum_{i\in I}b_ix_i \in V, w=\sum_{i\in I}b_iy_i \in V    
+                                &f(v+w) =\sum_{i\in I}c_i(x_i+y_i)= f(v) + f(w) \text{ für alle } v=\sum_{i\in I}b_ix_i \in V, w=\sum_{i\in I}b_iy_i \in V    
                         \intertext{und}
-                                f(vx) &=\sum_{i\in I}c_i(x_ix)=\sum_{i\in I}(c_ix_i)x = (\sum_{i\in I}c_ix_i)x= f(v)x \text{ für }  x\in K\text{ und }v= \sum_{i\in I}b_ix_i \in V.
+                                &f(vx) =\sum_{i\in I}c_i(x_ix)=\sum_{i\in I}(c_ix_i)x = (\sum_{i\in I}c_ix_i)x= f(v)x \text{ für }  x\in K\text{ und }v= \sum_{i\in I}b_ix_i \in V.
                         \end{align*}
                         Damit ist die Linearität von $ f $ gezeigt.
         \end{enumerate}
@@ -90,7 +90,7 @@
 	\end{equation*} die zu $ B $ duale Basis $ B^* $ von $V^\ast$.
 	\end{Definition}
 
-% % % VO_03.11.15 % % %
+%VO09-2015-11-03
 \paragraph{Beweis} $ V^* $ ist $ K $-VR. Wir zeigen $ V^*\subset K^V $ ist UVR.
         \begin{itemize}
                 \item $ 0: V\to K $ ist linear, d.h. $ 0 \in V^* \Rightarrow V^* \neq \emptyset $
@@ -242,7 +242,7 @@
 		Sei $ f\in \hom (V,W) $. Ist $ \dim V = n < \infty $,  so gilt $\rg f + \dfkt f = \dim V$.  Ist $ \dim V = \infty $, so gilt $ \rg f = \infty $ oder $ \dfkt f = \infty $.
 	\end{Satz}
 
-% % % VO_05.11.15 % % %
+%VO09-2015-11-05
 \paragraph{Beweis}
 	Wir nehmen an, dass $ \dfkt f = k \neq \infty $.
 	Sei $ (b_1,...,b_k) $ eine Basis von $ \ker f $;
