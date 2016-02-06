@@ -53,15 +53,13 @@
 		Ein Paar $(G,\circ)$ bestehend aus einer Menge $G$ und einer Verknüpfung 
 		\[\circ : G\times G \to G : (g,h) \mapsto g \circ h\]
 		heißt Gruppe, falls:
-
-	\begin{enumerate}[(i)]
-		\item $\forall f,g,h \in G : f\circ (g\circ h) = (f\circ g)\circ h$ \hfill (Assoziativität)
-		\item $\exists e\in G\ \forall g\in G : e\circ g = g$ \hfill (Existenz eines neutralen Elements)
-		\item $\forall g \in G\ \exists g^{-1} \in G : g^{-1}\circ g = e$ \hfill (Existenz eines inversen Elements)
-	\end{enumerate}
-	
-	Die Gruppe heißt \emph{kommutativ} oder \emph{abelsch}, falls zusätzlich gilt:
-		\[\forall g,h\in G: g\circ h = h\circ g\] %\text{ (Kommutativität)}
+                \begin{enumerate}[(i)]
+                        \item $\forall f,g,h \in G : f\circ (g\circ h) = (f\circ g)\circ h$ \hfill (Assoziativität)
+                        \item $\exists e\in G\ \forall g\in G : e\circ g = g$ \hfill (Existenz eines neutralen Elements)
+                        \item $\forall g \in G\ \exists g^{-1} \in G : g^{-1}\circ g = e$ \hfill (Existenz eines inversen Elements)
+                \end{enumerate}
+                Die Gruppe heißt \emph{kommutativ} oder \emph{abelsch}, falls zusätzlich gilt:
+                        \[\forall g,h\in G: g\circ h = h\circ g\] %\text{ (Kommutativität)}
 	\end{Definition}
 
 \paragraph{Bemerkung}
@@ -74,9 +72,7 @@
 	\begin{Definition}[Gruppenoperation]
 		Sind $(G,\circ )$ eine Gruppe und $X$ eine Menge, so heißt eine Abbildung
 		\[ \cdot : G\times X\to X, (g,x)\mapsto g\cdot x \]
-	
 	eine \emph{Gruppenoperation} (von $(G,\circ )$ auf $X$), falls
-
 	\begin{enumerate}[(i)]
 		\item $\forall g,h\in G :\forall x\in X: g\cdot (h\cdot x) = (g\circ h)\cdot x$ (entspricht nicht der Assoziativität!)
 		\item $\forall x\in X: e\cdot x = x$ für das neutrale Element $e$ der Gruppe $(G,\circ )$
@@ -111,7 +107,6 @@
 		\item $h:= g^{-1}$ (Linksinverse von $g$)
 		\item $k:= h^{-1}$ (Linksinverse von $h$)
 	\end{itemize}
-	
 	Damit berechnen wir (multiplikative Schreibweise: $ab$ statt $a\circ b$):
 	\begin{align*}
 		hg = e = kh &= k((hg)h) \\
@@ -129,24 +124,22 @@
 	\[\forall g \in G: gg^{-1}=g^{-1}g = e \]
 	und sind $h,h'\in G$ Inverse von $g\in G$, so gilt:
 	\[h' = h'(gh) = (h'g)h = h \]
-
 	d.h. Eindeutigkeit des Inversen.
 
 \subsection{Definition (Körper)}
 	\begin{Definition}[Körper]
 		Ein Tripel $(K,+,\cdot)$, bestehend aus einer Menge $K$ und zwei Verknüpfungen
-	\begin{align*}
-		+:&K\times K\to K,(x,y)\mapsto x+y\\
-		\cdot : &K\times K\to K, (x,y)\mapsto xy
-	\end{align*}
-	
-	heißt \emph{Körper}, falls:
-	\begin{enumerate}[(i)]
-		\item $(K,+)$ ist abelsche Gruppe (mit neutralem Element $0$ und inversem Element $-x$ von $x$)
-		\item $(K^\times,\cdot)$ ist abelsche Gruppe (mit neutralem Element $1$ und inversem Element $\frac{1}{x} = x^{-1}$ von $x\in K^\times$)
-		\item die Distributivgesetze gelten:
-			\[ \forall x,y,z\in K :\begin{cases}x\cdot (y+z) = x\cdot y+x\cdot z\\ (x+y)\cdot z = x\cdot z+y\cdot z \end{cases} \]
-	\end{enumerate}
+                \begin{align*}
+                        +:&K\times K\to K,(x,y)\mapsto x+y\\
+                        \cdot : &K\times K\to K, (x,y)\mapsto xy
+                \end{align*}
+                heißt \emph{Körper}, falls:
+                \begin{enumerate}[(i)]
+                        \item $(K,+)$ ist abelsche Gruppe (mit neutralem Element $0$ und inversem Element $-x$ von $x$)
+                        \item $(K^\times,\cdot)$ ist abelsche Gruppe (mit neutralem Element $1$ und inversem Element $\frac{1}{x} = x^{-1}$ von $x\in K^\times$)
+                        \item die Distributivgesetze gelten:
+                                \[ \forall x,y,z\in K :\begin{cases}x\cdot (y+z) = x\cdot y+x\cdot z\\ (x+y)\cdot z = x\cdot z+y\cdot z \end{cases} \]
+                \end{enumerate}
 	\end{Definition}
 
 \paragraph{Bemerkung}
@@ -172,9 +165,7 @@
 		\item $ 0 $, das neutrale Elemente bezüglich $+$ und
 		\item $1$ $(\neq 0)$, das neutrale Elemente (in $K^\times$ = $K\setminus\{0\}$) bezüglich $\cdot$
 	\end{itemize}
-	
 	Es gibt auch einen Körper mit genau 2 Elementen $(\{0,1\},+,\cdot)$, wobei
-	
 	\begin{minipage}{0.45\textwidth}
 		\begin{equation*}
 			\begin{tabular}{c|cc}
@@ -193,22 +184,19 @@
 			\end{tabular}
 		\end{equation*}
 	\end{minipage}
-	
 	Dieser Körper wird auch $\mathbb{Z}_2$ bezeichnet.
 
 \subsection{Bemerkung und Definition (Charakteristik)}
 	\begin{Definition}[Charakteristik]
 		In $\mathbb{Z}_2$ gilt $1 + 1 = 0$. Allgemeiner definiert man die \emph{Charakteristik} eines Körpers $(K,+,\cdot)$ (mit neutralen Elementen 0 und 1 von + bzw. $\cdot$) durch
-
-	\begin{equation*}
-		\Char(K,+,\cdot):=
-		\begin{cases}
-			0,\text{falls } \forall n \in \mathbb{N}^\times: \sum_{j = 1}^{n} 1 \neq 0\\
-			\min\{n \in \mathbb{N}^\times\mid \sum_{j = 1}^{n} 1 = 0\}
-		\end{cases}
-	\end{equation*}
+                \begin{equation*}
+                        \Char(K,+,\cdot):=
+                        \begin{cases}
+                                0,\text{falls } \forall n \in \mathbb{N}^\times: \sum_{j = 1}^{n} 1 \neq 0\\
+                                \min\{n \in \mathbb{N}^\times\mid \sum_{j = 1}^{n} 1 = 0\}
+                        \end{cases}
+                \end{equation*}
 	\end{Definition}
-	
 	z.B. $\Char(\mathbb{Z}_2) = 2$, da
 	\begin{align*}
 		\{n\in\mathbb{N}^\times\mid \underbrace{1+...+1=0}_{\text{n-mal}}=0\}

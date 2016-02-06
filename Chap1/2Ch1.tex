@@ -50,7 +50,6 @@
 		 +&: V \times V \to V:(v,u)\mapsto v+w,\\
 		 \cdot &: K \times V \to V:(x,v)\mapsto vx,
 	\end{align*}
-	
 	heißt \emph{Vektorraum über $K$} ($K$-VR), falls gilt:
 	\begin{enumerate}[(i)]
 		\item $(V,+)$ ist eine abelsche Gruppe
@@ -80,7 +79,6 @@
 		I\ni i \mapsto (v+w)_i &:= v_i+w_i\in K\\
 		I\ni i \mapsto (vx)_i &:= v_ix \in K
 	\end{align*}
-
 	Dieser Vektorraum wird mit $K^{I}$ bezeichnet und \emph{Standardvektorraum} (über I und K) genannt. Im Falle $ I=\{1,...,n\} $ schreibt man auch $K^{n} := K^{\{1,...,n\}}$
 	\end{Definition}
 
@@ -101,7 +99,6 @@
 		+&:\mathbb{C}\times \mathbb{C} \to \mathbb{C}: ((x+y),(x'+y')) \mapsto (x+iy)+(x'+iy') := (x+x')+i(y+y')\\
 		\cdot &:\mathbb{C}\times \mathbb{C} \to \mathbb{C}: ((x+iy),(x'+iy'))\mapsto (x+iy)\cdot (x'+iy') :=(xx'-yy')+i(xy'+x'y)
 	\end{align*}
-
 	Der Körper $\mathbb{C}$ bildet einen $\mathbb{R}$-VR mit
 		\[ +:\mathbb{C}\times\mathbb{C}\to\mathbb{C} \]
 	wie oben und der Skalarmultiplikation
@@ -114,16 +111,15 @@
 \subsection{Definition (Untervektorraum)}
 	\begin{Definition}[Untervektorraum]
 		Eine Teilmenge $U\subset V$ eines $K$-VR $V$ heißt \emph{Unter(vektor)raum} (UVR), falls $U$ mit der eingeschränkten Addition und Skalarmultiplikation
-	\begin{align*}
-		 ^+    & \mid_{U\times U}: U\times U \to V,(v,w) \mapsto v+w \\
-		 \cdot & \mid_{K\times U}: K\times U \to V,(x,v) \mapsto vx
-	\end{align*}
-
-	selbst ein Vektorraum ist, d.h. wenn insbesondere
-	\begin{align*}
-		&\forall v,w \in U: v+w\in U \text{ und}\\
-		&\forall x\in K\ \forall v\in U: vx\in U.
-	\end{align*}
+                \begin{align*}
+                        ^+    & \mid_{U\times U}: U\times U \to V,(v,w) \mapsto v+w \\
+                        \cdot & \mid_{K\times U}: K\times U \to V,(x,v) \mapsto vx
+                \end{align*}
+                selbst ein Vektorraum ist, d.h. wenn insbesondere
+                \begin{align*}
+                        &\forall v,w \in U: v+w\in U \text{ und}\\
+                        &\forall x\in K\ \forall v\in U: vx\in U.
+                \end{align*}
 	\end{Definition}
 
 \paragraph{Bemerkung}
@@ -146,7 +142,6 @@
 		\item $v = 0 \in U_i\text{, also } U_i \neq \emptyset$
 		\item Seien $v,w\in U_i$, d.h. $v,w\in K^n$ mit $v_i =w_i =0$, und $x\in K$; dann gilt $(vx+w)_i = v_ix+ w_i = 0\cdot x + 0 = 0$, also $vx+w\in U_i$ und damit ist $U_i$ UVR nach Unterraumkriterium.  
 	\end{enumerate}
-	
 	Kein UVR von $K^n, n\geq 2$, ist jedoch die Menge
 		\[ N:=\{v:I\to K\mid v_1\cdot v_2 = 0\}, \]
 	denn 
@@ -181,7 +176,7 @@
             \item $H\neq \emptyset$
             \item $\forall g,h\in H: g\circ h^{-1} \in H$
         \end{enumerate}
-            
+        
 	Achtung: Inversenbildung muss im Kriterium explizit formuliert werden, sonst würde z.B.: $\mathbb{N}\subset\mathbb{Z}$ als Teilmenge von $(\mathbb{Z}, +)$ als Gruppe ein Gegenbeispiel liefern.
         
         Weitere Beispiele:
@@ -232,7 +227,6 @@
 	
 	Damit ist die lineare Hülle der Familie $(e_i)_{i\in I}$
 		\[ [(e_i)_{i\in I}] = K^n. \]
-	
 	Nämlich: Da $[(e_i)_{i\in I}]\subset K^n$ ist, gilt für beliebige $x_1,...,x_n\in K$
 	\begin{gather*}
 		\underbrace{e_1x_1\underbrace{+...+\underbrace{e_nx_n + 0}_{\in [(e_i)_{i\in I}]}}_{\in [(e_i)_{i\in I}]}}_{\in [(e_i)_{i\in I}]}\in [(e_i)_{i\in I}]
@@ -286,14 +280,12 @@
 	^+    & \mid_{U\times U}: U\times U \to U \subset V\\
 	\cdot & \mid_{K\times U}: K\times U \to U \subset V,
 	\end{align*}
-	
 	also die Addition und Skalarmultiplikation vererben sich auf $ U $.
 
 Zur Skalarmultiplikation:
         \begin{addmargin}[25pt]{0pt}
 	Sind $(x_i)_{i\in I}$ mit $\#\{i\in I \mid x_i \neq 0\}<\infty$ eine Familie in $ K $ und $x\in K$, so gilt für ein geeignetes $n\in \mathbb{N}$
 		\[ \{i\in I\mid x_i \neq 0\} = \{i_1, ... , i_n\} \]
-
 	und damit
 	\begin{equation*}
 		\{i\in I\mid x_ix\neq 0\} =
@@ -302,13 +294,11 @@ Zur Skalarmultiplikation:
 			\emptyset& \text{falls }x = 0.
 		\end{cases}
 	\end{equation*}
-
 	Also folgt
 	\begin{align*}
 		(\sum_{i\in I}v_i x_i) x &= (\sum_{j=1}^{n} v_{i_j}x_{i_j})x\\
 		&= \sum_{j=1}^{n} v_{i_j}(x_{i_j}x) = \sum_{i\in I} v_i(x_ix) \in U_i,
 	\end{align*}
-
 	da $\sum_{i\in I} v_i(x_ix)$ Linearkombination (mit der Familie $(x_ix)_{i\in I}$ in K) ist.
 	\end{addmargin}
 
