@@ -3,15 +3,15 @@
 \subsection{Definition}
 	\begin{Definition}[Homomorphismus]
 		Sind $ V $ und $ W $ $ K $-VR, so heißt eine Abbildung $f: V \rightarrow W$ \emph{($K$-)linear} oder ein \emph{(Vektorraum-)Homomorphismus} $f\in \hom(V,W)$, falls gilt:
-	
 
-\begin{enumerate}[(i)]
-	\item $\forall v,w \in V: f(v+w) = f(v) + f(w)$;
-	\item $\forall v\in V\ \forall x\in K: f(vx) = f(v)x$
-\end{enumerate}
+                \begin{enumerate}[(i)]
+                        \item $\forall v,w \in V: f(v+w) = f(v) + f(w)$;
+                        \item $\forall v\in V\ \forall x\in K: f(vx) = f(v)x$
+                \end{enumerate}
 
-    das heißt, $ f $ ist verträglich mit den Vektorraumoperationen in $ V $ und $ W $.
+                das heißt, $ f $ ist verträglich mit den Vektorraumoperationen in $ V $ und $ W $.
 	\end{Definition}
+
 \paragraph{Bemerkung}
 	Damit die Verträglichkeit mit der Skalarmultiplikation sinnvoll ist, müssen $ V $ und $ W $ Vektorräume über demselben Körper $ K $ sein.
 
@@ -83,11 +83,11 @@
     
 \subsection{Beispiel und Definition (Dualraum)}
 	\begin{Definition}[Dualraum]
-		Der Dualraum $V^\ast := \hom(V,K)$ eines $K$-VRs $V$ ist ein $ K $-VR $(\subset K^V)$. Ist $\dim V=:n<\infty$ so ist $\dim V^\ast=n$.
-	Ist $B=(b_i, ... ,b_n)$ eine Basis von $ V (\dim V < \infty)$, so definieren wir für $ i = \{1, ... ,n\} $ die Linearform (nach Fortsetzungssatz):
-	\begin{equation*}
-		b_i^\ast\in V^*:V\to K, \forall j\in \{1,...,n\}:b_i^*(b_j)=\delta_{ij}
-	\end{equation*} die zu $ B $ duale Basis $ B^* $ von $V^\ast$.
+		Der \emph{Dualraum} $V^\ast := \hom(V,K)$ eines $K$-VRs $V$ ist ein $ K $-VR $(\subset K^V)$. Ist $\dim V=:n<\infty$ so ist $\dim V^\ast=n$.
+        
+                Nämlich: Ist $B=(b_i, ... ,b_n)$ eine Basis von $ V (\dim V < \infty)$, so definieren wir für $ i = \{1, ... ,n\} $ die Linearform (nach Fortsetzungssatz):
+                        \[b_i^\ast\in V^*:V\to K, \forall j\in \{1,...,n\}:b_i^*(b_j)=\delta_{ij}\]
+                eine Basis $B^*=(b^*_i)_{i\ in I}$ von $V^*$: die zu $B$ \emph{duale Basis} $ B^* $ von $V^\ast$.
 	\end{Definition}
 
 %VO09-2015-11-03
@@ -128,17 +128,19 @@
 	Damit ist $ B^* = \{b_1^*,...,b_n^*\}$ eine Basis von $ V^* $ -- insbesondere also $ \dim V^* = n = \dim V = \dim K\cdot \dim V $.
 
 \paragraph{Bemerkung}
-	Ist $\dim V = \infty$ und $B=(b_i)_{i\in I}$ eine Basis von $V$, so liefert $B^\ast=(b_i^\ast)_{i\in I}$ mit $\forall j\in I:b_i^\ast(b_j)=\delta_{ij}$ eine lineare unabhängige Familie. Diese ist jedoch kein Erzeugendensystem von $V^\ast: f\in\hom(V,K)=V^\ast$ mit $\forall j\in I:f(b_j)=1$ lässt sich nicht in $B^\ast$ linear kombinieren. Wäre $f=\sum_{i\in I}b_i^\ast x_i$, so gälte $\forall j\in I: x_j =\sum_{i\in I}b_i^\ast(b_j)x_j= \sum_{i\in I} \delta_{ij}x_j = f(b_j) = 1$.
-
+	Ist $\dim V = \infty$ und $B=(b_i)_{i\in I}$ eine Basis von $V$, so liefert $B^\ast=(b_i^\ast)_{i\in I}$ mit 
+            \[\forall j\in I:b_i^\ast(b_j)=\delta_{ij}\]
+        eine lineare unabhängige Familie, die jedoch kein Erzeugendensystem von $V^\ast$ ist:
+        
+        $f\in\hom(V,K)=V^\ast$ mit $\forall j\in I:f(b_j)=1$ lässt sich nicht in $B^\ast$ linear kombinieren. Wäre $f=\sum_{i\in I}b_i^\ast x_i$, so gälte
+            \[\forall j\in I: x_j =\sum_{i\in I}b_i^\ast(b_j)x_j= \sum_{i\in I} \delta_{ij}x_j = f(b_j) = 1\]
 	Das heißt, $(x_i)_{i\in I}$ wäre eine Familie in $ K $ mit $\#\{i\in I\mid x_i\neq 0\}=\infty$.
 
 \subsection{Satz (Homomorphismen als VR)}
 	\begin{Satz}[Homomorphismen als VR]
-		$ \hom (V,W) $ ist ein VR. Die Dimension der Homomorphismen $\dim\hom (V,W) = m\cdot n$, falls $m:=\dim W<\infty, n:=\dim V< \infty$.
-	\end{Satz}
-	
-\paragraph{Beweis}
-	Addition und Skalarmultiplikation in $\hom (V,W)$ werde (wie für $K$-wertige Abbildungen oder in $V^*$) punktweise definiert:
+		$ \hom (V,W) $ ist ein VR, mit $\dim\hom (V,W) = m\cdot n$, falls $m:=\dim W<\infty, n:=\dim V< \infty$.
+	\end{Satz}	
+	Addition und Skalarmultiplikation in $\hom (V,W)$ werden (wie für $K$-wertige Abbildungen oder in $V^*$) punktweise definiert:
 	\begin{itemize}
 		\item für $f,g \in \hom (V,W)$ setzt man $(f+g)(v) := f(v) + g(v)$ für alle $v\in V$,
 		\item für $f\in \hom (V,W)$ und $x\in K$ setzt man $(fx)(v) := f(v)x$ für alle $v\in V$.
@@ -146,7 +148,8 @@
 	Die so definierten Abbildungen $f+g,fx: V\to W$ sind linear, $f+g, fx\in \hom (V,W)$, aufgrund der VR-Eigenschaften von $V$.
 	
 	Damit zeigt man: $\hom (V,W)$ ist $K$-VR (siehe Aufgabe 27).
-	
+
+\paragraph{Beweis}
 	Seien nun $\dim V = n < \infty$ und $\dim W = m < \infty$.
 	
 	Wir wählen (nach BES) Basen $B = (b_1,...,b_n)$ von $V$ und $C=(c_1,...,c_m)$ von $W$ und definieren
@@ -167,7 +170,7 @@
 		\end{align*}
 	Also ist $F$ linear unabhängig.
 	
-	Da $(c_i)_{i\in I}$ Erzeugendensystem von $W$ ist, existiert zu jedem (fest gegebenen) $f\in\hom (V,W)$ eine Familie $(x_{ij})_{I,J}$ in $K$, sodass
+	Da $(c_i)_{i\in I}$ Erzeugendensystem von $W$ ist, existiert zu jedem (fest gegebenen) $f\in\hom (V,W)$ eine Familie $(x_{ij})_{\substack{i\in I\\j \in J}}$ in $K$, sodass
 		\begin{align*}
                     \forall k\in J: f(b_k) &= \sum_{i\in I} c_i x_{ik} \quad\text{(da $(c_i)_{i\in I}$ Erzeugendensystem)}\\
                     &= \sum_{\substack{i\in I\\j \in J}}c_ib_j^*(b_k)x_{ij}
@@ -180,41 +183,42 @@
 	
 \subsection{Lemma und Definition (Bild, Kern, Rang \& Defekt)}
 	\begin{Definition}[Bild, Kern, Rang \& Defekt]
-		Sei $f\in \hom (V,W)$. Dann sind Bild und Kern von f:
-		\begin{equation*}
-			f(V) = \{f(v)\in W\mid v\in V \}\subset W \text{ bzw. } \ker (f) := \{v\in V\mid f(v) = 0 \} \subset V
-		\end{equation*}
-	
-	UVR von $W$ bzw. $V$. Ihre Dimensionen heißen Rang und Defekt von $f$:
-		\begin{equation*}
-			\rg f := \dim f(V) \text{ bzw. } \dfkt f := \dim \ker f
-		\end{equation*}
+		Sei $f\in \hom (V,W)$. Dann sind \emph{Bild} und \emph{Kern} von $f$:
+		\begin{align*}
+                    f(V) &= \{f(v)\in W\mid v\in V \}\subset W\\
+                    \ker (f) :&= \{v\in V\mid f(v) = 0 \} \subset V
+                \end{align*}
+                UVR von $W$ bzw. $V$. Ihre Dimensionen heißen \emph{Rang} und \emph{Defekt} von $f$:
+                \begin{align*}
+                    \rg f &:= \dim f(V)\\
+                    \dfkt f &:= \dim \ker f
+                \end{align*}
 	\end{Definition}
 
 \paragraph{Bemerkung}
-	Da $f(0)=0$ für  $f\in \hom (V,W)$ gilt $\{0_V \}\in \ker f$ und $\{0_W \}\in f(V)$.
+	Da $f(0)=0$ für  $f\in \hom (V,W)$ gilt: $\{0_V \}\in \ker f$ und $\{0_W \}\in f(V)$.
 
 \paragraph{Beweis}
-	Zu zeigen: Das Bild $f(V)\subset W$ und $\ker f\subset V$ sind UVR. Nach Bemerkung gilt $f(V)\neq \emptyset$ und $\ker f \neq \emptyset$ -- wir verwenden dann das UR-Kriterium.
+	Zu zeigen: Das Bild $f(V)\subset W$ und $\ker f\subset V$ sind UVR.
+	Nach Bemerkung gilt $f(V)\neq \emptyset$ und $\ker f \neq \emptyset$ -- wir verwenden dann das UR-Kriterium.
 	
-	Das Bild $f(V)$ ist UVR: $f(V) \neq \emptyset$. Es bleibt zu zeigen:
-		\begin{equation*}
-			\forall w_1,w_2\in f(V), \forall x\in K: w_1x+w_2 \in f(V).
-		\end{equation*}
-	
-	Seien also $w_1 = f(v_1), w_2 = f(v_2) \in f(V)$ und $x\in K$; dann gilt:
-		\begin{equation*}
-			w_1x+w_2 = f(v_1)x+f(v_2) = f(v_1x+v_2)\in f(V)
-		\end{equation*}
-		
-	Der Kern $\ker f$ ist UVR: $\ker f\neq \emptyset$; seien $v_1,v_2\in \ker f$ und $x\in K$, dann gilt:
-		\begin{equation*}
-			f(v_1x+v_2) = f(v_1)x+f(v_2) = 0\cdot x + 0 = 0 \Rightarrow v_1x+v_2\in \ker f
-		\end{equation*}
+	Das Bild $f(V)$ ist UVR:
+	\begin{addmargin}[25pt]{0pt}
+            $f(V) \neq \emptyset$. Es bleibt zu zeigen:
+                \[\forall w_1,w_2\in f(V), \forall x\in K: w_1x+w_2 \in f(V)\]
+            Seien also $w_1 = f(v_1), w_2 = f(v_2) \in f(V)$ und $x\in K$; dann gilt:
+                \[w_1x+w_2 = f(v_1)x+f(v_2) = f(v_1x+v_2)\in f(V)\]
+        \end{addmargin}
+        
+	Der Kern $\ker f$ ist UVR:
+	\begin{addmargin}[25pt]{0pt}
+            $\ker f\neq \emptyset$; seien $v_1,v_2\in \ker f$ und $x\in K$, dann gilt:
+                \[f(v_1x+v_2) = f(v_1)x+f(v_2) = 0\cdot x + 0 = 0 \Rightarrow v_1x+v_2\in \ker f\]
+        \end{addmargin}
 
 \paragraph{Bemerkung}
 	Allgemeiner kann man für $f\in \hom (V,W)$ zeigen:
-		\begin{enumerate}
+		\begin{enumerate}[(i)]
 			\item Ist $U\subset V$ UVR, so ist $f(U)\subset W$ UVR.
 			\item Ist $U\subset W$ UVR, so ist $f^{-1}(U) = \{v\in V\mid f(v) \in U \}\subset V$ ein UVR.
 		\end{enumerate}
@@ -239,53 +243,60 @@
 
 \subsection{Rangsatz}
 	\begin{Satz}[Rangsatz]
-		Sei $ f\in \hom (V,W) $. Ist $ \dim V = n < \infty $,  so gilt $\rg f + \dfkt f = \dim V$.  Ist $ \dim V = \infty $, so gilt $ \rg f = \infty $ oder $ \dfkt f = \infty $.
+		Sei $ f\in \hom (V,W) $. Ist $ \dim V = n < \infty $,  so gilt
+                    \[\rg f + \dfkt f = \dim V\]
+                Ist $ \dim V = \infty $, so gilt $ \rg f = \infty $ oder $ \dfkt f = \infty $.
 	\end{Satz}
 
 %VO09-2015-11-05
 \paragraph{Beweis}
-	Wir nehmen an, dass $ \dfkt f = k \neq \infty $.
+	Wir nehmen an, dass $ \dfkt f = k < \infty $.
 	Sei $ (b_1,...,b_k) $ eine Basis von $ \ker f $;
 	nach BES ergänzen wir zu einer Basis $ (b_j)_{j\in J} $ von $ V $ (bemerke: $ \{1,...,k\}\subset J $).
-	Wir sehen $ I:= J\setminus \{1,...,k\} $ und $ \forall i\in I: c_i := f(b_i) $.
-	
+	Wir setzen 
+        \begin{align*}
+            &I:= J\setminus \{1,...,k\}\\
+            &\forall i\in I: c_i := f(b_i)
+        \end{align*}
 	Behauptung: $(c_i)_{c\in I}$ ist eine Basis von $f(V)$.
 	
-\subparagraph{Lineare Unabhängigkeit}
-	gilt für eine Linearkombination in $(c_i)_{i\in I}$:
+        Lineare Unabhängigkeit:
+        \begin{addmargin}[25pt]{0pt}
+	Gilt für eine Linearkombination in $(c_i)_{i\in I}$:
 		\[ 0=\sum_{i\in I}c_ix_i = \sum_{i\in I}f(b_i)x_i = f(\sum_{i\in I}b_ix_i)
 		 \]
 	so folgt
-	\begin{gather*}
-		\sum_{i\in I}b_ix_i \in \ker f\\
-		\Rightarrow \exists y_1,...,y_n\in K:\sum_{i\in I}b_ix_i=\sum_{j=1}^{k}b_jy_j\\
-		\Rightarrow 0 = \sum_{i\in I}b_ix_i - \sum_{j=1}^{k}b_jy_j\\
-		\Rightarrow
+	\begin{align*}
+		&\sum_{i\in I}b_ix_i \in \ker f\\
+		\Rightarrow \exists y_1,...,y_n\in K:&\sum_{i\in I}b_ix_i=\sum_{j=1}^{k}b_jy_j\\
+		\Rightarrow 0 = &\sum_{i\in I}b_ix_i - \sum_{j=1}^{k}b_jy_j\\
+		\Rightarrow&
 		\begin{cases}
 			\forall j = 1, ... ,k:y_j=0\\
 			\forall i\in I: x_i = 0,
 		\end{cases}
-		\text{da $(b_j)_{j\in J}$ linear unabhängig ist.}
-	\end{gather*}
+		\text{da $(b_j)_{j\in J}$ lin. unabh.}
+	\end{align*}
 			
-	Insbesondere gilt also $\forall i\in I: x_i = 0$ damit folgt die lineare Unabhängigkeit nach Lemma.
-	
-\subparagraph{Erzeugendensystem}
-	
+	Insbesondere gilt also $\forall i\in I: x_i = 0$; damit folgt die lineare Unabhängigkeit nach Lemma.
+	\end{addmargin}
+
+        Erzeugendensystem:
+        \begin{addmargin}[25pt]{0pt}
 	Sei $w\in f(V)$, also existiert $v\in V$ mit $w = f(v)$. Da $(b_j)_{j\in J}$ Basis von $V$ ist, existiert eine Familie $(x_j)_{j\in J}$ in $K$ so, dass 
 	\begin{equation*}
 		v = \sum_{j\in J} b_jx_j
 	\end{equation*}
 	
 	Dann gilt
-	\begin{gather*}
-		w = f(v) = f(\sum_{j\in J} b_jx_j) = \sum_{j\in J}f(b_jx_j)\\
-		J=I \cup\{{1,...,k\}} \Rightarrow \sum_{j=1}^{k}f(b_j)^{=0}x_j + \sum_{i\in I}f(b_i)^{=c_i}x_i = \sum_{i\in I}c_ix_i\in[(c_i)_{i\in I}].
-	\end{gather*}
-			
+	\begin{align*}
+		w &= f(v) = f(\sum_{j\in J} b_jx_j) = \sum_{j\in J}f(b_jx_j)\\
+		  &= \sum_{j=1}^{k}\underbrace{f(b_j)}_{=0}x_j + \sum_{i\in I}\underbrace{f(b_i)}_{=c_i}x_i = \sum_{i\in I}c_ix_i\in[(c_i)_{i\in I}].
+	\end{align*}
+        \end{addmargin}
+        
 	Da $(c_i)_{i\in I}$ also Basis von $f(V)$ ist folgt:
-			
-	\begin{enumerate}[1.{ Fall}]
+	\begin{enumerate}[1.{ Fall:}]
 		\item $(\dim V = n<\infty)$ dann ist $\# J = n$ und $\# I = \# J-k$, also $\rg f = n-k = \dim V - \dfkt f.$
 		\item $(\dim V = \infty)$, dann ist $\# J = \infty $ und damit auch $\#I =\#(J\setminus \{{1,...,k\}})=\infty $, also $\rg f= \infty$.
 	\end{enumerate}
@@ -294,7 +305,7 @@
 	Die Annahme $\dfkt f = k<\infty$, im Beweis ist keine Einschränkung:
 	\begin{enumerate}
 		\item ist $\dim V < \infty$, so folgt $\dfkt f<\infty$, da $\ker f\subset V$ Untervektorraum ist;			
-		\item $\dim V = \infty$, so ist man mit dem Beweis fertig, falls $\dfkt f = \infty$.
+		\item ist $\dim V = \infty$, so ist man mit dem Beweis fertig, falls $\dfkt f = \infty$.
 	\end{enumerate}
 			
 \paragraph{Korollar (Homomorphismen zwischen gleichdimensionalen VR)} 
@@ -305,14 +316,19 @@
 	
 \paragraph{Beweis} 
 	Der Rangsatz liefert:
-	\begin{enumerate}
-		\item Wenn $ f $ injektiv ist, dann ist $\ker f = \{{0\}}$, also ist $ \dfkt f = 0 \Rightarrow \rg f = \dim V-0 = \dim V \Rightarrow f(V) = W \Leftrightarrow f$ surjektiv
-		\item $f(V) = W \Rightarrow \rg f = \dim W = \dim V \Rightarrow \dfkt f= \dim V - \rg f=0 \Rightarrow \ker f = \{{0}\}$
-	\end{enumerate}
+	\begin{align*}
+            f \text{ injektiv} \Leftrightarrow \ker f = \{{0\}} &\Rightarrow \dfkt f = 0\\
+            &\Rightarrow \rg f = \dim V-0 = \dim V\\
+            &\Rightarrow f(V) = W \Leftrightarrow f \text{ surjektiv}
+        \end{align*}
+        \begin{align*}
+            f(V) = W &\Rightarrow \rg f = \dim W = \dim V\\
+            &\Rightarrow \dfkt f= \dim V - \rg f=0\\
+            &\Rightarrow \ker f = \{{0}\}
+	\end{align*}
 	
 \paragraph{Beispiel}
-	Der Shiftoperator für Folgen $(x_i)_{i\in \mathbb{N}}$ in $K$, $s: K^{\mathbb{N}} \to K^{\mathbb{N}}: (x_i)_{i\in \mathbb{N}} \mapsto (y_i)_{i\in \mathbb{N}}$ wobei
-	
+	Der \emph{Shiftoperator} für Folgen $(x_i)_{i\in \mathbb{N}}$ in $K$, $s: K^{\mathbb{N}} \to K^{\mathbb{N}}: (x_i)_{i\in \mathbb{N}} \mapsto (y_i)_{i\in \mathbb{N}}$ wobei
 	\begin{equation*}
 		y_i :=
 		\begin{cases}
@@ -320,22 +336,21 @@
 			x_{i-1} &\text{ für } i \neq 0
 		\end{cases}
 	\end{equation*}
-			
 	ist ein injektiver Homomorphismus, $s\in \hom(K^\mathbb{N},K^\mathbb{N})$ von $K^\mathbb{N}$ in sich (damit gilt $\dim $ Definitionsbereich $= \dim K^\mathbb{N}= \dim$ Wertebereich). Aber $s$ ist nicht surjektiv, also auch nicht bijektiv.
 	
-\paragraph{Übrigens}
+\paragraph{Übrigens:}
 	Damit folgt $\dim K^\mathbb{N} =\infty$ (sonst hätte man einen Widerspruch zum Korollar).
 		
 \subsection{Definition (Spezielle Homomorphismen)}
 	\begin{Definition}[Spezielle Homomorphismen]
 		Sei $f\in \hom(V,W)$ ein Homomorphismus, dann heißt $f$:
 	\begin{itemize}
-		\item Endomorphismus, $f\in \End (V)$, falls $W = V$;
-		\item Isomorphismus, $f\in \Iso(V,W)$, falls $f$ bijektiv ist;
-		\item Automorphismus, $f\in \Aut(V)$, falls $W=V$ und $f$ bijektiv ist.
+		\item \emph{Endomorphismus}, $f\in \End (V)$, falls $W = V$;
+		\item \emph{Isomorphismus}, $f\in \Iso(V,W)$, falls $f$ bijektiv ist;
+		\item \emph{Automorphismus}, $f\in \Aut(V)$, falls $W=V$ und $f$ bijektiv ist.
 	\end{itemize}
 	
-	Zwei $K$-VR $V$ und $W$ heißen isomorph, $W \cong V$, falls $\Iso(V,W) \neq \emptyset$.
+	Zwei $K$-VR $V$ und $W$ heißen \emph{isomorph} $W \cong V$, falls $\Iso(V,W) \neq \emptyset$.
 	\end{Definition}
 
 \paragraph{Bemerkung}
@@ -343,41 +358,37 @@
 	
 	Andererseits: Bildet eine lineare Abbildung $f\in \hom(V,W)$, eine Basis $B$ von $V$ auf eine Basis $C = f(B)$ von $W$ ab, so ist $f$ ein Isomorphismus.
 	
-	Nämlich: Ist $B$ Basis von $V$ und $ C = f(B)$ Erzeugendensystem, so ist $f$ surjektiv, da $f(V) = f ([B]) = [f(B)] = [C] = W$;
+	Nämlich: Ist $B$ Basis von $V$ und $ C = f(B)$ Erzeugendensystem, so ist $f$ surjektiv, da
+            \[f(V) = f ([B]) = [f(B)] = [C] = W;\]
 	ist $C =f(B)$ linear unabhängig, so ist $f$ injektiv, denn für
-			
-	\begin{gather*}
-		v = \sum_{b\in B} bx_b \in \ker f \Rightarrow 0 = f(v) = f(\sum_{b\in B}bx_b) = \sum_{b\in B}f(b)x_b\\
-		\Rightarrow \forall b \in B: x_b = 0 \Rightarrow v = 0, \text{ d.h., } \ker f=\{{0}\}.
-	\end{gather*}
+	\begin{align*}
+		&v = \sum_{b\in B} bx_b \in \ker f\\
+		&\Rightarrow 0 = f(v) = f(\sum_{b\in B}bx_b) = \sum_{b\in B}f(b)x_b\\
+		&\Rightarrow \forall b \in B: x_b = 0 \Rightarrow v = 0, \text{ d.h., } \ker f=\{{0}\} \Rightarrow f \text{ inj.}.
+	\end{align*}
 			
 \subsection{Isomorphielemma}
 	\begin{Lemma}[Isomorphielemma]
 		Seien $V$ und $W$ $ K $-VR mit $\dim V, \dim W < \infty$.
-	Dann gilt: $V \cong W \Leftrightarrow \dim V = \dim W$.
+                Dann gilt: 
+                    \[V \cong W \Leftrightarrow \dim V = \dim W\]
 	\end{Lemma}
 	
 \paragraph{Beweis}
-	Folgt aus obiger Bemerkung. Ausführlich:
+	Folgt aus obiger Bemerkung:
 		
-	$\Rightarrow$:
+	"$\Rightarrow$":
 	
 	Annahme: $V \cong W$; sei $f\in \Iso(V,W)(\neq 0)$.
 	Wähle eine Basis $B = (b_1, ... b_n)$ von $V$ (BES); da $f$ bijektiv, ist dann:
-	\begin{equation*}
-		C = f(B) = (f(b_i), ... , f(b_n))
-	\end{equation*}
-	
+                \[C = f(B) = (f(b_i), ... , f(b_n))\]
 	eine Basis von W, damit ist $\dim W = n = \dim V$.
 	
-	$\Leftarrow$:
+	"$\Leftarrow$":
 	
 	Sei $\dim W = \dim V = n$;
 	wähle Basen $B = (b_1, ... ,b_n)$ von $V$ und $C = (c_1, ... ,c_n)$ von $W$ (BES und Basissatz) und definiere $f\in \hom(V,W)$ durch (Fortsetzungssatz):
-	\begin{equation*}
-		\forall i = 1, ... ,n : f(b_i) = c_i
-	\end{equation*}
-
+		\[\forall i = 1, ... ,n : f(b_i) = c_i\]
 	Da $f$ eine Basis auf eine Basis abbildet ist $f\in \Iso(V,W)$.
 	Damit folgt also $\Iso(V,W) \neq \emptyset \Rightarrow V \cong W$.
 			
@@ -387,6 +398,6 @@
 \paragraph{Bemerkung: }
 	Ist $f\in \Iso(V,W)$, so ist $f^{-1}\in \Iso(W,V)$, denn
 	\begin{gather*}
-		(f\circ f^{-1})(\sum_{i\in I}v_ix_i) = f(\sum_{i\in I}f^{-1}(v_i)x_i) = \sum_{i\in I}(f\circ f^{-1})^{(= id)}(v_i)x_i\\
+		(f\circ f^{-1})(\sum_{i\in I}v_ix_i) = f(\sum_{i\in I}f^{-1}(v_i)x_i) = \sum_{i\in I}\underbrace{(f\circ f^{-1})}_{= id}(v_i)x_i\\
 		\Rightarrow f^{-1}(\sum_{i\in I}v_ix_i) = \sum_{i\in I}f^{-1}(v_i)x_i.
 	\end{gather*}
