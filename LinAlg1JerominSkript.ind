@@ -1,168 +1,168 @@
 \begin{theindex}
 
-  \item \IeC {\"A}quiaffine Geometrie, \hyperpage{101}
-  \item \IeC {\"A}quiaffine Transformation, \hyperpage{100}
-  \item \IeC {\"A}quivalente LGS, \hyperpage{84}
-  \item \IeC {\"A}quivalente Matrizen, \hyperpage{81}
-  \item \IeC {\"A}quivalenzrelation, \hyperpage{47}
+  \item \IeC {\"A}quiaffine Geometrie, \hyperpage{93}
+  \item \IeC {\"A}quiaffine Transformation, \hyperpage{92}
+  \item \IeC {\"A}quivalente LGS, \hyperpage{77}
+  \item \IeC {\"A}quivalente Matrizen, \hyperpage{74}
+  \item \IeC {\"A}quivalenzrelation, \hyperpage{43}
 
   \indexspace
 
   \item Abbildung, \hyperpage{5}
-  \item Affine Abbildung/Affinit\IeC {\"a}t, \hyperpage{61}
-  \item Affine Geometrie, \hyperpage{65}
-  \item Affine H\IeC {\"u}lle, \hyperpage{56}
-  \item Affine H\IeC {\"u}lle und Affinkombination, \hyperpage{58}
-  \item Affine und lineare (Un-)Abh\IeC {\"a}ngigkeit, \hyperpage{59}
-  \item Affiner Raum, \hyperpage{52}
-  \item Affiner Standardraum, \hyperpage{53}
-  \item Affiner Unterraum, \hyperpage{54}
-  \item Affines/baryzentrisches Bezugssystem, \hyperpage{60}
-  \item Affinkombination/Baryzentrum, \hyperpage{56}
-  \item Allgemeine Lage, \hyperpage{58}
-  \item Allgemeine lineare Gruppe, \hyperpage{66}
-  \item Austauschlemma, \hyperpage{25}
+  \item Affine Abbildung/Affinit\IeC {\"a}t, \hyperpage{57}
+  \item Affine Geometrie, \hyperpage{60}
+  \item Affine H\IeC {\"u}lle, \hyperpage{51}
+  \item Affine H\IeC {\"u}lle und Affinkombination, \hyperpage{53}
+  \item Affine und lineare (Un-)Abh\IeC {\"a}ngigkeit, \hyperpage{54}
+  \item Affiner Raum, \hyperpage{47}
+  \item Affiner Standardraum, \hyperpage{49}
+  \item Affiner Unterraum, \hyperpage{50}
+  \item Affines/baryzentrisches Bezugssystem, \hyperpage{55}
+  \item Affinkombination/Baryzentrum, \hyperpage{52}
+  \item Allgemeine Lage, \hyperpage{54}
+  \item Allgemeine lineare Gruppe, \hyperpage{61}
+  \item Austauschlemma, \hyperpage{23}
 
   \indexspace
 
-  \item Basis, \hyperpage{21}
-  \item Basiserg\IeC {\"a}nzungssatz, \hyperpage{25}
-  \item Basislemma, \hyperpage{23}
-  \item Basissatz, \hyperpage{26}
-  \item Bild, Kern, Rang \& Defekt, \hyperpage{33}
-  \item Blockmatrix, \hyperpage{94}
+  \item Basis, \hyperpage{19}
+  \item Basiserg\IeC {\"a}nzungssatz, \hyperpage{22}
+  \item Basislemma, \hyperpage{21}
+  \item Basissatz, \hyperpage{24}
+  \item Bild, Kern, Rang \& Defekt, \hyperpage{30}
+  \item Blockmatrix, \hyperpage{87}
 
   \indexspace
 
-  \item Charakteristik, \hyperpage{12}
+  \item Charakteristik, \hyperpage{11}
 
   \indexspace
 
-  \item Darstellungsmatrix einer Komposition, \hyperpage{77}
-  \item Definition, \hyperpage{45}
-  \item Determinante, \hyperpage{92}
-  \item Determinante eines Endomorphismus, \hyperpage{101}
-  \item Determinantenmultiplikationssatz, \hyperpage{102}
-  \item Dilatationsgruppe, \hyperpage{71}
-  \item Dimension, \hyperpage{27}
-  \item Dimension der Determinantenform, \hyperpage{97}
-  \item Dimension und Teilmengen, \hyperpage{27}
-  \item Dimensionen von komplement\IeC {\"a}ren UVR, \hyperpage{49}
-  \item Dimensionssatz, \hyperpage{39}
-  \item Direkte Summe, \hyperpage{42}
-  \item Dualraum, \hyperpage{30}
+  \item Darstellungsmatrix einer Komposition, \hyperpage{70}
+  \item Definition, \hyperpage{41}
+  \item Determinante, \hyperpage{85}
+  \item Determinante eines Endomorphismus, \hyperpage{93}
+  \item Determinantenmultiplikationssatz, \hyperpage{94}
+  \item Dilatationsgruppe, \hyperpage{65}
+  \item Dimension, \hyperpage{24}
+  \item Dimension der Determinantenform, \hyperpage{89}
+  \item Dimension und Teilmengen, \hyperpage{24}
+  \item Dimensionen von komplement\IeC {\"a}ren UVR, \hyperpage{44}
+  \item Dimensionssatz, \hyperpage{36}
+  \item Direkte Summe, \hyperpage{38}
+  \item Dualraum, \hyperpage{27}
 
   \indexspace
 
-  \item Eindeutigkeit der Punktdarstellung, \hyperpage{59}
-  \item Eindeutigkeit des neutralen Elements, \hyperpage{10}
-  \item Einheitsmatrix, \hyperpage{80}
-  \item Erweiterte Koeffizientenmatrix, \hyperpage{83}
+  \item Eindeutigkeit der Punktdarstellung, \hyperpage{55}
+  \item Eindeutigkeit des neutralen Elements, \hyperpage{9}
+  \item Einheitsmatrix, \hyperpage{73}
+  \item Erweiterte Koeffizientenmatrix, \hyperpage{76}
 
   \indexspace
 
-  \item Fortsetzungssatz, \hyperpage{29}
+  \item Fortsetzungssatz, \hyperpage{26}
   \item Fortsetzungssatz f\IeC {\"u}r affine Abbildungen, 
-		\hyperpage{68}
+		\hyperpage{63}
   \item Fortsetzungssatz f\IeC {\"u}r Determinantenformen, 
-		\hyperpage{96}
+		\hyperpage{88}
 
   \indexspace
 
-  \item Geometrie, \hyperpage{51}
-  \item Gruppe, \hyperpage{9}
-  \item Gruppenoperation, \hyperpage{9}
+  \item Geometrie, \hyperpage{47}
+  \item Gruppe, \hyperpage{8}
+  \item Gruppenoperation, \hyperpage{8}
 
   \indexspace
 
   \item Homomorphiesatz f\IeC {\"u}r lineare Abbildungen, 
-		\hyperpage{50}
-  \item Homomorphismen als VR, \hyperpage{31}
-  \item Homomorphismen zwischen gleichdimensionalen VR, \hyperpage{36}
-  \item Homomorphismus, \hyperpage{28}
+		\hyperpage{45}
+  \item Homomorphismen als VR, \hyperpage{28}
+  \item Homomorphismen zwischen gleichdimensionalen VR, \hyperpage{32}
+  \item Homomorphismus, \hyperpage{25}
 
   \indexspace
 
   \item Inverse, \hyperpage{6}
-  \item Invertierbare Matrix, \hyperpage{80}
-  \item Isomorphielemma, \hyperpage{37}
+  \item Invertierbare Matrix, \hyperpage{73}
+  \item Isomorphielemma, \hyperpage{34}
 
   \indexspace
 
-  \item K\IeC {\"o}rper, \hyperpage{11}
-  \item Komplement\IeC {\"a}re UVR, \hyperpage{41}
-  \item Komposition, \hyperpage{6}
-  \item Kurzform der def. Gleichung einer Darst.-Matrix, \hyperpage{78}
+  \item K\IeC {\"o}rper, \hyperpage{10}
+  \item Komplement\IeC {\"a}re UVR, \hyperpage{37}
+  \item Komposition, \hyperpage{5}
+  \item Kurzform der def. Gleichung einer Darst.-Matrix, \hyperpage{71}
 
   \indexspace
 
-  \item L\IeC {\"o}sungsraum, \hyperpage{83}
-  \item Leibniz-Formel, \hyperpage{91}
-  \item Lineare H\IeC {\"u}lle und Linearkombinationen, \hyperpage{20}
-  \item Lineares Gleichungssystem, \hyperpage{82}
-  \item Linearform/Determinantenform, \hyperpage{88}
-  \item Linearkombinationen und Homomorphismen, \hyperpage{29}
+  \item L\IeC {\"o}sungsraum, \hyperpage{76}
+  \item Leibniz-Formel, \hyperpage{84}
+  \item Lineare H\IeC {\"u}lle und Linearkombinationen, \hyperpage{18}
+  \item Lineares Gleichungssystem, \hyperpage{75}
+  \item Linearform/Determinantenform, \hyperpage{81}
+  \item Linearkombinationen und Homomorphismen, \hyperpage{26}
 
   \indexspace
 
-  \item Matrix, \hyperpage{75}
-  \item Matrizen als VR, \hyperpage{76}
-  \item Mittelpunkt, \hyperpage{69}
+  \item Matrix, \hyperpage{69}
+  \item Matrizen als VR, \hyperpage{69}
+  \item Mittelpunkt, \hyperpage{64}
 
   \indexspace
 
-  \item Nebenklassen, \hyperpage{46}
+  \item Nebenklassen, \hyperpage{42}
 
   \indexspace
 
-  \item Parallele Geraden, \hyperpage{67}
-  \item Parallelogramm/Fl\IeC {\"a}cheninhalt, \hyperpage{99}
-  \item Parallelotop im affinen Raum, \hyperpage{98}
-  \item Parallelprojektion, \hyperpage{67}
-  \item Permutationsgruppe, \hyperpage{10}
-  \item Produkt von VR, \hyperpage{45}
-  \item Projektion, \hyperpage{43}
-  \item Projektionen, \hyperpage{44}
+  \item Parallele Geraden, \hyperpage{61}
+  \item Parallelogramm/Fl\IeC {\"a}cheninhalt, \hyperpage{91}
+  \item Parallelotop im affinen Raum, \hyperpage{90}
+  \item Parallelprojektion, \hyperpage{62}
+  \item Permutationsgruppe, \hyperpage{9}
+  \item Produkt von VR, \hyperpage{41}
+  \item Projektion, \hyperpage{39}
+  \item Projektionen, \hyperpage{40}
 
   \indexspace
 
-  \item Rang einer Matrix, \hyperpage{81}
-  \item Rangsatz, \hyperpage{34}
+  \item Rang einer Matrix, \hyperpage{74}
+  \item Rangsatz, \hyperpage{31}
 
   \indexspace
 
-  \item Satz von Ceva, \hyperpage{73}
-  \item Satz von Menelaos, \hyperpage{71}
-  \item Scherung, \hyperpage{68}
-  \item Schnitt von UVR, \hyperpage{18}
-  \item Schwerpunktsatz, \hyperpage{70}
-  \item Signum einer Permutation, \hyperpage{90}
-  \item Spezielle Homomorphismen, \hyperpage{36}
-  \item Spezielle lineare Gruppe, \hyperpage{103}
-  \item Standardbasis, \hyperpage{22}
-  \item Standardvektorraum, \hyperpage{14}
-  \item Streckung, \hyperpage{67}
-  \item Summe von UVR, \hyperpage{38}
+  \item Satz von Ceva, \hyperpage{67}
+  \item Satz von Menelaos, \hyperpage{66}
+  \item Scherung, \hyperpage{63}
+  \item Schnitt von UVR, \hyperpage{16}
+  \item Schwerpunktsatz, \hyperpage{64}
+  \item Signum einer Permutation, \hyperpage{83}
+  \item Spezielle Homomorphismen, \hyperpage{33}
+  \item Spezielle lineare Gruppe, \hyperpage{94}
+  \item Standardbasis, \hyperpage{20}
+  \item Standardvektorraum, \hyperpage{13}
+  \item Streckung, \hyperpage{62}
+  \item Summe von UVR, \hyperpage{35}
 
   \indexspace
 
-  \item Teilverh\IeC {\"a}ltnis, \hyperpage{61}
-  \item Transponierte Matrix, \hyperpage{94}
-  \item Transposition, \hyperpage{90}
+  \item Teilverh\IeC {\"a}ltnis, \hyperpage{56}
+  \item Transponierte Matrix, \hyperpage{86}
+  \item Transposition, \hyperpage{83}
 
   \indexspace
 
-  \item Untervektorraum, \hyperpage{16}
-  \item Ursprung, \hyperpage{53}
+  \item Untervektorraum, \hyperpage{14}
+  \item Ursprung, \hyperpage{49}
 
   \indexspace
 
-  \item Vandermonde-Determinante, \hyperpage{95}
-  \item Vektorraum, \hyperpage{13}
-  \item Volumenverzerrung, \hyperpage{101}
+  \item Vandermonde-Determinante, \hyperpage{87}
+  \item Vektorraum, \hyperpage{12}
+  \item Volumenverzerrung, \hyperpage{93}
 
   \indexspace
 
-  \item Zeilenstufenform, \hyperpage{85}
+  \item Zeilenstufenform, \hyperpage{77}
 
 \end{theindex}
