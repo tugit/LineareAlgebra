@@ -3,17 +3,17 @@
 
 \subsection{Definition (Basis)}
 	\begin{Definition}[Basis]
-		Eine Teilmenge $S\subset V$ oder eine Familie $(v_i)_{i\in I}$ in $ V $ heißt:
+		Eine Teilmenge $S\subset V$ oder eine Familie $(v_i)_{i\in I}$ in $ V $ heißt
 	\begin{itemize}
-		\item \emph{Erzeugendensystem} von $ V $, falls $[S] = V$ bzw. $[(v_i)_{i\in I}] = V$
-		\item \emph{linear unabhängig}, falls $\forall v\in S: v \notin [S\setminus\{{v\}}]$ bzw. $\forall i\in I: v_i \notin [(v_j)_{j\in I\setminus\{{i\}}}]$ und sonst \emph{linear abhängig}.
+		\item \emph{Erzeugendensystem} von $ V $, falls \[[S] = V \text{ bzw. } [(v_i)_{i\in I}] = V\]
+		\item \emph{linear unabhängig}, falls \[\forall v\in S: v \notin [S\setminus\{{v\}}] \text{ bzw. } \forall i\in I: v_i \notin [(v_j)_{j\in I\setminus\{{i\}}}]\] und sonst \emph{linear abhängig}.
 	\end{itemize}
         Eine \emph{Basis} ist ein linear unabhängiges Erzeugendensystem.
 	\end{Definition}
 
 \paragraph{Bemerkung}
 	Man kann jede (Teil-)Menge $S\subset V$ als Familie in $V$ auffassen mit
-		\[v_i: S \to V: v\mapsto id_S(v) = v.\]
+		\[v: S \to V, v\mapsto id_S(v) = v.\]
 	Andererseits gilt für eine Familie $(v_i)_{i\in I} $:
 		\[(v_i)_{i\in I} \text{ linear unabhängig } \Rightarrow \{v_i \mid i\in I\} \text{ linear unabhängig.}\]
 	Die Umkehrung gilt im Allgemeinen nicht: Eine Familie (in $ V $) enthält mehr Information als eine Teilmenge von $ V $.
@@ -22,7 +22,7 @@
 	\begin{Definition}[Standardbasis]
 		Für $V = K^n$ ist $(e_1, ... , e_n)$,
 	\begin{equation*}
-		e_i:\{{1, ... ,n\}} =: I\to K: j\mapsto e_i(j)= \delta_{ij}=
+		e_i:\{{1, ... ,n\}} =: I\to K, j\mapsto e_i(j)= \delta_{ij}=
 		\begin{cases}
 			1,& \text{falls } i=j\\
 			0,& \text{sonst}
@@ -34,12 +34,11 @@
 \paragraph{Beweis}
 	z.z.: $ (e_i)_{i\in I} $ ist ein linear unabhängiges Erzeugendensystem. Wir wissen bereits $ [(e_i)_{i\in I}] = K^n $. Andererseits gilt für jedes $i\in I$ und jede Familie $(x_j\mid j\in I)$ in $ K $
 	\begin{gather*}
-		\left(\sum_{j\in I\setminus\{i\}}e_jx_j\right)(i) = \sum_{j\in I\setminus\{i\}}e_j(i)x_j = 0 \neq 1 = e_i(i)\\
-		\Rightarrow \sum_{j\in I\setminus\{i\}} e_jx_j \neq e_i
+		\Big(\sum_{j\in I\setminus\{i\}}e_jx_j\Big)(i) = \sum_{j\in I\setminus\{i\}}e_j(i)x_j = 0 \neq 1 = e_i(i) \Rightarrow \sum_{j\in I\setminus\{i\}} e_jx_j \neq e_i
 	\end{gather*}
 	also gilt
 	\begin{equation*}
-		\forall i\in I: e_i \notin [(e_j)_{j\in I\setminus\{i\}}] = \left\{\sum_{j=I\setminus\{i\}} e_jx_j\mid (x_j)_{ j\in I}\right\} \text{ mit } \#\{j\in I\mid x_j \neq 0\}<\infty
+		\forall i\in I: e_i \notin [(e_j)_{j\in I\setminus\{i\}}] = \Big\{\sum_{j=I\setminus\{i\}} e_jx_j\mid (x_j)_{ j\in I}\Big\} \text{ mit } \#\{j\in I\mid x_j \neq 0\}<\infty
 	\end{equation*}
 	
 \subsection{Lemma}
@@ -51,15 +50,17 @@
 \paragraph{Beweis}
 	Wir zeigen zwei Richtungen der Äquivalenz der Negationen: 
 		\[(v_i)_{i\in I} \text{ linear abhängig } \Leftrightarrow \exists(x_i)_{i\in I} \neq (0)_{i\in I}: \sum_{i\in I} v_ix_i = 0.\]
+        
 	"$\Leftarrow$":
 	Wir nehmen an, es gäbe eine \emph{nicht-triviale}\footnote{d.h. $(x_i)_{i\in I}\neq 0$} Linearkombination der Null,
 		\[0 = \sum_{i\in I} v_ix_i, \text{ wobei } \exists j\in I: x_j \neq 0.\]
 	Für $(y_i)_{i\in I}, y_i := - \frac{x_i}{x_j}$ ist dann
 	\begin{gather*}
 		0 = v_jx_j + \sum_{i\in I\setminus\{j\}} v_ix_i \\
-		\Rightarrow v_j = -\left(\sum_{i\in I\setminus\{j\}}v_ix_i\right)x_j^{-1} = \sum_{i\in I\setminus\{j\}} v_iy_i \in [(v_i)_{i\in I\setminus\{j\}}]
+		\Rightarrow v_j = -\Big(\sum_{i\in I\setminus\{j\}}v_ix_i\Big)x_j^{-1} = \sum_{i\in I\setminus\{j\}} v_iy_i \in [(v_i)_{i\in I\setminus\{j\}}]
 	\end{gather*}
 	insbesondere ist also $(v_i)_{i\in I}$ linear abhängig.
+	
 	"$\Rightarrow$": siehe Aufgabe.
 	
 \subsection{Korollar}
@@ -73,7 +74,7 @@
 		\[V = [(v_i)_{i\in I}] \Rightarrow \exists (x_i)_{i\in I}: v = \sum_{i\in I} v_ix_i\]
 	liefern $(x_i)_{i\in I}$ und $(y_i)_{i\in I}$
 	\begin{align*}
-		v = \sum_{i\in I} v_ix_i = \sum_{i\in I}v_iy_i \Rightarrow\footnotemark 0 &= \sum_{i\in I} v_i(x_i-y_i)\\
+		v = \sum_{i\in I} v_ix_i = \sum_{i\in I}v_iy_i \stackrel{\footnotemark}{\Rightarrow} 0 &= \sum_{i\in I} v_i(x_i-y_i)\\
                 &\Rightarrow \forall i\in I: x_i = y_i \Rightarrow (x_i)_{i\in I} = (y_i)_{i\in I}
 	\end{align*}
 	\footnotetext{Bemerke: Die Summe von Linearkombinationen ist wieder eine Linearkombination, siehe Aufgabe 19}
@@ -109,9 +110,9 @@
         e_i &:I\to K,\ j\mapsto e_i(j) = \delta_{ij}\text{, und}\\
         f_i &: I\to K,\ j\mapsto f_i(j):= 1-\delta_{ij}
     \end{align*}
-    dann sind $S:= \{e_1,f_1\}$ und $E:= \{e_i,f_i\mid i\in I\}$ lin. unabh. bzw. Erzeugendensystem von $K^3$. Ergänzung von $S$ durch einen Vektor $e_i$ oder $f_i, i = 2,3$ liefert eine Basis $B$ mit $S\subset B\subset E$.
+    dann sind $S:= \{e_1,f_1\}$ und $E:= \{e_i,f_i\mid i\in I\}$ lin. unabh. bzw. Erzeugendensystem von $K^3$. Ergänzung von $S$ durch einen Vektor $e_i$ oder $f_i$ mit $i = 2,3$ liefert eine Basis $B$ mit $S\subset B\subset E$.
     
-    Zum Beispiel: $B=\{e_1,f_1,f_2\}$ eine Basis, da sich jede Funktion $v\in K^3$ aus den Funktionen $e_1,f_1$ und $f_2$ linear kombinieren lässt.
+    Zum Beispiel ist $B=\{e_1,f_1,f_2\}$ eine Basis, da sich jede Funktion $v\in K^3$ aus den Funktionen $e_1,f_1$ und $f_2$ linear kombinieren lässt:
     \begin{gather*}
         v=e_1x_1+f_1y_1 + f_2y_2\Leftrightarrow \left\{
             \begin{array}{l}
@@ -125,13 +126,13 @@
 
 \subsection{Basisergänzungssatz}
     \begin{Satz}[Basisergänzungssatz]
-    	Jede lin. unabh. Menge $S\subset V$ kann zu einer Basis $B$ von $V$ ergänzt werden: Es existiert eine Basis $B$ von $V$ mit $S\subset B$.
+    	Jede lin. unabh. Menge $S\subset V$ kann zu einer Basis $B$ von $V$ ergänzt werden: Es existiert eine Basis $B$ von $V$ mit $S\supset B$.
     \end{Satz}
 
 \paragraph{Beweis}
     Sei $E\subset V$ ein Erzeugendensystem von $V$ (z.B. $E=V$). Dann ist $S\cup E$ ein Erzeugendensystem von $V$ mit $S\subset S\cup E$, das Basislemma liefert dann die\footnote{nicht eindeutig!} gesuchte Basis.
 
-\subsection{Bemerkung}
+\paragraph{Bemerkung}
     Strikt genommen haben wir den Basisergänzungssatz (BES) nur unter der Annahme bewiesen, dass $V$ \emph{endlich erzeugt} sei, d.h. $V$ ein endliches Erz. Syst. $E$ besitzt, $V=[E]$ und $\#E<\infty$.
 
 \paragraph{Bemerkung}
@@ -143,7 +144,7 @@
 \subsection{Austauschlemma}
     \begin{Lemma}[Austauschlemma]
     	Seien $B,B' \subset V$ Basen von $V$. Dann gilt:
-        \[\forall b\in B \exists b' \in B': (B\setminus\{b\})\cup\{b'\} \text{ ist Basis}\]
+        \[\forall b\in B\ \exists b' \in B': (B\setminus\{b\})\cup\{b'\} \text{ ist Basis}\]
     \end{Lemma}
     
 \paragraph{Beweis}
@@ -151,10 +152,11 @@
         \[b\notin [S] \Rightarrow \emptyset \neq V\setminus [S] = [B']\setminus [S] \Rightarrow B' \not\subset [S]\]
     d.h. es existiert $b' \in B'$ mit $b' \notin [S]$. Wir zeigen, dass $B'' := S\cup \{b'\} = (B\setminus\{b\})\cup \{b'\}$ Basis ist.
     
-    $B''$ ist Erzeugendensystem: Da $b'\in [B]$ existiert $(x_j)_{j\in B}$ mit $$b' = \sum_{j\in B} jx_j $$ mit $x_b \neq 0$, da $b' \notin [S]$.
-    Damit ist $b=(b'-\sum_{j\in S} jx_j)\frac{1}{x_b} \in [B''] \Rightarrow V = [B] \subset [B'' \cup \{b\}] \subset [B'']$.
+    $B''$ ist Erzeugendensystem: Da $b'\in [B]$ existiert $(x_j)_{j\in B}$ mit
+    \[b' = \sum_{j\in B} jx_j \text{ mit } x_b \neq 0, \text{ da } b' \notin [S].\]
+    Damit ist $b=(b'-\sum_{j\in S} jx_j)\frac{1}{x_b} \in [B''] \Rightarrow V = [B] \subset [B'' \cup \{b\}] =  [B'']$.
     
-    $B''$ ist linear unabhängig: $B''$ ist Erz. Syst. und $S\subset B' = S \cup \{b'\}$ lin unabh., kann also (nach Basislemma) erg"anzt werden zu einer Basis $\tilde{B}$ mit $S\subset \tilde{B}\subset B''$.
+    $B''$ ist linear unabhängig: $B''$ ist Erz. Syst. und $S\subset B'' = S \cup \{b'\}$ lin unabh., kann also (nach Basislemma) ergänzt werden zu einer Basis $\tilde{B}$ mit $S\subset \tilde{B}\subset B''$.
     Da $[S] \neq V$ gilt $\tilde{B} \neq S$ und damit $\tilde{B} = B''$ Basis, insbesondere linear unabhängig.
     
 \paragraph{Bemerkung}
@@ -173,8 +175,8 @@
     \begin{enumerate}[(i)]
         \item  Dies folgt direkt aus dem Basislemma (mit $S=\emptyset$).
         \item Seien $B,B'$ Basen von V, $B = (b_1,...,b_n)$.\\
-        Annahme: $\#B' < n, B' = (b'_1,...,b'_k)$ mit $k < n$. Wiederholte Anwendung des Austauschlemmas auf die Basen $B$ und $B'$ liefert nach (spätestens) $k+1\leq n$ Schritten einen Widerspruch zur linearen Unabhängigkeit der neuen Basis $B''$, da Vektoren $b'_i$ doppelt vorkommen müssen.\\
-        Annahme: $\#B' > n, B' = (b'_1,...,b'_n,b'_{n+1})$: Das gleiche Argument mit vertauschten Rollen der Basen führt wieder zum Widerspruch.
+        Annahme: $\#B' < n,\ B' = (b'_1,...,b'_k)$ mit $k < n$. Wiederholte Anwendung des Austauschlemmas auf die Basen $B$ und $B'$ liefert nach (spätestens) $k+1\leq n$ Schritten einen Widerspruch zur linearen Unabhängigkeit der neuen Basis $B''$, da Vektoren $b'_i$ doppelt vorkommen müssen.\\
+        Annahme: $\#B' > n,\ B' = (b'_1,...,b'_n,b'_{n+1})$: Das gleiche Argument mit vertauschten Rollen der Basen führt wieder zum Widerspruch.
      \end{enumerate}
 
 \subsection{Definition (Dimension)}
