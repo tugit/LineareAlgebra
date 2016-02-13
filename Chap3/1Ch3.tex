@@ -74,7 +74,7 @@
 	Damit folgt (vgl. Kap. 1.4): $ \dim \hom(V,W) = \dim K^{m\times n} = m\cdot n $.
 \subsection{Lemma \& Definition}
 	\begin{Lemma}[Darstellungsmatrix einer Komposition]
-	Sind $ U,V,W \ K$-VR mit Basen $ A=(u_1,\dots,u_p),B=(v_1,\dots,v_n),C=(w_1,\dots,w_m) $, so gilt für $ g\in \hom(U,V) $ und $ f\in \hom(V,W) $
+	Sind $ U,V,W \ K$-VR mit Basen $ A=(a_1,\dots,a_p),B=(b_1,\dots,b_n),C=(c_1,\dots,c_m) $, so gilt für $ g\in \hom(U,V) $ und $ f\in \hom(V,W) $
 		\[ \xi_A^C(f\circ g) = \xi_B^C(f)\cdot \xi_A^B(g), \]
 	\end{Lemma}
 	\begin{Definition}
@@ -111,7 +111,7 @@
 		Y = \xi_A^B(g)\in K^{n\times p} &\text{ von } g\in \hom(U,V)
 		\end{cases} \]
 	bezüglich $ B $ und $ C $ bzw. $ A $ und $ B $, dann gilt für $ k=1,\dots,p $
-		\[ (f\circ g)(u_k)=f\Big(\sum_{j=1}^{n}v_jy_{jk}\Big) = \sum_{j=1}^{n}f(v_j)y_{jk} = \sum_{j=1}^{n}\sum_{i=1}^{m}w_ix_{ij}y_{jk} = \sum_{i=1}^{m}w_i\Big(\sum_{j=1}^{n}x_{ij}y_{jk}\Big), \]
+		\[ (f\circ g)(a_k)=f\Big(\sum_{j=1}^{n}b_jy_{jk}\Big) = \sum_{j=1}^{n}f(b_j)y_{jk} = \sum_{j=1}^{n}\sum_{i=1}^{m}c_ix_{ij}y_{jk} = \sum_{i=1}^{m}c_i\Big(\sum_{j=1}^{n}x_{ij}y_{jk}\Big), \]
 	d.h. durch $ I=\{1,\dots,m\},J=\{1,\dots,n\},K=\{1,\dots,p\} $ und 
 		\[ \xi_A^C(f\circ g) = Z = (z_{ik})_{i\in I,k\in K} \quad\text{mit}\quad \forall i\in I\ \forall k\in K: z_{ik}= \sum_{j=1}^{n}x_{ij}y_{jk} \]
 	erhält man die Darstellungsmatrix
@@ -142,6 +142,7 @@
 		\[ (f\circ g)(A) = C\cdot XY, \]
 	also
 		\[ \xi_A^C(f\circ g) = X\cdot Y = \xi_B^C(f)\cdot \xi_A^B(g). \]
+        
 	Einfacher (aber weniger überzeugend) ist die folgende, die Linearität von $ f $ benutzende Version:
 		\[( f\circ g )(A) = f(g(A)) = f(BY) = f(B)\cdot Y = C\cdot XY\]
 \paragraph{Bemerkung}
