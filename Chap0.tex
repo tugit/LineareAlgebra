@@ -1,4 +1,4 @@
-% % % %Kapitel 0 - Grundlagen % % % %
+%VO1-2015-10-06
 \chapter{Grundlagen}
 \section*{Einleitung}
 	Es existieren zwei Methoden zur präzisen Formulierung:
@@ -14,7 +14,7 @@
 		\begin{itemize}
 			\item $\forall$ -- All-Quantor: \glqq für alle\grqq
 			\item $\exists(!)$ -- Existenz-Quantor: \glqq es existiert (genau) ein\grqq
-			\item $\lnot$ -- logische Verneinung: $\lnot A$ ist wahr, wenn $A$ falsch ist
+			\item $\lnot$ -- logische Verneinung: $\lnot A$ ist wahr, gdw. (genau dann wenn) $A$ falsch ist
 			\item $\land ,\lor$ -- logisches \glqq und\grqq{} und \glqq oder\grqq
 			\item $\Rightarrow ,\Leftrightarrow$ -- Implikation und Äquivalenz
 		\end{itemize}
@@ -34,9 +34,9 @@
 	Beispiele:
 	\begin{itemize}
 		\item Implikation: Für $x,y\in\mathbb{R}: xy = 0 \Rightarrow (x = 0\lor y = 0)$
-		\item Für Aussagen $ A $ und $ B $ gilt: $(A\Rightarrow B)\Leftrightarrow (\lnot A \lor B)$, Beweis durch Wahrheitstafel
+		\item Für Aussagen $ A $ und $ B $ gilt: $(A\Rightarrow B)\Leftrightarrow (\lnot A \lor B)$
 	\end{itemize}
-	
+	Beweis durch Wahrheitstafel:
 	\begin{figure}[H]\centering
 		\begin{tabular}{c|c|c|c|c|c}
 			$A$ & $B$ & $\lnot A$ & $\lnot A\lor B$ & $A \Rightarrow B$ & $(A\Rightarrow B)\Leftrightarrow (\lnot A \lor B)$\\\hline
@@ -45,7 +45,6 @@
 			f & w & w & w & w & w \\
 			f & f & w & w & w & w \\
 		\end{tabular}
-	\caption{Beweis durch Wahrheitstafel}
 	\end{figure}
 
 \paragraph{Bemerkung}

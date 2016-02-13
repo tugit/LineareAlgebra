@@ -2,7 +2,7 @@
 \section{Summen, Produkte und Quotienten}
 \subsection{Definition (Summe von UVR)}
 	\begin{Definition}[Summe von UVR]
-		Die \emph{Summe einer Familie} $ (U_i)_{i\in I} $ von UVR $ U\subset V $ eines $ K $-VR ist die Menge
+		Die \emph{Summe einer Familie} $ (U_i)_{i\in I} $ von UVR $ U_i\subset V $ eines $ K $-VR ist die Menge
 		\[
 		\sum_{i\in I} U_i := \Big\{\sum_{i \in I}u_i\mid \forall i\in I: u_i\in U_i \land \# \{i\in I\mid u_i \neq 0\}<\infty\Big\}.
 		\]
@@ -189,7 +189,7 @@ i\operatorname{mod} 2\Rightarrow v_j = 0\}
 		\forall i\in I: \dim U_i < \infty
 		\end{equation*}
 		
-	und es gilt die \emph{Dimensionsformel für direkte Summen} (Beweis in Aufgabe 35):
+	und es gilt die \emph{Dimensionsformel für direkte Summen} (Beweis: Aufgabe 35):
 		\begin{equation*}
 		\dim \bigoplus_{i\in I}U_i = \sum_{i\in I} \dim U_i.
 		\end{equation*}
@@ -288,9 +288,9 @@ i\operatorname{mod} 2\Rightarrow v_j = 0\}
 \paragraph{Bemerkung} 
 	Ist $V = \prod_{i\in I} V_i$ ein Produktraum, so erhält man kanonische UVR
 		\[U_i:=\{v=(v_i)_{i\in I}\in V\mid\forall j \neq i:v_j = 0\}\subset V,\]
-	die isomorph zu den $V_i$ sind vermittels der \emph{Faktor-Projektionen}
+	die isomorph zu den $V_i$ sind vermittels der \emph{Faktor-Projektionen}\footnote{Achtung: Keine Projektion in unserem obrigen Sinn!}
 		\[\pi_i:V\to V_i,\ (v_j)_{j\in I} \mapsto v_i,\]
-	bzw. \emph{Faktor-Injektionen}\footnote{Achtung: Keine Projektion in unserem obrigen Sinn!}
+	bzw. \emph{Faktor-Injektionen}
 		\[\iota_i:V_i\to V,\ v_i \mapsto(v_j)_{j\in I}\text{, wobei }v_j :=
 			\begin{cases}
 				v_i &\text{ falls } j=i\\
@@ -302,10 +302,12 @@ i\operatorname{mod} 2\Rightarrow v_j = 0\}
 	Ist $\#I=\infty$, so ist diese Identifikation im Allgemeinen falsch!
 	
 \paragraph{Beispiel}
+        % NOTE: Im Skript von Prof. Jeromin steht  K^n = \bigoplus ..., in der VO wurde aber K^n \cong \bigoplus ... geschrieben, wir schreiben = da diese Aussage stärker ist, also \cong daraus folgt
 	Für einen Körper $ K $ liefert das $ n $-fache Produkt den Standardraum
-		\[\prod_{i=1}^{n}K = \{(x_i)_{i = 1,...,n}\mid\forall i \in \{1,...,n\}: x_i \in K\} = K^n = \bigoplus_{i=1}^n\{(x_i)_{i\in {1,...,n}}\mid\forall j\neq i: x_j = 0\};\]
-	für den Raum der K-wertigen Folgen ist jedoch
-		\[\prod_{i\in \mathbb{N}}K=K^{\mathbb{N}}\neq\bigoplus_{i\in \mathbb{N}}\{(x_i)_{i\in \mathbb{N}}\mid\forall j\neq i: x_j=0\}.\]
+		\[\prod_{i=1}^{n}K = \{(x_i)_{i = 1,...,n}\mid\forall i \in \{1,...,n\}: x_i \in K\} = K^n = \bigoplus_{i=1}^n\{(x_i)_{i = 1,...,n}\mid\forall j\neq i: x_j = 0\};\]
+	für den Raum der $K$-wertigen Folgen ist jedoch
+	% NOTE: Im Skript von Prof. Jeromin steht \ncong statt \neq, in der VO wurde aber \neq geschrieben, wir schreiben \ncong, da diese Aussage stärker ist, also \neq daraus folgt
+		\[\prod_{i\in \mathbb{N}}K=K^{\mathbb{N}}\ncong\bigoplus_{i\in \mathbb{N}}\{(x_i)_{i\in \mathbb{N}}\mid\forall j\neq i: x_j=0\}.\]
 			
 \subsection{Lemma und Definition (Nebenklassen)}
 	\begin{Definition}[Nebenklassen]
@@ -313,7 +315,7 @@ i\operatorname{mod} 2\Rightarrow v_j = 0\}
 		\[V/U := \{v+U\mid v\in V\},\]
 	wobei
 		\[v+U:=\{v+u\mid u\in U\}\]
-	die \emph{Nebenklasse} zu $v\in V$ bezeichnet, wird mit den durch
+	die \emph{Nebenklasse}\footnote{Bemerke: Nebenklassen sind im Allgemeinen keine UVR, da sie $0$ nicht enthalten müssen!} zu $v\in V$ bezeichnet, wird mit den durch
 		\begin{align*}
 			+&: V/U \times V/U \to V/U,\ ((v+U),(w+U))\mapsto (v+w)+U,\\
 			\cdot &: K\times V/U \to V/U,\ (x,(v+U))\mapsto (vx)+U,
@@ -335,6 +337,8 @@ i\operatorname{mod} 2\Rightarrow v_j = 0\}
 	Das Resultat der Skalarmultiplikation bringt also nicht von dem Repräsentanten $v$ einer Nebenklasse $v+U$ ab, sondern nur von der Nebenklasse.
 	
 	Die Wohldefiniertheit der Addition ist analog zu beweisen.
+	
+	Die Vektorraumaxiome sind zu überprüfen.
 
 %VO12-2015-11-17
 \subsection{Bemerkung \& Definition (Äquivalenzrelation)}
@@ -349,7 +353,7 @@ i\operatorname{mod} 2\Rightarrow v_j = 0\}
 		\end{enumerate}
 	\end{Definition}
 
-\paragraph{Beweis} z.z.: $ v\sim w:\Leftrightarrow w-v\in U $ definiert eine Äquivalenzrelation
+        z.z.: $ v\sim w:\Leftrightarrow w-v\in U $ definiert eine Äquivalenzrelation
 	
 	\begin{itemize}
 		\item Reflexivität: Sei $ v\in V $ beliebig, dann gilt $ v-v=0\in U $, da $ U $ UVR.
@@ -364,16 +368,16 @@ i\operatorname{mod} 2\Rightarrow v_j = 0\}
 	\end{itemize}
 	
 	Ist dann $ \sim $ eine Äquivalenzrelation auf einer Menge $ X $, so zerfällt $ X $ in Äquivalenzklassen
-		\[ X_a = \{y\in X\mid y\sim a\} \]
+		\[ X_x = \{y\in X\mid y\sim x\} \]
 	d.h., $ X $ ist disjunkte Vereinigung der Äquivalenzklassen:
-		\[ X = \dot{\bigcup}_{a\in X}X_a \qquad\text{ und } \underbrace{X_a \cap X_b \neq \emptyset \Rightarrow X_a = X_b}_{\text{zwei Äquivalenzklassen sind etweder disjunkt oder gleich}} \]
+		\[ X = \dot{\bigcup}_{x\in X}X_x \qquad\text{ und } \underbrace{X_x \cap X_y \neq \emptyset \Rightarrow X_x = X_y}_{\text{zwei Äquivalenzklassen sind etweder disjunkt oder gleich}} \]
 		
 	Insbesondere zerfällt also ein VR $ V $ in Äquivalenzklassen (Nebenklassen)
 		\[ v+U (= V_v)\subset V, \]
 	wenn $ U $ ein UVR von $ V $ ist -- nach Lemma wird die Menge der Neben- bzw. Äquivalenzklassen dann wieder ein VR. Ähnlich wie den Quotientenvektorraum definiert man (z.B.) die \emph{Faktorgruppe} [Havlicek §.1.11.11].
 	
 \paragraph{Bemerkung}
-	Allgemeiner definiert man eine (binäre) \emph{Relation} $ (X,Y,\Gamma) $ zwischen Mengen $ X, Y $ durch den \emph{Graph den Relation}, eine Teilmenge
+	Allgemeiner definiert man eine (binäre) \emph{Relation} $ (X,Y,\Gamma) $ zwischen Mengen $ X, Y $ durch den \emph{Graph der Relation}, eine Teilmenge
 		\[ \Gamma \subset X\times Y = \{(x,y)\mid x\in X \land y\in Y\}. \]
 	Zum Beispiel ist eine Abbildung $ f:X\to Y $ eine Relation $ (X,Y,\Gamma_f) $, sodass
 		\[ \forall x\in X\ \exists ! y\in Y:(x,y)\in \Gamma_f. \]
@@ -410,9 +414,9 @@ i\operatorname{mod} 2\Rightarrow v_j = 0\}
 		
 	Surjektivität: Sei $ v+U\in V/U $ mit $ v\in V = U \oplus U' $; mit der Projektion
 	\begin{gather*}
-		p':V\to V, v=u+u' \mapsto p'(v) := u'
+		p':V\to V,\ v=u+u' \mapsto p'(v) := u'
 		\intertext{ist }
-		v + U = u' + u + U = u' + U = \phi(p'(v))
+		v + U = u' + \underbrace{u}_{\in U} + U = u' + U = \phi(p'(v))
 	\end{gather*}
 	also $V/U = \phi(U')$.
 	
@@ -461,7 +465,7 @@ i\operatorname{mod} 2\Rightarrow v_j = 0\}
 	Sei $ v+\ker f\in \ker \phi $, also 
 		\[ \phi(v+\ker f)= f(v) = 0; \]
 	dann folgt
-		\[ v\in \ker f \Rightarrow v+\ker f = \ker f = 0\in V/\ker f. \]
+		\[ v\in \ker f \Rightarrow v+\ker f = \ker f = \underbrace{0}_{0+\ker f}\in V/\ker f. \]
 	
 	Surjektivität:
 	folgt direkt aus der Definition.		
