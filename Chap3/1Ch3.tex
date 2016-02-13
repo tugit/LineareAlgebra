@@ -1,3 +1,4 @@
+%VO18-2015-12-10
 \chapter{Buchhaltung}
 	Dieses Kapitel zeigt eine Art "`Tabellenkalkül"' -- eine effiziente Rechenmethode in der linearen Algebra.
 	
@@ -42,7 +43,7 @@
 	
 \paragraph{Bemerkung}
 	Mit $ I:= \{1,\dots,m\} $ und $ J:= \{1,\dots,n\} $ kann eine Matrix auch als Abbildung aufgefasst werden
-		\[ X = (x_{ij})_{i\in I,j\in J}\text{ bzw. }X:I\times J\to K,(i,j)\mapsto x_{ij}. \]
+		\[ X = (x_{ij})_{i\in I,j\in J} \quad\text{ bzw. }\quad X:I\times J\to K,\ (i,j)\mapsto x_{ij}. \]
 	Ist $ f\in \hom(V,W) $ und sind $ B=(b_1,\dots,b_n) $ und $ C=(c_1,\dots,c_m) $ Basen von $ V $ bzw. $ W $, so sind
 		\[ x_{ij} = c_i^*(f(b_j)) \]
 	die Komponenten der Darstellungsmatrix $ \xi_B^C(f) $ von $ f $ bzgl. der Basen $ B $ und $ C $ mit der zu $ C $ dualen Basis $ C^*=(c_1^*,\dots c_m^*) $ von $ W^* $.\\
@@ -53,14 +54,13 @@
 	Mit der komponentenweisen Addition und Skalarmultiplikation auf $ K^{m\times n} $,
 		\[ (x_{ij})+(y_{ij}) := (x_{ij}+y_{ij}) \text{ und } (x_{ij})\cdot z := (x_{ij}\cdot z), \]
 	wird $ K^{m\times n} $ ein Vektorraum und man erhält einen Isomorphismus zu Basen $B$ und $C$ von $V$ bzw. $W$.
-		\[ \xi_B^C:\hom(V,W)\to K^{m\times n},f\mapsto \xi_B^C(f). \]
+		\[ \xi_B^C:\hom(V,W)\to K^{m\times n},\ f\mapsto \xi_B^C(f). \]
 	\end{Lemma}
 \paragraph{Bemerkung}
 	Die komponentenweise Addition und Skalarmultiplikation sind gerade die Addition und Skalarmultiplikation von Matrizen als Abbildungen.
 	
-	Wir wissen bereits, dass $ \hom(V,W) $ ein $ K $-VR ist (vgl. Kap. 1.4).
 \paragraph{Beweis}
-	Dass $ \hom(V,W) $ und $ K^{m\times n} \ K $-VR sind, ist bekannt. Die Linearität von $ \xi_B^C $ folgt direkt, da mit der zu $ C $ dualen Basis $ C^* $ von $ W^* $
+	Dass $ \hom(V,W) $ und $ K^{m\times n} \ K $-VR sind, ist bekannt (vgl. Kap. 1.4 bzw. Kapt. 1.1). Die Linearität von $ \xi_B^C $ folgt direkt, da mit der zu $ C $ dualen Basis $ C^* $ von $ W^* $
 		\[ \forall_{i=1,\dots,m} \forall_{j=1,\dots,n}: x_{ij}= c_i^*(f(b_j)). \]
 	Nämlich: für $ f,g\in \hom(V,W) $ und $ x,y\in K $ ist dann
 		\begin{align*}
@@ -111,30 +111,30 @@
 		Y = \xi_A^B(g)\in K^{n\times p} &\text{ von } g\in \hom(U,V)
 		\end{cases} \]
 	bezüglich $ B $ und $ C $ bzw. $ A $ und $ B $, dann gilt für $ k=1,\dots,p $
-		\[ (f\circ g)(u_k)=f(\sum_{j=1}^{n}v_jy_{jk}) = \sum_{j=1}^{n}f(v_j)y_{jk} = \sum_{j=1}^{n}\sum_{i=1}^{m}w_ix_{ij}y_{jk} = \sum_{i=1}^{m}w_i\left(\sum_{j=1}^{n}x_{ij}y_{jk}\right), \]
+		\[ (f\circ g)(u_k)=f\Big(\sum_{j=1}^{n}v_jy_{jk}\Big) = \sum_{j=1}^{n}f(v_j)y_{jk} = \sum_{j=1}^{n}\sum_{i=1}^{m}w_ix_{ij}y_{jk} = \sum_{i=1}^{m}w_i\Big(\sum_{j=1}^{n}x_{ij}y_{jk}\Big), \]
 	d.h. durch $ I=\{1,\dots,m\},J=\{1,\dots,n\},K=\{1,\dots,p\} $ und 
-		\[ \xi_A^C(f\circ g) = Z = (z_{ik})_{i\in I,k\in K} \]
-        mit
-                \[ \forall i\in I\ \forall k\in K: z_{ik}= \sum_{j=1}^{n}x_{ij}y_{jk} \]
+		\[ \xi_A^C(f\circ g) = Z = (z_{ik})_{i\in I,k\in K} \quad\text{mit}\quad \forall i\in I\ \forall k\in K: z_{ik}= \sum_{j=1}^{n}x_{ij}y_{jk} \]
 	erhält man die Darstellungsmatrix
 		\[ \xi_A^C(f\circ g) = \xi_B^C(f)\xi_A^B(g) \]
 	der Komposition als Produkt der Darstellungsmatrizen von $ f $ und $ g $.
 \subsection{Notation \& Definition}
 	\begin{Definition}[Kurzform der def. Gleichung einer Darst.-Matrix]
-	Wir notieren die definierende Gleichung einer Darstellungsmatrix $ X=\xi_B^C(f) $ eines Homomorphismus $ f\in \hom(V,W) $ auch in Kurzform
+	Wir notieren die definierende Gleichung einer Darstellungsmatrix $ X=\xi_B^C(f) $ von $ f\in \hom(V,W) $ auch in Kurzform
 		\[ CX=(c_1,\dots,c_m)X = (f(b_1),\dots,f(b_n)) = f(B). \]
-	Für die \emph{Koordinatenspalten eines Vektors}
+	Für die \emph{Koordinatenspalte eines Vektors}
 		\[ Y\in K^{n\times 1} \text{ mit } v=\sum_{j=1}^{n}b_jy_{j1} \]
 	ist dann
 		\[ f(v) = (f(b_1),\dots,f(b_n))Y = (c_1,\dots,c_m)XY. \]
 	\end{Definition}
-	Die Familien $ (c_i,\dots,c_m) $ und $ (f(b_1),\dots,f(b_n)) $ sind keine Matrizen, denn die Elemente sind Vektoren!
+	Die Familien $ (c_1,\dots,c_m) $ und $ (f(b_1),\dots,f(b_n)) $ sind keine Matrizen, denn die Elemente sind Vektoren!
+
+%VO19-2015-12-15
 \paragraph{Bemerkung}
 	Wir schreiben die Skalarmultiplikation als Rechts-Multiplikation.
 \paragraph{Beispiel}
-	Die neue Notation liefert einen "`alternativen Beweis"' für $ \xi_A^C(f\circ g) = \xi_B^C(f)\xi_A^B(g) $:
+	Die neue Notation liefert einen alternativen "`Beweis"' für $ \xi_A^C(f\circ g) = \xi_B^C(f)\xi_A^B(g) $:
 	
-	gilt für jeden Vektor $ a_k,k=1,\dots,p $
+	Gilt für jeden Vektor $ a_k,\ k=1,\dots,p $
 		\[ g(a_k) = \sum_{j=1}^{n}b_jy_{jk}, \text{ wobei } Y = \xi_A^B(g) \]
 	so erhalten wir
 		\[ (f(g(a_1)),\dots, f(g(a_p))) = (f(b_1),\dots , f(b_n))Y = (c_1,\dots,c_m)\xi_B^C(f)\cdot Y = C\cdot XY \]
