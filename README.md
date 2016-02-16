@@ -1,5 +1,5 @@
-# LinAlg1JerominSkript
-Hier soll im Verlauf des WS2015/16 ein von Studenten erstelltes Skript zur Vorlesung Lineare Algebra & Geometrie 1/Jeromin an der TU Wien entstehen.
+# LinAlg2JerominSkript
+Hier soll im Verlauf des SS2016 ein von Studenten erstelltes Skript zur Vorlesung Lineare Algebra & Geometrie 2/Jeromin an der TU Wien entstehen.
 
 Das Skriptum deckt den Vorlesungsstoff nicht verbindlich vollständig ab!
 
@@ -17,3 +17,4 @@ Grundsätzliche Formatierungsrichtlinien:
 	- VO ... neue Vorlesung
 	- ST ... Strukturänderung
 	- FO ... Formatierung
+- Grafiken bitte in den eigenen Ordner auslagern und sinnvoll benennen.
