@@ -152,12 +152,16 @@
         \[b\notin [S] \Rightarrow \emptyset \neq V\setminus [S] = [B']\setminus [S] \Rightarrow B' \not\subset [S]\]
     d.h. es existiert $b' \in B'$ mit $b' \notin [S]$. Wir zeigen, dass $B'' := S\cup \{b'\} = (B\setminus\{b\})\cup \{b'\}$ Basis ist.
     
-    $B''$ ist Erzeugendensystem: Da $b'\in [B]$ existiert $(x_j)_{j\in B}$ mit
-    \[b' = \sum_{j\in B} jx_j \text{ mit } x_b \neq 0, \text{ da } b' \notin [S].\]
-    Damit ist $b=(b'-\sum_{j\in S} jx_j)\frac{1}{x_b} \in [B''] \Rightarrow V = [B] \subset [B'' \cup \{b\}] =  [B'']$.
+    \begin{enumerate}
+	    \item $B''$ ist Erzeugendensystem:\\
+	    Da $b'\in [B]$ existiert $(x_j)_{j\in B}$ mit
+		    \[b' = \sum_{j\in B} jx_j \text{ mit } x_b \neq 0, \text{ da } b' \notin [S].\]
+	    Damit ist $b=(b'-\sum_{j\in S} jx_j)\frac{1}{x_b} \in [B''] \Rightarrow V = [B] \subset [B'' \cup \{b\}] =  [B'']$.
     
-    $B''$ ist linear unabhängig: $B''$ ist Erz. Syst. und $S\subset B'' = S \cup \{b'\}$ lin unabh., kann also (nach Basislemma) ergänzt werden zu einer Basis $\tilde{B}$ mit $S\subset \tilde{B}\subset B''$.
-    Da $[S] \neq V$ gilt $\tilde{B} \neq S$ und damit $\tilde{B} = B''$ Basis, insbesondere linear unabhängig.
+	    \item $B''$ ist linear unabhängig:\\
+		    $B''$ ist Erz. Syst. und $S\subset B'' = S \cup \{b'\}$ lin unabh., kann also (nach Basislemma) ergänzt werden zu einer Basis $\tilde{B}$ mit $S\subset \tilde{B}\subset B''$.
+		    Da $[S] \neq V$ gilt $\tilde{B} \neq S$ und damit $\tilde{B} = B''$ Basis, insbesondere linear unabhängig.
+    \end{enumerate}
     
 \paragraph{Bemerkung}
     Hier haben wir die Familienschreibweise (mit $B$ bzw. $S$ als Indexmenge) verwendet, um Linearkombinationen darzustellen.
