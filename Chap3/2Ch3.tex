@@ -36,7 +36,7 @@
 
 %VO20-2015-12-17
 \paragraph{Bemerkung}
-	Jede Lösung $ X_l $ eines (inhomogenen) LGS lässt sich schreiben als Summe einer \emph{Partikulärlösung} $ X_0 \in K^{n\times 1},AX_0 = Y $, und einer Lösung $V$ des homogenen LGS $ AX = 0 $:
+	Jede Lösung $ X_l $ eines (inhomogenen) LGS $AX=Y$ lässt sich schreiben als Summe einer \emph{Partikulärlösung} $ X_0 \in K^{n\times 1},AX_0 = Y $, und einer Lösung $V$ des homogenen LGS $ AX = 0 $:
 		\[ \forall X_l\in L_{A,Y}\exists V\in L_{A,0}:X_l=X_0+V=\tau_V(X_0) \]
 \paragraph{Bemerkung}
 	Der Lösungsraum eines "`unendlichen linearen Gleichungssystems"' hat die gleiche Struktur eines affinen Unterraums wie im endlichen Fall, z.B.:
@@ -59,14 +59,45 @@
 		\[ (AX=Y)\sim (A'X=Y'):\Leftrightarrow L_{A,Y} = L_{A',Y'} \]
 	\end{Definition}
 	\emph{Links}multiplikation der erweiterten Koeffizientenmatrix $ (A\mid Y) $ mit den folgenden Matrizen (mit $ i\neq j $) liefert z.B. äquivalente Systeme:
-	\begin{itemize}
-		\item $ D_i = (d_{kl})\in Gl(m) $
-			\[ d_{kl} := \delta_{kl}+(d-1)\delta_{ik}\delta_{il}\quad (d\in K^x); \]
-		\item $ T_{ij} = (t_{kl})\in Gl(m), $
-			\[ t_{kl} := \delta_{kl}-(\delta_{ik}-\delta_{jk})(\delta_{il}-\delta_{jl}) \]
-		\item $ S_{ij}=(s_{kl})\in Gl(m) $
-			\[ s_{kl} := \delta_{kl}+s\delta_{ik}\delta_{jl} \quad s\in K\]
-	\end{itemize}
+
+		$ D_i = (d_{kl})\in Gl(m), \qquad
+			d_{kl} := \delta_{kl}+(d-1)\delta_{ik}\delta_{il}\quad (d\in K^x); $
+                \[
+                \bordermatrix{
+                    &   &   & i & &\cr
+                    & 1 & 0 & \dots & \dots & 0\cr 
+                    & 0 & \ddots & \ddots & 0 & \vdots \cr
+                i & \vdots & \ddots & d & \ddots & \vdots \cr
+                    & \vdots & 0  &  \ddots & \ddots & 0 \cr
+                    & 0 &  \dots & \dots  & 0 & 1 \cr
+                }
+                \]
+		$ T_{ij} = (t_{kl})\in Gl(m), \qquad
+			 t_{kl} := \delta_{kl}-(\delta_{ik}-\delta_{jk})(\delta_{il}-\delta_{jl})$
+                \[
+                \bordermatrix{
+                      &        & i      & \dots  & j     &         \cr
+                      & \ddots &        &        &       &         \cr 
+                i     &        & 0      & 1      &       &         \cr
+                \vdots&        &        & \ddots &       &         \cr
+                j     &        &        & 1      & 0     &         \cr
+                      &        &        &        &       & \ddots  \cr
+                }
+                \]
+                
+		$ S_{ij}=(s_{kl})\in Gl(m), \qquad
+			 s_{kl} := \delta_{kl}+s\delta_{ik}\delta_{jl} \quad s\in K$
+                \[
+                \bordermatrix{
+                    &   &   &  & j &\cr
+                    & 1 & 0 & \dots & \dots & 0\cr 
+                i & 0 & \ddots & \ddots & s & \vdots \cr
+                    & \vdots & \ddots & 1 & \ddots & \vdots \cr
+                    & \vdots & 0  &  \ddots & \ddots & 0 \cr
+                    & 0 &  \dots & \dots  & 0 & 1 \cr
+                }
+                \]
+	
 	Die entsprechenden Operationen auf dem LGS werden als \emph{elementare Zeilenoperationen/-umformungen} bezeichnet (elZumf) bezeichnet:
 	\begin{itemize}
 		\item $ (A\mid Y) \to D_i (A\mid Y) $, Multiplikation der $ i $-ten Gleichung mit $ d\neq 0 $;
@@ -79,20 +110,30 @@
 	
 	\begin{Definition}[Zeilenstufenform]
 	Mit Hilfe der elementaren Zeilenumformungen kann man das LGS auf Zeilenstufenform bringen:
-		\[ \begin{pmatrix}
-			1 & \dots & \dots &\dots & y'_1\\
-			0 & 1 & \dots &\dots & y'_2\\
-			\vdots & & & &\vdots \\
-			0 & 0 & 1 &\dots & y'_r\\
-			  &   & \dots  &   0 & y'_{r+1}\\
-			\vdots & & & & \vdots \\
-			  &   &  \dots &   0 & y'_{m}\\
-		\end{pmatrix} \]
+		\[
+		\begin{pmatrix}
+		a_{11} & \dots & a_{1n} & y_1 \\
+		a_{21} & \dots & a_{2n} & y_2 \\
+		a_{31} & \dots & a_{3n} & y_3 \\
+		\vdots &       & \vdots & \vdots \\
+		a_{m1} & \dots & a_{mn} & y_m
+		\end{pmatrix}
+		\xrightarrow{\text{elZUmf}}
+                \begin{pmatrix*}[l]
+			1 & \dots & \dots &\dots & \dots & y'_1\\
+			0 & 1 & \dots &\dots & \dots & y'_2\\
+			\vdots &\ddots & \ddots & & \dots &\vdots \\
+			0  & \dots  &  0 & 1 & \dots &y'_r\\
+			 0  & \dots  & \dots    & 0 & 0 & y'_{r+1}\\
+			\vdots & & & & \vdots & \vdots \\
+			 0 & \dots & \dots   & \dots &  0 & y'_{m}\\
+		\end{pmatrix*} \]
 	Ein System in Zeilenstufenform kann dann einfach gelöst werden -- oder auch nicht, falls eine Gleichung $ 0 = y' \neq 0 $ auftaucht.
 	\end{Definition}
 \paragraph{Beispiel}
 	Wir betrachten das LGS $ AX=Y $ mit 
-	\[	A = \begin{pmatrix}
+	\[
+            A = \begin{pmatrix}
 		0 & 3 & 6\\
 		1 & 4 & 7\\
 		2 & 5 & 8
@@ -102,37 +143,38 @@
 		y_1 \\ y_2 \\ y_3
 		\end{pmatrix}. \]
 	Elementare Zeilenumformungen liefern dann:
-	\begin{gather*}
+	\begin{align*}
 	\begin{pmatrix}
 		0 & 3 & 6 & y_1\\
 		1 & 4 & 7 & y_2\\
 		2 & 5 & 8 & y_3
 	\end{pmatrix}\quad
 	\overset{T_{12}}{\to}\quad
-	\begin{pmatrix}	
+	&\begin{pmatrix}	
 		1 & 4 & 7 & y_2\\
 		0 & 3 & 6 & y_1\\
 		2 & 5 & 8 & y_3
-	\end{pmatrix}\quad
+	\end{pmatrix}
+	\\
 	\overset{S_{31}(-2)}{\to}\quad
-	\begin{pmatrix}	
+	&\begin{pmatrix}	
 		1 & 4 & 7 & y_2\\
 		0 & 3 & 6 & y_1\\
 		0 & -3 & -6 & y_3-2y_2
 	\end{pmatrix}\\
-	\overset{S_{32}(a)}{\to}\quad
-	\begin{pmatrix}	
+	\overset{S_{32}(1)}{\to}\quad
+	&\begin{pmatrix}	
 		1 & 4 & 7 & y_2\\
 		0 & 3 & 6 & y_1\\
 		0 & 0 & 0 & y_3-2y_2+y_1
-	\end{pmatrix}\quad
+	\end{pmatrix}\\
 	\overset{D_2(\frac{1}{3})}{\to}\quad
-	\begin{pmatrix}	
+	&\begin{pmatrix}	
 		1 & 4 & 7 & y_2\\
 		0 & 1 & 2 & y_1 \frac{1}{3}\\
 		0 & 0 & 0 & y_3-2y_2
 	\end{pmatrix}
-	 \end{gather*}
+	 \end{align*}
 	 d.h. ein äquivalentes LGS $ A'X=Y' $ ist gefunden mit
 	 	\[ A' = 
 	 	\begin{pmatrix}	
@@ -146,11 +188,11 @@
 	 	\end{pmatrix}.\]
 	 Das LGS $ AX=Y $ ist also genau dann lösbar, wenn $ y_1-2y_2+y_3 = 0 $; in diesem Falle ist dann
 	 	\[ L_{A,Y} = \{X =
-	 		\begin{pmatrix} y_2-7t-4(-2t+y_1\frac{1}{3})\\-2t+y_1\frac{1}{3}\\t\end{pmatrix}
-	 	\mid t\in \mathbb{R}\}
+	 		\begin{pmatrix} y_2-7t-4(-2t+\frac{1}{3}y_1)\\-2t+\frac{1}{3}y_1\\t\end{pmatrix}
+	 	, t\in \mathbb{R}\}
 	 	= \{X =
-	 		\begin{pmatrix} t-\frac{4}{3}y_1+y_2\\-2t+y_1\frac{1}{3}\\t\end{pmatrix}
-	 	\mid t\in \mathbb{R}\} \]
+	 		\begin{pmatrix} t-\frac{4}{3}y_1+y_2\\-2t+\frac{1}{3}y_1\\t\end{pmatrix}
+	 	, t\in \mathbb{R}\} \]
 \paragraph{Historische Bemerkung}
 	Das Gaußsche Eliminationsverfahren ist schon seit ca. 2000 Jahren bekannt, also schon lange vor Gauß (1777-1855) entwickelt worden.
 	

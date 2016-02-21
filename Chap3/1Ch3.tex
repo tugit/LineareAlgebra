@@ -85,22 +85,21 @@
 	\end{Definition}
 \paragraph{Bemerkung}
 	Das Element $ z_{ik} $ in der $ i $-ten Zeile und $ k $-ten Spalte von $ Z = XY $ wird also aus der $ i $-ten Zeile von $ X $ und der $k$-ten Spalte von $ Y $ berechnet.
-	% TODO: Beschriftung
 	\begin{align*}
-	    i\rightarrow
-            \left(\begin{array}{cccc}
-                &&&\\ 
-                \hline
-                &&&\\
+            \left(\begin{array}{ccc}
+                &&\\ 
+                x_{i1} & \dots & x_{in} \\
+                &&\\
             \end{array}\right)
             \cdot
             \left(\begin{array}{ccc}
-                &\vline &\\
-                &\vline &\\
+                &y_{1k} &\\
+                &\vdots &\\
+                &y_{nk} &\\
             \end{array}\right)
             =
              \left(\begin{array}{ccc}
-                & .&\\
+                & z_{ik}&\\
                 & &\\
             \end{array}\right)
 	\end{align*}
@@ -207,7 +206,7 @@
 	\end{Definition}
 \subsection{Bemerkung \& Definition}
 	Jedes $ X\in K^{m\times n} $ liefert (eindeutig) $ f_X\in \hom(K^n,K^m) $ nach Fortsetzungssatz via
-		\[ f_X:K^n\to K^m, f_X(e_j) = \sum_{i=1}^{m} e'_ix_{ij} \text{ für } j=1,\dots,n. \]
+		\[ f_X:K^n\to K^m,\ f_X(e_j) = \sum_{i=1}^{m} e'_ix_{ij} \text{ für } j=1,\dots,n. \]
 	Bezüglich der Standardbasen $ E = (e_1,\dots,e_n) $ von $ K^n $ und $ E'=(e'_1,\dots,e'_m) $ von $ K^m $ ist dann
 		\[ \xi_E^{E'}(f_X) = X. \]
 

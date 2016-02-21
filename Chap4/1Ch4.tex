@@ -4,13 +4,11 @@
 	Algebraisch: Dieses Volumen kann dann benutzt werden, um zu testen, wann ein Spat/Pa"-ral"-lelotop "`zusammenklappt"'.
 \section{Determinantenformen}
 	Idee: Für den Flächeninhalt $ F(v,w) $ eines von zwei Vektoren $ v,w\in V $ aufgespannten Parallelogramms gilt
-	\begin{gather*}
-		F{(vx,w)} = F{(v,w)}\cdot x\\
-		F(v+v',w) = F(v,w)+F(v',w)
-	\end{gather*}
-	und entsprechend für das zweite Argument; außerdem verschwindet der Flächeninhalt, wenn das Parallelogramm "`zusammenklappt"', also insbesondere gilt
-		\[ w=v\Rightarrow F(v,w)=0 \]
-	Die folgende Definition verallgemeinert diese Eigenschaften:
+	\begin{align*}
+		F{(vx,w)} &= F{(v,w)}\cdot x\\
+		F(v+v',w) &= F(v,w)+F(v',w)
+	\end{align*}
+	und entsprechend für das zweite Argument.
 
 \definecolor{ttttff}{rgb}{0.2,0.2,1}
 \definecolor{ttfftt}{rgb}{0.2,1,0.2}
@@ -120,6 +118,11 @@
 \end{figure}
 %-------------------End Addition mit einem Vektor ----------------
 
+	
+Außerdem verschwindet der Flächeninhalt, wenn das Parallelogramm "`zusammenklappt"', also insbesondere gilt
+	\[ w=v\Rightarrow F(v,w)=0 \]
+Die folgende Definition verallgemeinert diese Eigenschaften:
+
 \subsection{Definition}
 	\begin{Definition}[Linearform/Determinantenform]
 	Sei $ V $ ein $ K $-VR. Eine Abbildung $ \omega:V^m\to K $ heißt
@@ -130,7 +133,7 @@
 		\item \emph{alternierend}, falls $ \omega(v_1,\dots,v_m)=0 $ wann immer zwei Vektoren gleich sind, d.h.
 			\[ v_i = v_j \text{ für } i\neq j \Rightarrow \omega(v_1,\dots, v_m) = 0. \] 
 		\end{itemize}
-	Die Menge der alternierenden $ m $-Formen wird mit $ \Lambda^mV^* $ bezeichnet. Ist $ \dim V = n $, so heißt ein $ \omega\in \Lambda^nV^* $ auch Determinantenform.
+	Die Menge der alternierenden $ m $-Formen wird mit $ \Lambda^mV^* $ bezeichnet. Ist $ \dim V = n $, so heißt ein $ \omega\in \Lambda^nV^* $ auch \emph{Determinantenform}.
 	\end{Definition}
 
 \paragraph{Beispiel}
@@ -142,8 +145,8 @@
 		Für eine alternierende $ m $-Form $ \omega \in \Lambda^mV^* $ und $ i\neq j $ gilt:
 		\begin{enumerate}[(i)]
 			\item $ \omega(\dots,v_i,\dots,v_j,\dots) = -\omega (\dots,v_j,\dots,v_i,\dots)$;
-			\item $ \omega(\dots,v_i,\dots,v_is+v_j,\dots) = \omega(\dots,v_i,\dots,v_j,\dots) $ für $ s\in K $;
-			\item und $ \omega(v_1,\dots,v_m)=0 $, falls $ (v_i)_{i\in \{1,\dots,m\}} $ linear abhängig ist.
+			\item $ \omega(\dots,v_i,\dots,v_is+v_j,\dots) = \omega(\dots,v_i,\dots,v_j,\dots) $ für $ s\in K $ \footnote{Geometrisch entspricht das einer Scherung!};
+			\item $ \omega(v_1,\dots,v_m)=0 $, falls $ (v_i)_{i\in \{1,\dots,m\}} $ linear abhängig ist.
 		\end{enumerate}
 \paragraph{Beweis}
 	Seien $ v_1,\dots,v_m\in V $ und $ i,j\in \{1,\dots,m\} $ mit $ i\neq j $. Dann gilt:
@@ -151,20 +154,20 @@
 			0 &= \omega(\dots,v_i+v_j,\dots,v_i+v_j,\dots)\\
 			&= \omega(\dots,v_i,\dots,v_i,\dots)+\omega(\dots,v_j,\dots,v_j,\dots)+\omega(\dots,v_i,\dots,v_j,\dots)+\omega(\dots,v_j,\dots,v_i,\dots)\\
 			&= \omega(\dots,v_i,\dots,v_j,\dots)+\omega(\dots,v_j,\dots,v_i,\dots)
-		\end{align*}
-	und
-		\begin{align*}
+                \intertext{und}
 		0&=\omega(\dots,v_i,\dots,v_is,\dots)\\
 		&= \omega(\dots,v_i,\dots,v_is+v_j-v_j,\dots)\\
 		&= \omega(\dots,v_i,\dots,v_is+v_j,\dots)-\omega(\dots,v_i,\dots,v_j,\dots)
 		\end{align*}
-	Dies beweist (i) und (ii). Ist die Familie $ (v_i)_{i\in \{1,\dots,m\}} $ linear abhängig, o.B.d.A
+	Dies beweist (i) und (ii).
+	
+	Ist die Familie $ (v_i)_{i\in \{1,\dots,m\}} $ linear abhängig, o.B.d.A
 		\[ v_m = \sum_{i=1}^{m-1}v_ix_i \in [(v_i)_{i\in \{1,\dots,m-1\}}] \]
 	so gilt
-		\begin{gather*}
-		\omega(v_1,\dots,v_m)=\omega(v_1,\dots,v_{m-1},\sum_{i=1}^{m-1}v_ix_i)\\
-		= \sum_{i=1}^{m-1}\omega(v_1,\dots,v_{m-1},v_i)x_i (=0)
-		\end{gather*}
+		\begin{align*}
+		\omega(v_1,\dots,v_m) &=\omega(v_1,\dots,v_{m-1},\sum_{i=1}^{m-1}v_ix_i)\\
+                                      &= \sum_{i=1}^{m-1}\underbrace{\omega(v_1,\dots,v_{m-1},v_i)}_{0}x_i = 0 
+		\end{align*}
 	womit (iii) bewiesen ist.
 	\end{Lemma}
 \paragraph{Bemerkung}
@@ -172,24 +175,25 @@
 	Nämlich: sind $ v_1,\dots,v_m\in V $ mit $ v_i=v_j $ für $ i\neq j $, so gilt
 		\begin{align*}
 		0 &= \omega(\dots,v_i\dots,v_j,\dots)+\omega(\dots,v_j,\dots,v_i,\dots)\\
-		&= 2\omega(\dots,v_i,\dots,v_j,\dots) \Rightarrow 0 = \omega(\dots,v_i,\dots,v_j,\dots)
+		&= 2\omega(\dots,v_i,\dots,v_j,\dots) \\
+		\Rightarrow 0 &= \omega(\dots,v_i,\dots,v_j,\dots)
 		\end{align*}
 \paragraph{Buchhaltung}
 	Benutzt man (vgl. Gausssches Eliminationsverfahren) die Elementarmatrizen
 	\begin{gather*}
-		D_i = (d_{kl}) \in Gl(m); d_{kl} = \delta_{kl}+(d-1)\delta_{ik}\delta_{il}\quad (d\in K^\times);\\
-		T_{ij} = (t_{kl}) \in Gl(m); t_{kl} = \delta_{kl}-(\delta_{ik}-\delta_{jk})(\delta_{il}-\delta_{jl});\\
-		S_{ij} = (s_{kl})\in Gl(m); s_{kl}=\delta_{kl}+s\delta_{ik}\delta_{jl}\quad (s\in K)
+		D_i = (d_{kl}) \in Gl(m);\ d_{kl} = \delta_{kl}+(d-1)\delta_{ik}\delta_{il}\quad (d\in K^\times);\\
+		T_{ij} = (t_{kl}) \in Gl(m);\ t_{kl} = \delta_{kl}-(\delta_{ik}-\delta_{jk})(\delta_{il}-\delta_{jl});\\
+		S_{ij} = (s_{kl})\in Gl(m);\ s_{kl}=\delta_{kl}+s\delta_{ik}\delta_{jl}\quad (s\in K)
 	\end{gather*}
-	und beschreibt man eine Familie $ (v_i)_{i\in \{1,\dots,m\}} $ von Vektoren $ v_i\in V $ durch ein $ m $-Tupel $ A=(v_1,\dots,v_m) $ von Werten der Familie, so lassen sich die Homogenität und Eigenschaften (i) und (ii) des Lemmas einfach schreiben als
+	und beschreibt man eine Familie $ (v_i)_{i\in \{1,\dots,m\}} $ von Vektoren $ v_i\in V $ durch ein \emph{$ m $-Tupel} $ A=(v_1,\dots,v_m) $ von Werten der Familie, so lassen sich die \emph{Homogenität} und Eigenschaften (i) und (ii) des Lemmas einfach schreiben als
 		\[ \omega(AD_i) = \omega(A)d,\ \omega(AT_{ij}) = -\omega(A),\ \omega(AS_{ij}(s)) = \omega(A) \]
 \subsection{Wiederholung \& Definition}
 	Die bijektiven Abbildungen (Permutationen)
 		\[ \sigma: I\to I, i\mapsto \sigma(i),\text{ der Menge }I = \{1,\dots,m\} \]
 	bilden eine Gruppe (mit der Komposition als Verknüpfung), die Permutationsgruppe $ S_m $ der Menge $ I $.
 	\begin{Definition}[Transposition]
-	Eine Transposition $ \tau_{ij} \in S_m, i\neq j $ ist eine Permutation, die zwei Indizes vertauscht,
-		\[ \tau_{ij}:I\to I, k\mapsto \tau_{ij}(k):=
+	Eine \emph{Transposition} $ \tau_{ij} \in S_m, i\neq j $ ist eine Permutation, die zwei Indizes vertauscht,
+		\[ \tau_{ij}:I\to I,\ k\mapsto \tau_{ij}(k):=
 		\begin{cases}
 			j, &\text{falls } k=i,\\
 			i, &\text{falls } k=j,\\
@@ -218,9 +222,12 @@
 		\[ \sgn\tau_{ij} = \prod_{k<l}\frac{\tau_{ij}(k)-\tau_{ij}(l)}{k-l} = \frac{j-i}{i-j}\prod_{k\neq i,j}\frac{i-k}{j-k}\frac{j-k}{i-k} = -1 \]
 \paragraph{Beweis}
 	Seien $ \sigma,\tau\in S_m $ beliebig, dann gilt
-	\[ \sgn(\tau\circ\sigma) = \prod_{i<j}\frac{\tau(\sigma(i))-\tau(\sigma(j))}{\sigma(i)-\sigma(j)}\frac{\sigma(i)-\sigma(j)}{i-j} = \prod_{i<j}\frac{\tau(\sigma(i))-\tau(\sigma(j))}{\sigma(i)-\sigma(j)}\prod_{i<j}\frac{\sigma(i)-\sigma(j)}{i-j} \]
-	mit $ i'=\sigma(i), j'=\sigma(j) $ folgt
-	\[ \prod_{i'<j'}\frac{\tau(i')-\tau(j')}{i'-j'}\prod_{i<j}\frac{\sigma(i)-\sigma(j)}{i-j} = \sgn(\tau)\cdot \sgn(\sigma). \]
+	\begin{align*} \sgn(\tau\circ\sigma) &= \prod_{i<j}\frac{\tau(\sigma(i))-\tau(\sigma(j))}{\sigma(i)-\sigma(j)}\cdot\frac{\sigma(i)-\sigma(j)}{i-j} \\
+	&= \prod_{i<j}\frac{\tau(\sigma(i))-\tau(\sigma(j))}{\sigma(i)-\sigma(j)}\prod_{i<j}\frac{\sigma(i)-\sigma(j)}{i-j}\\
+	\intertext{Setze $i':=\sigma(i), j':=\sigma(j) $}
+	&=\prod_{i'<j'}\frac{\tau(i')-\tau(j')}{i'-j'}\prod_{i<j}\frac{\sigma(i)-\sigma(j)}{i-j}\\
+	&= \sgn(\tau)\cdot \sgn(\sigma).
+	\end{align*}
 	Da jede Permutation Komposition von Transpositionen ist, folgt daraus
 		\[ \forall \sigma \in S_m:\sgn(\sigma) = \pm 1 \]
 	und dass
@@ -231,37 +238,42 @@
 		\[ \omega(v_{\sigma(1)},\dots,v_{\sigma(m)}) =\omega(v_1,\dots,v_m)\sgn\sigma. \]
 \subsection{Leibniz-Formel}
 	\begin{Satz}[Leibniz-Formel]
-		Seien $ \omega\in \Lambda^mV^* $, $ (b_i)_{i\in \{1,\dots,m\}} $ linear unabhängig und $ (v_j)_{j\in \{1,\dots,m\}} $ eine Familie in der linearen Hülle der Familie $ [(b_i)_{i\in\{1,\dots,m\}}] \subset V$,
+		Seien $ \omega\in \Lambda^mV^* $, $ (b_i)_{i\in \{1,\dots,m\}} $ linear unabhängig und $ (v_j)_{j\in \{1,\dots,m\}} $ eine Familie in $ [(b_i)_{i\in\{1,\dots,m\}}] \subset V$,
 		\[ \forall j=1,\dots,m: v_j = \sum_{i=1}^{m}b_ix_{ij} \]
 	dann gilt
 		\[ \omega(v_1,\dots,v_m)=\omega(b_1,\dots,b_m)\sum_{\sigma\in S_m}\sgn(\sigma)x_{\sigma(1)1} \cdots x_{\sigma(m)m} \]
 	\end{Satz}
 \paragraph{Beweis}
 	Ausmultiplizieren ergibt:
-		\[ \omega(v_1,\dots,v_m)=\sum_{i_1=1}^{m}\cdots \sum_{i_m=1}^{m}\omega(b_{i_1},\dots,b_{i_m})x_{i_11}\cdots x_{i_mm} \]
-	wegen $ \omega(\dots)=0 $, wenn zwei $ b $'s gleich sind, d.h. wann immer $ \{1,\dots,m \}\ni j\mapsto i_j \in \{1,\dots,m\} $ nicht injektiv ist, also keine Permutation ist.
-		\[ = \sum_{\sigma\in S_m}\omega(b_{\sigma(1)},\dots,b_{\sigma(m)})x_{\sigma(1)1}\cdots x_{\sigma(m)m} = \sum_{\sigma\in S_m}\omega(b_1,\dots,b_m)\sgn(\sigma)x_{\sigma(1)1}\cdots x_{\sigma(m)m}\]
+		\begin{align*} \omega(v_1,\dots,v_m)&=\sum_{i_1=1}^{m}\cdots \sum_{i_m=1}^{m}\omega(b_{i_1},\dots,b_{i_m})x_{i_11}\cdots x_{i_mm}
+	\intertext{Es gilt: $ \omega(\dots)=0 $, wenn zwei $ b $'s gleich sind, d.h. wann immer $ \{1,\dots,m \}\ni j\mapsto i_j \in \{1,\dots,m\} $ nicht injektiv ist, also keine Permutation ist.}
+		 &= \sum_{\sigma\in S_m}\omega(b_{\sigma(1)},\dots,b_{\sigma(m)})x_{\sigma(1)1}\cdots x_{\sigma(m)m} \\
+		 &= \sum_{\sigma\in S_m}\omega(b_1,\dots,b_m)\sgn(\sigma)x_{\sigma(1)1}\cdots x_{\sigma(m)m}
+		 \end{align*}
 \paragraph{Beispiel}
-	Ist die Koeffizientenmatrix $ x=(x_{ij})_{i,j\in\{1,\dots,m\}} $ in der Leibniz-Formel eine obere Dreiecksmatrix, d.h.
+	Ist die \emph{Koeffizientenmatrix} $ x=(x_{ij})_{i,j\in\{1,\dots,m\}} $ in der Leibniz-Formel eine obere Dreiecksmatrix, d.h.
 		\[ X= \begin{pmatrix}
 		x_{11} & \cdots & \cdots & x_{1m}\\
 		0 & x_{22} & &\vdots\\
 		\vdots & \ddots & \ddots &\vdots\\
 		0 & \cdots & 0 & x_{mm}
 		\end{pmatrix}
-		\text{ und } \forall j=1,\dots,m :v_j=\sum_{i=1}^{j}b_ix_{ij} \]
+		\quad\text{und}\quad \forall j=1,\dots,m :v_j=\sum_{i=1}^{j}b_ix_{ij} \]
 	so gilt für jede Permutation $ \sigma\in S_m $ von $ I=\{1,\dots,m \} $
-		\[ x_{\sigma(1)1},\dots,x_{\sigma(m)m}\neq 0 \Rightarrow \forall j\in I:\sigma(j)\leq j \Rightarrow \sigma = \id_I \]
+		\begin{align*} x_{\sigma(1)1},\dots,x_{\sigma(m)m}\neq 0 &\Rightarrow \forall j\in I:\sigma(j)\leq j\\
+		&\Rightarrow \sigma = \id_I
+		\end{align*}
 	und damit 
 		\[ \omega(v_1,\dots,v_m) = \omega(b_1,\dots,b_m) x_{11}\cdots x_{mm}. \]
+
 \subsection{Buchhaltung}
 	\begin{Definition}[Determinante]
 		Mit 
-		\[ A:= (v_1,\dots,v_m)=(b_1,\dots,b_m)X = BX \]
-	und der Determinante
+		\[ A:= (v_1,\dots,v_m)=\underbrace{(b_1,\dots,b_m)}_{:=B}X = BX \]
+	und der \emph{Determinante}
 		\[ \det X := \sum_{\sigma\in S_m}\sgn(\sigma)x_{\sigma(1)1}\cdots x_{\sigma(m)m} \]
 	der Koeffizientenmatrix $ X\in K^{m\times m} $ lässt sich die Leibniz-Formel auch kürzer schreiben als
-		\[ \omega(A) = \omega(B)\det X. \]
+		\[ \omega(A) = \omega(B)\cdot\det X. \]
 	\end{Definition}
 	Für $ m=2 $ und $ m=3 $ lässt sich $ \det X $ einfach berechnen:
 		\begin{itemize}
@@ -271,7 +283,7 @@
 					\end{pmatrix}
 					= x_{11}x_{22}-x_{21}x_{12}
 				\]
-			\item für $ m=3 $ mit Hilfe der Regel von Sarrus (zuerst zyklische (gerade) Permutationen, dann mit einem Fixpunkt, also Transpositionen)
+			\item für $ m=3 $ mit Hilfe der \emph{Regel von Sarrus} (zuerst zyklische (gerade) Permutationen, dann mit einem Fixpunkt, also Transpositionen)
 				\[ \det \begin{pmatrix}
 					x_{11} & x_{12} & x_{13}\\
 					x_{21} & x_{22} & x_{23}\\
@@ -289,41 +301,53 @@
 	Für $ m>3 $ liefert der Laplacesche Entwicklungssatz eine Methode, die Terme (Permutationen) zu sortieren: Für fest gewähltes $ j\in \{1,\dots, m \} $ gilt
 		\[ \det X = \sum_{i=1}^{m}(-1)^{i+j}x_{ij}\det X_{ij} \]
 	mit
-		\[ X_{ij} = (x_{kl})_{k\neq i, l\neq j} = 
+		\[ X_{ij} = (x_{kl})_{\substack{k\neq i\\ l\neq j}} = 
+		% TODO: die i-te Zeile und j-te Spalte gehören durchgestrichen!
 		\begin{pmatrix}
 			x_{11} & \cdots & x_{1(j-1)} & x_{1j} & x_{1(j+1)} & \cdots & x_{1m} \\ 
-			\vdots & \ddots &  	&  	&  	&  	&  \\ 
-			x_{(i-1)1} 	&  	&  	&  	&  	&  	& x_{(i-1)m} \\ 
-			x_{i1} 	&	&  	& x_{ij} &  &  	& x_{im} \\ 
-			x_{(i+1)1} &  &  &  &  &  & x_{(i+1)m} \\ 
-			\vdots &  &  &  &  &  &  \\ 
+			\vdots &        &  	&  \vdots	&  	&  	& \vdots \\ 
+			x_{(i-1)1} 	&  	&  	& \vdots 	&  	&  	& x_{(i-1)m} \\ 
+			x_{i1} 	& \dots	& \dots & x_{ij} & \dots & \dots 	& x_{im} \\ 
+			x_{(i+1)1} &  &  & \vdots  &  &  & x_{(i+1)m} \\ 
+			\vdots &  &  & \vdots &  &  &\vdots  \\ 
 			x_{m1} &  &  & x_{mj} &  &  & x_{mm}
 			\end{pmatrix}  \]
 	Nämlich: Ist o.B.d.A. $ v_m=b_i $ in der Leibniz-Formel, also $ x_{km}=\delta_{ik} $, so erhält man
-		\[ \det X = \sum_{\sigma\in S_m}\sgn(\sigma)\prod_{j=1}^{m}x_{\sigma(j)j}=\sum_{\sigma\in S_m}\sgn(\sigma)\left(\prod_{j=1}^{m-1}x_{\sigma(j)j}\right)x_{\sigma(m)m} \]
-	wobei $ x_{\sigma(m)m} = 0 $ für $ \sigma(m)\neq i $ und $ =1 $ für $ \sigma(m) = i $,
-		\[ = \sum_{\sigma\in S_m, \sigma(m)=i}\sgn(\sigma)\prod_{j=1}^{m-1}x_{\sigma(j)j} = \sum_{\sigma\in S_{m-1}}(-1)^{m-i}\sgn(\sigma')\prod_{j=1}^{m-1}x_{\sigma'(j)j} = (-1)^{m-i}\det X_{im}. \]
-	Im letzten Schritt werden die Transpositionen berücksichtigt die notwendig sind, um die nun "`gelöschte"' Zeile ans Ende zu verschieben. Ausmultiplizieren des o.B.d.A. $ m $-ten Eintrags in einer alternierenden $ m $-Form $ \omega\in \Lambda^mV^* $ liefert also 
-		\[ \omega(v_1,\dots,v_m) = \sum_{i=1}^{m}\omega(v_1,\dots,v_{m-1},b_i)x_{im} = \omega(b_1,\dots,b_m)\sum_{i=1}^{m}(-1)^{m-1}x_{im}\det X_{im} \]
+		\begin{align*} 
+		\det X &= \sum_{\sigma\in S_m}\sgn(\sigma)\prod_{j=1}^{m}x_{\sigma(j)j}\\
+                       &=\sum_{\sigma\in S_m}\sgn(\sigma)\Big(\prod_{j=1}^{m-1}x_{\sigma(j)j}\Big)x_{\sigma(m)m}
+	\intertext{nach Voraussetzung gilt: $ x_{\sigma(m)m} = 0 $ für $ \sigma(m)\neq i $ und $x_{\sigma(m)m} =1 $ für $ \sigma(m) = i $,}
+		 &= \sum_{\substack{\sigma\in S_m\\ \sigma(m)=i}}\sgn(\sigma)\prod_{j=1}^{m-1}x_{\sigma(j)j} \\
+		 &= \sum_{\sigma\in S_{m-1}}(-1)^{m-i}\sgn(\sigma')\prod_{j=1}^{m-1}x_{\sigma'(j)j} \\
+		 &= (-1)^{m-i}\det X_{im}.
+                \end{align*}
+	Im vorletzten Schritt werden die Transpositionen berücksichtigt die notwendig sind, um die nun "`gestrichene"' $i$-te Zeile ans Ende zu verschieben. 
+	
+	Ausmultiplizieren des o.B.d.A. $ m $-ten Eintrags in einer alternierenden $ m $-Form $ \omega\in \Lambda^mV^* $ liefert also 
+		\begin{align*} 
+		\omega(v_1,\dots,v_m) &= \sum_{i=1}^{m}\omega(v_1,\dots,v_{m-1},b_i)x_{im}\\
+		&= \omega(b_1,\dots,b_m)\sum_{i=1}^{m}(-1)^{m-1}x_{im}\det X_{im}
+		\end{align*}
 	und damit die Behauptung, da $ \omega(b_1,\dots,b_m)\neq 0 $ angenommen werden kann (siehe unten).
+	
 	Da wegen $ \sgn(\sigma^{-1})=(\sgn(\sigma))^{-1} = \sgn(\sigma) $
-		\begin{gather*}
+		\begin{align*}
 		\sum_{\sigma\in S_m}\sgn(\sigma)\prod_{j=1}^{m}x_{j\sigma(j)} =
-		\sum_{\sigma\in S_m} \sgn(\sigma^{-1})\prod_{j=1}^{m}x_{\sigma^{-1}(j)j} =\\
-		\sum_{\sigma^{-1}\in S_m} \sgn(\sigma^{-1})\prod_{j=1}^{m}x_{\sigma(j)j} =
-		\sum_{\sigma\in S_m} \sgn(\sigma^{-1})\prod_{j=1}^{m}x_{\sigma(j)j}
-		\end{gather*}
+		&=\sum_{\sigma\in S_m} \sgn(\sigma^{-1})\prod_{j=1}^{m}x_{\sigma^{-1}(j)j} \\
+		&=\sum_{\sigma^{-1}\in S_m} \sgn(\sigma^{-1})\prod_{j=1}^{m}x_{\sigma(j)j} \\
+		&=\sum_{\sigma\in S_m} \sgn(\sigma)\prod_{j=1}^{m}x_{\sigma(j)j}
+		\end{align*}
 	\begin{Definition}[Transponierte Matrix]
-		gleicht die Determinante einer Matrix $ X $ der ihrer Transponierten:
-		\[ \det X^t = \det X \text{ mit } X^t := (x_{ji})_{i,j\in \{i,\dots, m \}} \]
+		gleicht die Determinante einer Matrix $ X $ der ihrer \emph{Transponierten}:
+		\[ \det X^t = \det X \quad\text{mit}\quad X^t := (x_{ji})_{i,j\in \{i,\dots, m \}} \]
 	\end{Definition}
 	Damit gilt der Laplacesche Entwicklungssatz auch für die Entwicklung nach einer Zeile von $ X $, anstelle nach einer Spalte, wie oben.
 	
 	Eine andere Möglichkeit zur Bestimmung von $ \det X $ liefert das Gausssche Eliminationsverfahren (hier mit elementaren Spaltenumformungen; es wird von rechts multipliziert), da (vgl. oben)
 		\begin{align*}
-		\det XD_i &= d\cdot \det X. (\Leftrightarrow \det D_iX^t = d\cdot \det X^t)\\
-		\det XT_{ij} &= -\det X, (\Leftrightarrow\dots)\\
-		\det XS_{ij} &= \det X.
+		\det XD_i &= d\cdot \det X \Leftrightarrow \det D_iX^t = d\cdot \det X^t\\
+		\det XT_{ij} &= -\det X  \Leftrightarrow T_{ij}X^t = -\det X^t\\
+		\det XS_{ij} &= \det X  \Leftrightarrow S_{ij}X^t = \det X^t
 		\end{align*}
 \paragraph{Bemerkung}
 	Diese "`Rechenmethoden"' sind von historischer Bedeutung, manchmal sind sie theoretisch praktisch, aber von beschränkter praktischer Bedeutung (seit man Computer hat).
@@ -341,7 +365,7 @@
 	\end{Definition}
 \subsection{Beispiel \& Definition (Vandermonde-Determinante)}
 	\begin{Definition}[Vandermonde-Determinante]
-		Für $ x_1,\dots, x_k\in K $ hat die Vandermonde-Matrix
+		Für $ x_1,\dots, x_k\in K $ hat die \emph{Vandermonde-Matrix}
 			\[ X= (x_i^{k-j})i,j\in \{1,\dots, k \} =
 				\begin{pmatrix}
 					x_1^{k-1}&x_1^{k-2}&\cdots & x_1^0\\
@@ -349,55 +373,68 @@
 					\vdots & \vdots & \ddots&\vdots \\
 					x_k^{k-1}&x_k^{k-2}&\cdots & x_k^0
 				\end{pmatrix} \in K^{k\times k}\]
-		(Vandermonde-)Determinante:
+		die \emph{(Vandermonde-)Determinante}:
 			\[ \det X = \det (x_i^{k-j})_{i,j = 1,\dots, k} = \prod_{i<j}x_i-x_j \]
-		Denn: Für $ k=2 $ gilt
+                
+		Denn:
+		
+		Für $ k=2 $ gilt
 			\[ \det \begin{pmatrix}
 				x_1&1\\x_2&1
 			\end{pmatrix} = x_1-x_2\]
-		also ist die Induktionsvoraussetzung wahr. Für $ k>2 $ gilt
-			\[ XS_{21}(-x_k)\cdots S_{k(k-1)}(-x_k) = 
+		also ist die Induktionsvoraussetzung gegeben.
+		
+		Für $ k>2 $ gilt
+			\begin{align*}
+			&XS_{21}(-x_k)\cdots S_{k(k-1)}(-x_k) \\
+			&= 
 			\begin{pmatrix}
 				x_1^{k-1} &\cdots & x_1 & 1\\
 				\vdots & & \vdots & \vdots\\
 				x_k^{k-1} & \cdots & x_k & 1
 			\end{pmatrix}\begin{pmatrix}
-				1 & 0 & \cdots & \\
-				-x_k & 1 & 0 & \cdots\\
-				0 & \ddots & \ddots & \\
-				\vdots & & & 1
-			\end{pmatrix}\begin{pmatrix}
-			1 & 0 & \cdots & \\
-			0 & 1& \ddots1&\\
-			\vdots & 0 &1 & 0 \\
-			\cdots & & -x_k & 1			
-			\end{pmatrix}\]
-			\[ = \begin{pmatrix}
+				1 & 0 &   & \\
+				-x_k & 1 &  & \\
+				 &  & \ddots & \\
+				 & & & 1
+			\end{pmatrix}
+			\dots
+			\begin{pmatrix}
+			1 &  &   & \\
+			  & \ddots&  &\\
+			   &   &1 & 0 \\
+			    & & -x_k & 1			
+			\end{pmatrix}\\
+			&= \begin{pmatrix}
 			x_1^{k-1}-x_1^{k-2}x_k & x_1^{k-2}-x_1^{k-3}x_k & \cdots & x_1-x_k & 1 \\ 
 			\vdots & \vdots &  & \vdots & \vdots \\ 
 			x_{k-1}^{k-1}-x_{k-1}^{k-2}x_k & x_{k-1}^{k-2}-x_{k-1}^{k-3}x_k & \cdots & x_{k-1}-x_k & 1 \\ 
 			0 & 0 & \cdots & 0 & 1
-			\end{pmatrix}  \]
-			\[ = \begin{pmatrix}
+			\end{pmatrix}\\ 
+			&= \begin{pmatrix}
 			(x_1-x_k)x_1^{k-2} & (x_1-x_k)x_1^{k-3} & \cdots & x_1-x_k & 1 \\ 
 			\vdots & \vdots &  & \vdots & \vdots \\ 
 			(x_{k-1}-x_k)x_{k-1}^{k-2}& (x_{k-1}-x_k)x_{k-1}^{k-3} & \cdots & x_{k-1}-x_k & 1 \\ 
 			0 & 0 & \cdots & 0 & 1
-			\end{pmatrix}  \]
+			\end{pmatrix}
+			\end{align*}
 		also ist (Laplacescher Entwicklungssatz nach letzter Zeile):
-			\[ \det X = 0+(-1)^{k+k}\det 
+			\begin{align*}
+                        \det X &= 0+(-1)^{k+k}\det 
 				\begin{pmatrix}
 					(x_1-x_k)x_1^{k-2} & (x_1-x_k)x_1^{k-3} & \cdots & x_1-x_k \\ 
 					\vdots & \vdots &  & \vdots  \\ 
 					(x_{k-1}-x_k)x_{k-1}^{k-2}& (x_{k-1}-x_k)x_{k-1}^{k-3} & \cdots & x_{k-1}-x_k  \\ 
-				\end{pmatrix} \]
-			\[ = 1\cdot(x_1-x_k)\cdots (x_{k-1}-x_k)\det
+				\end{pmatrix}\\
+			  &= 1\cdot(x_1-x_k)\cdots (x_{k-1}-x_k)\det
 				\begin{pmatrix}
 				x_1^{k-2} & \cdots & 1 \\ 
 				\vdots &  & \vdots \\ 
 				x_{k-1}^{k-2} & \cdots & 1
-				\end{pmatrix} = \]
-				\[ (x_1-x_k)\cdots(x_{k-1}-x_k)\prod_{i<j,\ i,j\in\{1,\dots, k-1 \}}(x_i-x_j) = \prod_{i<j,\ i,j\in \{1,\dots,k\}}(x_i-x_j) \]
+				\end{pmatrix}\\
+                                &=(x_1-x_k)\cdots(x_{k-1}-x_k)\prod_{\substack{i<j\\ i,j\in\{1,\dots, k-1 \}}}(x_i-x_j)\\
+                                &= \prod_{\substack{i<j\\ i,j\in \{1,\dots,k\}}}(x_i-x_j)
+                        \end{align*}
 		Also folgt die Behauptung mit Induktion.
 	\end{Definition}
 \subsection{Fortsetzungssatz für Determinantenformen}
@@ -409,7 +446,7 @@
 	Eindeutigkeit folgt aus der Leibniz-Formel und der Tatsache, dass $ V=[(b_i)_{i\in\{1,\dots,n\}}] $.
 	
 	Existenz: Gegeben sind eine Basis $ (b_i)_{i\in \{1,\dots, n\}} $ von $ V $ und $ d\in K $. Wir definieren $ \omega $ durch die Leibniz-Formel:
-		\[ \omega: V\times \overset{n}{\dots} \times V \to K, \omega(v_1,\dots,v_n):=d\cdot\det X \]
+		\[ \omega: \overbrace{V\times \dots \times V}^{n\text{-mal}} \to K,\ \omega(v_1,\dots,v_n):=d\cdot\det X \]
 	wobei $ X\in K^{n\times n} $ die Koeffizientenmatrix für die Basisdarstellung der $ (v_i) $ ist,
 		\[ (v_1,\dots,v_n)=(b_1,\dots,b_n)\cdot X. \]
 	Dann gilt:
@@ -423,8 +460,8 @@
 			ist aber $ v_i = v_j $ für ein Paar $ (i,j) $ mit $ i\neq j $, so gilt:
 				\[ \sgn(\sigma)x_{\sigma(1)1}\cdots x_{\sigma(n)n} + \sgn(\tau_{ij}\circ \sigma) x_{(\tau_{ij}\circ \sigma)(1)1}\cdots x_{(\tau_{ij}\circ \sigma)(n)n} = 0,  \]
 			denn
-				\[ \sgn(\tau_{ij}\circ \sigma) = -\sgn(\sigma),\text{ und } x_{(\tau_{ij}\circ\sigma)(1)1}\cdots x_{(\tau_{ij}\circ\sigma)(n)n} = x_{\sigma(1)1}\cdots x_{\sigma(n)n} \]
-			da $ v_i = v_j $
+				\[ \sgn(\tau_{ij}\circ \sigma) = -\sgn(\sigma) \quad\text{und}\quad x_{(\tau_{ij}\circ\sigma)(1)1}\cdots x_{(\tau_{ij}\circ\sigma)(n)n} = x_{\sigma(1)1}\cdots x_{\sigma(n)n} \]
+			da $ v_i = v_j $.
 			
 			Damit folgt:
 				\[ \sum_{\sigma\in S_n}\sgn(\sigma)x_{\sigma(1)1}\cdots x_{\sigma(n)n}=0, \]
@@ -437,18 +474,14 @@
 \subsection{Korollar}
 	Ist $ \omega(v_1,\dots,v_n)=0 $ für eine Determinantenform $ \omega\in\Lambda^nV^*\setminus\{0\}, $ so ist die Familie $ (v_i)_{i\in \{1,\dots, n\}} $ linear abhängig.
 \paragraph{Beweis}
-	Ist $ \omega\neq 0 $, so existiert eine Basis $ (b_i)_{i=1,\dots,n} $ von $ V $ mit $ \omega(b_1,\dots,b_n)=d\neq 0 $. Mit
-		\[ (v_1,\dots,v_n)=(b_1,\dots,b_n)\cdot X \]
-	folgt nun (Leibniz-Formel)
-		\[ \omega(v_1,\dots,v_n)=\omega(b_1,\dots,b_n)\det X = d\cdot \det X \]
+	Ist $ \omega\neq 0 $, so existiert eine Basis $ (b_i)_{i=1,\dots,n} $ von $ V $ mit $ \omega(b_1,\dots,b_n)=d\neq 0 $. 
 	Annahme: $ (v_i)_{i\in \{1,\dots,n\}} $ ist linear unabhängig, d.h. $ (v_i) $ ist Basis und damit existiert $ Y\in K^{n\times n} $ mit
 		\[ (b_1,\dots,b_n)=(v_1,\dots,v_n)Y, \]
 	nach Leibniz-Formel ist damit
-		\[ 0\neq d = \omega(b_1,\dots,b_n)=\omega(v_1,\dots,v_n)\cdot \det Y. \]
+		\[ 0\neq \omega(b_1,\dots,b_n)=\omega(v_1,\dots,v_n)\cdot \det Y. \]
 	Damit folgt
 		\[ \omega(v_1,\dots,v_n)\neq 0 \text{ (und }\det Y \neq 0) \]
-\paragraph{Verkürzung des Beweises}
-	Der Beweis ist zu verkürzen, indem man für die linear unabhängige Familie gleich die Basis $ (b_i) $ verwendet.
+
 \paragraph{Bemerkung}
 	Ist also $ \dim V=n $ und sind $ \omega\in \Lambda^nV^* $ und $ (b_i)_{i\in \{1,\dots,n\}} $ eine Familie in $ V $, so folgt aus zwei der folgenden Aussagen die dritte:
 		\begin{enumerate}[(i)]
@@ -458,6 +491,6 @@
 		\end{enumerate}
 \paragraph{Bemerkung}
 	Weiter folgt damit: Sind $ f\in \End(V),\ (b_i)_{i\in \{1,\dots,n\}} $ Basis von $ V $ und $ \omega\in \Lambda^nV^*\setminus\{0\}, $ so gilt:
-		\[ f\in Gl(V)\Leftrightarrow \omega(f(b_1),\dots,f(b_n))\neq 0 \]
+		\[ f\in \mathrm{Gl}(V)\Leftrightarrow \omega(f(b_1),\dots,f(b_n))\neq 0 \]
 	bzw.
-		\[ Gl(V)=\{f\in \End(V)\mid \omega(f(b_1),\dots,f(b_n))\neq 0\} \]
+		\[ \mathrm{Gl}(V)=\{f\in \End(V)\mid \omega(f(b_1),\dots,f(b_n))\neq 0\} \]

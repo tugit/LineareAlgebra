@@ -1,8 +1,8 @@
 \section{Äquiaffine Geometrie}
 \subsection{Definition}
 	\begin{Definition}[Parallelotop im affinen Raum]
-		Seien $ (A,V,\tau) $ ein $ n $-dimensionaler affiner Raum und $ p_0\in A $; das von einer Familie $ (v_j)_{j\in \{1,\dots,n\}} $ in $ V $ aufgespannte \emph{Parallelotop} oder \emph{Spat} ist die (über dem abstrakten Würfel $ \mathbb{Z}_2^n $ indizierte) Familie
-			\[ p: \mathbb{Z}_2^n\to A, \epsilon \mapsto p_\epsilon := p_0 +\sum_{j=1}^{n}v_j\epsilon_j. \]
+		Seien $ (A,V,\tau) $ ein $ n $-dimensionaler affiner Raum und $ p_0\in A $; das von einer Familie $ (v_j)_{j\in \{1,\dots,n\}} $ in $ V $ aufgespannte \emph{Parallelotop} oder \emph{Spat} ist die (über dem \emph{abstrakten Würfel} $ \mathbb{Z}_2^n $ indizierte) Familie
+			\[ p: \mathbb{Z}_2^n\to A,\ \epsilon \mapsto p_\epsilon := p_0 +\sum_{j=1}^{n}v_j\epsilon_j. \]
 		Ist $ \omega\in\Lambda^nV^*\setminus\{0\} $, so ist das zugehörige \emph{(Spat-)Volumen} von $ (p_\epsilon)_{\epsilon \in \mathbb{Z}_2^n} $
 			\[ \vol(p):= \omega(v_1,\dots,v_n). \]
 	\end{Definition}
@@ -34,23 +34,23 @@
 %%%%% ENDE Grafik Parallelogramm %%%%%
 \subsection{Bemerkung \& Definition}
 	\begin{Definition}[Parallelogramm/Flächeninhalt]
-		Im Falle $ n=2 $ heißt ein Parallelotop $ p $ auch \emph{Parallelogramm}, sein Spatvolumen auch sein \emph{Flächeninhalt}. Der Flächeninhalt ist orientiert:
+		Im Falle $ n=2 $ heißt ein Parallelotop $ p $ auch \emph{Parallelogramm}, sein Spatvolumen auch sein \emph{Flächeninhalt}. Der Flächeninhalt ist \emph{orientiert}:
 		Mit
 			\[ \epsilon = (\epsilon_j)_{j\in \{1,2\}}\cong (\epsilon_1,\epsilon_2) \]
 		und
 			\[ v_1 = p_{(1,0)}-p_{(0,0)}\text{ und } v_2 = p_{(0,1)}-p_{(0,0)} \]
 		ändert der Flächeninhalt das Vorzeichen, wenn man die Kantenvektoren vertauscht:
 			\[ \vol(p) = \omega(v_1,v_2) = -\omega(v_2,v_1) = \vol(p') \]
-		mit $ p'_\epsilon = p_\epsilon \circ \tau_{12} $.
+		mit $ p'_\epsilon = p_{\epsilon \circ \tau_{12}} $.
 	\end{Definition}
 \paragraph{Bemerkung}
 	Für ein Dreieck $ \{a,b,c\} $ wählt man eine Orientierung, e.g. $ (a,b,c) $, und setzt den Flächeninhalt
 		\[ F(a,b,c) := \omega(b-a,c-a)\cdot\frac{1}{2} \]
 	d.h. als halben Flächeninhalt des Parallelogramms
-		\[ p(0,0) = 0, p(1,0) = b, p(0,1) = c \text{ und } p(1,1) = a(-1)+b\cdot 1+c\cdot 1. \]
+		\[ p_{(0,0)} := a,\ p_{(1,0)} := b,\ p_{(0,1)} := c \text{ und } p_{(1,1)} = a(-1)+b\cdot 1+c\cdot 1. \]
 	Dieser Flächeninhalt ist wohldefiniert, d.h. er hängt nur vom Dreieck und der gewählten Orientierung ab -- insbesondere ist für Permutationen $ \sigma $ von $ \{a,b,c\} $ mit $ \sgn(\sigma) = +1 $ der Flächeninhalt gleich dem ursprünglichen. (Siehe Aufgabe)
 \paragraph{Bemerkung}
-	Ist $ A $ eine affine Ebene mit Flächenmessung $ \vol $ und $ \{a,b,c\} $ ein nicht-de"-ge"-nerier"-tes Dreieck, also ein baryzentrisches Bezugssystem, so gilt (Cramersche Regel)
+	Ist $ A $ eine affine Ebene mit Flächenmessung $ \vol $ und $ \{a,b,c\} $ ein nicht-de"-ge"-nerier"-tes Dreieck, also ein baryzentrisches Bezugssystem, so gilt (vgl. Cramersche Regel)
 		\[ \forall s\in A: s=a\cdot \frac{F(s,b,c)}{F(a,b,c)}+ b\cdot\frac{F(a,s,c)}{F(a,b,c)} +c\cdot\frac{F(a,b,s)}{F(a,b,c)}\]
 	Diese Flächenformel für die baryzentrischen Koordinaten eines Punktes $ s $ ist unabhängig von der (gewählten) Flächenmessung, das sich verschiedene Flächenmessungen nur um einen Faktor unterscheiden (der unabhängig vom Dreieck ist): $ \dim \Lambda^2V^*=1 $
 %%% Grafik Dreieck mit Punkt s %%%%%
@@ -85,7 +85,7 @@
 \paragraph{Bemerkung}
 	Ist $ \alpha:A\to A' $ affin mit linearem Anteil $ \lambda:V \to V' $ und $ p $ ein von einer Familie $ (v_j)_{j\in\{1,\dots,n\}} $ von Vektoren aufgespanntes Parallelotop in $ A $, so ist
 	 \begin{align*}
-	 p':= \alpha\circ p:\mathbb{Z}_2^n\to A', \epsilon \mapsto p'_\epsilon &= \alpha(p_0)+\lambda(\sum_{j=1}^{n}v_j\epsilon_j)\\
+	 p':= \alpha\circ p:\mathbb{Z}_2^n\to A',\ \epsilon \mapsto p'_\epsilon &= \alpha(p_0)+\lambda(\sum_{j=1}^{n}v_j\epsilon_j)\\
 	 &= \alpha(p_0)+\sum_{j=1}^{n}\lambda(v_j)\epsilon_j
 	 \end{align*}
 	ein von der Familie $ (\lambda(v))_{j\in \{1,\dots,n\}} $ von Vektoren in $ V' $ aufgespanntes Parallelotop in $ A' $. Damit ist $ \vol'(\alpha\circ p) $ ein sinnvoller Ausdruck, also der Begriff "`volumentreu"' sinnvoll für affine Abbildungen.
@@ -108,8 +108,8 @@
 	\begin{Definition}[Determinante eines Endomorphismus]
 		Seien $ f\in\End(V) $, wobei $ \dim V=n $, und $ \omega\in \Lambda^nV^*\setminus \{0\} $. Dann heißt
 		\[ \det f:= \frac{f^*\omega}{\omega} \]
-	die Determinante von $ f $, wobei
-		\[ f^*\omega: V^n\to K, (v_1,\dots,v_n)\mapsto \omega(f(v_1),\dots,f(v_n)). \]
+	die \emph{Determinante} von $ f $, wobei
+		\[ f^*\omega: V^n\to K,\ (v_1,\dots,v_n)\mapsto \omega(f(v_1),\dots,f(v_n)). \]
 	\end{Definition}
 \paragraph{Bemerkung}
 	Offenbar ist $ f^*\omega\in \Lambda^nV^* = [\omega] $ wegen $ \dim \Lambda^nV^*=1 $, d.h.
@@ -118,7 +118,7 @@
 	
 	Alternativ: Die Abbildung
 		\[ B\mapsto  \frac{f^*\omega(B)}{\omega(B)}\in K\]
-	ist konstant $ \equiv x $, unabhängig von der Basis $ B $.
+	ist konstant ($ \equiv x $, unabhängig von der Basis $ B $).
 \paragraph{Bemerkung}
 	Da $ f^*(\omega x) = (f^*\omega)x $ für $ x\in K $, liefert jedes $ \omega \in \Lambda^nV^*\setminus\{0\} $ die gleiche Determinante $ \det f $: die Determinante bzw. Volumenverzerrung ist unabhängig von der gewählten Volumenform $ \omega\in \Lambda^nV^*\setminus \{0\} $, d.h. der "`Referenzvolumenmessung"'.
 \subsection{Determinantenmultiplikationssatz}
@@ -150,7 +150,10 @@
 \end{Definition}
 \paragraph{Beweis}
 	Für $ g\in Gl(V) $ gilt nach DMS:
-		\[ 1 = \det \id_V = \det(g^{-1}\circ g) = \det g^{-1}\cdot \det g\Rightarrow \det g^{-1} = (\det g)^{-1} \]
+        \begin{gather*}
+            1 = \det \id_V = \det(g^{-1}\circ g) = \det g^{-1}\cdot \det g \\
+		\Rightarrow \det g^{-1} = (\det g)^{-1}
+        \end{gather*}
 	damit folgt
 		\[ g\in Sl(V)\Rightarrow g^{-1} \in Sl(V), \]
 	also mit DMS
