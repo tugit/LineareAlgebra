@@ -182,12 +182,12 @@
 \subsection{Definition}
 	\begin{Definition}[Allgemeine lineare Gruppe]
 	Die Automorphismen eines VR $ V $ bilden seine \emph{allgemeine lineare Gruppe}
-		\[ Gl(V):= \{\lambda\in \End(V)\mid \lambda \text{ invertierbar}\}. \]
+		\[ \mathrm{Gl}(V):= \{\lambda\in \End(V)\mid \lambda \text{ invertierbar}\}. \]
 	\end{Definition}
 \subsection{Bemerkung \& Definition}
 	\begin{Definition}[Parallele Geraden]
 	Sind $ g_i = [a_ib_i]=a_i + [v] $ mit $ b_i = a_i + v $ für $ i = 1,2 $ zwei Geraden mit dem gleichen RVR $ [v] $, d.h. \emph{parallel}, so sind auch ihre Bilder unter einer affinen Transformation $ \alpha $ parallele Geraden,
-		\[ \alpha(g_i) = \alpha(a_i) + [\lambda(v)] \text{ mit } \lambda\in Gl(V). \]
+		\[ \alpha(g_i) = \alpha(a_i) + [\lambda(v)] \text{ mit } \lambda\in \mathrm{Gl}(V). \]
 	\end{Definition}
 	%-------------------Begin parallele Geraden ----------------  
 \begin{figure}[H]\centering
@@ -296,7 +296,7 @@
 		$ \alpha:A\to A,o+v\mapsto \alpha(o+v):= o+v\cdot c $
 		
 	eine affine Transformation, d.h.,\hfill
-		$ \lambda \in Gl(V)\Leftrightarrow c\in K^\times, $
+		$ \lambda \in \mathrm{Gl}(V)\Leftrightarrow c\in K^\times, $
 	
 	so nennt man $ \alpha $ eine \emph{Streckung} mit \emph{Zentrum} $ o\in A $. Ist $ c\neq 1 $, d.h. $ \alpha \neq \id_A $, so gilt 
 		\[ \alpha(a) = a\Leftrightarrow a = o. \]
@@ -306,7 +306,7 @@
 	\begin{Definition}[Parallelprojektion]
 	Sind $ p\in \End(V) $ eine Projektion ($ p^2 = p $) und $ o\in A $, so liefert
 		\[ \pi:A\to A,o+v\mapsto \pi(o+v):= o+p(v) \]
-	eine \emph{Parallelprojektion} von $ A $ auf dem affinen Unterraum $ o+p(V) $. Ist $ p\neq \id_V $, so ist $ p\notin Gl(V) $ und also $ \pi $ keine affine Transformation (sondern eine nicht bijektive affine Abbildung), so hat $ \pi $ nicht-triviale \emph{Fasern} 
+	eine \emph{Parallelprojektion} von $ A $ auf dem affinen Unterraum $ o+p(V) $. Ist $ p\neq \id_V $, so ist $ p\notin \mathrm{Gl}(V) $ und also $ \pi $ keine affine Transformation (sondern eine nicht bijektive affine Abbildung), so hat $ \pi $ nicht-triviale \emph{Fasern} 
 		\[ \pi^{-1}(\{a'\})\subset A \text{ für } a'\in \pi(A), \]
 	wobei $ \dim\pi^{-1}(\{a'\}) = \dfkt p \geq 1 $.
 	\end{Definition}
@@ -315,7 +315,7 @@
 	Seien $ \omega\in V^* $ und $ w\in \ker \omega $, sei $ o\in A $; die \emph{Scherung}
 		\[ \sigma:A\to A, o+v\mapsto \sigma(o+v):= o+v+w\omega(v) \]
 	ist dann eine affine Transformation, denn\hfill
-		$ \lambda = \id_V + w\cdot \omega \in Gl(V) $
+		$ \lambda = \id_V + w\cdot \omega \in \mathrm{Gl}(V) $
 		
 	mit\hfill
 		$ \lambda^{-1} = \id_v - w\cdot \omega. $

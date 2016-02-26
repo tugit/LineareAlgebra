@@ -87,17 +87,17 @@
 		(X\subset Y) \Leftrightarrow \{\forall x : (x\in X \Rightarrow x\in Y)\}
 	\end{gather*}
 
-\section*{Definition (Abbildung)}
+\subsection*{Definition (Abbildung)}
 	\begin{Definition}[Abbildung]
-		Eine Zuordnung $f: X\to Y$ zwischen zwei Mengen $X$ und $Y$ heißt eine Abbildung, falls $\forall x\in X: \exists ! y\in Y: y=f(x)$.
-
-	X heißt der Definitionsbereich der Abbildung und $f(X):=\{f(x)\mid x\in X \}\subseteq Y$ das Bild.
+		Eine Zuordnung $f: X\to Y$ zwischen zwei Mengen $X$ und $Y$ heißt eine \emph{Abbildung}, falls 
+		\[\forall x\in X: \exists ! y\in Y: y=f(x).\]
+	Dabei nennet man $X$ den \emph{Definitionsbereich} der Abbildung und $f(X):=\{f(x)\mid x\in X \}\subseteq Y$ das \emph{Bild}.
 
 	Eine Abbildung $f: X\to Y$ heißt
 	\begin{itemize}
-		\item injektiv, falls $\forall x,x'\in X:f(x) = f(x') \Rightarrow x=x'$
-		\item surjektiv, falls $\forall y\in Y:\exists x\in X: y = f(x)$
-		\item bijektiv, falls $\forall y\in Y:\exists !x\in X: y = f(x)$
+		\item \emph{injektiv}, falls $\forall x,x'\in X:f(x) = f(x') \Rightarrow x=x'$
+		\item \emph{surjektiv}, falls $\forall y\in Y:\exists x\in X: y = f(x)$
+		\item \emph{bijektiv}, falls $\forall y\in Y:\exists !x\in X: y = f(x)$
 	\end{itemize}
 	\end{Definition}
 
@@ -113,31 +113,37 @@
 	\end{itemize}
 
 \paragraph{Beispiel}
-	Die Identität $id_X :X\to X, x\mapsto id_X(x):= x$ ist eine bijektive Abbildung.
+	Die \emph{Identität} $id_X :X\to X,\ x\mapsto id_X(x):= x$ ist eine bijektive Abbildung.
 	
 \paragraph{Bemerkung}
 	Eine Abbildung ist genau dann bijektiv, wenn sie injektiv und surjektiv ist.
 	
-\section*{Definition (Komposition)}
+\subsection*{Definition (Komposition)}
 	\begin{Definition}[Komposition]
-		Sind $ f:X\to Y $ und $ g:Y\to Z$ Abbildungen, so ist ihre Komposition/Verkettung die Abbildung $ g\circ f:X\to Z, x\mapsto (g\circ f)(x):= g(f(x)) $.
+		Sind $ f:X\to Y $ und $ g:Y\to Z$ Abbildungen, so ist ihre \emph{Komposition/Verkettung} die Abbildung 
+		\[g\circ f:X\to Z,\ x\mapsto (g\circ f)(x):= g(f(x))\]
 	\end{Definition}
 	
 \paragraph{Beispiel:}
-	Seien $ X = Y = Z = \mathbb{R} $ und $ f:X\to Y, x\mapsto f(x) :=x^2 $, $ g:Y\to Z, y\mapsto g(y):=y^3 + y $, so ist die Verkettung $ g\circ f: X\to Z, x\mapsto (g\circ f)(x) = (x^2)^3+x^2 = x^6 + x^2 $.
+	Seien $ X = Y = Z = \mathbb{R} $,
+	\begin{align*}
+            f:X\to Y,\ x\mapsto f(x) &:=x^2 \\
+            g:Y\to Z,\ y\mapsto g(y)&:=y^3 + y
+	\end{align*}
+	so ist die Verkettung $ g\circ f: X\to Z, x\mapsto (g\circ f)(x) = (x^2)^3+x^2 = x^6 + x^2 $.
 
-\section*{Lemma}
+\subsection*{Lemma}
 	\begin{Lemma}[Inverse]
 		Seien $ f:X\to Y $ und $ g:Y\to X $ Abbildungen. Dann gilt:
 	\begin{enumerate}[i)]
-		\item ist $ g $ Linksinverse von $ f $, d.h. $ g\circ f = id_X $, so ist f injektiv
-		\item ist $ g $ Rechtsinverse von $ f $, d.h. $ f\circ g = id_Y$, so ist f surjektiv
-		\item ist $ g $ Links- und Rechtsinverse von $ f $, so heißt $ g =f^{-1}$ Inverse von $ f $
+		\item ist $ g $ \emph{Linksinverse} von $ f $, d.h. $ g\circ f = id_X $, so ist f injektiv
+		\item ist $ g $ \emph{Rechtsinverse} von $ f $, d.h. $ f\circ g = id_Y$, so ist f surjektiv
+		\item ist $ g $ Links- und Rechtsinverse von $ f $, so heißt $ g =f^{-1}$ \emph{Inverse} von $ f $
 	\end{enumerate}
 	\end{Lemma}
 
 \paragraph{Beispiel}
-	$ f:\mathbb{N}\to \mathbb{N}, n\mapsto f(n):= n+1 $ hat Linksinverse
+	$ f:\mathbb{N}\to \mathbb{N},\ n\mapsto f(n):= n+1 $ hat Linksinverse
 	\begin{equation*}
 		g:\mathbb{N} \to \mathbb{N}, n\mapsto g(n):=
 		\begin{cases}
@@ -156,6 +162,10 @@
 \paragraph{Beweis}
 	Zwei Aussagen sind zu beweisen:
 	\begin{enumerate}[i)]
-		\item Sei $ g $ Linksinverse von $ f $. Dann gilt für $ x,x'\in X $ mit \\$ f(x) = f(x'): x = g(f(x)) = g(f(x')) = x' $, also ist $ f $ injektiv.
-		\item Sei $g $ Rechtsinverse von $ f $ und $ y\in Y $. Setze $ x:= g(y)\in X $, dann gilt $f(x) = f(g(y)) = y$. Damit existiert zu jedem $ y\in Y $ (mindestens) ein $ x = g(y) $, sodass  $ y=f(x) $.
+		\item Sei $ g $ Linksinverse von $ f $. Dann gilt für $ x,x'\in X $ mit $ f(x) = f(x')$:
+                \[x = g(f(x)) = g(f(x')) = x'\]
+                also ist $ f $ injektiv.
+		\item Sei $g $ Rechtsinverse von $ f $ und $ y\in Y $ beliebig. Setze $ x:= g(y)\in X $, dann gilt 
+		\[f(x) = f(g(y)) = y\]
+		Damit existiert zu jedem $ y\in Y $ (mindestens) ein $ x = g(y) $, sodass  $ y=f(x) $, d.h. $f$ ist surjektiv.
 	\end{enumerate}

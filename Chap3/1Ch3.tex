@@ -60,12 +60,12 @@
 	Die komponentenweise Addition und Skalarmultiplikation sind gerade die Addition und Skalarmultiplikation von Matrizen als Abbildungen.
 	
 \paragraph{Beweis}
-	Dass $ \hom(V,W) $ und $ K^{m\times n} \ K $-VR sind, ist bekannt (vgl. Kap. 1.4 bzw. Kapt. 1.1). Die Linearität von $ \xi_B^C $ folgt direkt, da mit der zu $ C $ dualen Basis $ C^* $ von $ W^* $
+	Dass $ \hom(V,W) $ und $ K^{m\times n} \ K $-VR sind, ist bekannt (vgl. Kap. 1.4 bzw. Kap. 1.1). Die Linearität von $ \xi_B^C $ folgt direkt, da mit der zu $ C $ dualen Basis $ C^* $ von $ W^* $
 		\[ \forall_{i=1,\dots,m} \forall_{j=1,\dots,n}: x_{ij}= c_i^*(f(b_j)). \]
 	Nämlich: für $ f,g\in \hom(V,W) $ und $ x,y\in K $ ist dann
 		\begin{align*}
-			\forall_{i= 1,\dots,m} \forall_{j=1,\dots, n} :\ &c_i^*((fx+gy)(b_j))\\
-			=\ &c_i^*(f(b_j)x+g(b_j)y) = c_i^*(f(b_j))x+c_i^*(g(b_j))y.
+			\forall_{i= 1,\dots,m} \forall_{j=1,\dots, n} : c_i^*((fx+gy)(b_j)) &= c_i^*(f(b_j)x+g(b_j)y)\\
+			 &= c_i^*(f(b_j))x+c_i^*(g(b_j))y.
 		\end{align*}
 	Die Abbildung
 		\[ K^{m\times n}\ni X=(x_{ij})\mapsto \sum_{i=1}^{m}\sum_{j=1}^{n}c_ix_{ij}b_j^* = f\in \hom(V,W) \]
@@ -74,7 +74,7 @@
 	Damit folgt (vgl. Kap. 1.4): $ \dim \hom(V,W) = \dim K^{m\times n} = m\cdot n $.
 \subsection{Lemma \& Definition}
 	\begin{Lemma}[Darstellungsmatrix einer Komposition]
-	Sind $ U,V,W \ K$-VR mit Basen $ A=(a_1,\dots,a_p),B=(b_1,\dots,b_n),C=(c_1,\dots,c_m) $, so gilt für $ g\in \hom(U,V) $ und $ f\in \hom(V,W) $
+	Sind $ U,V,W \ K$-VR mit Basen $ A=(a_1,\dots,a_p),\ B=(b_1,\dots,b_n),\ C=(c_1,\dots,c_m) $, so gilt für $ g\in \hom(U,V) $ und $ f\in \hom(V,W) $
 		\[ \xi_A^C(f\circ g) = \xi_B^C(f)\cdot \xi_A^B(g), \]
 	\end{Lemma}
 	\begin{Definition}
@@ -111,7 +111,7 @@
 		\end{cases} \]
 	bezüglich $ B $ und $ C $ bzw. $ A $ und $ B $, dann gilt für $ k=1,\dots,p $
 		\[ (f\circ g)(a_k)=f\Big(\sum_{j=1}^{n}b_jy_{jk}\Big) = \sum_{j=1}^{n}f(b_j)y_{jk} = \sum_{j=1}^{n}\sum_{i=1}^{m}c_ix_{ij}y_{jk} = \sum_{i=1}^{m}c_i\Big(\sum_{j=1}^{n}x_{ij}y_{jk}\Big), \]
-	d.h. durch $ I=\{1,\dots,m\},J=\{1,\dots,n\},K=\{1,\dots,p\} $ und 
+	d.h. durch $ I=\{1,\dots,m\},\ J=\{1,\dots,n\},\ K=\{1,\dots,p\} $ und 
 		\[ \xi_A^C(f\circ g) = Z = (z_{ik})_{i\in I,k\in K} \quad\text{mit}\quad \forall i\in I\ \forall k\in K: z_{ik}= \sum_{j=1}^{n}x_{ij}y_{jk} \]
 	erhält man die Darstellungsmatrix
 		\[ \xi_A^C(f\circ g) = \xi_B^C(f)\xi_A^B(g) \]
@@ -214,18 +214,18 @@
 	Damit definiert man den Rang einer Matrix $ X\in K^{m\times n} $ als 
 		\[ \rg X:=\rg f_X \]
 	Eine Matrix $ X\in K^{n\times n} $ ist genau dann invertierbar, wenn $ \rg X = n $. Man setzt
-		\[ Gl(n):= \{X\in K^{n\times n}\mid \rg X =n\}. \]
+		\[ \mathrm{Gl}(n):= \{X\in K^{n\times n}\mid \rg X =n\}. \]
 	\end{Definition}
 \subsection{Bemerkung \& Definition}
 	Nach der Transformationsformel für Darstellungsmatrizen gilt bei Basiswechseln in $ V $ und $ W $ für $ f\in \hom(V,W) $
 		\[ \xi_{B'}^{C'}(f) = \xi_C^{C'}(\id_W)\cdot \xi_B^C(f)\cdot \xi_{B'}^B(\id_V). \]
-	Dabei sind $ \xi_{B'}^B(\id_V)\in Gl(n) $ und $ \xi_C^{C'}(\id_W)\in Gl(m) $ invertierbar, da etwa
+	Dabei sind $ \xi_{B'}^B(\id_V)\in \mathrm{Gl}(n) $ und $ \xi_C^{C'}(\id_W)\in \mathrm{Gl}(m) $ invertierbar, da etwa
 		\[ \xi^B_{B'}(\id_V)\cdot\xi_B^{B'}(\id_V) = \xi_B^B(\id_V)=E_n; \]
-	Sind andererseits die Basis $ B $ und $ P\in Gl(n) $ gegeben, so ist
+	Sind andererseits die Basis $ B $ und $ P\in \mathrm{Gl}(n) $ gegeben, so ist
 		\[ \xi_B^{B'}(\id_V)=P^{-1} \text{ für } B':= BP, \]
-	d.h. jedes $ P\in Gl(n) $ realisiert einen Basiswechsel in $ V $, kommt also in der Transformationsformel vor.
+	d.h. jedes $ P\in \mathrm{Gl}(n) $ realisiert einen Basiswechsel in $ V $, kommt also in der Transformationsformel vor.
 	
 	\begin{Definition}[Äquivalente Matrizen]
 	Daher definiert man auch Matrizen $ X,X'\in K^{m\times n} $ als \emph{äquivalent},
-		\[ X\sim X',\quad \text{falls }\exists P\in Gl(n)\exists Q\in Gl(m):X' = QXP^{-1}.  \]
+		\[ X\sim X',\quad \text{falls }\exists P\in \mathrm{Gl}(n)\exists Q\in \mathrm{Gl}(m):X' = QXP^{-1}.  \]
 	\end{Definition}

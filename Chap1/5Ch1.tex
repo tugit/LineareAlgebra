@@ -23,7 +23,7 @@
 		\]
 	dann gilt $ \forall n\in \mathbb{N}: U_n\subset U_{n+1} $, und damit auch
 		\begin{gather*}
-		\sum_{i\leq n} U_i = U_n = \bigcup_{i\leq n}U_i \text{, aber } \sum_{i\in \mathbb{N}}U_i = \bigcup_{i\in \mathbb{N}}U_i \neq V.
+		\sum_{i\leq n} U_i = U_n = \bigcup_{i\leq n}U_i, \quad\text{aber}\quad \sum_{i\in \mathbb{N}}U_i = \bigcup_{i\in \mathbb{N}}U_i \neq V.
 		\end{gather*}
 		
 	Nun setze für $ i\in \{0,1\} $
@@ -224,7 +224,7 @@ i\operatorname{mod} 2\Rightarrow v_j = 0\}
 \subsection{Satz (Projektionen)}
 	\begin{Satz}[Projektionen]
 	Sei $ p\in \End(V) $ Projektion, dann ist
-            \[ p'= \id_V-p \text{ Projektion mit }  pp' = p'p = 0.\]
+            \[ p'= \id_V-p \quad\text{Projektion mit}\quad  pp' = p'p = 0.\]
         Gilt andererseits $ p+p' = id_V $ und $ pp' = 0 $ für $ p,p' \in \End(V) $, so sind $ p,p' $ Projektionen mit
 		\[ V = p(V)\oplus p'(V) = \ker p \oplus \ker p'. \]
 	\end{Satz}
@@ -288,9 +288,9 @@ i\operatorname{mod} 2\Rightarrow v_j = 0\}
 \paragraph{Bemerkung} 
 	Ist $V = \prod_{i\in I} V_i$ ein Produktraum, so erhält man kanonische UVR
 		\[U_i:=\{v=(v_i)_{i\in I}\in V\mid\forall j \neq i:v_j = 0\}\subset V,\]
-	die isomorph zu den $V_i$ sind vermittels der \emph{Faktor-Projektionen}\footnote{Achtung: Keine Projektion in unserem obrigen Sinn!}
+	die isomorph zu den $V_i$ sind mittels der \emph{Faktor-Projektionen}\footnote{Achtung: Keine Projektion in unserem obrigen Sinn!}
 		\[\pi_i:V\to V_i,\ (v_j)_{j\in I} \mapsto v_i,\]
-	bzw. \emph{Faktor-Injektionen}
+	bzw. mittels der \emph{Faktor-Injektionen}
 		\[\iota_i:V_i\to V,\ v_i \mapsto(v_j)_{j\in I}\text{, wobei }v_j :=
 			\begin{cases}
 				v_i &\text{ falls } j=i\\
@@ -315,7 +315,7 @@ i\operatorname{mod} 2\Rightarrow v_j = 0\}
 		\[V/U := \{v+U\mid v\in V\},\]
 	wobei
 		\[v+U:=\{v+u\mid u\in U\}\]
-	die \emph{Nebenklasse}\footnote{Bemerke: Nebenklassen sind im Allgemeinen keine UVR, da sie $0$ nicht enthalten müssen!} zu $v\in V$ bezeichnet, wird mit den durch
+	die \emph{Nebenklasse}\footnote{Bemerke: Nebenklassen sind im Allgemeinen keine UVR, z.B. müssen sie $0$ nicht enthalten!} zu $v\in V$ bezeichnet, wird mit den durch
 		\begin{align*}
 			+&: V/U \times V/U \to V/U,\ ((v+U),(w+U))\mapsto (v+w)+U,\\
 			\cdot &: K\times V/U \to V/U,\ (x,(v+U))\mapsto (vx)+U,
@@ -330,11 +330,11 @@ i\operatorname{mod} 2\Rightarrow v_j = 0\}
 	
 	Ist $x\in K$ und sind $(v+U),(v'+U)\in V/U$ gleich, also $v+U = v'+U$, so gilt
 		\begin{align*}
-		&v+U = v'+U \\
-		\Leftrightarrow\ & v - v'\in U \Rightarrow (v-v')x \in U \\
-		\Rightarrow\ & vx+U=v' x+U
+		v+U = v'+U &\Leftrightarrow v - v'\in U \\
+		&\Rightarrow (v-v')x \in U \\
+		&\Rightarrow vx+U=v' x+U
 		\end{align*}
-	Das Resultat der Skalarmultiplikation bringt also nicht von dem Repräsentanten $v$ einer Nebenklasse $v+U$ ab, sondern nur von der Nebenklasse.
+	Das Resultat der Skalarmultiplikation hängt also nicht von dem Repräsentanten $v$ einer Nebenklasse $v+U$ ab, sondern nur von der Nebenklasse.
 	
 	Die Wohldefiniertheit der Addition ist analog zu beweisen.
 	
@@ -421,7 +421,7 @@ i\operatorname{mod} 2\Rightarrow v_j = 0\}
 	also $V/U = \phi(U')$.
 	
 	Die Dimensionsformel folgt dann aus der für direkte Summen:
-		\[ \dim U' = \dim V/U \Rightarrow \dim V/U = \dim V-\dim U \]
+		\[ \dim V/U = \dim U' \Rightarrow \dim V/U = \dim V-\dim U \]
 		
 \paragraph{Beispiel}
 	Ist $ p\in \End(V) $ eine Projektion, so auch $ p':= \id_V-p $ und es gilt

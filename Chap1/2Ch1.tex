@@ -4,8 +4,8 @@
 	\begin{Definition}[Untervektorraum]
 		Eine Teilmenge $U\subset V$ eines $K$-VR $V$ heißt \emph{Unter(vektor)raum} (UVR), falls $U$ mit der eingeschränkten Addition und Skalarmultiplikation
                 \begin{align*}
-                        ^+    & \mid_{U\times U}: U\times U \to V,(v,w) \mapsto v+w \\
-                        \cdot & \mid_{K\times U}: K\times U \to V,(x,v) \mapsto vx
+                        ^+    & \mid_{U\times U}: U\times U \to V,\ (v,w) \mapsto v+w \\
+                        \cdot & \mid_{K\times U}: K\times U \to V,\ (x,v) \mapsto vx
                 \end{align*}
                 selbst ein Vektorraum ist, d.h. wenn insbesondere
                 \begin{align*}
@@ -15,7 +15,7 @@
 	\end{Definition}
 
 \paragraph{Bemerkung}
-	Eine nicht-leere Teilmenge $U\subset V, U\neq\emptyset$, ist genau dann ein UVR, wenn die auf U eingeschränkten Operationen wohldefiniert sind, d.h. wenn $ U $ bzgl. $ + $ und $ \cdot $ abgeschlossen ist.
+	Eine nicht-leere Teilmenge $U\subset V, U\neq\emptyset$, ist genau dann ein UVR, wenn die auf $U$ eingeschränkten Operationen wohldefiniert sind, d.h. wenn $ U $ bzgl. $ + $ und $ \cdot $ abgeschlossen ist.
 
 	Dies kann zum \emph{Unterraumkriterium} zusammengefasst werden:
 	\begin{equation*}
@@ -61,7 +61,7 @@
 	\end{itemize}
 	
 	z.B. bildet jeder UVR $U\subset V$ eines $K$-VR $V$ (mit der Addition) eine Untergruppe der Gruppe $(V,+)$.\\
-        In gleicher Weise ist eine nicht-leere Teilmenge eine \emph{Untergruppe} bzw. einen \emph{Unterkörper}, falls die eingeschränkten Operationen wohldefiniert sind.
+        In gleicher Weise bildet eine nicht-leere Teilmenge eine \emph{Untergruppe} bzw. einen \emph{Unterkörper}, falls die eingeschränkten Operationen wohldefiniert sind.
     
         z.B. ist $H\subset G$ eine Untergruppe, falls (Untergruppenkriterium):
         \begin{enumerate}
@@ -69,7 +69,7 @@
             \item $\forall g,h\in H: g\circ h^{-1} \in H$
         \end{enumerate}
         
-	Achtung: Inversenbildung muss im Kriterium explizit formuliert werden, sonst würde z.B.: $\mathbb{N}\subset\mathbb{Z}$ als Teilmenge von $(\mathbb{Z}, +)$ als Gruppe ein Gegenbeispiel liefern.
+	Achtung: Inversenbildung muss im Kriterium explizit formuliert werden, sonst würde z.B.: $\mathbb{N}\subset\mathbb{Z}$ als Teilmenge von der Gruppe $(\mathbb{Z}, +)$ ein Gegenbeispiel liefern.
         
         Weitere Beispiele:
         \begin{itemize}
@@ -103,11 +103,11 @@
 	Ist $U\subset V$ UVR, so gilt $[U] = U$.
 
 \paragraph{Beispiel}
-	$N=\{v:I\to K\mid v_1v_2=0\} \subset K^n,I=\{1,...,n\},n\geq 2$, hat die lineare Hülle $[N]=K^n$.
+	$N=\{v:I\to K\mid v_1v_2=0\} \subset K^n,\ I=\{1,...,n\},\ n\geq 2$, hat die lineare Hülle $[N]=K^n$.
 
 \paragraph{Beispiel}
 	Für $I=\{1,...,n\}$ und $i\in I$ definiere
-	$e_i:I\to K , j\mapsto e_i(j):= \delta_{ij}$, wobei 
+	$e_i:I\to K ,\ j\mapsto e_i(j):= \delta_{ij}$, wobei 
 	\begin{equation*}
 		\delta_{ij} :=
 		\begin{cases}
@@ -151,7 +151,7 @@
 \subsection{Lemma (Lineare Hülle und Linearkombinationen)}
 	\begin{Lemma}[Lineare Hülle und Linearkombinationen]
 		Ist $(v_i)_{i\in I}$, $I \neq \emptyset$, Familie in einem $K$-VR, so gilt: 
-		\[ [(v_i)_{i\in I}] = \bigg\{\sum_{i\in I} v_ix_i\mid x: I\to K: \# \{i\in I \mid x_i \neq 0\}< \infty\bigg\}, \]
+		\[ [(v_i)_{i\in I}] = \bigg\{\sum_{i\in I} v_ix_i\mid x: I\to K,\ \# \{i\in I \mid x_i \neq 0\}< \infty\bigg\}, \]
 	d.h. die lineare Hülle der Familie ist die Menge aller Linearkombinationen der Familie.
 	\end{Lemma}
 

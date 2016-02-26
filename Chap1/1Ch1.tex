@@ -51,7 +51,7 @@
 \subsection{Definition (Gruppe)}
 	\begin{Definition}[Gruppe]
 		Ein Paar $(G,\circ)$ bestehend aus einer Menge $G$ und einer Verknüpfung 
-		\[\circ : G\times G \to G : (g,h) \mapsto g \circ h\]
+		\[\circ : G\times G \to G,\ (g,h) \mapsto g \circ h\]
 		heißt Gruppe, falls:
                 \begin{enumerate}[(i)]
                         \item $\forall f,g,h \in G : f\circ (g\circ h) = (f\circ g)\circ h$\hfill (\emph{Assoziativität})
@@ -258,8 +258,8 @@
 	\begin{Definition}[Vektorraum]
 		Sei $K$ ein Körper. Eine Menge $V$ mit zwei Abbildungen
 	\begin{align*}
-		 +&: V \times V \to V:(v,u)\mapsto v+w,\\
-		 \cdot &: K \times V \to V:(x,v)\mapsto vx,
+		 +&: V \times V \to V,\ (v,w)\mapsto v+w,\\
+		 \cdot &: K \times V \to V,\ (x,v)\mapsto vx,
 	\end{align*}
 	heißt \emph{Vektorraum über $K$} ($K$-VR), falls gilt:
 	\begin{enumerate}[(i)]
@@ -273,7 +273,7 @@
 
 \paragraph{Bemerkung}
 	Wir notieren die Skalarmultiplikation als Rechtsmultiplikation (Skalar steht rechts):
-		\[ \cdot: K \times V \to V : (x,v) \mapsto vx \]
+		\[ \cdot: K \times V \to V,\ (x,v) \mapsto vx \]
 
 \paragraph{Beispiel}
 	Die Translationen eines affinen Raumes bilden einen Vektorraum (vgl. mit der Skizze oben): Dieses Beispiel wird im nächsten Kapitel repräsentiert.
@@ -284,7 +284,7 @@
 \subsection{Beispiel und Definition (Standardvektorraum)}
 	\begin{Definition}[Standardvektorraum]
 		Ist $ I $ eine Menge und $ K $ ein Körper, so bilden die $ K $-wertigen Abbildungen
-		\[ v: I \to K: i \mapsto v_i \]
+		\[ v: I \to K,\ i \mapsto v_i \]
 	einen Vektorraum mit der punktweise definierten Addition und Skalarmultiplikation:
 	\begin{align*}
 		I\ni i \mapsto (v+w)_i &:= v_i+w_i\in K\\

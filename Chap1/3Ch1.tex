@@ -13,7 +13,7 @@
 
 \paragraph{Bemerkung}
 	Man kann jede (Teil-)Menge $S\subset V$ als Familie in $V$ auffassen mit
-		\[v: S \to V, v\mapsto id_S(v) = v.\]
+		\[v: S \to V,\ v\mapsto id_S(v) = v.\]
 	Andererseits gilt für eine Familie $(v_i)_{i\in I} $:
 		\[(v_i)_{i\in I} \text{ linear unabhängig } \Rightarrow \{v_i \mid i\in I\} \text{ linear unabhängig.}\]
 	Die Umkehrung gilt im Allgemeinen nicht: Eine Familie (in $ V $) enthält mehr Information als eine Teilmenge von $ V $.
@@ -22,13 +22,13 @@
 	\begin{Definition}[Standardbasis]
 		Für $V = K^n$ ist $(e_1, ... , e_n)$,
 	\begin{equation*}
-		e_i:\{{1, ... ,n\}} =: I\to K, j\mapsto e_i(j)= \delta_{ij}=
+		e_i:\{{1, ... ,n\}} =: I\to K,\ j\mapsto e_i(j)= \delta_{ij}=
 		\begin{cases}
 			1,& \text{falls } i=j\\
 			0,& \text{sonst}
 		\end{cases}
 	\end{equation*}
-	für $i=1,\dots,n$, eine Basis -- die Standardbasis des (Standard-)Vektorraumes $K^n$.
+	für $i=1,\dots,n$, eine Basis -- die \emph{Standardbasis} des (Standard-)Vektorraumes $K^n$.
 	\end{Definition}
 
 \paragraph{Beweis}
@@ -74,10 +74,9 @@
 		\[V = [(v_i)_{i\in I}] \Rightarrow \exists (x_i)_{i\in I}: v = \sum_{i\in I} v_ix_i\]
 	liefern $(x_i)_{i\in I}$ und $(y_i)_{i\in I}$
 	\begin{align*}
-		v = \sum_{i\in I} v_ix_i = \sum_{i\in I}v_iy_i \stackrel{\footnotemark}{\Rightarrow} 0 &= \sum_{i\in I} v_i(x_i-y_i)\\
+		v = \sum_{i\in I} v_ix_i = \sum_{i\in I}v_iy_i \Rightarrow 0 &= \sum_{i\in I} v_i(x_i-y_i)\\
                 &\Rightarrow \forall i\in I: x_i = y_i \Rightarrow (x_i)_{i\in I} = (y_i)_{i\in I}
 	\end{align*}
-	\footnotetext{Bemerke: Die Summe von Linearkombinationen ist wieder eine Linearkombination, siehe Aufgabe 19}
 	Damit ist die Basisdarstellung $v = \sum_{i\in I} v_ix_i$ von $v$ auch eindeutig.
 
 %VO07-2015-10-27

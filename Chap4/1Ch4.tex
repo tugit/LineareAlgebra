@@ -1,3 +1,4 @@
+%VO21-2016-01-07
 \chapter{Volumenmessung}
 	Grundlegende Idee: Wir definieren ein Spat- oder Parallelotop-Volumen.
 
@@ -145,7 +146,7 @@ Die folgende Definition verallgemeinert diese Eigenschaften:
 		Für eine alternierende $ m $-Form $ \omega \in \Lambda^mV^* $ und $ i\neq j $ gilt:
 		\begin{enumerate}[(i)]
 			\item $ \omega(\dots,v_i,\dots,v_j,\dots) = -\omega (\dots,v_j,\dots,v_i,\dots)$;
-			\item $ \omega(\dots,v_i,\dots,v_is+v_j,\dots) = \omega(\dots,v_i,\dots,v_j,\dots) $ für $ s\in K $ \footnote{Geometrisch entspricht das einer Scherung!};
+			\item $ \omega(\dots,v_i,\dots,v_is+v_j,\dots) = \omega(\dots,v_i,\dots,v_j,\dots) $ für $ s\in K $ \footnote{Geometrisch entspricht dies einer Scherung!};
 			\item $ \omega(v_1,\dots,v_m)=0 $, falls $ (v_i)_{i\in \{1,\dots,m\}} $ linear abhängig ist.
 		\end{enumerate}
 \paragraph{Beweis}
@@ -181,9 +182,9 @@ Die folgende Definition verallgemeinert diese Eigenschaften:
 \paragraph{Buchhaltung}
 	Benutzt man (vgl. Gausssches Eliminationsverfahren) die Elementarmatrizen
 	\begin{gather*}
-		D_i = (d_{kl}) \in Gl(m);\ d_{kl} = \delta_{kl}+(d-1)\delta_{ik}\delta_{il}\quad (d\in K^\times);\\
-		T_{ij} = (t_{kl}) \in Gl(m);\ t_{kl} = \delta_{kl}-(\delta_{ik}-\delta_{jk})(\delta_{il}-\delta_{jl});\\
-		S_{ij} = (s_{kl})\in Gl(m);\ s_{kl}=\delta_{kl}+s\delta_{ik}\delta_{jl}\quad (s\in K)
+		D_i = (d_{kl}) \in \mathrm{Gl}(m);\ d_{kl} = \delta_{kl}+(d-1)\delta_{ik}\delta_{il}\quad (d\in K^\times);\\
+		T_{ij} = (t_{kl}) \in \mathrm{Gl}(m);\ t_{kl} = \delta_{kl}-(\delta_{ik}-\delta_{jk})(\delta_{il}-\delta_{jl});\\
+		S_{ij} = (s_{kl})\in \mathrm{Gl}(m);\ s_{kl}=\delta_{kl}+s\delta_{ik}\delta_{jl}\quad (s\in K)
 	\end{gather*}
 	und beschreibt man eine Familie $ (v_i)_{i\in \{1,\dots,m\}} $ von Vektoren $ v_i\in V $ durch ein \emph{$ m $-Tupel} $ A=(v_1,\dots,v_m) $ von Werten der Familie, so lassen sich die \emph{Homogenität} und Eigenschaften (i) und (ii) des Lemmas einfach schreiben als
 		\[ \omega(AD_i) = \omega(A)d,\ \omega(AT_{ij}) = -\omega(A),\ \omega(AS_{ij}(s)) = \omega(A) \]
@@ -199,7 +200,7 @@ Die folgende Definition verallgemeinert diese Eigenschaften:
 			i, &\text{falls } k=j,\\
 			k & \text{sonst}.
 		\end{cases} \]
-	Jede Permutation ist eine Komposition von Transpositionen, wie man leicht durch Induktion über m zeigt:
+	Jede Permutation ist eine Komposition von Transpositionen, wie man leicht durch Induktion über $m$ zeigt:
 	
 	Ist $ \sigma(m) = i<m$, so ist $ \tau_{im}\circ \sigma $ eine Permutation, die $ m $ fixiert, also
 		\[ \tau_{im}\circ\sigma\mid_{\{1,\dots,m-1\}}\in S_{m-1} \]
@@ -208,7 +209,7 @@ Die folgende Definition verallgemeinert diese Eigenschaften:
 	Die Eigenschaft (i) des Lemmas, $ \omega(AT_{ij})=-\omega(A) $, lässt sich mit $ \tau_{ij} $ dann formulieren als
 		\[ \omega(v_{\tau_{ij}(1)}, \dots, v_{\tau_{ij}(m)}) = - \omega(v_1,\dots,v_m) \]
 	Da jede Permutation $ \sigma\in S_m $ Komposition von Transpositionen ist, folgt
-		\[ \forall \sigma\in S_m: \omega(v_{\sigma}(1),\dots,v_{\sigma(m)})=\pm \omega(v_1,\dots,v_{m}). \]
+		\[ \forall \sigma\in S_m: \omega(v_{\sigma(1)},\dots,v_{\sigma(m)})=\pm \omega(v_1,\dots,v_{m}). \]
 	Frage: Was ist das Vorzeichen bzw. wie kann man es berechnen?
 \subsection{Lemma \& Definition}
 	\begin{Definition}[Signum einer Permutation]
@@ -220,6 +221,8 @@ Die folgende Definition verallgemeinert diese Eigenschaften:
 \paragraph{Beispiel}
 	Eine Transposition $ \tau_{ij} $ ist eine ungerade Permutation, da
 		\[ \sgn\tau_{ij} = \prod_{k<l}\frac{\tau_{ij}(k)-\tau_{ij}(l)}{k-l} = \frac{j-i}{i-j}\prod_{k\neq i,j}\frac{i-k}{j-k}\frac{j-k}{i-k} = -1 \]
+
+%VO22-2016-01-12
 \paragraph{Beweis}
 	Seien $ \sigma,\tau\in S_m $ beliebig, dann gilt
 	\begin{align*} \sgn(\tau\circ\sigma) &= \prod_{i<j}\frac{\tau(\sigma(i))-\tau(\sigma(j))}{\sigma(i)-\sigma(j)}\cdot\frac{\sigma(i)-\sigma(j)}{i-j} \\
@@ -283,25 +286,49 @@ Die folgende Definition verallgemeinert diese Eigenschaften:
 					\end{pmatrix}
 					= x_{11}x_{22}-x_{21}x_{12}
 				\]
-			\item für $ m=3 $ mit Hilfe der \emph{Regel von Sarrus} (zuerst zyklische (gerade) Permutationen, dann mit einem Fixpunkt, also Transpositionen)
+			\item für $ m=3 $ mit Hilfe der \emph{Regel von Sarrus} (zuerst zyklische (gerade) Permutationen, dann mit einem Fixpunkt, also Transpositionen $\tau_{1,3}, \tau_{1,2}, \tau_{2,3}$)
 				\[ \det \begin{pmatrix}
 					x_{11} & x_{12} & x_{13}\\
 					x_{21} & x_{22} & x_{23}\\
 					x_{31} & x_{32} & x_{33}
 				\end{pmatrix}
-				 = 	 \begin{matrix}
+				 = 	 \begin{matrix*}[r]
 				 x_{11}x_{22}x_{33}
 				 +x_{21}x_{32}x_{13}
 				 +x_{31}x_{12}x_{23}\\
-				 -x_{11}x_{23}x_{32}
-				 -x_{21}x_{33}x_{12}
 				 -x_{31}x_{22}x_{13}
-				 \end{matrix} \]
+				 -x_{21}x_{12}x_{33}
+				 -x_{11}x_{32}x_{23}
+				 \end{matrix*} \]
+                                \begin{center}
+                                % source: http://www.texample.net/tikz/examples/mnemonic-rule-for-matrix-determinant/
+                                \begin{tikzpicture}[baseline=(A.center)]
+                                \tikzset{node style ge/.style={circle}}
+                                \tikzset{BarreStyle/.style = {opacity=.4,line width=4 mm,line cap=round,color=#1}}
+                                    \tikzset{SignePlus/.style = {above left,,opacity=1,circle,fill=#1!50}}
+                                    \tikzset{SigneMoins/.style = {below left,,opacity=1,circle,fill=#1!50}}
+                                
+                                \matrix (A) [matrix of math nodes, nodes = {node style ge},,column sep=0 mm] 
+                                { x_{11} & x_{12} & x_{13}  \\
+                                x_{21} & x_{22} & x_{23}  \\
+                                x_{31} & x_{32} & x_{33}  \\\hline
+                                x_{11} & x_{12} & x_{13} \\
+                                x_{21} & x_{22} & x_{13}\\
+                                };
+
+                                \draw [BarreStyle=blue] (A-1-1.north west) node[SignePlus=blue] {$+$} to (A-3-3.south east) ;
+                                \draw [BarreStyle=blue] (A-2-1.north west) node[SignePlus=blue] {$+$} to (A-4-3.south east) ;
+                                \draw [BarreStyle=blue] (A-3-1.north west) node[SignePlus=blue] {$+$} to (A-5-3.south east) ;
+                                \draw [BarreStyle=red]  (A-3-1.south west) node[SigneMoins=red] {$-$} to (A-1-3.north east);
+                                \draw [BarreStyle=red]  (A-4-1.south west) node[SigneMoins=red] {$-$} to (A-2-3.north east);
+                                \draw [BarreStyle=red]  (A-5-1.south west) node[SigneMoins=red] {$-$} to (A-3-3.north east);
+                                \end{tikzpicture}
+                                \end{center}
 			\end{itemize}
 	Für $ m>3 $ liefert der Laplacesche Entwicklungssatz eine Methode, die Terme (Permutationen) zu sortieren: Für fest gewähltes $ j\in \{1,\dots, m \} $ gilt
 		\[ \det X = \sum_{i=1}^{m}(-1)^{i+j}x_{ij}\det X_{ij} \]
 	mit
-		\[ X_{ij} = (x_{kl})_{\substack{k\neq i\\ l\neq j}} = 
+		\[ X_{ij} := (x_{kl})_{\substack{k\neq i\\ l\neq j}} = 
 		% TODO: die i-te Zeile und j-te Spalte gehören durchgestrichen!
 		\begin{pmatrix}
 			x_{11} & \cdots & x_{1(j-1)} & x_{1j} & x_{1(j+1)} & \cdots & x_{1m} \\ 
@@ -318,7 +345,7 @@ Die folgende Definition verallgemeinert diese Eigenschaften:
                        &=\sum_{\sigma\in S_m}\sgn(\sigma)\Big(\prod_{j=1}^{m-1}x_{\sigma(j)j}\Big)x_{\sigma(m)m}
 	\intertext{nach Voraussetzung gilt: $ x_{\sigma(m)m} = 0 $ für $ \sigma(m)\neq i $ und $x_{\sigma(m)m} =1 $ für $ \sigma(m) = i $,}
 		 &= \sum_{\substack{\sigma\in S_m\\ \sigma(m)=i}}\sgn(\sigma)\prod_{j=1}^{m-1}x_{\sigma(j)j} \\
-		 &= \sum_{\sigma\in S_{m-1}}(-1)^{m-i}\sgn(\sigma')\prod_{j=1}^{m-1}x_{\sigma'(j)j} \\
+		 &= \sum_{\sigma'\in S_{m-1}}(-1)^{m-i}\sgn(\sigma')\prod_{j=1}^{m-1}x_{\sigma'(j)j} \\
 		 &= (-1)^{m-i}\det X_{im}.
                 \end{align*}
 	Im vorletzten Schritt werden die Transpositionen berücksichtigt die notwendig sind, um die nun "`gestrichene"' $i$-te Zeile ans Ende zu verschieben. 
@@ -351,6 +378,8 @@ Die folgende Definition verallgemeinert diese Eigenschaften:
 		\end{align*}
 \paragraph{Bemerkung}
 	Diese "`Rechenmethoden"' sind von historischer Bedeutung, manchmal sind sie theoretisch praktisch, aber von beschränkter praktischer Bedeutung (seit man Computer hat).
+
+%VO23-2016-01-14
 \subsection{Beispiel \& Definition (Blockmatrix)}
 	\begin{Definition}[Blockmatrix]
 		Für eine Blockmatrix

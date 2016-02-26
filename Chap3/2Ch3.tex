@@ -60,40 +60,40 @@
 	\end{Definition}
 	\emph{Links}multiplikation der erweiterten Koeffizientenmatrix $ (A\mid Y) $ mit den folgenden Matrizen (mit $ i\neq j $) liefert z.B. äquivalente Systeme:
 
-		$ D_i = (d_{kl})\in Gl(m), \qquad
-			d_{kl} := \delta_{kl}+(d-1)\delta_{ik}\delta_{il}\quad (d\in K^x); $
+		$ D_i = (d_{kl})\in \mathrm{Gl}(m), \qquad
+			d_{kl} := \delta_{kl}+(d-1)\delta_{ik}\delta_{il}\quad (d\in K^x) $
                 \[
                 \bordermatrix{
                     &   &   & i & &\cr
                     & 1 & 0 & \dots & \dots & 0\cr 
-                    & 0 & \ddots & \ddots & 0 & \vdots \cr
+                    & 0 & \ddots & \ddots &   & \vdots \cr
                 i & \vdots & \ddots & d & \ddots & \vdots \cr
-                    & \vdots & 0  &  \ddots & \ddots & 0 \cr
+                    & \vdots &   &  \ddots & \ddots & 0 \cr
                     & 0 &  \dots & \dots  & 0 & 1 \cr
                 }
                 \]
-		$ T_{ij} = (t_{kl})\in Gl(m), \qquad
+		$ T_{ij} = (t_{kl})\in \mathrm{Gl}(m), \qquad
 			 t_{kl} := \delta_{kl}-(\delta_{ik}-\delta_{jk})(\delta_{il}-\delta_{jl})$
                 \[
                 \bordermatrix{
                       &        & i      & \dots  & j     &         \cr
-                      & \ddots &        &        &       &         \cr 
-                i     &        & 0      & 1      &       &         \cr
-                \vdots&        &        & \ddots &       &         \cr
-                j     &        &        & 1      & 0     &         \cr
-                      &        &        &        &       & \ddots  \cr
+                      & 1      &        &        &       &         \cr 
+                i     &        & 0      &        & 1     &         \cr
+                \vdots&        &        & 1      &       &         \cr
+                j     &        & 1      &        & 0     &         \cr
+                      &        &        &        &       & 1       \cr
                 }
                 \]
                 
-		$ S_{ij}=(s_{kl})\in Gl(m), \qquad
-			 s_{kl} := \delta_{kl}+s\delta_{ik}\delta_{jl} \quad s\in K$
+		$ S_{ij}=(s_{kl})\in \mathrm{Gl}(m), \qquad
+			 s_{kl} := \delta_{kl}+s\delta_{ik}\delta_{jl} \quad (s\in K)$
                 \[
                 \bordermatrix{
                     &   &   &  & j &\cr
                     & 1 & 0 & \dots & \dots & 0\cr 
                 i & 0 & \ddots & \ddots & s & \vdots \cr
                     & \vdots & \ddots & 1 & \ddots & \vdots \cr
-                    & \vdots & 0  &  \ddots & \ddots & 0 \cr
+                    & \vdots &   &  \ddots & \ddots & 0 \cr
                     & 0 &  \dots & \dots  & 0 & 1 \cr
                 }
                 \]
@@ -104,7 +104,7 @@
 		\item $ (A\mid Y) \to T_{ij} (A\mid Y) $, Vertauschung der $ i $-ten und $ j $-ten Gleichung;
 		\item $ (A\mid Y) \to S_{ij} (A\mid Y)$, Addition des $ s $-fachen der $ j $-ten Gleichung zur $ i $-ten Gleichung.
 	\end{itemize}
-	Da $ D_i,T_{ij},S_{ij}\in Gl(m) $, sind die elementaren Zeilenumformungen reversibel, verändern daher den Lösungsraum nicht: für $ D_i $ und $ T_{ij} $ ist das klar; $ S_{ij} = S_{ij}(s) $ ist invertierbar mit
+	Da $ D_i,T_{ij},S_{ij}\in \mathrm{Gl}(m) $, sind die elementaren Zeilenumformungen reversibel, verändern daher den Lösungsraum nicht: für $ D_i $ und $ T_{ij} $ ist das klar; $ S_{ij} = S_{ij}(s) $ ist invertierbar mit
 		\[ (S_{ij})^{-1} = (S_{ij}(s))^{-1} = S_{ij}(-s). \]
 	Geometrisch ist $ S_{ij} $ Darstellungsmatrix einer Scherung.
 	
@@ -122,7 +122,7 @@
                 \begin{pmatrix*}[l]
 			1 & \dots & \dots &\dots & \dots & y'_1\\
 			0 & 1 & \dots &\dots & \dots & y'_2\\
-			\vdots &\ddots & \ddots & & \dots &\vdots \\
+			\vdots &\ddots & \ddots & &  &\vdots \\
 			0  & \dots  &  0 & 1 & \dots &y'_r\\
 			 0  & \dots  & \dots    & 0 & 0 & y'_{r+1}\\
 			\vdots & & & & \vdots & \vdots \\
@@ -205,4 +205,4 @@
 \paragraph{Bemerkung}
 	Mehrere LGS $ AX = Y_1, AX = Y_2, \dots AX = Y_k $ mit derselben Koeffizientenmatrix $ A $ können simultan gelöst werden, indem man elementare Zeileinumformungen auf die um alle $ Y $ erweiterte Koeffizientenmatrix $ (A\mid Y_1\mid Y_2\mid \dots \mid Y_k) $ anwendet.
 \paragraph{Bemerkung}
-	Das Gaußsche Eliminationsverfahren kann zur Bestimmung der Inversen einer Matrix $ A\in Gl(n) $ verwendet werden. Insbesondere ist eine \emph{untere Dreiecksmatrix} $ A\in K^{n\times n} $, d.h $ a_{ij} = 0 $ für $ i<j $ genau dann invertierbar, wenn $ a_{ii}\neq 0 $ für alle $ i=1,\dots,n $.
+	Das Gaußsche Eliminationsverfahren kann zur Bestimmung der Inversen einer Matrix $ A\in \mathrm{Gl}(n) $ verwendet werden. Insbesondere ist eine \emph{untere Dreiecksmatrix} $ A\in K^{n\times n} $, d.h $ a_{ij} = 0 $ für $ i<j $ genau dann invertierbar, wenn $ a_{ii}\neq 0 $ für alle $ i=1,\dots,n $.
