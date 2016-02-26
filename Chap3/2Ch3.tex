@@ -1,208 +1,256 @@
 %VO19-2015-12-15
 \section{Lineare Gleichungssysteme}
-	Mission: Viele Probleme in Anwendungen oder Naturwissenschaften werden zu "`linearen Problemen"' reduziert, d.h. auf lineare Gleichungssysteme unterschiedlicher Komplexität.
-	Diese Reduktion ist etwa eine wichtige Aufgabe der Analysis; Aufgabe der linearen Algebra ist dann die Lösung bzw. Strukturanalyse der linearen Gleichungssysteme.
-\subsection{Definition}
-	\begin{Definition}[Lineares Gleichungssystem]
-	Ein \emph{lineares Gleichungssystem} (LGS) ist ein System von $ m $ Gleichungen
-		\[ \begin{array}{cccc}\tag{$\star\star$}
-		a_{11}x_1+&\dots &+ a_{1n}x_n &=y_1\\
-		\vdots & &\vdots & \vdots\\
-		a_{m1}x_1 +& \dots &+a_{mn}x_n &= y_m
-		\end{array} \]
-	für $ n $ Unbekannte $ x_1,\dots,x_n\in K $, wobei die Parameter $ a_{ij},y_i\in K $ gegeben sind. Ist $ y_1 = \dots = y_m = 0 $, so heißt das System \emph{homogen}, anderenfalls \emph{inhomogen}.
-	\end{Definition}
-\paragraph{Bemerkung}
-	Mit Matrizen $ A\in K^{m\times n},X\in K^{n\times 1} $ und $ Y\in K^{m\times 1} $ lässt sich ein lineares Gleichungssystem kompakter schreiben als
-		\[ AX = Y \tag{$\star$}\]
-	Die Standardbasen $ E $ und $ E' $ von $ K^n $ bzw. $ K^m $ liefern den Isomorphismus
-		\[ K^{m\times n}\ni A\mapsto f_A\in \hom(K^n,K^m)\text{, wobei }f_A(E) = E'A, \]
-	damit lässt sich ($\star$) umformulieren als Gleichung eines affinen Unterraumes von $ K^n: $
-		\[ f_A(x) = y \text{ mit } x=EX \text{ und } y=E'Y. \]
-	Nämlich: Existiert eine Lösung $ x\in f_A^{-1}(\{y\})\neq \emptyset $, so ist der Lösungsraum
-		\[ f_A^{-1}(\{y\}) = x+\ker f_A\subset K^n \]
-	ein affiner Unterraum.
-	
-	Das nächste Lemma folgt dann mit dem Basisisomorphismus:
-		\[ K^{n\times 1} \ni X \mapsto EX =: x\in K^n \]
-\subsection{Definition \& Lemma}
-	\begin{Lemma}[Lösungsraum]
-	Der \emph{Lösungsraum} $ L_{A,Y} $ eines linearen Gleichungssystems,
-		\[ L_{A,Y}:=\{X\in K^{n\times 1}\mid AX=Y\}\subset K^{n\times 1} \]
-	ist leer oder ein affiner Unterraum der Dimension $ k = n-\rg A $.
-	
-	Ist $ Y = 0 $, so gilt $ 0\in L_{A,Y} $ und $ L_{A,Y}\subset K^{n\times 1} $ ist ein linearer Unterraum (UVR).
-	\end{Lemma}
+ Mission: Viele Probleme in Anwendungen oder Naturwissenschaften werden zu "`linearen Problemen"' reduziert, d.h. auf lineare Gleichungssysteme unterschiedlicher Komplexität.
+ Diese Reduktion ist etwa eine wichtige Aufgabe der Analysis; Aufgabe der linearen Algebra ist dann die Lösung bzw. Strukturanalyse der linearen Gleichungssysteme.
+ \subsection{Definition}
+ 	\begin{Definition}[Lineares Gleichungssystem]
+ 		Ein \emph{lineares Gleichungssystem} (LGS) ist ein System von $ m $ Gleichungen
+ 		\[
+ 			\begin{array}{cccc}\tag{$\star\star$}
+ 				a_{11}x_1+  & \dots & + a_{1n}x_n & =y_1   \\
+ 				\vdots      &       & \vdots      & \vdots \\
+ 				a_{m1}x_1 + & \dots & +a_{mn}x_n  & = y_m
+ 			\end{array}
+ 		\]
+ 		für $ n $ Unbekannte $ x_1,\dots,x_n\in K $, wobei die Parameter $ a_{ij},y_i\in K $ gegeben sind. Ist $ y_1 = \dots = y_m = 0 $, so heißt das System \emph{homogen}, anderenfalls \emph{inhomogen}.
+ 	\end{Definition}
+ 	\paragraph{Bemerkung}
+ 		Mit Matrizen $ A\in K^{m\times n},X\in K^{n\times 1} $ und $ Y\in K^{m\times 1} $ lässt sich ein lineares Gleichungssystem kompakter schreiben als
+ 		\[
+ 			AX = Y \tag{$\star$}
+ 		\]
+ 		Die Standardbasen $ E $ und $ E' $ von $ K^n $ bzw. $ K^m $ liefern den Isomorphismus
+ 		\[
+ 			K^{m\times n}\ni A\mapsto f_A\in \hom(K^n,K^m)\text{, wobei }f_A(E) = E'A,
+ 		\]
+ 		damit lässt sich ($\star$) umformulieren als Gleichung eines affinen Unterraumes von $ K^n: $
+ 		\[
+ 			f_A(x) = y \text{ mit } x=EX \text{ und } y=E'Y.
+ 		\]
+ 		Nämlich: Existiert eine Lösung $ x\in f_A^{-1}(\{y\})\neq \emptyset $, so ist der Lösungsraum
+ 		\[
+ 			f_A^{-1}(\{y\}) = x+\ker f_A\subset K^n
+ 		\]
+ 		ein affiner Unterraum.
+
+ 		Das nächste Lemma folgt dann mit dem Basisisomorphismus:
+ 		\[
+ 			K^{n\times 1} \ni X \mapsto EX =: x\in K^n
+ 		\]
+ \subsection{Definition \& Lemma}
+ 	\begin{Lemma}[Lösungsraum]
+ 		Der \emph{Lösungsraum} $ L_{A,Y} $ eines linearen Gleichungssystems,
+ 		\[
+ 			L_{A,Y}:=\{X\in K^{n\times 1}\mid AX=Y\}\subset K^{n\times 1}
+ 		\]
+ 		ist leer oder ein affiner Unterraum der Dimension $ k = n-\rg A $.
+
+ 		Ist $ Y = 0 $, so gilt $ 0\in L_{A,Y} $ und $ L_{A,Y}\subset K^{n\times 1} $ ist ein linearer Unterraum (UVR).
+ 	\end{Lemma}
 
 %VO20-2015-12-17
-\paragraph{Bemerkung}
-	Jede Lösung $ X_l $ eines (inhomogenen) LGS $AX=Y$ lässt sich schreiben als Summe einer \emph{Partikulärlösung} $ X_0 \in K^{n\times 1},AX_0 = Y $, und einer Lösung $V$ des homogenen LGS $ AX = 0 $:
-		\[ \forall X_l\in L_{A,Y}\exists V\in L_{A,0}:X_l=X_0+V=\tau_V(X_0) \]
-\paragraph{Bemerkung}
-	Der Lösungsraum eines "`unendlichen linearen Gleichungssystems"' hat die gleiche Struktur eines affinen Unterraums wie im endlichen Fall, z.B.:
-		\[ \{x\in C^\infty(\mathbb{R})\mid \forall t\in \mathbb{R}:x''(t) = t^2 \} \]
-	ist ein (2-dim) AUR, des unendlich-dim. R-VR $C^\infty$, wobei $ C^\infty(\mathbb{R}) $ den (Vektor-)Raum der beliebig oft differenzierbaren Funktionen auf $ \mathbb{R} $ notiert. 
-\subsection{Bemerkung \& Definition}
-	\begin{Definition}[Erweiterte Koeffizientenmatrix]
-	Ist $ AX=Y \neq 0$ ein inhomogenes LGS, so gilt
-		\[ L_{A,Y} = \emptyset \Leftrightarrow y\notin f_A(K^n) \]
-	mit der \emph{erweiterten Koeffizientenmatrix}
-		\[ (A\mid Y) \in K^{m\times (n+1)} \]
-	lässt sich dies formulieren als
-		\[ f_{(A\mid Y)}(K^{n+1})\neq f_A(K^n) \Leftrightarrow \rg f_{(A\mid Y)}\neq \rg f_A \Leftrightarrow \rg (A\mid Y) \neq \rg A. \]
-	Folglich ist
-		\[ L_{A,Y} \neq \emptyset \Leftrightarrow \rg (A\mid Y) = \rg A \]
-	\end{Definition}
-\subsection{Bemerkung \& Definition, Gaußsches Eliminationsverfahren}
-	\begin{Definition}[Äquivalente LGS]
-	Eine Idee zur Lösung eines LGS ist, das Gleichungssystem zu "`vereinfachen"', ohne dabei den Lösungsraum zu verändern: Man nennt zwei LGS $ AX=Y$ und $A'X=Y' $ \emph{äquivalent}, wenn sie den gleichen Lösungsraum haben,
-		\[ (AX=Y)\sim (A'X=Y'):\Leftrightarrow L_{A,Y} = L_{A',Y'} \]
-	\end{Definition}
-	\emph{Links}multiplikation der erweiterten Koeffizientenmatrix $ (A\mid Y) $ mit den folgenden Matrizen (mit $ i\neq j $) liefert z.B. äquivalente Systeme:
+ 	\paragraph{Bemerkung}
+ 		Jede Lösung $ X_l $ eines (inhomogenen) LGS $AX=Y$ lässt sich schreiben als Summe einer \emph{Partikulärlösung} $ X_0 \in K^{n\times 1},AX_0 = Y $, und einer Lösung $V$ des homogenen LGS $ AX = 0 $:
+ 		\[
+ 			\forall X_l\in L_{A,Y}\exists V\in L_{A,0}:X_l=X_0+V=\tau_V(X_0)
+ 		\]
+ 	\paragraph{Bemerkung}
+ 		Der Lösungsraum eines "`unendlichen linearen Gleichungssystems"' hat die gleiche Struktur eines affinen Unterraums wie im endlichen Fall, z.B.:
+ 		\[
+ 			\{x\in C^\infty(\mathbb{R})\mid \forall t\in \mathbb{R}:x''(t) = t^2 \}
+ 		\]
+ 		ist ein (2-dim) AUR, des unendlich-dim. R-VR $C^\infty$, wobei $ C^\infty(\mathbb{R}) $ den (Vektor-)Raum der beliebig oft differenzierbaren Funktionen auf $ \mathbb{R} $ notiert.
+ \subsection{Bemerkung \& Definition}
+ 	\begin{Definition}[Erweiterte Koeffizientenmatrix]
+ 		Ist $ AX=Y \neq 0$ ein inhomogenes LGS, so gilt
+ 		\[
+ 			L_{A,Y} = \emptyset \Leftrightarrow y\notin f_A(K^n)
+ 		\]
+ 		mit der \emph{erweiterten Koeffizientenmatrix}
+ 		\[
+ 			(A\mid Y) \in K^{m\times (n+1)}
+ 		\]
+ 		lässt sich dies formulieren als
+ 		\[
+ 			f_{(A\mid Y)}(K^{n+1})\neq f_A(K^n) \Leftrightarrow \rg f_{(A\mid Y)}\neq \rg f_A \Leftrightarrow \rg (A\mid Y) \neq \rg A.
+ 		\]
+ 		Folglich ist
+ 		\[
+ 			L_{A,Y} \neq \emptyset \Leftrightarrow \rg (A\mid Y) = \rg A
+ 		\]
+ 	\end{Definition}
+ \subsection{Bemerkung \& Definition, Gaußsches Eliminationsverfahren}
+ 	\begin{Definition}[Äquivalente LGS]
+ 		Eine Idee zur Lösung eines LGS ist, das Gleichungssystem zu "`vereinfachen"', ohne dabei den Lösungsraum zu verändern: Man nennt zwei LGS $ AX=Y$ und $A'X=Y' $ \emph{äquivalent}, wenn sie den gleichen Lösungsraum haben,
+ 		\[
+ 			(AX=Y)\sim (A'X=Y'):\Leftrightarrow L_{A,Y} = L_{A',Y'}
+ 		\]
+ 	\end{Definition}
+ 	\emph{Links}multiplikation der erweiterten Koeffizientenmatrix $ (A\mid Y) $ mit den folgenden Matrizen (mit $ i\neq j $) liefert z.B. äquivalente Systeme:
 
-		$ D_i = (d_{kl})\in \mathrm{Gl}(m), \qquad
-			d_{kl} := \delta_{kl}+(d-1)\delta_{ik}\delta_{il}\quad (d\in K^x) $
-                \[
-                \bordermatrix{
-                    &   &   & i & &\cr
-                    & 1 & 0 & \dots & \dots & 0\cr 
-                    & 0 & \ddots & \ddots &   & \vdots \cr
-                i & \vdots & \ddots & d & \ddots & \vdots \cr
-                    & \vdots &   &  \ddots & \ddots & 0 \cr
-                    & 0 &  \dots & \dots  & 0 & 1 \cr
-                }
-                \]
-		$ T_{ij} = (t_{kl})\in \mathrm{Gl}(m), \qquad
-			 t_{kl} := \delta_{kl}-(\delta_{ik}-\delta_{jk})(\delta_{il}-\delta_{jl})$
-                \[
-                \bordermatrix{
-                      &        & i      & \dots  & j     &         \cr
-                      & 1      &        &        &       &         \cr 
-                i     &        & 0      &        & 1     &         \cr
-                \vdots&        &        & 1      &       &         \cr
-                j     &        & 1      &        & 0     &         \cr
-                      &        &        &        &       & 1       \cr
-                }
-                \]
-                
-		$ S_{ij}=(s_{kl})\in \mathrm{Gl}(m), \qquad
-			 s_{kl} := \delta_{kl}+s\delta_{ik}\delta_{jl} \quad (s\in K)$
-                \[
-                \bordermatrix{
-                    &   &   &  & j &\cr
-                    & 1 & 0 & \dots & \dots & 0\cr 
-                i & 0 & \ddots & \ddots & s & \vdots \cr
-                    & \vdots & \ddots & 1 & \ddots & \vdots \cr
-                    & \vdots &   &  \ddots & \ddots & 0 \cr
-                    & 0 &  \dots & \dots  & 0 & 1 \cr
-                }
-                \]
-	
-	Die entsprechenden Operationen auf dem LGS werden als \emph{elementare Zeilenoperationen/-umformungen} bezeichnet (elZumf) bezeichnet:
-	\begin{itemize}
-		\item $ (A\mid Y) \to D_i (A\mid Y) $, Multiplikation der $ i $-ten Gleichung mit $ d\neq 0 $;
-		\item $ (A\mid Y) \to T_{ij} (A\mid Y) $, Vertauschung der $ i $-ten und $ j $-ten Gleichung;
-		\item $ (A\mid Y) \to S_{ij} (A\mid Y)$, Addition des $ s $-fachen der $ j $-ten Gleichung zur $ i $-ten Gleichung.
-	\end{itemize}
-	Da $ D_i,T_{ij},S_{ij}\in \mathrm{Gl}(m) $, sind die elementaren Zeilenumformungen reversibel, verändern daher den Lösungsraum nicht: für $ D_i $ und $ T_{ij} $ ist das klar; $ S_{ij} = S_{ij}(s) $ ist invertierbar mit
-		\[ (S_{ij})^{-1} = (S_{ij}(s))^{-1} = S_{ij}(-s). \]
-	Geometrisch ist $ S_{ij} $ Darstellungsmatrix einer Scherung.
-	
-	\begin{Definition}[Zeilenstufenform]
-	Mit Hilfe der elementaren Zeilenumformungen kann man das LGS auf Zeilenstufenform bringen:
-		\[
-		\begin{pmatrix}
-		a_{11} & \dots & a_{1n} & y_1 \\
-		a_{21} & \dots & a_{2n} & y_2 \\
-		a_{31} & \dots & a_{3n} & y_3 \\
-		\vdots &       & \vdots & \vdots \\
-		a_{m1} & \dots & a_{mn} & y_m
-		\end{pmatrix}
-		\xrightarrow{\text{elZUmf}}
-                \begin{pmatrix*}[l]
-			1 & \dots & \dots &\dots & \dots & y'_1\\
-			0 & 1 & \dots &\dots & \dots & y'_2\\
-			\vdots &\ddots & \ddots & &  &\vdots \\
-			0  & \dots  &  0 & 1 & \dots &y'_r\\
-			 0  & \dots  & \dots    & 0 & 0 & y'_{r+1}\\
-			\vdots & & & & \vdots & \vdots \\
-			 0 & \dots & \dots   & \dots &  0 & y'_{m}\\
-		\end{pmatrix*} \]
-	Ein System in Zeilenstufenform kann dann einfach gelöst werden -- oder auch nicht, falls eine Gleichung $ 0 = y' \neq 0 $ auftaucht.
-	\end{Definition}
-\paragraph{Beispiel}
-	Wir betrachten das LGS $ AX=Y $ mit 
-	\[
-            A = \begin{pmatrix}
-		0 & 3 & 6\\
-		1 & 4 & 7\\
-		2 & 5 & 8
-		\end{pmatrix}
-		\text{ und }
-		Y = \begin{pmatrix}
-		y_1 \\ y_2 \\ y_3
-		\end{pmatrix}. \]
-	Elementare Zeilenumformungen liefern dann:
-	\begin{align*}
-	\begin{pmatrix}
-		0 & 3 & 6 & y_1\\
-		1 & 4 & 7 & y_2\\
-		2 & 5 & 8 & y_3
-	\end{pmatrix}\quad
-	\overset{T_{12}}{\to}\quad
-	&\begin{pmatrix}	
-		1 & 4 & 7 & y_2\\
-		0 & 3 & 6 & y_1\\
-		2 & 5 & 8 & y_3
-	\end{pmatrix}
-	\\
-	\overset{S_{31}(-2)}{\to}\quad
-	&\begin{pmatrix}	
-		1 & 4 & 7 & y_2\\
-		0 & 3 & 6 & y_1\\
-		0 & -3 & -6 & y_3-2y_2
-	\end{pmatrix}\\
-	\overset{S_{32}(1)}{\to}\quad
-	&\begin{pmatrix}	
-		1 & 4 & 7 & y_2\\
-		0 & 3 & 6 & y_1\\
-		0 & 0 & 0 & y_3-2y_2+y_1
-	\end{pmatrix}\\
-	\overset{D_2(\frac{1}{3})}{\to}\quad
-	&\begin{pmatrix}	
-		1 & 4 & 7 & y_2\\
-		0 & 1 & 2 & y_1 \frac{1}{3}\\
-		0 & 0 & 0 & y_3-2y_2
-	\end{pmatrix}
-	 \end{align*}
-	 d.h. ein äquivalentes LGS $ A'X=Y' $ ist gefunden mit
-	 	\[ A' = 
-	 	\begin{pmatrix}	
-	 		1 & 4 & 7 \\
-	 		0 & 1 & 2 \\
-	 		0 & 0 & 0 
-	 	\end{pmatrix}
-	 	\text{ und }
-	 	Y = \begin{pmatrix}
-	 	y_2 \\ y_1\frac{1}{3} \\ y_1-2y_2+y_3
-	 	\end{pmatrix}.\]
-	 Das LGS $ AX=Y $ ist also genau dann lösbar, wenn $ y_1-2y_2+y_3 = 0 $; in diesem Falle ist dann
-	 	\[ L_{A,Y} = \{X =
-	 		\begin{pmatrix} y_2-7t-4(-2t+\frac{1}{3}y_1)\\-2t+\frac{1}{3}y_1\\t\end{pmatrix}
-	 	, t\in \mathbb{R}\}
-	 	= \{X =
-	 		\begin{pmatrix} t-\frac{4}{3}y_1+y_2\\-2t+\frac{1}{3}y_1\\t\end{pmatrix}
-	 	, t\in \mathbb{R}\} \]
-\paragraph{Historische Bemerkung}
-	Das Gaußsche Eliminationsverfahren ist schon seit ca. 2000 Jahren bekannt, also schon lange vor Gauß (1777-1855) entwickelt worden.
-	
-\paragraph{Nutzen der Methode}
-	\begin{itemize}
-		\item lässt sich einfach programmieren (leider ggf. numerisch instabil)
-		\item nützlich für mittelgroße Systeme (tausende Gleichungen)
-		\item nicht effizient für große Systeme (Millionen von Gleichungen)
-	\end{itemize}
-\paragraph{Bemerkung}
-	Mehrere LGS $ AX = Y_1, AX = Y_2, \dots AX = Y_k $ mit derselben Koeffizientenmatrix $ A $ können simultan gelöst werden, indem man elementare Zeileinumformungen auf die um alle $ Y $ erweiterte Koeffizientenmatrix $ (A\mid Y_1\mid Y_2\mid \dots \mid Y_k) $ anwendet.
-\paragraph{Bemerkung}
-	Das Gaußsche Eliminationsverfahren kann zur Bestimmung der Inversen einer Matrix $ A\in \mathrm{Gl}(n) $ verwendet werden. Insbesondere ist eine \emph{untere Dreiecksmatrix} $ A\in K^{n\times n} $, d.h $ a_{ij} = 0 $ für $ i<j $ genau dann invertierbar, wenn $ a_{ii}\neq 0 $ für alle $ i=1,\dots,n $.
+ 	$ D_i = (d_{kl})\in \mathrm{Gl}(m), \qquad
+ 	d_{kl} := \delta_{kl}+(d-1)\delta_{ik}\delta_{il}\quad (d\in K^x) $
+ 	\[
+ 		\bordermatrix{
+ 			&   &   & i & &\cr
+ 			& 1 & 0 & \dots & \dots & 0\cr
+ 			& 0 & \ddots & \ddots &   & \vdots \cr
+ 			i & \vdots & \ddots & d & \ddots & \vdots \cr
+ 			& \vdots &   &  \ddots & \ddots & 0 \cr
+ 			& 0 &  \dots & \dots  & 0 & 1 \cr
+ 		}
+ 	\]
+ 	$ T_{ij} = (t_{kl})\in \mathrm{Gl}(m), \qquad
+ 	t_{kl} := \delta_{kl}-(\delta_{ik}-\delta_{jk})(\delta_{il}-\delta_{jl})$
+ 	\[
+ 		\bordermatrix{
+ 			&        & i      & \dots  & j     &         \cr
+ 			& 1      &        &        &       &         \cr
+ 			i     &        & 0      &        & 1     &         \cr
+ 			\vdots&        &        & 1      &       &         \cr
+ 			j     &        & 1      &        & 0     &         \cr
+ 			&        &        &        &       & 1       \cr
+ 		}
+ 	\]
+
+ 	$ S_{ij}=(s_{kl})\in \mathrm{Gl}(m), \qquad
+ 	s_{kl} := \delta_{kl}+s\delta_{ik}\delta_{jl} \quad (s\in K)$
+ 	\[
+ 		\bordermatrix{
+ 			&   &   &  & j &\cr
+ 			& 1 & 0 & \dots & \dots & 0\cr
+ 			i & 0 & \ddots & \ddots & s & \vdots \cr
+ 			& \vdots & \ddots & 1 & \ddots & \vdots \cr
+ 			& \vdots &   &  \ddots & \ddots & 0 \cr
+ 			& 0 &  \dots & \dots  & 0 & 1 \cr
+ 		}
+ 	\]
+
+ 	Die entsprechenden Operationen auf dem LGS werden als \emph{elementare Zeilenoperationen/-umformungen} bezeichnet (elZumf) bezeichnet:
+ 	\begin{itemize}
+ 		\item $ (A\mid Y) \to D_i (A\mid Y) $, Multiplikation der $ i $-ten Gleichung mit $ d\neq 0 $;
+ 		\item $ (A\mid Y) \to T_{ij} (A\mid Y) $, Vertauschung der $ i $-ten und $ j $-ten Gleichung;
+ 		\item $ (A\mid Y) \to S_{ij} (A\mid Y)$, Addition des $ s $-fachen der $ j $-ten Gleichung zur $ i $-ten Gleichung.
+ 	\end{itemize}
+ 	Da $ D_i,T_{ij},S_{ij}\in \mathrm{Gl}(m) $, sind die elementaren Zeilenumformungen reversibel, verändern daher den Lösungsraum nicht: für $ D_i $ und $ T_{ij} $ ist das klar; $ S_{ij} = S_{ij}(s) $ ist invertierbar mit
+ 	\[
+ 		(S_{ij})^{-1} = (S_{ij}(s))^{-1} = S_{ij}(-s).
+ 	\]
+ 	Geometrisch ist $ S_{ij} $ Darstellungsmatrix einer Scherung.
+
+ 	\begin{Definition}[Zeilenstufenform]
+ 		Mit Hilfe der elementaren Zeilenumformungen kann man das LGS auf Zeilenstufenform bringen:
+ 		\[
+ 			\begin{pmatrix}
+ 				a_{11} & \dots & a_{1n} & y_1    \\
+ 				a_{21} & \dots & a_{2n} & y_2    \\
+ 				a_{31} & \dots & a_{3n} & y_3    \\
+ 				\vdots &       & \vdots & \vdots \\
+ 				a_{m1} & \dots & a_{mn} & y_m
+ 			\end{pmatrix}
+ 			\xrightarrow{\text{elZUmf}}
+ 			\begin{pmatrix*}[l]
+ 				1 & \dots & \dots &\dots & \dots & y'_1\\
+ 				0 & 1 & \dots &\dots & \dots & y'_2\\
+ 				\vdots &\ddots & \ddots & &  &\vdots \\
+ 				0  & \dots  &  0 & 1 & \dots &y'_r\\
+ 				0  & \dots  & \dots    & 0 & 0 & y'_{r+1}\\
+ 				\vdots & & & & \vdots & \vdots \\
+ 				0 & \dots & \dots   & \dots &  0 & y'_{m}\\
+ 			\end{pmatrix*}
+ 		\]
+ 		Ein System in Zeilenstufenform kann dann einfach gelöst werden -- oder auch nicht, falls eine Gleichung $ 0 = y' \neq 0 $ auftaucht.
+ 	\end{Definition}
+ 	\paragraph{Beispiel}
+ 		Wir betrachten das LGS $ AX=Y $ mit
+ 		\[
+ 			A =
+ 			\begin{pmatrix}
+ 				0 & 3 & 6 \\
+ 				1 & 4 & 7 \\
+ 				2 & 5 & 8
+ 			\end{pmatrix}
+ 			\text{ und }
+ 			Y =
+ 			\begin{pmatrix}
+ 				y_1 \\ y_2 \\ y_3
+ 			\end{pmatrix}
+ 			.
+ 		\]
+ 		Elementare Zeilenumformungen liefern dann:
+ 		\begin{align*}
+ 			\begin{pmatrix}
+ 			0 & 3  & 6  & y_1             \\
+ 			1 & 4  & 7  & y_2             \\
+ 			2 & 5  & 8  & y_3
+ 			\end{pmatrix}
+ 			\quad
+ 			\overset{T_{12}}{\to}\quad
+ 			&
+ 			\begin{pmatrix}
+ 			1 & 4  & 7  & y_2             \\
+ 			0 & 3  & 6  & y_1             \\
+ 			2 & 5  & 8  & y_3
+ 			\end{pmatrix}
+ 			\\
+ 			\overset{S_{31}(-2)}{\to}\quad
+ 			&
+ 			\begin{pmatrix}
+ 			1 & 4  & 7  & y_2             \\
+ 			0 & 3  & 6  & y_1             \\
+ 			0 & -3 & -6 & y_3-2y_2
+ 			\end{pmatrix}
+ 			\\
+ 			\overset{S_{32}(1)}{\to}\quad
+ 			&
+ 			\begin{pmatrix}
+ 			1 & 4  & 7  & y_2             \\
+ 			0 & 3  & 6  & y_1             \\
+ 			0 & 0  & 0  & y_3-2y_2+y_1
+ 			\end{pmatrix}
+ 			\\
+ 			\overset{D_2(\frac{1}{3})}{\to}\quad
+ 			&
+ 			\begin{pmatrix}
+ 			1 & 4  & 7  & y_2             \\
+ 			0 & 1  & 2  & y_1 \frac{1}{3} \\
+ 			0 & 0  & 0  & y_3-2y_2
+ 			\end{pmatrix}
+ 		\end{align*}
+ 		d.h. ein äquivalentes LGS $ A'X=Y' $ ist gefunden mit
+ 		\[
+ 			A' =
+ 			\begin{pmatrix}
+ 				1 & 4 & 7 \\
+ 				0 & 1 & 2 \\
+ 				0 & 0 & 0
+ 			\end{pmatrix}
+ 			\text{ und }
+ 			Y =
+ 			\begin{pmatrix}
+ 				y_2 \\ y_1\frac{1}{3} \\ y_1-2y_2+y_3
+ 			\end{pmatrix}
+ 			.
+ 		\]
+ 		Das LGS $ AX=Y $ ist also genau dann lösbar, wenn $ y_1-2y_2+y_3 = 0 $; in diesem Falle ist dann
+ 		\[
+ 			L_{A,Y} = \{X =
+ 			\begin{pmatrix} y_2-7t-4(-2t+\frac{1}{3}y_1)\\-2t+\frac{1}{3}y_1\\t\end{pmatrix}
+ 			, t\in \mathbb{R}\}
+ 			= \{X =
+ 			\begin{pmatrix} t-\frac{4}{3}y_1+y_2\\-2t+\frac{1}{3}y_1\\t\end{pmatrix}
+ 			, t\in \mathbb{R}\}
+ 		\]
+ 	\paragraph{Historische Bemerkung}
+ 		Das Gaußsche Eliminationsverfahren ist schon seit ca. 2000 Jahren bekannt, also schon lange vor Gauß (1777-1855) entwickelt worden.
+
+ 	\paragraph{Nutzen der Methode}
+ 		\begin{itemize}
+ 			\item lässt sich einfach programmieren (leider ggf. numerisch instabil)
+ 			\item nützlich für mittelgroße Systeme (tausende Gleichungen)
+ 			\item nicht effizient für große Systeme (Millionen von Gleichungen)
+ 		\end{itemize}
+ 	\paragraph{Bemerkung}
+ 		Mehrere LGS $ AX = Y_1, AX = Y_2, \dots AX = Y_k $ mit derselben Koeffizientenmatrix $ A $ können simultan gelöst werden, indem man elementare Zeileinumformungen auf die um alle $ Y $ erweiterte Koeffizientenmatrix $ (A\mid Y_1\mid Y_2\mid \dots \mid Y_k) $ anwendet.
+ 	\paragraph{Bemerkung}
+ 		Das Gaußsche Eliminationsverfahren kann zur Bestimmung der Inversen einer Matrix $ A\in \mathrm{Gl}(n) $ verwendet werden. Insbesondere ist eine \emph{untere Dreiecksmatrix} $ A\in K^{n\times n} $, d.h $ a_{ij} = 0 $ für $ i<j $ genau dann invertierbar, wenn $ a_{ii}\neq 0 $ für alle $ i=1,\dots,n $.

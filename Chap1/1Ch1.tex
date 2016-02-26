@@ -1,319 +1,362 @@
 %VO02-2015-10-08
 \chapter{Lineare Räume und Abbildungen}
 \section{Von Geometrie zu Algebra}
-	Euklid führte in den \glqq Elementen\grqq{} (ca. 300 v. Chr.) das bis heute gültige Schema ein:
-	\begin{itemize}
-		\item Definition
-		\item Axiom/Postulat
-		\item Lehrsatz
-		\item Beweis
-	\end{itemize}
+ Euklid führte in den \glqq Elementen\grqq{} (ca. 300 v. Chr.) das bis heute gültige Schema ein:
+ \begin{itemize}
+ 	\item Definition
+ 	\item Axiom/Postulat
+ 	\item Lehrsatz
+ 	\item Beweis
+ \end{itemize}
 
-\subsection{Parallelenaxiom/-problem (Euklid, Formulierung nach Playfair)}
-	Es existiert genau eine Parallele $ g' $ zum Punkt $ P \notin g $ zur Geraden $ g $.
+ \subsection{Parallelenaxiom/-problem (Euklid, Formulierung nach Playfair)}
+ 	Es existiert genau eine Parallele $ g' $ zum Punkt $ P \notin g $ zur Geraden $ g $.
 
-	Kann das Axiom aus den anderen Axiomen hergeleitet/bewiesen werden? Nein, denn es existieren nichteuklidische, hyperbolische Geometrien (18. Jh.) in denen es mehrere derartige Parallelen gibt. Als Beispiel lässt sich eine Geometrie anführen, die nicht auf einer Ebene sondern auf einem Kreis operiert. Dort lassen sich zu einer Sekante mehrere parallele Sekanten betrachten (also Sekanten, die die ursprüngliche nicht schneiden).
+ 	Kann das Axiom aus den anderen Axiomen hergeleitet/bewiesen werden? Nein, denn es existieren nichteuklidische, hyperbolische Geometrien (18. Jh.) in denen es mehrere derartige Parallelen gibt. Als Beispiel lässt sich eine Geometrie anführen, die nicht auf einer Ebene sondern auf einem Kreis operiert. Dort lassen sich zu einer Sekante mehrere parallele Sekanten betrachten (also Sekanten, die die ursprüngliche nicht schneiden).
 
-	\begin{figure}[H]
-		\begin{minipage}{.45\textwidth}
-			\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
-				\clip(-1.69,-0.64) rectangle (4.14,2.83);
-				\draw [domain=-1.69:4.14] plot(\x,{(-1--1*\x)/1});
-				\draw [domain=-1.69:4.14] plot(\x,{(-0--1*\x)/1});
-				\draw (0.6,1) node[] {P};
-				\draw (1.58,0.16) node[] {g};
-				\draw (1.52,1.78) node[] {g'};
-				\begin{scriptsize}
-				\fill [color=blue] (1,1) circle (2pt);
-				\end{scriptsize}
-			\end{tikzpicture}
-		\end{minipage}
-		\begin{minipage}{.45\textwidth}
-			\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
-				\clip(-2.24,-3.38) rectangle (3.15,1.76);
-				\draw(0,0) circle (1cm);
-				\draw (-0.94,0.35)-- (0.66,0.75);
-				\draw (-0.13,0.74) node[] {g};
-				\draw (0.32,-0.56) node[] {P};
-				\draw (-1,-0.02)-- (0.88,-0.48);
-				\draw (-0.35,-0.94)-- (0.91,0.42);
-				\begin{scriptsize}
-				\fill [color=blue] (0.22,-0.32) circle (1.5pt);
-				\end{scriptsize}
-			\end{tikzpicture}
-		\end{minipage}
-	\end{figure}
+ 	\begin{figure}[H]
+ 		\begin{minipage}{.45\textwidth}
+ 			\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+ 				\clip(-1.69,-0.64) rectangle (4.14,2.83);
+ 				\draw [domain=-1.69:4.14] plot(\x,{(-1--1*\x)/1});
+ 				\draw [domain=-1.69:4.14] plot(\x,{(-0--1*\x)/1});
+ 				\draw (0.6,1) node[] {P};
+ 				\draw (1.58,0.16) node[] {g};
+ 				\draw (1.52,1.78) node[] {g'};
+ 				\begin{scriptsize}
+ 					\fill [color=blue] (1,1) circle (2pt);
+ 				\end{scriptsize}
+ 			\end{tikzpicture}
+ 		\end{minipage}
+ 		\begin{minipage}{.45\textwidth}
+ 			\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+ 				\clip(-2.24,-3.38) rectangle (3.15,1.76);
+ 				\draw(0,0) circle (1cm);
+ 				\draw (-0.94,0.35)-- (0.66,0.75);
+ 				\draw (-0.13,0.74) node[] {g};
+ 				\draw (0.32,-0.56) node[] {P};
+ 				\draw (-1,-0.02)-- (0.88,-0.48);
+ 				\draw (-0.35,-0.94)-- (0.91,0.42);
+ 				\begin{scriptsize}
+ 					\fill [color=blue] (0.22,-0.32) circle (1.5pt);
+ 				\end{scriptsize}
+ 			\end{tikzpicture}
+ 		\end{minipage}
+ 	\end{figure}
 
-\paragraph{Was ist eine Geometrie?}
-	Eine Geometrie ist durch eine Menge X und eine auf X operierende Transformationsgruppe gegeben.
+ 	\paragraph{Was ist eine Geometrie?}
+ 		Eine Geometrie ist durch eine Menge X und eine auf X operierende Transformationsgruppe gegeben.
 
 %VO3-2015-10-13
-\subsection{Definition (Gruppe)}
-	\begin{Definition}[Gruppe]
-		Ein Paar $(G,\circ)$ bestehend aus einer Menge $G$ und einer Verknüpfung 
-		\[\circ : G\times G \to G,\ (g,h) \mapsto g \circ h\]
-		heißt Gruppe, falls:
-                \begin{enumerate}[(i)]
-                        \item $\forall f,g,h \in G : f\circ (g\circ h) = (f\circ g)\circ h$\hfill (\emph{Assoziativität})
-                        \item $\exists e\in G\ \forall g\in G : e\circ g = g$\hfill (Existenz eines \emph{neutralen Elements})
-                        \item $\forall g \in G\ \exists g^{-1} \in G : g^{-1}\circ g = e$\hfill (Existenz eines \emph{inversen Elements})
-                \end{enumerate}
-                Die Gruppe heißt \emph{kommutativ} oder \emph{abelsch}, falls zusätzlich gilt:
-                        \[\forall g,h\in G: g\circ h = h\circ g\] %\text{ (Kommutativität)}
-	\end{Definition}
+ \subsection{Definition (Gruppe)}
+ 	\begin{Definition}[Gruppe]
+ 		Ein Paar $(G,\circ)$ bestehend aus einer Menge $G$ und einer Verknüpfung
+ 		\[
+ 			\circ : G\times G \to G,\ (g,h) \mapsto g \circ h
+ 		\]
+ 		heißt Gruppe, falls:
+ 		\begin{enumerate}[(i)]
+ 			\item $\forall f,g,h \in G : f\circ (g\circ h) = (f\circ g)\circ h$\hfill (\emph{Assoziativität})
+ 			\item $\exists e\in G\ \forall g\in G : e\circ g = g$\hfill (Existenz eines \emph{neutralen Elements})
+ 			\item $\forall g \in G\ \exists g^{-1} \in G : g^{-1}\circ g = e$\hfill (Existenz eines \emph{inversen Elements})
+ 		\end{enumerate}
+ 		Die Gruppe heißt \emph{kommutativ} oder \emph{abelsch}, falls zusätzlich gilt:
+ 		\[
+ 			\forall g,h\in G: g\circ h = h\circ g
+ 		\] %\text{ (Kommutativität)}
+ 	\end{Definition}
 
-\paragraph{Bemerkung}
-	Das ist eine axiomatische Definition, d.h. der Begriff \glqq Gruppe\grqq{} wird durch (aus vielen (!) Beispielen abstrahierten) \glqq Rechenregeln\grqq{} definiert.
-\paragraph{Beispiel}
-	Die rationalen Zahlen $\mathbb{Q}$ bilden mit der Addition eine Gruppe $(\mathbb{Q} ,+)$.
-	Die rationalen Zahlen ohne $0$, $\mathbb{Q}^{\times} := \mathbb{Q}\setminus \{0\}$, bilden mit der Multiplikation eine Gruppe $(\mathbb{Q}^\times ,\cdot)$.
+ 	\paragraph{Bemerkung}
+ 		Das ist eine axiomatische Definition, d.h. der Begriff \glqq Gruppe\grqq{} wird durch (aus vielen (!) Beispielen abstrahierten) \glqq Rechenregeln\grqq{} definiert.
+ 	\paragraph{Beispiel}
+ 		Die rationalen Zahlen $\mathbb{Q}$ bilden mit der Addition eine Gruppe $(\mathbb{Q} ,+)$.
+ 		Die rationalen Zahlen ohne $0$, $\mathbb{Q}^{\times} := \mathbb{Q}\setminus \{0\}$, bilden mit der Multiplikation eine Gruppe $(\mathbb{Q}^\times ,\cdot)$.
 
-\subsection{Definition (Gruppenoperation)}
-	\begin{Definition}[Gruppenoperation]
-		Sind $(G,\circ )$ eine Gruppe und $X$ eine Menge, so heißt eine Abbildung
-		\[ \cdot : G\times X\to X,\ (g,x)\mapsto g\cdot x \]
-	eine \emph{Gruppenoperation} (von $(G,\circ )$ auf $X$), falls
-	\begin{enumerate}[(i)]
-		\item $\forall g,h\in G :\forall x\in X: g\cdot (h\cdot x) = (g\circ h)\cdot x$ (entspricht nicht der Assoziativität!)
-		\item $\forall x\in X: e\cdot x = x$ für das neutrale Element $e$ der Gruppe $(G,\circ )$
-	\end{enumerate}
-	$(G,\circ )$ heißt dann \emph{Transformationsgruppe} von X.
-	\end{Definition}
+ \subsection{Definition (Gruppenoperation)}
+ 	\begin{Definition}[Gruppenoperation]
+ 		Sind $(G,\circ )$ eine Gruppe und $X$ eine Menge, so heißt eine Abbildung
+ 		\[
+ 			\cdot : G\times X\to X,\ (g,x)\mapsto g\cdot x
+ 		\]
+ 		eine \emph{Gruppenoperation} (von $(G,\circ )$ auf $X$), falls
+ 		\begin{enumerate}[(i)]
+ 			\item $\forall g,h\in G :\forall x\in X: g\cdot (h\cdot x) = (g\circ h)\cdot x$ (entspricht nicht der Assoziativität!)
+ 			\item $\forall x\in X: e\cdot x = x$ für das neutrale Element $e$ der Gruppe $(G,\circ )$
+ 		\end{enumerate}
+ 		$(G,\circ )$ heißt dann \emph{Transformationsgruppe} von X.
+ 	\end{Definition}
 
-\paragraph{Bemerkung}
-	Operiert $G$ (kurz für $(G,\circ )$, aus dem Zusammenhang ersichtlich) auf $X$, so ist für jedes $g\in G$ die Abbildung
-		\[ g:X\to X,\ x\mapsto g\cdot x \]
-	eine bijektive Abbildung von $X$ auf sich. Wegen der Axiome (i) und (ii) aus der Definition erhält man $g^{-1}: X\to X$ als Inverse der Abbildung.
-	
-\subsection{Beispiel und Definition (Permutationsgruppe)}
-	\begin{Definition}[Permutationsgruppe]
-		Die bijektiven Abbildungen einer Menge $X$ auf sich, 
-		\[ G:= \{g:X\to X\mid g \text{ bij.}\}, \]
-	bilden (mit der Komposition $\circ$) eine (Transformations-)Gruppe $(G,\circ )$ (die auf $X$ operiert): die \emph{Permutationsgruppe} oder \emph{symmetrische Gruppe} $S_X$ von $X$.
-	
-	Für $X=\{1,2,...,n\}$ schreibt man auch $S_n$ statt $S_{\{1,...,n\}}$.
-	\end{Definition}
-\paragraph{Bemerkung}
-	Im Gegensatz zu allgemeinen Abbildungen stimmen in (Permutations-)Gruppen Links- und Rechtsinverse stets überein.
-\subsection{Lemma (Eindeutigkeit des neutralen Elements)}
-	\begin{Lemma}[Eindeutigkeit des neutralen Elements]
-		Das neutrale Element einer Gruppe $(G,\circ )$ ist eindeutig und $\forall g\in G: g\circ e = g$. Weiters: 
-		\[\forall g\in G\ \exists ! g^{-1} \in G: g^{-1}\circ g = g \circ g^{-1} = e\]
-	\end{Lemma}
+ 	\paragraph{Bemerkung}
+ 		Operiert $G$ (kurz für $(G,\circ )$, aus dem Zusammenhang ersichtlich) auf $X$, so ist für jedes $g\in G$ die Abbildung
+ 		\[
+ 			g:X\to X,\ x\mapsto g\cdot x
+ 		\]
+ 		eine bijektive Abbildung von $X$ auf sich. Wegen der Axiome (i) und (ii) aus der Definition erhält man $g^{-1}: X\to X$ als Inverse der Abbildung.
 
-\paragraph{Beweis}
-	Sei $g\in G$ gegeben und (gemäß Gruppenaxiom (iii)):
-	\begin{itemize}
-		\item $h:= g^{-1}$ (Linksinverse von $g$)
-		\item $k:= h^{-1}$ (Linksinverse von $h$)
-	\end{itemize}
-	Damit berechnen wir (multiplikative Schreibweise: $ab$ statt $a\circ b$):
-	\begin{align*}
-		hg = e = kh &= k((hg)h) \\
-                            &= k(h(gh)) \tag{$\star$}\\
-                            &= (kh)(gh) = gh
-	\intertext{und }
-                ge = g(hg) &= (gh)g \stackrel{(\star)}{=} eg
-	\end{align*}
-	
-	Jedes (links-)neutrale Element $e$ ist also auch rechtsneutral
-	\[\forall g\in G: eg = ge = g\tag{$\star\star$}\]
-	und ist $e'\in G$ auch neutrales Element, dann:
-	\[e' = ee' \stackrel{(\star\star)}{=} e'e = e \]
-	Weiters ist jedes (Links-)Inverse auch rechtsinvers (nach $\star$)
-	\[\forall g \in G: gg^{-1}=g^{-1}g = e \]
-	und sind $h,h'\in G$ Inverse von $g\in G$, so gilt:
-	\[h' = h'(gh) = (h'g)h = h \]
-	d.h. Eindeutigkeit des Inversen.
+ \subsection{Beispiel und Definition (Permutationsgruppe)}
+ 	\begin{Definition}[Permutationsgruppe]
+ 		Die bijektiven Abbildungen einer Menge $X$ auf sich,
+ 		\[
+ 			G:= \{g:X\to X\mid g \text{ bij.}\},
+ 		\]
+ 		bilden (mit der Komposition $\circ$) eine (Transformations-)Gruppe $(G,\circ )$ (die auf $X$ operiert): die \emph{Permutationsgruppe} oder \emph{symmetrische Gruppe} $S_X$ von $X$.
 
-\subsection{Definition (Körper)}
-	\begin{Definition}[Körper]
-		Ein Tripel $(K,+,\cdot)$, bestehend aus einer Menge $K$ und zwei Verknüpfungen
-                \begin{align*}
-                        +:&K\times K\to K,\ (x,y)\mapsto x+y\\
-                        \cdot : &K\times K\to K,\ (x,y)\mapsto xy
-                \end{align*}
-                heißt \emph{Körper}, falls:
-                \begin{enumerate}[(i)]
-                        \item $(K,+)$ ist abelsche Gruppe (mit neutralem Element $0$ und inversem Element $-x$ von $x$)
-                        \item $(K^\times,\cdot)$ ist abelsche Gruppe (mit neutralem Element $1$ und inversem Element $\frac{1}{x} = x^{-1}$ von $x\in K^\times$)
-                        \item die Distributivgesetze gelten:
-                                \[ \forall x,y,z\in K :\begin{cases}x\cdot (y+z) = x\cdot y+x\cdot z\\ (x+y)\cdot z = x\cdot z+y\cdot z \end{cases} \]
-                \end{enumerate}
-	\end{Definition}
+ 		Für $X=\{1,2,...,n\}$ schreibt man auch $S_n$ statt $S_{\{1,...,n\}}$.
+ 	\end{Definition}
+ 	\paragraph{Bemerkung}
+ 		Im Gegensatz zu allgemeinen Abbildungen stimmen in (Permutations-)Gruppen Links- und Rechtsinverse stets überein.
+ \subsection{Lemma (Eindeutigkeit des neutralen Elements)}
+ 	\begin{Lemma}[Eindeutigkeit des neutralen Elements]
+ 		Das neutrale Element einer Gruppe $(G,\circ )$ ist eindeutig und $\forall g\in G: g\circ e = g$. Weiters:
+ 		\[
+ 			\forall g\in G\ \exists ! g^{-1} \in G: g^{-1}\circ g = g \circ g^{-1} = e
+ 		\]
+ 	\end{Lemma}
 
-\paragraph{Bemerkung}
-	In einem Körper gilt stets:
-		\[0\cdot x = x\cdot 0 = 0\]
-        denn
-		\begin{gather*}
-		0\cdot x = (0+0)\cdot x = 0\cdot x + 0\cdot x \\
-		\Rightarrow 0 = 0\cdot x + (-(0\cdot x)) = 0\cdot x + 0\cdot x + (-(0\cdot x)) = 0\cdot x
-		\end{gather*}
-	und analog $x\cdot 0 = 0$.\\
-	Insbesondere folgt damit 
-	\[\forall x,y\in K: x\cdot y = y\cdot x\]
-	(im zweiten Axiom für Körper wird die abelsche Gruppe für $K^\times$ festgelegt.)
-	
-\paragraph{Beispiel}
-	Die rationalen Zahlen $\mathbb{Q}$, die reellen Zahlen $\mathbb{R}$ oder die komplexen Zahlen $\mathbb{C}$ bilden mit den üblichen Verknüpfungen Körper.
+ 	\paragraph{Beweis}
+ 		Sei $g\in G$ gegeben und (gemäß Gruppenaxiom (iii)):
+ 		\begin{itemize}
+ 			\item $h:= g^{-1}$ (Linksinverse von $g$)
+ 			\item $k:= h^{-1}$ (Linksinverse von $h$)
+ 		\end{itemize}
+ 		Damit berechnen wir (multiplikative Schreibweise: $ab$ statt $a\circ b$):
+ 		\begin{align*}
+ 			hg = e = kh & = k((hg)h)                       \\
+ 			            & = k(h(gh)) \tag{$\star$}         \\
+ 			            & = (kh)(gh) = gh
+ 			\intertext{und }
+ 			ge = g(hg)  & = (gh)g \stackrel{(\star)}{=} eg
+ 		\end{align*}
 
-%VO04-2015-10-15
-\paragraph{Bemerkung und Beispiel}
-	Aufgrund der Axiome (i) und (ii) enthält $ K $ mindestens 2 Elemente, also $ \# K \geq 2 $, nämlich:
-	\begin{itemize}
-		\item $ 0 $, das neutrale Element bezüglich $+$ und
-		\item $1$ $(\neq 0)$, das neutrale Elemente (in $K^\times$ = $K\setminus\{0\}$) bezüglich $\cdot$
-	\end{itemize}
-	Es gibt auch einen Körper mit genau 2 Elementen $(\{0,1\},+,\cdot)$, wobei
-	
-	\begin{minipage}{0.45\textwidth}
-		\begin{equation*}
-			\begin{tabular}{c|cc}
-				$+$ & 0 & 1\\\hline
-				0 & 0 & 1\\
-				1 & 1 & 0\\
-			\end{tabular}
-		\end{equation*}
-	\end{minipage}
-	\begin{minipage}{0.45\textwidth}
-		\begin{equation*}
-			\begin{tabular}{c|cc}
-				$\cdot$ & 0 & 1\\\hline
-				0 & 0 & 1\\
-				1 & 1 & 1\\
-			\end{tabular}
-		\end{equation*}
-	\end{minipage}
-	
-	Dieser Körper wird auch $\mathbb{Z}_2$ bezeichnet.
+ 		Jedes (links-)neutrale Element $e$ ist also auch rechtsneutral
+ 		\[
+ 			\forall g\in G: eg = ge = g\tag{$\star\star$}
+ 		\]
+ 		und ist $e'\in G$ auch neutrales Element, dann:
+ 		\[
+ 			e' = ee' \stackrel{(\star\star)}{=} e'e = e
+ 		\]
+ 		Weiters ist jedes (Links-)Inverse auch rechtsinvers (nach $\star$)
+ 		\[
+ 			\forall g \in G: gg^{-1}=g^{-1}g = e
+ 		\]
+ 		und sind $h,h'\in G$ Inverse von $g\in G$, so gilt:
+ 		\[
+ 			h' = h'(gh) = (h'g)h = h
+ 		\]
+ 		d.h. Eindeutigkeit des Inversen.
 
-\subsection{Bemerkung und Definition (Charakteristik)}
-	\begin{Definition}[Charakteristik]
-		In $\mathbb{Z}_2$ gilt $1 + 1 = 0$. Allgemeiner definiert man die \emph{Charakteristik} eines Körpers $(K,+,\cdot)$ (mit neutralen Elementen 0 und 1 von + bzw. $\cdot$) durch
-                \begin{equation*}
-                        \Char(K,+,\cdot):=
-                        \begin{cases}
-                                0 &\text{falls } \forall n \in \mathbb{N}^\times: \sum_{j = 1}^{n} 1 \neq 0\\
-                                \min\{n \in \mathbb{N}^\times\mid \sum_{j = 1}^{n} 1 = 0\} & \text{sonst}
-                        \end{cases}
-                \end{equation*}
-	\end{Definition}
-	z.B. $\Char(\mathbb{Z}_2) = 2$, da
-	\begin{align*}
-		\{n\in\mathbb{N}^\times\mid \underbrace{1+...+1=0}_{\text{n-mal}}=0\}
-		&=\{n\in\mathbb{N}^\times\mid n=0 \text{ mod } 2\}\\
-		&=\{n\in\mathbb{N}^\times\mid n \text{ gerade}\}
-        \end{align*}
-        und damit $\min\{n\in\mathbb{N}^\times\mid \underbrace{1+...+1=0}_{\text{n-mal}}\}=2$
-	
-	Wir werden mitunter $\Char(K,+,\cdot)\neq 0$ oder (öfter) $\Char(K,+,\cdot)=2$ ausschließen (müssen).
+ \subsection{Definition (Körper)}
+ 	\begin{Definition}[Körper]
+ 		Ein Tripel $(K,+,\cdot)$, bestehend aus einer Menge $K$ und zwei Verknüpfungen
+ 		\begin{align*}
+ 			+:      & K\times K\to K,\ (x,y)\mapsto x+y \\
+ 			\cdot : & K\times K\to K,\ (x,y)\mapsto xy
+ 		\end{align*}
+ 		heißt \emph{Körper}, falls:
+ 		\begin{enumerate}[(i)]
+ 			\item $(K,+)$ ist abelsche Gruppe (mit neutralem Element $0$ und inversem Element $-x$ von $x$)
+ 			\item $(K^\times,\cdot)$ ist abelsche Gruppe (mit neutralem Element $1$ und inversem Element $\frac{1}{x} = x^{-1}$ von $x\in K^\times$)
+ 			\item die Distributivgesetze gelten:
+ 			      \[
+ 			      	\forall x,y,z\in K :
+ 			      	\begin{cases}x\cdot (y+z) = x\cdot y+x\cdot z\\ (x+y)\cdot z = x\cdot z+y\cdot z \end{cases}
+ 			      \]
+ 		\end{enumerate}
+ 	\end{Definition}
+
+ 	\paragraph{Bemerkung}
+ 		In einem Körper gilt stets:
+ 		\[
+ 			0\cdot x = x\cdot 0 = 0
+ 		\]
+ 		denn
+ 		\begin{gather*}
+ 			0\cdot x = (0+0)\cdot x = 0\cdot x + 0\cdot x \\
+ 			\Rightarrow 0 = 0\cdot x + (-(0\cdot x)) = 0\cdot x + 0\cdot x + (-(0\cdot x)) = 0\cdot x
+ 		\end{gather*}
+ 		und analog $x\cdot 0 = 0$.\\
+ 		Insbesondere folgt damit
+ 		\[
+ 			\forall x,y\in K: x\cdot y = y\cdot x
+ 		\]
+ 		(im zweiten Axiom für Körper wird die abelsche Gruppe für $K^\times$ festgelegt.)
+
+ 	\paragraph{Beispiel}
+ 		Die rationalen Zahlen $\mathbb{Q}$, die reellen Zahlen $\mathbb{R}$ oder die komplexen Zahlen $\mathbb{C}$ bilden mit den üblichen Verknüpfungen Körper.
 
 %VO04-2015-10-15
-\subsection{Translationen und Vektoren}
+ 	\paragraph{Bemerkung und Beispiel}
+ 		Aufgrund der Axiome (i) und (ii) enthält $ K $ mindestens 2 Elemente, also $ \# K \geq 2 $, nämlich:
+ 		\begin{itemize}
+ 			\item $ 0 $, das neutrale Element bezüglich $+$ und
+ 			\item $1$ $(\neq 0)$, das neutrale Elemente (in $K^\times$ = $K\setminus\{0\}$) bezüglich $\cdot$
+ 		\end{itemize}
+ 		Es gibt auch einen Körper mit genau 2 Elementen $(\{0,1\},+,\cdot)$, wobei
 
-\begin{tikzpicture}[scale=1.5,>=triangle 45]
-	\draw[->,color=black] (-0.1,0) -- (10,0);
-	\draw[->,color=black] (0,-0.1) -- (0,4);
-	
-	\coordinate[label=left:$x$] (x) at (1,2);
-	\coordinate[label=below:$y\equal\tau_v(x)$] (y) at (5,1.5);
-	\coordinate[label=above:$y'\equal\tau_w(x)$] (y') at (2,3.5);
-	\coordinate (z) at (6,3);
-	
-	\draw [fill] (x) circle (.5pt);
-	\draw [fill] (y') circle (.5pt);
-	\draw [fill] (y) circle (.5pt);
-	\draw [fill] (z) circle (.5pt);
-	
-	\draw [->] (x) to node[below left]{$ v $} (y);
-	\draw [->] (x) --node[above left]{$ w $} (y');
-	\draw [->] (y) --node[below right]{$ w $} (z);
-	\draw [->] (y') --node[above right]{$ v $} (z);
-	\draw [->] (x) --node[above]{$ v+w $} node[below]{$ w+v $} (z);
-	
-	\draw (z) node[below right] {$z = \tau_w(y)=(\tau_w\circ\tau_v)(x)=\tau_{w+v}(x)$};
-	\draw (z) node[above right] {$z' = \tau_v(y')=(\tau_v\circ\tau_w)(x) = \tau_{v+w}(x)$};
-	\draw (4,0.5) node[] {$z=z'\Rightarrow$ Translationen \glqq der\grqq{} Ebene bilden eine abelsche Gruppe};
-\end{tikzpicture}
+ 		\begin{minipage}{0.45\textwidth}
+ 			\begin{equation*}
+ 				\begin{tabular}{c|cc}
+ 					$+$ & 0 & 1 \\\hline
+ 					0   & 0 & 1 \\
+ 					1   & 1 & 0 \\
+ 				\end{tabular}
+ 			\end{equation*}
+ 		\end{minipage}
+ 		\begin{minipage}{0.45\textwidth}
+ 			\begin{equation*}
+ 				\begin{tabular}{c|cc}
+ 					$\cdot$ & 0 & 1 \\\hline
+ 					0       & 0 & 1 \\
+ 					1       & 1 & 1 \\
+ 				\end{tabular}
+ 			\end{equation*}
+ 		\end{minipage}
 
-\begin{tikzpicture}[scale=1.5, >=triangle 45]
-	\draw[->,color=black] (-0.1,0) -- (9,0);
-	\draw[->,color=black] (0,-0.1) -- (0,4);
-	
-	\coordinate[label=left:$ x $] (x) at (1,3);
-	\coordinate[label=right:$ y \equal \tau_v(x) \equal (\tau_{\frac{v}{2}} \circ \tau_{\frac{v}{2}})(x) \equal \tau_{\frac{v}{2} + \frac{v}{2}}(x) $] (y) at (3,1);
-	
-	\draw [fill] (x) circle (.5pt);
-	\draw [fill] (y) circle (.5pt);
-	
-	\draw [->] (1,3) --node[left]{$v$} (3,1);
-	\draw [->] (1,3) --node[above] {$\frac{v}{2}$} (2,2);
-	\draw [->] (2,2) --node[above] {$\frac{v}{2}$} (3,1);
-	
-	\draw (5,3) node[text width = 7cm] {Translationen kann man \glqq strecken\grqq{}, sodass gewisse Rechengesetze gelten.};
-\end{tikzpicture}
+ 		Dieser Körper wird auch $\mathbb{Z}_2$ bezeichnet.
 
-\subsection{Definition (Vektorraum)}
-	\begin{Definition}[Vektorraum]
-		Sei $K$ ein Körper. Eine Menge $V$ mit zwei Abbildungen
-	\begin{align*}
-		 +&: V \times V \to V,\ (v,w)\mapsto v+w,\\
-		 \cdot &: K \times V \to V,\ (x,v)\mapsto vx,
-	\end{align*}
-	heißt \emph{Vektorraum über $K$} ($K$-VR), falls gilt:
-	\begin{enumerate}[(i)]
-		\item $(V,+)$ ist eine abelsche Gruppe
-		\item $\forall v\in V: v\cdot 1=v$ und\\
-                      $\forall x,y \in K\ \forall v\in V: (v\cdot x)\cdot y = v\cdot (x\cdot y)$
-		\item $\forall x,y \in K\ \forall v\in V: v(x+y) = vx + vy$\\
-                      $\forall x\in K\ \forall v,w\in V: (v+w)x = vx + wx$
-	\end{enumerate}
-	\end{Definition}
+ \subsection{Bemerkung und Definition (Charakteristik)}
+ 	\begin{Definition}[Charakteristik]
+ 		In $\mathbb{Z}_2$ gilt $1 + 1 = 0$. Allgemeiner definiert man die \emph{Charakteristik} eines Körpers $(K,+,\cdot)$ (mit neutralen Elementen 0 und 1 von + bzw. $\cdot$) durch
+ 		\begin{equation*}
+ 			\Char(K,+,\cdot):=
+ 			\begin{cases}
+ 				0                                                          & \text{falls } \forall n \in \mathbb{N}^\times: \sum_{j = 1}^{n} 1 \neq 0 \\
+ 				\min\{n \in \mathbb{N}^\times\mid \sum_{j = 1}^{n} 1 = 0\} & \text{sonst}
+ 			\end{cases}
+ 		\end{equation*}
+ 	\end{Definition}
+ 	z.B. $\Char(\mathbb{Z}_2) = 2$, da
+ 	\begin{align*}
+ 		\{n\in\mathbb{N}^\times\mid \underbrace{1+...+1=0}_{\text{n-mal}}=0\}
+ 		  & =\{n\in\mathbb{N}^\times\mid n=0 \text{ mod } 2\} \\
+ 		  & =\{n\in\mathbb{N}^\times\mid n \text{ gerade}\}
+ 	\end{align*}
+ 	und damit $\min\{n\in\mathbb{N}^\times\mid \underbrace{1+...+1=0}_{\text{n-mal}}\}=2$
 
-\paragraph{Bemerkung}
-	Wir notieren die Skalarmultiplikation als Rechtsmultiplikation (Skalar steht rechts):
-		\[ \cdot: K \times V \to V,\ (x,v) \mapsto vx \]
+ 	Wir werden mitunter $\Char(K,+,\cdot)\neq 0$ oder (öfter) $\Char(K,+,\cdot)=2$ ausschließen (müssen).
 
-\paragraph{Beispiel}
-	Die Translationen eines affinen Raumes bilden einen Vektorraum (vgl. mit der Skizze oben): Dieses Beispiel wird im nächsten Kapitel repräsentiert.
-	
-\paragraph{Beispiel}
-	Jeder Körper $ K $ ist ein $ K $-VR (Vektorraum über sich selbst): das ist ein (trivialer) Spezialfall des folgenden:
-	
-\subsection{Beispiel und Definition (Standardvektorraum)}
-	\begin{Definition}[Standardvektorraum]
-		Ist $ I $ eine Menge und $ K $ ein Körper, so bilden die $ K $-wertigen Abbildungen
-		\[ v: I \to K,\ i \mapsto v_i \]
-	einen Vektorraum mit der punktweise definierten Addition und Skalarmultiplikation:
-	\begin{align*}
-		I\ni i \mapsto (v+w)_i &:= v_i+w_i\in K\\
-		I\ni i \mapsto (vx)_i &:= v_ix \in K
-	\end{align*}
-	Dieser Vektorraum wird mit $K^{I}$ bezeichnet und \emph{Standardvektorraum} (über I und K) genannt. Im Falle $ I=\{1,...,n\} $ schreibt man auch $K^{n} := K^{\{1,...,n\}}$
-	\end{Definition}
+%VO04-2015-10-15
+ \subsection{Translationen und Vektoren}
 
-\subsection{Bemerkung und Definition (Familienschreibweise)}
-	\begin{Definition}
-		Anstelle der normalen Schreibweise
-		\[ I\ni i \mapsto v(i) \in K \]
-	für die Auswertung einer Abbildung  $v: I \to K$ an einem Punkt $i\in I$ haben wir die \emph{Indexschreibweise} verwendet:	
-		\[ I\ni i \mapsto v_i \in K \]
-	Wir haben damit eine Abbildung $v: I \to K$ als \emph{Familie} $ (v_i)_{i\in I} $ über der Indexmenge $ I $ aufgefasst -- Familie ist ein \glqq alternativer\grqq{} Begriff für Abbildung.
-	\end{Definition}
-	
-\paragraph{Beispiel}
-	Sei $i$ eine \glqq Zahl\grqq{} mit $i^2=-1$ ($i$ entspricht nicht dem Element der Indexmenge aus dem vorherigen Abschnitt). Die Menge der komplexen Zahlen
-		\[ \mathbb{C}:=\{{x+iy\mid x,y\in \mathbb{R}}\} \]
-	bildet mit der Addition und Multiplikation einen Körper:
-	\begin{align*}
-		+&:\mathbb{C}\times \mathbb{C} \to \mathbb{C}: ((x+y),(x'+y')) \mapsto (x+iy)+(x'+iy') := (x+x')+i(y+y')\\
-		\cdot &:\mathbb{C}\times \mathbb{C} \to \mathbb{C}: ((x+iy),(x'+iy'))\mapsto (x+iy)\cdot (x'+iy') :=(xx'-yy')+i(xy'+x'y)
-	\end{align*}
-	Der Körper $\mathbb{C}$ bildet einen $\mathbb{R}$-VR mit
-		\[ +:\mathbb{C}\times\mathbb{C}\to\mathbb{C} \]
-	wie oben und der Skalarmultiplikation
-		\[ \cdot:\mathbb{R}\times\mathbb{C}\to\mathbb{C}:(x',(x+iy))\mapsto(x+iy)x':=xx'+iyx' \]
-	Diese Skalarmultiplikation ist also gerade die Einschränkung der komplexen Multiplikation auf $\mathbb{R}\times\mathbb{C}$ wobei die Identifikation
-		\[ \mathbb{R}\cong \{{x+iy\in\mathbb{C}\mid y=0}\} \]
-	verwendet wird.
+ 	\begin{tikzpicture}[scale=1.5,>=triangle 45]
+ 		\draw[->,color=black] (-0.1,0) -- (10,0);
+ 		\draw[->,color=black] (0,-0.1) -- (0,4);
+
+ 		\coordinate[label=left:$x$] (x) at (1,2);
+ 		\coordinate[label=below:$y\equal\tau_v(x)$] (y) at (5,1.5);
+ 		\coordinate[label=above:$y'\equal\tau_w(x)$] (y') at (2,3.5);
+ 		\coordinate (z) at (6,3);
+
+ 		\draw [fill] (x) circle (.5pt);
+ 		\draw [fill] (y') circle (.5pt);
+ 		\draw [fill] (y) circle (.5pt);
+ 		\draw [fill] (z) circle (.5pt);
+
+ 		\draw [->] (x) to node[below left]{$ v $} (y);
+ 		\draw [->] (x) --node[above left]{$ w $} (y');
+ 		\draw [->] (y) --node[below right]{$ w $} (z);
+ 		\draw [->] (y') --node[above right]{$ v $} (z);
+ 		\draw [->] (x) --node[above]{$ v+w $} node[below]{$ w+v $} (z);
+
+ 		\draw (z) node[below right] {$z = \tau_w(y)=(\tau_w\circ\tau_v)(x)=\tau_{w+v}(x)$};
+ 		\draw (z) node[above right] {$z' = \tau_v(y')=(\tau_v\circ\tau_w)(x) = \tau_{v+w}(x)$};
+ 		\draw (4,0.5) node[] {$z=z'\Rightarrow$ Translationen \glqq der\grqq{} Ebene bilden eine abelsche Gruppe};
+ 	\end{tikzpicture}
+
+ 	\begin{tikzpicture}[scale=1.5, >=triangle 45]
+ 		\draw[->,color=black] (-0.1,0) -- (9,0);
+ 		\draw[->,color=black] (0,-0.1) -- (0,4);
+
+ 		\coordinate[label=left:$ x $] (x) at (1,3);
+ 		\coordinate[label=right:$ y \equal \tau_v(x) \equal (\tau_{\frac{v}{2}} \circ \tau_{\frac{v}{2}})(x) \equal \tau_{\frac{v}{2} + \frac{v}{2}}(x) $] (y) at (3,1);
+
+ 		\draw [fill] (x) circle (.5pt);
+ 		\draw [fill] (y) circle (.5pt);
+
+ 		\draw [->] (1,3) --node[left]{$v$} (3,1);
+ 		\draw [->] (1,3) --node[above] {$\frac{v}{2}$} (2,2);
+ 		\draw [->] (2,2) --node[above] {$\frac{v}{2}$} (3,1);
+
+ 		\draw (5,3) node[text width = 7cm] {Translationen kann man \glqq strecken\grqq{}, sodass gewisse Rechengesetze gelten.};
+ 	\end{tikzpicture}
+
+ \subsection{Definition (Vektorraum)}
+ 	\begin{Definition}[Vektorraum]
+ 		Sei $K$ ein Körper. Eine Menge $V$ mit zwei Abbildungen
+ 		\begin{align*}
+ 			+     & : V \times V \to V,\ (v,w)\mapsto v+w, \\
+ 			\cdot & : K \times V \to V,\ (x,v)\mapsto vx,
+ 		\end{align*}
+ 		heißt \emph{Vektorraum über $K$} ($K$-VR), falls gilt:
+ 		\begin{enumerate}[(i)]
+ 			\item $(V,+)$ ist eine abelsche Gruppe
+ 			\item $\forall v\in V: v\cdot 1=v$ und\\
+ 			      $\forall x,y \in K\ \forall v\in V: (v\cdot x)\cdot y = v\cdot (x\cdot y)$
+ 			\item $\forall x,y \in K\ \forall v\in V: v(x+y) = vx + vy$\\
+ 			      $\forall x\in K\ \forall v,w\in V: (v+w)x = vx + wx$
+ 		\end{enumerate}
+ 	\end{Definition}
+
+ 	\paragraph{Bemerkung}
+ 		Wir notieren die Skalarmultiplikation als Rechtsmultiplikation (Skalar steht rechts):
+ 		\[
+ 			\cdot: K \times V \to V,\ (x,v) \mapsto vx
+ 		\]
+
+ 	\paragraph{Beispiel}
+ 		Die Translationen eines affinen Raumes bilden einen Vektorraum (vgl. mit der Skizze oben): Dieses Beispiel wird im nächsten Kapitel repräsentiert.
+
+ 	\paragraph{Beispiel}
+ 		Jeder Körper $ K $ ist ein $ K $-VR (Vektorraum über sich selbst): das ist ein (trivialer) Spezialfall des folgenden:
+
+ \subsection{Beispiel und Definition (Standardvektorraum)}
+ 	\begin{Definition}[Standardvektorraum]
+ 		Ist $ I $ eine Menge und $ K $ ein Körper, so bilden die $ K $-wertigen Abbildungen
+ 		\[
+ 			v: I \to K,\ i \mapsto v_i
+ 		\]
+ 		einen Vektorraum mit der punktweise definierten Addition und Skalarmultiplikation:
+ 		\begin{align*}
+ 			I\ni i \mapsto (v+w)_i & := v_i+w_i\in K \\
+ 			I\ni i \mapsto (vx)_i  & := v_ix \in K
+ 		\end{align*}
+ 		Dieser Vektorraum wird mit $K^{I}$ bezeichnet und \emph{Standardvektorraum} (über I und K) genannt. Im Falle $ I=\{1,...,n\} $ schreibt man auch $K^{n} := K^{\{1,...,n\}}$
+ 	\end{Definition}
+
+ \subsection{Bemerkung und Definition (Familienschreibweise)}
+ 	\begin{Definition}
+ 		Anstelle der normalen Schreibweise
+ 		\[
+ 			I\ni i \mapsto v(i) \in K
+ 		\]
+ 		für die Auswertung einer Abbildung  $v: I \to K$ an einem Punkt $i\in I$ haben wir die \emph{Indexschreibweise} verwendet:
+ 		\[
+ 			I\ni i \mapsto v_i \in K
+ 		\]
+ 		Wir haben damit eine Abbildung $v: I \to K$ als \emph{Familie} $ (v_i)_{i\in I} $ über der Indexmenge $ I $ aufgefasst -- Familie ist ein \glqq alternativer\grqq{} Begriff für Abbildung.
+ 	\end{Definition}
+
+ 	\paragraph{Beispiel}
+ 		Sei $i$ eine \glqq Zahl\grqq{} mit $i^2=-1$ ($i$ entspricht nicht dem Element der Indexmenge aus dem vorherigen Abschnitt). Die Menge der komplexen Zahlen
+ 		\[
+ 			\mathbb{C}:=\{{x+iy\mid x,y\in \mathbb{R}}\}
+ 		\]
+ 		bildet mit der Addition und Multiplikation einen Körper:
+ 		\begin{align*}
+ 			+     & :\mathbb{C}\times \mathbb{C} \to \mathbb{C}: ((x+y),(x'+y')) \mapsto (x+iy)+(x'+iy') := (x+x')+i(y+y')            \\
+ 			\cdot & :\mathbb{C}\times \mathbb{C} \to \mathbb{C}: ((x+iy),(x'+iy'))\mapsto (x+iy)\cdot (x'+iy') :=(xx'-yy')+i(xy'+x'y)
+ 		\end{align*}
+ 		Der Körper $\mathbb{C}$ bildet einen $\mathbb{R}$-VR mit
+ 		\[
+ 			+:\mathbb{C}\times\mathbb{C}\to\mathbb{C}
+ 		\]
+ 		wie oben und der Skalarmultiplikation
+ 		\[
+ 			\cdot:\mathbb{R}\times\mathbb{C}\to\mathbb{C}:(x',(x+iy))\mapsto(x+iy)x':=xx'+iyx'
+ 		\]
+ 		Diese Skalarmultiplikation ist also gerade die Einschränkung der komplexen Multiplikation auf $\mathbb{R}\times\mathbb{C}$ wobei die Identifikation
+ 		\[
+ 			\mathbb{R}\cong \{{x+iy\in\mathbb{C}\mid y=0}\}
+ 		\]
+ 		verwendet wird.

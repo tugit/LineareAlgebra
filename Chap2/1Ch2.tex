@@ -109,74 +109,76 @@
 		\[ \tau:\mathbb{R}^2\times Z^2\to Z^2,(v,a)\mapsto a+v \]
 	keinen affinen Raum, da diese Operation nicht einfach transitiv ist: zu je zwei Punkten gibt es unendlich viele "`Verbindungsvektoren"'.
 
-%-----------------------------------------------------------------------
-\tdplotsetmaincoords{340}{0} 
-\begin{tikzpicture}[scale=2,tdplot_main_coords]
-\def\cyradius{1.2}
-\def\cyhight{2.5}
-\def\xstart{-6}
-\def\ystart{1.2}
-%\def\xstart{-\cyradius}
-%\def\ystart{-2}
+ 	%-----------------------------------------------------------------------
+ 	\tdplotsetmaincoords{340}{0}
+ 	\begin{tikzpicture}[scale=2,tdplot_main_coords]
+ 		\def\cyradius{1.2}
+ 		\def\cyhight{2.5}
+ 		\def\xstart{-6}
+ 		\def\ystart{1.2}
+ 		%\def\xstart{-\cyradius}
+ 		%\def\ystart{-2}
 
-\def\xpostext{\xstart-0.1}
-\def\ypostext{\ystart-1}
+ 		\def\xpostext{\xstart-0.1}
+ 		\def\ypostext{\ystart-1}
 
-\coordinate[color=blue,label={[xshift=-10, yshift=5]:$\mathbb{R}^2$}] (Nullpunkt) at (\xstart,\ystart,0);
-%x,Z,y
-\foreach \t in {0,5,...,180}{%
-\draw[line width=1pt,color=red] ({\cyradius*cos(\t)},{0},{\cyradius*sin(\t)})--({\cyradius*cos(\t+5)},{0},{\cyradius*sin(\t+5)});
-}
+ 		\coordinate[color=blue,label={[xshift=-10, yshift=5]:$\mathbb{R}^2$}] (Nullpunkt) at (\xstart,\ystart,0);
+ 		%x,Z,y
+ 		\foreach \t in {0,5,...,180}{%
+ 			\draw[line width=1pt,color=red] ({\cyradius*cos(\t)},{0},{\cyradius*sin(\t)})--({\cyradius*cos(\t+5)},{0},{\cyradius*sin(\t+5)});
+ 		}
 
-\foreach \t in {0,5,...,360}{%
-\draw[line width=1pt,color=red] ({\cyradius*cos(\t)},{\cyhight},{\cyradius*sin(\t)})--({\cyradius*cos(\t+5)},{\cyhight},{\cyradius*sin(\t+5)});
-}
+ 		\foreach \t in {0,5,...,360}{%
+ 			\draw[line width=1pt,color=red] ({\cyradius*cos(\t)},{\cyhight},{\cyradius*sin(\t)})--({\cyradius*cos(\t+5)},{\cyhight},{\cyradius*sin(\t+5)});
+ 		}
 
-\draw[line width=1pt,color=red] ({\cyradius},{0},{0})--({\cyradius},{\cyhight},{0});
-\draw[line width=1pt,color=red] ({-\cyradius},{0},{0})--({-\cyradius},{\cyhight},{0});
+ 		\draw[line width=1pt,color=red] ({\cyradius},{0},{0})--({\cyradius},{\cyhight},{0});
+ 		\draw[line width=1pt,color=red] ({-\cyradius},{0},{0})--({-\cyradius},{\cyhight},{0});
 
-\foreach \t in {0,-5,...,-180}{%
-\draw[line width=1pt,color=blue] ({\cyradius*cos(\t)},{1-\t/360},{sin(\t)})--({\cyradius*cos(\t+2)},{1-\t/360},{sin(\t +2)});
-}%for end
+ 		\foreach \t in {0,-5,...,-180}{%
+ 			\draw[line width=1pt,color=blue] ({\cyradius*cos(\t)},{1-\t/360},{sin(\t)})--({\cyradius*cos(\t+2)},{1-\t/360},{sin(\t +2)});
+ 		}%for end
 
-\foreach \t in {-180,-181,...,-260}{%
-\ifthenelse{\t=-260}{\draw[-{>[scale=1,length=10,width=6]},line width=1pt,color=blue] ({\cyradius*cos(\t)},{1-\t/360},{sin(\t)})--({\cyradius*cos(\t-5)},{1-\t/360},{sin(\t -5)});}{%else Zweig
-\ifthenelse{\t=-225}{\draw[line width=1pt,color=blue] ({\cyradius*cos(\t)},{1-\t/360},{sin(\t)})--({\cyradius*cos(\t-5)},{1-\t/360},{sin(\t -5)})node[below]{$v$};}{\draw[line width=1pt,color=blue] ({\cyradius*cos(\t)},{1-\t/360},{sin(\t)})--({\cyradius*cos(\t-5)},{1-\t/360},{sin(\t -5)});}
-}
-}%for end
+ 		\foreach \t in {-180,-181,...,-260}{%
+ 			\ifthenelse{\t=-260}{\draw[-{>[scale=1,length=10,width=6]},line width=1pt,color=blue] ({\cyradius*cos(\t)},{1-\t/360},{sin(\t)})--({\cyradius*cos(\t-5)},{1-\t/360},{sin(\t -5)});}{%else Zweig
+ 				\ifthenelse{\t=-225}{\draw[line width=1pt,color=blue] ({\cyradius*cos(\t)},{1-\t/360},{sin(\t)})--({\cyradius*cos(\t-5)},{1-\t/360},{sin(\t -5)})node[below]{$v$};}{\draw[line width=1pt,color=blue] ({\cyradius*cos(\t)},{1-\t/360},{sin(\t)})--({\cyradius*cos(\t-5)},{1-\t/360},{sin(\t -5)});}
+ 			}
+ 		}%for end
 
-\foreach \t in {85,84,...,0}{%
-\draw[line width=1pt,color=blue] ({\cyradius*cos(\t)},{1-\t/360},{sin(\t)})--({\cyradius*cos(\t+5)},{1-\t/360},{sin(\t +5)});
-}
-%zwei Punkte x,y und u,z
-\draw[fill,color=red] (0,0.75,1) circle [x=1cm,y=1cm,radius=0.05]node[below,label={[xshift=0, yshift=-34]$\text{Äquivalenzklasse } \mathbb{R}^2_{(x,y)}$}]{$(x,y)\sim (\tilde{x},\tilde{y})$};
-\draw[fill,color=red] (0,1.75,1) circle [x=1cm,y=1cm,radius=0.05]node[ yshift=20,label={[xshift=0, yshift=22]$Z^2 =S^{1} \times \mathbb{R}^{1}$}]{$(u,z)\sim (\tilde{u},\tilde{z})$};
-% Richtungsvektor
-\draw[-{>[scale=1,length=10,width=6]},shorten >=6pt, shorten <=6pt,line width=1pt,color=blue] (0,0.75,1) -- (0,1.75,1) node[midway, right]{$v$} ;
-%%blause Koordinatensystem
-\draw[-{>[scale=1,length=10,width=8]},line width=1pt,color=blue] ({\xstart},{\ystart-1.5},{0})--({\xstart},{\ystart+1.5},{0});
-\draw[-{>[scale=1,length=10,width=8]},line width=0.75pt,color=blue] ({\xstart-1},{\ystart},{0})--({\xstart+3*\cyradius},{\ystart},{0});
-%rote Linien
-\draw[line width=1pt,color=red] ({\xstart+2*\cyradius},{\ystart-0.6},{0})--({\xstart+2*\cyradius},{\ystart+1.5},{0});
-\draw[line width=1pt,color=red] ({\xstart},{\ystart-1},{0})--({\xstart},{\ystart+1},{0});
+ 		\foreach \t in {85,84,...,0}{%
+ 			\draw[line width=1pt,color=blue] ({\cyradius*cos(\t)},{1-\t/360},{sin(\t)})--({\cyradius*cos(\t+5)},{1-\t/360},{sin(\t +5)});
+ 		}
+ 		%zwei Punkte x,y und u,z
+ 		\draw[fill,color=red] (0,0.75,1) circle [x=1cm,y=1cm,radius=0.05]node[below,label={[xshift=0, yshift=-34]$\text{Äquivalenzklasse } \mathbb{R}^2_{(x,y)}$}]{$(x,y)\sim (\tilde{x},\tilde{y})$};
+ 		\draw[fill,color=red] (0,1.75,1) circle [x=1cm,y=1cm,radius=0.05]node[ yshift=20,label={[xshift=0, yshift=22]$Z^2 =S^{1} \times \mathbb{R}^{1}$}]{$(u,z)\sim (\tilde{u},\tilde{z})$};
+ 		% Richtungsvektor
+ 		\draw[-{>[scale=1,length=10,width=6]},shorten >=6pt, shorten <=6pt,line width=1pt,color=blue] (0,0.75,1) -- (0,1.75,1) node[midway, right]{$v$} ;
+ 		%%blause Koordinatensystem
+ 		\draw[-{>[scale=1,length=10,width=8]},line width=1pt,color=blue] ({\xstart},{\ystart-1.5},{0})--({\xstart},{\ystart+1.5},{0});
+ 		\draw[-{>[scale=1,length=10,width=8]},line width=0.75pt,color=blue] ({\xstart-1},{\ystart},{0})--({\xstart+3*\cyradius},{\ystart},{0});
+ 		%rote Linien
+ 		\draw[line width=1pt,color=red] ({\xstart+2*\cyradius},{\ystart-0.6},{0})--({\xstart+2*\cyradius},{\ystart+1.5},{0});
+ 		\draw[line width=1pt,color=red] ({\xstart},{\ystart-1},{0})--({\xstart},{\ystart+1},{0});
 
-%rote Punkte 2d x,y und x1,y1
-\draw[fill,color=red] ({\xstart+0.5},{\ystart-0.5},0) circle [x=1cm,y=1cm,radius=0.05]node[above]{$(x,y)$};
-\draw[fill,color=red] ({\xstart+0.5+2*\cyradius},{\ystart-0.5},0) circle [x=1cm,y=1cm,radius=0.05]node[above]{$(\tilde{x},\tilde{y})$};
+ 		%rote Punkte 2d x,y und x1,y1
+ 		\draw[fill,color=red] ({\xstart+0.5},{\ystart-0.5},0) circle [x=1cm,y=1cm,radius=0.05]node[above]{$(x,y)$};
+ 		\draw[fill,color=red] ({\xstart+0.5+2*\cyradius},{\ystart-0.5},0) circle [x=1cm,y=1cm,radius=0.05]node[above]{$(\tilde{x},\tilde{y})$};
 
-%rote Punkte 2d u,z und u1,z1
-\draw[fill,color=red] ({\xstart+0.5},{\ystart+0.5},0) circle [x=1cm,y=1cm,radius=0.05]node[above]{$(u,z)$};
-\draw[fill,color=red] ({\xstart+0.5+2*\cyradius},{\ystart+0.5},0) circle [x=1cm,y=1cm,radius=0.05]node[above]{$(\tilde{u},\tilde{z})$};
+ 		%rote Punkte 2d u,z und u1,z1
+ 		\draw[fill,color=red] ({\xstart+0.5},{\ystart+0.5},0) circle [x=1cm,y=1cm,radius=0.05]node[above]{$(u,z)$};
+ 		\draw[fill,color=red] ({\xstart+0.5+2*\cyradius},{\ystart+0.5},0) circle [x=1cm,y=1cm,radius=0.05]node[above]{$(\tilde{u},\tilde{z})$};
 
-%text node unterhalb der 3d graphik    
-\node[text width=6cm, anchor=north west, text centered] at (\xpostext,\ypostext,0)
-    {$(x,y)\sim (\tilde{x},\tilde{y})$ \\ $:\Leftrightarrow \begin{cases} \exists k \in \mathbb{Z}: &  \tilde{x} =x + 2k \pi, \\  & \tilde{y} = y \end{cases}$};
-    
-\draw[->,line width=1pt,color=red, dashed, shorten >=7pt, shorten <=7pt] (\xpostext+0.89,\ypostext-0.15,0) -- ({\xstart+0.5},{\ystart-0.5},0);
-   
-\draw[->,line width=1pt,color=red, dashed, shorten >=7pt, shorten <=7pt] (\xpostext+2.21,\ypostext-0.15,0) -- ({\xstart+0.5+2*\cyradius},{\ystart-0.5},0);
-\end{tikzpicture}
-%-----------------------------------------------------------------------
+ 		%text node unterhalb der 3d graphik
+ 		\node[text width=6cm, anchor=north west, text centered] at (\xpostext,\ypostext,0)
+ 		{$(x,y)\sim (\tilde{x},\tilde{y})$ \\ $:\Leftrightarrow
+ 			\begin{cases} \exists k \in \mathbb{Z}: &  \tilde{x} =x + 2k \pi, \\  & \tilde{y} = y \end{cases}
+ 		$};
+
+ 		\draw[->,line width=1pt,color=red, dashed, shorten >=7pt, shorten <=7pt] (\xpostext+0.89,\ypostext-0.15,0) -- ({\xstart+0.5},{\ystart-0.5},0);
+
+ 		\draw[->,line width=1pt,color=red, dashed, shorten >=7pt, shorten <=7pt] (\xpostext+2.21,\ypostext-0.15,0) -- ({\xstart+0.5+2*\cyradius},{\ystart-0.5},0);
+ 	\end{tikzpicture}
+ 	%-----------------------------------------------------------------------
 
 \subsection{Beispiel \& Definition (affiner Unterraum)}
 		Ist $ U\subset V $ UVR eines $ K $-VR $ V $, so liefert jedes $ v\in V $ die Nebenklasse

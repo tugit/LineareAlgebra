@@ -1,471 +1,568 @@
 %VO10-2015-11-10
 \section{Summen, Produkte und Quotienten}
-\subsection{Definition (Summe von UVR)}
-	\begin{Definition}[Summe von UVR]
-		Die \emph{Summe einer Familie} $ (U_i)_{i\in I} $ von UVR $ U_i\subset V $ eines $ K $-VR ist die Menge
-		\[
-		\sum_{i\in I} U_i := \Big\{\sum_{i \in I}u_i\mid \forall i\in I: u_i\in U_i \land \# \{i\in I\mid u_i \neq 0\}<\infty\Big\}.
-		\]
-	\end{Definition}
-		
-\paragraph{Bemerkung}
-	Offenbar ist $ \sum_{i\in I} U_i\subset V $ UVR mit
-	\[  \bigcup_{i\in I}U_i \subset \sum_{i\in I} U_i \Rightarrow \Big[\bigcup_{i\in I}U_i\Big]\subset \sum_{i\in I} U_i; \]
-	andererseits gilt:
-	\[ \sum_{i\in I}U_i \subset \Big\{\sum_{j\in J}v_jx_j\mid \forall j\in J: v_j\in \bigcup_{i\in I}U_i \land \#\{j\in J\mid x_j\neq 0\}<\infty\Big\}\subset \Big[\bigcup_{i\in I}U_i\Big]. \]
-	Damit ist die Summe einer Familie $ (U_i)_{i\in I} $ gerade die lineare Hülle ihrer Vereinigung $ \bigcup_{i\in I}U_i $,
-	\[ \sum_{i\in I}U_i= \Big[\bigcup_{i\in I}U_i\Big]. \]
-		
-\paragraph{Beispiel}
-	Sei $ V=\mathbb{R}^\mathbb{N} $ der Raum der reellen Folgen. Für $ n\in \mathbb{N} $ setze
-		\[
-		U_n := \{v\in \mathbb{R}^\mathbb{N}\mid \forall j\in \mathbb{N}: j>n\Rightarrow v_j = 0 \} \subset \mathbb{R}^\mathbb{N};
-		\]
-	dann gilt $ \forall n\in \mathbb{N}: U_n\subset U_{n+1} $, und damit auch
-		\begin{gather*}
-		\sum_{i\leq n} U_i = U_n = \bigcup_{i\leq n}U_i, \quad\text{aber}\quad \sum_{i\in \mathbb{N}}U_i = \bigcup_{i\in \mathbb{N}}U_i \neq V.
-		\end{gather*}
-		
-	Nun setze für $ i\in \{0,1\} $
-		\[
-		\tilde{U}_i := \{v\in \mathbb{R}^\mathbb{N}\mid \forall j\in \mathbb{N}: j\equiv
-i\operatorname{mod} 2\Rightarrow v_j = 0\}
-		\]
-	dann ist 
-		\[
-		\bigcup_{i\in \{0,1\}}\tilde{U}_i \neq \sum_{i\in \{0,1\}}\tilde{U}_i = V.
-		\]
-		
-\subsection{Dimensionssatz}
-	\begin{Satz}[Dimensionssatz]
-	Sind $ U_i \subset V $ UVR mit $ \dim U_i < \infty $ für $ i\in \{1,2\} $, so ist
-		\[ \dim (U_1+U_2) + \dim (U_1\cap U_2) = \dim U_1 + \dim U_2. \]	
-	Ist $ \dim U_1 = \infty$ oder $ \dim U_2=\infty $, so ist auch $ \dim (U_1+U_2)=\infty $.
-	\end{Satz}
-	
-\paragraph{Beweis}
-	Seien
-		\begin{itemize}
-		\item $ B_0 \subset U_1\cap U_2 $ eine Basis von $ U_0 := U_1\cap U_2 $;
-		\item $ S_i \subset U_i $ lin. unabh., so dass $ B_i = B_0 \cup S_i $ Basen von $ U_i $ sind ($ i = 1,2 $) (nach BES).
-		\end{itemize}
-	Offenbar gilt dann, da $ B_i = B_0\cup S_i $ lin. unabh. sind,
-		\[
-		B_0\cap S_1 = \emptyset \text{ und } B_0\cap S_2 = \emptyset
-		\]
-	und 
-		\[
-		S_1\cap S_2 \subset U_1\cap U_2 = [B_0] \Rightarrow S_1\cap S_2 = \emptyset.
-		\]
-	Wir zeigen, dass $ B:= B_0\cup S_1\cup S_2 $ Basis von $ U_1 + U_2 =: U $ ist.
-	\begin{itemize}
-\item	$ B\subset U $ ist Erz. Syst. nach Konstruktion:
-		\begin{gather*}
-		\forall i\in \{1,2\} : U_i=[B_i]\subset [B]\\
-		\Rightarrow U_1+U_2 = [U_1\cup U_2]\subset [B]
-		\end{gather*}
-	
-\item $ B $ ist linear unabhängig:
-	Gegeben sei eine Linearkombination von $ 0\in U $,
-		\[
-		0 = \sum_{b\in B}bx_b = \underbrace{\sum_{b\in B_0}bx_b}_{:=b_0} + \underbrace{\sum_{b\in S_1}bx_b}_{:=s_1} + \underbrace{\sum_{b\in S_2}bx_b}_{:=s_2}
-		\]
-        mit $b_0\in [B_0] = U_0$ und $s_i\in [S_i]$ für $i= 1,2$;
+ \subsection{Definition (Summe von UVR)}
+ 	\begin{Definition}[Summe von UVR]
+ 		Die \emph{Summe einer Familie} $ (U_i)_{i\in I} $ von UVR $ U_i\subset V $ eines $ K $-VR ist die Menge
+ 		\[
+ 			\sum_{i\in I} U_i := \Big\{\sum_{i \in I}u_i\mid \forall i\in I: u_i\in U_i \land \# \{i\in I\mid u_i \neq 0\}<\infty\Big\}.
+ 		\]
+ 	\end{Definition}
 
-	dann gilt etwa, da $ B_1 = B_0 \cup S_1 $ lin. unabh. ist,
-		\[
-		\underbrace{b_0+ s_1}_{\in U_1} = \underbrace{-s_2}_{\in [S_2]} \in U_1\cap [S_2]\subset U_0 \Rightarrow s_1 = 0
-		\]
-		
-	und damit, da $ B_2 = B_0 \cup S_2 $ lin. unabh. ist,
-		\[
-		0 = b_0 + \underbrace{s_1}_{=0} + s_2 \Rightarrow b_0=s_2 = 0.
-		\]
-\end{itemize}
-	Mit der linearen Unabhängigkeit von $ B_0$, $S_1 $ und $ S_2 $ folgt dann
-		\[
-		0 = \sum_{b\in B_0}bx_b = \sum_{b\in S_1}bx_b = \sum_{b\in S_2}bx_b \Rightarrow \forall b\in B: x_b = 0.
-		\]
-	Mit
-		\begin{align*}
-		\overbrace{\#B}^{\dim(U_1+U_2)} + \overbrace{\#B_0}^{\dim(U_1\cap U_2)} &= (\#B_0 + \#S_1 + \#S_2) + \#B_0\\
-		&= (\#B_0+\#S_1)+(\#B_0 + \#S_2) \\
-		&= \underbrace{\#B_1}_{\dim(U_1)}+\underbrace{\#B_2}_{\dim(U_2)}
-		\end{align*}
-	folgt dann die Behauptung.
+ 	\paragraph{Bemerkung}
+ 		Offenbar ist $ \sum_{i\in I} U_i\subset V $ UVR mit
+ 		\[
+ 			\bigcup_{i\in I}U_i \subset \sum_{i\in I} U_i \Rightarrow \Big[\bigcup_{i\in I}U_i\Big]\subset \sum_{i\in I} U_i;
+ 		\]
+ 		andererseits gilt:
+ 		\[
+ 			\sum_{i\in I}U_i \subset \Big\{\sum_{j\in J}v_jx_j\mid \forall j\in J: v_j\in \bigcup_{i\in I}U_i \land \#\{j\in J\mid x_j\neq 0\}<\infty\Big\}\subset \Big[\bigcup_{i\in I}U_i\Big].
+ 		\]
+ 		Damit ist die Summe einer Familie $ (U_i)_{i\in I} $ gerade die lineare Hülle ihrer Vereinigung $ \bigcup_{i\in I}U_i $,
+ 		\[
+ 			\sum_{i\in I}U_i= \Big[\bigcup_{i\in I}U_i\Big].
+ 		\]
 
-\paragraph{Bemerkung}
-	Im Beweis haben wir bemerkt: 
-	
-	Ist z.B. $ B_1 = B_0\cup S_1 $ lin. unabh., und $ b_0\in [B_0] $ und $ s_1\in [S_1] $ mit $b_0 + s_1 = 0$ so folgt 
-	\[b_0 = s_1 = 0 \]
-	Sind nämlich $ b_0 = \sum_{b\in B_0} bx_b $ und $ s_1 = \sum_{b\in S_1}bx_b $, so gilt 
-		\begin{gather*}
-		0 = b_0+s_1 = \sum_{b\in B_0} bx_b+\sum_{b\in S_1} bx_b = \sum_{b\in B_1} bx_b \\ \Rightarrow \forall b\in B_1: x_b = 0\Rightarrow b_0 = s_1 = 0.
-		\end{gather*}
+ 	\paragraph{Beispiel}
+ 		Sei $ V=\mathbb{R}^\mathbb{N} $ der Raum der reellen Folgen. Für $ n\in \mathbb{N} $ setze
+ 		\[
+ 			U_n := \{v\in \mathbb{R}^\mathbb{N}\mid \forall j\in \mathbb{N}: j>n\Rightarrow v_j = 0 \} \subset \mathbb{R}^\mathbb{N};
+ 		\]
+ 		dann gilt $ \forall n\in \mathbb{N}: U_n\subset U_{n+1} $, und damit auch
+ 		\begin{gather*}
+ 			\sum_{i\leq n} U_i = U_n = \bigcup_{i\leq n}U_i, \quad\text{aber}\quad \sum_{i\in \mathbb{N}}U_i = \bigcup_{i\in \mathbb{N}}U_i \neq V.
+ 		\end{gather*}
 
-\paragraph{Bemerkung}
-	Ist $ U_1\cap U_2 = \{0\} $ bzw. $ \dim (U_1\cap U_2)  = 0 $, so zeigt der Beweis auch:
-		\[
-		\forall v\in U_1+U_2\ \exists ! u_1 \in U_1\ \exists ! u_2\in U_2: v= u_1+u_2
-		\]
+ 		Nun setze für $ i\in \{0,1\} $
+ 		\[
+ 			\tilde{U}_i := \{v\in \mathbb{R}^\mathbb{N}\mid \forall j\in \mathbb{N}: j\equiv
+ 			i\operatorname{mod} 2\Rightarrow v_j = 0\}
+ 		\]
+ 		dann ist
+ 		\[
+ 			\bigcup_{i\in \{0,1\}}\tilde{U}_i \neq \sum_{i\in \{0,1\}}\tilde{U}_i = V.
+ 		\]
 
-\subsection{Definition (Komplementäre UVR)}
-	\begin{Definition}[Komplementäre UVR]
-		Zwei UVR $ U_1,U_2 \subset V $ heißen \emph{komplementär} in $ V $, falls
-		\[
-		U_1+U_2=V\text{ und } U_1\cap U_2 = \{0\}.
-		\]
-	\end{Definition}
-		
-\subsection{Lemma (Komplementäre UVR)}
-	\begin{Lemma}[Komplementäre UVR]
-		Zu jedem UVR $ U\subset V $ existiert ein (in $ V $) komplementärer UVR.
-	\end{Lemma}
-	
-\paragraph{Beweis}
-	Sei $ U\subset V $ UVR eines $ K $-VR $ V $.
-	Seien 
-		\begin{itemize}
-		\item $ B\subset U $ eine Basis von $ U $;
-		\item $ S\subset V $ lin. unahb., so dass $ C=B\cup S $ Basis von $ V $ ist (BES).
-		\end{itemize}
-	Definiere $ U':= [S] $. Dann ist $ U'\subset V $ UVR mit
-		\begin{enumerate}[(i)]
-		% NOTE: wir zeigen, dass U+U' Übermenge ist, wollen aber letztendlich Gleichheit zeigen ... die andere Inklusion ist aber trivial, da U und U' Teilmengen von V sind
-		\item $ U+U' \supset [C] = V $, da $ C\subset U\cup U' $ Erz. Syst. von $ V $ ist;
-		\item $ U\cap U' = [B]\cap [S] = \{0\}$, da $ C=B\cup S $ linear unabhängig ist.
-		\end{enumerate}
-		
-\paragraph{Bemerkung}
-	Zu einem UVR $ U\subset V $ gibt es normalerweise viele komplementäre UVR $ U'\subset V $.
-	Zu
-		\begin{equation*}
-		U:= \{v\in K^2\mid v_2 = 0\}
-		\end{equation*}
-	
-	ist beispielsweise jeder UVR $ U' = [u']$ mit $u'_2\neq 0 $ komplementär in $ K^2 $.
-	
-\subsection{Lemma \& Definition (direkte Summe)}
-	\begin{Definition}[Direkte Summe]
-	Sei $ U= \sum_{i\in I}U_i\subset V $ Summe einer Familie von UVR $ U_i\in V $; dann besitzt jeder Vektor $ u\in U $ eine eindeutige Zerlegung als Summe von $ u_i $, genau dann, wenn
-		\begin{equation*}
-		\forall i\in I: U_i\cap \sum_{j\in I\setminus \{i\}}U_j = \{0 \}.
-		\end{equation*}
-		
-	In diesem Falle heißt die Summe \emph{direkt} und man schreibt
-	\[ U = \bigoplus_{i\in I} U_i. \]
-	\end{Definition}
-		
-\paragraph{Bemerkung}
-	Eine Summe $ V = \sum_{i\in I} U_i $ ist genau dann direkt, wenn
-		\[
-		\forall i\in I: U_i, \sum_{j\in I\setminus\{i\}}U_j \subset V
-		\]
-	komplementäre UVR in $ V $ sind.
+ \subsection{Dimensionssatz}
+ 	\begin{Satz}[Dimensionssatz]
+ 		Sind $ U_i \subset V $ UVR mit $ \dim U_i < \infty $ für $ i\in \{1,2\} $, so ist
+ 		\[
+ 			\dim (U_1+U_2) + \dim (U_1\cap U_2) = \dim U_1 + \dim U_2.
+ 		\]
+ 		Ist $ \dim U_1 = \infty$ oder $ \dim U_2=\infty $, so ist auch $ \dim (U_1+U_2)=\infty $.
+ 	\end{Satz}
 
-\paragraph{Beweis}
-	Zu zeigen ist die Eindeutigkeitsaussage. Sei also $ u \in \bigoplus_{i\in I}U_i $,
-		\begin{gather*}
-		u = \sum_{i\in I} u_i = \sum_{i\in I} u_i' \text{ mit } \forall i\in I: u_i,u'_i\in U_i;
-		\end{gather*}
-	dann gilt für jedes $ i\in I$:
-		\[
-		u'_i-u_i = \sum _{j\neq i}u_j-\sum_{j\neq i} u'_j = \underbrace{\sum_{j\neq i}u_j-u'_j}_{\in \sum_{j\neq i}U_j}\ \in U_i\cap \sum_{j\neq i} U_j = \{0\},
-		\]
-	da die Summe als direkt angenommen wurde; damit folgt $ \forall i \in I: u_i = u'_i $, d.h. die Zerlegung ist eindeutig.
-	
-	Die Umkehrung ist trivial:
-		\begin{gather*}
-		\exists i\in I:U_i\cap \sum_{j\neq i} U_j \neq \{0\}\\
-		\Rightarrow \exists i\in I\ \exists u_i\in U_i\setminus\{0\}\ \exists (u_j)_{j\in I\setminus\{i\}}:
-		(\forall j\in I\setminus\{i\}:u_j \in U_j)\land u_i = \sum_{j\neq i} u_j,
-		\end{gather*}
-	d.h., die Zerlegung von $ u_i\in \sum_{i\in I}U_i $ ist nicht eindeutig.
+ 	\paragraph{Beweis}
+ 		Seien
+ 		\begin{itemize}
+ 			\item $ B_0 \subset U_1\cap U_2 $ eine Basis von $ U_0 := U_1\cap U_2 $;
+ 			\item $ S_i \subset U_i $ lin. unabh., so dass $ B_i = B_0 \cup S_i $ Basen von $ U_i $ sind ($ i = 1,2 $) (nach BES).
+ 		\end{itemize}
+ 		Offenbar gilt dann, da $ B_i = B_0\cup S_i $ lin. unabh. sind,
+ 		\[
+ 			B_0\cap S_1 = \emptyset \text{ und } B_0\cap S_2 = \emptyset
+ 		\]
+ 		und
+ 		\[
+ 			S_1\cap S_2 \subset U_1\cap U_2 = [B_0] \Rightarrow S_1\cap S_2 = \emptyset.
+ 		\]
+ 		Wir zeigen, dass $ B:= B_0\cup S_1\cup S_2 $ Basis von $ U_1 + U_2 =: U $ ist.
+ 		\begin{itemize}
+ 			\item	$ B\subset U $ ist Erz. Syst. nach Konstruktion:
+ 			      \begin{gather*}
+ 			      	\forall i\in \{1,2\} : U_i=[B_i]\subset [B]\\
+ 			      	\Rightarrow U_1+U_2 = [U_1\cup U_2]\subset [B]
+ 			      \end{gather*}
 
-\paragraph{Bemerkung}
-	Sind $ \dim V <\infty $ und $ \# I < \infty $ so gilt
-		\begin{equation*}
-		\forall i\in I: \dim U_i < \infty
-		\end{equation*}
-		
-	und es gilt die \emph{Dimensionsformel für direkte Summen} (Beweis: Aufgabe 35):
-		\begin{equation*}
-		\dim \bigoplus_{i\in I}U_i = \sum_{i\in I} \dim U_i.
-		\end{equation*}
-	
-	Ist insbesondere $ B=(b_1,...,b_n) $ eine Basis von $ V $, so gilt
-		\begin{equation*}
-		\dim V = \dim \bigoplus_{i=1}^n [b_i]=\sum_{i=1}^{n}1 = n.
-		\end{equation*}
-		
-\paragraph{Bemerkung}
-	Seien $ U,U'\subset V $ komplementäre UVR, also $ V = U \oplus U' $, dann werden durch
-		\begin{equation*}
-		v = u+u' \mapsto
-			\begin{cases}
-				p(v):=u\\
-				p'(v):= u'
-			\end{cases}
-		\end{equation*}
-	Endomorphismen $ p,p'\in \operatorname{End}(V) $ (wohl-)definiert, da $ u,u' $ durch $ v $ eindeutig bestimmt sind (Linearität von $ p,p' $ ist klar).
-	Offenbar ist 
-		\[ p(V) = U \text{ und } \ker p = U'\]
-	und es gilt
-		\[ p^2 := p\circ p = p \]
-	und analog für $ p' $; außerdem gilt ($ \circ $ für die Komposition weggelassen)
-		\[ p+p' = id_V \text{ und } p'p = 0 = pp'.\]
-		
-\subsection{Definition (Projektion)}
-	\begin{Definition}[Projektion]
-		$ p\in \End(V) $ heißt \emph{Projektion}, falls $ p^2 = p $ (d.h. falls $ p $ idempotent ist).
-	\end{Definition}
-	
-\subsection{Satz (Projektionen)}
-	\begin{Satz}[Projektionen]
-	Sei $ p\in \End(V) $ Projektion, dann ist
-            \[ p'= \id_V-p \quad\text{Projektion mit}\quad  pp' = p'p = 0.\]
-        Gilt andererseits $ p+p' = id_V $ und $ pp' = 0 $ für $ p,p' \in \End(V) $, so sind $ p,p' $ Projektionen mit
-		\[ V = p(V)\oplus p'(V) = \ker p \oplus \ker p'. \]
-	\end{Satz}
+ 			\item $ B $ ist linear unabhängig:
+ 			      Gegeben sei eine Linearkombination von $ 0\in U $,
+ 			      \[
+ 			      	0 = \sum_{b\in B}bx_b = \underbrace{\sum_{b\in B_0}bx_b}_{:=b_0} + \underbrace{\sum_{b\in S_1}bx_b}_{:=s_1} + \underbrace{\sum_{b\in S_2}bx_b}_{:=s_2}
+ 			      \]
+ 			      mit $b_0\in [B_0] = U_0$ und $s_i\in [S_i]$ für $i= 1,2$;
+
+ 			      dann gilt etwa, da $ B_1 = B_0 \cup S_1 $ lin. unabh. ist,
+ 			      \[
+ 			      	\underbrace{b_0+ s_1}_{\in U_1} = \underbrace{-s_2}_{\in [S_2]} \in U_1\cap [S_2]\subset U_0 \Rightarrow s_1 = 0
+ 			      \]
+
+ 			      und damit, da $ B_2 = B_0 \cup S_2 $ lin. unabh. ist,
+ 			      \[
+ 			      	0 = b_0 + \underbrace{s_1}_{=0} + s_2 \Rightarrow b_0=s_2 = 0.
+ 			      \]
+ 		\end{itemize}
+ 		Mit der linearen Unabhängigkeit von $ B_0$, $S_1 $ und $ S_2 $ folgt dann
+ 		\[
+ 			0 = \sum_{b\in B_0}bx_b = \sum_{b\in S_1}bx_b = \sum_{b\in S_2}bx_b \Rightarrow \forall b\in B: x_b = 0.
+ 		\]
+ 		Mit
+ 		\begin{align*}
+ 			\overbrace{\#B}^{\dim(U_1+U_2)} + \overbrace{\#B_0}^{\dim(U_1\cap U_2)} & = (\#B_0 + \#S_1 + \#S_2) + \#B_0                               \\
+ 			                                                                        & = (\#B_0+\#S_1)+(\#B_0 + \#S_2)                                 \\
+ 			                                                                        & = \underbrace{\#B_1}_{\dim(U_1)}+\underbrace{\#B_2}_{\dim(U_2)}
+ 		\end{align*}
+ 		folgt dann die Behauptung.
+
+ 	\paragraph{Bemerkung}
+ 		Im Beweis haben wir bemerkt:
+
+ 		Ist z.B. $ B_1 = B_0\cup S_1 $ lin. unabh., und $ b_0\in [B_0] $ und $ s_1\in [S_1] $ mit $b_0 + s_1 = 0$ so folgt
+ 		\[
+ 			b_0 = s_1 = 0
+ 		\]
+ 		Sind nämlich $ b_0 = \sum_{b\in B_0} bx_b $ und $ s_1 = \sum_{b\in S_1}bx_b $, so gilt
+ 		\begin{gather*}
+ 			0 = b_0+s_1 = \sum_{b\in B_0} bx_b+\sum_{b\in S_1} bx_b = \sum_{b\in B_1} bx_b \\ \Rightarrow \forall b\in B_1: x_b = 0\Rightarrow b_0 = s_1 = 0.
+ 		\end{gather*}
+
+ 	\paragraph{Bemerkung}
+ 		Ist $ U_1\cap U_2 = \{0\} $ bzw. $ \dim (U_1\cap U_2)  = 0 $, so zeigt der Beweis auch:
+ 		\[
+ 			\forall v\in U_1+U_2\ \exists ! u_1 \in U_1\ \exists ! u_2\in U_2: v= u_1+u_2
+ 		\]
+
+ \subsection{Definition (Komplementäre UVR)}
+ 	\begin{Definition}[Komplementäre UVR]
+ 		Zwei UVR $ U_1,U_2 \subset V $ heißen \emph{komplementär} in $ V $, falls
+ 		\[
+ 			U_1+U_2=V\text{ und } U_1\cap U_2 = \{0\}.
+ 		\]
+ 	\end{Definition}
+
+ \subsection{Lemma (Komplementäre UVR)}
+ 	\begin{Lemma}[Komplementäre UVR]
+ 		Zu jedem UVR $ U\subset V $ existiert ein (in $ V $) komplementärer UVR.
+ 	\end{Lemma}
+
+ 	\paragraph{Beweis}
+ 		Sei $ U\subset V $ UVR eines $ K $-VR $ V $.
+ 		Seien
+ 		\begin{itemize}
+ 			\item $ B\subset U $ eine Basis von $ U $;
+ 			\item $ S\subset V $ lin. unahb., so dass $ C=B\cup S $ Basis von $ V $ ist (BES).
+ 		\end{itemize}
+ 		Definiere $ U':= [S] $. Dann ist $ U'\subset V $ UVR mit
+ 		\begin{enumerate}[(i)]
+ 			% NOTE: wir zeigen, dass U+U' Übermenge ist, wollen aber letztendlich Gleichheit zeigen ... die andere Inklusion ist aber trivial, da U und U' Teilmengen von V sind
+ 			\item $ U+U' \supset [C] = V $, da $ C\subset U\cup U' $ Erz. Syst. von $ V $ ist;
+ 			\item $ U\cap U' = [B]\cap [S] = \{0\}$, da $ C=B\cup S $ linear unabhängig ist.
+ 		\end{enumerate}
+
+ 	\paragraph{Bemerkung}
+ 		Zu einem UVR $ U\subset V $ gibt es normalerweise viele komplementäre UVR $ U'\subset V $.
+ 		Zu
+ 		\begin{equation*}
+ 			U:= \{v\in K^2\mid v_2 = 0\}
+ 		\end{equation*}
+
+ 		ist beispielsweise jeder UVR $ U' = [u']$ mit $u'_2\neq 0 $ komplementär in $ K^2 $.
+
+ \subsection{Lemma \& Definition (direkte Summe)}
+ 	\begin{Definition}[Direkte Summe]
+ 		Sei $ U= \sum_{i\in I}U_i\subset V $ Summe einer Familie von UVR $ U_i\in V $; dann besitzt jeder Vektor $ u\in U $ eine eindeutige Zerlegung als Summe von $ u_i $, genau dann, wenn
+ 		\begin{equation*}
+ 			\forall i\in I: U_i\cap \sum_{j\in I\setminus \{i\}}U_j = \{0 \}.
+ 		\end{equation*}
+
+ 		In diesem Falle heißt die Summe \emph{direkt} und man schreibt
+ 		\[
+ 			U = \bigoplus_{i\in I} U_i.
+ 		\]
+ 	\end{Definition}
+
+ 	\paragraph{Bemerkung}
+ 		Eine Summe $ V = \sum_{i\in I} U_i $ ist genau dann direkt, wenn
+ 		\[
+ 			\forall i\in I: U_i, \sum_{j\in I\setminus\{i\}}U_j \subset V
+ 		\]
+ 		komplementäre UVR in $ V $ sind.
+
+ 	\paragraph{Beweis}
+ 		Zu zeigen ist die Eindeutigkeitsaussage. Sei also $ u \in \bigoplus_{i\in I}U_i $,
+ 		\begin{gather*}
+ 			u = \sum_{i\in I} u_i = \sum_{i\in I} u_i' \text{ mit } \forall i\in I: u_i,u'_i\in U_i;
+ 		\end{gather*}
+ 		dann gilt für jedes $ i\in I$:
+ 		\[
+ 			u'_i-u_i = \sum _{j\neq i}u_j-\sum_{j\neq i} u'_j = \underbrace{\sum_{j\neq i}u_j-u'_j}_{\in \sum_{j\neq i}U_j}\ \in U_i\cap \sum_{j\neq i} U_j = \{0\},
+ 		\]
+ 		da die Summe als direkt angenommen wurde; damit folgt $ \forall i \in I: u_i = u'_i $, d.h. die Zerlegung ist eindeutig.
+
+ 		Die Umkehrung ist trivial:
+ 		\begin{gather*}
+ 			\exists i\in I:U_i\cap \sum_{j\neq i} U_j \neq \{0\}\\
+ 			\Rightarrow \exists i\in I\ \exists u_i\in U_i\setminus\{0\}\ \exists (u_j)_{j\in I\setminus\{i\}}:
+ 			(\forall j\in I\setminus\{i\}:u_j \in U_j)\land u_i = \sum_{j\neq i} u_j,
+ 		\end{gather*}
+ 		d.h., die Zerlegung von $ u_i\in \sum_{i\in I}U_i $ ist nicht eindeutig.
+
+ 	\paragraph{Bemerkung}
+ 		Sind $ \dim V <\infty $ und $ \# I < \infty $ so gilt
+ 		\begin{equation*}
+ 			\forall i\in I: \dim U_i < \infty
+ 		\end{equation*}
+
+ 		und es gilt die \emph{Dimensionsformel für direkte Summen} (Beweis: Aufgabe 35):
+ 		\begin{equation*}
+ 			\dim \bigoplus_{i\in I}U_i = \sum_{i\in I} \dim U_i.
+ 		\end{equation*}
+
+ 		Ist insbesondere $ B=(b_1,...,b_n) $ eine Basis von $ V $, so gilt
+ 		\begin{equation*}
+ 			\dim V = \dim \bigoplus_{i=1}^n [b_i]=\sum_{i=1}^{n}1 = n.
+ 		\end{equation*}
+
+ 	\paragraph{Bemerkung}
+ 		Seien $ U,U'\subset V $ komplementäre UVR, also $ V = U \oplus U' $, dann werden durch
+ 		\begin{equation*}
+ 			v = u+u' \mapsto
+ 			\begin{cases}
+ 				p(v):=u    \\
+ 				p'(v):= u'
+ 			\end{cases}
+ 		\end{equation*}
+ 		Endomorphismen $ p,p'\in \operatorname{End}(V) $ (wohl-)definiert, da $ u,u' $ durch $ v $ eindeutig bestimmt sind (Linearität von $ p,p' $ ist klar).
+ 		Offenbar ist
+ 		\[
+ 			p(V) = U \text{ und } \ker p = U'
+ 		\]
+ 		und es gilt
+ 		\[
+ 			p^2 := p\circ p = p
+ 		\]
+ 		und analog für $ p' $; außerdem gilt ($ \circ $ für die Komposition weggelassen)
+ 		\[
+ 			p+p' = id_V \text{ und } p'p = 0 = pp'.
+ 		\]
+
+ \subsection{Definition (Projektion)}
+ 	\begin{Definition}[Projektion]
+ 		$ p\in \End(V) $ heißt \emph{Projektion}, falls $ p^2 = p $ (d.h. falls $ p $ idempotent ist).
+ 	\end{Definition}
+
+ \subsection{Satz (Projektionen)}
+ 	\begin{Satz}[Projektionen]
+ 		Sei $ p\in \End(V) $ Projektion, dann ist
+ 		\[
+ 			p'= \id_V-p \quad\text{Projektion mit}\quad  pp' = p'p = 0.
+ 		\]
+ 		Gilt andererseits $ p+p' = id_V $ und $ pp' = 0 $ für $ p,p' \in \End(V) $, so sind $ p,p' $ Projektionen mit
+ 		\[
+ 			V = p(V)\oplus p'(V) = \ker p \oplus \ker p'.
+ 		\]
+ 	\end{Satz}
 
 %VO11-2015-11-12
-\paragraph{Beweis}
-	Seien $p\in \operatorname{End}(V)$ Projektion und $p' := id_V -p$; dann gilt:
-		\begin{align*}
-		pp' &= p(\id_V-p)=p-p^{2} = 0 \\
-		p'p &= (\id_V-p)p = p - p^{2} = 0
-		\end{align*}
-	und
-		\[p'^2 = p'(\id_V-p)=p'-p'p = p'\]
-	d.h., $p'\in\End(V)$ ist Projektion.
-	
-	Anderseits: Seien $p$, $p'\in \End(V)$, so dass $p+p' = \id_V \text{ und } pp' = 0$.
-		
-	Dann gilt:
-		\[p-p^2 = p(\id_V-p) = pp' = 0 \Leftrightarrow p^2=p\]
-	d.h., $p\in\operatorname{End}(V)$ ist Projektion -- damit ist auch $p'$ Projektion (erster Teil) und $p' p = 0 $.
-	
-	Weiters liefert
-        \begin{align*}
-		\forall v\in V: v&=\id_V(v) = p(v) + p'(v)\\
-		\Rightarrow V &= p(V)+p'(V)
-        \end{align*}
-	und ist $w = p(v)= p'(v')$ für geeignete $v,v'\in V$ (d.h., $w \in p(V)\cap p'(V)$), so gilt
-		\[ w = p(v) = p^2(v) = p(p(v)) = p(w) = p(p'(v')) = pp'(v') = 0, \]
-	also $p(V)\cap p'(V) = {0}$ und damit $V = p(V)\oplus p'(V)$. 
-	
-	Ferner gilt
-		\[0 = p \circ p' \Rightarrow p'(V)\subset \ker p\]
-	und ist $v\in \ker p$, so folgt
-		\[v = p(v) + p'(v) = 0 + p'(v)\in p'(V) \Rightarrow \ker p \subset p'(V).\]
-	Für $p'$ gilt das Gleiche und wir haben 
-	\[\ker p = p'(V) \text{ und } \ker p' = p(V)\]
-	Damit folgt die letzte Behauptung $V = \ker p \oplus\ker p'$.
-	
-\paragraph{Bemerkung}
-	Im Beweis haben wir etwas mehr bewiesen als behauptet -- nämlich:
-		\[ \ker p = p'(V)\text{ und }\ker p' = p(V) \]
-		
-\subsection{Beispiel und Definition (Involution)}	
-	\begin{Definition}[Definition]
-		Sei $s\in \operatorname{End}(V)$ eine \emph{Involution} d.h. $s^2 = \id_V$  und 
-		\[ p_\pm := \frac{1}{2}(\id_V\pm s). \]
-	Offenbar gilt dann
-		\[ p_{+} + p_{-} = \id_V \text{ und } p_+ p_{-} = \frac{1}{4}(\id_V +s)(\id_V -s) =  \frac{1}{4}(\id_V^2-s^2)=0 \]
-	also (Satz) sind $p_\pm\in\End(V)$ Projektionen mit komplementären Bildern bzw. Kernen.
-	\end{Definition}
-		
-\subsection{Lemma und Definition (Produkt von VR)}
-	\begin{Definition}[Produkt von VR]
-		Ist $(V_i)_{i\in I}$ eine Familie von $ K $-VR $V_i$, so wird das (mengenthoretische) \emph{Produkt}:
-		\[V:= \prod_{i\in I}V_i=\{(v_i)_{i\in I}\mid\forall i\in I:v_i\in V_i\}\]
-	mit den komponentenweise definierten VR-Operationen zu einem $ K $-VR. Dies ist der \emph{Produktraum} der Familie	$(V_i)_{i\in I}$.
-	\end{Definition}
-		
-\paragraph{Beweis} ($V$ is $K$-VR) Aufgabe!
+ 	\paragraph{Beweis}
+ 		Seien $p\in \operatorname{End}(V)$ Projektion und $p' := id_V -p$; dann gilt:
+ 		\begin{align*}
+ 			pp' & = p(\id_V-p)=p-p^{2} = 0     \\
+ 			p'p & = (\id_V-p)p = p - p^{2} = 0
+ 		\end{align*}
+ 		und
+ 		\[
+ 			p'^2 = p'(\id_V-p)=p'-p'p = p'
+ 		\]
+ 		d.h., $p'\in\End(V)$ ist Projektion.
 
-\paragraph{Bemerkung} 
-	Ist $V = \prod_{i\in I} V_i$ ein Produktraum, so erhält man kanonische UVR
-		\[U_i:=\{v=(v_i)_{i\in I}\in V\mid\forall j \neq i:v_j = 0\}\subset V,\]
-	die isomorph zu den $V_i$ sind mittels der \emph{Faktor-Projektionen}\footnote{Achtung: Keine Projektion in unserem obrigen Sinn!}
-		\[\pi_i:V\to V_i,\ (v_j)_{j\in I} \mapsto v_i,\]
-	bzw. mittels der \emph{Faktor-Injektionen}
-		\[\iota_i:V_i\to V,\ v_i \mapsto(v_j)_{j\in I}\text{, wobei }v_j :=
-			\begin{cases}
-				v_i &\text{ falls } j=i\\
-				0 &\text{ sonst.}
-			\end{cases}
-		\]
-	Ist dann $\# I < \infty$, so erhält man
-		\[\prod_{i\in I} V_i\cong \bigoplus_{i\in I}U_i\quad (=: \bigoplus_{i\in I}V_i);\]
-	Ist $\#I=\infty$, so ist diese Identifikation im Allgemeinen falsch!
-	
-\paragraph{Beispiel}
-        % NOTE: Im Skript von Prof. Jeromin steht  K^n = \bigoplus ..., in der VO wurde aber K^n \cong \bigoplus ... geschrieben, wir schreiben = da diese Aussage stärker ist, also \cong daraus folgt
-	Für einen Körper $ K $ liefert das $ n $-fache Produkt den Standardraum
-		\[\prod_{i=1}^{n}K = \{(x_i)_{i = 1,...,n}\mid\forall i \in \{1,...,n\}: x_i \in K\} = K^n = \bigoplus_{i=1}^n\{(x_i)_{i = 1,...,n}\mid\forall j\neq i: x_j = 0\};\]
-	für den Raum der $K$-wertigen Folgen ist jedoch
-	% NOTE: Im Skript von Prof. Jeromin steht \ncong statt \neq, in der VO wurde aber \neq geschrieben, wir schreiben \ncong, da diese Aussage stärker ist, also \neq daraus folgt
-		\[\prod_{i\in \mathbb{N}}K=K^{\mathbb{N}}\ncong\bigoplus_{i\in \mathbb{N}}\{(x_i)_{i\in \mathbb{N}}\mid\forall j\neq i: x_j=0\}.\]
-			
-\subsection{Lemma und Definition (Nebenklassen)}
-	\begin{Definition}[Nebenklassen]
-		Sei $U\subset V$ UVR. Die Menge der Nebenklassen 
-		\[V/U := \{v+U\mid v\in V\},\]
-	wobei
-		\[v+U:=\{v+u\mid u\in U\}\]
-	die \emph{Nebenklasse}\footnote{Bemerke: Nebenklassen sind im Allgemeinen keine UVR, z.B. müssen sie $0$ nicht enthalten!} zu $v\in V$ bezeichnet, wird mit den durch
-		\begin{align*}
-			+&: V/U \times V/U \to V/U,\ ((v+U),(w+U))\mapsto (v+w)+U,\\
-			\cdot &: K\times V/U \to V/U,\ (x,(v+U))\mapsto (vx)+U,
-		\end{align*}
-	definierten Operationen ein Vektorraum: der \emph{Quotientenraum} $V/U$.
-	\end{Definition}
-			
-\paragraph{Beweis}
-	Zu zeigen: Wohldefiniertheit der Operationen und VR-Axiome.
-	
-	Wohldefiniertheit der Skalarmultiplikation:
-	
-	Ist $x\in K$ und sind $(v+U),(v'+U)\in V/U$ gleich, also $v+U = v'+U$, so gilt
-		\begin{align*}
-		v+U = v'+U &\Leftrightarrow v - v'\in U \\
-		&\Rightarrow (v-v')x \in U \\
-		&\Rightarrow vx+U=v' x+U
-		\end{align*}
-	Das Resultat der Skalarmultiplikation hängt also nicht von dem Repräsentanten $v$ einer Nebenklasse $v+U$ ab, sondern nur von der Nebenklasse.
-	
-	Die Wohldefiniertheit der Addition ist analog zu beweisen.
-	
-	Die Vektorraumaxiome sind zu überprüfen.
+ 		Anderseits: Seien $p$, $p'\in \End(V)$, so dass $p+p' = \id_V \text{ und } pp' = 0$.
+
+ 		Dann gilt:
+ 		\[
+ 			p-p^2 = p(\id_V-p) = pp' = 0 \Leftrightarrow p^2=p
+ 		\]
+ 		d.h., $p\in\operatorname{End}(V)$ ist Projektion -- damit ist auch $p'$ Projektion (erster Teil) und $p' p = 0 $.
+
+ 		Weiters liefert
+ 		\begin{align*}
+ 			\forall v\in V: v & =\id_V(v) = p(v) + p'(v) \\
+ 			\Rightarrow V     & = p(V)+p'(V)
+ 		\end{align*}
+ 		und ist $w = p(v)= p'(v')$ für geeignete $v,v'\in V$ (d.h., $w \in p(V)\cap p'(V)$), so gilt
+ 		\[
+ 			w = p(v) = p^2(v) = p(p(v)) = p(w) = p(p'(v')) = pp'(v') = 0,
+ 		\]
+ 		also $p(V)\cap p'(V) = {0}$ und damit $V = p(V)\oplus p'(V)$.
+
+ 		Ferner gilt
+ 		\[
+ 			0 = p \circ p' \Rightarrow p'(V)\subset \ker p
+ 		\]
+ 		und ist $v\in \ker p$, so folgt
+ 		\[
+ 			v = p(v) + p'(v) = 0 + p'(v)\in p'(V) \Rightarrow \ker p \subset p'(V).
+ 		\]
+ 		Für $p'$ gilt das Gleiche und wir haben
+ 		\[
+ 			\ker p = p'(V) \text{ und } \ker p' = p(V)
+ 		\]
+ 		Damit folgt die letzte Behauptung $V = \ker p \oplus\ker p'$.
+
+ 	\paragraph{Bemerkung}
+ 		Im Beweis haben wir etwas mehr bewiesen als behauptet -- nämlich:
+ 		\[
+ 			\ker p = p'(V)\text{ und }\ker p' = p(V)
+ 		\]
+
+ \subsection{Beispiel und Definition (Involution)}
+ 	\begin{Definition}[Definition]
+ 		Sei $s\in \operatorname{End}(V)$ eine \emph{Involution} d.h. $s^2 = \id_V$  und
+ 		\[
+ 			p_\pm := \frac{1}{2}(\id_V\pm s).
+ 		\]
+ 		Offenbar gilt dann
+ 		\[
+ 			p_{+} + p_{-} = \id_V \text{ und } p_+ p_{-} = \frac{1}{4}(\id_V +s)(\id_V -s) =  \frac{1}{4}(\id_V^2-s^2)=0
+ 		\]
+ 		also (Satz) sind $p_\pm\in\End(V)$ Projektionen mit komplementären Bildern bzw. Kernen.
+ 	\end{Definition}
+
+ \subsection{Lemma und Definition (Produkt von VR)}
+ 	\begin{Definition}[Produkt von VR]
+ 		Ist $(V_i)_{i\in I}$ eine Familie von $ K $-VR $V_i$, so wird das (mengenthoretische) \emph{Produkt}:
+ 		\[
+ 			V:= \prod_{i\in I}V_i=\{(v_i)_{i\in I}\mid\forall i\in I:v_i\in V_i\}
+ 		\]
+ 		mit den komponentenweise definierten VR-Operationen zu einem $ K $-VR. Dies ist der \emph{Produktraum} der Familie	$(V_i)_{i\in I}$.
+ 	\end{Definition}
+
+ 	\paragraph{Beweis} ($V$ is $K$-VR) Aufgabe!
+
+ 	\paragraph{Bemerkung}
+ 		Ist $V = \prod_{i\in I} V_i$ ein Produktraum, so erhält man kanonische UVR
+ 		\[
+ 			U_i:=\{v=(v_i)_{i\in I}\in V\mid\forall j \neq i:v_j = 0\}\subset V,
+ 		\]
+ 		die isomorph zu den $V_i$ sind mittels der \emph{Faktor-Projektionen}\footnote{Achtung: Keine Projektion in unserem obrigen Sinn!}
+ 		\[
+ 			\pi_i:V\to V_i,\ (v_j)_{j\in I} \mapsto v_i,
+ 		\]
+ 		bzw. mittels der \emph{Faktor-Injektionen}
+ 		\[
+ 			\iota_i:V_i\to V,\ v_i \mapsto(v_j)_{j\in I}\text{, wobei }v_j :=
+ 			\begin{cases}
+ 				v_i & \text{ falls } j=i \\
+ 				0   & \text{ sonst.}
+ 			\end{cases}
+ 		\]
+ 		Ist dann $\# I < \infty$, so erhält man
+ 		\[
+ 			\prod_{i\in I} V_i\cong \bigoplus_{i\in I}U_i\quad (=: \bigoplus_{i\in I}V_i);
+ 		\]
+ 		Ist $\#I=\infty$, so ist diese Identifikation im Allgemeinen falsch!
+
+ 	\paragraph{Beispiel}
+ 		% NOTE: Im Skript von Prof. Jeromin steht  K^n = \bigoplus ..., in der VO wurde aber K^n \cong \bigoplus ... geschrieben, wir schreiben = da diese Aussage stärker ist, also \cong daraus folgt
+ 		Für einen Körper $ K $ liefert das $ n $-fache Produkt den Standardraum
+ 		\[
+ 			\prod_{i=1}^{n}K = \{(x_i)_{i = 1,...,n}\mid\forall i \in \{1,...,n\}: x_i \in K\} = K^n = \bigoplus_{i=1}^n\{(x_i)_{i = 1,...,n}\mid\forall j\neq i: x_j = 0\};
+ 		\]
+ 		für den Raum der $K$-wertigen Folgen ist jedoch
+ 		% NOTE: Im Skript von Prof. Jeromin steht \ncong statt \neq, in der VO wurde aber \neq geschrieben, wir schreiben \ncong, da diese Aussage stärker ist, also \neq daraus folgt
+ 		\[
+ 			\prod_{i\in \mathbb{N}}K=K^{\mathbb{N}}\ncong\bigoplus_{i\in \mathbb{N}}\{(x_i)_{i\in \mathbb{N}}\mid\forall j\neq i: x_j=0\}.
+ 		\]
+
+ \subsection{Lemma und Definition (Nebenklassen)}
+ 	\begin{Definition}[Nebenklassen]
+ 		Sei $U\subset V$ UVR. Die Menge der Nebenklassen
+ 		\[
+ 			V/U := \{v+U\mid v\in V\},
+ 		\]
+ 		wobei
+ 		\[
+ 			v+U:=\{v+u\mid u\in U\}
+ 		\]
+ 		die \emph{Nebenklasse}\footnote{Bemerke: Nebenklassen sind im Allgemeinen keine UVR, z.B. müssen sie $0$ nicht enthalten!} zu $v\in V$ bezeichnet, wird mit den durch
+ 		\begin{align*}
+ 			+     & : V/U \times V/U \to V/U,\ ((v+U),(w+U))\mapsto (v+w)+U, \\
+ 			\cdot & : K\times V/U \to V/U,\ (x,(v+U))\mapsto (vx)+U,
+ 		\end{align*}
+ 		definierten Operationen ein Vektorraum: der \emph{Quotientenraum} $V/U$.
+ 	\end{Definition}
+
+ 	\paragraph{Beweis}
+ 		Zu zeigen: Wohldefiniertheit der Operationen und VR-Axiome.
+
+ 		Wohldefiniertheit der Skalarmultiplikation:
+
+ 		Ist $x\in K$ und sind $(v+U),(v'+U)\in V/U$ gleich, also $v+U = v'+U$, so gilt
+ 		\begin{align*}
+ 			v+U = v'+U & \Leftrightarrow v - v'\in U \\
+ 			           & \Rightarrow (v-v')x \in U   \\
+ 			           & \Rightarrow vx+U=v' x+U
+ 		\end{align*}
+ 		Das Resultat der Skalarmultiplikation hängt also nicht von dem Repräsentanten $v$ einer Nebenklasse $v+U$ ab, sondern nur von der Nebenklasse.
+
+ 		Die Wohldefiniertheit der Addition ist analog zu beweisen.
+
+ 		Die Vektorraumaxiome sind zu überprüfen.
 
 %VO12-2015-11-17
-\subsection{Bemerkung \& Definition (Äquivalenzrelation)}
-	\begin{Definition}[Äquivalenzrelation]
-		Der Definition von $ V/U $ liegt ein allgemeineres Prinzip zugrunde:	
-		\[ v\sim w :\Leftrightarrow (v+U)= (w+U) \Leftrightarrow w-v \in U \]
-	definiert für jeden UVR $ U\subset V $ eines $ K $-VR $ V $ eine \emph{Äquivalenzrelation} auf $ V $, d.h.:
-		\begin{enumerate}[(i)]
-			\item $ \forall v\in V: v\sim v $ (\emph{Reflexivität})
-			\item $ \forall v,w\in V: v\sim w\Leftrightarrow w\sim v $ (\emph{Symmetrie});
-			\item $ \forall u,v,w\in V: u\sim v\land v\sim w\Rightarrow u\sim w $ (\emph{Transitivität}).
-		\end{enumerate}
-	\end{Definition}
+ \subsection{Bemerkung \& Definition (Äquivalenzrelation)}
+ 	\begin{Definition}[Äquivalenzrelation]
+ 		Der Definition von $ V/U $ liegt ein allgemeineres Prinzip zugrunde:
+ 		\[
+ 			v\sim w :\Leftrightarrow (v+U)= (w+U) \Leftrightarrow w-v \in U
+ 		\]
+ 		definiert für jeden UVR $ U\subset V $ eines $ K $-VR $ V $ eine \emph{Äquivalenzrelation} auf $ V $, d.h.:
+ 		\begin{enumerate}[(i)]
+ 			\item $ \forall v\in V: v\sim v $ (\emph{Reflexivität})
+ 			\item $ \forall v,w\in V: v\sim w\Leftrightarrow w\sim v $ (\emph{Symmetrie});
+ 			\item $ \forall u,v,w\in V: u\sim v\land v\sim w\Rightarrow u\sim w $ (\emph{Transitivität}).
+ 		\end{enumerate}
+ 	\end{Definition}
 
-        z.z.: $ v\sim w:\Leftrightarrow w-v\in U $ definiert eine Äquivalenzrelation
-	
-	\begin{itemize}
-		\item Reflexivität: Sei $ v\in V $ beliebig, dann gilt $ v-v=0\in U $, da $ U $ UVR.
-		\item Symmetrie: Seien $ v,w\in V $ beliebig, dann gilt
-			\begin{align*}
-			v\sim w 	&\Leftrightarrow w-v\in U\\
-						&\Leftrightarrow v-w\in U \Leftrightarrow w\sim v.
-			\end{align*}
-		\item Transivitität: Seien $ u,v,w\in V $ beliebig; gilt nun
-			$u\sim v$, d.h. $v-u\in U$ und $v\sim w$, d.h. $w-v\in U$, so gilt auch:
-			\[\underbrace{(w-v)}_{\in U}+\underbrace{(v-u)}_{\in U}= w-u\in U \Leftrightarrow u\sim w\]
-	\end{itemize}
-	
-	Ist dann $ \sim $ eine Äquivalenzrelation auf einer Menge $ X $, so zerfällt $ X $ in Äquivalenzklassen
-		\[ X_x = \{y\in X\mid y\sim x\} \]
-	d.h., $ X $ ist disjunkte Vereinigung der Äquivalenzklassen:
-		\[ X = \dot{\bigcup}_{x\in X}X_x \qquad\text{ und } \underbrace{X_x \cap X_y \neq \emptyset \Rightarrow X_x = X_y}_{\text{zwei Äquivalenzklassen sind etweder disjunkt oder gleich}} \]
-		
-	Insbesondere zerfällt also ein VR $ V $ in Äquivalenzklassen (Nebenklassen)
-		\[ v+U (= V_v)\subset V, \]
-	wenn $ U $ ein UVR von $ V $ ist -- nach Lemma wird die Menge der Neben- bzw. Äquivalenzklassen dann wieder ein VR. Ähnlich wie den Quotientenvektorraum definiert man (z.B.) die \emph{Faktorgruppe} [Havlicek §.1.11.11].
-	
-\paragraph{Bemerkung}
-	Allgemeiner definiert man eine (binäre) \emph{Relation} $ (X,Y,\Gamma) $ zwischen Mengen $ X, Y $ durch den \emph{Graph der Relation}, eine Teilmenge
-		\[ \Gamma \subset X\times Y = \{(x,y)\mid x\in X \land y\in Y\}. \]
-	Zum Beispiel ist eine Abbildung $ f:X\to Y $ eine Relation $ (X,Y,\Gamma_f) $, sodass
-		\[ \forall x\in X\ \exists ! y\in Y:(x,y)\in \Gamma_f. \]
-	Ein anderes Beispiel ist die \emph{Ordnungsrelation} auf $ \mathbb{Z} $, definiert durch
-		\[ x\leq y :\Leftrightarrow \{(x,y)\in \mathbb{Z}^2\mid y-x\in \mathbb{N}\}, \]
-	Eine Ordnungsrelation ist reflexiv, transitiv und \emph{antisymmetrisch}, d.h.
-	\[\forall x,y\in \mathbb{Z}: x\leq y\land y\leq x\Rightarrow x=y \]
-	Die \emph{Teilmengenrelation}
-		\[ Y\subset\tilde{Y} \text{ für } Y,\tilde{Y}\in \mathcal{P}(X):= \{Y\mid Y\subset X\} \]
-	liefert auch eine Ordnungsrelation auf der Potenzmenge $ \mathcal{P}(X) $ von $ X $, jedoch nur eine \emph{Halbordnung} -- im Gegensatz zur \emph{Totalordnung} auf $ \mathbb{Z} $, wo je zwei Elemente vergleichbar sind, d.h.,
-		\[ \forall x,y\in \mathbb{Z}: x\leq y\lor y\leq x. \]
-	Auf $ \mathcal{P}(X) $ gilt dies im Allgemeinen nicht, denn z.B. in $ \mathcal{P}(\{0,1\}) $ sind $ \{0\},\{1\} $ nicht vergleichbar, denn
-		\[ \{0\}\not\subset\{1\}\land \{1\}\not\subset \{0\}. \]
+ 	z.z.: $ v\sim w:\Leftrightarrow w-v\in U $ definiert eine Äquivalenzrelation
 
-\subsection{Lemma (Dimensionen von komplementären UVR)}
-	\begin{Lemma}[Dimensionen von komplementären UVR]
-		Ist $ U\subset V $ UVR und $ U' $ komplementärer UVR zu $ U $ in $ V $, so gilt
-		\[ U'\cong V/U \]
-	vermöge
-		\[ U'\ni u' \overset{\phi}{\mapsto} u'+U\in V/U. \]
-	Ist $ \dim V<\infty $, so gilt $ \dim U+\dim V/U = \dim V $.
-	\end{Lemma}
-	
-\paragraph{Beweis} z.z.: $ \phi $ ist Isomorphismus.
-	
-	Dass $ \phi $ Homomorphismus ist, folgt aus der Definition der VR-Operationen auf $ V/U $.
+ 	\begin{itemize}
+ 		\item Reflexivität: Sei $ v\in V $ beliebig, dann gilt $ v-v=0\in U $, da $ U $ UVR.
+ 		\item Symmetrie: Seien $ v,w\in V $ beliebig, dann gilt
+ 		      \begin{align*}
+ 		      	v\sim w & \Leftrightarrow w-v\in U                          \\
+ 		      	        & \Leftrightarrow v-w\in U \Leftrightarrow w\sim v.
+ 		      \end{align*}
+ 		\item Transivitität: Seien $ u,v,w\in V $ beliebig; gilt nun
+ 		      $u\sim v$, d.h. $v-u\in U$ und $v\sim w$, d.h. $w-v\in U$, so gilt auch:
+ 		      \[
+ 		      	\underbrace{(w-v)}_{\in U}+\underbrace{(v-u)}_{\in U}= w-u\in U \Leftrightarrow u\sim w
+ 		      \]
+ 	\end{itemize}
 
-	Injektivität: Sei $ u'\in \ker \phi $, d.h.\footnote{Bemerke: "`$=$"' steht für die Gleichheit von Nebenklassen!}
-		\begin{align*}
-		\phi(u')&=u'+U=0+U\in V/U\\
-		&\Rightarrow u'\in U'\cap U = \{0\}\\
-		&\Rightarrow u'=0
-		\end{align*}
-		
-	Surjektivität: Sei $ v+U\in V/U $ mit $ v\in V = U \oplus U' $; mit der Projektion
-	\begin{gather*}
-		p':V\to V,\ v=u+u' \mapsto p'(v) := u'
-		\intertext{ist }
-		v + U = u' + \underbrace{u}_{\in U} + U = u' + U = \phi(p'(v))
-	\end{gather*}
-	also $V/U = \phi(U')$.
-	
-	Die Dimensionsformel folgt dann aus der für direkte Summen:
-		\[ \dim V/U = \dim U' \Rightarrow \dim V/U = \dim V-\dim U \]
-		
-\paragraph{Beispiel}
-	Ist $ p\in \End(V) $ eine Projektion, so auch $ p':= \id_V-p $ und es gilt
-		\[ V= \ker p \oplus \ker p' = \ker p \oplus p(V), \]
-	also gilt
-		\[ p(V)\cong V/\ker p. \]
+ 	Ist dann $ \sim $ eine Äquivalenzrelation auf einer Menge $ X $, so zerfällt $ X $ in Äquivalenzklassen
+ 	\[
+ 		X_x = \{y\in X\mid y\sim x\}
+ 	\]
+ 	d.h., $ X $ ist disjunkte Vereinigung der Äquivalenzklassen:
+ 	\[
+ 		X = \dot{\bigcup}_{x\in X}X_x \qquad\text{ und } \underbrace{X_x \cap X_y \neq \emptyset \Rightarrow X_x = X_y}_{\text{zwei Äquivalenzklassen sind etweder disjunkt oder gleich}}
+ 	\]
 
-\subsection{Homomorphiesatz für lineare Abbildungen: }
-	\begin{Satz}[Homomorphiesatz für lineare Abbildungen]
-		Für $ f\in \hom(V,W) $ ist $ f(V)\cong V/\ker f $ vermöge
-		\[ V/\ker f\ni v+\ker f \overset{\phi}{\mapsto} f(v)\in f(V). \]
-	\end{Satz}
+ 	Insbesondere zerfällt also ein VR $ V $ in Äquivalenzklassen (Nebenklassen)
+ 	\[
+ 		v+U (= V_v)\subset V,
+ 	\]
+ 	wenn $ U $ ein UVR von $ V $ ist -- nach Lemma wird die Menge der Neben- bzw. Äquivalenzklassen dann wieder ein VR. Ähnlich wie den Quotientenvektorraum definiert man (z.B.) die \emph{Faktorgruppe} [Havlicek §.1.11.11].
 
-\paragraph{Beweis}
-	Wohldefiniertheit von $ \phi $: 
-	
-	Sind $ v+\ker f, v'+\ker f \in V/\ker f$ und $ v+\ker f = v'+\ker f $, so gilt 
-		\begin{align*}
-		v'-v \in \ker f &\Rightarrow f(v')-f(v) = f(v'-v) = 0 \\
-			&\Rightarrow f(v') = f(v)
-		\end{align*}
-	d.h. $ \phi $ ist wohldefiniert.
-	
-	Linearität:
-		\begin{itemize}
-		\item Für $ x\in K $ und $ v+\ker f \in V/\ker f $ ist
-		\begin{align*}
-		\phi( (v+\ker f)x) &= f(vx)\\
-                                   &= f(v)x \\
-                                   &= \phi (v+\ker f)\cdot x
-		\end{align*}
-		\item Für $ v+\ker f, w+\ker f\in V/\ker f $ ist 
-			\begin{align*}
-			\phi ((v+\ker f)+(w+\ker f) ) &= \phi((v+w)+\ker f) \\
-			&=f(v+w)\\
-			&= f(v)+f(w)\\
-			&=\phi(v+\ker f)+\phi(w+\ker f)
-			\end{align*}
-		\end{itemize}
-	Injektivität:
-	Sei $ v+\ker f\in \ker \phi $, also 
-		\[ \phi(v+\ker f)= f(v) = 0; \]
-	dann folgt
-		\[ v\in \ker f \Rightarrow v+\ker f = \ker f = \underbrace{0}_{0+\ker f}\in V/\ker f. \]
-	
-	Surjektivität:
-	folgt direkt aus der Definition.		
+ 	\paragraph{Bemerkung}
+ 		Allgemeiner definiert man eine (binäre) \emph{Relation} $ (X,Y,\Gamma) $ zwischen Mengen $ X, Y $ durch den \emph{Graph der Relation}, eine Teilmenge
+ 		\[
+ 			\Gamma \subset X\times Y = \{(x,y)\mid x\in X \land y\in Y\}.
+ 		\]
+ 		Zum Beispiel ist eine Abbildung $ f:X\to Y $ eine Relation $ (X,Y,\Gamma_f) $, sodass
+ 		\[
+ 			\forall x\in X\ \exists ! y\in Y:(x,y)\in \Gamma_f.
+ 		\]
+ 		Ein anderes Beispiel ist die \emph{Ordnungsrelation} auf $ \mathbb{Z} $, definiert durch
+ 		\[
+ 			x\leq y :\Leftrightarrow \{(x,y)\in \mathbb{Z}^2\mid y-x\in \mathbb{N}\},
+ 		\]
+ 		Eine Ordnungsrelation ist reflexiv, transitiv und \emph{antisymmetrisch}, d.h.
+ 		\[
+ 			\forall x,y\in \mathbb{Z}: x\leq y\land y\leq x\Rightarrow x=y
+ 		\]
+ 		Die \emph{Teilmengenrelation}
+ 		\[
+ 			Y\subset\tilde{Y} \text{ für } Y,\tilde{Y}\in \mathcal{P}(X):= \{Y\mid Y\subset X\}
+ 		\]
+ 		liefert auch eine Ordnungsrelation auf der Potenzmenge $ \mathcal{P}(X) $ von $ X $, jedoch nur eine \emph{Halbordnung} -- im Gegensatz zur \emph{Totalordnung} auf $ \mathbb{Z} $, wo je zwei Elemente vergleichbar sind, d.h.,
+ 		\[
+ 			\forall x,y\in \mathbb{Z}: x\leq y\lor y\leq x.
+ 		\]
+ 		Auf $ \mathcal{P}(X) $ gilt dies im Allgemeinen nicht, denn z.B. in $ \mathcal{P}(\{0,1\}) $ sind $ \{0\},\{1\} $ nicht vergleichbar, denn
+ 		\[
+ 			\{0\}\not\subset\{1\}\land \{1\}\not\subset \{0\}.
+ 		\]
+
+ \subsection{Lemma (Dimensionen von komplementären UVR)}
+ 	\begin{Lemma}[Dimensionen von komplementären UVR]
+ 		Ist $ U\subset V $ UVR und $ U' $ komplementärer UVR zu $ U $ in $ V $, so gilt
+ 		\[
+ 			U'\cong V/U
+ 		\]
+ 		vermöge
+ 		\[
+ 			U'\ni u' \overset{\phi}{\mapsto} u'+U\in V/U.
+ 		\]
+ 		Ist $ \dim V<\infty $, so gilt $ \dim U+\dim V/U = \dim V $.
+ 	\end{Lemma}
+
+ 	\paragraph{Beweis} z.z.: $ \phi $ ist Isomorphismus.
+
+ 		Dass $ \phi $ Homomorphismus ist, folgt aus der Definition der VR-Operationen auf $ V/U $.
+
+ 		Injektivität: Sei $ u'\in \ker \phi $, d.h.\footnote{Bemerke: "`$=$"' steht für die Gleichheit von Nebenklassen!}
+ 		\begin{align*}
+ 			\phi(u') & =u'+U=0+U\in V/U                   \\
+ 			         & \Rightarrow u'\in U'\cap U = \{0\} \\
+ 			         & \Rightarrow u'=0
+ 		\end{align*}
+
+ 		Surjektivität: Sei $ v+U\in V/U $ mit $ v\in V = U \oplus U' $; mit der Projektion
+ 		\begin{gather*}
+ 			p':V\to V,\ v=u+u' \mapsto p'(v) := u'
+ 			\intertext{ist }
+ 			v + U = u' + \underbrace{u}_{\in U} + U = u' + U = \phi(p'(v))
+ 		\end{gather*}
+ 		also $V/U = \phi(U')$.
+
+ 		Die Dimensionsformel folgt dann aus der für direkte Summen:
+ 		\[
+ 			\dim V/U = \dim U' \Rightarrow \dim V/U = \dim V-\dim U
+ 		\]
+
+ 	\paragraph{Beispiel}
+ 		Ist $ p\in \End(V) $ eine Projektion, so auch $ p':= \id_V-p $ und es gilt
+ 		\[
+ 			V= \ker p \oplus \ker p' = \ker p \oplus p(V),
+ 		\]
+ 		also gilt
+ 		\[
+ 			p(V)\cong V/\ker p.
+ 		\]
+
+ \subsection{Homomorphiesatz für lineare Abbildungen: }
+ 	\begin{Satz}[Homomorphiesatz für lineare Abbildungen]
+ 		Für $ f\in \hom(V,W) $ ist $ f(V)\cong V/\ker f $ vermöge
+ 		\[
+ 			V/\ker f\ni v+\ker f \overset{\phi}{\mapsto} f(v)\in f(V).
+ 		\]
+ 	\end{Satz}
+
+ 	\paragraph{Beweis}
+ 		Wohldefiniertheit von $ \phi $:
+
+ 		Sind $ v+\ker f, v'+\ker f \in V/\ker f$ und $ v+\ker f = v'+\ker f $, so gilt
+ 		\begin{align*}
+ 			v'-v \in \ker f & \Rightarrow f(v')-f(v) = f(v'-v) = 0 \\
+ 			                & \Rightarrow f(v') = f(v)
+ 		\end{align*}
+ 		d.h. $ \phi $ ist wohldefiniert.
+
+ 		Linearität:
+ 		\begin{itemize}
+ 			\item Für $ x\in K $ und $ v+\ker f \in V/\ker f $ ist
+ 			      \begin{align*}
+ 			      	\phi( (v+\ker f)x) & = f(vx)                  \\
+ 			      	                   & = f(v)x                  \\
+ 			      	                   & = \phi (v+\ker f)\cdot x
+ 			      \end{align*}
+ 			\item Für $ v+\ker f, w+\ker f\in V/\ker f $ ist
+ 			      \begin{align*}
+ 			      	\phi ((v+\ker f)+(w+\ker f) ) & = \phi((v+w)+\ker f)           \\
+ 			      	                              & =f(v+w)                        \\
+ 			      	                              & = f(v)+f(w)                    \\
+ 			      	                              & =\phi(v+\ker f)+\phi(w+\ker f)
+ 			      \end{align*}
+ 		\end{itemize}
+ 		Injektivität:
+ 		Sei $ v+\ker f\in \ker \phi $, also
+ 		\[
+ 			\phi(v+\ker f)= f(v) = 0;
+ 		\]
+ 		dann folgt
+ 		\[
+ 			v\in \ker f \Rightarrow v+\ker f = \ker f = \underbrace{0}_{0+\ker f}\in V/\ker f.
+ 		\]
+
+ 		Surjektivität:
+ 		folgt direkt aus der Definition.

@@ -1,231 +1,336 @@
 %VO18-2015-12-10
 \chapter{Buchhaltung}
-	Dieses Kapitel zeigt eine Art "`Tabellenkalkül"' -- eine effiziente Rechenmethode in der linearen Algebra.
-	
-	Vorteil: Selbst durch einen Trottel (e.g. einen Computer) ausführbar. 
-	
-	Nachteil: Selbst durch einen Trottel ausführbar.
-	
+Dieses Kapitel zeigt eine Art "`Tabellenkalkül"' -- eine effiziente Rechenmethode in der linearen Algebra.
+
+Vorteil: Selbst durch einen Trottel (e.g. einen Computer) ausführbar.
+
+Nachteil: Selbst durch einen Trottel ausführbar.
+
 \paragraph{Generalvoraussetzung} Alle VR haben in diesem Kapitel endliche Dimension.
 \section{Matrizen}
-\paragraph{Idee}
-	Ein Homomorphismus $ f\in \hom(V,W) $ wird (nach Fortsetzungssatz) durch die Bilder $ f(b_j) $ der Vektoren einer Basis $ (b_j)_{j\in J} $ eindeutig festgelegt; ist $ (c_i)_{i\in I} $ eine Basis von $ W $, so hat jedes dieser $ f(b_j) $ eine eindeutige Basisdarstellung.
-		\[ \forall {j\in J}\exists! (x_i)_{i\in I}:f(b_j) = \sum_{i\in I}c_ix_{ij} \]
-	Sind $ n=\dim V $ und $ m=\dim W $ endlich, so kann man also $ f $ mithilfe der Basen $ (b_j)_{j\in J} $ von $ V $ und $ (c_i)_{i\in I} $ von $ W $ komplett durch die Tabelle der Koeffizienten beschreiben:
-	
-	\begin{figure}[H]\centering
-		$ \begin{array}{c|cccccc}
-		f		& f(b_1) 	& f(b_2) 	& \dots 	& f(b_j)	& \dots	& f(b_n) \\\hline
-		c_1  	& x_{11}  	& x_{12}	& \dots		& x_{1j}	& \dots	& x_{1n} \\
-		c_2		& x_{21}	& x_{22}	& \dots		& x_{2j}	& \dots	& x_{2n} \\
-		\vdots  &  \vdots	&  \vdots	&			&  \vdots	&		&  \vdots \\
-		c_i		&  x_{i1}	&  x_{i2}	& \dots		&  x_{ij}	&\dots  &  x_{in} \\
-		\vdots	&  \vdots	&  \vdots	&			&  \vdots	&		&  \vdots \\
-		c_m		&  x_{m1}	&  x_{m2}	& \dots		&  x_{mj}	& \dots	&  x_{mn} 
-		\end{array} $
-	\end{figure}
-	
-	Dabei spielt es prinzipiell keine Rolle, ob die Bilder $ f(b_j) $ der Basisvektoren in den Spalten stehen (wie oben) oder in den Zeilen der Tabelle -- es ist aber wichtig, dass dies konsistent gemacht wird.
-	
-	In dieser LVA: Bilder $ f(b_j) $ der Basisvektoren werden durch Spalten beschrieben.
+ \paragraph{Idee}
+ 	Ein Homomorphismus $ f\in \hom(V,W) $ wird (nach Fortsetzungssatz) durch die Bilder $ f(b_j) $ der Vektoren einer Basis $ (b_j)_{j\in J} $ eindeutig festgelegt; ist $ (c_i)_{i\in I} $ eine Basis von $ W $, so hat jedes dieser $ f(b_j) $ eine eindeutige Basisdarstellung.
+ 	\[
+ 		\forall {j\in J}\exists! (x_i)_{i\in I}:f(b_j) = \sum_{i\in I}c_ix_{ij}
+ 	\]
+ 	Sind $ n=\dim V $ und $ m=\dim W $ endlich, so kann man also $ f $ mithilfe der Basen $ (b_j)_{j\in J} $ von $ V $ und $ (c_i)_{i\in I} $ von $ W $ komplett durch die Tabelle der Koeffizienten beschreiben:
+
+ 	\begin{figure}[H]\centering
+ 		$
+ 		\begin{array}{c|cccccc}
+ 			f      & f(b_1) & f(b_2) & \dots & f(b_j) & \dots & f(b_n) \\\hline
+ 			c_1    & x_{11} & x_{12} & \dots & x_{1j} & \dots & x_{1n} \\
+ 			c_2    & x_{21} & x_{22} & \dots & x_{2j} & \dots & x_{2n} \\
+ 			\vdots & \vdots & \vdots &       & \vdots &       & \vdots \\
+ 			c_i    & x_{i1} & x_{i2} & \dots & x_{ij} & \dots & x_{in} \\
+ 			\vdots & \vdots & \vdots &       & \vdots &       & \vdots \\
+ 			c_m    & x_{m1} & x_{m2} & \dots & x_{mj} & \dots & x_{mn}
+ 		\end{array}
+ 		$
+ 	\end{figure}
+
+ 	Dabei spielt es prinzipiell keine Rolle, ob die Bilder $ f(b_j) $ der Basisvektoren in den Spalten stehen (wie oben) oder in den Zeilen der Tabelle -- es ist aber wichtig, dass dies konsistent gemacht wird.
+
+ 	In dieser LVA: Bilder $ f(b_j) $ der Basisvektoren werden durch Spalten beschrieben.
 
 \subsection{Definition}
 	\begin{Definition}[Matrix]
 		Eine \emph{Matrix} $ X\in K^{m\times n} $ ist eine Tabelle von Elementen $ x_{ij}\in K $ mit $ m $ Zeilen und $ n $ Spalten:
-			\[ X = \begin{pmatrix}
-			x_{11} 		& \dots 	& x_{1n}\\
-			\vdots 		& 			& \vdots\\
-			x_{m1} 		& \dots		& x_{mn}
-			\end{pmatrix} \]
+		\[
+			X =
+			\begin{pmatrix}
+				x_{11} & \dots & x_{1n} \\
+				\vdots &       & \vdots \\
+				x_{m1} & \dots & x_{mn}
+			\end{pmatrix}
+		\]
 		Die \emph{(Darstellungs-)Matrix} eines $ f\in \hom(V,W) $ bzgl. Basen $ B= (b_1,\dots,b_n) $ und $ C=(c_1,\dots,c_m) $ von $ V $ bzw. $ W $, ist die Matrix
-			\[ X = \xi^C_B(f)\in K^{m\times n}\text{ mit }\forall j=1,\dots,n:f(b_j) = \sum_{i=1}^{m}c_ix_{ij}. \]
+		\[
+			X = \xi^C_B(f)\in K^{m\times n}\text{ mit }\forall j=1,\dots,n:f(b_j) = \sum_{i=1}^{m}c_ix_{ij}.
+		\]
 	\end{Definition}
-	
-\paragraph{Bemerkung}
-	Mit $ I:= \{1,\dots,m\} $ und $ J:= \{1,\dots,n\} $ kann eine Matrix auch als Abbildung aufgefasst werden
-		\[ X = (x_{ij})_{i\in I,j\in J} \quad\text{ bzw. }\quad X:I\times J\to K,\ (i,j)\mapsto x_{ij}. \]
-	Ist $ f\in \hom(V,W) $ und sind $ B=(b_1,\dots,b_n) $ und $ C=(c_1,\dots,c_m) $ Basen von $ V $ bzw. $ W $, so sind
-		\[ x_{ij} = c_i^*(f(b_j)) \]
-	die Komponenten der Darstellungsmatrix $ \xi_B^C(f) $ von $ f $ bzgl. der Basen $ B $ und $ C $ mit der zu $ C $ dualen Basis $ C^*=(c_1^*,\dots c_m^*) $ von $ W^* $.\\
-	Mit der zu $ B $ dualen Basis $ B^*= (b_1^*,\dots,b_n^*) $ von $ V^* $ ist dann auch
-		\[ f=\sum_{i=1}^{m}\sum_{j=1}^{n} c_ix_{ij}b_j^*. \]
+
+	\paragraph{Bemerkung}
+		Mit $ I:= \{1,\dots,m\} $ und $ J:= \{1,\dots,n\} $ kann eine Matrix auch als Abbildung aufgefasst werden
+		\[
+			X = (x_{ij})_{i\in I,j\in J} \quad\text{ bzw. }\quad X:I\times J\to K,\ (i,j)\mapsto x_{ij}.
+		\]
+		Ist $ f\in \hom(V,W) $ und sind $ B=(b_1,\dots,b_n) $ und $ C=(c_1,\dots,c_m) $ Basen von $ V $ bzw. $ W $, so sind
+		\[
+			x_{ij} = c_i^*(f(b_j))
+		\]
+		die Komponenten der Darstellungsmatrix $ \xi_B^C(f) $ von $ f $ bzgl. der Basen $ B $ und $ C $ mit der zu $ C $ dualen Basis $ C^*=(c_1^*,\dots c_m^*) $ von $ W^* $.\\
+		Mit der zu $ B $ dualen Basis $ B^*= (b_1^*,\dots,b_n^*) $ von $ V^* $ ist dann auch
+		\[
+			f=\sum_{i=1}^{m}\sum_{j=1}^{n} c_ix_{ij}b_j^*.
+		\]
 \subsection{Lemma}
 	\begin{Lemma}[Matrizen als VR]
-	Mit der komponentenweisen Addition und Skalarmultiplikation auf $ K^{m\times n} $,
-		\[ (x_{ij})+(y_{ij}) := (x_{ij}+y_{ij}) \text{ und } (x_{ij})\cdot z := (x_{ij}\cdot z), \]
-	wird $ K^{m\times n} $ ein Vektorraum und man erhält einen Isomorphismus zu Basen $B$ und $C$ von $V$ bzw. $W$.
-		\[ \xi_B^C:\hom(V,W)\to K^{m\times n},\ f\mapsto \xi_B^C(f). \]
+		Mit der komponentenweisen Addition und Skalarmultiplikation auf $ K^{m\times n} $,
+		\[
+			(x_{ij})+(y_{ij}) := (x_{ij}+y_{ij}) \text{ und } (x_{ij})\cdot z := (x_{ij}\cdot z),
+		\]
+		wird $ K^{m\times n} $ ein Vektorraum und man erhält einen Isomorphismus zu Basen $B$ und $C$ von $V$ bzw. $W$.
+		\[
+			\xi_B^C:\hom(V,W)\to K^{m\times n},\ f\mapsto \xi_B^C(f).
+		\]
 	\end{Lemma}
-\paragraph{Bemerkung}
-	Die komponentenweise Addition und Skalarmultiplikation sind gerade die Addition und Skalarmultiplikation von Matrizen als Abbildungen.
-	
-\paragraph{Beweis}
-	Dass $ \hom(V,W) $ und $ K^{m\times n} \ K $-VR sind, ist bekannt (vgl. Kap. 1.4 bzw. Kap. 1.1). Die Linearität von $ \xi_B^C $ folgt direkt, da mit der zu $ C $ dualen Basis $ C^* $ von $ W^* $
-		\[ \forall_{i=1,\dots,m} \forall_{j=1,\dots,n}: x_{ij}= c_i^*(f(b_j)). \]
-	Nämlich: für $ f,g\in \hom(V,W) $ und $ x,y\in K $ ist dann
+	\paragraph{Bemerkung}
+		Die komponentenweise Addition und Skalarmultiplikation sind gerade die Addition und Skalarmultiplikation von Matrizen als Abbildungen.
+
+	\paragraph{Beweis}
+		Dass $ \hom(V,W) $ und $ K^{m\times n} \ K $-VR sind, ist bekannt (vgl. Kap. 1.4 bzw. Kap. 1.1). Die Linearität von $ \xi_B^C $ folgt direkt, da mit der zu $ C $ dualen Basis $ C^* $ von $ W^* $
+		\[
+			\forall_{i=1,\dots,m} \forall_{j=1,\dots,n}: x_{ij}= c_i^*(f(b_j)).
+		\]
+		Nämlich: für $ f,g\in \hom(V,W) $ und $ x,y\in K $ ist dann
 		\begin{align*}
-			\forall_{i= 1,\dots,m} \forall_{j=1,\dots, n} : c_i^*((fx+gy)(b_j)) &= c_i^*(f(b_j)x+g(b_j)y)\\
-			 &= c_i^*(f(b_j))x+c_i^*(g(b_j))y.
+			\forall_{i= 1,\dots,m} \forall_{j=1,\dots, n} : c_i^*((fx+gy)(b_j)) & = c_i^*(f(b_j)x+g(b_j)y)         \\
+			                                                                    & = c_i^*(f(b_j))x+c_i^*(g(b_j))y.
 		\end{align*}
-	Die Abbildung
-		\[ K^{m\times n}\ni X=(x_{ij})\mapsto \sum_{i=1}^{m}\sum_{j=1}^{n}c_ix_{ij}b_j^* = f\in \hom(V,W) \]
-	liefert die Inverse von $ f\mapsto\xi_B^C(f) $, also ist $ \xi_B^C $ ein Isomorphismus.
-\paragraph{Bemerkung}
-	Damit folgt (vgl. Kap. 1.4): $ \dim \hom(V,W) = \dim K^{m\times n} = m\cdot n $.
+		Die Abbildung
+		\[
+			K^{m\times n}\ni X=(x_{ij})\mapsto \sum_{i=1}^{m}\sum_{j=1}^{n}c_ix_{ij}b_j^* = f\in \hom(V,W)
+		\]
+		liefert die Inverse von $ f\mapsto\xi_B^C(f) $, also ist $ \xi_B^C $ ein Isomorphismus.
+	\paragraph{Bemerkung}
+		Damit folgt (vgl. Kap. 1.4): $ \dim \hom(V,W) = \dim K^{m\times n} = m\cdot n $.
 \subsection{Lemma \& Definition}
 	\begin{Lemma}[Darstellungsmatrix einer Komposition]
-	Sind $ U,V,W \ K$-VR mit Basen $ A=(a_1,\dots,a_p),\ B=(b_1,\dots,b_n),\ C=(c_1,\dots,c_m) $, so gilt für $ g\in \hom(U,V) $ und $ f\in \hom(V,W) $
-		\[ \xi_A^C(f\circ g) = \xi_B^C(f)\cdot \xi_A^B(g), \]
+		Sind $ U,V,W \ K$-VR mit Basen $ A=(a_1,\dots,a_p),\ B=(b_1,\dots,b_n),\ C=(c_1,\dots,c_m) $, so gilt für $ g\in \hom(U,V) $ und $ f\in \hom(V,W) $
+		\[
+			\xi_A^C(f\circ g) = \xi_B^C(f)\cdot \xi_A^B(g),
+		\]
 	\end{Lemma}
 	\begin{Definition}
-	wobei die \emph{Matrixmultiplikation}
-		\[ \cdot:K^{m\times n}\times K^{n\times p} \to K^{m\times p},\ (X,Y)\mapsto X\cdot Y = Z \]
-	definiert ist durch
-		\[ z_{ik} := \sum_{j=1}^{n}x_{ij}y_{jk}. \]
+		wobei die \emph{Matrixmultiplikation}
+		\[
+			\cdot:K^{m\times n}\times K^{n\times p} \to K^{m\times p},\ (X,Y)\mapsto X\cdot Y = Z
+		\]
+		definiert ist durch
+		\[
+			z_{ik} := \sum_{j=1}^{n}x_{ij}y_{jk}.
+		\]
 	\end{Definition}
-\paragraph{Bemerkung}
-	Das Element $ z_{ik} $ in der $ i $-ten Zeile und $ k $-ten Spalte von $ Z = XY $ wird also aus der $ i $-ten Zeile von $ X $ und der $k$-ten Spalte von $ Y $ berechnet.
-	\begin{align*}
-            \left(\begin{array}{ccc}
-                &&\\ 
-                x_{i1} & \dots & x_{in} \\
-                &&\\
-            \end{array}\right)
-            \cdot
-            \left(\begin{array}{ccc}
-                &y_{1k} &\\
-                &\vdots &\\
-                &y_{nk} &\\
-            \end{array}\right)
-            =
-             \left(\begin{array}{ccc}
-                & z_{ik}&\\
-                & &\\
-            \end{array}\right)
-	\end{align*}
-\paragraph{Beweis}
-	Wir verwenden die Darstellungsmatrizen
-		\[ \begin{cases}
-		X = \xi^C_B(f)\in K^{m\times n} &\text{ von } f\in \hom(V,W)\\
-		Y = \xi_A^B(g)\in K^{n\times p} &\text{ von } g\in \hom(U,V)
-		\end{cases} \]
-	bezüglich $ B $ und $ C $ bzw. $ A $ und $ B $, dann gilt für $ k=1,\dots,p $
-		\[ (f\circ g)(a_k)=f\Big(\sum_{j=1}^{n}b_jy_{jk}\Big) = \sum_{j=1}^{n}f(b_j)y_{jk} = \sum_{j=1}^{n}\sum_{i=1}^{m}c_ix_{ij}y_{jk} = \sum_{i=1}^{m}c_i\Big(\sum_{j=1}^{n}x_{ij}y_{jk}\Big), \]
-	d.h. durch $ I=\{1,\dots,m\},\ J=\{1,\dots,n\},\ K=\{1,\dots,p\} $ und 
-		\[ \xi_A^C(f\circ g) = Z = (z_{ik})_{i\in I,k\in K} \quad\text{mit}\quad \forall i\in I\ \forall k\in K: z_{ik}= \sum_{j=1}^{n}x_{ij}y_{jk} \]
-	erhält man die Darstellungsmatrix
-		\[ \xi_A^C(f\circ g) = \xi_B^C(f)\xi_A^B(g) \]
-	der Komposition als Produkt der Darstellungsmatrizen von $ f $ und $ g $.
+	\paragraph{Bemerkung}
+		Das Element $ z_{ik} $ in der $ i $-ten Zeile und $ k $-ten Spalte von $ Z = XY $ wird also aus der $ i $-ten Zeile von $ X $ und der $k$-ten Spalte von $ Y $ berechnet.
+		\begin{align*}
+			\left(
+			\begin{array}{ccc}
+			       &        &        \\
+			x_{i1} & \dots  & x_{in} \\
+			       &        &        \\
+			\end{array}
+			\right)
+			\cdot
+			\left(
+			\begin{array}{ccc}
+			       & y_{1k} &        \\
+			       & \vdots &        \\
+			       & y_{nk} &        \\
+			\end{array}
+			\right)
+			=
+			\left(
+			\begin{array}{ccc}
+			       & z_{ik} &        \\
+			       &        &        \\
+			\end{array}
+			\right)
+		\end{align*}
+	\paragraph{Beweis}
+		Wir verwenden die Darstellungsmatrizen
+		\[
+			\begin{cases}
+				X = \xi^C_B(f)\in K^{m\times n} & \text{ von } f\in \hom(V,W) \\
+				Y = \xi_A^B(g)\in K^{n\times p} & \text{ von } g\in \hom(U,V)
+			\end{cases}
+		\]
+		bezüglich $ B $ und $ C $ bzw. $ A $ und $ B $, dann gilt für $ k=1,\dots,p $
+		\[
+			(f\circ g)(a_k)=f\Big(\sum_{j=1}^{n}b_jy_{jk}\Big) = \sum_{j=1}^{n}f(b_j)y_{jk} = \sum_{j=1}^{n}\sum_{i=1}^{m}c_ix_{ij}y_{jk} = \sum_{i=1}^{m}c_i\Big(\sum_{j=1}^{n}x_{ij}y_{jk}\Big),
+		\]
+		d.h. durch $ I=\{1,\dots,m\},\ J=\{1,\dots,n\},\ K=\{1,\dots,p\} $ und
+		\[
+			\xi_A^C(f\circ g) = Z = (z_{ik})_{i\in I,k\in K} \quad\text{mit}\quad \forall i\in I\ \forall k\in K: z_{ik}= \sum_{j=1}^{n}x_{ij}y_{jk}
+		\]
+		erhält man die Darstellungsmatrix
+		\[
+			\xi_A^C(f\circ g) = \xi_B^C(f)\xi_A^B(g)
+		\]
+		der Komposition als Produkt der Darstellungsmatrizen von $ f $ und $ g $.
 \subsection{Notation \& Definition}
 	\begin{Definition}[Kurzform der def. Gleichung einer Darst.-Matrix]
-	Wir notieren die definierende Gleichung einer Darstellungsmatrix $ X=\xi_B^C(f) $ von $ f\in \hom(V,W) $ auch in Kurzform
-		\[ CX=(c_1,\dots,c_m)X = (f(b_1),\dots,f(b_n)) = f(B). \]
-	Für die \emph{Koordinatenspalte eines Vektors}
-		\[ Y\in K^{n\times 1} \text{ mit } v=\sum_{j=1}^{n}b_jy_{j1} \]
-	ist dann
-		\[ f(v) = (f(b_1),\dots,f(b_n))Y = (c_1,\dots,c_m)XY. \]
+		Wir notieren die definierende Gleichung einer Darstellungsmatrix $ X=\xi_B^C(f) $ von $ f\in \hom(V,W) $ auch in Kurzform
+		\[
+			CX=(c_1,\dots,c_m)X = (f(b_1),\dots,f(b_n)) = f(B).
+		\]
+		Für die \emph{Koordinatenspalte eines Vektors}
+		\[
+			Y\in K^{n\times 1} \text{ mit } v=\sum_{j=1}^{n}b_jy_{j1}
+		\]
+		ist dann
+		\[
+			f(v) = (f(b_1),\dots,f(b_n))Y = (c_1,\dots,c_m)XY.
+		\]
 	\end{Definition}
 	Die Familien $ (c_1,\dots,c_m) $ und $ (f(b_1),\dots,f(b_n)) $ sind keine Matrizen, denn die Elemente sind Vektoren!
 
 %VO19-2015-12-15
-\paragraph{Bemerkung}
-	Wir schreiben die Skalarmultiplikation als Rechts-Multiplikation.
-\paragraph{Beispiel}
-	Die neue Notation liefert einen alternativen "`Beweis"' für $ \xi_A^C(f\circ g) = \xi_B^C(f)\xi_A^B(g) $:
-	
-	Gilt für jeden Vektor $ a_k,\ k=1,\dots,p $
-		\[ g(a_k) = \sum_{j=1}^{n}b_jy_{jk}, \text{ wobei } Y = \xi_A^B(g) \]
-	so erhalten wir
-		\[ (f(g(a_1)),\dots, f(g(a_p))) = (f(b_1),\dots , f(b_n))Y = (c_1,\dots,c_m)\xi_B^C(f)\cdot Y = C\cdot XY \]
-	womit nun
-		\[ (f\circ g)(A) = C\cdot XY, \]
-	also
-		\[ \xi_A^C(f\circ g) = X\cdot Y = \xi_B^C(f)\cdot \xi_A^B(g). \]
-        
-	Einfacher (aber weniger überzeugend) ist die folgende, die Linearität von $ f $ benutzende Version:
-		\[( f\circ g )(A) = f(g(A)) = f(BY) = f(B)\cdot Y = C\cdot XY\]
-\paragraph{Bemerkung}
-	Sei $ f\in \hom(V,W) $ mit $ r:= \rg f $, dann existieren Basen $ B $ und $ C $ von $ V $ bzw. $ W $, sodass
-		\[ \xi_B^C(f) = X \text{ mit } x_{ij} =
+	\paragraph{Bemerkung}
+		Wir schreiben die Skalarmultiplikation als Rechts-Multiplikation.
+	\paragraph{Beispiel}
+		Die neue Notation liefert einen alternativen "`Beweis"' für $ \xi_A^C(f\circ g) = \xi_B^C(f)\xi_A^B(g) $:
+
+		Gilt für jeden Vektor $ a_k,\ k=1,\dots,p $
+		\[
+			g(a_k) = \sum_{j=1}^{n}b_jy_{jk}, \text{ wobei } Y = \xi_A^B(g)
+		\]
+		so erhalten wir
+		\[
+			(f(g(a_1)),\dots, f(g(a_p))) = (f(b_1),\dots , f(b_n))Y = (c_1,\dots,c_m)\xi_B^C(f)\cdot Y = C\cdot XY
+		\]
+		womit nun
+		\[
+			(f\circ g)(A) = C\cdot XY,
+		\]
+		also
+		\[
+			\xi_A^C(f\circ g) = X\cdot Y = \xi_B^C(f)\cdot \xi_A^B(g).
+		\]
+
+		Einfacher (aber weniger überzeugend) ist die folgende, die Linearität von $ f $ benutzende Version:
+		\[
+			( f\circ g )(A) = f(g(A)) = f(BY) = f(B)\cdot Y = C\cdot XY
+		\]
+	\paragraph{Bemerkung}
+		Sei $ f\in \hom(V,W) $ mit $ r:= \rg f $, dann existieren Basen $ B $ und $ C $ von $ V $ bzw. $ W $, sodass
+		\[
+			\xi_B^C(f) = X \text{ mit } x_{ij} =
 			\begin{cases}
-			1,& \text{falls }i=j\leq r\\
-			0,& \text{sonst}
-			\end{cases} \]
-	d.h.
-		\[ X = \left(\begin{array}{ccc|ccc}
-		1      & \dots  & 0_{1r} & 0      &\dots &0 \\
-		\vdots & \ddots & \vdots & \vdots &\vdots&\vdots\\
-		0      & \dots  & 1_{rr} & 0      &\dots &0 \\\hline
-		0      & \dots  & 0      & 0      &\dots &0 \\
-		\vdots & \vdots & \vdots & \vdots &\vdots&\vdots \\
-                0      & \dots  & 0      & 0      &\dots &0\\
-		\end{array}\right) \]
-		
-	Nämlich -- wie im Beweis des Rangsatzes: Die Basen $ B $ und $ C $ werden so gewählt, dass
-		 \begin{enumerate}[(i)]
-		 	\item $ (b_{r+1},\dots,b_n) $ Basis von $ \ker f $ ist, und dann
-		 	\item $ c_i := f(b_i) $ für $ i= 1,\dots,r $ eine Basis von $ f(V) $ liefert.
-		 \end{enumerate}
-	Offenbar hat $ \xi_B^C(f)$ dann die gewünschte Form:
-		\[ f(b_1)=c_1,\dots,f(b_r)=c_r,f(b_{r+1})=0,\dots,f(b_n)=0, \]
-	d.h.
-		\[ f(B) = (f(b_1),\dots,f(b_n))=(c_1,\dots,c_m)\left(\begin{array}{ccc|ccc}
-		1      & \dots  & 0_{1r} & 0      &\dots &0 \\
-		\vdots & \ddots & \vdots & \vdots &\vdots&\vdots\\
-		0      & \dots  & 1_{rr} & 0      &\dots &0 \\\hline
-		0      & \dots  & 0      & 0      &\dots &0 \\
-		\vdots & \vdots & \vdots & \vdots &\vdots&\vdots \\
-                0      & \dots  & 0      & 0      &\dots &0\\
-		\end{array}\right) = CX. \]
-	Umgekehrt: gibt es eine Darstellungmatrix von $ f $ dieser Form, so ist $ \rg f = r $.
+				1, & \text{falls }i=j\leq r \\
+				0, & \text{sonst}
+			\end{cases}
+		\]
+		d.h.
+		\[
+			X = \left(
+			\begin{array}{ccc|ccc}
+				1      & \dots  & 0_{1r} & 0      & \dots  & 0      \\
+				\vdots & \ddots & \vdots & \vdots & \vdots & \vdots \\
+				0      & \dots  & 1_{rr} & 0      & \dots  & 0      \\\hline
+				0      & \dots  & 0      & 0      & \dots  & 0      \\
+				\vdots & \vdots & \vdots & \vdots & \vdots & \vdots \\
+				0      & \dots  & 0      & 0      & \dots  & 0      \\
+			\end{array}
+			\right)
+		\]
+
+		Nämlich -- wie im Beweis des Rangsatzes: Die Basen $ B $ und $ C $ werden so gewählt, dass
+		\begin{enumerate}[(i)]
+			\item $ (b_{r+1},\dots,b_n) $ Basis von $ \ker f $ ist, und dann
+			\item $ c_i := f(b_i) $ für $ i= 1,\dots,r $ eine Basis von $ f(V) $ liefert.
+		\end{enumerate}
+		Offenbar hat $ \xi_B^C(f)$ dann die gewünschte Form:
+		\[
+			f(b_1)=c_1,\dots,f(b_r)=c_r,f(b_{r+1})=0,\dots,f(b_n)=0,
+		\]
+		d.h.
+		\[
+			f(B) = (f(b_1),\dots,f(b_n))=(c_1,\dots,c_m)\left(
+			\begin{array}{ccc|ccc}
+				1      & \dots  & 0_{1r} & 0      & \dots  & 0      \\
+				\vdots & \ddots & \vdots & \vdots & \vdots & \vdots \\
+				0      & \dots  & 1_{rr} & 0      & \dots  & 0      \\\hline
+				0      & \dots  & 0      & 0      & \dots  & 0      \\
+				\vdots & \vdots & \vdots & \vdots & \vdots & \vdots \\
+				0      & \dots  & 0      & 0      & \dots  & 0      \\
+			\end{array}
+			\right) = CX.
+		\]
+		Umgekehrt: gibt es eine Darstellungmatrix von $ f $ dieser Form, so ist $ \rg f = r $.
 \subsection{Beispiel \& Definition}
 	\begin{Definition}[Einheitsmatrix]
-	Ist $ B=(b_1,\dots,b_n) $ Basis von $ V $, so hat der Isomorphismus
-		\[ \phi:V\to K^n \text{ mit } \forall j=1,\dots,n:\phi(b_j)=e_j \]
-	bezüglich $ B $ und der Standardbasis $ E = (e_1,\dots,e_n) $ von $ K^n $ die \emph{$ n $-reihige Einheitsmatrix} als Darstellungsmatrix:
-		\[ \xi_B^E(\phi) = E_n := (\delta_{ij})_{i,j = 1,\dots,n} \]
+		Ist $ B=(b_1,\dots,b_n) $ Basis von $ V $, so hat der Isomorphismus
+		\[
+			\phi:V\to K^n \text{ mit } \forall j=1,\dots,n:\phi(b_j)=e_j
+		\]
+		bezüglich $ B $ und der Standardbasis $ E = (e_1,\dots,e_n) $ von $ K^n $ die \emph{$ n $-reihige Einheitsmatrix} als Darstellungsmatrix:
+		\[
+			\xi_B^E(\phi) = E_n := (\delta_{ij})_{i,j = 1,\dots,n}
+		\]
 	\end{Definition}
-\paragraph{Beispiel}
-	Sind $ B=(b_1,\dots,b_n) $ und $ B'=(b'_1,\dots,b'_n) $ Basen von $ V $, wobei
-		\[ \forall j=1,\dots,n:b_j = \sum_{i=1}^{n}b'_ix_{ij}, \]
-	so hat die Identität $ \id_V $ die Darstellungsmatrix
-		\[ \xi_B^{B'}(\id_V)= X = (x_{ij})_{i,j=1\dots,n}. \]
-	Sind dann $ B $ und $ B' $ Basen von $ V $ und $ C $ und $ C' $ Basen von $ W $, so erhält man für $ f\in\hom(V,W) $ die Transformationsformel
-		\[ \xi_{B'}^{C'}(f) = \xi_{B'}^{C'}(\id_W\circ f\circ \id_V) = \xi_C^{C'}(\id_W)\cdot \xi_B^C(f)\cdot \xi_{B'}^{B}(\id_V) \]
+	\paragraph{Beispiel}
+		Sind $ B=(b_1,\dots,b_n) $ und $ B'=(b'_1,\dots,b'_n) $ Basen von $ V $, wobei
+		\[
+			\forall j=1,\dots,n:b_j = \sum_{i=1}^{n}b'_ix_{ij},
+		\]
+		so hat die Identität $ \id_V $ die Darstellungsmatrix
+		\[
+			\xi_B^{B'}(\id_V)= X = (x_{ij})_{i,j=1\dots,n}.
+		\]
+		Sind dann $ B $ und $ B' $ Basen von $ V $ und $ C $ und $ C' $ Basen von $ W $, so erhält man für $ f\in\hom(V,W) $ die Transformationsformel
+		\[
+			\xi_{B'}^{C'}(f) = \xi_{B'}^{C'}(\id_W\circ f\circ \id_V) = \xi_C^{C'}(\id_W)\cdot \xi_B^C(f)\cdot \xi_{B'}^{B}(\id_V)
+		\]
 \subsection{Beispiel \& Definition}
 	Ist $ f\in \Iso(V,W) $ mit Basen $ B $ und $ C $ von $ V $ bzw. $ W $, so gilt (mit $ n=\dim V = \dim W $)
-		\[ \xi_C^B(f^{-1})\cdot \xi_B^C(f) = \xi_B^B(f^{-1}\circ f) = \xi_B^B(\id_V) = E_n \]
+	\[
+		\xi_C^B(f^{-1})\cdot \xi_B^C(f) = \xi_B^B(f^{-1}\circ f) = \xi_B^B(\id_V) = E_n
+	\]
 	und
-		\[ \xi_B^C(f)\cdot \xi_C^B(f^{-1})=\xi_C^C(f\circ f^{-1}) = \xi_C^C(\id_W)=E_n. \]
-		
+	\[
+		\xi_B^C(f)\cdot \xi_C^B(f^{-1})=\xi_C^C(f\circ f^{-1}) = \xi_C^C(\id_W)=E_n.
+	\]
+
 	\begin{Definition}[Invertierbare Matrix]
-	Eine Matrix $ X\in K^{n\times n} $ nennt man invertierbar mit Inverser $ X^{-1} $, falls
-		\[ \exists X^{-1}\in K^{n\times n}:X^{-1}X = E_n \]
-	Damit ist die Darstellungsmatrix der Inversen die Inverse der Darstellungsmatrix:
-		\[ \xi_C^B(f^{-1}) = (\xi_B^C(f))^{-1} \]
+		Eine Matrix $ X\in K^{n\times n} $ nennt man invertierbar mit Inverser $ X^{-1} $, falls
+		\[
+			\exists X^{-1}\in K^{n\times n}:X^{-1}X = E_n
+		\]
+		Damit ist die Darstellungsmatrix der Inversen die Inverse der Darstellungsmatrix:
+		\[
+			\xi_C^B(f^{-1}) = (\xi_B^C(f))^{-1}
+		\]
 	\end{Definition}
 \subsection{Bemerkung \& Definition}
 	Jedes $ X\in K^{m\times n} $ liefert (eindeutig) $ f_X\in \hom(K^n,K^m) $ nach Fortsetzungssatz via
-		\[ f_X:K^n\to K^m,\ f_X(e_j) = \sum_{i=1}^{m} e'_ix_{ij} \text{ für } j=1,\dots,n. \]
+	\[
+		f_X:K^n\to K^m,\ f_X(e_j) = \sum_{i=1}^{m} e'_ix_{ij} \text{ für } j=1,\dots,n.
+	\]
 	Bezüglich der Standardbasen $ E = (e_1,\dots,e_n) $ von $ K^n $ und $ E'=(e'_1,\dots,e'_m) $ von $ K^m $ ist dann
-		\[ \xi_E^{E'}(f_X) = X. \]
+	\[
+		\xi_E^{E'}(f_X) = X.
+	\]
 
 	\begin{Definition}[Rang einer Matrix]
-	Damit definiert man den Rang einer Matrix $ X\in K^{m\times n} $ als 
-		\[ \rg X:=\rg f_X \]
-	Eine Matrix $ X\in K^{n\times n} $ ist genau dann invertierbar, wenn $ \rg X = n $. Man setzt
-		\[ \mathrm{Gl}(n):= \{X\in K^{n\times n}\mid \rg X =n\}. \]
+		Damit definiert man den Rang einer Matrix $ X\in K^{m\times n} $ als
+		\[
+			\rg X:=\rg f_X
+		\]
+		Eine Matrix $ X\in K^{n\times n} $ ist genau dann invertierbar, wenn $ \rg X = n $. Man setzt
+		\[
+			\mathrm{Gl}(n):= \{X\in K^{n\times n}\mid \rg X =n\}.
+		\]
 	\end{Definition}
 \subsection{Bemerkung \& Definition}
 	Nach der Transformationsformel für Darstellungsmatrizen gilt bei Basiswechseln in $ V $ und $ W $ für $ f\in \hom(V,W) $
-		\[ \xi_{B'}^{C'}(f) = \xi_C^{C'}(\id_W)\cdot \xi_B^C(f)\cdot \xi_{B'}^B(\id_V). \]
+	\[
+		\xi_{B'}^{C'}(f) = \xi_C^{C'}(\id_W)\cdot \xi_B^C(f)\cdot \xi_{B'}^B(\id_V).
+	\]
 	Dabei sind $ \xi_{B'}^B(\id_V)\in \mathrm{Gl}(n) $ und $ \xi_C^{C'}(\id_W)\in \mathrm{Gl}(m) $ invertierbar, da etwa
-		\[ \xi^B_{B'}(\id_V)\cdot\xi_B^{B'}(\id_V) = \xi_B^B(\id_V)=E_n; \]
+	\[
+		\xi^B_{B'}(\id_V)\cdot\xi_B^{B'}(\id_V) = \xi_B^B(\id_V)=E_n;
+	\]
 	Sind andererseits die Basis $ B $ und $ P\in \mathrm{Gl}(n) $ gegeben, so ist
-		\[ \xi_B^{B'}(\id_V)=P^{-1} \text{ für } B':= BP, \]
+	\[
+		\xi_B^{B'}(\id_V)=P^{-1} \text{ für } B':= BP,
+	\]
 	d.h. jedes $ P\in \mathrm{Gl}(n) $ realisiert einen Basiswechsel in $ V $, kommt also in der Transformationsformel vor.
-	
+
 	\begin{Definition}[Äquivalente Matrizen]
-	Daher definiert man auch Matrizen $ X,X'\in K^{m\times n} $ als \emph{äquivalent},
-		\[ X\sim X',\quad \text{falls }\exists P\in \mathrm{Gl}(n)\exists Q\in \mathrm{Gl}(m):X' = QXP^{-1}.  \]
+		Daher definiert man auch Matrizen $ X,X'\in K^{m\times n} $ als \emph{äquivalent},
+		\[
+			X\sim X',\quad \text{falls }\exists P\in \mathrm{Gl}(n)\exists Q\in \mathrm{Gl}(m):X' = QXP^{-1}.
+		\]
 	\end{Definition}

@@ -1,178 +1,214 @@
 %VO17-2015-12-03
 \section{Dreiecke in der Affinen Geometrie}
-\subsection{Beispiel \& Definition}
-	\begin{Definition}[Mittelpunkt]
-	Der (geometrische) Schwerpunkt zweier Punkte $ a,b\in A $ eines affinen Raumes über dem Körper $ K $ ist ihr Mittelpunkt
-		\[ s_{a,b} = a\cdot \frac{1}{2}+b\cdot \frac{1}{2}. \]
-	\end{Definition}
-	
-	Dies ist sinnlos, falls $ \Char K = 2 $ ist, was wir also ausschließen müssen.
-	Ist etwa $ A $ AR über $ K=\mathbb{Z}_2 $, so enthält jede Gerade genau zwei Punkte,
-		\[ \forall a,b\in A: [ab] = 
-			\begin{cases}
-				\{a,b\},& \text{falls }a\neq b\\
-				\{a\},& \text{falls } a=b
-			\end{cases} \]
-	Für den Rest des Kapitels wird $ \Char K \neq 0 $ ausgeschlossen.
-\paragraph{Bemerkung}
-	Ist $ K $ ein geordneter Körper, e.g. $ K=\mathbb{R} $, so kann man die \emph{Strecke}
-		\[ \overline{ab}:= \{a(1-s)+bs\mid 0\leq s\leq 1\} \]
-	zwischen zwei Punkten $ a,b\in A $ definieren. Jeder Punkt $ c\in \overline{ab} $ auf der Strecke liegt \emph{zwischen} ihren \emph{Endpunkten} $ a $ und $ b $; $ s_{ab} $ ist dann auch Mittelpunkt der Strecke $ \overline{ab} $.
-	
-	Offenbar ist das sinnlos, wenn der Körper $ K $ nicht angeordnet ist.
-	
-	
-\subsection{Schwerpunktsatz}
-	\begin{Satz}[Schwerpunktsatz]
-	Der Schwerpunkt eines nicht-degenerierten Dreieck $ \{a,b,c\}\subset A $ ist der Schnittpunkt der Seitenhalbierenden, die er im Verhältnis $ -\frac{1}{2} $ teilt.
-	\end{Satz}
-% % % Grafik Schwerpunktsatz
-	\begin{figure}[H]\centering
-	\definecolor{uququq}{rgb}{0.25,0.25,0.25}
-	\definecolor{zzttqq}{rgb}{0.6,0.2,0}
-	\definecolor{qqqqff}{rgb}{0,0,1}
-		\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,scale=1.5] %,x=1.0cm,y=1.0cm]
-		\clip(0.71,0.52) rectangle (5.68,4.35);
-		\coordinate (a) at (1.36,2.12);
-		\coordinate (b) at (3,4);
-		\coordinate (c) at (4.56,0.82);
-		%\fill[color=zzttqq,fill=zzttqq,fill opacity=0.1] (a) -- (b) -- (c) -- cycle;
-		\draw [color=zzttqq] (a)-- (b);
-		\draw [color=zzttqq] (b)-- (c);
-		\draw [color=zzttqq] (c)-- (a);
-		
-		% Halbierungspunkte:
-		\coordinate (Sab) at (2.18,3.06);
-		\coordinate (Sbc) at (3.78,2.41);
-		\coordinate (Sac) at (2.96,1.47);
-		\coordinate (S) at (2.97,2.31);
-		
-		\fill [color=qqqqff] (a) circle (1.5pt);
-		\draw[color=qqqqff] (a) node[left] {$a$};
-		\fill [color=qqqqff] (b) circle (1.5pt);
-		\draw[color=qqqqff] (b) node[above] {$b$};
-		\fill [color=qqqqff] (c) circle (1.5pt);
-		\draw[color=qqqqff] (c) node[right] {$c$};
-		\fill [color=uququq] (Sab) circle (1.5pt);
-		\draw[color=uququq] (Sab) node[left] {$S_{ab}$};
-		\fill [color=uququq] (Sbc) circle (1.5pt);
-		\draw[color=uququq] (Sbc) node[right] {$S_{bc}$};
-		\fill [color=uququq] (Sac) circle (1.5pt);
-		\draw[color=uququq] (Sac) node[below] {$S_{ac}$};
-		\fill [color=uququq] (S) circle (1.5pt);
-		\draw[color=uququq] (S) node[below left] {$S$};
-		\draw [dash pattern=on 2pt off 2pt] (Sbc)-- (a);
-		\draw [dash pattern=on 2pt off 2pt] (Sac)-- (b);
-		\draw [dash pattern=on 2pt off 2pt] (Sab)-- (c);
-		\end{tikzpicture}
-	\end{figure}
-\paragraph{Beweis}
-	Der (geometrische) Schwerpunkt des Dreiecks $ \{a,b,c\}\subset A $ ist
-		\[ s = a\cdot \frac{1}{3}+ b\cdot \frac{1}{3}+ c\cdot \frac{1}{3} = (a\cdot \frac{1}{2}+b\frac{1}{2})\frac{2}{3}+c\cdot \frac{1}{3} = s_{ab}\cdot\frac{2}{3}+c\cdot \frac{1}{3} \in [s_{ab}c];\]
-	weiters gilt
-			\[ (s_{ab}s:cs)= -\frac{\frac{1}{3}}{1-\frac{1}{3}} = -\frac{1}{2}, \]
-	$ s $ teilt die Strecke $ \overline{s_{ab}c} $ im Verhältnis $ -\frac{1}{2} $. Aus Symmetriegründen gelten diese Resultate genauso für die anderen Seitenhalbierenden.
-\paragraph{Bemerkung}
-	Andere bekannte Schnittsätze im Dreieck machen in der affinen Geometrie keinen Sinn. Sätze wie der Höhensatz oder über den Umkreismittelpunkt können gar nicht erst formuliert werden: in der affinen Geometrie kennt man weder Längen- noch Winkelmessung.
-	
-	Dem gegenüber sind die Sätze von Menelaos und Ceva "`affine Sätze"', d.h. sie können rein affin formuliert werden und beschreiben unter affinen Transformationen \emph{invariante} Sachverhalte.
-\subsection{Bemerkung \& Definition}
-	Sind $ \alpha:A\to A' $ und $ \beta:A'\to A'' $ affine Abbildungen und bezeichnen $ \lambda:V\to V' $ bzw. $ \mu:V'\to V'' $ ihre linearen Anteile,
-		\[ \forall a\in A\forall v\in V:\alpha(a+v) = \alpha(a)+\lambda(v)\text{ und }\forall a'\in A'\forall v'\in V':\beta(a'+v') = \beta(a')+\mu(v'), \]
-	so gilt für ihre Komposition
-		\[ (\beta\circ\alpha)(a+v) = \beta(\alpha(a)+\lambda(v)) = \beta(\alpha(a))+\mu(\lambda(v)) = (\beta\circ\alpha)(a)+(\mu\circ\lambda)(v), \]
-	d.h. der lineare Anteil einer Komposition von affinen Abbildungen ist die Komposition der linearen Anteile.
-	
-	\begin{Definition}[Dilatationsgruppe]
-	Da eine affine Transformation, deren linearer Anteil Vielfaches der Identität ist, eine Translation oder eine Streckung ist, bilden die Translationen und Streckungen eines affinen Raumes eine Gruppe, die \emph{Dilatationsgruppe}.
-	\end{Definition}
-	
-\subsection{Satz von Menelaos}
-	\begin{Satz}[Satz von Menelaos]
-		Seien $ \{a,b,c\}\subset A $ ein nicht-degeneriertes Dreieck und $ g\subset A $ eine Gerade, die die drei Seiten des Dreiecks außerhalb der Ecken des Dreiecks schneidet;
-			\[ a'\in g\cap [bc],b'\in g\cap [ca] \text{ und }c'\in g\cap [ab] \]
-		bezeichne die Schnittpunkte. Dann gilt:
-			\[ (ac':bc')(ba':ca')(cb':ab') = 1 \]
-		Umgekehrt garantiert die TV-Bedingung, dass drei Punkte $ a'\in [bc],b'\in [ca] $ und $ c'\in [ab] $ auf den Seiten des Dreiecks kollinear sind.
-	\end{Satz}
-	
-	\begin{figure}[H]\centering
-	\definecolor{zzttqq}{rgb}{0.6,0.2,0}
-	\definecolor{qqqqff}{rgb}{0,0,1}
-	\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
-	\clip(1.05,-0.85) rectangle (9.76,4.01);
-	%\fill[color=zzttqq,fill=zzttqq,fill opacity=0.1] (2.1,0.26) -- (6.42,0.81) -- (4.5,3) -- cycle;
-	\draw [color=zzttqq] (2.1,0.26)-- (6.42,0.81);
-	\draw [color=zzttqq] (6.42,0.81)-- (4.5,3);
-	\draw [color=zzttqq] (4.5,3)-- (2.1,0.26);
-	\draw [domain=1.05:9.76] plot(\x,{(-0.02--0.55*\x)/4.32});
-	\draw [domain=1.05:9.76] plot(\x,{(-13.58--1.45*\x)/-3.33});
+ \subsection{Beispiel \& Definition}
+ 	\begin{Definition}[Mittelpunkt]
+ 		Der (geometrische) Schwerpunkt zweier Punkte $ a,b\in A $ eines affinen Raumes über dem Körper $ K $ ist ihr Mittelpunkt
+ 		\[
+ 			s_{a,b} = a\cdot \frac{1}{2}+b\cdot \frac{1}{2}.
+ 		\]
+ 	\end{Definition}
 
-	\fill [color=qqqqff] (2.1,0.26) circle (1.5pt);
-	\draw[color=qqqqff] (2.14,0.33) node[below] {$A$};
-	\fill [color=qqqqff] (6.42,0.81) circle (1.5pt);
-	\draw[color=qqqqff] (6.46,0.8) node[below] {$B$};
-	\fill [color=qqqqff] (4.5,3) circle (1.5pt);
-	\draw[color=qqqqff] (4.54,3.07) node[above] {$C$};
-	\fill (3.94,2.36) circle (1.5pt);
-	\draw (3.99,2.43) node[above] {$b'$};
-	\fill (7.28,0.92) circle (1.5pt);
-	\draw (7.33,0.99) node[above] {$c'$};
-	\draw[color=black] (1.33,3.19) node {$g$};
-	\fill (5.74,1.59) circle (1.5pt);
-	\draw (5.78,1.66) node[above right] {$a'$};
-	\end{tikzpicture}
-	\end{figure}
-	
-\paragraph{Beweis}
-	Betrachte Streckung $ \gamma $ mit Zentrum $ c' $ und Faktor $ s_{ab}\in K^\times $,
-		\[ \gamma:A\to A, c'+ v\mapsto \gamma(c'+v) := c'+vs_{ab}; \]
-	insbesondere ist für $ s_{ab}=\frac{1}{(ac':bc')} $
-		\[ \gamma(a)=c'+(a-c')\frac{1}{(ac':bc')}=c'+(b-c') = b. \]
-	Definiert man Streckungen $ \alpha $ und $ \beta $ entsprechend, mit Zentren $ a' $ bzw. $ b' $ und Faktoren $ s_{bc} = \frac{1}{(ba':ca')} $ bzw. $ s_{ca}=\frac{1}{cb':ab'} $, so liefert die Komposition eine affine Transformation
-		\[ \delta:= \beta\circ\alpha\circ\gamma:A\to A:,a+v \mapsto \delta(a+v) := a+vs_{ab}s_{bc}s_{ca}, \]
-	da
-		\[ a\overset{\gamma}{\mapsto}b\overset{\alpha}{\mapsto}c\overset{\beta}{\mapsto}a. \]
-	Damit gilt
-		\[ (ac':bc')(ba':ca')(cb':ab') = 1 \Leftrightarrow \delta = \id_A \]
-	Wegen $ a\notin [c'a'] $ ist andererseits
-		\[ \delta = \id_A \Leftrightarrow [c'a'] = \delta([c'a']) = \beta([c'a']), \]
-	da $ \gamma([c'a']) = [c'a'] $ und $ \alpha([c'a']) = [c'a'], $ was die letzte Gleichung liefert, damit ist
-		\[ \delta = \id_A \Leftrightarrow [c'a']=\beta([c'a'])\Leftrightarrow b'\in [c'a'], \]
-	da $ \beta $ Streckung mit Zentrum $ b' $ ist. Damit ist die Behauptung bewiesen.
-\subsection{Satz von Ceva}
-	\begin{Satz}[Satz von Ceva]
-		Seien $ \{a,b,c\}\subset A $ ein nicht-degeneriertes Dreieck und
-			\[ a'\in [bc]\setminus \{b,c\},b'\in [ac]\setminus \{a,c\},c'\in [ab]\setminus \{a,b\}. \]
-		Schneiden sich die drei Transversalen $ [aa'],[bb'] $ und $ [cc'] $ in einem Punkt, so gilt
-			\[ (ac':bc')(ba':ca')(cb':ab')=-1. \]
-	\end{Satz}
-	\begin{figure}[H]\centering
-	\definecolor{zzttqq}{rgb}{0.6,0.2,0}
-	\definecolor{qqqqff}{rgb}{0,0,1}
-	\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
-	\clip(0.25,0.33) rectangle (9.57,6.25);
-	%\fill[color=zzttqq,fill=zzttqq,fill opacity=0.1] (1.5,1.52) -- (6.8,1.78) -- (4.08,5.58) -- cycle;
-	\draw [color=zzttqq] (1.5,1.52)-- (6.8,1.78);
-	\draw [color=zzttqq] (6.8,1.78)-- (4.08,5.58);
-	\draw [color=zzttqq] (4.08,5.58)-- (1.5,1.52);
-	\draw [domain=0.25:9.57] plot(\x,{(--15.39-1.1*\x)/4.43});
-	\draw [domain=0.25:9.57] plot(\x,{(-13.46--3.96*\x)/0.48});
-	\draw [domain=0.25:9.57] plot(\x,{(--1.82--1.03*\x)/2.21});
-	\fill [color=qqqqff] (1.5,1.52) circle (1.5pt);
-	\draw[color=qqqqff] (1.5,1.64) node[left] {$a$};
-	\fill [color=qqqqff] (6.8,1.78) circle (1.5pt);
-	\draw[color=qqqqff] (6.88,1.9) node[right] {$b$};
-	\fill [color=qqqqff] (4.08,5.58) circle (1.5pt);
-	\draw[color=qqqqff] (4.14,5.7) node[right] {$c$};
-	\fill (2.37,2.88) circle (1.5pt);
-	\draw (2.45,3.01) node[above left] {$b'$};
-	\fill (3.6,1.62) circle (1.5pt);
-	\draw (3.68,1.75) node[below right] {$c'$};
-	\fill (5.62,3.43) circle (1.5pt);
-	\draw (5.7,3.56) node[above] {$a'$};
-	\end{tikzpicture}
-	\end{figure}
-	Beweis in Aufgabe 59.
-\paragraph{Bemerkung}
-	Für die Seitenmitten gilt der Satz (Schwerpunktsatz).
+ 	Dies ist sinnlos, falls $ \Char K = 2 $ ist, was wir also ausschließen müssen.
+ 	Ist etwa $ A $ AR über $ K=\mathbb{Z}_2 $, so enthält jede Gerade genau zwei Punkte,
+ 	\[
+ 		\forall a,b\in A: [ab] =
+ 		\begin{cases}
+ 			\{a,b\}, & \text{falls }a\neq b \\
+ 			\{a\},   & \text{falls } a=b
+ 		\end{cases}
+ 	\]
+ 	Für den Rest des Kapitels wird $ \Char K \neq 0 $ ausgeschlossen.
+ 	\paragraph{Bemerkung}
+ 		Ist $ K $ ein geordneter Körper, e.g. $ K=\mathbb{R} $, so kann man die \emph{Strecke}
+ 		\[
+ 			\overline{ab}:= \{a(1-s)+bs\mid 0\leq s\leq 1\}
+ 		\]
+ 		zwischen zwei Punkten $ a,b\in A $ definieren. Jeder Punkt $ c\in \overline{ab} $ auf der Strecke liegt \emph{zwischen} ihren \emph{Endpunkten} $ a $ und $ b $; $ s_{ab} $ ist dann auch Mittelpunkt der Strecke $ \overline{ab} $.
+
+ 		Offenbar ist das sinnlos, wenn der Körper $ K $ nicht angeordnet ist.
+
+
+ \subsection{Schwerpunktsatz}
+ 	\begin{Satz}[Schwerpunktsatz]
+ 		Der Schwerpunkt eines nicht-degenerierten Dreieck $ \{a,b,c\}\subset A $ ist der Schnittpunkt der Seitenhalbierenden, die er im Verhältnis $ -\frac{1}{2} $ teilt.
+ 	\end{Satz}
+ 	% % % Grafik Schwerpunktsatz
+ 	\begin{figure}[H]\centering
+ 		\definecolor{uququq}{rgb}{0.25,0.25,0.25}
+ 		\definecolor{zzttqq}{rgb}{0.6,0.2,0}
+ 		\definecolor{qqqqff}{rgb}{0,0,1}
+ 		\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,scale=1.5] %,x=1.0cm,y=1.0cm]
+ 			\clip(0.71,0.52) rectangle (5.68,4.35);
+ 			\coordinate (a) at (1.36,2.12);
+ 			\coordinate (b) at (3,4);
+ 			\coordinate (c) at (4.56,0.82);
+ 			%\fill[color=zzttqq,fill=zzttqq,fill opacity=0.1] (a) -- (b) -- (c) -- cycle;
+ 			\draw [color=zzttqq] (a)-- (b);
+ 			\draw [color=zzttqq] (b)-- (c);
+ 			\draw [color=zzttqq] (c)-- (a);
+
+ 			% Halbierungspunkte:
+ 			\coordinate (Sab) at (2.18,3.06);
+ 			\coordinate (Sbc) at (3.78,2.41);
+ 			\coordinate (Sac) at (2.96,1.47);
+ 			\coordinate (S) at (2.97,2.31);
+
+ 			\fill [color=qqqqff] (a) circle (1.5pt);
+ 			\draw[color=qqqqff] (a) node[left] {$a$};
+ 			\fill [color=qqqqff] (b) circle (1.5pt);
+ 			\draw[color=qqqqff] (b) node[above] {$b$};
+ 			\fill [color=qqqqff] (c) circle (1.5pt);
+ 			\draw[color=qqqqff] (c) node[right] {$c$};
+ 			\fill [color=uququq] (Sab) circle (1.5pt);
+ 			\draw[color=uququq] (Sab) node[left] {$S_{ab}$};
+ 			\fill [color=uququq] (Sbc) circle (1.5pt);
+ 			\draw[color=uququq] (Sbc) node[right] {$S_{bc}$};
+ 			\fill [color=uququq] (Sac) circle (1.5pt);
+ 			\draw[color=uququq] (Sac) node[below] {$S_{ac}$};
+ 			\fill [color=uququq] (S) circle (1.5pt);
+ 			\draw[color=uququq] (S) node[below left] {$S$};
+ 			\draw [dash pattern=on 2pt off 2pt] (Sbc)-- (a);
+ 			\draw [dash pattern=on 2pt off 2pt] (Sac)-- (b);
+ 			\draw [dash pattern=on 2pt off 2pt] (Sab)-- (c);
+ 		\end{tikzpicture}
+ 	\end{figure}
+ 	\paragraph{Beweis}
+ 		Der (geometrische) Schwerpunkt des Dreiecks $ \{a,b,c\}\subset A $ ist
+ 		\[
+ 			s = a\cdot \frac{1}{3}+ b\cdot \frac{1}{3}+ c\cdot \frac{1}{3} = (a\cdot \frac{1}{2}+b\frac{1}{2})\frac{2}{3}+c\cdot \frac{1}{3} = s_{ab}\cdot\frac{2}{3}+c\cdot \frac{1}{3} \in [s_{ab}c];
+ 		\]
+ 		weiters gilt
+ 		\[
+ 			(s_{ab}s:cs)= -\frac{\frac{1}{3}}{1-\frac{1}{3}} = -\frac{1}{2},
+ 		\]
+ 		$ s $ teilt die Strecke $ \overline{s_{ab}c} $ im Verhältnis $ -\frac{1}{2} $. Aus Symmetriegründen gelten diese Resultate genauso für die anderen Seitenhalbierenden.
+ 	\paragraph{Bemerkung}
+ 		Andere bekannte Schnittsätze im Dreieck machen in der affinen Geometrie keinen Sinn. Sätze wie der Höhensatz oder über den Umkreismittelpunkt können gar nicht erst formuliert werden: in der affinen Geometrie kennt man weder Längen- noch Winkelmessung.
+
+ 		Dem gegenüber sind die Sätze von Menelaos und Ceva "`affine Sätze"', d.h. sie können rein affin formuliert werden und beschreiben unter affinen Transformationen \emph{invariante} Sachverhalte.
+ \subsection{Bemerkung \& Definition}
+ 	Sind $ \alpha:A\to A' $ und $ \beta:A'\to A'' $ affine Abbildungen und bezeichnen $ \lambda:V\to V' $ bzw. $ \mu:V'\to V'' $ ihre linearen Anteile,
+ 	\[
+ 		\forall a\in A\forall v\in V:\alpha(a+v) = \alpha(a)+\lambda(v)\text{ und }\forall a'\in A'\forall v'\in V':\beta(a'+v') = \beta(a')+\mu(v'),
+ 	\]
+ 	so gilt für ihre Komposition
+ 	\[
+ 		(\beta\circ\alpha)(a+v) = \beta(\alpha(a)+\lambda(v)) = \beta(\alpha(a))+\mu(\lambda(v)) = (\beta\circ\alpha)(a)+(\mu\circ\lambda)(v),
+ 	\]
+ 	d.h. der lineare Anteil einer Komposition von affinen Abbildungen ist die Komposition der linearen Anteile.
+
+ 	\begin{Definition}[Dilatationsgruppe]
+ 		Da eine affine Transformation, deren linearer Anteil Vielfaches der Identität ist, eine Translation oder eine Streckung ist, bilden die Translationen und Streckungen eines affinen Raumes eine Gruppe, die \emph{Dilatationsgruppe}.
+ 	\end{Definition}
+
+ \subsection{Satz von Menelaos}
+ 	\begin{Satz}[Satz von Menelaos]
+ 		Seien $ \{a,b,c\}\subset A $ ein nicht-degeneriertes Dreieck und $ g\subset A $ eine Gerade, die die drei Seiten des Dreiecks außerhalb der Ecken des Dreiecks schneidet;
+ 		\[
+ 			a'\in g\cap [bc],b'\in g\cap [ca] \text{ und }c'\in g\cap [ab]
+ 		\]
+ 		bezeichne die Schnittpunkte. Dann gilt:
+ 		\[
+ 			(ac':bc')(ba':ca')(cb':ab') = 1
+ 		\]
+ 		Umgekehrt garantiert die TV-Bedingung, dass drei Punkte $ a'\in [bc],b'\in [ca] $ und $ c'\in [ab] $ auf den Seiten des Dreiecks kollinear sind.
+ 	\end{Satz}
+
+ 	\begin{figure}[H]\centering
+ 		\definecolor{zzttqq}{rgb}{0.6,0.2,0}
+ 		\definecolor{qqqqff}{rgb}{0,0,1}
+ 		\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+ 			\clip(1.05,-0.85) rectangle (9.76,4.01);
+ 			%\fill[color=zzttqq,fill=zzttqq,fill opacity=0.1] (2.1,0.26) -- (6.42,0.81) -- (4.5,3) -- cycle;
+ 			\draw [color=zzttqq] (2.1,0.26)-- (6.42,0.81);
+ 			\draw [color=zzttqq] (6.42,0.81)-- (4.5,3);
+ 			\draw [color=zzttqq] (4.5,3)-- (2.1,0.26);
+ 			\draw [domain=1.05:9.76] plot(\x,{(-0.02--0.55*\x)/4.32});
+ 			\draw [domain=1.05:9.76] plot(\x,{(-13.58--1.45*\x)/-3.33});
+
+ 			\fill [color=qqqqff] (2.1,0.26) circle (1.5pt);
+ 			\draw[color=qqqqff] (2.14,0.33) node[below] {$A$};
+ 			\fill [color=qqqqff] (6.42,0.81) circle (1.5pt);
+ 			\draw[color=qqqqff] (6.46,0.8) node[below] {$B$};
+ 			\fill [color=qqqqff] (4.5,3) circle (1.5pt);
+ 			\draw[color=qqqqff] (4.54,3.07) node[above] {$C$};
+ 			\fill (3.94,2.36) circle (1.5pt);
+ 			\draw (3.99,2.43) node[above] {$b'$};
+ 			\fill (7.28,0.92) circle (1.5pt);
+ 			\draw (7.33,0.99) node[above] {$c'$};
+ 			\draw[color=black] (1.33,3.19) node {$g$};
+ 			\fill (5.74,1.59) circle (1.5pt);
+ 			\draw (5.78,1.66) node[above right] {$a'$};
+ 		\end{tikzpicture}
+ 	\end{figure}
+
+ 	\paragraph{Beweis}
+ 		Betrachte Streckung $ \gamma $ mit Zentrum $ c' $ und Faktor $ s_{ab}\in K^\times $,
+ 		\[
+ 			\gamma:A\to A, c'+ v\mapsto \gamma(c'+v) := c'+vs_{ab};
+ 		\]
+ 		insbesondere ist für $ s_{ab}=\frac{1}{(ac':bc')} $
+ 		\[
+ 			\gamma(a)=c'+(a-c')\frac{1}{(ac':bc')}=c'+(b-c') = b.
+ 		\]
+ 		Definiert man Streckungen $ \alpha $ und $ \beta $ entsprechend, mit Zentren $ a' $ bzw. $ b' $ und Faktoren $ s_{bc} = \frac{1}{(ba':ca')} $ bzw. $ s_{ca}=\frac{1}{cb':ab'} $, so liefert die Komposition eine affine Transformation
+ 		\[
+ 			\delta:= \beta\circ\alpha\circ\gamma:A\to A:,a+v \mapsto \delta(a+v) := a+vs_{ab}s_{bc}s_{ca},
+ 		\]
+ 		da
+ 		\[
+ 			a\overset{\gamma}{\mapsto}b\overset{\alpha}{\mapsto}c\overset{\beta}{\mapsto}a.
+ 		\]
+ 		Damit gilt
+ 		\[
+ 			(ac':bc')(ba':ca')(cb':ab') = 1 \Leftrightarrow \delta = \id_A
+ 		\]
+ 		Wegen $ a\notin [c'a'] $ ist andererseits
+ 		\[
+ 			\delta = \id_A \Leftrightarrow [c'a'] = \delta([c'a']) = \beta([c'a']),
+ 		\]
+ 		da $ \gamma([c'a']) = [c'a'] $ und $ \alpha([c'a']) = [c'a'], $ was die letzte Gleichung liefert, damit ist
+ 		\[
+ 			\delta = \id_A \Leftrightarrow [c'a']=\beta([c'a'])\Leftrightarrow b'\in [c'a'],
+ 		\]
+ 		da $ \beta $ Streckung mit Zentrum $ b' $ ist. Damit ist die Behauptung bewiesen.
+ \subsection{Satz von Ceva}
+ 	\begin{Satz}[Satz von Ceva]
+ 		Seien $ \{a,b,c\}\subset A $ ein nicht-degeneriertes Dreieck und
+ 		\[
+ 			a'\in [bc]\setminus \{b,c\},b'\in [ac]\setminus \{a,c\},c'\in [ab]\setminus \{a,b\}.
+ 		\]
+ 		Schneiden sich die drei Transversalen $ [aa'],[bb'] $ und $ [cc'] $ in einem Punkt, so gilt
+ 		\[
+ 			(ac':bc')(ba':ca')(cb':ab')=-1.
+ 		\]
+ 	\end{Satz}
+ 	\begin{figure}[H]\centering
+ 		\definecolor{zzttqq}{rgb}{0.6,0.2,0}
+ 		\definecolor{qqqqff}{rgb}{0,0,1}
+ 		\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+ 			\clip(0.25,0.33) rectangle (9.57,6.25);
+ 			%\fill[color=zzttqq,fill=zzttqq,fill opacity=0.1] (1.5,1.52) -- (6.8,1.78) -- (4.08,5.58) -- cycle;
+ 			\draw [color=zzttqq] (1.5,1.52)-- (6.8,1.78);
+ 			\draw [color=zzttqq] (6.8,1.78)-- (4.08,5.58);
+ 			\draw [color=zzttqq] (4.08,5.58)-- (1.5,1.52);
+ 			\draw [domain=0.25:9.57] plot(\x,{(--15.39-1.1*\x)/4.43});
+ 			\draw [domain=0.25:9.57] plot(\x,{(-13.46--3.96*\x)/0.48});
+ 			\draw [domain=0.25:9.57] plot(\x,{(--1.82--1.03*\x)/2.21});
+ 			\fill [color=qqqqff] (1.5,1.52) circle (1.5pt);
+ 			\draw[color=qqqqff] (1.5,1.64) node[left] {$a$};
+ 			\fill [color=qqqqff] (6.8,1.78) circle (1.5pt);
+ 			\draw[color=qqqqff] (6.88,1.9) node[right] {$b$};
+ 			\fill [color=qqqqff] (4.08,5.58) circle (1.5pt);
+ 			\draw[color=qqqqff] (4.14,5.7) node[right] {$c$};
+ 			\fill (2.37,2.88) circle (1.5pt);
+ 			\draw (2.45,3.01) node[above left] {$b'$};
+ 			\fill (3.6,1.62) circle (1.5pt);
+ 			\draw (3.68,1.75) node[below right] {$c'$};
+ 			\fill (5.62,3.43) circle (1.5pt);
+ 			\draw (5.7,3.56) node[above] {$a'$};
+ 		\end{tikzpicture}
+ 	\end{figure}
+ 	Beweis in Aufgabe 59.
+ 	\paragraph{Bemerkung}
+ 		Für die Seitenmitten gilt der Satz (Schwerpunktsatz).

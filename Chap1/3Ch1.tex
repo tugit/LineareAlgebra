@@ -1,224 +1,257 @@
 %VO06-2015-10-22
 \section{Basis und Dimensionen}
 
-\subsection{Definition (Basis)}
-	\begin{Definition}[Basis]
-		Eine Teilmenge $S\subset V$ oder eine Familie $(v_i)_{i\in I}$ in $ V $ heißt
-	\begin{itemize}
-		\item \emph{Erzeugendensystem} von $ V $, falls \[[S] = V \text{ bzw. } [(v_i)_{i\in I}] = V\]
-		\item \emph{linear unabhängig}, falls \[\forall v\in S: v \notin [S\setminus\{{v\}}] \text{ bzw. } \forall i\in I: v_i \notin [(v_j)_{j\in I\setminus\{{i\}}}]\] und sonst \emph{linear abhängig}.
-	\end{itemize}
-        Eine \emph{Basis} ist ein linear unabhängiges Erzeugendensystem.
-	\end{Definition}
+ \subsection{Definition (Basis)}
+ 	\begin{Definition}[Basis]
+ 		Eine Teilmenge $S\subset V$ oder eine Familie $(v_i)_{i\in I}$ in $ V $ heißt
+ 		\begin{itemize}
+ 			\item \emph{Erzeugendensystem} von $ V $, falls \[
+ 			      [S] = V \text{ bzw. } [(v_i)_{i\in I}] = V
+ 		\]
+ 		\item \emph{linear unabhängig}, falls \[
+ 		\forall v\in S: v \notin [S\setminus\{{v\}}] \text{ bzw. } \forall i\in I: v_i \notin [(v_j)_{j\in I\setminus\{{i\}}}]
+ 	\] und sonst \emph{linear abhängig}.
+ 	\end{itemize}
+ 	Eine \emph{Basis} ist ein linear unabhängiges Erzeugendensystem.
+ 	\end{Definition}
 
-\paragraph{Bemerkung}
-	Man kann jede (Teil-)Menge $S\subset V$ als Familie in $V$ auffassen mit
-		\[v: S \to V,\ v\mapsto id_S(v) = v.\]
-	Andererseits gilt für eine Familie $(v_i)_{i\in I} $:
-		\[(v_i)_{i\in I} \text{ linear unabhängig } \Rightarrow \{v_i \mid i\in I\} \text{ linear unabhängig.}\]
-	Die Umkehrung gilt im Allgemeinen nicht: Eine Familie (in $ V $) enthält mehr Information als eine Teilmenge von $ V $.
-	
-\subsection{Beispiel und Definition (Standardbasis)}
-	\begin{Definition}[Standardbasis]
-		Für $V = K^n$ ist $(e_1, ... , e_n)$,
-	\begin{equation*}
-		e_i:\{{1, ... ,n\}} =: I\to K,\ j\mapsto e_i(j)= \delta_{ij}=
-		\begin{cases}
-			1,& \text{falls } i=j\\
-			0,& \text{sonst}
-		\end{cases}
-	\end{equation*}
-	für $i=1,\dots,n$, eine Basis -- die \emph{Standardbasis} des (Standard-)Vektorraumes $K^n$.
-	\end{Definition}
+ 	\paragraph{Bemerkung}
+ 		Man kann jede (Teil-)Menge $S\subset V$ als Familie in $V$ auffassen mit
+ 		\[
+ 			v: S \to V,\ v\mapsto id_S(v) = v.
+ 		\]
+ 		Andererseits gilt für eine Familie $(v_i)_{i\in I} $:
+ 		\[
+ 			(v_i)_{i\in I} \text{ linear unabhängig } \Rightarrow \{v_i \mid i\in I\} \text{ linear unabhängig.}
+ 		\]
+ 		Die Umkehrung gilt im Allgemeinen nicht: Eine Familie (in $ V $) enthält mehr Information als eine Teilmenge von $ V $.
 
-\paragraph{Beweis}
-	z.z.: $ (e_i)_{i\in I} $ ist ein linear unabhängiges Erzeugendensystem. Wir wissen bereits $ [(e_i)_{i\in I}] = K^n $. Andererseits gilt für jedes $i\in I$ und jede Familie $(x_j\mid j\in I)$ in $ K $
-	\begin{gather*}
-		\Big(\sum_{j\in I\setminus\{i\}}e_jx_j\Big)(i) = \sum_{j\in I\setminus\{i\}}e_j(i)x_j = 0 \neq 1 = e_i(i) \Rightarrow \sum_{j\in I\setminus\{i\}} e_jx_j \neq e_i
-	\end{gather*}
-	also gilt
-	\begin{equation*}
-		\forall i\in I: e_i \notin [(e_j)_{j\in I\setminus\{i\}}] = \Big\{\sum_{j=I\setminus\{i\}} e_jx_j\mid (x_j)_{ j\in I}\Big\} \text{ mit } \#\{j\in I\mid x_j \neq 0\}<\infty
-	\end{equation*}
-	
-\subsection{Lemma}
-	\begin{Lemma}
-		Eine Familie $(v_i)_{i\in I}$ ist linear unabhängig gdw. für jede Linearkombination
-		\[0 = \sum_{i\in I} v_ix_i \Rightarrow \forall i\in I: x_i = 0.\]
-	\end{Lemma}
+ \subsection{Beispiel und Definition (Standardbasis)}
+ 	\begin{Definition}[Standardbasis]
+ 		Für $V = K^n$ ist $(e_1, ... , e_n)$,
+ 		\begin{equation*}
+ 			e_i:\{{1, ... ,n\}} =: I\to K,\ j\mapsto e_i(j)= \delta_{ij}=
+ 			\begin{cases}
+ 				1, & \text{falls } i=j \\
+ 				0, & \text{sonst}
+ 			\end{cases}
+ 		\end{equation*}
+ 		für $i=1,\dots,n$, eine Basis -- die \emph{Standardbasis} des (Standard-)Vektorraumes $K^n$.
+ 	\end{Definition}
 
-\paragraph{Beweis}
-	Wir zeigen zwei Richtungen der Äquivalenz der Negationen: 
-		\[(v_i)_{i\in I} \text{ linear abhängig } \Leftrightarrow \exists(x_i)_{i\in I} \neq (0)_{i\in I}: \sum_{i\in I} v_ix_i = 0.\]
-        
-	"$\Leftarrow$":
-	Wir nehmen an, es gäbe eine \emph{nicht-triviale}\footnote{d.h. $(x_i)_{i\in I}\neq 0$} Linearkombination der Null,
-		\[0 = \sum_{i\in I} v_ix_i, \text{ wobei } \exists j\in I: x_j \neq 0.\]
-	Für $(y_i)_{i\in I}, y_i := - \frac{x_i}{x_j}$ ist dann
-	\begin{gather*}
-		0 = v_jx_j + \sum_{i\in I\setminus\{j\}} v_ix_i \\
-		\Rightarrow v_j = -\Big(\sum_{i\in I\setminus\{j\}}v_ix_i\Big)x_j^{-1} = \sum_{i\in I\setminus\{j\}} v_iy_i \in [(v_i)_{i\in I\setminus\{j\}}]
-	\end{gather*}
-	insbesondere ist also $(v_i)_{i\in I}$ linear abhängig.
-	
-	"$\Rightarrow$": siehe Aufgabe.
-	
-\subsection{Korollar}
-	\begin{Korollar}
-		Ist $(v_i)_{i\in I}$ Basis von $ V $, so ist jeder Vektor $v\in V$ eindeutig in den $v_i$ darstellbar:
-		\[\forall v\in V \exists! (x_i)_{i\in I}: v = \sum_{i\in I} v_ix_i\]
-	\end{Korollar}
+ 	\paragraph{Beweis}
+ 		z.z.: $ (e_i)_{i\in I} $ ist ein linear unabhängiges Erzeugendensystem. Wir wissen bereits $ [(e_i)_{i\in I}] = K^n $. Andererseits gilt für jedes $i\in I$ und jede Familie $(x_j\mid j\in I)$ in $ K $
+ 		\begin{gather*}
+ 			\Big(\sum_{j\in I\setminus\{i\}}e_jx_j\Big)(i) = \sum_{j\in I\setminus\{i\}}e_j(i)x_j = 0 \neq 1 = e_i(i) \Rightarrow \sum_{j\in I\setminus\{i\}} e_jx_j \neq e_i
+ 		\end{gather*}
+ 		also gilt
+ 		\begin{equation*}
+ 			\forall i\in I: e_i \notin [(e_j)_{j\in I\setminus\{i\}}] = \Big\{\sum_{j=I\setminus\{i\}} e_jx_j\mid (x_j)_{ j\in I}\Big\} \text{ mit } \#\{j\in I\mid x_j \neq 0\}<\infty
+ 		\end{equation*}
 
-\paragraph{Beweis}
-	Sei $v\in V$ beliebig, dann gilt:
-		\[V = [(v_i)_{i\in I}] \Rightarrow \exists (x_i)_{i\in I}: v = \sum_{i\in I} v_ix_i\]
-	liefern $(x_i)_{i\in I}$ und $(y_i)_{i\in I}$
-	\begin{align*}
-		v = \sum_{i\in I} v_ix_i = \sum_{i\in I}v_iy_i \Rightarrow 0 &= \sum_{i\in I} v_i(x_i-y_i)\\
-                &\Rightarrow \forall i\in I: x_i = y_i \Rightarrow (x_i)_{i\in I} = (y_i)_{i\in I}
-	\end{align*}
-	Damit ist die Basisdarstellung $v = \sum_{i\in I} v_ix_i$ von $v$ auch eindeutig.
+ \subsection{Lemma}
+ 	\begin{Lemma}
+ 		Eine Familie $(v_i)_{i\in I}$ ist linear unabhängig gdw. für jede Linearkombination
+ 		\[
+ 			0 = \sum_{i\in I} v_ix_i \Rightarrow \forall i\in I: x_i = 0.
+ 		\]
+ 	\end{Lemma}
+
+ 	\paragraph{Beweis}
+ 		Wir zeigen zwei Richtungen der Äquivalenz der Negationen:
+ 		\[
+ 			(v_i)_{i\in I} \text{ linear abhängig } \Leftrightarrow \exists(x_i)_{i\in I} \neq (0)_{i\in I}: \sum_{i\in I} v_ix_i = 0.
+ 		\]
+
+ 		"$\Leftarrow$":
+ 		Wir nehmen an, es gäbe eine \emph{nicht-triviale}\footnote{d.h. $(x_i)_{i\in I}\neq 0$} Linearkombination der Null,
+ 		\[
+ 			0 = \sum_{i\in I} v_ix_i, \text{ wobei } \exists j\in I: x_j \neq 0.
+ 		\]
+ 		Für $(y_i)_{i\in I}, y_i := - \frac{x_i}{x_j}$ ist dann
+ 		\begin{gather*}
+ 			0 = v_jx_j + \sum_{i\in I\setminus\{j\}} v_ix_i \\
+ 			\Rightarrow v_j = -\Big(\sum_{i\in I\setminus\{j\}}v_ix_i\Big)x_j^{-1} = \sum_{i\in I\setminus\{j\}} v_iy_i \in [(v_i)_{i\in I\setminus\{j\}}]
+ 		\end{gather*}
+ 		insbesondere ist also $(v_i)_{i\in I}$ linear abhängig.
+
+ 		"$\Rightarrow$": siehe Aufgabe.
+
+ \subsection{Korollar}
+ 	\begin{Korollar}
+ 		Ist $(v_i)_{i\in I}$ Basis von $ V $, so ist jeder Vektor $v\in V$ eindeutig in den $v_i$ darstellbar:
+ 		\[
+ 			\forall v\in V \exists! (x_i)_{i\in I}: v = \sum_{i\in I} v_ix_i
+ 		\]
+ 	\end{Korollar}
+
+ 	\paragraph{Beweis}
+ 		Sei $v\in V$ beliebig, dann gilt:
+ 		\[
+ 			V = [(v_i)_{i\in I}] \Rightarrow \exists (x_i)_{i\in I}: v = \sum_{i\in I} v_ix_i
+ 		\]
+ 		liefern $(x_i)_{i\in I}$ und $(y_i)_{i\in I}$
+ 		\begin{align*}
+ 			v = \sum_{i\in I} v_ix_i = \sum_{i\in I}v_iy_i \Rightarrow 0 & = \sum_{i\in I} v_i(x_i-y_i)                                                      \\
+ 			                                                             & \Rightarrow \forall i\in I: x_i = y_i \Rightarrow (x_i)_{i\in I} = (y_i)_{i\in I}
+ 		\end{align*}
+ 		Damit ist die Basisdarstellung $v = \sum_{i\in I} v_ix_i$ von $v$ auch eindeutig.
 
 %VO07-2015-10-27
-\subsection{Basislemma}
-    \begin{Lemma}[Basislemma]
-    	Sei $S\subset V$ lin. unabh. und $E\subset V$ ein Erzeugendensystem mit $S\subset E$. Dann existiert eine Basis $B$ von $V$ mit $S\subset B\subset E$.
-    \end{Lemma}
+ \subsection{Basislemma}
+ 	\begin{Lemma}[Basislemma]
+ 		Sei $S\subset V$ lin. unabh. und $E\subset V$ ein Erzeugendensystem mit $S\subset E$. Dann existiert eine Basis $B$ von $V$ mit $S\subset B\subset E$.
+ 	\end{Lemma}
 
-\paragraph{Beweis}
-    Wir gehen für den Beweis davon aus, dass $\#E<\infty$. Betrachte alle Teilmengen $X\subset V$ mit $S\subset X\subset E$ und $X$ lin. unabh. Sei $B$ eine solche Menge, die maximal ist, d.h.
-        \[\forall X\subset E: ((B\subset X\land X\text{ lin. unabh.}) \Rightarrow X= B)\]
-    Nach Konstruktion ist $B=\{b_1,...,b_n\}$ lin. unabh. Zu zeigen: $V=[B]$.\\
-    Ist $B=E$, so folgt $[B]=[E]=V$.\\
-    Ist $B\neq E$, so ist $B\cup \{v\} $ für (jedes) $v\in E\setminus B$ lin. abh., da $B$ maximal lin. unabh. ist; also existiert eine nicht-triviale Linearkombination des Nullvektors.
-        \[\exists x,x_1,...,x_n \in K: 0=vx+\sum^n_{i=1}b_ix_i\]
-    Wäre $x=0$, so würde folgen $x_1=...=x_n=0$, da $B$ lin. unabh. ist. 
-    Also ist $x\neq 0$ und 
-    	\[v=-\sum^n_{i=1} b_i\frac{x_i}{x} \in [B].\]
-    Da dies für beliebiges $v\in E\setminus B$ gilt, folgt
-    	\[E\subset [B] \Rightarrow V=[E]\subset [[B]] = [B],\]
-    d.h., $ B $ ist Erzeugendensystem und damit eine Basis mit $S\subset B\subset E$.
+ 	\paragraph{Beweis}
+ 		Wir gehen für den Beweis davon aus, dass $\#E<\infty$. Betrachte alle Teilmengen $X\subset V$ mit $S\subset X\subset E$ und $X$ lin. unabh. Sei $B$ eine solche Menge, die maximal ist, d.h.
+ 		\[
+ 			\forall X\subset E: ((B\subset X\land X\text{ lin. unabh.}) \Rightarrow X= B)
+ 		\]
+ 		Nach Konstruktion ist $B=\{b_1,...,b_n\}$ lin. unabh. Zu zeigen: $V=[B]$.\\
+ 		Ist $B=E$, so folgt $[B]=[E]=V$.\\
+ 		Ist $B\neq E$, so ist $B\cup \{v\} $ für (jedes) $v\in E\setminus B$ lin. abh., da $B$ maximal lin. unabh. ist; also existiert eine nicht-triviale Linearkombination des Nullvektors.
+ 		\[
+ 			\exists x,x_1,...,x_n \in K: 0=vx+\sum^n_{i=1}b_ix_i
+ 		\]
+ 		Wäre $x=0$, so würde folgen $x_1=...=x_n=0$, da $B$ lin. unabh. ist.
+ 		Also ist $x\neq 0$ und
+ 		\[
+ 			v=-\sum^n_{i=1} b_i\frac{x_i}{x} \in [B].
+ 		\]
+ 		Da dies für beliebiges $v\in E\setminus B$ gilt, folgt
+ 		\[
+ 			E\subset [B] \Rightarrow V=[E]\subset [[B]] = [B],
+ 		\]
+ 		d.h., $ B $ ist Erzeugendensystem und damit eine Basis mit $S\subset B\subset E$.
 
-\paragraph{Bemerkung}
-    Ist $\#E = \infty$, so kann man einen analogen Beweis führen, falls man die Existenz einer maximalen Menge voraussetzt: Dies garantiert das \emph{Zornsche Lemma} bzw. \emph{Auswahlaxiom}.
-    Wir werden das Lemma auch im Falle $\#E = \infty$ benutzen!
+ 	\paragraph{Bemerkung}
+ 		Ist $\#E = \infty$, so kann man einen analogen Beweis führen, falls man die Existenz einer maximalen Menge voraussetzt: Dies garantiert das \emph{Zornsche Lemma} bzw. \emph{Auswahlaxiom}.
+ 		Wir werden das Lemma auch im Falle $\#E = \infty$ benutzen!
 
-\paragraph{Beispiel}
-    Für $V=K^3=K^I$ mit $I=\{1,2,3\}$ betrachte die Standardbasisvektoren 
-    \begin{align*}
-        e_i &:I\to K,\ j\mapsto e_i(j) = \delta_{ij}\text{, und}\\
-        f_i &: I\to K,\ j\mapsto f_i(j):= 1-\delta_{ij}
-    \end{align*}
-    dann sind $S:= \{e_1,f_1\}$ und $E:= \{e_i,f_i\mid i\in I\}$ lin. unabh. bzw. Erzeugendensystem von $K^3$. Ergänzung von $S$ durch einen Vektor $e_i$ oder $f_i$ mit $i = 2,3$ liefert eine Basis $B$ mit $S\subset B\subset E$.
-    
-    Zum Beispiel ist $B=\{e_1,f_1,f_2\}$ eine Basis, da sich jede Funktion $v\in K^3$ aus den Funktionen $e_1,f_1$ und $f_2$ linear kombinieren lässt:
-    \begin{gather*}
-        v=e_1x_1+f_1y_1 + f_2y_2\Leftrightarrow \left\{
-            \begin{array}{l}
-                v(2)=y_1\\
-                v(3) - v(2) = y_1 + y_2 - y_1 = y_2\\
-                v(1) + v(2) - v(3) = x_1 + y_2 - y_2 = x_1
-            \end{array}
-    	\right.
-    \end{gather*}
-    Dass $B$ lin. unabh. folgt dann: Wäre $B$ lin. abh., so würde folgen $f_2\in [\{e_1,f_1\}]\Rightarrow [B] \subset [\{e_1,f_1\}] \neq K^3$, was nicht der Fall ist.
+ 	\paragraph{Beispiel}
+ 		Für $V=K^3=K^I$ mit $I=\{1,2,3\}$ betrachte die Standardbasisvektoren
+ 		\begin{align*}
+ 			e_i & :I\to K,\ j\mapsto e_i(j) = \delta_{ij}\text{, und} \\
+ 			f_i & : I\to K,\ j\mapsto f_i(j):= 1-\delta_{ij}
+ 		\end{align*}
+ 		dann sind $S:= \{e_1,f_1\}$ und $E:= \{e_i,f_i\mid i\in I\}$ lin. unabh. bzw. Erzeugendensystem von $K^3$. Ergänzung von $S$ durch einen Vektor $e_i$ oder $f_i$ mit $i = 2,3$ liefert eine Basis $B$ mit $S\subset B\subset E$.
 
-\subsection{Basisergänzungssatz}
-    \begin{Satz}[Basisergänzungssatz]
-    	Jede lin. unabh. Menge $S\subset V$ kann zu einer Basis $B$ von $V$ ergänzt werden: Es existiert eine Basis $B$ von $V$ mit $S\supset B$.
-    \end{Satz}
+ 		Zum Beispiel ist $B=\{e_1,f_1,f_2\}$ eine Basis, da sich jede Funktion $v\in K^3$ aus den Funktionen $e_1,f_1$ und $f_2$ linear kombinieren lässt:
+ 		\begin{gather*}
+ 			v=e_1x_1+f_1y_1 + f_2y_2\Leftrightarrow \left\{
+ 			\begin{array}{l}
+ 				v(2)=y_1                                   \\
+ 				v(3) - v(2) = y_1 + y_2 - y_1 = y_2        \\
+ 				v(1) + v(2) - v(3) = x_1 + y_2 - y_2 = x_1
+ 			\end{array}
+ 			\right.
+ 		\end{gather*}
+ 		Dass $B$ lin. unabh. folgt dann: Wäre $B$ lin. abh., so würde folgen $f_2\in [\{e_1,f_1\}]\Rightarrow [B] \subset [\{e_1,f_1\}] \neq K^3$, was nicht der Fall ist.
 
-\paragraph{Beweis}
-    Sei $E\subset V$ ein Erzeugendensystem von $V$ (z.B. $E=V$). Dann ist $S\cup E$ ein Erzeugendensystem von $V$ mit $S\subset S\cup E$, das Basislemma liefert dann die\footnote{nicht eindeutig!} gesuchte Basis.
+ \subsection{Basisergänzungssatz}
+ 	\begin{Satz}[Basisergänzungssatz]
+ 		Jede lin. unabh. Menge $S\subset V$ kann zu einer Basis $B$ von $V$ ergänzt werden: Es existiert eine Basis $B$ von $V$ mit $S\supset B$.
+ 	\end{Satz}
 
-\paragraph{Bemerkung}
-    Strikt genommen haben wir den Basisergänzungssatz (BES) nur unter der Annahme bewiesen, dass $V$ \emph{endlich erzeugt} sei, d.h. $V$ ein endliches Erz. Syst. $E$ besitzt, $V=[E]$ und $\#E<\infty$.
+ 	\paragraph{Beweis}
+ 		Sei $E\subset V$ ein Erzeugendensystem von $V$ (z.B. $E=V$). Dann ist $S\cup E$ ein Erzeugendensystem von $V$ mit $S\subset S\cup E$, das Basislemma liefert dann die\footnote{nicht eindeutig!} gesuchte Basis.
 
-\paragraph{Bemerkung}
-    Wir haben für den BES die (in diesem Falle einfachere) Mengenschreibweise (anstelle der Familienschreibweise) verwendet.
+ 	\paragraph{Bemerkung}
+ 		Strikt genommen haben wir den Basisergänzungssatz (BES) nur unter der Annahme bewiesen, dass $V$ \emph{endlich erzeugt} sei, d.h. $V$ ein endliches Erz. Syst. $E$ besitzt, $V=[E]$ und $\#E<\infty$.
 
-\paragraph{Bemerkung}
-    Ähnlich kann man einen Verkürzungssatz beweisen: Jedes Erzeugendensystem eines Vektorraums $V$ kann zu einer Basis verkürzt werden.
+ 	\paragraph{Bemerkung}
+ 		Wir haben für den BES die (in diesem Falle einfachere) Mengenschreibweise (anstelle der Familienschreibweise) verwendet.
 
-\subsection{Austauschlemma}
-    \begin{Lemma}[Austauschlemma]
-    	Seien $B,B' \subset V$ Basen von $V$. Dann gilt:
-        \[\forall b\in B\ \exists b' \in B': (B\setminus\{b\})\cup\{b'\} \text{ ist Basis}\]
-    \end{Lemma}
-    
-\paragraph{Beweis}
-    Sei $b\in B$ beliebig gewählt und $S:= B\setminus \{b\}$. Da $B$ lin. unabh. ist, gilt 
-        \[b\notin [S] \Rightarrow \emptyset \neq V\setminus [S] = [B']\setminus [S] \Rightarrow B' \not\subset [S]\]
-    d.h. es existiert $b' \in B'$ mit $b' \notin [S]$. Wir zeigen, dass $B'' := S\cup \{b'\} = (B\setminus\{b\})\cup \{b'\}$ Basis ist.
-    
-    \begin{enumerate}
-	    \item $B''$ ist Erzeugendensystem:\\
-	    Da $b'\in [B]$ existiert $(x_j)_{j\in B}$ mit
-		    \[b' = \sum_{j\in B} jx_j \text{ mit } x_b \neq 0, \text{ da } b' \notin [S].\]
-	    Damit ist $b=(b'-\sum_{j\in S} jx_j)\frac{1}{x_b} \in [B''] \Rightarrow V = [B] \subset [B'' \cup \{b\}] =  [B'']$.
-    
-	    \item $B''$ ist linear unabhängig:\\
-		    $B''$ ist Erz. Syst. und $S\subset B'' = S \cup \{b'\}$ lin unabh., kann also (nach Basislemma) ergänzt werden zu einer Basis $\tilde{B}$ mit $S\subset \tilde{B}\subset B''$.
-		    Da $[S] \neq V$ gilt $\tilde{B} \neq S$ und damit $\tilde{B} = B''$ Basis, insbesondere linear unabhängig.
-    \end{enumerate}
-    
-\paragraph{Bemerkung}
-    Hier haben wir die Familienschreibweise (mit $B$ bzw. $S$ als Indexmenge) verwendet, um Linearkombinationen darzustellen.
-    
-\subsection{Basissatz}
-	\begin{Satz}[Basissatz]
-	Sei $V$ ein endlich erzeugter $K$-VR, $V=[E]$ mit $\#E < \infty$. Dann gilt:
-	\begin{enumerate}[(i)]
-		\item $V$ besitzt eine endliche Basis $B$ mit $n:= \#B \leq \#E$.
-		\item Ist $B'\subset V$ eine Basis von $V$, so ist $\#B' = \#B = n$.
-	\end{enumerate}
-	\end{Satz}
-    
-\paragraph{Beweis}
-    \begin{enumerate}[(i)]
-        \item  Dies folgt direkt aus dem Basislemma (mit $S=\emptyset$).
-        \item Seien $B,B'$ Basen von V, $B = (b_1,...,b_n)$.\\
-        Annahme: $\#B' < n,\ B' = (b'_1,...,b'_k)$ mit $k < n$. Wiederholte Anwendung des Austauschlemmas auf die Basen $B$ und $B'$ liefert nach (spätestens) $k+1\leq n$ Schritten einen Widerspruch zur linearen Unabhängigkeit der neuen Basis $B''$, da Vektoren $b'_i$ doppelt vorkommen müssen.\\
-        Annahme: $\#B' > n,\ B' = (b'_1,...,b'_n,b'_{n+1})$: Das gleiche Argument mit vertauschten Rollen der Basen führt wieder zum Widerspruch.
-     \end{enumerate}
+ 	\paragraph{Bemerkung}
+ 		Ähnlich kann man einen Verkürzungssatz beweisen: Jedes Erzeugendensystem eines Vektorraums $V$ kann zu einer Basis verkürzt werden.
 
-\subsection{Definition (Dimension)}
-    \begin{Definition}[Dimension]
-    	Sei $V$ ein $K$-VR, die \emph{Dimension} von $ V $ ist dann:
-        \begin{itemize}
-            \item $\dim V:= \#B$, falls $ V $ endlich erzeugt und $B$ eine Basis von $V$ ist;
-            \item $\dim V:= \infty$, falls $V$ nicht endlich erzeugt ist.
-        \end{itemize}
-    \end{Definition}
-    
-\paragraph{Bemerkung}
-    Nach dem Basissatz hängt $\dim V = \#B$ (falls $V$ endlich erz.) nicht von der Basis $B$ ab, d.h. $\dim V$ ist wohldefiniert.
-    
-\paragraph{Beispiel}
-    $\dim K^n = \#\{e_1,...,e_n\} = n$ (Standardbasis).
+ \subsection{Austauschlemma}
+ 	\begin{Lemma}[Austauschlemma]
+ 		Seien $B,B' \subset V$ Basen von $V$. Dann gilt:
+ 		\[
+ 			\forall b\in B\ \exists b' \in B': (B\setminus\{b\})\cup\{b'\} \text{ ist Basis}
+ 		\]
+ 	\end{Lemma}
+
+ 	\paragraph{Beweis}
+ 		Sei $b\in B$ beliebig gewählt und $S:= B\setminus \{b\}$. Da $B$ lin. unabh. ist, gilt
+ 		\[
+ 			b\notin [S] \Rightarrow \emptyset \neq V\setminus [S] = [B']\setminus [S] \Rightarrow B' \not\subset [S]
+ 		\]
+ 		d.h. es existiert $b' \in B'$ mit $b' \notin [S]$. Wir zeigen, dass $B'' := S\cup \{b'\} = (B\setminus\{b\})\cup \{b'\}$ Basis ist.
+
+ 		\begin{enumerate}
+ 			\item $B''$ ist Erzeugendensystem:\\
+ 			      Da $b'\in [B]$ existiert $(x_j)_{j\in B}$ mit
+ 			      \[
+ 			      	b' = \sum_{j\in B} jx_j \text{ mit } x_b \neq 0, \text{ da } b' \notin [S].
+ 			      \]
+ 			      Damit ist $b=(b'-\sum_{j\in S} jx_j)\frac{1}{x_b} \in [B''] \Rightarrow V = [B] \subset [B'' \cup \{b\}] =  [B'']$.
+
+ 			\item $B''$ ist linear unabhängig:\\
+ 			      $B''$ ist Erz. Syst. und $S\subset B'' = S \cup \{b'\}$ lin unabh., kann also (nach Basislemma) ergänzt werden zu einer Basis $\tilde{B}$ mit $S\subset \tilde{B}\subset B''$.
+ 			      Da $[S] \neq V$ gilt $\tilde{B} \neq S$ und damit $\tilde{B} = B''$ Basis, insbesondere linear unabhängig.
+ 		\end{enumerate}
+
+ 	\paragraph{Bemerkung}
+ 		Hier haben wir die Familienschreibweise (mit $B$ bzw. $S$ als Indexmenge) verwendet, um Linearkombinationen darzustellen.
+
+ \subsection{Basissatz}
+ 	\begin{Satz}[Basissatz]
+ 		Sei $V$ ein endlich erzeugter $K$-VR, $V=[E]$ mit $\#E < \infty$. Dann gilt:
+ 		\begin{enumerate}[(i)]
+ 			\item $V$ besitzt eine endliche Basis $B$ mit $n:= \#B \leq \#E$.
+ 			\item Ist $B'\subset V$ eine Basis von $V$, so ist $\#B' = \#B = n$.
+ 		\end{enumerate}
+ 	\end{Satz}
+
+ 	\paragraph{Beweis}
+ 		\begin{enumerate}[(i)]
+ 			\item  Dies folgt direkt aus dem Basislemma (mit $S=\emptyset$).
+ 			\item Seien $B,B'$ Basen von V, $B = (b_1,...,b_n)$.\\
+ 			      Annahme: $\#B' < n,\ B' = (b'_1,...,b'_k)$ mit $k < n$. Wiederholte Anwendung des Austauschlemmas auf die Basen $B$ und $B'$ liefert nach (spätestens) $k+1\leq n$ Schritten einen Widerspruch zur linearen Unabhängigkeit der neuen Basis $B''$, da Vektoren $b'_i$ doppelt vorkommen müssen.\\
+ 			      Annahme: $\#B' > n,\ B' = (b'_1,...,b'_n,b'_{n+1})$: Das gleiche Argument mit vertauschten Rollen der Basen führt wieder zum Widerspruch.
+ 		\end{enumerate}
+
+ \subsection{Definition (Dimension)}
+ 	\begin{Definition}[Dimension]
+ 		Sei $V$ ein $K$-VR, die \emph{Dimension} von $ V $ ist dann:
+ 		\begin{itemize}
+ 			\item $\dim V:= \#B$, falls $ V $ endlich erzeugt und $B$ eine Basis von $V$ ist;
+ 			\item $\dim V:= \infty$, falls $V$ nicht endlich erzeugt ist.
+ 		\end{itemize}
+ 	\end{Definition}
+
+ 	\paragraph{Bemerkung}
+ 		Nach dem Basissatz hängt $\dim V = \#B$ (falls $V$ endlich erz.) nicht von der Basis $B$ ab, d.h. $\dim V$ ist wohldefiniert.
+
+ 	\paragraph{Beispiel}
+ 		$\dim K^n = \#\{e_1,...,e_n\} = n$ (Standardbasis).
 
 %VO08-2015-10-29
-\subsection{Korollar (Dimension und Teilmengen)}
-	\begin{Korollar}[Dimension und Teilmengen]
-		Sei $ V $ ein $ K $-VR mit $\dim V =: n\in \mathbb{N}$. Dann gilt:
-    \begin{enumerate}[(i)]
-    	\item Ist $S \subset V$ linear unabhängig, so ist $\# S \leq n$ und $\# S = n$ gdw. $ S $ Basis ist.
-    	\item Ist $E \subset V$ Erzeugendensystem, so ist $\#E \geq n$, bzw. $\#E = n$ gdw. $ E $ eine Basis ist.
-    \end{enumerate}
-	\end{Korollar}
-    
-\paragraph{Bemerkung}
-	Insbesondere: Ist $U\subset V$ UVR mit $\dim U=\dim V < \infty$, so gilt $ U=V $.
-   
-\paragraph{Beweis}
-    \begin{enumerate}[(i)]
-        \item Ist $ S $ linear unabhängig, so existiert (nach BES) eine Basis $ B $ von $ V $ mit 
-            \begin{gather*}
-                S\subset B\Leftrightarrow \left\{
-                \begin{array}{l}
-                    \#S \leq \#B\\
-                    \#S = \#B \Leftrightarrow S = B
-                \end{array}\right.
-            \end{gather*}
-        \item Analog (mit Basislemma), siehe Aufgabe 23.
-        \end{enumerate} 
+ \subsection{Korollar (Dimension und Teilmengen)}
+ 	\begin{Korollar}[Dimension und Teilmengen]
+ 		Sei $ V $ ein $ K $-VR mit $\dim V =: n\in \mathbb{N}$. Dann gilt:
+ 		\begin{enumerate}[(i)]
+ 			\item Ist $S \subset V$ linear unabhängig, so ist $\# S \leq n$ und $\# S = n$ gdw. $ S $ Basis ist.
+ 			\item Ist $E \subset V$ Erzeugendensystem, so ist $\#E \geq n$, bzw. $\#E = n$ gdw. $ E $ eine Basis ist.
+ 		\end{enumerate}
+ 	\end{Korollar}
+
+ 	\paragraph{Bemerkung}
+ 		Insbesondere: Ist $U\subset V$ UVR mit $\dim U=\dim V < \infty$, so gilt $ U=V $.
+
+ 	\paragraph{Beweis}
+ 		\begin{enumerate}[(i)]
+ 			\item Ist $ S $ linear unabhängig, so existiert (nach BES) eine Basis $ B $ von $ V $ mit
+ 			      \begin{gather*}
+ 			      	S\subset B\Leftrightarrow \left\{
+ 			      	\begin{array}{l}
+ 			      		\#S \leq \#B                    \\
+ 			      		\#S = \#B \Leftrightarrow S = B
+ 			      	\end{array}
+ 			      	\right.
+ 			      \end{gather*}
+ 			\item Analog (mit Basislemma), siehe Aufgabe 23.
+ 		\end{enumerate}
