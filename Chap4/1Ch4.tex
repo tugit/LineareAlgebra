@@ -329,15 +329,16 @@ Die folgende Definition verallgemeinert diese Eigenschaften:
 		\[ \det X = \sum_{i=1}^{m}(-1)^{i+j}x_{ij}\det X_{ij} \]
 	mit
 		\[ X_{ij} := (x_{kl})_{\substack{k\neq i\\ l\neq j}} = 
-		% TODO: die i-te Zeile und j-te Spalte gehören durchgestrichen!
+		% TODO: die i-te Zeile und j-te Spalte gehören durchgestrichen! % Q&D-Fix durch markierung in rot
 		\begin{pmatrix}
-			x_{11} & \cdots & x_{1(j-1)} & x_{1j} & x_{1(j+1)} & \cdots & x_{1m} \\ 
-			\vdots &        &  	&  \vdots	&  	&  	& \vdots \\ 
-			x_{(i-1)1} 	&  	&  	& \vdots 	&  	&  	& x_{(i-1)m} \\ 
-			x_{i1} 	& \dots	& \dots & x_{ij} & \dots & \dots 	& x_{im} \\ 
-			x_{(i+1)1} &  &  & \vdots  &  &  & x_{(i+1)m} \\ 
-			\vdots &  &  & \vdots &  &  &\vdots  \\ 
-			x_{m1} &  &  & x_{mj} &  &  & x_{mm}
+			x_{11} & \cdots & x_{1(j-1)} & \color{red}x_{1j} & x_{1(j+1)} & \cdots & x_{1m} \\ 
+			\vdots &        &  	&  \color{red}\vdots	&  	&  	& \vdots \\ 
+			x_{(i-1)1} 	&  	&  	& \color{red}\vdots 	&  	&  	& x_{(i-1)m} \\ 
+			\color{red}x_{i1} 	&\color{red} \dots	& \color{red}\dots & \color{red}x_{ij} &
+			 \color{red}\dots &\color{red} \dots 	& \color{red}x_{im} \\ 
+			x_{(i+1)1} &  &  & \color{red}\vdots  &  &  & x_{(i+1)m} \\ 
+			\vdots &  &  & \color{red}\vdots &  &  &\vdots  \\ 
+			x_{m1} &  &  & \color{red}x_{mj} &  &  & x_{mm}
 			\end{pmatrix}  \]
 	Nämlich: Ist o.B.d.A. $ v_m=b_i $ in der Leibniz-Formel, also $ x_{km}=\delta_{ik} $, so erhält man
 		\begin{align*} 
