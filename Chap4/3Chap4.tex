@@ -24,13 +24,15 @@
 	Insbesondere gilt:
 		\[ \forall x\in [(e_j)_{j\in \mathbb{N}}]\ \exists n\in \mathbb{N}\forall k>n : x_k = 0 \]
 \subsection{Idee \& Definition} \index{Polynom}\index{Cauchyprodukt}
-	Wir fassen ein Polynom als (endliche) Koeffizientenfolge auf,
+	\begin{Definition}[Cauchyprodukt]
+		Wir fassen ein Polynom als (endliche) Koeffizientenfolge auf,
 		\[ \sum_{k=0}^{n} t^ka_k \cong
 		\sum_{k\in \mathbb{N}}e_ka_k \text{ mit } a_k = 0 \text{ für } k>n \]
 	und führen darauf das \emph{Cauchyprodukt} (vgl. Analysis) als Multiplikation ein:
 		\[ (a_k)_{k\in \mathbb{N}} \odot (b_k)_{k\in \mathbb{N}} := (c_k)_{k\in \mathbb{N}} \]
 	wobei
 		\[ c_k := \sum_{j=0}^{k}a_jb_{k-j}. \]
+	\end{Definition}
 	Insbesondere gilt damit
 		\begin{gather*}
 		\forall j,k\in \mathbb{N}: e_j \odot e_k = e_{j+k}
@@ -43,13 +45,15 @@
 	Mit $ 1:= e_0,\ t:= e_1 $ und $ t^0 := 1 $, wie üblich, liefert dies:
 		\[ \sum_{k=0}^{n}t^ka_k = \sum_{k\in \mathbb{N}}e_ka_k \in [(e_k)_{k\in N}]\subset K^\mathbb{N} \]
 \subsection{Definition}\index{Polynom!-algebra}\index{Polynom!Grad}\index{Polynom!normiertes}
-		\[ K[t] := ([(e_k)_{k\in \mathbb{N}}],\odot) ,\]
+		\begin{Definition}[Polynomalgebra]
+			\[ K[t] := ([(e_k)_{k\in \mathbb{N}}],\odot) ,\]
 	mit dem Cauchyprodukt $ \odot $, ist die \emph{Polynomalgebra} über dem Körper $ K $; die Elemente von $ K[t] $,
 		\[ p(t) = \sum_{k=0}^{n}t^ka_k = \sum_{k\in\mathbb{N}}e_ka_k, \]
 	heißen \emph{Polynome in der Variablen} $ t:= e_1 $.
 	Der Grad eines Polynoms ist
 		\[  \deg\sum_{k=0}^{n}t^ka_k := \max \{k\in \mathbb{N}\mid a_k \neq 0\}  \quad \left( \text{bzw. } \deg 0 := -\infty \right) \]
 	Ist (der "`höchste"' Koeffizient) $ a_n = 1 $ für $ \deg p(t) = n $, so heißt das Polynom $ p(t) $ normiert.
+		\end{Definition}
 \paragraph{Notation}
 	Mit $t^k = e_{k}$, also $ K[t] = [(e_k)_{k\in N}] $
 	wird das Cauchyprodukt auf $ K[t] $ eine "`normale"' Multiplikation, gefolgt von einer Sortierung nach den Potenzen der Variablen $ t $. Wir werden das $ \oplus $ daher oft unterdrücken, und z.B. $ p(t)q(t) $ schreiben, anstelle von $ p(t) \odot q(t) $.
@@ -64,7 +68,8 @@
 \paragraph{Bemerkung}
 	Die Polynomalgebra $ K[t] $ über $ K $ ist eine assoziative und kommutative $ K $-Algebra, weiters ist $ K[t] $ unitär mit Einselement $ 1=e_0 $.
 \subsection{Definition}\index{Algebra}
-	Eine $ K $-Algebra ist ein $ K $-VR mit einer \emph{bilinearen Abbildung},
+	\begin{Definition}[Algebra]
+		Eine $ K $-Algebra ist ein $ K $-VR mit einer \emph{bilinearen Abbildung},
 		\[ \odot: V\times V \to V,\ (v,w)\mapsto v\odot w, \]
 	d.h. es gilt
 		\begin{enumerate}[(i)]
@@ -78,6 +83,7 @@
 			\item assoziativ, falls \hfill$ \forall u,v,w\in V: (u\odot v)\odot w = u\odot (v\odot w); $
 			\item kommutativ, falls \hfill$ \forall v,w,\in V: v\odot w = w\odot v $
 		\end{itemize}
+	\end{Definition}
 \paragraph{Beispiel}
 	$ \End(V) $ ist (mit Komposition) eine unitäre assoziative Algebra.
 \paragraph{Bemerkung}
@@ -89,7 +95,9 @@
 		\[ ([1], +\mid_{[1]\times [1]},\odot\mid_{[1]\times [1]} ) \cong K \]
 	vermöge $ K\ni x \mapsto 1 \cdot x\in [1] $ (siehe Aufgabe 5).
 \subsection{Definition}\index{Algebra!-Homomorphismus}
-	Ein \emph{Algebra-Homomorphismus} zwischen $ K $-Algebren $ (V,\odot) $ und $ (W,*) $ ist eine lineare Abbildung $ \psi\in \hom(V,W) $, für die gilt:
+	\begin{Definition}[Algebra-Homomorphismus]
+		Ein \emph{Algebra-Homomorphismus} zwischen $ K $-Algebren $ (V,\odot) $ und $ (W,*) $ ist eine lineare Abbildung $ \psi\in \hom(V,W) $, für die gilt:
 		\[ \forall v,v' \in V: \psi(v\odot v')=\psi(v)*\psi(v') \]
+	\end{Definition}
 \paragraph{Bemerkung}
 	$ \hom(V,W) $ wird oft auch für den (Vektor-)Raum der Algebra-Homomorphismen verwendet. In dieser LVA bedeutet $ \hom(V,W) $ immer VR-Homomorphismen, bei allen "`anderen"' Homomorphismen wird extra erwähnt, was gemeint ist.
