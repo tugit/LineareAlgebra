@@ -1,3 +1,4 @@
+%VO1-2016-03-01
 \setcounter{chapter}{3}
 \chapter{Volumenmessung}
 \setcounter{section}{2}
@@ -6,23 +7,23 @@
 \paragraph{Beispiel}
 	Wir definieren Polynomfunktionen $ p,q: K\to K $ eines Körpers $ K $ in sich durch 
 		\begin{align*}
-		p:& K\to K, x\mapsto p(x):= 1+x+x^2\\
-		q:& K\to K, x\mapsto q(x):= 1
+		p:\ & K\to K,\ x\mapsto p(x):= 1+x+x^2\\
+		q:\ & K\to K,\ x\mapsto q(x):= 1
 		\end{align*}
-	Falls $ K=\mathbb{Z}_2 $ gilt dann
+	Falls $ K=\mathbb{Z}_2 $ so gilt dann
 		\begin{align*}
-		\forall x\in K: x(x+1)&=0\\
-		\Rightarrow \forall x\in K: p(x) &= q(x)
+		&\forall x\in K: x(x+1)=0\\
+		\Rightarrow\ &\forall x\in K: p(x) = q(x)
 		\end{align*}
 	d.h., unterschiedliche "`Polynome"' liefern die gleiche Polynomfunktion: Koeffizientenvergleich funktioniert nicht.
 \paragraph{Wiederholung}
 	Auf dem Folgenraum $ K^\mathbb{N} $ betrachten wir die Familie $ (e_k)_{k\in \mathbb{N}} $ mit
-		\[ e_k :\mathbb{N}\to K, j\mapsto e_k(j):= \delta_{jk}; \]
+		\[ e_k :\mathbb{N}\to K,\ j\mapsto e_k(j):= \delta_{jk}; \]
 	wir wissen: $ (e_k)_{k\in \mathbb{N}} $ ist linear unabhängig, aber kein Erzeugendensystem:
 		\[ \forall k\in \mathbb{N}: e_k \notin [(e_j)_{j\neq k}] \text{ und }
 		[(e_j)_{j\in\mathbb{N}}]\neq K^{\mathbb{N}}\]
 	Insbesondere gilt:
-		\[ \forall x\in [(e_j)_{j\in \mathbb{N}}]\ \exists n\in \mathbb{N}\forall k>n : x_k = 0 \]
+		\[ \forall x\in [(e_j)_{j\in \mathbb{N}}]\ \exists n\in \mathbb{N}\ \forall k>n : x_k = 0 \]
 \subsection{Idee \& Definition} \index{Polynom}\index{Cauchyprodukt}
 	\begin{Definition}[Cauchyprodukt]
 		Wir fassen ein Polynom als (endliche) Koeffizientenfolge auf,
@@ -50,13 +51,13 @@
 	mit dem Cauchyprodukt $ \odot $, ist die \emph{Polynomalgebra} über dem Körper $ K $; die Elemente von $ K[t] $,
 		\[ p(t) = \sum_{k=0}^{n}t^ka_k = \sum_{k\in\mathbb{N}}e_ka_k, \]
 	heißen \emph{Polynome in der Variablen} $ t:= e_1 $.
-	Der Grad eines Polynoms ist
+	Der \emph{Grad} eines Polynoms ist
 		\[  \deg\sum_{k=0}^{n}t^ka_k := \max \{k\in \mathbb{N}\mid a_k \neq 0\}  \quad \left( \text{bzw. } \deg 0 := -\infty \right) \]
-	Ist (der "`höchste"' Koeffizient) $ a_n = 1 $ für $ \deg p(t) = n $, so heißt das Polynom $ p(t) $ normiert.
+	Ist (der "`höchste"' Koeffizient) $ a_n = 1 $ für $ \deg p(t) = n $, so heißt das Polynom $ p(t) $ \emph{normiert}.
 		\end{Definition}
 \paragraph{Notation}
 	Mit $t^k = e_{k}$, also $ K[t] = [(e_k)_{k\in N}] $
-	wird das Cauchyprodukt auf $ K[t] $ eine "`normale"' Multiplikation, gefolgt von einer Sortierung nach den Potenzen der Variablen $ t $. Wir werden das $ \oplus $ daher oft unterdrücken, und z.B. $ p(t)q(t) $ schreiben, anstelle von $ p(t) \odot q(t) $.
+	wird das Cauchyprodukt auf $ K[t] $ eine "`normale"' Multiplikation, gefolgt von einer Sortierung nach den Potenzen der Variablen $ t $. Wir werden das $ \odot $ daher oft unterdrücken, und z.B. $ p(t)q(t) $ schreiben, anstelle von $ p(t) \odot q(t) $.
 \paragraph{Bemerkung (Koeffizientenvergleich)}
 	Mit dieser Definition von "`Polynom"' gilt
 		\begin{align*}
@@ -101,3 +102,5 @@
 	\end{Definition}
 \paragraph{Bemerkung}
 	$ \hom(V,W) $ wird oft auch für den (Vektor-)Raum der Algebra-Homomorphismen verwendet. In dieser LVA bedeutet $ \hom(V,W) $ immer VR-Homomorphismen, bei allen "`anderen"' Homomorphismen wird extra erwähnt, was gemeint ist.
+
+%VO2-2016-03-03
