@@ -1,0 +1,94 @@
+\setcounter{chapter}{3}
+\chapter{Volumenmessung}
+\setcounter{section}{2}
+\section{Polynome \& Polynomfunktionen}
+	Warum? (Vielleicht eher "`Algebra"' -- allgemein -- als "`lineare"' Algebra) Wichtig: das charakteristische Polynom eines Endomorphismus -- wichtiges Hilfsmittel im Kontext der Struktursätze.
+\paragraph{Beispiel}
+	Wir definieren Polynomfunktionen $ p,q: K\to K $ eines Körpers $ K $ in sich durch 
+		\begin{align*}
+		p:& K\to K, x\mapsto p(x):= 1+x+x^2\\
+		q:& K\to K, x\mapsto q(x):= 1
+		\end{align*}
+	Falls $ K=\mathbb{Z}_2 $ gilt dann
+		\begin{align*}
+		\forall x\in K: x(x+1)&=0\\
+		\Rightarrow \forall x\in K: p(x) &= q(x)
+		\end{align*}
+	d.h., unterschiedliche "`Polynome"' liefern die gleiche Polynomfunktion: Koeffizientenvergleich funktioniert nicht.
+\paragraph{Wiederholung}
+	Auf dem Folgenraum $ K^\mathbb{N} $ betrachten wir die Familie $ (e_k)_{k\in \mathbb{N}} $ mit
+		\[ e_k :\mathbb{N}\to K, j\mapsto e_k(j):= \delta_{jk}; \]
+	wir wissen: $ (e_k)_{k\in \mathbb{N}} $ ist linear unabhängig, aber kein Erzeugendensystem:
+		\[ \forall k\in \mathbb{N}: e_k \notin [(e_j)_{j\neq k}] \text{ und }
+		[(e_j)_{j\in\mathbb{N}}]\neq K^{\mathbb{N}}\]
+	Insbesondere gilt:
+		\[ \forall x\in [(e_j)_{j\in \mathbb{N}}]\ \exists n\in \mathbb{N}\forall k>n : x_k = 0 \]
+\subsection{Idee \& Definition} \index{Polynom}\index{Cauchyprodukt}
+	Wir fassen ein Polynom als (endliche) Koeffizientenfolge auf,
+		\[ \sum_{k=0}^{n} t^ka_k \cong
+		\sum_{k\in \mathbb{N}}e_ka_k \text{ mit } a_k = 0 \text{ für } k>n \]
+	und führen darauf das \emph{Cauchyprodukt} (vgl. Analysis) als Multiplikation ein:
+		\[ (a_k)_{k\in \mathbb{N}} \odot (b_k)_{k\in \mathbb{N}} := (c_k)_{k\in \mathbb{N}} \]
+	wobei
+		\[ c_k := \sum_{j=0}^{k}a_jb_{k-j}. \]
+	Insbesondere gilt damit
+		\begin{gather*}
+		\forall j,k\in \mathbb{N}: e_j \odot e_k = e_{j+k}
+		\Rightarrow \forall k\in \mathbb{N}:
+			\begin{cases}
+				e_0 \odot e_k = e_k\\
+				e_1^k = \underset{k \text{ mal}}{\underbrace{e_1 \odot \cdots \odot e_1}} = e_k
+			\end{cases}
+		\end{gather*}
+	Mit $ 1:= e_0,\ t:= e_1 $ und $ t^0 := 1 $, wie üblich, liefert dies:
+		\[ \sum_{k=0}^{n}t^ka_k = \sum_{k\in \mathbb{N}}e_ka_k \in [(e_k)_{k\in N}]\subset K^\mathbb{N} \]
+\subsection{Definition}\index{Polynom!-algebra}\index{Polynom!Grad}\index{Polynom!normiertes}
+		\[ K[t] := ([(e_k)_{k\in \mathbb{N}}],\odot) ,\]
+	mit dem Cauchyprodukt $ \odot $, ist die \emph{Polynomalgebra} über dem Körper $ K $; die Elemente von $ K[t] $,
+		\[ p(t) = \sum_{k=0}^{n}t^ka_k = \sum_{k\in\mathbb{N}}e_ka_k, \]
+	heißen \emph{Polynome in der Variablen} $ t:= e_1 $.
+	Der Grad eines Polynoms ist
+		\[  \deg\sum_{k=0}^{n}t^ka_k := \max \{k\in \mathbb{N}\mid a_k \neq 0\} \]
+	Ist $ a_n = 1 $ für $ \deg p(t) = n $, so heißt das Polynom $ p(t) $ normiert.
+\paragraph{Notation}
+	Mit 
+	wird das Cauchyprodukt auf $ K[t] $ eine "normale" Multiplikation, gefolgt von einer Sortierung nach den Potenzen der Variablen $ t $. Wir werden das $ \oplus $ daher oft unterdrücken, und z.B. $ p(t)q(t) $ schreiben, anstelle von $ p(t)\oplus q(t) $.
+\paragraph{Bemerkung (Koeffizientenvergleich)}
+	Mit dieser Definition von "Polynom" gilt
+		\begin{align*}
+			p(t)=\sum_{k=0}^{n}t^ka_k = 0
+			\Rightarrow \forall k\in \mathbb{N}: a_k = 0,
+		\end{align*}
+	da $ (t^k)_{k\in \mathbb{N}} = (e_k)_{k\in \mathbb{N}}$ linear unabhängig ist.
+	Koeffizientenvergleich funktioniert!
+\paragraph{Bemerkung}
+	Die Polynomalgebra $ K[t] $ über $ K $ ist eine assoziative und kommutative $ K $-Algebra, weiter ist $ K[t] $ unitär mit Einselement $ 1=e_0 $.
+\subsection{Definition}\index{Algebra}
+	Eine $ K $-Algebra ist ein $ K $-VR mit einer \emph{bilinearen Abbildung},
+		\[ \odot: V\times V \to V,\ (v,w)\mapsto v\odot w, \]
+	d.h. es gilt
+		\begin{enumerate}[(i)]
+			\item $ \forall w\in V:\ V\ni v\mapsto v\odot w\in V $ ist linear;
+			\item $ \forall v\in V: V\ni w\mapsto v\odot w\in V $ ist linear.
+		\end{enumerate}
+	Eine $ K $-Algebra heißt
+		\begin{itemize}
+			\item unitär (mit Einselement 1), falls  \hfill$ \exists 1\in V\forall v\in V: 1\odot v = v\odot 1 = v; $
+			\item assoziativ, falls \hfill$ \forall u,v,w\in V: (u\odot v)\odot w = u\odot (v\odot w); $
+			\item kommutativ, falls \hfill$ \forall v,w,\in V: v\odot w = w\odot v $
+		\end{itemize}
+\paragraph{Beispiel}
+	$ \End(V) $ ist (mit Komposition) eine unitäre assoziative Algebra.
+\paragraph{Bemerkung}
+	In jeder Algebra $ (V,\odot) $ gilt:
+		\[ \forall v\in V: 0\odot v = v\odot 0 = 0 \]
+	da z.B. für $ v\in V $ gilt
+		\[ v\odot 0 = v\odot (0+0) = v\odot 0 + v\odot 0 \ \Rightarrow\  0=v\odot 0\]
+	Ist $ (V,\odot) $ unitär, so folgt $ [1]\in V $ wegen $ 1\odot 1 = 1 $
+		\[ ([1], +\mid_{[1]\times [1]},\odot\mid_{[1]\times [1]} ) \cong K \]
+	vermöge $ K\ni x \mapsto 1\times x\in [1] $ (siehe Aufgabe 5).
+\subsection{Definition}\index{Algebra!-Homomorphismus}
+	Ein \emph{Algebra-Homomorphismus} zwischen $ K $-Algebren $ (V,\odot) $ und $ (W,*) $ ist eine lineare Abbildung $ \psi\in \hom(V,W) $, für die gilt:
+		\[ \forall v,v' \in V: \psi(v\odot v')=\psi(v)*\psi(v') \]
+\paragraph{Bemerkung}
+	$ \hom(V,W) $ wird oft auch für den (Vektor-)Raum der Algebra-Homomorphismen verwendet. In dieser LVA bedeutet $ \hom(V,W) $ immer VR-Homomorphismen, bei allen "`anderen"' Homomorphismen wird extra erwähnt, was gemeint ist.

@@ -9,7 +9,7 @@ Um das PDF herunterzuladen: Download des ganzen Repos mit Download ZIP, im entpa
 
 Grundsätzliche Formatierungsrichtlinien:
 - Struktur beginnt bei \chapter und richtet sich nach dem Vorlesungsaufbau.
-- Satz, Lemma, Korollar und Definition sind als \subsection einzeln strukturiert und zusätzlich die wesentliche Inhalte in die entsprechende Umgebung zu schachteln.
+- Satz, Lemma, Korollar und Definition sind als \subsection einzeln strukturiert und zusätzlich die Schlagworte in das Stichwortverzeichnis zu integrieren.
 - Beispiel, Beweis und Bemerkung werden als \paragraph strukturiert.
 - Einzeilige Formeln werden als \\[ \\] gesetzt, mehrzeilige je nach Ausrichtung als gather* oder align* (also nicht nummeriert).
 - Commits sind folgende Kürzel vorzustellen:
