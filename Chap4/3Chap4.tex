@@ -43,15 +43,13 @@
 	Mit $ 1:= e_0,\ t:= e_1 $ und $ t^0 := 1 $, wie üblich, liefert dies:
 		\[ \sum_{k=0}^{n}t^ka_k = \sum_{k\in \mathbb{N}}e_ka_k \in [(e_k)_{k\in N}]\subset K^\mathbb{N} \]
 \subsection{Definition}\index{Polynom!-algebra}\index{Polynom!Grad}\index{Polynom!normiertes}
-    \begin{Definition}[Polynomalgebra]
 		\[ K[t] := ([(e_k)_{k\in \mathbb{N}}],\odot) ,\]
 	mit dem Cauchyprodukt $ \odot $, ist die \emph{Polynomalgebra} über dem Körper $ K $; die Elemente von $ K[t] $,
 		\[ p(t) = \sum_{k=0}^{n}t^ka_k = \sum_{k\in\mathbb{N}}e_ka_k, \]
 	heißen \emph{Polynome in der Variablen} $ t:= e_1 $.
 	Der Grad eines Polynoms ist
 		\[  \deg\sum_{k=0}^{n}t^ka_k := \max \{k\in \mathbb{N}\mid a_k \neq 0\}  \quad \left( \text{bzw. } \deg 0 := -\infty \right) \]
-	Ist (der höchste Koeffizient) $ a_n = 1 $ für $ \deg p(t) = n $, so heißt das Polynom $ p(t) $ normiert.
-	\end{Definition}
+	Ist (der "`höchste"' Koeffizient) $ a_n = 1 $ für $ \deg p(t) = n $, so heißt das Polynom $ p(t) $ normiert.
 \paragraph{Notation}
 	Mit $t^k = e_{k}$, also $ K[t] = [(e_k)_{k\in N}] $
 	wird das Cauchyprodukt auf $ K[t] $ eine "`normale"' Multiplikation, gefolgt von einer Sortierung nach den Potenzen der Variablen $ t $. Wir werden das $ \oplus $ daher oft unterdrücken, und z.B. $ p(t)q(t) $ schreiben, anstelle von $ p(t) \odot q(t) $.
@@ -66,7 +64,6 @@
 \paragraph{Bemerkung}
 	Die Polynomalgebra $ K[t] $ über $ K $ ist eine assoziative und kommutative $ K $-Algebra, weiters ist $ K[t] $ unitär mit Einselement $ 1=e_0 $.
 \subsection{Definition}\index{Algebra}
-    \begin{Definition}[Algebra]
 	Eine $ K $-Algebra ist ein $ K $-VR mit einer \emph{bilinearen Abbildung},
 		\[ \odot: V\times V \to V,\ (v,w)\mapsto v\odot w, \]
 	d.h. es gilt
@@ -81,7 +78,6 @@
 			\item assoziativ, falls \hfill$ \forall u,v,w\in V: (u\odot v)\odot w = u\odot (v\odot w); $
 			\item kommutativ, falls \hfill$ \forall v,w,\in V: v\odot w = w\odot v $
 		\end{itemize}
-	\end{Definition}
 \paragraph{Beispiel}
 	$ \End(V) $ ist (mit Komposition) eine unitäre assoziative Algebra.
 \paragraph{Bemerkung}
@@ -90,12 +86,10 @@
 	da z.B. für $ v\in V $ gilt
 		\[ v\odot 0 = v\odot (0+0) = v\odot 0 + v\odot 0 \ \Rightarrow\  0=v\odot 0\]
 	Ist $ (V,\odot) $ unitär, so folgt $ [1]\in V $ wegen $ 1\odot 1 = 1 $
-		\[ ([1], +\mid_{[1]\times [1]},\odot\mid_{[1]\times [1]} ) \stackrel{"`isomorph"'}{\cong} K \]
+		\[ ([1], +\mid_{[1]\times [1]},\odot\mid_{[1]\times [1]} ) \cong K \]
 	vermöge $ K\ni x \mapsto 1 \cdot x\in [1] $ (siehe Aufgabe 5).
 \subsection{Definition}\index{Algebra!-Homomorphismus}
-    \begin{Definition}[Algebra-Homomorphismus]
 	Ein \emph{Algebra-Homomorphismus} zwischen $ K $-Algebren $ (V,\odot) $ und $ (W,*) $ ist eine lineare Abbildung $ \psi\in \hom(V,W) $, für die gilt:
 		\[ \forall v,v' \in V: \psi(v\odot v')=\psi(v)*\psi(v') \]
-	\end{Definition}
 \paragraph{Bemerkung}
 	$ \hom(V,W) $ wird oft auch für den (Vektor-)Raum der Algebra-Homomorphismen verwendet. In dieser LVA bedeutet $ \hom(V,W) $ immer VR-Homomorphismen, bei allen "`anderen"' Homomorphismen wird extra erwähnt, was gemeint ist.
