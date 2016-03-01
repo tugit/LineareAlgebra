@@ -201,7 +201,7 @@ Algebraisch: Dieses Volumen kann dann benutzt werden, um zu testen, wann ein Spa
  \subsection{Wiederholung \& Definition}
  	Die bijektiven Abbildungen (Permutationen)
  	\[
- 		\sigma: I\to I, i\mapsto \sigma(i),\text{ der Menge }I = \{1,\dots,m\}
+ 		\sigma: I\to I,\ i\mapsto \sigma(i),\text{ der Menge }I = \{1,\dots,m\}
  	\]
  	bilden eine Gruppe (mit der Komposition als Verknüpfung), die Permutationsgruppe $ S_m $ der Menge $ I $.
  	\begin{Definition}[Transposition]
@@ -362,27 +362,28 @@ Algebraisch: Dieses Volumen kann dann benutzt werden, um zu testen, wann ein Spa
  		      		\tikzset{SigneMoins/.style = {below left,,opacity=1,circle,fill=#1!50}}
 
  		      		\matrix (A) [matrix of math nodes, nodes = {node style ge},,column sep=0 mm]
- 		      		{ x_{11} & x_{12} & x_{13}  \\
+ 		      		{
+                                        x_{11} & x_{12} & x_{13}  \\
  		      			x_{21} & x_{22} & x_{23}  \\
  		      			x_{31} & x_{32} & x_{33}  \\\hline
- 		      			x_{11} & x_{12} & x_{13} \\
- 		      			x_{21} & x_{22} & x_{13}\\
+ 		      			x_{11} & x_{12} & x_{13}  \\
+ 		      			x_{21} & x_{22} & x_{13}  \\
  		      		};
 
- 		      		\draw [BarreStyle=blue] (A-1-1.north west) node[SignePlus=blue] {$+$} to (A-3-3.south east) ;
- 		      		\draw [BarreStyle=blue] (A-2-1.north west) node[SignePlus=blue] {$+$} to (A-4-3.south east) ;
- 		      		\draw [BarreStyle=blue] (A-3-1.north west) node[SignePlus=blue] {$+$} to (A-5-3.south east) ;
+ 		      		\draw [BarreStyle=blue] (A-1-1.north west) node[SignePlus=blue] {$+$} to (A-3-3.south east);
+ 		      		\draw [BarreStyle=blue] (A-2-1.north west) node[SignePlus=blue] {$+$} to (A-4-3.south east);
+ 		      		\draw [BarreStyle=blue] (A-3-1.north west) node[SignePlus=blue] {$+$} to (A-5-3.south east);
  		      		\draw [BarreStyle=red]  (A-3-1.south west) node[SigneMoins=red] {$-$} to (A-1-3.north east);
  		      		\draw [BarreStyle=red]  (A-4-1.south west) node[SigneMoins=red] {$-$} to (A-2-3.north east);
  		      		\draw [BarreStyle=red]  (A-5-1.south west) node[SigneMoins=red] {$-$} to (A-3-3.north east);
  		      	\end{tikzpicture}
  		      \end{center}
  	\end{itemize}
- 	Für $ m>3 $ liefert der Laplacesche Entwicklungssatz eine Methode, die Terme (Permutationen) zu sortieren: Für fest gewähltes $ j\in \{1,\dots, m \} $ gilt
+ 	Für $ m>3 $ liefert der Laplacesche Entwicklungssatz eine Methode, die Terme (Permutationen) zu sortieren: Für fest gewähltes $ j\in \{1,\dots, m \} $ gilt\footnote{Entwicklung nach $j$-ter Spalte}
  	\[
  		\det X = \sum_{i=1}^{m}(-1)^{i+j}x_{ij}\det X_{ij}
  	\]
- 	mit
+ 	mit\footnote{Die $i$-te Zeile und die $j$-te Spalte sind in dieser Matrix "`gestrichen"', d.h. die Matrix ist aus $K^{(m-1)\times(m-1)}$}
  	\[
  		X_{ij} := (x_{kl})_{\substack{k\neq i\\ l\neq j}} =
  		% TODO: die i-te Zeile und j-te Spalte gehören durchgestrichen! % Q&D-Fix durch markierung in rot
@@ -463,7 +464,7 @@ Algebraisch: Dieses Volumen kann dann benutzt werden, um zu testen, wann ein Spa
  	\begin{Definition}[Vandermonde-Determinante]
  		Für $ x_1,\dots, x_k\in K $ hat die \emph{Vandermonde-Matrix}
  		\[
- 			X= (x_i^{k-j})i,j\in \{1,\dots, k \} =
+ 			X= \big(x_i^{k-j}\big)_{i,j\in \{1,\dots, k \}} =
  			\begin{pmatrix}
  				x_1^{k-1} & x_1^{k-2} & \cdots & x_1^0  \\
  				x_2^{k-1} & x_2^{k-2} & \cdots & x_2^0  \\
@@ -474,7 +475,7 @@ Algebraisch: Dieses Volumen kann dann benutzt werden, um zu testen, wann ein Spa
  		\]
  		die \emph{(Vandermonde-)Determinante}:
  		\[
- 			\det X = \det (x_i^{k-j})_{i,j = 1,\dots, k} = \prod_{i<j}x_i-x_j
+ 			\det X = \det \big(x_i^{k-j}\big)_{i,j = 1,\dots, k} = \prod_{i<j}x_i-x_j
  		\]
 
  		Denn:
