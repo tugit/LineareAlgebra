@@ -104,3 +104,83 @@
 	$ \hom(V,W) $ wird oft auch für den (Vektor-)Raum der Algebra-Homomorphismen verwendet. In dieser LVA bedeutet $ \hom(V,W) $ immer VR-Homomorphismen, bei allen "`anderen"' Homomorphismen wird extra erwähnt, was gemeint ist.
 
 %VO2-2016-03-03
+
+\subsection{Einsetzungssatz \& Definitionen}
+	\begin{Satz}[Einsetzungssatz]\index{Einsetzungshomomorphismus}\index{Polynom!funktion}
+		Seien $ (V,\odot) $ eine unitäre assoziative Algebra und $ v\in V $. Dann ist
+			\[ \psi_v: K[t]\to V,\ \sum_{k=0}^{n}t^ka_k = p(t)\mapsto \psi_v(p(t)) := \sum_{k=0}^{n}v^ka_k \]
+		-- wobei $ v^0 = 1 $ sinnvoll ist, da die Algebra unitär ist -- ein Algebra-Homomorphismus; $ \psi_v $ heißt \emph{Einsetzungshomomorphismus}. 
+			\[ p:V\to V,\ v\mapsto p(v) := \psi_v(p(t)) \]
+		heißt die zu $ p(t)\in K[t] $ gehörige \emph{Polynomfunktion} auf $ V $.
+	\end{Satz}
+\paragraph{Bemerkung}
+	Wie üblich: $ v^k := \underset{k-\text{mal}}{\underbrace{v\odot\cdots \odot v}} $ und $ v^0 := 1 $.
+\paragraph{Beweis}
+	\begin{enumerate}
+		\item $ \psi_v $ ist linear:
+			\begin{itemize}
+				\item für $ p(t) = \sum_{k\in\mathbb{N}} t^ka_k $ und $ a\in K $ gilt:
+					\[ \psi_v(p(t)a) = \psi_v(\sum_{k\in\mathbb{N}} t^ka_k) = \sum_{k\in\mathbb{N}} v^ka_ka = \psi_v(p(t))a; \]
+				\item für $ p(t) = \sum_{k\in\mathbb{N}} t^ka_k $ und $ q(t) = \sum_{k\in\mathbb{N}} t^k b_k $ gilt:
+					\[ \psi_v(p(t)+q(t)) = \psi_v(\sum_{k\in\mathbb{N}}t^k(a_k+b_k)) = \sum_{k\in\mathbb{N}} v^k(a_k+b_k) = \psi_v(p(t))+\psi_v(q(t)) \]
+			\end{itemize}
+		\item $ \psi_v $ ist verträglich mit der Multiplikation:
+		
+			Für die Vektoren der Basis $ (t^k)_{k\in\mathbb{N}} $ von $ K[t] $ gilt, da $ (V,\odot) $ assoziativ ist,
+				\[ \psi_v(t^mt^n) = \psi_v(t^{m+n}) = v^{m+n} = v^m\odot v^n = \psi_v(t^m)\odot \psi_v(t^n). \]
+			Da aber $ \psi_v $ linear und die Multiplikation in $ K[t] $ und in $ (V,\odot) $ bilinear sind, folgt die Behauptung.
+	\end{enumerate}
+\paragraph{Bemerkung (Fortsetzungssatz für bilineare Abbildungen)}
+	Im Beweis haben wir verwendet: Die Abbildungen
+		\[ K[t]\times K[t]\to V,\ (p(t),q(t))\mapsto
+			\begin{cases}
+			\psi_v(p(t)q(t))& \text{ (Cauchyprodukt)}\\
+			\psi_v(p(t))\odot \psi_v(q(t)) & \text{(Produkt in $ (V,\odot) $)}
+			\end{cases} \]
+	sind bilinear (da $ \psi_v $ linear ist), sind also gleich, sobald sie auf einer Basis übereinstimmen.
+	Dies ist die Eindeutigkeit eines Fortsetzungssatzes für bilineare Abbildungen:
+	
+	Sind $ V,W\ K$-VR, $ (b_i)_{i\in I} $ eine Basis von $ V $ und $ (\beta_{ij})_{i,j\in I} $ eine Familie in $ W $, so gibt es eine eindeutige bilineare Abbildung
+		\[ \beta: V\times V\to W \]
+	mit
+		\[ \forall i,j\in I: \beta(b_i,b_j) = \beta_{ij} \]
+	Dieser Fortsetzungssatz folgt direkt aus dem Fortsetzungssatz für lineare Abbildungen, da
+		\[ \{\beta:V\times V\to W \text{ bilinear}\} \cong \hom(V,\hom(V,W))\]
+	vermittels des Isomorphismus
+		\[ \beta \mapsto \big(v\mapsto\underset{\in \hom(V,W)}{\underbrace{\beta(v,.)}}\big), \]
+	d.h. durch Nacheinandereinsetzen der Argumente.
+\paragraph{Bemerkung}
+	Die Abbildung eines Polynoms auf seine Polynomfunktion auf dem Körper,
+		\[ K[t]\ni p(t)\mapsto (x\mapsto p(x))=\psi_x(p(t))\in K^K \]
+	ist für $ \Char K\neq 0 $ nicht injektiv, das heißt: Koeffizientenvergleich kann nur funktionieren, wenn $ \Char K = 0 $
+\paragraph{Beispiel \& Bemerkung}
+	Ist $ V\ K $-VR, so ist $ \End(V) $ eine $ K $-Algebra (mit Komposition $ \circ $). Man erhält also für $ f\in \End(V) $ einen Einsetzungshomomorphismus
+		\[ \psi_f: K[t]\to \End(V),\ p(t) \mapsto \psi_f(p(t)) = p(f); \]
+	und für jedes Polynom $ p(t)\in K[t] $ eine zugehörige Polynomfunktion
+		\[ p: \End(V)\to\End(V),\ f\mapsto \psi_f(p(t))= p(f). \]
+	Dieses Beispiel ist der Schlüssel zum Satz von Cayley-Hamilton (im nächsten Abschnitt).
+\subsection{Lemma}
+	\begin{Lemma}
+		Für Polynome $ p(t), q(t)\in K[t] $ gilt:
+			\begin{itemize}
+				\item $ \deg p(t)\odot q(t) = \deg p(t)+\deg q(t) $,
+				\item $ \deg p(t)+q(t) \leq \max\{\deg p(t), \deg q(t)\} $.
+			\end{itemize}
+	\end{Lemma}
+\paragraph{Beweis}
+	Für $ p(t) = \sum_{k\in\mathbb{N}}t^ka_k $ und $ q(t) = \sum_{k\in\mathbb{N}}t^kb_k $ ist
+		\[ p(t)\odot q(t) = \sum_{k\in\mathbb{N}}t^kc_k \text{ mit } c_k = \sum_{j=0}^{k}a_jb_{k-j} \]
+	Gilt nun $ \deg p(t) = n $ und $ \deg q(t) = m $, d.h.
+		\[ a_n,b_n \neq 0 \land \forall k>n, k'>m:a_k = b_{k'}=0 \] 
+	so folgt
+		\[ \left.
+		\begin{aligned}
+		\forall k>m+n : c_k = 0\ \\
+		        c_{m+n} = a_nb_m\ \\
+		\end{aligned}
+		 \right\}
+		\Rightarrow \deg p(t)\odot q(t) = m+n \]
+	Gilt andererseits $ \deg p(t) = -\infty $ oder $ \deg q(t) = -\infty $, also $ p(t) = 0 \lor q(t) = 0 $,
+	so folgt
+		\[ p(t)\odot q(t) = 0 \Rightarrow \deg p(t)\odot q(t) = -\infty. \]
+	Die zweite Behauptung ist offensichtlich wahr.
