@@ -196,14 +196,14 @@ Algebraisch: Dieses Volumen kann dann benutzt werden, um zu testen, wann ein Spa
  		\end{gather*}
  		und beschreibt man eine Familie $ (v_i)_{i\in \{1,\dots,m\}} $ von Vektoren $ v_i\in V $ durch ein \emph{$ m $-Tupel} $ A=(v_1,\dots,v_m) $ von Werten der Familie, so lassen sich die \emph{Homogenität} und Eigenschaften (i) und (ii) des Lemmas einfach schreiben als
  		\[
- 			\omega(AD_i) = \omega(A)d,\ \omega(AT_{ij}) = -\omega(A),\ \omega(AS_{ij}(s)) = \omega(A)
+ 			\omega(AD_i(d)) = \omega(A)d,\ \omega(AT_{ij}) = -\omega(A),\ \omega(AS_{ij}(s)) = \omega(A)
  		\]
  \subsection{Wiederholung \& Definition}
  	Die bijektiven Abbildungen (Permutationen)
  	\[
  		\sigma: I\to I,\ i\mapsto \sigma(i),\text{ der Menge }I = \{1,\dots,m\}
  	\]
- 	bilden eine Gruppe (mit der Komposition als Verknüpfung), die Permutationsgruppe $ S_m $ der Menge $ I $.
+ 	bilden mit der Komposition eine Gruppe: die Permutationsgruppe $ S_m $ der Menge $ I $.
  	\begin{Definition}[Transposition]
  		Eine \emph{Transposition} $ \tau_{ij} \in S_m, i\neq j $ ist eine Permutation, die zwei Indizes vertauscht,
  		\[
@@ -418,7 +418,7 @@ Algebraisch: Dieses Volumen kann dann benutzt werden, um zu testen, wann ein Spa
 
  	Da wegen $ \sgn(\sigma^{-1})=(\sgn(\sigma))^{-1} = \sgn(\sigma) $
  	\begin{align*}
- 		\sum_{\sigma\in S_m}\sgn(\sigma)\prod_{j=1}^{m}x_{j\sigma(j)} =
+ 		\sum_{\sigma\in S_m}\sgn(\sigma)\prod_{j=1}^{m}x_{j\sigma(j)}
  		  & =\sum_{\sigma\in S_m} \sgn(\sigma^{-1})\prod_{j=1}^{m}x_{\sigma^{-1}(j)j} \\
  		  & =\sum_{\sigma^{-1}\in S_m} \sgn(\sigma^{-1})\prod_{j=1}^{m}x_{\sigma(j)j} \\
  		  & =\sum_{\sigma\in S_m} \sgn(\sigma)\prod_{j=1}^{m}x_{\sigma(j)j}
