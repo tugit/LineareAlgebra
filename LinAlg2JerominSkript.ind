@@ -1,11 +1,21 @@
 \begin{theindex}
 
+  \item Algebra, \hyperpage{5}
+    \subitem -Homomorphismus, \hyperpage{6}
+
+  \indexspace
+
   \item Cauchyprodukt, \hyperpage{4}
+
+  \indexspace
+
+  \item Einsetzungshomomorphismus, \hyperpage{6}
 
   \indexspace
 
   \item Polynom, \hyperpage{4}
     \subitem -algebra, \hyperpage{4}
+    \subitem funktion, \hyperpage{6}
     \subitem Grad, \hyperpage{4}
     \subitem normiertes, \hyperpage{4}
 
