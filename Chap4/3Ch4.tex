@@ -18,8 +18,8 @@
 	d.h., unterschiedliche "`Polynome"' liefern die gleiche Polynomfunktion: Koeffizientenvergleich funktioniert nicht.
 \paragraph{Wiederholung}
 	Auf dem Folgenraum $ K^\mathbb{N} $ betrachten wir die Familie $ (e_k)_{k\in \mathbb{N}} $ mit
-		\[ e_k :\mathbb{N}\to K,\ j\mapsto e_k(j):= \delta_{jk}; \]
-	wir wissen: $ (e_k)_{k\in \mathbb{N}} $ ist linear unabhängig, aber kein Erzeugendensystem:
+		\[ e_k :\mathbb{N}\to K,\ j\mapsto e_k(j):= \delta_{jk} \]
+	Wir wissen: $ (e_k)_{k\in \mathbb{N}} $ ist linear unabhängig, aber kein Erzeugendensystem:
 		\[ \forall k\in \mathbb{N}: e_k \notin [(e_j)_{j\neq k}] \text{ und }
 		[(e_j)_{j\in\mathbb{N}}]\neq K^{\mathbb{N}}\]
 	Insbesondere gilt:
@@ -44,7 +44,7 @@
 			\end{cases}
 		\end{gather*}
 	Mit $ 1:= e_0,\ t:= e_1 $ und $ t^0 := 1 $, wie üblich, liefert dies:
-		\[ \sum_{k=0}^{n}t^ka_k = \sum_{k\in \mathbb{N}}e_ka_k \in [(e_k)_{k\in N}]\subset K^\mathbb{N} \]
+		\[ \sum_{k=0}^{n}t^ka_k = \sum_{k\in \mathbb{N}}e_ka_k \in [(e_k)_{k\in \mathbb{N}}]\subset K^\mathbb{N} \]
 \subsection{Definition}\index{Polynom!-algebra}\index{Polynom!Grad}\index{Polynom!normiertes}
 		\begin{Definition}[Polynomalgebra]
 			\[ K[t] := ([(e_k)_{k\in \mathbb{N}}],\odot) ,\]
@@ -56,13 +56,13 @@
 	Ist (der "`höchste"' Koeffizient) $ a_n = 1 $ für $ \deg p(t) = n $, so heißt das Polynom $ p(t) $ \emph{normiert}.
 		\end{Definition}
 \paragraph{Notation}
-	Mit $t^k = e_{k}$, also $ K[t] = [(e_k)_{k\in N}] $
-	wird das Cauchyprodukt auf $ K[t] $ eine "`normale"' Multiplikation, gefolgt von einer Sortierung nach den Potenzen der Variablen $ t $. Wir werden das $ \odot $ daher oft unterdrücken, und z.B. $ p(t)q(t) $ schreiben, anstelle von $ p(t) \odot q(t) $.
+	Mit $t^k = e_{k}$, also $ K[t] = [(e_k)_{k\in \mathbb{N}}] $
+	wird das Cauchyprodukt auf $ K[t] $ eine "`normale"' Multiplikation, gefolgt von einer Sortierung nach den Potenzen der Variablen $ t $. Wir werden das "`$ \odot $"' daher oft unterdrücken, und z.B. $ p(t)q(t) $ schreiben, anstelle von $ p(t) \odot q(t) $.
 \paragraph{Bemerkung (Koeffizientenvergleich)}
 	Mit dieser Definition von "`Polynom"' gilt
 		\begin{align*}
 			p(t)=\sum_{k=0}^{n}t^ka_k = 0
-			\Rightarrow \forall k\in \mathbb{N}: a_k = 0,
+			\quad\Rightarrow \forall k\in \mathbb{N}: a_k = 0,
 		\end{align*}
 	da $ (t^k)_{k\in \mathbb{N}} = (e_k)_{k\in \mathbb{N}}$ linear unabhängig ist.
 	Koeffizientenvergleich funktioniert!
@@ -80,9 +80,12 @@
 	
 	Eine $ K $-Algebra heißt
 		\begin{itemize}
-			\item unitär (mit Einselement 1), falls  \hfill$ \exists 1\in V\forall v\in V: 1\odot v = v\odot 1 = v; $
-			\item assoziativ, falls \hfill$ \forall u,v,w\in V: (u\odot v)\odot w = u\odot (v\odot w); $
-			\item kommutativ, falls \hfill$ \forall v,w,\in V: v\odot w = w\odot v $
+			\item unitär (mit Einselement 1), falls
+                              \[\exists 1\in V\ \forall v\in V: 1\odot v = v\odot 1 = v\]
+			\item assoziativ, falls
+                              \[\forall u,v,w\in V: (u\odot v)\odot w = u\odot (v\odot w)\]
+			\item kommutativ, falls
+                              \[\forall v,w,\in V: v\odot w = w\odot v\]
 		\end{itemize}
 	\end{Definition}
 \paragraph{Beispiel}
@@ -92,7 +95,7 @@
 		\[ \forall v\in V: 0\odot v = v\odot 0 = 0 \]
 	da z.B. für $ v\in V $ gilt
 		\[ v\odot 0 = v\odot (0+0) = v\odot 0 + v\odot 0 \ \Rightarrow\  0=v\odot 0\]
-	Ist $ (V,\odot) $ unitär, so folgt $ [1]\subset V $ wegen $ 1\odot 1 = 1 $
+	Ist $ (V,\odot) $ unitär, so liefert $ [1]\subset V $ wegen $ 1\odot 1 = 1 $ einen Körper:
 		\[ ([1], +\mid_{[1]\times [1]},\odot\mid_{[1]\times [1]} ) \cong K \]
 	vermöge $ K\ni x \mapsto 1 \cdot x\in [1] $ (siehe Aufgabe 5).
 \subsection{Definition}\index{Algebra!-Homomorphismus}
@@ -101,7 +104,7 @@
 		\[ \forall v,v' \in V: \psi(v\odot v')=\psi(v)*\psi(v') \]
 	\end{Definition}
 \paragraph{Bemerkung}
-	$ \hom(V,W) $ wird oft auch für den (Vektor-)Raum der Algebra-Homomorphismen verwendet. In dieser LVA bedeutet $ \hom(V,W) $ immer VR-Homomorphismen, bei allen "`anderen"' Homomorphismen wird extra erwähnt, was gemeint ist.
+	$ \hom(V,W) $ wird oft auch für den (Vektor-)Raum der Algebra-Homomorphismen verwendet. In dieser LVA bedeutet "`$ \hom(V,W) $"' immer VR-Homomorphismen, bei allen "`anderen"' Homomorphismen wird  erwähnt, was gemeint ist.
 
 %VO2-2016-03-03
 
@@ -120,11 +123,11 @@
 		\item $ \psi_v $ ist linear:
 			\begin{itemize}
 				\item für $ p(t) = \sum_{k\in\mathbb{N}} t^ka_k $ und $ a\in K $ gilt:
-					\[ \psi_v(p(t)a) = \psi_v(\sum_{k\in\mathbb{N}} t^ka_ka) = \sum_{k\in\mathbb{N}} v^ka_ka = \psi_v(p(t))a; \]
+					\[ \psi_v(p(t)a) = \psi_v\Big(\sum_{k\in\mathbb{N}} t^ka_ka\Big) = \sum_{k\in\mathbb{N}} v^ka_ka = \psi_v(p(t))a; \]
 				\item für $ p(t) = \sum_{k\in\mathbb{N}} t^ka_k $ und $ q(t) = \sum_{k\in\mathbb{N}} t^k b_k $ gilt:
-					\[ \psi_v(p(t)+q(t)) = \psi_v(\sum_{k\in\mathbb{N}}t^k(a_k+b_k)) = \sum_{k\in\mathbb{N}} v^k(a_k+b_k) = \psi_v(p(t))+\psi_v(q(t)) \]
+					\[ \psi_v(p(t)+q(t)) = \psi_v\Big(\sum_{k\in\mathbb{N}}t^k(a_k+b_k)\Big) = \sum_{k\in\mathbb{N}} v^k(a_k+b_k) = \psi_v(p(t))+\psi_v(q(t)) \]
 			\end{itemize}
-		\item $ \psi_v $ ist verträglich mit der Multiplikation:
+		\item $ \psi_v $ ist "`multiplikativ"', d.h. verträglich mit der beteiligten Multiplikation:
 		
 			Für die Vektoren der Basis $ (t^k)_{k\in\mathbb{N}} $ von $ K[t] $ gilt, da $ (V,\odot) $ assoziativ ist,
 				\[ \psi_v(t^mt^n) = \psi_v(t^{m+n}) = v^{m+n} = v^m\odot v^n = \psi_v(t^m)\odot \psi_v(t^n). \]
@@ -134,8 +137,8 @@
 	Im Beweis haben wir verwendet: Die Abbildungen
 		\[ K[t]\times K[t]\to V,\ (p(t),q(t))\mapsto
 			\begin{cases}
-			\psi_v(p(t)q(t))& \text{ (Cauchyprodukt)}\\
-			\psi_v(p(t))\odot \psi_v(q(t)) & \text{(Produkt in $ (V,\odot) $)}
+			\psi_v(p(t)q(t)) &\text{(Cauchyprodukt)}\\
+			\psi_v(p(t))\odot \psi_v(q(t)) &\text{(Produkt in $ (V,\odot) $)}
 			\end{cases} \]
 	sind bilinear (da $ \psi_v $ linear ist), sind also gleich, sobald sie auf einer Basis übereinstimmen.
 	Dies ist die Eindeutigkeit eines Fortsetzungssatzes für bilineare Abbildungen:
@@ -155,7 +158,7 @@
 \paragraph{Bemerkung}
 	Die Abbildung eines Polynoms auf seine Polynomfunktion auf dem Körper,
 		\[ K[t]\ni p(t)\mapsto (x\mapsto p(x))=\psi_x(p(t))\in K^K \]
-	ist für $ \Char K\neq 0 $ nicht injektiv, das heißt: Koeffizientenvergleich kann nur funktionieren, wenn $ \Char K = 0 $
+	ist für $ \Char K\neq 0 $ nicht injektiv\footnote{sonst wäre $K^K$ unendlich dimensional.}. Das heißt: Koeffizientenvergleich (für Polynomfunktionen) kann nur funktionieren, wenn $ \Char K = 0 $
 \paragraph{Beispiel \& Bemerkung}
 	Ist $ V\ K $-VR, so ist $ \End(V) $ eine $ K $-Algebra (mit Komposition $ \circ $). Man erhält also für $ f\in \End(V) $ einen Einsetzungshomomorphismus
 		\[ \psi_f: K[t]\to \End(V),\ p(t) \mapsto \psi_f(p(t)) = p(f); \]
@@ -187,3 +190,5 @@
 	so folgt
 		\[ p(t)\odot q(t) = 0 \Rightarrow \deg p(t)\odot q(t) = -\infty. \]
 	Die zweite Behauptung ist offensichtlich wahr.
+
+%VO3-2016-03-08
