@@ -263,5 +263,70 @@
 		\[ p(t)= t^4-t^3+t^2-t =
 			\begin{cases}
 				t(t-1)(t-i)(t+i) \in \mathbb{C}[t]\\
-				t(t-1)(t^2+1) \in \mathbb{R}[t].
+				t(t-1)(t^2+1) \in \mathbb{R}[t]
 			\end{cases} \]
+\subsection{Mehr zu Polynomen}
+	Dies ist der Anfang einer der Teilbarkeitstheorie der natürlichen Zahlen ähnlichen Theorie für Polynome.
+	
+	\begin{addmargin}{1cm}
+		\textit{Sind $ p(t),d(t)\in K[t] $, so heißt $ d(t) $ \emph{Teiler} von $ p(t), d(t)\mid p(t) $, falls
+			\[ \exists q(t)\in K[t]: p(t)= d(t)q(t). \]}
+	\end{addmargin}
+	
+\paragraph{Primpolynome}
+	Nennt man $ p(t)\in K[t] $ mit $ \deg p(t) > 0$ ein \emph{Primpolynom} (oder \emph{irreduzibel}), falls für $ d(t),q(t)\in K[t] $ gilt:
+		\[ p(t)= d(t)q(t) \Rightarrow \Big( \deg q(t)=0 \lor \deg d(t) = 0 \Big), \]
+	so gilt der Satz über die \emph{Primfaktorzerlegung}:
+	
+	\begin{addmargin}{1cm}
+		\textit{Jedes Polynom $ p(t)\in K[t] $ mit $ \deg p(t)>0 $ zerfällt eindeutig in Primpolynome,
+			\[ p(t) = a_n p_1(t) \cdots p_m(t), \]
+		wobei $ a_n\in K $ und $ p_1(t),\dots,p_m(t)\in K[t] $ normierte Primpolynome sind.}
+	\end{addmargin}
+\paragraph{Beweis}	
+	Existenz ist einfach zu zeigen (Induktion über $ n $), die weniger leicht zu zeigende Eindeutigkeit benutzt die Existenz des \emph{größten gemeinsamen Teilers} $ d(t) = \ggT\big(p(t),q(t)\big) $ zweier Polynome $ p(t) $ und $ q(t) $:
+	
+	\begin{addmargin}{1cm}
+		\textit{Zu $ p(t),q(t) \in K[t]\setminus \{0\} $ gibt es genau ein normiertes Polynom $ d(t)\in K[t] $ mit
+			\begin{align*}
+				d(t)&\mid p(t)\land d(t)\mid q(t) \text{ und}\\
+				d'(t)&\mid p(t)\land d'(t)\mid q(t) \Rightarrow d'(t)\mid d(t).
+			\end{align*}}
+	\end{addmargin}
+\paragraph{Lemma von B\'ezont}
+	Für den $ \ggT $ gilt auch das Lemma von B\'ezont:
+		\[ \exists p'(t),q'(t)\in K[t]: d(t)=p(t)p'(t)+q(t)q'(t) \]
+\paragraph{Bemerkung}
+	Aus der Gradformel,
+		\[ \deg d(t)q(t) = \deg d(t)+\deg q(t) \]
+	folgt direkt:
+		\begin{addmargin}{1cm}
+			\textit{Jedes Polynom $ p(t)\in K[t] $ mit $ \deg p(t)=1 $ ist Primpolynom.}
+		\end{addmargin}
+
+\paragraph{Fundamentalsatz der Algebra}
+	Falls $ K = \mathbb{C} $, so sind die Polynome mit Grad 1 die einzigen Primpolynome:
+		\begin{addmargin}{1cm}
+			\textit{In $ \mathbb{C} $ zerfällt jedes Polynom (mit Grad $ \geq 1 $) in Linearfaktoren;
+				\[ \forall p(t)\in \mathbb{C}[t],\ \deg \geq 1:\ \exists x_1,\dots,x_n \in \mathbb{C} \]
+			mit
+				\[ p(t) = a_n \prod_{j=1}^{n}(t-x_j) \]}
+		\end{addmargin}
+	Ist $ K=\mathbb{R} $, so ist dies nicht der Fall; ein Primpolynom vom Grad $ \deg p(t) = 2 $ ist z.B.
+		\[ p(t) = t^2+1\ \in \mathbb{R}[t], \]
+	denn
+		\[ t^2+1 = (t-x_1)(t-x_2) \Rightarrow
+			\begin{cases}
+				0 = x_1 + x_2\\
+				1 = x_1 \cdot x_2
+			\end{cases}
+		\Rightarrow 1 = -x^2 \]
+	Andererseits ist $ p(t)\in \mathbb{R}[t]\subset \mathbb{C}[t], $
+	also existieren $ x_1,\dots,x_n\in \mathbb{C} $ mit
+		\[ a_n\prod_{j=1}^{n}(t-x_j) = p(t) = \overline{p(t)} = \overline{a_n}\prod_{j=1}^{n}(t-\overline{x_j}), \]
+	d.h. mit der Eindeutigkeit der Primfaktorzerlegung, $ a_n\in \mathbb{R} $ und die $ x_j $ sind entweder reell oder treten in komplex-konjugierten Paaren auf:
+		\[ p(t) = a_n\prod_{j=1}^{m}(t^2-t(x_j+\overline{x_j})+x_j\overline{x_j})\prod_{j=2m+1}^{n}(t-x_j). \]
+	Ist also $ p(t) \in \mathbb{R}[t] $ Primpolynom, so folgt $ \deg p(t)\leq 2 $ und
+		\[ \deg p(t) = 2 \Rightarrow \exists x,y\in \mathbb{R}: p(t) = (t-x)^2+y^2 \text{ mit } y\neq 0\]
+	In $ K=\mathbb{Q} $ gibt es noch "`mehr"' Primpolynome, wie z.B.:
+		\[ p(t) = t^2-2 \text{ oder } p(t) = t^4+1 \]
