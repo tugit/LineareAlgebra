@@ -204,8 +204,10 @@
 			\Rightarrow p(t)&=q(t)
 		\end{align*}
 \subsection{Euklidischer Divisionsalgorithmus}
+	\begin{Satz}[Euklidischer Divisionsalgorithmus (Polynomdivision)]
 	Seien $ p(t), d(t) \in K[t],\ d(t) \neq 0$. Dann existieren eindeutig $ q(t), r(t) \in K[t] $, sodass
 		\[ p(t)= d(t)q(t) + r(t) \text{ und } \deg r(t) < \deg d(t). \]
+	\end{Satz}
 \paragraph{Bemerkung}
 	Ist $ \deg p(t)\leq \deg d(t) $, so ist die Aussage trivial.
 \paragraph{Beweis}
@@ -247,10 +249,14 @@
 	liefert diese Abbildung dann für jedes $ m\in \mathbb{N} $ einen Isomorphismus
 		\[ K[t]_m \times K[t]_{k-1} \to K[t]_{k+m} \]
 \subsection{Korollar \& Definition}
+    \begin{Definition}[Nullstelle]
 	Sei $ p(t)\in K[t] $ mit $ \deg p(t)\geq 1 $. Ist $ x\in K $ eine \emph{Nullstelle} von $ p(t) $, d.h.
 		\[ p(x) = \psi_x(p(t)) = 0, \]
+	\end{Definition}
 	so folgt
-		\[ \exists! q(t)\in K[t]: p(t) = (t-x) q(t) \].
+	\begin{Korollar}[Abspalten von Linearfaktoren mit Hilfe von Nullstellen]
+		\[ \exists! q(t)\in K[t]: p(t) = (t-x) q(t) \]
+	\end{Korollar}
 \paragraph{Beweis}
 	Seien $ p(t)\in K[t] $ mit $ \deg p(t) \geq 1 $ und $ x\in K $ eine Nullstelle von $ p(t) $; dann gibt es eindeutig $ q(t),r(t) \in K[t] $ mit
 		\[ p(t) = (t-x) q(t) + r(t) \text{ und } \deg r(t) < \deg (t-x) = 1, \]
@@ -268,21 +274,25 @@
 \subsection{Mehr zu Polynomen}
 	Dies ist der Anfang einer der Teilbarkeitstheorie der natürlichen Zahlen ähnlichen Theorie für Polynome.
 	
+	\begin{Definition}[Teiler]
 	\begin{addmargin}{1cm}
-		\textit{Sind $ p(t),d(t)\in K[t] $, so heißt $ d(t) $ \emph{Teiler} von $ p(t), d(t)\mid p(t) $, falls
+			\textit{Sind $ p(t),d(t)\in K[t] $, so heißt $ d(t) $ \emph{Teiler} von $ p(t), d(t)\mid p(t) $, falls
 			\[ \exists q(t)\in K[t]: p(t)= d(t)q(t). \]}
 	\end{addmargin}
+	\end{Definition}
 	
 \paragraph{Primpolynome}
 	Nennt man $ p(t)\in K[t] $ mit $ \deg p(t) > 0$ ein \emph{Primpolynom} (oder \emph{irreduzibel}), falls für $ d(t),q(t)\in K[t] $ gilt:
 		\[ p(t)= d(t)q(t) \Rightarrow \Big( \deg q(t)=0 \lor \deg d(t) = 0 \Big), \]
 	so gilt der Satz über die \emph{Primfaktorzerlegung}:
 	
+	\begin{Satz}[Primfaktorzerlegung]
 	\begin{addmargin}{1cm}
 		\textit{Jedes Polynom $ p(t)\in K[t] $ mit $ \deg p(t)>0 $ zerfällt eindeutig in Primpolynome,
 			\[ p(t) = a_n p_1(t) \cdots p_m(t), \]
 		wobei $ a_n\in K $ und $ p_1(t),\dots,p_m(t)\in K[t] $ normierte Primpolynome sind.}
 	\end{addmargin}
+	\end{Satz}
 \paragraph{Beweis}	
 	Existenz ist einfach zu zeigen (Induktion über $ n $), die weniger leicht zu zeigende Eindeutigkeit benutzt die Existenz des \emph{größten gemeinsamen Teilers} $ d(t) = \ggT\big(p(t),q(t)\big) $ zweier Polynome $ p(t) $ und $ q(t) $:
 	
@@ -295,7 +305,9 @@
 	\end{addmargin}
 \paragraph{Lemma von B\'ezont}
 	Für den $ \ggT $ gilt auch das Lemma von B\'ezont:
+	\begin{Lemma}[Lemma von B\'ezont]
 		\[ \exists p'(t),q'(t)\in K[t]: d(t)=p(t)p'(t)+q(t)q'(t) \]
+	\end{Lemma}
 \paragraph{Bemerkung}
 	Aus der Gradformel,
 		\[ \deg d(t)q(t) = \deg d(t)+\deg q(t) \]
@@ -306,12 +318,14 @@
 
 \paragraph{Fundamentalsatz der Algebra}
 	Falls $ K = \mathbb{C} $, so sind die Polynome mit Grad 1 die einzigen Primpolynome:
+	    \begin{Satz}[Fundamentalsatz der Algebra]
 		\begin{addmargin}{1cm}
 			\textit{In $ \mathbb{C} $ zerfällt jedes Polynom (mit Grad $ \geq 1 $) in Linearfaktoren;
 				\[ \forall p(t)\in \mathbb{C}[t],\ \deg \geq 1:\ \exists x_1,\dots,x_n \in \mathbb{C} \]
 			mit
 				\[ p(t) = a_n \prod_{j=1}^{n}(t-x_j) \]}
 		\end{addmargin}
+		\end{Satz}
 	Ist $ K=\mathbb{R} $, so ist dies nicht der Fall; ein Primpolynom vom Grad $ \deg p(t) = 2 $ ist z.B.
 		\[ p(t) = t^2+1\ \in \mathbb{R}[t], \]
 	denn
