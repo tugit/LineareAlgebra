@@ -158,7 +158,7 @@
 \paragraph{Bemerkung}
 	Die Abbildung eines Polynoms auf seine Polynomfunktion auf dem Körper,
 		\[ K[t]\ni p(t)\mapsto (x\mapsto p(x))=\psi_x(p(t))\in K^K \]
-	ist für $ \Char K\neq 0 $ nicht injektiv\footnote{sonst wäre $K^K$ unendlich dimensional.}. Das heißt: Koeffizientenvergleich (für Polynomfunktionen) kann nur funktionieren, wenn $ \Char K = 0 $
+	ist für $ \Char K\neq 0 $ nicht injektiv\footnote{sonst wäre $K^K$ unendlich dimensional.}. Das heißt: Koeffizientenvergleich (für Polynomfunktionen) kann nur funktionieren, wenn $ \Char K = 0 $.
 \paragraph{Beispiel \& Bemerkung}
 	Ist $ V\ K $-VR, so ist $ \End(V) $ eine $ K $-Algebra (mit Komposition $ \circ $). Man erhält also für $ f\in \End(V) $ einen Einsetzungshomomorphismus
 		\[ \psi_f: K[t]\to \End(V),\ p(t) \mapsto \psi_f(p(t)) = p(f); \]
@@ -192,3 +192,76 @@
 	Die zweite Behauptung ist offensichtlich wahr.
 
 %VO3-2016-03-08
+
+\paragraph{Beispiel}
+	Für $ p(t),q(t),d(t)\in K[t] $ mit $ d(t)\neq 0 $ gilt
+		\[ d(t)p(t) = d(t)q(t)\Rightarrow p(t)=q(t). \]
+	Nämlich: da $ \deg d(t) \geq 0$,
+		\begin{align*}
+			-\infty &= \deg d(t)\big(p(t)-q(t)\big)\\
+			&= \deg d(t)+ \deg\big(p(t)-q(t)\big)\\
+			\Rightarrow \deg\big(p(t)-q(t)\big) &= -\infty\\
+			\Rightarrow p(t)&=q(t)
+		\end{align*}
+\subsection{Euklidischer Divisionsalgorithmus}
+	Seien $ p(t), d(t) \in K[t],\ d(t) \neq 0$. Dann existieren eindeutig $ q(t), r(t) \in K[t] $, sodass
+		\[ p(t)= d(t)q(t) + r(t) \text{ und } \deg r(t) < \deg d(t). \]
+\paragraph{Bemerkung}
+	Ist $ \deg p(t)\leq \deg d(t) $, so ist die Aussage trivial.
+\paragraph{Beweis}
+	Eindeutigkeit folgt wie im Beispiel; mit
+		\begin{gather*}
+		p(t) =
+			\begin{cases}
+				d(t)q(t)+r(t)\\
+				d(t)\tilde{q}(t)+\tilde{r}(t)
+			\end{cases}\\
+		\Rightarrow d(t)\big(q(t)-\tilde{q}(t)\big) = \tilde{r}(t)-r(t)
+		\end{gather*}
+	erhält man
+		\begin{gather*}
+			\deg d(t) + \deg \big(q(t)-\tilde{q}(t)\big) = \deg (r(t)-\tilde{r}(t))\\
+			\leq \max \{\deg r(t), \deg \tilde{r} (t)\} < \deg d(t).
+		\end{gather*}
+	Also folgt
+		\[ \deg\big(q(t)-\tilde{q}(t)\big) = -\infty \Rightarrow \deg (r(t)-\tilde{r}(t)) = \deg d(t) -\infty = - \infty \]
+	und damit
+		\[ \tilde{q}(t)=q(t) \text{ und }\tilde{r}(t) = r(t). \]
+	
+	Existenz: Mit $ k := \deg d(t) \geq 0 $ und
+		\[ K[t]_m := \{q(t)\in K[t]\mid \deg q(t)\leq m \} \text{ für }m\in \mathbb{N} \]
+	betrachte man die Abbildung
+		\[ K[t]_m \times K[t]_{k-1}\to K[t]_{k+m},\ \big(q(t), r(t)\big) \mapsto d(t)q(t)+r(t). \]
+	Diese Abbildung ist linear (klar) und injektiv, denn:
+	ist $ q(t) \neq 0 $, so folgt wegen
+		\[ \deg r(t) < k = \deg d(t)\leq \deg d(t)q(t) \]
+	dass %Anm.: da wegen des kleineren Grades der höchste Koeffizient durch die Addition nicht verschwinden kann
+		\begin{gather*}
+			\deg \big(d(t)q(t) + r(t)\big) = \deg d(t)q(t)\geq k > -\infty\\
+			\Rightarrow d(t)q(t)+r(t)\neq 0,
+		\end{gather*}
+	also
+		\[ d(t)q(t)+r(t)=0 \Rightarrow q(t)=0 \land r(t) = 0. \] %Damit ist der Kern der Abbildung \{0\} -> Injektivität
+	Wegen
+		\[ \dim K[t]_m \times K[t]_[k-1] = (m+1) + k = (k+m) + 1 = \dim K[t]_{k+m} \]
+	liefert diese Abbildung dann für jedes $ m\in \mathbb{N} $ einen Isomorphismus
+		\[ K[t]_m \times K[t]_{k-1} \to K[t]_{k+m} \]
+\subsection{Korollar \& Definition}
+	Sei $ p(t)\in K[t] $ mit $ \deg p(t)\geq 1 $. Ist $ x\in K $ eine \emph{Nullstelle} von $ p(t) $, d.h.
+		\[ p(x) = \psi_x(p(t)) = 0, \]
+	so folgt
+		\[ \exists! q(t)\in K[t]: p(t) = (t-x) q(t) \].
+\paragraph{Beweis}
+	Seien $ p(t)\in K[t] $ mit $ \deg p(t) \geq 1 $ und $ x\in K $ eine Nullstelle von $ p(t) $; dann gibt es eindeutig $ q(t),r(t) \in K[t] $ mit
+		\[ p(t) = (t-x) q(t) + r(t) \text{ und } \deg r(t) < \deg (t-x) = 1, \]
+	also
+		\[ p(t) = (t-x)q(t)+r(t) = (t-x)q(t)+c_0. \]
+	Einsetzen von $ x\in K $ liefert dann
+		\[ 0 = p(x) = (x-x)q(x) + c_0 = c_0 \]
+\paragraph{Bemerkung und Beispiel}
+	Dies liefert eine Methode, um Polynome zu \emph{faktorisieren}: Für jede gefundene Nullstelle kann man einen \emph{Linearfaktor} abspalten.
+		\[ p(t)= t^4-t^3+t^2-t =
+			\begin{cases}
+				t(t-1)(t-i)(t+i) \in \mathbb{C}[t]\\
+				t(t-1)(t^2+1) \in \mathbb{R}[t].
+			\end{cases} \]
