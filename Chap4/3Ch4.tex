@@ -133,7 +133,7 @@
 				\[ \psi_v(t^mt^n) = \psi_v(t^{m+n}) = v^{m+n} = v^m\odot v^n = \psi_v(t^m)\odot \psi_v(t^n). \]
 			Da aber $ \psi_v $ linear und die Multiplikation in $ K[t] $ und in $ (V,\odot) $ bilinear sind, folgt die Behauptung.
 	\end{enumerate}
-\paragraph{Bemerkung (Fortsetzungssatz für bilineare Abbildungen)}
+\paragraph{Bemerkung (Fortsetzungssatz für bilineare Abbildungen)}\index{Fortsetzungssatz für bilineare Abbildungen}
 	Im Beweis haben wir verwendet: Die Abbildungen
 		\[ K[t]\times K[t]\to V,\ (p(t),q(t))\mapsto
 			\begin{cases}
@@ -159,7 +159,7 @@
 	Die Abbildung eines Polynoms auf seine Polynomfunktion auf dem Körper,
 		\[ K[t]\ni p(t)\mapsto (x\mapsto p(x))=\psi_x(p(t))\in K^K \]
 	ist für $ \Char K\neq 0 $ nicht injektiv\footnote{sonst wäre $K^K$ unendlich dimensional.}. Das heißt: Koeffizientenvergleich (für Polynomfunktionen) kann nur funktionieren, wenn $ \Char K = 0 $.
-\paragraph{Beispiel \& Bemerkung}
+\paragraph{Beispiel \& Bemerkung}\index{Einsetzungshomomorphismus}
 	Ist $ V\ K $-VR, so ist $ \End(V) $ eine $ K $-Algebra (mit Komposition $ \circ $). Man erhält also für $ f\in \End(V) $ einen Einsetzungshomomorphismus
 		\[ \psi_f: K[t]\to \End(V),\ p(t) \mapsto \psi_f(p(t)) = p(f); \]
 	und für jedes Polynom $ p(t)\in K[t] $ eine zugehörige Polynomfunktion
@@ -203,7 +203,7 @@
 			\Rightarrow \deg\big(p(t)-q(t)\big) &= -\infty\\
 			\Rightarrow p(t)&=q(t)
 		\end{align*}
-\subsection{Euklidischer Divisionsalgorithmus}
+\subsection{Euklidischer Divisionsalgorithmus}\index{Polynom!-division}
 	\begin{Satz}[Euklidischer Divisionsalgorithmus (Polynomdivision)]
 	Seien $ p(t), d(t) \in K[t],\ d(t) \neq 0$. Dann existieren eindeutig $ q(t), r(t) \in K[t] $, sodass
 		\[ p(t)= d(t)q(t) + r(t) \text{ und } \deg r(t) < \deg d(t). \]
@@ -249,7 +249,7 @@
 	liefert diese Abbildung dann für jedes $ m\in \mathbb{N} $ einen Isomorphismus
 		\[ K[t]_m \times K[t]_{k-1} \to K[t]_{k+m} \]
 \subsection{Korollar \& Definition}
-	\begin{Definition}[Nullstelle]
+	\begin{Definition}[Nullstelle]\index{Nullstelle}
 	Sei $ p(t)\in K[t] $ mit $ \deg p(t)\geq 1 $. Ist $ x\in K $ eine \emph{Nullstelle} von $ p(t) $, d.h.
 		\[ p(x) = \psi_x(p(t)) = 0, \]
 	\end{Definition}
@@ -264,7 +264,7 @@
 		\[ p(t) = (t-x)q(t)+r(t) = (t-x)q(t)+c_0. \]
 	Einsetzen von $ x\in K $ liefert dann
 		\[ 0 = p(x) = (x-x)q(x) + c_0 = c_0 \]
-\paragraph{Bemerkung und Beispiel}
+\paragraph{Bemerkung und Beispiel}\index{Linearfaktorisierung}
 	Dies liefert eine Methode, um Polynome zu \emph{faktorisieren}: Für jede gefundene Nullstelle kann man einen \emph{Linearfaktor} abspalten.
 		\[ p(t)= t^4-t^3+t^2-t =
 			\begin{cases}
@@ -280,7 +280,7 @@
 			\[ \exists q(t)\in K[t]: p(t)= d(t)q(t). \]}
 	\end{addmargin}
 	\end{Definition}
-\paragraph{Primpolynome}
+\paragraph{Primpolynome}\index{Primpolynome}
 	Nennt man $ p(t)\in K[t] $ mit $ \deg p(t) > 0$ ein \emph{Primpolynom} (oder \emph{irreduzibel}), falls für $ d(t),q(t)\in K[t] $ gilt:
 		\[ p(t)= d(t)q(t) \Rightarrow \Big( \deg q(t)=0 \lor \deg d(t) = 0 \Big), \]
 	so gilt der Satz über die \emph{Primfaktorzerlegung}:
