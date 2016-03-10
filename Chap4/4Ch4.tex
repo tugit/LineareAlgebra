@@ -1,5 +1,6 @@
 \section{Das charakteristische Polynom}
 \subsection{Definition}\index{Eigenwert,-vektor,-raum}
+\begin{Definition}[Eigenwert,Eigenvektor,Eigenraum]
 	Seien $ V $ ein $ K $-VR und $ f\in\End(V) $. Dann heißen
 		\begin{enumerate}[(i)]
 			\item $ x\in K $ ein Eigenwert von $ f $, falls
@@ -9,6 +10,7 @@
 			\item $ \ker(f-\id_Vx) \subset V $ ein Eigenraum, falls
 				\[ \ker(f-\id_Vx) \neq \{0\}.\]
 		\end{enumerate}
+	\end{Definition}
 \paragraph{Bemerkung}
 	Der Skalar $ x\in K $ ist genau dann ein Eigenwert von $ f\in \End(V) $, wenn $ \ker(f-\id_Vx)\neq \{0\} $, d.h., wenn ein Eigenvektor $ v\in V^\times $ zu $ x $ existiert.
 \paragraph{Beispiel}
@@ -88,10 +90,12 @@
 		$ X=\begin{pmatrix} 0&1\\-1&0 \end{pmatrix} $.
 		
 \subsection{Definition} \index{Charakteristisches Polynom}
+\begin{Definition}[Charakteristisches Polynom]
 	Sei $ V $ ein $ K $-VR, für $ f\in\End(V) $ ist das \emph{charakteristische Polynom} von $ f $:
 		\[ \chi_f(t) := \det (\id_Vt-f)\in K[t]. \]
 	Analog definiert man für $ X\in K^{n\times n} $ das charakteristische Polynom
 		\[ \chi_f(t) := \det (E_nt-X)\in K[t]. \]
+\end{Definition}
 \paragraph{Bemerkung}
 	Oft wird auch das andere Vorzeichen in der Determinante verwendet, also $ \det(f-\id_Vt) $ bzw. $ \det(X-E_nt) $.
 \paragraph{Bemerkung}
