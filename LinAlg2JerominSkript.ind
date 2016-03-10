@@ -9,14 +9,29 @@
 
   \indexspace
 
-  \item Einsetzungshomomorphismus, \hyperpage{6}
+  \item Einsetzungshomomorphismus, \hyperpage{6}, \hyperpage{8}
+
+  \indexspace
+
+  \item Fortsetzungssatz f\IeC {\"u}r bilineare Abbildungen, 
+		\hyperpage{7}
+
+  \indexspace
+
+  \item Linearfaktorisierung, \hyperpage{11}
+
+  \indexspace
+
+  \item Nullstelle, \hyperpage{10}
 
   \indexspace
 
   \item Polynom, \hyperpage{4}
     \subitem -algebra, \hyperpage{4}
-    \subitem funktion, \hyperpage{6}
+    \subitem -division, \hyperpage{9}
+    \subitem -funktion, \hyperpage{6}
     \subitem Grad, \hyperpage{4}
     \subitem normiertes, \hyperpage{4}
+  \item Primpolynome, \hyperpage{11}
 
 \end{theindex}
