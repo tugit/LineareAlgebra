@@ -1,5 +1,5 @@
 # LinAlg1JerominSkript
-Hier soll im Verlauf des WS2015/16 ein von Studenten erstelltes Skript zur Vorlesung Lineare Algebra & Geometrie 1/Jeromin an der TU Wien entstehen.
+Hier ist im Verlauf des WS2015/16 ein von Studenten erstelltes Skript zur Vorlesung Lineare Algebra & Geometrie 1/Jeromin an der TU Wien entstanden. Es ist nicht mehr in aktiver Entwicklung/Korrektur. PRs werden selbstverständlich weiterhin bearbeitet!
 
 Das Skriptum deckt den Vorlesungsstoff nicht verbindlich vollständig ab!
 
