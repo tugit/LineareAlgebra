@@ -2,13 +2,16 @@
 
   \item Algebra, \hyperpage{5}
     \subitem -Homomorphismus, \hyperpage{6}
+  \item Algebraische/geometrische Vielfachheit, \hyperpage{17}
 
   \indexspace
 
   \item Cauchyprodukt, \hyperpage{4}
+  \item Charakteristisches Polynom, \hyperpage{16}
 
   \indexspace
 
+  \item Eigenwert,-vektor,-raum, \hyperpage{13}
   \item Einsetzungshomomorphismus, \hyperpage{6}, \hyperpage{8}
 
   \indexspace
@@ -22,7 +25,7 @@
 
   \indexspace
 
-  \item Nullstelle, \hyperpage{10}
+  \item Nullstelle, \hyperpage{11}
 
   \indexspace
 
@@ -32,6 +35,10 @@
     \subitem -funktion, \hyperpage{6}
     \subitem Grad, \hyperpage{4}
     \subitem normiertes, \hyperpage{4}
-  \item Primpolynome, \hyperpage{11}
+  \item Primpolynome, \hyperpage{12}
+
+  \indexspace
+
+  \item Spur, \hyperpage{16}
 
 \end{theindex}

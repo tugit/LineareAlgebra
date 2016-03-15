@@ -99,7 +99,7 @@
 \paragraph{Bemerkung}
 	Oft wird auch das andere Vorzeichen in der Determinante verwendet, also $ \det(f-\id_Vt) $ bzw. $ \det(X-E_nt) $.
 \paragraph{Bemerkung}
-	\emph{Diese Definition ist erklärungsbedürtig!}
+	\emph{Diese Definition ist erklärungsbedürftig!}
 	
 	Da $ t\notin K $ ist $ \id_Vt-f\notin \End(V) $, sondern $ \id_Vt-f\in\End(V)[t] $. Zwei Lösungsstrategien bieten sich an:
 		\begin{enumerate}
@@ -111,3 +111,102 @@
 	Ist $ B $ eine Basis von $ V $ und $ \xi_B^B(f) = X = (x_{ij})_{i,j\in\{1,\dots,n\}}$, so erhält man 
 		\[ \chi_f(t)=\sum_{\sigma\in S_n}\sgn(\sigma)\prod_{j=1}^{n}\underset{\in K[t]}{\underbrace{\left(\delta_{\sigma(j)j}-x_{\sigma(j)j}\right)}} \in K[t]. \]
 	Die Unabhängigkeit von der Basis $ B $ folgt aus der Transformationsformel für Darstellungsmatrizen und dem Determinanten-Multiplikationssatz (wie vorher für $ \det f = \det \xi_B^B(f) $).
+
+% VO 2016-03-15 %
+
+\subsection{Bemerkung \& Definition}\index{Spur}
+	Ist $ \dim V=n $, so ist $ \chi_f(t) $ ein normiertes Polynom vom Grad $ \deg\left(\chi_f(t)\right)=n $,
+		\[ \chi_f(t)=t^n-t^{n-1}\tr f + \dots + (-1)^n\det f,\] % = \det(-f) = \chi_f(0)
+	wobei die \emph{Spur} $ \tr f $ von $ f $ durch diese Gleichung (wohl-)defininiert ist.
+	Ist $ (x_{ij})_{i,j\in\{1,\dots,n\}} = X = \xi_B^B(f) $ Darstellungsmatrix von $ f $, so gilt
+		\[ \tr f = \sum_{j=1}^{n}x_{jj} = \sum_{j=1}^{n} b_j^*f(b_j). \]
+	Oft wird $ \det(f-\id_vt)=(-1)^n\chi_f(t) $ als charakteristisches Polynom definiert -- dieses Polynom ist dann nur für gerade $ n $ normiert.
+\subsection{Korollar}
+	Ein $ x\in K $ ist genau dann Eigenwert von $ f $, wenn $ \chi_f(x)=0 $.
+	
+	Also: Die Eigenwerte von $ f $ sind genau die Nullstellen des charakteristischen Polynoms $ \chi_f(t) $.
+\paragraph{Beweis}
+	Klar -- das war die Idee hinter der Definition des charakteristischen Polynoms.
+\subsection{Korollar \& Definition}\index{Algebraische/geometrische Vielfachheit}
+	Ist $ x\in K $ Eigenwert von $ f\in\End(V) $, so ist $ (t-x) $ Teiler des charakteristischen Polynoms. Insbesondere gilt:
+		\[ \exists!k\in \mathbb{N}^\times:
+			\begin{cases}
+				(t-x)^k\mid \chi_f(t)\\
+				(t-x)^{k+1}\nmid \chi_f(t)
+			\end{cases} \]
+	Diese Zahl $ k $ heißt die \emph{algebraische Vielfachheit} von $ x $;
+		\[ g:= \dfkt(\id_Vx-f) \leq k \]
+	ist die \emph{geometrische Vielfachheit} von $ x $.
+\paragraph{Beweis}
+	Da $ x $ Eigenwert von $ f $ ist, ist die Existenz und Eindeutigkeit von $ k $ klar. Außerdem gilt analog auch $ g\geq 1 $.
+	
+	Zu zeigen bleibt: $ g\leq k $, d.h. $ (t-x)^g \mid \chi_f(t) $:
+	
+	Für eine Basis $ B = (b_1,\dots,b_n) $ von $ V $ mit
+	$ \ker (\id_v x - f) = [(b_1,\dots,b_g)]$
+	hat
+		\[ \xi_B^B(f) =
+		\begin{pmatrix}
+			E_gx & Y\\
+			0 & X
+		\end{pmatrix}
+		\text{ mit } Y\in K^{g\times (n-g)}, X\in K^{(n-g)\times(n-g)} \]
+	Blockgestalt, also ist
+		\[ \chi_f(t)=(t-x)^g\cdot \chi_X(t), \]
+	d.h. $ (t-x)^g \mid \chi_f(t)$, da $ (t-x)^{k+1}\nmid \chi_f(t) $, gilt also $ g\leq k $.
+\paragraph{Beispiel}
+	Ist $ f\in\End(V) $ wie oben durch $ f(B)=BX $ gegeben, so haben die Eigenwerte
+		\[ x_1 = -1 \text{ und } x_2 = 3 \text{ für }
+		X=\begin{pmatrix} 2 &3\\1 & 0 \end{pmatrix} \]
+	algebraische und geometrische Vielfachheiten 
+		\[ 1 = g_i = k_i, \text{ da } 1\leq g_i \leq k_i \text{ und } k_1+k_2 \leq 2; \]
+	der Eigenwert
+		\[ x=1 \text{ für } X = \begin{pmatrix} 2&-1\\1&0 \end{pmatrix} \]
+	hat algebraische und geometrische Vielfachheiten
+		\[ k = 2 \text{ und } g = 1 \]
+	da
+		\[ f\neq \id_V x = \id_V \]
+	und $ \chi_f(t)=(t-x)^2 \in \mathbb{R}[t] $, da ein quadratisches Polynom zwei (relle oder komplex konjugierte) Nullstellen hat, oder aber eine doppelte reelle.
+
+\subsection{Definition \& Lemma}
+	Das Schlüsselargument im Beweis oben kann man verallgemeinern:
+	
+	Sei $ f\in \End(V) $ und $ U\subset V $ ein \emph{$ f $-invarianter Unterraum}, d.h. $ f(U)\subset U $. 
+	
+	Ist dann $ V=U\oplus U' $ eine direkte Zerlegung und $ p,p'\in \End(V) $ die zugehörigen Projektionen, so gilt
+		\[ \chi_f(t)=\chi_{f|_U}(t)\cdot \chi_{f'}(t), \]
+	wobei
+		\[ f':= p'\circ f|_{U'}\in \End(U'). \]
+
+\paragraph{Bemerkung}
+	Man kann $ f|_U $ als Endomorphismus $ f|_U\in \End(U) $ auffassen, da $ f(U)\subset U $.
+\paragraph{Beweis}
+	Wie oben: Sei $ B=(b_1,\dots,b_n) $ Basis von $ V $, sodass
+		\begin{itemize}
+			\item $ C=(b_1,\dots,b_k) $ Basis von $ U $ und
+			\item $ C'=(b_{k+1},\dots,b_n) $ Basis von $ U' $ ist.
+		\end{itemize}
+	Die Darstellungsmatrix von $ f $ bzgl. $ B $ hat dann Blockgestalt,
+		\[ \xi_B^B(f) =
+			\begin{pmatrix}
+				X&Y\\0&X'
+			\end{pmatrix}
+		\text{ mit } X=\xi_C^C(f|_U), X' = \xi_{C'}^{C'}(f') \]
+	Damit folgt die Behauptung (wie oben) mit der Leibniz-Formel.
+\paragraph{Bemerkung}
+	Alternativ kann man das Lemma mit der von $ f $ induzierten Quotientenabbildung $ f'\in \End(V/U) $ formulieren, wobei
+		\[ f':V/U\to V/U, v+U\mapsto f'(v+U) := f(v)+U \]
+\subsection{Definition}\index{Diagonalisierbarkeit}\index{Triagonalisierbarkeit}
+	Ein Endomorphismus $ f\in\End(f) $ heißt \emph{diagonalisierbar} bzw. \emph{trigonalisierbar}, falls es eine Basis $ B $ von $ V $ gibt, sodass $ \xi_B^B(f)=(x_{ij})_{i,j\in\{1,\dots,n\}} $ eine Diagonalmatrix 
+		\[ i\neq j\Rightarrow x_{ij} = 0 \]
+	bzw. obere Dreiecksmatrix ist,
+		\[ i>j \Rightarrow x_{ij} = 0 \]
+\paragraph{Bemerkung}
+	Falls $ \dim V<\infty $, so ist $ f\in\End(V) $ genau dann diagonalisierbar, wenn $ V $ eine Basis aus Eigenvektoren von $ f $ besitzt. Damit kann man "`Diagonalisierbarkeit"' auch im Falle $ \dim V=\infty $ definieren.
+\paragraph{Bemerkung}
+	Ist $ f $ trigonalisierbar (oder gar diagonalisierbar), so zerfällt $ \chi_f (t) $ in Linearfaktoren: für geeignete $ x_1,\dots,x_n\in K $ ist
+		\[ \chi_f(t)=\prod_{j=1}^{n}(t-x_j). \]
+\subsection{Bemerkung \& Definition}
+	Man nennt eine Matrix $ K\in K^{n\times n} $ diagonalisierbar (bzw. trigonalisierbar), falls $ f_X\in \End(K^n) $ diagonalisierbar (bzw. trigonalisierbar) ist.
+	
+	Dies ist genau dann der Fall, falls es $ P\in Gl(n) $ gibt, sodass $ PXP^{-1} $ Diagonalmatrix (bzw. obere Dreiecksmatrix) ist.
