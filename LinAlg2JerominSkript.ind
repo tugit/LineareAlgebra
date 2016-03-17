@@ -1,5 +1,9 @@
 \begin{theindex}
 
+  \item $ f $-invarianter Unterraum, \hyperpage{18}
+
+  \indexspace
+
   \item Algebra, \hyperpage{5}
     \subitem -Homomorphismus, \hyperpage{6}
   \item Algebraische/geometrische Vielfachheit, \hyperpage{17}
@@ -8,6 +12,10 @@
 
   \item Cauchyprodukt, \hyperpage{4}
   \item Charakteristisches Polynom, \hyperpage{16}
+
+  \indexspace
+
+  \item Diagonalisierbarkeit, \hyperpage{19}
 
   \indexspace
 
@@ -40,5 +48,9 @@
   \indexspace
 
   \item Spur, \hyperpage{16}
+
+  \indexspace
+
+  \item Triagonalisierbarkeit, \hyperpage{19}
 
 \end{theindex}
