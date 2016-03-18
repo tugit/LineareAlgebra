@@ -232,7 +232,7 @@
 \subsection{Lemma}
 	Frage: Was sind hinreichende Kriterien dafür? Notwendigkeit kennen wir: $ \chi_f(t) $ zerfällt in Linearfaktoren.
 	
-	\begin{Lemma}
+	\begin{Lemma}[Lineare Unabhängigkeit von Eigenvektoren]
 		Eigenvektoren $ v_1,\dots,v_m\in V $ zu paarweise verschiedenen Eigenwerten $ x_1,\dots,x_m $ eines Endomorphismus $ f\in\End(V) $ sind linear unabhängig.
 	\end{Lemma}
 \paragraph{Bemerkung}
@@ -257,7 +257,7 @@
 	also
 		\[ \forall i=1,\dots,m: 0 = w_i = v_iy_i \text{ und }v_i \neq 0 \Rightarrow y_i = 0.  \]
 \subsection{Satz}
-	\begin{Satz}
+    \begin{Satz}[Diagonalisierbarkeit eines Endomorpismus]
 		Ein Endomorphismus $ f\in \End(V) $ ist genau dann diagonalisierbar, wenn $ \chi_f(t) \in K[t] $ in Linearfaktoren zerfällt und die algebraischen und geometrischen Vielfachheiten aller Eigenwerte übereinstimmen,
 			\[ \chi_f(t) = \prod_{i=1}^{m}(t-x_i)^{k_i} \text{ und } \forall i=1,\dots,m: k_i = g_i.\]
 	\end{Satz}
@@ -286,7 +286,9 @@
 		\[ \forall i=1,\dots,n:k_i = 1 \text{ und } \sum_{i=1}^{n}k_i = n, \]
 	d.h. das charakteristische Polynom zerfällt in Linearfaktoren und $ \forall i=1,\dots,n:k_i=g_i. $
 \subsection{Satz}
+\begin{Satz}[Trigonalisierbarkeit eines Endomorpismus]
 	Ein Endomorpismus $ f\in\End(V) $ ist genau dann trigonalisierbar, wenn das charakteristische Polynom in Linearfaktoren zerfällt.
+\end{Satz}
 \paragraph{Bemerkung}
 	Da Diagonalisierbarkeit bzw. Trigonalisierbarkeit durch die Existenz einer Darstellungsmatrix in spezieller Gestalt definiert wurde, wird in den Charakterisierungen immer (implizit) $ \dim V < \infty $ angenommen.
 \paragraph{Beweis}
