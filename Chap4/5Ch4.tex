@@ -1,4 +1,99 @@
 \section{Der Satz von Cayley-Hamilton}
 \subsection{Satz}
 	Für $ f\in\End(V) $ gilt $ \chi_f(f) = 0$.
+\paragraph{Unfug-Beweis}
+	durch direktes Einsetzen erhält man
+		\[ \chi_f(f)=\det (\id_V f-f) = \det 0 = 0 \]
+\paragraph{Zum Verständnis des Satzes}
+	Ist $ V $ ein $ K $-VR mit $ n=\dim V < \infty $ und $ f\in \End (V) $, so ist
+		\[ \chi_f(t) = \sum_{k=0}^{n}t^ka_k \in K[t] \]
+	ein (abstraktes) Polynom in der Variablen $ t\ (= e_1\in K^\mathbb{N})$ und der Einsetzungshomomorphismus $ \psi_f:K[t]\to \End(V) $ (also ein Algebrahomomophismus) liefert
+		\[ \chi_f(f) = \psi_f\left(\chi_f(t)\right) = \sum_{k=0}^{n}f^k a_k. \]
+	Der Satz sagt, dass $ 0 = \chi_f(f)\in \End(V) $, d.h.
+		\[ \forall v\in V: \chi_f(f)(v) = 0. \]
+\subsection{Definition \& Lemma}
+	Seien $ f\in\End(V) $ und $ B $ eine \emph{$ f $-zyklische Basis} von $ V $, d.h. eine Basis der Form
+		\[ B= (b_1,\dots,b_n) = \left(b,f(b),\dots,f^{n-1}(b)\right). \]
+	Dann existieren $ a_0,\dots,a_{n-1}\in K $ mit
+		\[ f^n(b)+\sum_{k=0}^{n-1}f^k(b)a_k = 0, \]
+	mit diesen Koeffizienten ist
+		\[ \chi_f(t) = t^n+t^{n-1}a_{n-1}+\dots,+ta_1+a_0. \]
+\paragraph{Bemerkung}
+	Im Allgemeinen existiert zu $ f\in \End(V) $ keine $ f $-zyklische Basis von $ V $, z.B. für $ f = \id_V $ und $ \dim V \geq 2 $.
 \paragraph{Beweis}
+	Da $ B= \left(b,f(b),\dots,f^{n-1}(b)\right) $ eine Basis ist, ist $ f^n(b)\in [B] $ und damit existieren die $ a_k $ mit
+		\[ 0 = f^n(b) + \sum_{k=0}^{n-1}f^k(b)a_k. \]
+	Damit ist die Darstellungsmatrix von $ f $
+		\[ \xi_B^B(f) =
+		\begin{pmatrix}
+		0 & 0 & \cdots & 0 & -a_0 \\ 
+		1 & 0 & \vdots & \vdots & -a_1 \\ 
+		0 & 1 & \ddots & \vdots & \vdots \\ 
+		\vdots & \vdots & \ddots & 0 & \vdots \\ 
+		0 & \cdots & 0 & 1 & -a_{n-1}
+		\end{pmatrix} =: X\]
+	und Entwicklung von $ \chi_f(t)=\det(E_nt-\xi_B^B(f)) $ nach der ersten Zeile(nach Laplaceschem Entwicklungssatz -- dieser Satz war "`nur"' eine Methode, die Terme in der Leibniz-Formel zu sortieren) liefert
+		\[ \det(E_nt-X) = \det 
+		\begin{pmatrix}
+		t & 0 & \cdots & 0 & a_0 \\ 
+		-1 & t & \vdots & \vdots & a_1 \\ 
+		0 & -1 & \ddots & \vdots & \vdots \\ 
+		\vdots & \vdots & \ddots & t & \vdots \\ 
+		0 & \cdots & 0 & -1 & t+a_{n-1}
+		\end{pmatrix} \]
+		\[ = t \det \begin{pmatrix}
+		t & 0 & \cdots & 0 & a_1 \\ 
+		-1 & t & \vdots & \vdots & a_2 \\ 
+		0 & -1 & \ddots & \vdots & \vdots \\ 
+		\vdots & \vdots & \ddots & t & \vdots \\ 
+		0 & \cdots & 0 & -1 & t+a_{n-1}
+		\end{pmatrix} + (-1)^{n+1} a_0 \det(X_{1n}) \]
+		\[ \overset{\text{mit Ind.}}{=} t \{t^n{n-1}+t{n-2}a_{n-1}+\dots+a_1\}+a_0 = t^n+t^{n-1}a_{n-1}+\dots,+ta_1+a_0, \]
+	wie behauptet.
+\paragraph{Beispiel}
+	Zur Lösung des reellen \emph{Anfangswertproblems}
+		\[ y'' + 2y' - 3y = 0,\ 
+		\begin{cases}
+			y(0)=4 \\
+			y'(0)=0
+		\end{cases} \]
+	schreiben wir dieses als System erster Ordnung mit dem Ansatz $ y_1 = y \text{ und }y_2 = y' $:
+	
+	Daraus erhält man mit $ Y= (y_1,y_2) $
+	  \begin{align*}
+		 Y' &= (y_1',y_2') = (y',y'') = (y',-2y'+3y)\\
+		 &= (y,y') \begin{pmatrix}
+		 	0 & 3\\ 1 & -2
+		 \end{pmatrix} = YX
+	  \end{align*}
+	mit $ X= \begin{pmatrix}
+	0 & 3\\ 1 & -2
+	\end{pmatrix}$, d.h. wir suchen eine $ \frac{d}{ds} $-zyklische Basis $ (y,\frac{d}{ds}y) = (y,y') $ eines 2-$ \dim $ UVR $ [(y,y')]\subset C^\infty(\mathbb{R}) $ bezüglich derer $ \frac{d}{ds}\in \End(C^\infty(\mathbb{R})) $ Darstellungsmatrix $ X $ hat.
+	
+	Der Ansatz $ y(s) = e^{xs} (v_0,v_1)$ reduziert das AWP auf ein Eigenwertproblem.
+		\[ 0 = \left(Y'-YX\right)(s) = \left(\frac{d}{ds}Y - YX\right)(s) = \underset{Y}{\underbrace{e^{xs}(v_0,v_1)}} \{E_2x-X\}\]
+	bzw. (vgl. Abschnitt 3.1) mit dem zur transponierten Matrix $ X^t $ assoziierten Endomorphismus $ f_{X^t}\in \End(\mathbb{R}^2) $
+		\[ f_{X^t}(v) = vx \text{ für }x\in\mathbb{R} \text{ und }v\in \mathbb{R}^2. \]
+	Nach obigem Lemma sind die Eigenwerte Lösungen der Gleichung
+		\[ 0 = \chi_{X^t}(x) = \chi_X(x) \overset{\text{Lemma}}{=} x^2+2x-3 = (x-1)(x+3). \]
+	Also sind $ x_1 = 1 $ und $ x_2 = -3 $ die Eigenwerte; zugehörige Eigenvektoren erhält man als Lösungen der linearen Gleichungssysteme
+		\[ (0,0) = (v_0,v_1)(E_2x_i-X)= (v_0,v_1)\begin{pmatrix}
+		x_i&-3\\-1&x_i+2
+		\end{pmatrix} = \begin{cases}
+		(v_0,v_1)\begin{pmatrix}
+		1&-3\\-1&3
+		\end{pmatrix}& \text{ für } i = 1\\
+		(v_0,v_1)\begin{pmatrix}
+		-3&-3\\-1&-1
+		\end{pmatrix}& \text{ für } i = 2
+		\end{cases} \]
+	Damit bekommt man Eigenvektoren $ (v_0,v_1) = (1,1) $ zum Eigenwert $ x=1 $ und $ (v_0,v_1) = (1,-3) $ zum Eigenwert $ x = -3 $.
+	
+	Die allgemeine, durch \emph{Superposition} (Linearkombination) erhaltene Lösung der Differentialgleichung ist also
+		\[ s\mapsto Y(s) = e^s(1,1)c_1 + e^{-3s}(1,-3)c_2 \]
+	mit Koeffizienten $ c_1,c_2 \in \mathbb{R} $. Abgleich der "`Integrationskonstanten"' $ c_1 $ und $ c_2 $ mit den Anfangsbedingungen liefert dann die Lösung
+		\[ s \mapsto y(s) = 3e^s+e^{-3s}. \]
+\paragraph{Bemerkung}
+	Man bemerke: $ (y,y') $ ist linear unabhängig für die Lösung, ist also tatsächlich $ \frac{d}{ds} $-zyklische Basis eines 2-$ \dim $ URs $ [(y,y')]\subset C^\infty(\mathbb{R}) $ -- obwohl die den gleichen Raum aufspannenden "`Basislösungen"'
+		\[ s\mapsto e^s \text{ und } s\mapsto e^{-3s} \]
+	keine $ \frac{d}{ds} $-zyklischen Basen erzeugen, da sie lineare Differentialgleichungen erster Ordnung (mit konstanten Koeffizienten) lösen.
