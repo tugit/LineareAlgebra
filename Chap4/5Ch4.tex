@@ -2,8 +2,8 @@
 \subsection{Satz}
 	Für $ f\in\End(V) $ gilt $ \chi_f(f) = 0$.
 \paragraph{Unfug-Beweis}
-	durch direktes Einsetzen erhält man
-		\[ \chi_f(f)=\det (\id_V f-f) = \det 0 = 0 \]
+	Durch direktes Einsetzen erhält man
+		\[ \chi_f(f)=\det (\id_V f-f) = \det 0 = 0. \]
 \paragraph{Zum Verständnis des Satzes}
 	Ist $ V $ ein $ K $-VR mit $ n=\dim V < \infty $ und $ f\in \End (V) $, so ist
 		\[ \chi_f(t) = \sum_{k=0}^{n}t^ka_k \in K[t] \]
@@ -97,3 +97,55 @@
 	Man bemerke: $ (y,y') $ ist linear unabhängig für die Lösung, ist also tatsächlich $ \frac{d}{ds} $-zyklische Basis eines 2-$ \dim $ URs $ [(y,y')]\subset C^\infty(\mathbb{R}) $ -- obwohl die den gleichen Raum aufspannenden "`Basislösungen"'
 		\[ s\mapsto e^s \text{ und } s\mapsto e^{-3s} \]
 	keine $ \frac{d}{ds} $-zyklischen Basen erzeugen, da sie lineare Differentialgleichungen erster Ordnung (mit konstanten Koeffizienten) lösen.
+\subsection{Korollar}
+	Besitzt $ V $ eine $ f $-zyklische Basis für $ f\in\End(V) $, so gilt $ \chi_f(f)=0 $.
+\paragraph{Beweis}
+	Sei also $ B=(b_1,\dots,b_n) =(b,f(b),\dots,f^{n-1}(b)) $ $ f $-zyklische Basis von $ V $ und $ a_0,\dots,a_{n-1}\in K $ so, dass
+		\[ 0 = f^n(b)+\sum_{k=0}^{n-1}f^k(b)a_k. \]
+	Dann gilt
+		\[ \chi_f(f)(b_1) = \chi_f(f)(b) = \left(f^n+\sum_{k=0}^{n-1}f^ka_k\right)(b) = f^n(b)+\sum_{k=0}^{n-1}f^k(b)a_k. \]
+	Damit folgt für $ i=2,\dots,n $
+		\[ \chi_f(f)(b_i) = \chi_f(f)\left(f^{i-1}(b)\right) \overset{\footnotemark}{=} f^{i-1}\left(\chi_f(f)(b) \right) = 0. \]
+		\footnotetext{Aufgrund der Linearität der Endomorphismen $ \End(V) $ als unitäre Algebra.}
+	Da also $ V=[B] \subset \ker {\chi_f(f)}$, folgt $ \chi_f(f) = 0. $
+\paragraph{Bemerkung}
+	Damit ist der Satz von Cayley-Hamilton bewiesen, sofern $ V $ eine $ f $-zyklische Basis besitzt.
+\subsection{Lemma}
+	Für $ f\in\End(V) $ und $ v\in V^\times  $ sei
+		\[ U := \left[\left(f^k(v)\right)_{k\in{\mathbb{N}}}\right]. \]
+	Damit ist $ U $ ein $ f $-invarianter UVR von $ V $. Ist $ \dim V < \infty $, so besitzt $ U $ eine $ f $-zyklische Basis $ \left(v,f(v),\dots,f^{r-1}(v)\right) $.
+	
+\paragraph{Beweis}
+	Offenbar ist $ U $ $ f $-invarianter UR:
+	\begin{itemize}
+		\item $ U $ ist (als lineare Hülle einer Familie) ein UVR von $ V $;
+		\item da gilt
+			\[ \forall k\in \mathbb{N}: f\left(f^k(v)\right)=f^{k+1}(v)\in U \]
+			folgt, dass $ f(U) = f\left(\left[\left(f^k(v)\right)_{k\in{\mathbb{N}}}\right]\right) = \left[\left(f^{k+1}(v)\right)_{k\in{\mathbb{N}}}\right]\subset U. $
+	\end{itemize}
+	Ist $ \dim V < \infty $ und $ v\neq 0 $, so existiert $ r\in \mathbb{N} $, sodass
+		\[ \left(v,\dots,f^{r-1}(v)\right) \text{ linear unabhängig und }f^r(v)\in\left[\left(v,\dots,f^{r-1}(v)\right)\right]; \]
+	damit ist $ \left(v,f(v),\dots, f^{r-1}(v)\right) $ $ f $-zyklische Basis von $ U $:
+	\begin{enumerate}
+		\item $ \left(v,\dots,f^{r-1}(v) \right) $ ist linear unabhängig.
+		\item $ f^r(v) \in \left[\left(v,\dots,f^{r-1}(v)\right)\right]$, damit gilt
+		\[ \forall k\in \mathbb{N}: k\geq r \Rightarrow f^k(v)\in \left[\left(v,\dots,f^{r-1}(v)\right)\right] \]
+	\end{enumerate}
+	wie man z.B. mit Induktion sehen kann: ist
+		\[ f^{k-1}(v) = \sum_{j=0}^{r-1}f^j(v)x_j \in \left[\left(v,\dots,f^{r-1}(v)\right) \right], \]
+	so folgt
+		\[ f^k(v) = \sum_{j=1}^{r}f^j(v)x_{j-1}=f^{r}(v)x_{r-1}+\sum_{j=1}^{r-1}f^j(v)x_{j-1}\in \left[\left(v,\dots,f^{r-1}(v)\right)\right] \]
+	und damit
+		\[ U = \left[\left(f^k(v)\right)_{k\in \mathbb{N}}\right]\in \left[\left(v,\dots,f^{r-1}(v)\right)\right]. \]
+\subsection{Beweis vom Satz von Cayley-Hamilton}
+	Zu zeigen: für $ f\in \End(V) $ gilt $ \chi_f(f)=0 $:
+		\[ \forall v\in V:\chi_f(f)(v) = 0. \]
+	Sei also $ v\in V^\times $ und
+		\[ U := \left[\left( f^k(v)_{k\in \mathbb{N}}\right)\right]\subset V. \]
+	Mit einem zu $ U $ komplementären UVR $ U'\subset V $, $ V=U\oplus U' $, und den zugehörigen Projektionen
+		\[ p: V\to V, p(V) = U,\ker p = U' \text{ bzw. }p':V\to V, p'(V)=U', \ker p' = U, \]
+	ist dann
+		\[ \chi_f(t) = \chi_{f'}(t)\cdot \chi_{f\mid_U}(t) \text{ mit } f' := p'\circ f\mid_{U'}\in \End(U'). \]
+	Damit folgt
+		\[ \chi_f(f)(v) = \chi_{f'}(f) \left(\chi_{f\mid_U}(f)(v) \right) = \chi_{f'}(f)(0)=0 \]
+	nach Korollar oben, da $ U $ eine $ f $-zyklische Basis besitzt und $ v\in U $.
