@@ -12,12 +12,16 @@
 	Der Satz sagt, dass $ 0 = \chi_f(f)\in \End(V) $, d.h.
 		\[ \forall v\in V: \chi_f(f)(v) = 0. \]
 \subsection{Definition \& Lemma}
+\begin{Definition}[$ f $-zyklische Basis]
 	Seien $ f\in\End(V) $ und $ B $ eine \emph{$ f $-zyklische Basis} von $ V $, d.h. eine Basis der Form
 		\[ B= (b_1,\dots,b_n) = \left(b,f(b),\dots,f^{n-1}(b)\right). \]
+\end{Definition}
+\begin{Lemma}
 	Dann existieren $ a_0,\dots,a_{n-1}\in K $ mit
 		\[ f^n(b)+\sum_{k=0}^{n-1}f^k(b)a_k = 0, \]
 	mit diesen Koeffizienten ist
 		\[ \chi_f(t) = t^n+t^{n-1}a_{n-1}+\dots,+ta_1+a_0. \]
+\end{Lemma}
 \paragraph{Bemerkung}
 	Im Allgemeinen existiert zu $ f\in \End(V) $ keine $ f $-zyklische Basis von $ V $, z.B. für $ f = \id_V $ und $ \dim V \geq 2 $.
 \paragraph{Beweis}
@@ -98,7 +102,9 @@
 		\[ s\mapsto e^s \text{ und } s\mapsto e^{-3s} \]
 	keine $ \frac{d}{ds} $-zyklischen Basen erzeugen, da sie lineare Differentialgleichungen erster Ordnung (mit konstanten Koeffizienten) lösen.
 \subsection{Korollar}
+\begin{Korollar}
 	Besitzt $ V $ eine $ f $-zyklische Basis für $ f\in\End(V) $, so gilt $ \chi_f(f)=0 $.
+\end{Korollar}
 \paragraph{Beweis}
 	Sei also $ B=(b_1,\dots,b_n) =(b,f(b),\dots,f^{n-1}(b)) $ $ f $-zyklische Basis von $ V $ und $ a_0,\dots,a_{n-1}\in K $ so, dass
 		\[ 0 = f^n(b)+\sum_{k=0}^{n-1}f^k(b)a_k. \]
@@ -111,10 +117,11 @@
 \paragraph{Bemerkung}
 	Damit ist der Satz von Cayley-Hamilton bewiesen, sofern $ V $ eine $ f $-zyklische Basis besitzt.
 \subsection{Lemma}
+\begin{Lemma}[ $ f $-invarianter UVR endlicher Dimension besitzen eine $ f $-zyklische Basis]
 	Für $ f\in\End(V) $ und $ v\in V^\times  $ sei
 		\[ U := \left[\left(f^k(v)\right)_{k\in{\mathbb{N}}}\right]. \]
 	Damit ist $ U $ ein $ f $-invarianter UVR von $ V $. Ist $ \dim V < \infty $, so besitzt $ U $ eine $ f $-zyklische Basis $ \left(v,f(v),\dots,f^{r-1}(v)\right) $.
-	
+\end{Lemma}
 \paragraph{Beweis}
 	Offenbar ist $ U $ $ f $-invarianter UR:
 	\begin{itemize}
@@ -143,7 +150,83 @@
 	Sei also $ v\in V^\times $ und
 		\[ U := \left[\left( f^k(v)_{k\in \mathbb{N}}\right)\right]\subset V. \]
 	Mit einem zu $ U $ komplementären UVR $ U'\subset V $, $ V=U\oplus U' $, und den zugehörigen Projektionen
-		\[ p: V\to V, p(V) = U,\ker p = U' \text{ bzw. }p':V\to V, p'(V)=U', \ker p' = U, \]
+	\begin{multicols}{2}
+	%------------------ Projektion ----------------
+ 	\begin{figure}[H]\centering
+ 		\tdplotsetmaincoords{0}{0} %-27
+ 		\begin{tikzpicture}[xscale=0.5,yscale=0.5,tdplot_main_coords]
+
+ 				\def\xstart{0} %x Koordinate der Startposition der Grafik
+ 				\def\ystart{0} %y Koordinate der Startposition der Grafik
+ 				\def\myscale{0.5} %ändert die Größe der Grafik (Skalierung der Grafik)
+                \def\myscalex{1.0}
+                \def\myscaley{0.6}
+                \def\maxlh{6.0}
+                \def\maxlv{6.0}
+                
+ 				\def\xstartdraw{(\xstart + \maxlh)} %xKoordinate des Referenzstartpunktes (in dieser Zeichnung: a)
+ 				\def\ystartdraw{(\ystart + \maxlv)}%yKoordinate des Referenzstartpunktes (in dieser Zeichnung: a)
+
+ 			    \node (pointro) at ({\xstartdraw+(\maxlh*\myscalex)},{\ystartdraw+(\maxlv*\myscaley)}) {};
+ 			    
+			    \node (pointlu) at ({\xstartdraw-(\maxlh*\myscalex)},{\ystartdraw-(\maxlv*\myscaley)}) {};
+			    \node (pointlo) at ({\xstartdraw-(\maxlh*\myscalex)},{\ystartdraw+(\maxlv*\myscaley)}) {};
+                \node (pointru) at ({\xstartdraw+(\maxlh*\myscalex)},{\ystartdraw-(\maxlv*\myscaley)}) {};
+                
+ 				%\node (pointo1) at ($(pointol)!0.2!(pointor)$) {};
+ 				%\node (pointo2) at ($(pointol)!0.9!(pointor)$) {};
+
+ 				\node (offsetx) at ({(3.0*\myscalex},{0.0}) {}; %just an offset
+ 				\node (offsety) at ({0.0},{3.0*\myscaley}) {}; %just an offset
+                
+                \node (unity) at ({\maxlh*0.25*\myscalex},{\maxlv*0.25*\myscaley}) {}; %just an offset
+                \node (unitx) at ({\maxlh*0.25*\myscalex},{-\maxlv*0.25*\myscaley}) {}; %just an offset
+                
+               	\node (point00) at ($(pointlo) + 4.0*(unitx) - 1.0*(unity)$) {};
+ 				%\draw[fill,color=blue] (point00) circle [radius=0.18];
+ 				
+                 
+ 				%Koordinatenkreuz
+ 				\draw[-,line width=0.2pt,color=black] ($(point00) -3.0*(unity)$) -- ($(point00) +5.0*(unity)$);
+ 				\draw[-,line width=0.2pt,color=black,shorten >=-20pt] ($(point00) -3.0*(unitx)$) -- ($(point00) + 3.0*(unitx)$);
+ 				
+ 				%Q2 dotted vertikal
+ 				\draw[-,line width=0.4pt,color=red,dotted] ($(point00) -2.0*(unitx) -2.0*(unity)$ + ) -- ($(point00) -2.0*(unitx) +3.0*(unity)$);
+ 				\draw[-,line width=0.4pt,color=red,dotted] ($(point00) -1.0*(unitx) -2.0*(unity)$ + ) -- ($(point00) -1.0*(unitx) +4.0*(unity)$);
+ 				
+ 				%Q1 dotted vertikal
+ 				\draw[-,line width=0.4pt,color=red,dotted] ($(point00) + 2.0*(unitx) -2.0*(unity)$ + ) -- ($(point00) + 2.0*(unitx) +5.0*(unity)$);
+ 				\draw[-,line width=0.4pt,color=red,dotted] ($(point00) +1.0*(unitx) -2.0*(unity)$ + ) -- ($(point00) +1.0*(unitx) +5.0*(unity)$);
+ 				
+ 				%Q1 und Q2 dotted horizontal
+ 				\draw[-,line width=0.4pt,color=red,dotted] ($(point00) - 1.0*(unitx) +4.0*(unity)$ + ) -- ($(point00) + 3.0*(unitx) +4.0*(unity)$);
+ 				\draw[-,line width=0.4pt,color=red,dotted] ($(point00) - 2.0*(unitx) +3.0*(unity)$ + ) -- ($(point00) + 4.0*(unitx) +3.0*(unity)$);
+ 				\draw[-,line width=0.4pt,color=red,dotted] ($(point00) - 3.0*(unitx) +2.0*(unity)$ + ) -- ($(point00) + 4.0*(unitx) +2.0*(unity)$);
+ 				\draw[-,line width=0.4pt,color=red,dotted] ($(point00) - 3.0*(unitx) +1.0*(unity)$ + ) -- ($(point00) + 4.0*(unitx) +1.0*(unity)$);	
+ 				\draw[-,line width=0.4pt,color=red,dotted] ($(point00) - 3.0*(unitx) -1.0*(unity)$ + ) -- ($(point00) + 3.0*(unitx) -1.0*(unity)$);	
+ 				
+ 				%Vektoren blau
+ 				\node (point03) at ($(point00) +3.0*(unity)$) {};
+               	\node (point20) at ($(point00) +2.0*(unitx)$) {};
+               	\node (point23) at ($(point00) +2.0*(unitx) +3.0*(unity) $){};
+ 				
+ 				\draw[-{>[scale=1,length=8,width=6]},shorten >=-5pt,line width=0.5pt,color=red] (point00) -- (point03);
+ 				\draw[-{>[scale=1,length=8,width=6]},shorten >=-5pt,line width=0.5pt,color=red] (point00) -- (point20);
+ 				\draw[-{>[scale=1,length=8,width=6]},shorten >=-5pt, shorten <=-5pt,line width=0.9pt,color=blue] (point00) -- (point23);
+ 				
+ 			    \node (pointvekw) at (point23) [above,color=blue]{$v$};
+ 			    \node (pointvekw) at (point20) [xshift=-20,color=red]{$p(v)$};
+ 			    \node (pointvekw) at (point03) [yshift= 10,xshift=-5,color=red]{$p'(v)$};
+ 			    \node (pointvekw) at ($(point00) -3.0*(unitx)$) [yshift= 8,color=green]{$U$};
+ 			    \node (pointvekw) at ($(point00) +5.0*(unity)$) [yshift=-5,xshift= 5,color=green]{$U'$};
+ 			\end{tikzpicture}
+	\end{figure}
+	%------------------ Projektion ----------------
+	    \begin{align*}
+		    &p: V\to V, p(V) = U, \ker p = U' \text{ bzw. } \\
+		    &p':V\to V, p'(V) = U', \ker p' = U,
+	    \end{align*}
+	\end{multicols}
 	ist dann
 		\[ \chi_f(t) = \chi_{f'}(t)\cdot \chi_{f\mid_U}(t) \text{ mit } f' := p'\circ f\mid_{U'}\in \End(U'). \]
 	Damit folgt
