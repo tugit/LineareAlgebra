@@ -1,12 +1,14 @@
 \begin{theindex}
 
   \item $ f $-invarianter Unterraum, \hyperpage{18}
+  \item $ f $-zyklische Basis, \hyperpage{23}
 
   \indexspace
 
   \item Algebra, \hyperpage{5}
     \subitem -Homomorphismus, \hyperpage{6}
   \item Algebraische/geometrische Vielfachheit, \hyperpage{17}
+  \item Annulatorpolynom, \hyperpage{29}
 
   \indexspace
 
@@ -30,6 +32,10 @@
   \indexspace
 
   \item Linearfaktorisierung, \hyperpage{11}
+
+  \indexspace
+
+  \item Minimalpolynom, \hyperpage{29}
 
   \indexspace
 
