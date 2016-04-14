@@ -1,7 +1,7 @@
 %VO1-2016-03-01
-\setcounter{chapter}{3}
-\chapter{Volumenmessung}
-\setcounter{section}{2}
+%\setcounter{chapter}{3}
+%\chapter{Volumenmessung}
+%\setcounter{section}{2}
 \section{Polynome \& Polynomfunktionen}
 	Warum? (Vielleicht eher "`Algebra"' -- allgemein -- als "`lineare"' Algebra) Wichtig: das charakteristische Polynom eines Endomorphismus -- wichtiges Hilfsmittel im Kontext der Struktursätze.
 \paragraph{Beispiel}
@@ -166,7 +166,7 @@
 		\[ p: \End(V)\to\End(V),\ f\mapsto \psi_f(p(t))= p(f). \]
 	Dieses Beispiel ist der Schlüssel zum Satz von Cayley-Hamilton (im nächsten Abschnitt).
 \subsection{Lemma}
-	\begin{Lemma}
+	\begin{Lemma}[Gradformel für Polynome]
 		Für Polynome $ p(t), q(t)\in K[t] $ gilt:
 			\begin{itemize}
 				\item $ \deg p(t)\odot q(t) = \deg p(t)+\deg q(t) $,
@@ -245,7 +245,7 @@
 	also
 		\[ d(t)q(t)+r(t)=0 \Rightarrow q(t)=0 \land r(t) = 0. \] %Damit ist der Kern der Abbildung \{0\} -> Injektivität
 	Wegen
-		\[ \dim K[t]_m \times K[t]_{k-1} = (m+1) + k = (k+m) + 1 = \dim K[t]_{k+m} \]
+		\[ \dim K[t]_m \times K[t]_[k-1] = (m+1) + k = (k+m) + 1 = \dim K[t]_{k+m} \]
 	liefert diese Abbildung dann für jedes $ m\in \mathbb{N} $ einen Isomorphismus
 		\[ K[t]_m \times K[t]_{k-1} \to K[t]_{k+m} \]
 \subsection{Korollar \& Definition}
@@ -281,10 +281,11 @@
 	\end{addmargin}
 	\end{Definition}
 \paragraph{Primpolynome}\index{Primpolynome}
+\begin{Definition}[Primpolynom]
 	Nennt man $ p(t)\in K[t] $ mit $ \deg p(t) > 0$ ein \emph{Primpolynom} (oder \emph{irreduzibel}), falls für $ d(t),q(t)\in K[t] $ gilt:
 		\[ p(t)= d(t)q(t) \Rightarrow \Big( \deg q(t)=0 \lor \deg d(t) = 0 \Big), \]
 	so gilt der Satz über die \emph{Primfaktorzerlegung}:
-	
+\end{Definition}
 	\begin{Satz}[Primfaktorzerlegung]
 	\begin{addmargin}{1cm}
 		\textit{Jedes Polynom $ p(t)\in K[t] $ mit $ \deg p(t)>0 $ zerfällt eindeutig in Primpolynome,
