@@ -176,11 +176,13 @@
 	
 % % VO-12-04-2016 % % 
 \subsection{Definition}\index{Annulatorpolynom}\index{Minimalpolynom}
+\begin{Definition}[Annulatorpolynom, Minimalpolynom]
 	Sei $ V $ ein $ K $-VR und $ f\in\End(V) $. Dann heißt $ p\in K[t] $
 		\begin{itemize}
 			\item \emph{Annulatorpolynom von $ f $}, falls $ p(f)=0 $;
 			\item \emph{Minimalpolynom von $ f $}, falls $ p(t) $ normiertes Annulatorpolynom minimalen Grades ist.
 		\end{itemize}
+\end{Definition}
 \paragraph{Bemerkung}
 	Jedes (polynomiale) Vielfache 
 		\[ p(t) = q(t)\mu_f(t)\in K[t] \]
@@ -190,7 +192,10 @@
 	Nach dem Satz von Cayley-Hamilton hat jeder Endomorphismus $ f\in\End(f) $ ein Annulatorpolynom, also auch ein Minimalpolynom -- wenn $ \dim V < \infty $.
 	
 \subsection{Lemma}
+\begin{Lemma}[Jedes Minimalpolynom ist Teiler des Annulatorpolynom von $ f\in\End(V) $]
 	Ist $ p(t)\in K[t] $ Annulatorpolynom von $ f\in\End(V) $, so ist jedes Minimalpolynom $ \mu_f(t)\in K[t] $ Teiler von $ p(t) $. 
+\end{Lemma}
+
 \paragraph{Beweis}
 	Seien $ q(t),r(t)\in K[t] $ die (nach dem euklidischen Divisionsalgorithmus) eindeutigen Polynome mit
 		\[ p(t) = q(t)\mu_f(t)+r(t) \text{ und }\deg r(t)<\deg \mu_f(t). \]
@@ -199,7 +204,9 @@
 	also $ r(t) = 0 $, denn andernfalls wäre $ \mu_f(t) $ nicht normiertes Annulatorpolynom minimalen Grades.
 	
 \subsection{Korollar}
+\begin{Korollar}
 	Das Minimalpolynom $ \mu_f(t)\in K[t] $ eines Endomorphismus $ f\in \End(V) $ ist eindeutig.
+\end{Korollar}
 \paragraph{Beweis}
 	Sind $ \mu_f(t),\tilde{\mu}_f(t)\in K[t] $ Minimalpolynome von $ f\in \End(V) $, so gilt
 		\[ \exists! q(t)\in K[t] : \tilde{\mu}_f(t) = q(t)\mu_f(t) \] % Nach Lemma 4.5.7

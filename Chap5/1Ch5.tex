@@ -37,9 +37,10 @@ Algebraisch:
 \paragraph{Bemerkung}
 	Man kann auch bilineare Abbildungen $ V\times V'\to W $ betrachten und, zum Beispiel, auch einen Fortsetzungssatz beweisen.
 	
-	WIr benötigen eine Verallgemeinerung in eine andere Richtung:
+	Wir benötigen eine Verallgemeinerung in eine andere Richtung:
 \subsection{Definition} \index{Sesquilinearform}\index{Semilinearität}
-	Seien $ V $ ein $ K $-VR und $ K\ni x\mapsto \overline{x}\in K $ ein (Körper-) Automorphismus, d.h. eine bijektive Abbildung mit
+\begin{Definition}[Sesquilinearform]
+Seien $ V $ ein $ K $-VR und $ K\ni x\mapsto \overline{x}\in K $ ein (Körper-) Automorphismus, d.h. eine bijektive Abbildung mit
 		\[ \overline{x+y} = \overline{x}+\overline{y} \text{ und } \overline{xy} = \overline{x}\cdot \overline{y} \]
 	für alle $ x,y\in K $. Eine Abbildung $ \sigma: V\times V \to K $ heißt dann \emph{Sesquilinearform} (bzgl. $ \overline{\phantom{a}} $), falls
 		\begin{enumerate}[(i)]
@@ -50,7 +51,8 @@ Algebraisch:
 					\item $ \forall v\in V\forall x\in K: \sigma(vx,w) = \overline{x}\sigma(v,w) $.
 				\end{enumerate}
 		\end{enumerate}
-		
+\end{Definition}
+
 \paragraph{Beispiel}
 	Die Identität $ K\ni x\mapsto \overline{x}:= x\in K $ ist offensichtlich ein Körperautomorphismus für jeden Körper $ K $. \emph{Bilinearformen} sind genau die Sesquilinearformen bezüglich $ \id_K $.
 \paragraph{Beispiel}
@@ -67,6 +69,7 @@ Algebraisch:
 \paragraph{Bemerkung}
 	In $ \mathbb{Z}_p, \mathbb{Q} $ und $ \mathbb{R} $ gibt es nur \emph{einen} Körperautomorphismus: $ \id_K $. Ein Automorphismus $ \overline{\phantom{a}} $ von $ \mathbb{C} $ mit $ \overline{\mathbb{R}} = \mathbb{R} $ ist trivial, $ \overline{\phantom{a}} = \id_\mathbb{C} $ oder die komplexe Konjugation.
 \subsection{Fortsetzungssatz für Sesquilinearformen}
+\begin{Satz}[Fortsetzungssatz für Sesquilinearformen]
 	Sind $ V $ ein $ K $-VR und $ K\ni x\mapsto \overline{x}\in K $ ein Körperautomorphismus, $ (b_i)_{i\in I} $ Basis von $ V $ und $ (s_{ij})_{i,j\in I} $ eine Familie in $ K $, so existiert eine eindeutige Sesquilinearform $ \sigma $ mit
 		\[ \forall i,j\in I:\sigma(b_i,b_j) = s_{ij}. \]
-	
+\end{Satz}
