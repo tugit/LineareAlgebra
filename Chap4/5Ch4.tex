@@ -1,4 +1,264 @@
 \section{Der Satz von Cayley-Hamilton}
 \subsection{Satz}
 	Für $ f\in\End(V) $ gilt $ \chi_f(f) = 0$.
+\paragraph{Unfug-Beweis}
+	Durch direktes Einsetzen erhält man
+		\[ \chi_f(f)=\det (\id_V f-f) = \det 0 = 0. \]
+\paragraph{Zum Verständnis des Satzes}
+	Ist $ V $ ein $ K $-VR mit $ n=\dim V < \infty $ und $ f\in \End (V) $, so ist
+		\[ \chi_f(t) = \sum_{k=0}^{n}t^ka_k \in K[t] \]
+	ein (abstraktes) Polynom in der Variablen $ t\ (= e_1\in K^\mathbb{N})$ und der Einsetzungshomomorphismus $ \psi_f:K[t]\to \End(V) $ (also ein Algebrahomomophismus) liefert
+		\[ \chi_f(f) = \psi_f\left(\chi_f(t)\right) = \sum_{k=0}^{n}f^k a_k. \]
+	Der Satz sagt, dass $ 0 = \chi_f(f)\in \End(V) $, d.h.
+		\[ \forall v\in V: \chi_f(f)(v) = 0. \]
+		
+\subsection{Definition \& Lemma}\index{$ f $-zyklische Basis}
+\begin{Definition}[$ f $-zyklische Basis]
+	Seien $ f\in\End(V) $ und $ B $ eine \emph{$ f $-zyklische Basis} von $ V $, d.h. eine Basis der Form
+		\[ B= (b_1,\dots,b_n) = \left(b,f(b),\dots,f^{n-1}(b)\right). \]		
+\end{Definition}
+
+\begin{Lemma}
+	Dann existieren $ a_0,\dots,a_{n-1}\in K $ mit
+		\[ f^n(b)+\sum_{k=0}^{n-1}f^k(b)a_k = 0, \]
+	mit diesen Koeffizienten ist
+		\[ \chi_f(t) = t^n+t^{n-1}a_{n-1}+\dots,+ta_1+a_0. \]
+\end{Lemma}
+\paragraph{Bemerkung}
+	Im Allgemeinen existiert zu $ f\in \End(V) $ keine $ f $-zyklische Basis von $ V $, z.B. für $ f = \id_V $ und $ \dim V \geq 2 $.
 \paragraph{Beweis}
+	Da $ B= \left(b,f(b),\dots,f^{n-1}(b)\right) $ eine Basis ist, ist $ f^n(b)\in [B] $ und damit existieren die $ a_k $ mit
+		\[ 0 = f^n(b) + \sum_{k=0}^{n-1}f^k(b)a_k. \]
+	Damit ist die Darstellungsmatrix von $ f $
+		\[ \xi_B^B(f) =
+		\begin{pmatrix}
+		0 & 0 & \cdots & 0 & -a_0 \\ 
+		1 & 0 & \vdots & \vdots & -a_1 \\ 
+		0 & 1 & \ddots & \vdots & \vdots \\ 
+		\vdots & \vdots & \ddots & 0 & \vdots \\ 
+		0 & \cdots & 0 & 1 & -a_{n-1}
+		\end{pmatrix} =: X\]
+	und Entwicklung von $ \chi_f(t)=\det(E_nt-\xi_B^B(f)) $ nach der ersten Zeile(nach Laplaceschem Entwicklungssatz -- dieser Satz war "`nur"' eine Methode, die Terme in der Leibniz-Formel zu sortieren) liefert
+		\[ \det(E_nt-X) = \det 
+		\begin{pmatrix}
+		t & 0 & \cdots & 0 & a_0 \\ 
+		-1 & t & \vdots & \vdots & a_1 \\ 
+		0 & -1 & \ddots & \vdots & \vdots \\ 
+		\vdots & \vdots & \ddots & t & \vdots \\ 
+		0 & \cdots & 0 & -1 & t+a_{n-1}
+		\end{pmatrix} \]
+		\[ = t \det \begin{pmatrix}
+		t & 0 & \cdots & 0 & a_1 \\ 
+		-1 & t & \vdots & \vdots & a_2 \\ 
+		0 & -1 & \ddots & \vdots & \vdots \\ 
+		\vdots & \vdots & \ddots & t & \vdots \\ 
+		0 & \cdots & 0 & -1 & t+a_{n-1}
+		\end{pmatrix} + (-1)^{n+1} a_0 \det(X_{1n}) \]
+		\[ \overset{\text{mit Ind.}}{=} t \{t^n{n-1}+t{n-2}a_{n-1}+\dots+a_1\}+a_0 = t^n+t^{n-1}a_{n-1}+\dots,+ta_1+a_0, \]
+	wie behauptet.
+	
+\paragraph{Beispiel}
+	Zur Lösung des reellen \emph{Anfangswertproblems}
+		\[ y'' + 2y' - 3y = 0,\ 
+		\begin{cases}
+			y(0)=4 \\
+			y'(0)=0
+		\end{cases} \]
+	schreiben wir dieses als System erster Ordnung mit dem Ansatz $ y_1 = y \text{ und }y_2 = y' $:
+	
+	Daraus erhält man mit $ Y= (y_1,y_2) $
+	  \begin{align*}
+		 Y' &= (y_1',y_2') = (y',y'') = (y',-2y'+3y)\\
+		 &= (y,y') \begin{pmatrix}
+		 	0 & 3\\ 1 & -2
+		 \end{pmatrix} = YX
+	  \end{align*}
+	mit $ X= \begin{pmatrix}
+	0 & 3\\ 1 & -2
+	\end{pmatrix}$, d.h. wir suchen eine $ \frac{d}{ds} $-zyklische Basis $ (y,\frac{d}{ds}y) = (y,y') $ eines 2-$ \dim $ UVR $ [(y,y')]\subset C^\infty(\mathbb{R}) $ bezüglich derer $ \frac{d}{ds}\in \End(C^\infty(\mathbb{R})) $ Darstellungsmatrix $ X $ hat.
+	
+	Der Ansatz $ y(s) = e^{xs} (v_0,v_1)$ reduziert das AWP auf ein Eigenwertproblem.
+		\[ 0 = \left(Y'-YX\right)(s) = \left(\frac{d}{ds}Y - YX\right)(s) = \underset{Y}{\underbrace{e^{xs}(v_0,v_1)}} \{E_2x-X\}\]
+	bzw. (vgl. Abschnitt 3.1) mit dem zur transponierten Matrix $ X^t $ assoziierten Endomorphismus $ f_{X^t}\in \End(\mathbb{R}^2) $
+		\[ f_{X^t}(v) = vx \text{ für }x\in\mathbb{R} \text{ und }v\in \mathbb{R}^2. \]
+	Nach obigem Lemma sind die Eigenwerte Lösungen der Gleichung
+		\[ 0 = \chi_{X^t}(x) = \chi_X(x) \overset{\text{Lemma}}{=} x^2+2x-3 = (x-1)(x+3). \]
+	Also sind $ x_1 = 1 $ und $ x_2 = -3 $ die Eigenwerte; zugehörige Eigenvektoren erhält man als Lösungen der linearen Gleichungssysteme
+		\[ (0,0) = (v_0,v_1)(E_2x_i-X)= (v_0,v_1)\begin{pmatrix}
+		x_i&-3\\-1&x_i+2
+		\end{pmatrix} = \begin{cases}
+		(v_0,v_1)\begin{pmatrix}
+		1&-3\\-1&3
+		\end{pmatrix}& \text{ für } i = 1\\
+		(v_0,v_1)\begin{pmatrix}
+		-3&-3\\-1&-1
+		\end{pmatrix}& \text{ für } i = 2
+		\end{cases} \]
+	Damit bekommt man Eigenvektoren $ (v_0,v_1) = (1,1) $ zum Eigenwert $ x=1 $ und $ (v_0,v_1) = (1,-3) $ zum Eigenwert $ x = -3 $.
+	
+	Die allgemeine, durch \emph{Superposition} (Linearkombination) erhaltene Lösung der Differentialgleichung ist also
+		\[ s\mapsto Y(s) = e^s(1,1)c_1 + e^{-3s}(1,-3)c_2 \]
+	mit Koeffizienten $ c_1,c_2 \in \mathbb{R} $. Abgleich der "`Integrationskonstanten"' $ c_1 $ und $ c_2 $ mit den Anfangsbedingungen liefert dann die Lösung
+		\[ s \mapsto y(s) = 3e^s+e^{-3s}. \]
+\paragraph{Bemerkung}
+	Man bemerke: $ (y,y') $ ist linear unabhängig für die Lösung, ist also tatsächlich $ \frac{d}{ds} $-zyklische Basis eines 2-$ \dim $ URs $ [(y,y')]\subset C^\infty(\mathbb{R}) $ -- obwohl die den gleichen Raum aufspannenden "`Basislösungen"'
+		\[ s\mapsto e^s \text{ und } s\mapsto e^{-3s} \]
+	keine $ \frac{d}{ds} $-zyklischen Basen erzeugen, da sie lineare Differentialgleichungen erster Ordnung (mit konstanten Koeffizienten) lösen.
+	
+\subsection{Korollar}
+\begin{Korollar}
+	Besitzt $ V $ eine $ f $-zyklische Basis für $ f\in\End(V) $, so gilt $ \chi_f(f)=0 $.
+\end{Korollar}
+\paragraph{Beweis}
+	Sei also $ B=(b_1,\dots,b_n) =(b,f(b),\dots,f^{n-1}(b)) $ $ f $-zyklische Basis von $ V $ und $ a_0,\dots,a_{n-1}\in K $ so, dass
+		\[ 0 = f^n(b)+\sum_{k=0}^{n-1}f^k(b)a_k. \]
+	Dann gilt
+		\[ \chi_f(f)(b_1) = \chi_f(f)(b) = \left(f^n+\sum_{k=0}^{n-1}f^ka_k\right)(b) = f^n(b)+\sum_{k=0}^{n-1}f^k(b)a_k. \]
+	Damit folgt für $ i=2,\dots,n $
+		\[ \chi_f(f)(b_i) = \chi_f(f)\left(f^{i-1}(b)\right) \overset{\footnotemark}{=} f^{i-1}\left(\chi_f(f)(b) \right) = 0. \]
+		\footnotetext{Aufgrund der Linearität der Endomorphismen $ \End(V) $ als unitäre Algebra.}
+	Da also $ V=[B] \subset \ker {\chi_f(f)}$, folgt $ \chi_f(f) = 0. $
+\paragraph{Bemerkung}
+	Damit ist der Satz von Cayley-Hamilton bewiesen, sofern $ V $ eine $ f $-zyklische Basis besitzt.
+	
+\subsection{Lemma}
+\begin{Lemma}[ $ f $-invarianter UVR endlicher Dimension besitzen eine $ f $-zyklische Basis]
+	Für $ f\in\End(V) $ und $ v\in V^\times  $ sei
+		\[ U := \left[\left(f^k(v)\right)_{k\in{\mathbb{N}}}\right]. \]
+	Damit ist $ U $ ein $ f $-invarianter UVR von $ V $. Ist $ \dim V < \infty $, so besitzt $ U $ eine $ f $-zyklische Basis $ \left(v,f(v),\dots,f^{r-1}(v)\right) $.
+\end{Lemma}
+\paragraph{Beweis}
+	Offenbar ist $ U $ $ f $-invarianter UR:
+	\begin{itemize}
+		\item $ U $ ist (als lineare Hülle einer Familie) ein UVR von $ V $;
+		\item da gilt
+			\[ \forall k\in \mathbb{N}: f\left(f^k(v)\right)=f^{k+1}(v)\in U \]
+			folgt, dass $ f(U) = f\left(\left[\left(f^k(v)\right)_{k\in{\mathbb{N}}}\right]\right) = \left[\left(f^{k+1}(v)\right)_{k\in{\mathbb{N}}}\right]\subset U. $
+	\end{itemize}
+	Ist $ \dim V < \infty $ und $ v\neq 0 $, so existiert $ r\in \mathbb{N} $, sodass
+		\[ \left(v,\dots,f^{r-1}(v)\right) \text{ linear unabhängig und }f^r(v)\in\left[\left(v,\dots,f^{r-1}(v)\right)\right]; \]
+	damit ist $ \left(v,f(v),\dots, f^{r-1}(v)\right) $ $ f $-zyklische Basis von $ U $:
+	\begin{enumerate}
+		\item $ \left(v,\dots,f^{r-1}(v) \right) $ ist linear unabhängig.
+		\item $ f^r(v) \in \left[\left(v,\dots,f^{r-1}(v)\right)\right]$, damit gilt
+		\[ \forall k\in \mathbb{N}: k\geq r \Rightarrow f^k(v)\in \left[\left(v,\dots,f^{r-1}(v)\right)\right] \]
+	\end{enumerate}
+	wie man z.B. mit Induktion sehen kann: ist
+		\[ f^{k-1}(v) = \sum_{j=0}^{r-1}f^j(v)x_j \in \left[\left(v,\dots,f^{r-1}(v)\right) \right], \]
+	so folgt
+		\[ f^k(v) = \sum_{j=1}^{r}f^j(v)x_{j-1}=f^{r}(v)x_{r-1}+\sum_{j=1}^{r-1}f^j(v)x_{j-1}\in \left[\left(v,\dots,f^{r-1}(v)\right)\right] \]
+	und damit
+		\[ U = \left[\left(f^k(v)\right)_{k\in \mathbb{N}}\right]\in \left[\left(v,\dots,f^{r-1}(v)\right)\right]. \]
+		
+\subsection{Beweis vom Satz von Cayley-Hamilton}
+	Zu zeigen: für $ f\in \End(V) $ gilt $ \chi_f(f)=0 $:
+		\[ \forall v\in V:\chi_f(f)(v) = 0. \]
+	Sei also $ v\in V^\times $ und
+		\[ U := \left[\left( f^k(v)_{k\in \mathbb{N}}\right)\right]\subset V. \]
+	Mit einem zu $ U $ komplementären UVR $ U'\subset V $, $ V=U\oplus U' $, und den zugehörigen Projektionen
+	
+	\begin{multicols}{2}
+	%------------------ Projektion ----------------
+ 	\begin{figure}[H]\centering
+ 		\include{Chap4/Projektion.tikz}
+	\end{figure}
+	%------------------ Projektion ----------------
+	    \begin{align*}
+		    &p: V\to V, p(V) = U, \ker p = U' \text{ bzw. } \\
+		    &p':V\to V, p'(V) = U', \ker p' = U,
+	    \end{align*}
+	\end{multicols}
+	ist dann
+		\[ \chi_f(t) = \chi_{f'}(t)\cdot \chi_{f\mid_U}(t) \text{ mit } f' := p'\circ f\mid_{U'}\in \End(U'). \]
+	Damit folgt
+		\[ \chi_f(f)(v) = \chi_{f'}(f) \left(\chi_{f\mid_U}(f)(v) \right) = \chi_{f'}(f)(0)=0 \]
+	nach Korollar oben, da $ U $ eine $ f $-zyklische Basis besitzt und $ v\in U $.
+	
+% % VO-12-04-2016 % % 
+\subsection{Definition}\index{Annulatorpolynom}\index{Minimalpolynom}
+	Sei $ V $ ein $ K $-VR und $ f\in\End(V) $. Dann heißt $ p\in K[t] $
+		\begin{itemize}
+			\item \emph{Annulatorpolynom von $ f $}, falls $ p(f)=0 $;
+			\item \emph{Minimalpolynom von $ f $}, falls $ p(t) $ normiertes Annulatorpolynom minimalen Grades ist.
+		\end{itemize}
+\paragraph{Bemerkung}
+	Jedes (polynomiale) Vielfache 
+		\[ p(t) = q(t)\mu_f(t)\in K[t] \]
+	eines Minimalpolynoms $ \mu_f(t) $ von $ f $ ist ein Annulatorpolynom, da
+		\[ \forall v\in V: p(f)(v) = \left(q(f)\circ \mu_f(f)\right)(v) = q(f)\left(\mu_f(f)(v)\right) = q(f)(0) = 0 \]
+\paragraph{Bemerkung}
+	Nach dem Satz von Cayley-Hamilton hat jeder Endomorphismus $ f\in\End(f) $ ein Annulatorpolynom, also auch ein Minimalpolynom -- wenn $ \dim V < \infty $.
+	
+\subsection{Lemma}
+	Ist $ p(t)\in K[t] $ Annulatorpolynom von $ f\in\End(V) $, so ist jedes Minimalpolynom $ \mu_f(t)\in K[t] $ Teiler von $ p(t) $. 
+\paragraph{Beweis}
+	Seien $ q(t),r(t)\in K[t] $ die (nach dem euklidischen Divisionsalgorithmus) eindeutigen Polynome mit
+		\[ p(t) = q(t)\mu_f(t)+r(t) \text{ und }\deg r(t)<\deg \mu_f(t). \]
+	Dies liefert
+		\[ r(f) = p(f)-q(f)\circ \mu_f(f) = 0-q(f)(0) = 0, \]
+	also $ r(t) = 0 $, denn andernfalls wäre $ \mu_f(t) $ nicht normiertes Annulatorpolynom minimalen Grades.
+	
+\subsection{Korollar}
+	Das Minimalpolynom $ \mu_f(t)\in K[t] $ eines Endomorphismus $ f\in \End(V) $ ist eindeutig.
+\paragraph{Beweis}
+	Sind $ \mu_f(t),\tilde{\mu}_f(t)\in K[t] $ Minimalpolynome von $ f\in \End(V) $, so gilt
+		\[ \exists! q(t)\in K[t] : \tilde{\mu}_f(t) = q(t)\mu_f(t) \] % Nach Lemma 4.5.7
+	wobei
+		\begin{itemize}
+			\item $ \deg q(t) = 0 $, da $ \deg \tilde{\mu}_f(t) \leq \deg \mu_f(t) $,
+			\item $ q(t) = 1$, da $ \tilde{\mu}_f(t) $ und $ \mu_f(t) $ normiert sind.
+		\end{itemize}
+	Daher ist
+		\[ \tilde{\mu}_f(t) = 1\cdot \mu_f(t) = \mu_f(t). \]
+\paragraph{Bemerkung}
+	Wie für Endomorphismen kann Annulatorpolynome, Minimalpolynome, usw. auch für Matrizen $ X\in K^{n\times n} $ definieren:
+		\begin{itemize}
+			\item mithilfe der assoziierten Endomorphismen $ f_X\in \End(K^n) $, oder 
+			\item mithilfe des Einsetzungshomomorphismus $ \psi_X: K[t] \to K^{n\times n}. $ % in der Algebra der quadratischen Matrizen
+		\end{itemize}
+	Beide Methoden liefern das gleiche Ergebnis durch den Algebrahomomorphismus zwischen den Endomorphismen und den quadratischen Matrizen.
+
+\paragraph{Bemerkung \& Beispiel}
+	Zerfällt das charakteristische Polynom in Linearfaktoren, so zerfällt auch das Minimalpolynom in dieselben Linearfaktoren:
+		\[ \chi_f(t)= \prod_{i=1}^{m}(t-x_i)^{k_i} \Rightarrow \mu_f(t) = \prod_{i=1}^{m}(t-x_i)^{m_i}, \]
+	wobei für $ i= 1,\dots,m $ gilt $ 1\leq m_i\leq k_i $.
+	
+	Zum Beispiel: 
+		\begin{itemize}
+			\item $ X = \begin{pmatrix}
+			1&0\\0&0
+			\end{pmatrix} $: $ \chi_{f_X} = t(t-1) = \mu_{f_X}(t)$
+			\item $ X = \begin{pmatrix}
+			1&0\\0&1
+			\end{pmatrix} $: $ \chi_{f_X} = (t-1)^2 \Rightarrow \mu_{f_X}(t) = (t-1) $
+			\item $ X = \begin{pmatrix}
+			1&1\\0&1
+			\end{pmatrix} $: $ \chi_{f_X} = (t-1)^2 = \mu_{f_X}(t)$.
+		\end{itemize}
+
+\paragraph{Bemerkung}
+	Die Definition des charakteristischen Polynoms ist etwas problematisch:
+		\[ \chi_f(t) := \det (\id_Vt-f) \]
+	ist "`gut"' für Polynomfunktionen, aber "`nicht korrekt"' für abstrakte Polynome; die Definition 
+		\[ \chi_f(t) := \sum_{\sigma\in S_n}\sgn(\sigma)\prod_{i=1}^{n}\left(\delta_{\sigma(j)j}-x_{\sigma(j)j} \right)\in K[t] \]
+	mithilfe der Darstellungsmatrix
+		\[ X = (x_{ij})_{i,j\in \{1,\dots,n\}} = \xi_B^B(f) \]
+	von $ f $ bzgl. einer Basis $ B $ und der Leibniz-Formel ist nicht sehr übersichtlich. Vergleiche auch [Axler, Kap. 8] zum Thema.
+	
+	Im Gegensatz dazu: Definitionen von "`Annulatorpolynom"' und "`Minimalpolynom"' etc. sind einfach (konzeptionell).
+	
+	Frage: Braucht man das charakteristische Polynom überhaupt?
+	
+	Man kommt auch ohne das charakteristische Polynom "`recht weit"':
+		\begin{itemize}
+			\item Für $ \dim V <\infty $ folgt die Existenz eines Annulatorpolynoms, und damit des Minimalpolynoms recht einfach wegen $ \dim \End(V) <\infty $.
+			\item Durch Einsetzen: Jeder Eigenwert eines Endomorphismus ist Nullstelle seines Minimalpolynoms.
+			\item Umgekehrt ist auch jede Nullstelle des Minimalpolynoms Eigenwert -- ist $ \mu_f(x) = 0 $, so existiert $ q(t)\in K[t] $ mit
+				\[ \mu_f(t) = q(t)(t-x); \]
+			wäre $ x $ kein Eigenwert, also $ f-\id_V x \in Gl(V) $, so gälte
+				\[ (f-\id_Vx)(V) = V \Rightarrow \{0\} = \mu_f(f)(V) = q(f)(V), \]
+			d.h. $ \mu_f(t) $ wäre nicht Minimal-Polynom.
+			\item Ein Endomorphismus ist diagonalisierbar, wenn sein Minimal-Polynom in paarweise verschiedene Linearfaktoren zerfällt.
+		\end{itemize}
+	
+	Nachteil des Minimal-Polynoms: schwierig berechenbar?

@@ -1,0 +1,67 @@
+\tdplotsetmaincoords{0}{0} %-27
+ 		\begin{tikzpicture}[xscale=0.5,yscale=0.5,tdplot_main_coords]
+
+ 				\def\xstart{0} %x Koordinate der Startposition der Grafik
+ 				\def\ystart{-3} %y Koordinate der Startposition der Grafik
+ 				\def\myscale{0.5} %ändert die Größe der Grafik (Skalierung der Grafik)
+                \def\myscalex{1.0}
+                \def\myscaley{0.6}
+                \def\maxlh{6.0}
+                \def\maxlv{6.0}
+                
+ 				\def\xstartdraw{(\xstart + \maxlh)} %xKoordinate des Referenzstartpunktes (in dieser Zeichnung: a)
+ 				\def\ystartdraw{(\ystart + \maxlv)}%yKoordinate des Referenzstartpunktes (in dieser Zeichnung: a)
+
+ 			    \node (pointro) at ({\xstartdraw+(\maxlh*\myscalex)},{\ystartdraw+(\maxlv*\myscaley)}) {};
+ 			    
+			    \node (pointlu) at ({\xstartdraw-(\maxlh*\myscalex)},{\ystartdraw-(\maxlv*\myscaley)}) {};
+			    \node (pointlo) at ({\xstartdraw-(\maxlh*\myscalex)},{\ystartdraw+(\maxlv*\myscaley)}) {};
+                \node (pointru) at ({\xstartdraw+(\maxlh*\myscalex)},{\ystartdraw-(\maxlv*\myscaley)}) {};
+                
+ 				%\node (pointo1) at ($(pointol)!0.2!(pointor)$) {};
+ 				%\node (pointo2) at ($(pointol)!0.9!(pointor)$) {};
+
+ 				\node (offsetx) at ({(3.0*\myscalex},{0.0}) {}; %just an offset
+ 				\node (offsety) at ({0.0},{3.0*\myscaley}) {}; %just an offset
+                
+                \node (unity) at ({\maxlh*0.25*\myscalex},{\maxlv*0.25*\myscaley}) {}; %just an offset
+                \node (unitx) at ({\maxlh*0.25*\myscalex},{-\maxlv*0.25*\myscaley}) {}; %just an offset
+                
+               	\node (point00) at ($(pointlo) + 4.0*(unitx) - 1.0*(unity)$) {};
+ 				%\draw[fill,color=blue] (point00) circle [radius=0.18];
+ 				
+                 
+ 				%Koordinatenkreuz
+ 				\draw[-,line width=0.2pt,color=black] ($(point00) -3.0*(unity)$) -- ($(point00) +5.0*(unity)$);
+ 				\draw[-,line width=0.2pt,color=black,shorten >=-20pt] ($(point00) -3.0*(unitx)$) -- ($(point00) + 3.0*(unitx)$);
+ 				
+ 				%Q2 dotted vertikal
+ 				\draw[-,line width=0.4pt,color=red,dotted] ($(point00) -2.0*(unitx) -2.0*(unity)$ + ) -- ($(point00) -2.0*(unitx) +3.0*(unity)$);
+ 				\draw[-,line width=0.4pt,color=red,dotted] ($(point00) -1.0*(unitx) -2.0*(unity)$ + ) -- ($(point00) -1.0*(unitx) +4.0*(unity)$);
+ 				
+ 				%Q1 dotted vertikal
+ 				\draw[-,line width=0.4pt,color=red,dotted] ($(point00) + 2.0*(unitx) -2.0*(unity)$ + ) -- ($(point00) + 2.0*(unitx) +5.0*(unity)$);
+ 				\draw[-,line width=0.4pt,color=red,dotted] ($(point00) +1.0*(unitx) -2.0*(unity)$ + ) -- ($(point00) +1.0*(unitx) +5.0*(unity)$);
+ 				
+ 				%Q1 und Q2 dotted horizontal
+ 				\draw[-,line width=0.4pt,color=red,dotted] ($(point00) - 1.0*(unitx) +4.0*(unity)$ + ) -- ($(point00) + 3.0*(unitx) +4.0*(unity)$);
+ 				\draw[-,line width=0.4pt,color=red,dotted] ($(point00) - 2.0*(unitx) +3.0*(unity)$ + ) -- ($(point00) + 4.0*(unitx) +3.0*(unity)$);
+ 				\draw[-,line width=0.4pt,color=red,dotted] ($(point00) - 3.0*(unitx) +2.0*(unity)$ + ) -- ($(point00) + 4.0*(unitx) +2.0*(unity)$);
+ 				\draw[-,line width=0.4pt,color=red,dotted] ($(point00) - 3.0*(unitx) +1.0*(unity)$ + ) -- ($(point00) + 4.0*(unitx) +1.0*(unity)$);	
+ 				\draw[-,line width=0.4pt,color=red,dotted] ($(point00) - 3.0*(unitx) -1.0*(unity)$ + ) -- ($(point00) + 3.0*(unitx) -1.0*(unity)$);	
+ 				
+ 				%Vektoren blau
+ 				\node (point03) at ($(point00) +3.0*(unity)$) {};
+               	\node (point20) at ($(point00) +2.0*(unitx)$) {};
+               	\node (point23) at ($(point00) +2.0*(unitx) +3.0*(unity) $){};
+ 				
+ 				\draw[-{>[scale=1,length=8,width=6]},shorten >=-5pt,line width=0.5pt,color=red] (point00) -- (point03);
+ 				\draw[-{>[scale=1,length=8,width=6]},shorten >=-5pt,line width=0.5pt,color=red] (point00) -- (point20);
+ 				\draw[-{>[scale=1,length=8,width=6]},shorten >=-5pt, shorten <=-5pt,line width=0.9pt,color=blue] (point00) -- (point23);
+ 				
+ 			    \node (pointvekw) at (point23) [above,color=blue]{$v$};
+ 			    \node (pointvekw) at (point20) [xshift=-20,color=red]{$p(v)$};
+ 			    \node (pointvekw) at (point03) [yshift= 10,xshift=-5,color=red]{$p'(v)$};
+ 			    \node (pointvekw) at ($(point00) -3.0*(unitx)$) [yshift= 8,color=green]{$U$};
+ 			    \node (pointvekw) at ($(point00) +5.0*(unity)$) [yshift=-5,xshift= 5,color=green]{$U'$};
+ 			\end{tikzpicture}
