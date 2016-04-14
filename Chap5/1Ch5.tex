@@ -1,0 +1,72 @@
+\chapter{Längen- und Winkelmessung}
+Plan: 
+	Längen und Winkel (in "Punkträumen" $ \cong $ affinen Räumen) verstehen.
+	
+Algebraisch:
+	via Produkte (bilineare -- oder fast bilineare -- Abbildungen).
+	
+	\definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
+	\definecolor{qqqqff}{rgb}{0.,0.,1.}
+	\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,scale=1.8]
+	\clip(0,0) rectangle (10,4.5);
+	\draw [shift={(6.635,3.07)},color=qqwuqq,fill=qqwuqq,fill opacity=0.1] (0,0) -- (34.85:0.14) arc (34.85:143.6:0.14) -- cycle;
+	\draw [->] (3.58,2.44) -- (1.56,3.8);
+	\draw [->] (7.6,2.35) -- (5.25,4.1);
+	\draw [->] (5.5,2.26) -- (7.8,3.9);
+
+	\draw [fill=qqqqff] (3.58,2.44) circle (1pt);
+	\draw[color=qqqqff] (3.6,2.4) node[below] {$A$};
+	\draw [fill=qqqqff] (1.56,3.8) circle (1pt);
+	\draw[color=blue] (1.5,3.8) node[above] {$B$};
+	\draw (2.9,3.4) node {Abstand a bis b $ \cong $ Länge b-a};
+	\draw (7.4,3) node[below] {Winkel $ \cong $ Winkel zwischen Richtungsvektoren};
+	
+	\end{tikzpicture}
+
+\section{Bilinearformen \& Sesquilinearformen}
+\paragraph{Zur Erinnerung}
+	Sind $ V $ und  $W$ $ K $-VR, so nennt man eine Abbildung
+		\[ \beta: V\times V\to W \]
+	\emph{bilinear} oder ein \emph{Produkt}, wenn sie in jedem Argument linear ist:
+		\begin{enumerate}[(i)]
+			\item $ \forall w\in V :V\ni v \mapsto \beta(v,w)\in W $ ist linear;
+			\item $ \forall v\in V: V\ni w\mapsto \beta(v,w)\in W $ ist linear.
+		\end{enumerate}
+	Zu vorgegebenen Werten $ \beta_{ij} \in W$ auf einer Basis $ (b_i)_{i\in I} $ von $ V $ existiert dann eine eindeutige Bilinearform $ \beta $ (Fortsetzungssatz Abschnitt 4.3):
+		\[ \exists! \beta:V\times V\to W \text{ bilinear}: \forall i,j\in I: \beta(b_i,b_j) = \beta_{ij}. \]
+\paragraph{Bemerkung}
+	Man kann auch bilineare Abbildungen $ V\times V'\to W $ betrachten und, zum Beispiel, auch einen Fortsetzungssatz beweisen.
+	
+	WIr benötigen eine Verallgemeinerung in eine andere Richtung:
+\subsection{Definition} \index{Sesquilinearform}\index{Semilinearität}
+	Seien $ V $ ein $ K $-VR und $ K\ni x\mapsto \overline{x}\in K $ ein (Körper-) Automorphismus, d.h. eine bijektive Abbildung mit
+		\[ \overline{x+y} = \overline{x}+\overline{y} \text{ und } \overline{xy} = \overline{x}\cdot \overline{y} \]
+	für alle $ x,y\in K $. Eine Abbildung $ \sigma: V\times V \to K $ heißt dann \emph{Sesquilinearform} (bzgl. $ \overline{\phantom{a}} $), falls
+		\begin{enumerate}[(i)]
+			\item $ \forall v\in V: V\ni w \mapsto \sigma(v,w)\in K $ ist linear, d.h. $ \sigma(v,.)\in V^* $;
+			\item $ \forall w\in V: V\ni v \mapsto \sigma(v,w)\in K $ ist \emph{semilinear}, d.h.
+				\begin{enumerate}[(a)]
+					\item $ \forall v,v' \in V: \sigma(v+v',w) = \sigma(v,w)+\sigma(v',w) $ und
+					\item $ \forall v\in V\forall x\in K: \sigma(vx,w) = \overline{x}\sigma(v,w) $.
+				\end{enumerate}
+		\end{enumerate}
+		
+\paragraph{Beispiel}
+	Die Identität $ K\ni x\mapsto \overline{x}:= x\in K $ ist offensichtlich ein Körperautomorphismus für jeden Körper $ K $. \emph{Bilinearformen} sind genau die Sesquilinearformen bezüglich $ \id_K $.
+\paragraph{Beispiel}
+	Für $ K = \mathbb{C} $ liefert \emph{komplexe Konjugation} einen Körperautomorphismus (keinen VR-Automorphismus, vgl. Abschnitt 1.4):
+		\[ \mathbb{C}\ni x+iy \mapsto \overline{x+iy}:= x-iy \in \mathbb{C}. \]
+	Dieses Beispiel ist unser Grund für die Einführung des Begriffs der Sesquilinearform.
+\paragraph{Bemerkung}
+	Ist $ \sigma $ Bilinearform und Sesquilinearform bezüglich $ \overline{\phantom{a}} $, so ist $ \sigma $ oder $ \overline{\phantom{a}} $ trivial:
+		\[ \forall x\in K\forall v,w\in V: 0 = \sigma(vx,w) - \sigma(vx,w) = (x-\overline{x})\sigma(v,w)  \]
+		\[ \Rightarrow \begin{cases}
+		\forall v,w\in V: \sigma(v,w) = 0 \text{ oder}\\
+		\exists v,w\in V: \sigma(v,w)\neq 0 \land \forall x\in K: \overline{x} = x.
+		\end{cases} \]
+\paragraph{Bemerkung}
+	In $ \mathbb{Z}_p, \mathbb{Q} $ und $ \mathbb{R} $ gibt es nur \emph{einen} Körperautomorphismus: $ \id_K $. Ein Automorphismus $ \overline{\phantom{a}} $ von $ \mathbb{C} $ mit $ \overline{\mathbb{R}} = \mathbb{R} $ ist trivial, $ \overline{\phantom{a}} = \id_\mathbb{C} $ oder die komplexe Konjugation.
+\subsection{Fortsetzungssatz für Sesquilinearformen}
+	Sind $ V $ ein $ K $-VR und $ K\ni x\mapsto \overline{x}\in K $ ein Körperautomorphismus, $ (b_i)_{i\in I} $ Basis von $ V $ und $ (s_{ij})_{i,j\in I} $ eine Familie in $ K $, so existiert eine eindeutige Sesquilinearform $ \sigma $ mit
+		\[ \forall i,j\in I:\sigma(b_i,b_j) = s_{ij}. \]
+	
