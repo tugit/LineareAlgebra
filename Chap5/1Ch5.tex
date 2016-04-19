@@ -1,3 +1,4 @@
+% VO 14-04-2016 %
 \chapter{Längen- und Winkelmessung}
 Plan: 
 	Längen und Winkel (in "Punkträumen" $ \cong $ affinen Räumen) verstehen.
@@ -7,20 +8,20 @@ Algebraisch:
 	
 	\definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
 	\definecolor{qqqqff}{rgb}{0.,0.,1.}
-	\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,scale=1.8]
-	\clip(0,0) rectangle (10,4.5);
-	\draw [shift={(6.635,3.07)},color=qqwuqq,fill=qqwuqq,fill opacity=0.1] (0,0) -- (34.85:0.14) arc (34.85:143.6:0.14) -- cycle;
-	\draw [->] (3.58,2.44) -- (1.56,3.8);
-	\draw [->] (7.6,2.35) -- (5.25,4.1);
-	\draw [->] (5.5,2.26) -- (7.8,3.9);
-
-	\draw [fill=qqqqff] (3.58,2.44) circle (1pt);
-	\draw[color=qqqqff] (3.6,2.4) node[below] {$A$};
-	\draw [fill=qqqqff] (1.56,3.8) circle (1pt);
-	\draw[color=blue] (1.5,3.8) node[above] {$B$};
-	\draw (2.9,3.4) node {Abstand a bis b $ \cong $ Länge b-a};
-	\draw (7.4,3) node[below] {Winkel $ \cong $ Winkel zwischen Richtungsvektoren};
 	
+	\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,scale=1.8]
+	\clip(0,0) rectangle (10,3);
+	\draw [shift={(6.635,1.07)},color=qqwuqq,fill=qqwuqq,fill opacity=0.1] (0,0) -- (34.85:0.14) arc (34.85:143.6:0.14) -- cycle;
+	\draw [->] (3.58,1) -- (1.56,2.3);
+	\draw [->] (7.6,0.35) -- (5.25,2.1);
+	\draw [->] (5.5,0.26) -- (7.8,1.9);
+
+	\draw [fill=qqqqff] (3.58,1) circle (1pt);
+	\draw[color=qqqqff] (3.6,1) node[below] {$A$};
+	\draw [fill=qqqqff] (1.56,2.3) circle (1pt);
+	\draw[color=blue] (1.5,2.3) node[above] {$B$};
+	\draw (2.5,0.1) node {Abstand a bis b $ \cong $ Länge b-a};
+	\draw (6.4,0.1) node {Winkel $ \cong $ Winkel zwischen Richtungsvektoren};
 	\end{tikzpicture}
 
 \section{Bilinearformen \& Sesquilinearformen}
@@ -68,8 +69,88 @@ Seien $ V $ ein $ K $-VR und $ K\ni x\mapsto \overline{x}\in K $ ein (Körper-) 
 		\end{cases} \]
 \paragraph{Bemerkung}
 	In $ \mathbb{Z}_p, \mathbb{Q} $ und $ \mathbb{R} $ gibt es nur \emph{einen} Körperautomorphismus: $ \id_K $. Ein Automorphismus $ \overline{\phantom{a}} $ von $ \mathbb{C} $ mit $ \overline{\mathbb{R}} = \mathbb{R} $ ist trivial, $ \overline{\phantom{a}} = \id_\mathbb{C} $ oder die komplexe Konjugation.
+	
 \subsection{Fortsetzungssatz für Sesquilinearformen}
 \begin{Satz}[Fortsetzungssatz für Sesquilinearformen]
 	Sind $ V $ ein $ K $-VR und $ K\ni x\mapsto \overline{x}\in K $ ein Körperautomorphismus, $ (b_i)_{i\in I} $ Basis von $ V $ und $ (s_{ij})_{i,j\in I} $ eine Familie in $ K $, so existiert eine eindeutige Sesquilinearform $ \sigma $ mit
 		\[ \forall i,j\in I:\sigma(b_i,b_j) = s_{ij}. \]
 \end{Satz}
+
+% VO 19-04-2016 % 
+\paragraph{Beweis}
+	Wir imitieren den Beweis unseres ersten Fortsetzungssatzes für lineare Abbildungen:
+	
+	{Eindeutigkeit:}
+	Sei $ \sigma $ eine Sesquilinearform mit der gewünschten Eigenschaft oben; gilt
+		\[ v = \sum_{i\in I}b_ix_i \text{ und }w = \sum_{i\in I}b_i y_i \]
+	so folgt
+		\[ \sigma(v,w) = \sum_{i,j\in I}\overline{x_i}\sigma(b_i,b_j)y_j = \sum_{i,j\in I}\overline{x_i}s_{ij}y_j \]
+	d.h. $ \sigma $ ist durch die Familie $ (s_{ij})_{i,j\in I} $ eindeutig bestimmt.
+	
+	{Existenz:}
+	Da jeder Vektor $ v\in V $ eine eindeutige Basisdarstellung $ v=\sum_{i\in I}b_ix_i $ hat, wird durch
+	\[ \sigma:V\times V \to K, (v,w)= \left(\sum_{i\in I}b_ix_i, \sum_{j\in I}b_jy_j\right) \]
+	\[ \mapsto \sigma(v,w) := \sum_{i,j\in I}\overline{x_i}s_{ij}y_j \]
+	eine Abbildung wohldefiniert. Offenbar (nachrechnen) ist $ \sigma $ dann sesquilinear. 
+
+\paragraph{Bemerkung}
+	Jede Sesquilinearform $ \sigma: V\times V\to K $ liefert eine semi-lineare Abbildung
+		\[ V\ni v\mapsto \sigma(v,.)\in V^*. \]
+	Mit einem "`Fortsetzungssatz für semi-lineare Abbildungen"' (Aufgabe 34) hätte man auch den früher skizzierten Beweis für bilineare Abbildungen imitieren können.
+
+\subsection{Buchhaltung}\index{Gramsche Matrix}
+\paragraph{Gramsche Matrix}
+	Ist $ n=\dim V < \infty $ und $ B=(b_1,\dots,b_n) $ Basis von $ V $, so kann man eine Sesquilinearform $ \sigma: V\times V\to K $ durch eine Matrix $ S $
+	\[ \begin{array}{c|ccc}
+	\sigma & b_1 & \dots & b_n \\ \hline
+	b_1 & s_{11} &  & s_{1n} \\ 
+	\vdots &  & \ddots &  \\ 
+	b_n & s_{n1} &  & s_{nn}
+	\end{array}  \]
+	Diese Matrix
+		\[ \Gamma_B(\sigma) = S = \left(\sigma(b_i,b_j)\right)_{i,j\in \{1,\dots,n\}} \]
+	heißt die Darstellungsmatrix oder \emph{Gramsche Matrix} von $ \sigma $ bezüglich $ B $. Für Vektoren
+		\[ v = \sum_{i=1}^{n}b_ix_i = BX \text{ und } w = \sum_{j=1}^{n}b_jy_j = BY \]
+	ist dann
+		\[ \sigma(v,w) = \sum_{i,j=1}^{n}\overline{x_i}s_{ij}y_j = \overline{X}^tSY \]
+		\[ = (\overline{x_1},\dots,\overline{x_n})\begin{pmatrix}
+		\sum_{i=1}^{n}s_{1j}y_j\\ \vdots\\ \sum_{j=1}^{n}s_{nj}y_j
+		\end{pmatrix} = \sum_{i=1}^{n}\overline{x_i}\sum_{j=1}^{n}s_{ij}y_j. \]
+\paragraph{Transformationsformel}
+	Ein Basiswechsel $ B' = BP $ mit $ P = \xi_{B'}^B \in Gl(n)$ liefert dann
+		\[ v = BX = (B'P^{-1})X = B'\underset{X'}{\underbrace{(P^{-1}X)}} \text{ und } w = B'\underset{Y'}{\underbrace{(P^{-1}Y)}} \]
+	und damit für $ X,Y \in K^{n\times 1} $
+		\[ \overline{X}^tSY = \overline{X'}^t\underset{S'}{\underbrace{(\overline{P}^tSP)}}Y' \]
+	woraus die \emph{Transformationsformel für Gramsche Matrizen} folgt
+		\[ S' = \overline{P}^tSP, \]
+	wobei $ \overline{P}^t $ die Transponierte der Matrix mit Einträgen $ \overline{p_{ij}} $ ist.
+\paragraph{Äquivalenz von Matrizen}
+Dies liefert einen weiteren Äquivalenzbegriff für quadratische Matrizen $ S\in K^{n\times n} $:
+		\[ S' \sim S :\Leftrightarrow \exists  P\in Gl(n): S' = \overline{P}^tSP. \]
+	Die verschiedenen Begriffe der Äquivalenz von Matrizen (vgl. 3.1 \& 4.2) spiegeln die verschiedenen Funktionen/Bedeutungen von Matrizen wider.
+	
+\paragraph{Bemerkung}
+	Die Menge der Sesquilinearformen auf einem $ K $-VR ist selbst ein $ K $-VR. Ist $ n=\dim V< \infty $ und $ B $ Basis von $ V $, so erhält man (Fortsetzungssatz) einen Isomorphismus
+		\[ K^{V\times V}\supset \{\sigma:V\times V\to K \text{ Sesquilinearform}\}\ni \sigma \mapsto \Gamma_B(\sigma)\in K^{n\times n}. \]
+\subsection{Beispiel \& Definition} \index{Sesquilinearform!kanonische}\index{Sesquilinearform!assoziierte}
+	Sei $ \overline{\phantom{a}}:K\to K $ Körperautomorphismus; jedes $ S\in K^{n\times n} $ liefert dann eine eindeutige Sesquilinearform
+		\[ \sigma_S:K^n\times K^n \to K \text{ mit } (e_i,e_j)\mapsto \sigma_S(e_i,e_j):= s_{ij}, \] 
+	die zu \emph{$ S $ assoziierte Sesquilinearform}.
+
+	Für $ S = E_n $ bezeichnet man $ \sigma_S $ auch als \emph{kanonische Sesquilinearform}.
+\subsection{Definition}
+	Eine Sesquilinearform $ \sigma:V\times V\to K $ auf einem $ K $-VR bzgl. eines Automorphismus $ \overline{\phantom{a}}:K\to K $ nennen wir
+		\begin{enumerate}[(i)]
+			\item \emph{symmetrisch}, falls
+				\[ \forall v,w\in V: \sigma(w,v) = \overline{\sigma(v,w)} \]
+			\item \emph{schiefsymmetrisch}, falls
+				\[ \forall v,w\in V: \sigma(w,v) = - \overline{\sigma(v,w)} \]
+			\item \emph{alternierend}, falls
+				\[ \forall v \in V: \sigma(v,v) = 0. \]
+		\end{enumerate}
+	Falls $ K =\mathbb{C} $ und $ \overline{\phantom{a}} $ komplexe Konjugation sind, so nennt man eine symmetrische Sesquilinearform auch \emph{Hermitesche Sesquilinearform}.
+\paragraph{Bemerkung}
+	Ist $ \sigma $ nicht-trivial und (schief-)symmetrisch, so muss $ \overline{\phantom{a}} $ eine Involution sein.
+	
+	Nämlich: Wähle $ v,w\in V $ mit $ \sigma(v,w) = 1$; dann gilt
+		\[ \forall x\in K: \overline{\overline{x}} = \overline{\sigma(vx,w)} = \pm \sigma(w,vx) = \overline{\overline{x}\sigma(v,w)} = \pm \sigma(w,v)x = \overline{\sigma(v,w)}x = x. \]
