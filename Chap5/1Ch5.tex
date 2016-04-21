@@ -1,7 +1,7 @@
 % VO 14-04-2016 %
 \chapter{Längen- und Winkelmessung}
 Plan: 
-	Längen und Winkel (in "Punkträumen" $ \cong $ affinen Räumen) verstehen.
+	Längen und Winkel (in "`Punkträumen"' $ \cong $ affinen Räumen) verstehen.
 	
 Algebraisch:
 	via Produkte (bilineare -- oder fast bilineare -- Abbildungen).
@@ -11,17 +11,17 @@ Algebraisch:
 	
 	\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,scale=1.8]
 	\clip(0,0) rectangle (10,3);
-	\draw [shift={(6.635,1.07)},color=qqwuqq,fill=qqwuqq,fill opacity=0.1] (0,0) -- (34.85:0.14) arc (34.85:143.6:0.14) -- cycle;
-	\draw [->] (3.58,1) -- (1.56,2.3);
-	\draw [->] (7.6,0.35) -- (5.25,2.1);
-	\draw [->] (5.5,0.26) -- (7.8,1.9);
+	\draw [shift={(5.635,1.07)},color=qqwuqq,fill=qqwuqq,fill opacity=0.1] (0,0) -- (34.85:0.14) arc (34.85:143.6:0.14) -- cycle;
+	\draw [->] (2.58,1) -- (0.56,2.3);
+	\draw [->] (6.6,0.35) -- (4.25,2.1);
+	\draw [->] (4.5,0.26) -- (6.8,1.9);
 
-	\draw [fill=qqqqff] (3.58,1) circle (1pt);
-	\draw[color=qqqqff] (3.6,1) node[below] {$A$};
-	\draw [fill=qqqqff] (1.56,2.3) circle (1pt);
-	\draw[color=blue] (1.5,2.3) node[above] {$B$};
-	\draw (2.5,0.1) node {Abstand a bis b $ \cong $ Länge b-a};
-	\draw (6.4,0.1) node {Winkel $ \cong $ Winkel zwischen Richtungsvektoren};
+	\draw [fill=qqqqff] (2.58,1) circle (1pt);
+	\draw[color=qqqqff] (2.6,1) node[below] {$A$};
+	\draw [fill=qqqqff] (0.56,2.3) circle (1pt);
+	\draw[color=blue] (0.5,2.3) node[above] {$B$};
+	\draw (1.5,0.1) node {Abstand a bis b $ \cong $ Länge b-a};
+	\draw (5.4,0.1) node {Winkel $ \cong $ Winkel zwischen Richtungsvektoren};
 	\end{tikzpicture}
 
 \section{Bilinearformen \& Sesquilinearformen}
@@ -43,7 +43,7 @@ Algebraisch:
 \begin{Definition}[Sesquilinearform]
 Seien $ V $ ein $ K $-VR und $ K\ni x\mapsto \overline{x}\in K $ ein (Körper-) Automorphismus, d.h. eine bijektive Abbildung mit
 		\[ \overline{x+y} = \overline{x}+\overline{y} \text{ und } \overline{xy} = \overline{x}\cdot \overline{y} \]
-	für alle $ x,y\in K $. Eine Abbildung $ \sigma: V\times V \to K $ heißt dann \emph{Sesquilinearform} (bzgl. $ \overline{\phantom{a}} $), falls
+	für alle $ x,y\in K $. Eine Abbildung $ \sigma: V\times V \to K $ heißt dann \emph{Sesquilinearform} (bzgl. $ \bar{.} $), falls
 		\begin{enumerate}[(i)]
 			\item $ \forall v\in V: V\ni w \mapsto \sigma(v,w)\in K $ ist linear, d.h. $ \sigma(v,.)\in V^* $;
 			\item $ \forall w\in V: V\ni v \mapsto \sigma(v,w)\in K $ ist \emph{semilinear}, d.h.
@@ -61,14 +61,14 @@ Seien $ V $ ein $ K $-VR und $ K\ni x\mapsto \overline{x}\in K $ ein (Körper-) 
 		\[ \mathbb{C}\ni x+iy \mapsto \overline{x+iy}:= x-iy \in \mathbb{C}. \]
 	Dieses Beispiel ist unser Grund für die Einführung des Begriffs der Sesquilinearform.
 \paragraph{Bemerkung}
-	Ist $ \sigma $ Bilinearform und Sesquilinearform bezüglich $ \overline{\phantom{a}} $, so ist $ \sigma $ oder $ \overline{\phantom{a}} $ trivial:
+	Ist $ \sigma $ Bilinearform und Sesquilinearform bezüglich $ \bar{.} $, so ist $ \sigma $ oder $ \bar{.} $ trivial:
 		\[ \forall x\in K\forall v,w\in V: 0 = \sigma(vx,w) - \sigma(vx,w) = (x-\overline{x})\sigma(v,w)  \]
 		\[ \Rightarrow \begin{cases}
 		\forall v,w\in V: \sigma(v,w) = 0 \text{ oder}\\
 		\exists v,w\in V: \sigma(v,w)\neq 0 \land \forall x\in K: \overline{x} = x.
 		\end{cases} \]
 \paragraph{Bemerkung}
-	In $ \mathbb{Z}_p, \mathbb{Q} $ und $ \mathbb{R} $ gibt es nur \emph{einen} Körperautomorphismus: $ \id_K $. Ein Automorphismus $ \overline{\phantom{a}} $ von $ \mathbb{C} $ mit $ \overline{\mathbb{R}} = \mathbb{R} $ ist trivial, $ \overline{\phantom{a}} = \id_\mathbb{C} $ oder die komplexe Konjugation.
+	In $ \mathbb{Z}_p, \mathbb{Q} $ und $ \mathbb{R} $ gibt es nur \emph{einen} Körperautomorphismus: $ \id_K $. Ein Automorphismus $ \bar{.} $ von $ \mathbb{C} $ mit $ \overline{\mathbb{R}} = \mathbb{R} $ ist trivial, $ \bar{.} = \id_\mathbb{C} $ oder die komplexe Konjugation.
 	
 \subsection{Fortsetzungssatz für Sesquilinearformen}
 \begin{Satz}[Fortsetzungssatz für Sesquilinearformen]
@@ -133,13 +133,13 @@ Dies liefert einen weiteren Äquivalenzbegriff für quadratische Matrizen $ S\in
 	Die Menge der Sesquilinearformen auf einem $ K $-VR ist selbst ein $ K $-VR. Ist $ n=\dim V< \infty $ und $ B $ Basis von $ V $, so erhält man (Fortsetzungssatz) einen Isomorphismus
 		\[ K^{V\times V}\supset \{\sigma:V\times V\to K \text{ Sesquilinearform}\}\ni \sigma \mapsto \Gamma_B(\sigma)\in K^{n\times n}. \]
 \subsection{Beispiel \& Definition} \index{Sesquilinearform!kanonische}\index{Sesquilinearform!assoziierte}
-	Sei $ \overline{\phantom{a}}:K\to K $ Körperautomorphismus; jedes $ S\in K^{n\times n} $ liefert dann eine eindeutige Sesquilinearform
+	Sei $ \bar{.}:K\to K $ Körperautomorphismus; jedes $ S\in K^{n\times n} $ liefert dann eine eindeutige Sesquilinearform
 		\[ \sigma_S:K^n\times K^n \to K \text{ mit } (e_i,e_j)\mapsto \sigma_S(e_i,e_j):= s_{ij}, \] 
 	die zu \emph{$ S $ assoziierte Sesquilinearform}.
 
 	Für $ S = E_n $ bezeichnet man $ \sigma_S $ auch als \emph{kanonische Sesquilinearform}.
-\subsection{Definition}
-	Eine Sesquilinearform $ \sigma:V\times V\to K $ auf einem $ K $-VR bzgl. eines Automorphismus $ \overline{\phantom{a}}:K\to K $ nennen wir
+\subsection{Definition}\index{Sesquilinearform!symmetrische}
+	Eine Sesquilinearform $ \sigma:V\times V\to K $ auf einem $ K $-VR bzgl. eines Automorphismus $ \bar{.}:K\to K $ nennen wir
 		\begin{enumerate}[(i)]
 			\item \emph{symmetrisch}, falls
 				\[ \forall v,w\in V: \sigma(w,v) = \overline{\sigma(v,w)} \]
@@ -148,9 +148,110 @@ Dies liefert einen weiteren Äquivalenzbegriff für quadratische Matrizen $ S\in
 			\item \emph{alternierend}, falls
 				\[ \forall v \in V: \sigma(v,v) = 0. \]
 		\end{enumerate}
-	Falls $ K =\mathbb{C} $ und $ \overline{\phantom{a}} $ komplexe Konjugation sind, so nennt man eine symmetrische Sesquilinearform auch \emph{Hermitesche Sesquilinearform}.
+	Falls $ K =\mathbb{C} $ und $ \bar{.} $ komplexe Konjugation sind, so nennt man eine symmetrische Sesquilinearform auch \emph{Hermitesche Sesquilinearform}.
 \paragraph{Bemerkung}
-	Ist $ \sigma $ nicht-trivial und (schief-)symmetrisch, so muss $ \overline{\phantom{a}} $ eine Involution sein.
+	Ist $ \sigma $ nicht-trivial und (schief-)symmetrisch, so muss $ \bar{.} $ eine Involution sein.
 	
 	Nämlich: Wähle $ v,w\in V $ mit $ \sigma(v,w) = 1$; dann gilt
 		\[ \forall x\in K: \overline{\overline{x}} = \overline{\sigma(vx,w)} = \pm \sigma(w,vx) = \overline{\overline{x}\sigma(v,w)} = \pm \sigma(w,v)x = \overline{\sigma(v,w)}x = x. \]
+
+% VO 21-04-2016 %
+	Ist $ \Char(K) \neq 2 $ und $ \bar{.}  $ Involution, so kann jede Sesquilinearform in einen symmetrischen und einen schiefsymmetrischen Anteil zerlegt werden:
+		\[ \forall v,w\in V: \sigma(v,w) = \frac{1}{2}\left(\sigma(v,w)+\overline{\sigma(w,v)}\right) +\frac{1}{2}\left(\sigma(v,w)-\overline{\sigma(w,v)} \right).\]
+\paragraph{Bemerkung}
+	Ist $ \Char(K)\neq 2 $ und $ \bar{.} = \id_K $, so sind "`alternierend"' und "`schiefsymmetrisch"' äquivalent für eine Sesquilinearform $ \sigma $.
+	
+	Andererseits ist jede alternierende Sesquilinearform bilinear, d.h. $ \bar{.} = \id_K $ oder $ \sigma = 0 $.
+	
+\paragraph{Buchhaltung}
+	Unter den folgenden Annahmen:
+		\begin{itemize}
+			\item $ \Char(K)\neq 2 $ und $ \bar{.} $ Involution;
+			\item $ n=\dim V <\infty $ und $ B $ ist Basis von $ V $;
+		\end{itemize}
+	gilt für die Gramsche Matrix $ S = \Gamma_B(\sigma) $ einer Sesquilinearform $ \sigma $ auf $ V $:
+		\begin{itemize}
+			\item $ 0 = \overline{S}^t-S\Leftrightarrow \sigma $ symmetrisch;\footnote{bis auf Faktor 2: Gramsche Matrix des schiefsymmetrischen Anteils von $ \sigma $}
+			\item $ 0 = S + \overline{S}^t \Leftrightarrow \sigma $ schiefsymmetrisch.
+		\end{itemize}
+	Nämlich:
+		\[ \overline{S}^t = \begin{pmatrix}
+		\overline{\sigma(b_1,b_2)} & \overline{\sigma(b_1,b_2)} &\cdots& \overline{\sigma(b_1,b_n)} \\ 
+		\overline{\sigma(b_2,b_1)} &  & & \vdots \\ 
+		\vdots &  & & \vdots \\ 
+		\overline{\sigma(b_n,b_1)} & \cdots & & \overline{\sigma(b_n,b_n)}
+		\end{pmatrix}^t =  \begin{pmatrix}
+		\overline{\sigma(b_1,b_2)} & \overline{\sigma(b_2,b_1)} &\cdots& \overline{\sigma(b_n,b_1)} \\ 
+		\overline{\sigma(b_1,b_2)} &  & & \vdots \\ 
+		\vdots &  & & \vdots \\ 
+		\overline{\sigma(b_1,b_n)} & \cdots & & \overline{\sigma(b_n,b_n)}
+		\end{pmatrix} \]
+		\[ S = \begin{pmatrix}
+		\sigma(b_1,b_2) & \sigma(b_1,b_2) &\cdots& \sigma(b_1,b_n) \\ 
+		\sigma(b_2,b_1) &  & & \vdots \\ 
+		\vdots &  & & \vdots \\ 
+		\sigma(b_n,b_1) & \cdots & & \sigma(b_n,b_n)
+		\end{pmatrix} \]
+		
+\subsection{Definition} \index{Orthogonal!-raum}\index{Orthogonal}
+	Sei $ \sigma $ symmetrische Sesquilinearform auf einem Vektorraum $ V $. Zwei Vektoren $ v,w\in V $ heißen \emph{orthogonal} (bzgl. $ \sigma $),
+		\[ w \perp v, \text{ falls } \sigma(v,w) = 0. \]
+	Der \emph{Orthogonalraum} einer Menge $ \emptyset \neq S\subset V $ ist der UVR
+		\[ S^\perp := \bigcap_{s\in S} \ker \underset{\in V^*}{\underbrace{\sigma(s,.)}}. \]
+\paragraph{Bemerkung}
+	Wegen der Symmetrie von $ \sigma $ ist die \emph{Orthogonalitätsrelation} symmetrisch,
+		\[ w \perp v \Leftrightarrow v \perp w. \]
+\paragraph{Bemerkung}
+	Da $ \forall v\in V: \sigma(v,.) \in V^* $, ist der Orthogonalraum wohldefiniert und (als Schnitt von UVR) ein UVR. Offenbar gilt
+		\[ \tilde{S} \subset S \Rightarrow \tilde{S}^\perp \supset S^\perp. \]
+	Damit folgt direkt $ S^\perp \supset [S]^\perp $, sind andererseits $ w\in S^\perp $ und $ v\in [S] $, so gilt
+		\[ v = \sum_{s\in S}sx_s \Rightarrow \sigma(v,w)= \sum_{s\in S}\overline{x_s}\sigma(s,w) = 0, \text{ da } \forall s\in S: w\perp s \]
+	d.h. $ w\in S^\perp \Rightarrow w\in [S]^\perp. $ Insgesamt ist also
+		\[ \forall S \subset V: [S]=S.\]
+	Ähnlich zeigt man für jede Familie $ (U_i)_{i\in I} $ von UVR $ U_i\subset V $:
+		\[ \left(\sum_{i\in I}U_i \right)^\perp= \bigcap_{i\in I} U_i^\perp. \]
+\paragraph{Bemerkung \& Beispiel}
+	Für $ S\subset V $ kann man $ S^{\perp\perp} = \left(S^\perp\right)^\perp $ betrachten; im Allgemeinen gilt
+		\[ S\subset S^{\perp\perp} \text{ aber } S\neq S^{\perp\perp}. \]
+	Ist etwa $ \sigma = 0 $, so ist $ S^\perp = V $ für jede Menge $ \emptyset \neq S\subsetneq V $; also ist
+		\[ S^{\perp\perp} = V^\perp s = V \neq S. \]
+
+\subsection{Definition}\index{Radikal!-raum}\index{Radikal!-frei}
+	$ V^\perp $ ist der \emph{Radikal(-raum)} eines VR mit symmetrischer Sesquilinearform $ \sigma $; ist $ V^\perp = \{0 \} $, so heißt $ \sigma $ \emph{radikalfrei} oder \emph{nicht-degeneriert}, andernfalls \emph{degeneriert}.
+\paragraph{Beispiel}
+	Betrachte $ V=\mathbb{R}^2 $ mit Standardbasis $ (e_1,e_2) $.
+	
+	Ist für eine symmetrische Sesquilinearform (Bilinearform) $ \sigma $ auf $ V $
+		\[ \sigma(e_1,e_1) = 0, \sigma(e_1,e_2) = 1, \sigma(e_2,e_2) = 0 \]
+	so ist $ \sigma $ nicht-degeneriert, $ V^\perp = \{0\} $, da
+		\[ v = e_1x_1 + e_2x_2 \perp e_1,e_2 \Rightarrow
+		\begin{cases}
+		0 = \sigma(e_1,v) = x_2\\
+		0 = \sigma(e_2,v) = x_1
+		\end{cases} \]
+		\[ \Rightarrow x_1 = x_2 = 0, \]
+	also $ V^\perp = \{0\} $, d.h. $ \sigma $ ist nicht-degeneriert.
+	
+	% Grafik R^2
+	
+	Ist aber
+		\[ \sigma(e_1,e_1) = 1, \sigma(e_1,e_2) = 1, \sigma(e_2,e_2) = 1, \]
+	so ist $ V^\perp = [e_1-e_2] $, d.h. $ \sigma $ ist degeneriert.
+	
+	% Grafik R^2 mit UVR [e_1-e_2]-> Gerade y = -x
+
+\subsection{Lemma}
+	Ist $ U\subset V $ ein zum Radikal von $ (V,\sigma) $ komplementärer UVR, $ V = V^\perp \oplus U $, so ist
+		\[ \sigma\big|_{U\times U}:U\times U \to K \]
+	radikalfrei.
+\paragraph{Beweis}
+	Sei $ u\in U $ im Radikal von $ (U,\sigma\big|_{U\times U}) $, d.h. es gelte
+		\[ \forall v\in U: \sigma(v,u) = 0. \]
+	Weil
+		\[ \forall v\in V^\perp\forall w\in V: v\perp w \Rightarrow \forall v\in V^\perp: v\perp u \]
+	erhalten wir $ u\in U\cap V^\perp = \{0\} $.
+\paragraph{Beispiel}
+	Die Einschränkung von $ \sigma $ mit (wie oben)
+		\[ \forall i,j \in \{1,2\}: \sigma(e_i,e_j) = 1 \]
+		auf jeden UVR $ U = [e_1x_1 + e_2x_2] $ mit $ x_1 + x_2 \neq 0 $ ist radikalfrei, denn
+			\[ \sigma(e_1x_1+e_2x_2, e_1x_1+e_2x_2) = (x_1+x_2)^2 \neq 0. \]
