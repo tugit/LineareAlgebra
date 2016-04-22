@@ -133,12 +133,16 @@ Dies liefert einen weiteren Äquivalenzbegriff für quadratische Matrizen $ S\in
 	Die Menge der Sesquilinearformen auf einem $ K $-VR ist selbst ein $ K $-VR. Ist $ n=\dim V< \infty $ und $ B $ Basis von $ V $, so erhält man (Fortsetzungssatz) einen Isomorphismus
 		\[ K^{V\times V}\supset \{\sigma:V\times V\to K \text{ Sesquilinearform}\}\ni \sigma \mapsto \Gamma_B(\sigma)\in K^{n\times n}. \]
 \subsection{Beispiel \& Definition} \index{Sesquilinearform!kanonische}\index{Sesquilinearform!assoziierte}
+\begin{Definition}[assoziierte Sesquilinearform]
 	Sei $ \bar{.}:K\to K $ Körperautomorphismus; jedes $ S\in K^{n\times n} $ liefert dann eine eindeutige Sesquilinearform
 		\[ \sigma_S:K^n\times K^n \to K \text{ mit } (e_i,e_j)\mapsto \sigma_S(e_i,e_j):= s_{ij}, \] 
 	die zu \emph{$ S $ assoziierte Sesquilinearform}.
 
 	Für $ S = E_n $ bezeichnet man $ \sigma_S $ auch als \emph{kanonische Sesquilinearform}.
+\end{Definition}
+
 \subsection{Definition}\index{Sesquilinearform!symmetrische}
+\begin{Definition}[symmetrische, schiefsymmetrische und alternierende Sesquilinearformen]
 	Eine Sesquilinearform $ \sigma:V\times V\to K $ auf einem $ K $-VR bzgl. eines Automorphismus $ \bar{.}:K\to K $ nennen wir
 		\begin{enumerate}[(i)]
 			\item \emph{symmetrisch}, falls
@@ -148,7 +152,12 @@ Dies liefert einen weiteren Äquivalenzbegriff für quadratische Matrizen $ S\in
 			\item \emph{alternierend}, falls
 				\[ \forall v \in V: \sigma(v,v) = 0. \]
 		\end{enumerate}
+\end{Definition}
+
+\begin{Definition}[Hermitesche Sesquilinearform]
 	Falls $ K =\mathbb{C} $ und $ \bar{.} $ komplexe Konjugation sind, so nennt man eine symmetrische Sesquilinearform auch \emph{Hermitesche Sesquilinearform}.
+\end{Definition}
+
 \paragraph{Bemerkung}
 	Ist $ \sigma $ nicht-trivial und (schief-)symmetrisch, so muss $ \bar{.} $ eine Involution sein.
 	
@@ -194,10 +203,12 @@ Dies liefert einen weiteren Äquivalenzbegriff für quadratische Matrizen $ S\in
 		\end{pmatrix} \]
 		
 \subsection{Definition} \index{Orthogonal!-raum}\index{Orthogonal}
+\begin{Definition}[orthogonal, Orthogonalraum]
 	Sei $ \sigma $ symmetrische Sesquilinearform auf einem Vektorraum $ V $. Zwei Vektoren $ v,w\in V $ heißen \emph{orthogonal} (bzgl. $ \sigma $),
 		\[ w \perp v, \text{ falls } \sigma(v,w) = 0. \]
 	Der \emph{Orthogonalraum} einer Menge $ \emptyset \neq S\subset V $ ist der UVR
 		\[ S^\perp := \bigcap_{s\in S} \ker \underset{\in V^*}{\underbrace{\sigma(s,.)}}. \]
+\end{Definition}
 \paragraph{Bemerkung}
 	Wegen der Symmetrie von $ \sigma $ ist die \emph{Orthogonalitätsrelation} symmetrisch,
 		\[ w \perp v \Leftrightarrow v \perp w. \]
@@ -217,7 +228,9 @@ Dies liefert einen weiteren Äquivalenzbegriff für quadratische Matrizen $ S\in
 		\[ S^{\perp\perp} = V^\perp s = V \neq S. \]
 
 \subsection{Definition}\index{Radikal!-raum}\index{Radikal!-frei}
-	$ V^\perp $ ist der \emph{Radikal(-raum)} eines VR mit symmetrischer Sesquilinearform $ \sigma $; ist $ V^\perp = \{0 \} $, so heißt $ \sigma $ \emph{radikalfrei} oder \emph{nicht-degeneriert}, andernfalls \emph{degeneriert}.
+\begin{Definition}[Radikal(-raum),radikalfrei,nicht-degeneriert,degeneriert]
+$ V^\perp $ ist der \emph{Radikal(-raum)} eines VR mit symmetrischer Sesquilinearform $ \sigma $; ist $ V^\perp = \{0 \} $, so heißt $ \sigma $ \emph{radikalfrei} oder \emph{nicht-degeneriert}, andernfalls \emph{degeneriert}.
+\end{Definition}
 \paragraph{Beispiel}
 	Betrachte $ V=\mathbb{R}^2 $ mit Standardbasis $ (e_1,e_2) $.
 	
@@ -241,9 +254,11 @@ Dies liefert einen weiteren Äquivalenzbegriff für quadratische Matrizen $ S\in
 	% Grafik R^2 mit UVR [e_1-e_2]-> Gerade y = -x
 
 \subsection{Lemma}
+\begin{Lemma}[]
 	Ist $ U\subset V $ ein zum Radikal von $ (V,\sigma) $ komplementärer UVR, $ V = V^\perp \oplus U $, so ist
 		\[ \sigma\big|_{U\times U}:U\times U \to K \]
 	radikalfrei.
+\end{Lemma}
 \paragraph{Beweis}
 	Sei $ u\in U $ im Radikal von $ (U,\sigma\big|_{U\times U}) $, d.h. es gelte
 		\[ \forall v\in U: \sigma(v,u) = 0. \]
