@@ -1,0 +1,106 @@
+% VO 26-04-2016 %
+\section{Der Satz von Sylvester}
+\paragraph{Beispiel}
+	Ist $ \sigma $ symmetrische Sesquilinearform auf $ V=\mathbb{Z}^2_2 $ mit
+		\[ \sigma(e_1,e_1)=0, \sigma(e_1,e_2) = 1, \sigma(e_2,e_2) = 0, \]
+	so ist $ \sigma $ (wie vorher) nicht-degeneriert, $ V^\perp =\{0\}$, trotzdem gilt
+		\[ \forall v\in V: \sigma(v,v) = 0. \]
+	Das folgende Lemma zeigt, dass dies ein degenerierter Fall ist:
+	
+\subsection{Lemma \& Definition (Polarisation)}
+	Ist $ \sigma $ symmetrische Bilinearform auf einem $ K $-VR $ V $ über einem Körper $ K $ mit $ \Char K \neq 2 $, so gilt
+		\[ \forall v,w\in V: \sigma(v,w)=\frac{1}{2}\left(q(v+w)-q(v)-q(w)\right), \]
+	wobei
+		\[ q:V\to K, v\mapsto q(v):= \sigma(v,v) \]
+	die zu $ \sigma $ gehörige \emph{quadratische Form} bezeichnet.
+\paragraph{Beweis}
+	Ausrechnen: sind $ v,w\in V $, so gilt
+	\begin{align*}
+	q(v+w) &= \sigma(v+w,v+w)\\
+			&= \sigma(v,v) + \sigma(v,w)+\sigma(w,v)+\sigma(w,w)\\
+			&= q(v)+2\sigma(v,w)+q(w)
+	\end{align*}
+	diese Gleichung kann (da $ \Char K\neq 2 $) nach $ \sigma(v,w) $ aufgelöst werden.
+\paragraph{Bemerkung}
+	Ist $ \Char K=0 $ so kann man statt
+		\[ q(v+w)=q(v)+2\sigma(v,w)+q(w) \]
+	auch
+		\[ q(v+w)-q(v-w) = 4 \sigma(v,w) \]
+	für die Polarisation verwenden.
+	
+\subsection{Lemma}
+	Ist $ \sigma $ symmetrische Sesquilinearform auf einem $ K $-VR $ V $ über einem Körper $ K $ mit $ \Char K \neq 2 $, so gilt
+		\[ \sigma = 0 \Leftrightarrow \forall v\in V: \sigma(v,v) = 0. \]
+\paragraph{Bemerkung}
+	Im Falle einer Bilinearform folgt dies direkt mit Polarisation.
+	
+	Im Falle eines nicht-trivialen Körperautomorphismus $ \bar{.} $ liefert
+		\[ v\mapsto \sigma(v,v)  \]
+	wegen
+		\[ K\ni x \mapsto \sigma(vx,vx)-x^2\sigma(v,v) = (\overline{x}x-x^2)\sigma(v,v)\neq 0 \]
+	im Allgemeinen \emph{keine} quadratische Form:
+		\[ \exists x\in K: \exists v\in V: \sigma(vx,vx) = \overline{x}\sigma(v,v)x \neq x^2\sigma(v,v). \]
+\paragraph{Beweis}
+	Ist $ \sigma = 0 $, so folgt trivialerweise
+		\[ \forall v\in V: \sigma(v,v) = 0. \]
+	Sei nun $ \sigma \neq 0 $, d.h.
+		\[ \exists v,w\in V: \sigma(v,w)\neq 0. \]
+	Wie vorher berechnet man für $ v,w\in V $
+		\[ \sigma(v+w,v+w) = \sigma(v,v)+\sigma(v,w)+\overline{\sigma(v,w)}+\sigma(w,w). \]
+	Wähle nun $ v,w\in V $ mit $ \sigma(v,w)\neq 0 $, o.B.d.A. $ \sigma(v,w) = 1 $.
+	\footnote{Ggf. ersetzt man $ w $ durch $ \frac{w}{\sigma(v,w)} $.}
+	Ist $ \sigma(v,v) \neq 0 $ oder $ \sigma(w,w)\neq 0 $, so sind wir fertig.
+	
+	Gilt jedoch $ \sigma(v,v) = \sigma(w,w) = 0 $, so liefert
+		\[ \sigma(v+w,v+w) = 0 + 1 + 1 + 0 \neq 0 \]
+	wieder die Behauptung, da $ \Char K \neq 2 $.
+\paragraph{Vereinbarung}
+	Im Folgenden schließen wir $ \Char K = 2 $ aus.
+	
+\subsection{Lemma}
+	Für eine symmetrische Sesquilinearform $ \sigma $ auf $ V $ und $ b\in V $ mit $ \sigma(b,b)\neq 0 $ gilt
+		\[ V = [b]\oplus \{b\}^\perp. \]
+\paragraph{Beweis}
+	Es gilt $ V = [b]+\{b\}^\perp $, da für $ v\in V $
+		\[ v = u + b\frac{\sigma(b,v)}{\sigma(b,b)} \text{ mit } u := v-b\frac{\sigma(b,v)}{\sigma(b,b)}\perp b;\footnote{denn $ \sigma(b,u) = \sigma(b,v-b\frac{\sigma(b,v)}{\sigma(b,b)}) = \sigma(b,v)-\sigma(b,b)\frac{\sigma(b,v)}{\sigma(b,b)} = 0 $} \]
+	ist $ v\in [b]\cap \{b\}^\perp $, so gilt
+		\[ v = bx \text{ für ein }x\in K \text{ und} \]
+		\[ 0 = \sigma(b,v) = \sigma(b,bx) = \sigma(b,b)x \]
+			\[ \Rightarrow x = 0 \land v = 0, \]
+	d.h. $ [b]\cap \{b\}^\perp = \{0\}$ und damit folgt die Behauptung.
+\paragraph{Bemerkung}
+	Ist $ \sigma(b,b) = 0 $ für $ b \in V $, so gilt
+		\[ b\in [b]\cap \{b\}^\perp, \]
+	d.h. ist $ b\neq 0 $, so ist $ [b]\cap \{b\}^\perp \neq \{0\}$. Außerdem ist dann $ \sigma\big|_{U\times U} $ für $ U:= \{b\}^\perp $ degeneriert, da
+		\[ \exists v = b \in U^\times \forall u\in U: u\perp b.\]
+		
+\subsection{Diagonalisierungslemma}
+	Zu jeder symmetrischen Sesquilinearform $ \sigma $ auf einem endlichdimensionalen VR $ V $, also $ n = \dim V < \infty $,  gibt es eine Basis $ B = (b_1,\dots,b_n) $ von $ V $, die $ \sigma $ \emph{diagonalisiert}, d.h. für die gilt
+		\[ \sigma(b_i,b_j)=0, \text{ falls } i\neq j. \]
+\paragraph{Beweis}
+	Durch Induktion über $ n $.
+	
+	Für $ n = 1 $ ist die Behauptung trivial (denn $ i\neq j $ existiert nicht).
+	
+	Sei die Behauptung also für $\dim V = n $ bewiesen. Ist $ \sigma $ symmetrische Sesquilinearform auf $ V $ mit $ \dim V = n+1 $ und o.B.d.A. $ \sigma \neq 0 $, also
+		\[ \exists b\in V: \sigma(b,b) \neq 0 \]
+	nach obigem Lemma lässt sich also $ V $ aufspalten in 
+		\[ V = [b]\oplus U \text{ mit } U:=\{b\}^\perp \]
+	und $ \dim U = n $. Nach Annahme existiert eine Basis $ (b_1,\dots,b_n) $ von $ U $, die $ \sigma|_{U\times U} $ diagonalisiert. Da $ b \perp b_1,\dots,b_n \in U$ liefert $ B := (b,b_1,\dots,b_n) $ eine $ \sigma $-diagonalisierende Basis von $ V $. 
+\paragraph{Bemerkung}
+	Ist $ B = (b_1,\dots,b_n) $ eine $ \sigma $-diagonalisierende Basis, also
+		\[ s_{ij} = \sigma(b_i,b_j) = 0 \text{ für } i\neq j \]
+	so ist
+		\[ \sigma(v,v) = \sum_{i=1}^{n}\overline{x_i}s_{ii}x_i \text{ für } v = \sum_{i=1}^{n}b_ix_i. \]
+	Sind $ a_1,\dots,a_n\in K^\times $ und $ b_i' = b_ia_i $, so zeigt
+		\[ s_{ij}' = \sigma(b_i',b_j') = \overline{a_i}\sigma(b_i,b_j)a_j = \overline{a_i}s_{ij}a_j, \]
+	dass $ B' = (b_1',\dots,b_n') $ eine weitere $ \sigma $-diagonalisierende Basis ist.
+	Man kann also die $ s_{ii} $ "`adjustieren"', sofern man die (unabhängigen) Gleichungen
+		\[ s_{ii}' = \overline{a_i}s_{ii}a_i \]
+	für gegebene $ s_{ii}' $ (nach den $ a_i $) lösen kann. Zum Beispiel:
+\subsection{Korollar}
+	Ist $ \sigma $ symmetrische Sesquilinearform auf einem $ \mathbb{C} $-VR $ V $ mit $ \dim V < \infty $, so besitzt $ V $ eine Basis $ B = (b_1,\dots,b_n) $, sodass
+		\[ \exists r\in \mathbb{N}: s_{ij} = \sigma(b_i,b_j) = \begin{cases}
+		1 & \text{für } i = j \leq r\\
+		0 & \text{sonst}.
+		\end{cases} \]
