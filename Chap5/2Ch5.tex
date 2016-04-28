@@ -7,7 +7,7 @@
 		\[ \forall v\in V: \sigma(v,v) = 0. \]
 	Das folgende Lemma zeigt, dass dies ein degenerierter Fall ist:
 	
-\subsection{Lemma \& Definition (Polarisation)}
+\subsection{Lemma \& Definition (Polarisation)}\index{quadratische Form}
 	Ist $ \sigma $ symmetrische Bilinearform auf einem $ K $-VR $ V $ über einem Körper $ K $ mit $ \Char K \neq 2 $, so gilt
 		\[ \forall v,w\in V: \sigma(v,w)=\frac{1}{2}\left(q(v+w)-q(v)-q(w)\right), \]
 	wobei
@@ -99,8 +99,145 @@
 		\[ s_{ii}' = \overline{a_i}s_{ii}a_i \]
 	für gegebene $ s_{ii}' $ (nach den $ a_i $) lösen kann. Zum Beispiel:
 \subsection{Korollar}
-	Ist $ \sigma $ symmetrische Sesquilinearform auf einem $ \mathbb{C} $-VR $ V $ mit $ \dim V < \infty $, so besitzt $ V $ eine Basis $ B = (b_1,\dots,b_n) $, sodass
+	Ist $ \sigma $ symmetrische Bilinearform auf einem $ \mathbb{C} $-VR $ V $ mit $ \dim V < \infty $, so besitzt $ V $ eine Basis $ B = (b_1,\dots,b_n) $, sodass
 		\[ \exists r\in \mathbb{N}: s_{ij} = \sigma(b_i,b_j) = \begin{cases}
 		1 & \text{für } i = j \leq r\\
 		0 & \text{sonst}.
 		\end{cases} \]
+		
+% VO 28-04-2016 %
+\paragraph{Bemerkung}
+	D.h.
+		\[ \begin{pmatrix}
+		E_r & 0 \\ 0 & 0
+		\end{pmatrix} \]
+\paragraph{Beweis}
+	Sei (nach Diagonalisierungslemma) $ B' = (b_1',\dots,b_n') $ eine $ \sigma$-diagonalisierende Basis von $ V $; durch Umsortierung der Basisvektoren kann man erreichen, dass
+		\[ s_{11}' ,\dots, s_{rr}' \neq 0 \text{ und } s_{r+1,r+1}' = \dots = s_{nn}' = 0 \]
+	für ein $ r\in \{0,\dots,n\} $. Mit einer Wahl der Wurzel bilden die Vektoren 
+		\[ b_i := \begin{cases}
+		{b_i'}\cdot \frac{1}{\sqrt{s_{ii}'}} & \text{ für } i = 1,\dots,r\\
+		b_i' = 0 & \text{ für } i = r+1,\dots,n 
+		\end{cases} \]
+	dann eine Basis $ B $ mit der gewünschten Eigenschaft:
+		\[ \sigma(b_i,b_i) = \underset{s_{ii}'}{\underbrace{\sigma(b_i',b_i')}} \cdot \left(\frac{1}{\sqrt{s_{ii}'}}\right)^2 = 1 \text{ für } i = 1,\dots,r\]
+		\[ \sigma(b_i,b_i) = \sigma(b_i',b_i') = 0 \text{ für } i = r+1,\dots, n. \]
+		
+\subsection{Korollar}
+	Ist $ V $ ein $ K $-VR mit $ \dim V <\infty $ und $ \sigma $ entweder
+		\begin{itemize}
+			\item symmetrische Bilinearform, wenn $ K=\mathbb{R} $, oder
+			\item Hermitesche Sesquilinearform, wenn $ K = \mathbb{C} $,
+		\end{itemize}
+	so besitzt $ V $ eine Basis $ B = (b_1,\dots,b_n) $, sodass
+		\[ \exists r\in \mathbb{N}: s_{ij} = \sigma(b_i,b_j) =
+		\begin{cases}
+			\pm 1 & \text{ für }i = j \leq r\\
+			0 & \text{ sonst}
+		\end{cases} \]
+\paragraph{Beweis}
+	Wie oben -- aber:
+	In diesen beiden Fällen gilt für eine diagonalisierende Basis $ B'=(b_1',\dots,b_n') $ und $ b_i = b_i'\cdot \frac{1}{a_i} $ mit $ a_i\in K $ für $ i=1,\dots,n $:
+		\[ s_{ii}' = \sigma(b_i',b_i')\in \mathbb{R} \text{ und }
+		\begin{cases}
+			a_i^2 \geq 0 & \text{falls } K = \mathbb{R},\\
+			\overline{a_i}a_i \geq 0 & \text{falls } K =\mathbb{C}.
+		\end{cases} \]
+	Also kann man die $ s_{ii}' $ (nur) positiv reskalieren und so $ s_{ii} = 0 $ oder $ s_{ii} = \pm 1 $ erreichen.
+\paragraph{Notation}
+	Im Folgenden bezeichnet $ \mathbb{K} $ entweder $ \mathbb{K} = \mathbb{R} $ oder $ \mathbb{K}=\mathbb{C} $.
+\paragraph{Motivation}
+	Für die obige Basis $ B $ von $ V $ mit den Eigenschaften des Korollars gilt offensichtlich:
+		\[ v\perp b_1,\dots,b_r \Rightarrow v\in [\{b_{r+1},\dots,b_{n}\}] \]
+	und
+		\[ b_{r+1},\dots,b_n \perp V, \]
+	also ist $ (b_{r+1},\dots,b_n) $ Basis des Radikalraums $ V^\perp $ von $ (V,\sigma) $,
+		\[ V^\perp = [\{b_{r+1},\dots,b_n\} ] \Rightarrow r = \dim V-\dim V^\perp. \]
+	Insbesondere ist $ \dim V^\perp $ und damit $ r $ unabhängig von der Basis $ B $.
+
+\subsection{Satz von Sylvester}\index{Sesquilinearform!Signatur}
+	Sei $ V $ ein $ \mathbb{K} $-VR, $ \dim V <\infty $, und $ \sigma $
+		\begin{itemize}
+			\item symmetrische Bilinearform, wenn $ \mathbb{K}=\mathbb{R} $, oder
+			\item Hermitesche Sesquilinearform, wenn $ \mathbb{K}=\mathbb{C} $.
+		\end{itemize}
+	Dann gibt es eine direkte Zerlegung von $ V $ mit UVR $ V_{\pm}\subset V $,
+		\[ V= V_+ \oplus_\perp V_- \oplus_\perp V^\perp,  \]
+	wobei
+		\[ V_+ \perp V_- \text{ und } \forall v\in V^\times_\pm: \pm \sigma(v,v) > 0. \]
+	Die \emph{Signatur} $ \sgn(\sigma):= (\dim V_+,\dim V_-,\dim V^\perp) $ von $ \sigma $ ist unabhängig von der direkten Zerlegung von $ V $.
+\paragraph{Bemerkung \& Definition}\index{Trägheitsindex}\index{Positivitätsindex}\index{Negativitätsindex}
+	Ist $ \sigma $ nicht-degeneriert, $ V^\perp \{0\} $, so bezeichnet man auch\footnote{Die Reihenfolge kann bei verschiedenen Autoren auch jeweils $ - $ vor $ + $ sein.}
+		\begin{itemize}
+			\item das Paar $ \sgn (\sigma) =(\dim V_+,\dim V_-)$ als Signatur von $ \sigma $, und
+			\item die Differenz $ \dim V_+ - \dim V_- $ als \emph{Trägheitsindex} von $ \sigma $.
+		\end{itemize}
+	Die Dimension $ \dim V_\pm $ ist auch der \emph{Positivitäts-} bzw. \emph{Negativitätsindex} von $ \sigma $.
+	
+	Der Satz von Sylvester wird auch "`Trägheitssatz von Sylvester"' genannt.
+\paragraph{Beweis}
+	Sei $ B=(b_1,\dots,b_n) $ eine Basis von $ V $ und $ p,r\in \mathbb{N} $, sodass (siehe Korollar oben)
+		\[ \sigma(b_i,b_j) =
+		\begin{cases}
+			+1 & \text{ für } 0 < i=j\leq p\\
+			-1 & \text{ für } p < i=j\leq r\\
+			0 & \text{ sonst. }
+		\end{cases} \]
+	Mit
+		\[ V_+ := [\{b_1,\dots,b_p \}] \text{ und } V_- := [\{b_{p+1},\dots,b_r\}] \]
+	erhält man die gewünschte direkte orthogonale Zerlegung von $ V $,
+		\[ V = V_+ \oplus_\perp V_- \oplus_\perp V^\perp. \]
+	Zur Eindeutigkeit der Signatur $ \sgn(\sigma) = (p,r-p,n-r) $:
+	
+	Seien
+	\[ V=V_+ \oplus_\perp V_- \oplus_\perp V^\perp
+	= \tilde{V}_+\oplus_\perp\tilde{V}_-\oplus_\perp\tilde{V}^\perp \]
+	direkte orthogonale Zerlegungen von $ V $ mit
+		\[ \pm \sigma(v,v)>0 \text{ für }
+			\begin{cases}
+				v\in V_\pm^\times\\
+				v\in \tilde{V}_\pm^\times.
+			\end{cases} \]
+	Nun gilt
+	\begin{align*}
+		&\forall v\in V_-^\times: \sigma(v,v)< 0 \\
+		&\Rightarrow \forall v\in V_- \oplus V^\perp: \sigma(v,v) \leq 0
+	\end{align*}
+	und damit, da $ \sigma(v,v)>0 $ für $ v\in \tilde{V}_+^\times $,
+		\[ v\in (V_-\oplus V^\perp)\cap \tilde{V}_+ \Rightarrow v= 0. \]
+	Es folgt, mit dem Dimensionssatz, $ \tilde{p}\leq p $, da
+		\[ \tilde{p}+(n-p) = \dim \tilde{V}_+ + \dim(V_-\oplus V^\perp) \leq \dim V = n. \]
+	Vertauscht man die Rollen der Zerlegungen, so erhält man die Ungleichung $ p\leq \tilde{p} $ und damit also
+		\[ p = \tilde{p}. \]
+\paragraph{Bemerkung}
+	Diese Zerlegung $ V= V_+ \oplus_\perp V_- \oplus_\perp V^\perp $ ist im Allgemeinen \emph{nicht} eindeutig!
+\paragraph{Beispiel}
+	Betrachte eine durch ihre Werte auf der Standardbasis $ E=(e_1,e_2) $ gegebene symmetrische Bilinearform $ \sigma: \mathbb{R}^2\times \mathbb{R}^2 \to \mathbb{R} $.
+		\begin{enumerate}
+			\item $ S=(\sigma(e_i,e_j))_{i,j\in \{1,2\}} =
+			\begin{pmatrix}
+				0&1\\1& 0
+			\end{pmatrix} $. Mit $ P:=\begin{pmatrix}
+			1&1\\ 1& -1
+			\end{pmatrix}\in Gl(2) $ liefert ein Basiswechsel $ B=EP $
+				\[ (\sigma(b_i,b_j))_{i,j\in \{1,2\}} = P^tSP = \begin{pmatrix}
+				2 & 0 \\ 0 & -2
+				\end{pmatrix} \]
+			die Signatur $ \sgn(\sigma) = (1,1,0)\cong (1,1) $.
+			Jeder weitere Basiswechsel
+				\[ \tilde{B}=BQ \text{ mit } Q = \begin{pmatrix}
+				\cosh(s) & \sinh(s)\\ \sinh(s)& \cosh(s) 
+				\end{pmatrix}, s\in \mathbb{R}, \]
+			liefert eine andere Zerlegung, ohne die Gramsche Matrix zu ändern.
+			\item $ S=(\sigma(e_i,e_j))_{i,j\in \{1,2\}}= \begin{pmatrix}
+			1 & 1\\ 1 & 1
+			\end{pmatrix}. $ Der Basiswechsel $ B=EP $ wie oben liefert hier
+				\[ (\sigma(b_i,b_j))_{i,j\in \{1,2\}} = P^tSP = \begin{pmatrix}
+				4 & 0 \\ 0 & 0
+				\end{pmatrix}, \]
+			also die Signatur $ \sgn(\sigma) = (1,0,1) $ von $ \sigma $. Hier ist $ V^\perp = [\{b_2\}]$ durch $ \sigma $ festgelegt, aber jeder Basiswechsel
+				\[ \tilde{B} = BQ \text{ mit } Q= \begin{pmatrix}
+				1 & 0 \\ s & 1
+				\end{pmatrix}, s\in \mathbb{R} \]
+			ändert die der Basis zugeordnete Zerlegung -- wieder ohne Änderung der Gramschen Matrix.
+		\end{enumerate}

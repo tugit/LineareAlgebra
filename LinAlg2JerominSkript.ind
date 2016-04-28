@@ -62,6 +62,10 @@
 
   \indexspace
 
+  \item quadratische Form, \hyperpage{40}
+
+  \indexspace
+
   \item Radikal
     \subitem -frei, \hyperpage{39}
     \subitem -raum, \hyperpage{39}
@@ -70,9 +74,11 @@
 
   \item Semilinearit\IeC {\"a}t, \hyperpage{33}
   \item Sesquilinearform, \hyperpage{33}
+    \subitem (schief-)symmetrische, \hyperpage{36}
     \subitem assoziierte, \hyperpage{36}
+    \subitem Hermitesche, \hyperpage{36}
     \subitem kanonische, \hyperpage{36}
-    \subitem symmetrische, \hyperpage{36}
+    \subitem Signatur einer, \hyperpage{45}
   \item Spur, \hyperpage{16}
 
   \indexspace
