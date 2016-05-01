@@ -6,9 +6,9 @@ Plan:
 Algebraisch:
 	via Produkte (bilineare -- oder fast bilineare -- Abbildungen).
 	
+%TODO schönere Grafik...; dann auslagern.
 	\definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
 	\definecolor{qqqqff}{rgb}{0.,0.,1.}
-	
 	\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,scale=1.8]
 	\clip(0,0) rectangle (10,3);
 	\draw [shift={(5.635,1.07)},color=qqwuqq,fill=qqwuqq,fill opacity=0.1] (0,0) -- (34.85:0.14) arc (34.85:143.6:0.14) -- cycle;
@@ -260,14 +260,13 @@ $ V^\perp $ ist der \emph{Radikal(-raum)} eines VR mit symmetrischer Sesquilinea
 	radikalfrei.
 \end{Lemma}
 \paragraph{Beweis}
-	Sei $ u\in U $ im Radikal von $ (U,\sigma\big|_{U\times U}) $, d.h. es gelte
-		\[ \forall v\in U: \sigma(v,u) = 0. \]
+	Sei $ u\in U $ im Radikal von $ (U,\sigma\big|_{U\times U}) $, d.h. es gelte $ \forall v\in U: \sigma(v,u) = 0 $.
 	Weil
 		\[ \forall v\in V^\perp\forall w\in V: v\perp w \Rightarrow \forall v\in V^\perp: v\perp u \]
 	erhalten wir $ u\in U\cap V^\perp = \{0\} $.
 \paragraph{Beispiel}
 	Die Einschränkung von $ \sigma $ mit (wie oben)
 		\[ \forall i,j \in \{1,2\}: \sigma(e_i,e_j) = 1 \]
-		auf jeden UVR $ U = [e_1x_1 + e_2x_2] $ mit $ x_1 + x_2 \neq 0 $ ist radikalfrei, denn
+	auf jeden UVR $ U = [e_1x_1 + e_2x_2] $ mit $ x_1 + x_2 \neq 0 $ ist radikalfrei, denn
 			\[ \sigma(e_1x_1+e_2x_2, e_1x_1+e_2x_2) = (x_1+x_2)^2 \neq 0. \]
 	
