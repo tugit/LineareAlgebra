@@ -3,7 +3,7 @@
 \paragraph{Beispiel}
 	Ist $ \sigma $ symmetrische Sesquilinearform auf $ V=\mathbb{Z}^2_2 $ mit
 		\[ \sigma(e_1,e_1)=0, \sigma(e_1,e_2) = 1, \sigma(e_2,e_2) = 0, \]
-	so ist $ \sigma $ (wie vorher) nicht-degeneriert, $ V^\perp =\{0\}$, trotzdem gilt
+	so ist $ \sigma $ (wie vorher) nicht-degeneriert, $ V^\perp =\{0\}$; trotzdem gilt
 		\[ \forall v\in V: \sigma(v,v) = 0. \]
 	Das folgende Lemma zeigt, dass dies ein degenerierter Fall ist:
 	
@@ -34,9 +34,7 @@
 \paragraph{Bemerkung}
 	Im Falle einer Bilinearform folgt dies direkt mit Polarisation.
 	
-	Im Falle eines nicht-trivialen Körperautomorphismus $ \bar{.} $ liefert
-		\[ v\mapsto \sigma(v,v)  \]
-	wegen
+	Im Falle eines nicht-trivialen Körperautomorphismus $ \bar{.} $ liefert $ v\mapsto \sigma(v,v) $ wegen
 		\[ K\ni x \mapsto \sigma(vx,vx)-x^2\sigma(v,v) = (\overline{x}x-x^2)\sigma(v,v)\neq 0 \]
 	im Allgemeinen \emph{keine} quadratische Form:
 		\[ \exists x\in K: \exists v\in V: \sigma(vx,vx) = \overline{x}\sigma(v,v)x \neq x^2\sigma(v,v). \]
@@ -147,7 +145,7 @@
 \paragraph{Notation}
 	Im Folgenden bezeichnet $ \mathbb{K} $ entweder $ \mathbb{K} = \mathbb{R} $ oder $ \mathbb{K}=\mathbb{C} $.
 \paragraph{Motivation}
-	Für die obige Basis $ B $ von $ V $ mit den Eigenschaften des Korollars gilt offensichtlich:
+	Für die obige Basis $ B $ von $ V $ mit den Eigenschaften des Korollars gilt offenbar:
 		\[ v\perp b_1,\dots,b_r \Rightarrow v\in [\{b_{r+1},\dots,b_{n}\}] \]
 	und
 		\[ b_{r+1},\dots,b_n \perp V, \]
@@ -155,7 +153,7 @@
 		\[ V^\perp = [\{b_{r+1},\dots,b_n\} ] \Rightarrow r = \dim V-\dim V^\perp. \]
 	Insbesondere ist $ \dim V^\perp $ und damit $ r $ unabhängig von der Basis $ B $.
 
-\subsection{Satz von Sylvester}\index{Sesquilinearform!Signatur}
+\subsection{Satz von Sylvester}\index{Signatur}
 	Sei $ V $ ein $ \mathbb{K} $-VR, $ \dim V <\infty $, und $ \sigma $
 		\begin{itemize}
 			\item symmetrische Bilinearform, wenn $ \mathbb{K}=\mathbb{R} $, oder

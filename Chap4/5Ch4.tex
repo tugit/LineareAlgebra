@@ -151,9 +151,9 @@
 		\[ U = \left[\left(f^k(v)\right)_{k\in \mathbb{N}}\right]\in \left[\left(v,\dots,f^{r-1}(v)\right)\right]. \]
 		
 \subsection{Beweis vom Satz von Cayley-Hamilton}
-	Zu zeigen: für $ f\in \End(V) $ gilt $ \chi_f(f)=0 $:
+	Zu zeigen: für $ f\in \End(V) $ gilt $ \chi_f(f)=0 $, d.h.
 		\[ \forall v\in V:\chi_f(f)(v) = 0. \]
-	Sei also $ v\in V^\times $ und
+	Seien also $ v\in V^\times $ und
 		\[ U := \left[\left( f^k(v)_{k\in \mathbb{N}}\right)\right]\subset V. \]
 	Mit einem zu $ U $ komplementären UVR $ U'\subset V $, $ V=U\oplus U' $, und den zugehörigen Projektionen
 	
@@ -168,8 +168,8 @@
 		    &p':V\to V, p'(V) = U', \ker p' = U,
 	    \end{align*}
 	\end{multicols}
-	ist dann
-		\[ \chi_f(t) = \chi_{f'}(t)\cdot \chi_{f\mid_U}(t) \text{ mit } f' := p'\circ f\mid_{U'}\in \End(U'). \]
+	ist dann $ \chi_f(t) = \chi_{f'}(t)\cdot \chi_{f\mid_U}(t) \text{ mit } f' := p'\circ f\mid_{U'}\in \End(U') $.
+	
 	Damit folgt
 		\[ \chi_f(f)(v) = \chi_{f'}(f) \left(\chi_{f\mid_U}(f)(v) \right) = \chi_{f'}(f)(0)=0 \]
 	nach Korollar oben, da $ U $ eine $ f $-zyklische Basis besitzt und $ v\in U $.
