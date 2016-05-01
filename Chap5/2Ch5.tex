@@ -8,11 +8,15 @@
 	Das folgende Lemma zeigt, dass dies ein degenerierter Fall ist:
 	
 \subsection{Lemma \& Definition (Polarisation)}\index{quadratische Form}
+\begin{Lemma}[Polarisationslemma]	
 	Ist $ \sigma $ symmetrische Bilinearform auf einem $ K $-VR $ V $ über einem Körper $ K $ mit $ \Char K \neq 2 $, so gilt
 		\[ \forall v,w\in V: \sigma(v,w)=\frac{1}{2}\left(q(v+w)-q(v)-q(w)\right), \]
 	wobei
+\end{Lemma}
+\begin{Definition}[quadratische Form]
 		\[ q:V\to K, v\mapsto q(v):= \sigma(v,v) \]
 	die zu $ \sigma $ gehörige \emph{quadratische Form} bezeichnet.
+\end{Definition}
 \paragraph{Beweis}
 	Ausrechnen: sind $ v,w\in V $, so gilt
 	\begin{align*}
@@ -29,8 +33,10 @@
 	für die Polarisation verwenden.
 	
 \subsection{Lemma}
+\begin{Lemma}[]
 	Ist $ \sigma $ symmetrische Sesquilinearform auf einem $ K $-VR $ V $ über einem Körper $ K $ mit $ \Char K \neq 2 $, so gilt
 		\[ \sigma = 0 \Leftrightarrow \forall v\in V: \sigma(v,v) = 0. \]
+\end{Lemma}
 \paragraph{Bemerkung}
 	Im Falle einer Bilinearform folgt dies direkt mit Polarisation.
 	
@@ -56,8 +62,10 @@
 	Im Folgenden schließen wir $ \Char K = 2 $ aus.
 	
 \subsection{Lemma}
+\begin{Lemma}[]
 	Für eine symmetrische Sesquilinearform $ \sigma $ auf $ V $ und $ b\in V $ mit $ \sigma(b,b)\neq 0 $ gilt
 		\[ V = [b]\oplus \{b\}^\perp. \]
+\end{Lemma}
 \paragraph{Beweis}
 	Es gilt $ V = [b]+\{b\}^\perp $, da für $ v\in V $
 		\[ v = u + b\frac{\sigma(b,v)}{\sigma(b,b)} \text{ mit } u := v-b\frac{\sigma(b,v)}{\sigma(b,b)}\perp b;\footnote{denn $ \sigma(b,u) = \sigma(b,v-b\frac{\sigma(b,v)}{\sigma(b,b)}) = \sigma(b,v)-\sigma(b,b)\frac{\sigma(b,v)}{\sigma(b,b)} = 0 $} \]
@@ -73,8 +81,11 @@
 		\[ \exists v = b \in U^\times \forall u\in U: u\perp b.\]
 		
 \subsection{Diagonalisierungslemma}
+\begin{Lemma}[Diagonalisierungslemma]
 	Zu jeder symmetrischen Sesquilinearform $ \sigma $ auf einem endlichdimensionalen VR $ V $, also $ n = \dim V < \infty $,  gibt es eine Basis $ B = (b_1,\dots,b_n) $ von $ V $, die $ \sigma $ \emph{diagonalisiert}, d.h. für die gilt
 		\[ \sigma(b_i,b_j)=0, \text{ falls } i\neq j. \]
+\end{Lemma}
+
 \paragraph{Beweis}
 	Durch Induktion über $ n $.
 	
@@ -97,12 +108,14 @@
 		\[ s_{ii}' = \overline{a_i}s_{ii}a_i \]
 	für gegebene $ s_{ii}' $ (nach den $ a_i $) lösen kann. Zum Beispiel:
 \subsection{Korollar}
+\begin{Korollar}[]
 	Ist $ \sigma $ symmetrische Bilinearform auf einem $ \mathbb{C} $-VR $ V $ mit $ \dim V < \infty $, so besitzt $ V $ eine Basis $ B = (b_1,\dots,b_n) $, sodass
 		\[ \exists r\in \mathbb{N}: s_{ij} = \sigma(b_i,b_j) = \begin{cases}
 		1 & \text{für } i = j \leq r\\
 		0 & \text{sonst}.
 		\end{cases} \]
-		
+\end{Korollar}
+
 % VO 28-04-2016 %
 \paragraph{Bemerkung}
 	D.h.
@@ -122,6 +135,7 @@
 		\[ \sigma(b_i,b_i) = \sigma(b_i',b_i') = 0 \text{ für } i = r+1,\dots, n. \]
 		
 \subsection{Korollar}
+\begin{Korollar}[]
 	Ist $ V $ ein $ K $-VR mit $ \dim V <\infty $ und $ \sigma $ entweder
 		\begin{itemize}
 			\item symmetrische Bilinearform, wenn $ K=\mathbb{R} $, oder
@@ -133,6 +147,7 @@
 			\pm 1 & \text{ für }i = j \leq r\\
 			0 & \text{ sonst}
 		\end{cases} \]
+\end{Korollar}
 \paragraph{Beweis}
 	Wie oben -- aber:
 	In diesen beiden Fällen gilt für eine diagonalisierende Basis $ B'=(b_1',\dots,b_n') $ und $ b_i = b_i'\cdot \frac{1}{a_i} $ mit $ a_i\in K $ für $ i=1,\dots,n $:
@@ -153,7 +168,8 @@
 		\[ V^\perp = [\{b_{r+1},\dots,b_n\} ] \Rightarrow r = \dim V-\dim V^\perp. \]
 	Insbesondere ist $ \dim V^\perp $ und damit $ r $ unabhängig von der Basis $ B $.
 
-\subsection{Satz von Sylvester}\index{Signatur}
+\subsection{Satz von Sylvester}\index{Sesquilinearform!Signatur}
+\begin{Satz}[Satz von Sylvester (Trägheitssatz von Sylvester)]	
 	Sei $ V $ ein $ \mathbb{K} $-VR, $ \dim V <\infty $, und $ \sigma $
 		\begin{itemize}
 			\item symmetrische Bilinearform, wenn $ \mathbb{K}=\mathbb{R} $, oder
@@ -163,15 +179,19 @@
 		\[ V= V_+ \oplus_\perp V_- \oplus_\perp V^\perp,  \]
 	wobei
 		\[ V_+ \perp V_- \text{ und } \forall v\in V^\times_\pm: \pm \sigma(v,v) > 0. \]
+\end{Satz}
+\begin{Definition}[Signatur]
 	Die \emph{Signatur} $ \sgn(\sigma):= (\dim V_+,\dim V_-,\dim V^\perp) $ von $ \sigma $ ist unabhängig von der direkten Zerlegung von $ V $.
+\end{Definition}
 \paragraph{Bemerkung \& Definition}\index{Trägheitsindex}\index{Positivitätsindex}\index{Negativitätsindex}
+\begin{Definition}[Signatur, Trägheitsindex,Positivitäts- ,Negativitätsindex  ]
 	Ist $ \sigma $ nicht-degeneriert, $ V^\perp \{0\} $, so bezeichnet man auch\footnote{Die Reihenfolge kann bei verschiedenen Autoren auch jeweils $ - $ vor $ + $ sein.}
 		\begin{itemize}
 			\item das Paar $ \sgn (\sigma) =(\dim V_+,\dim V_-)$ als Signatur von $ \sigma $, und
 			\item die Differenz $ \dim V_+ - \dim V_- $ als \emph{Trägheitsindex} von $ \sigma $.
 		\end{itemize}
 	Die Dimension $ \dim V_\pm $ ist auch der \emph{Positivitäts-} bzw. \emph{Negativitätsindex} von $ \sigma $.
-	
+\end{Definition}	
 	Der Satz von Sylvester wird auch "`Trägheitssatz von Sylvester"' genannt.
 \paragraph{Beweis}
 	Sei $ B=(b_1,\dots,b_n) $ eine Basis von $ V $ und $ p,r\in \mathbb{N} $, sodass (siehe Korollar oben)
