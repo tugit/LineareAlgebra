@@ -35,6 +35,10 @@
 
   \indexspace
 
+  \item induzierte Norm, \hyperpage{50}
+
+  \indexspace
+
   \item Linearfaktorisierung, \hyperpage{11}
 
   \indexspace
@@ -43,12 +47,16 @@
 
   \indexspace
 
+  \item Negativit\IeC {\"a}tsindex, \hyperpage{46}
   \item Nullstelle, \hyperpage{11}
 
   \indexspace
 
   \item Orthogonal, \hyperpage{38}
     \subitem -raum, \hyperpage{38}
+  \item Orthonormal
+    \subitem -basis, \hyperpage{48}
+    \subitem -system, \hyperpage{48}
 
   \indexspace
 
@@ -58,6 +66,8 @@
     \subitem -funktion, \hyperpage{6}
     \subitem Grad, \hyperpage{4}
     \subitem normiertes, \hyperpage{4}
+  \item positiv definit, \hyperpage{50}
+  \item Positivit\IeC {\"a}tsindex, \hyperpage{46}
   \item Primpolynome, \hyperpage{12}
 
   \indexspace
@@ -78,11 +88,19 @@
     \subitem assoziierte, \hyperpage{36}
     \subitem Hermitesche, \hyperpage{36}
     \subitem kanonische, \hyperpage{36}
-    \subitem Signatur einer, \hyperpage{45}
+    \subitem Signatur, \hyperpage{45}
+  \item Skalarprodukt, \hyperpage{48}
   \item Spur, \hyperpage{16}
 
   \indexspace
 
+  \item Tr\IeC {\"a}gheitsindex, \hyperpage{46}
   \item Triagonalisierbarkeit, \hyperpage{19}
+
+  \indexspace
+
+  \item Vektorraum
+    \subitem Euklidischer, \hyperpage{50}
+    \subitem unit\IeC {\"a}rer, \hyperpage{50}
 
 \end{theindex}

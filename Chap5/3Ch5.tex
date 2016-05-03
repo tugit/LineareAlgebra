@@ -1,0 +1,33 @@
+\section{Euklidische \& unitäre Vektorräume}
+
+% GRAFIK-MOTIVATION %
+	% (A,V,\tau) reelle affine Ebene
+	% (o; e_1,e_2) affines Bezugssystem
+	% Abstand/Länge von b-a ist (falls e_1 \perp e_2 und |e_1| = |e_2| = 1):
+	% d(a,b) = \|b-a\| = \sqrt{(y_1-x_1)^2+(y_2-x_2)^2}
+
+\paragraph{Bemerkung}
+	Die folgende Definition ist nur für Skalarprodukte $ \langle.,.\rangle $ sinnvoll, für die
+		\[ v\mapsto \langle v,v\rangle \in T \]
+	mit einem angeordneten Teilkörper $ T \subset K $ des Körpers $ K $ (vgl. Abschnitt 1.2).
+	Ein nicht-triviales Beispiel, mit $ T=\mathbb{R}\subset \mathbb{C} = K $, ist ein Hermitesches Skalarprodukt:
+		\[ \forall v\in V: \langle v,v\rangle = \overline{\langle v,v\rangle} \Rightarrow \forall v\in V: \langle v,v,\rangle \in \mathbb{R}\subset \mathbb{C}. \]
+\paragraph{Vereinbarung}
+	Im Folgenden beschränken wir uns bis auf Weiteres auf $ \mathbb{K} $-VR mit $ \langle.,.\rangle $ Hermitsche Sesquilinearform, falls $ \mathbb{K} = \mathbb{C} $ (vgl. Satz von Sylvester).
+	
+\subsection{Definition}\index{positiv definit}\index{induzierte Norm}\index{Vektorraum!Euklidischer}\index{Vektorraum!unitärer}
+	Ein Skalarprodukt $ \langle.,.\rangle $ auf einem $ \mathbb{K} $-VR $ V $ heißt \emph{positiv definit}, falls
+		\[ \forall v\in V^\times:\langle v,v\rangle >0; \]
+	die \emph{induzierte Norm} eines positiv-definiten Skalarprodukts $ \langle.,.\rangle $ ist die Abbildung
+		\[ \|.\|: V\to \mathbb{K}, v\mapsto \|v\| := \sqrt{\langle v,v\rangle}\geq 0. \]
+	Ein $ \mathbb{K} $-VR $ (V,\langle.,.\rangle ) $ mit positiv-definitem Skalarprodukt ist
+		\begin{itemize}
+			\item ein \emph{Euklidischer Vektorraum}, falls $ \mathbb{K}=\mathbb{R} $, und
+			\item ein \emph{unitärer Vektorraum}, falls $ \mathbb{K} = \mathbb{C} $ und $ \langle.,.\rangle $ Hermitesche Sesquilinearform ist. 
+		\end{itemize}
+
+\subsection{Bemerkung \& Definition}
+	Ebenso definiert man ein Skalarprodukt als \emph{negativ definit}, falls
+		\[ \forall v\in V^\times: \langle v,v\rangle < 0; \]
+	$ \langle.,.\rangle $ heißt \emph{indefinit}, falls es weder positiv, noch negativ definit ist.
+	Die Definition der induzierten Norm ist nur im positiv definiten Fall sinnvoll.

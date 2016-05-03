@@ -259,3 +259,47 @@
 				\end{pmatrix}, s\in \mathbb{R} \]
 			ändert die der Basis zugeordnete Zerlegung -- wieder ohne Änderung der Gramschen Matrix.
 		\end{enumerate}
+
+% VO 03-05-2016 %
+\subsection{Bemerkung \& Definition}\index{Äquivalenz von Sesquilinearformen}
+	Zur geometrischen Analyse der Lösungsmengen von quadratischen Gleichungen (Quadriken), ist es hilfreich, eine \emph{Äquivalenz} für symmetrische Bilinearformen/Sesquilinearformen $ \sigma $ und $ \sigma' $ auf einem $ \mathbb{K} $-VR $ V $ einzuführen:
+		\[ \sigma' \sim \sigma :\Leftrightarrow \exists f\in Gl(V)\forall v,w\in V: \sigma'(v,w) = \sigma(f(v),f(w)). \]
+	Ist $ \dim V <\infty $, so liefert der Satz von Sylvester im Falle
+		\begin{itemize}
+			\item symmetrische Bilinearform auf $ \mathbb{R} $-VR, oder
+			\item Hermitesche Sesquilinearform auf $ \mathbb{C} $-VR:
+		\end{itemize}
+\paragraph{Satz:}
+	Zwei symmetrische Sesquilinearformen sind genau dann äquivalent, wenn ihre Signaturen übereinstimmen,
+		\[ \sigma' \sim \sigma \Leftrightarrow  \sgn(\sigma') = \sgn(\sigma). \]
+		
+\subsection{Definition}\index{Skalarprodukt}\index{Orthonormal!-system}\index{Orthonormal!-basis}
+	Ein \emph{Skalarprodukt} auf einem $ K $-VR $ V $ ist eine nicht-degenerierte symmetrische Sesquilinearform
+		\[ \langle.,.\rangle:V\times V \to K, (v,w)\mapsto \langle v,w\rangle. \]
+	Eine Familie $ (e_i)_{i\in I} $ in einem VR $ (V,\langle.,.\rangle) $ mit Skalarprodukt heißt \emph{Orthonormalsystem (ONS)}, falls
+		\[ \forall i,j\in I: \langle e_i,e_j\rangle = \pm \delta_{ij}; \]
+	\emph{Orthonormalbasis (ONB)}, falls $ (e_i)_{i\in I} $ zusätzlich Basis ist.
+\paragraph{Bemerkung}
+	Ein ONS ist linear unabhängig:
+
+	Für $ v=\sum_{i\in I}e_ix_i $ gilt
+		\[ 0 = v \Rightarrow \forall i\in I: 0 = \langle e_i,v\rangle = \sum_{j\in I}\langle e_i,e_j\rangle x_j = \pm x_i \]
+	Ist $ \dim V < \infty $, so hat $ (V,\langle.,.\rangle) $ jedenfalls eine ONB, wenn
+		\begin{itemize}
+			\item symmetrische Bilinearform auf einem $ \mathbb{K} $-VR ist, oder
+			\item Hermitesche Sesquilinearform auf einem $ \mathbb{C} $-VR ist.
+		\end{itemize}
+	Ist $ K\neq \mathbb{K} $, so kann die "`Normierung"' problematisch sein.
+\paragraph{Beispiel}
+	Auf dem $ \mathbb{R} $-VR der beschränkten Zahlenfolgen:
+		\[ V=\{(x_n)_{n\in \mathbb{N}}\in \mathbb{R}^\mathbb{N}, \exists c\in \mathbb{R}\forall n\in \mathbb{N}: |x_n|<c \}, \]
+	führen wir ein Skalarprodukt, durch Angabe seiner quadratischen Form (Polarisation!) ein:
+		\[ \langle (x_n)_{n\in \mathbb{N}},(x_n)_{n\in \mathbb{N}}\rangle := \sum_{n\in \mathbb{N}}\left(\frac{x_n}{2^n}\right)^2.  \]
+	Man erhält ein ONS $ (e_n)_{n\in \mathbb{N}} $ aus skalierten Standardvektoren
+		\[ e_m:\mathbb{N}\to \mathbb{R}, n\mapsto e_m(n):= 2^n\delta_{mn}. \]
+	Dieses ONS kann zu einer Basis ergänzt werden (nach BES), nicht jedoch zu einer ONB (in unserem Sinne):
+		\[ \langle e_m, v\rangle = \frac{x_m}{2^m} \text{ für } v=(x_{n})_{n\in \mathbb{N}}, \]
+	also gilt
+		\[ \forall m\in \mathbb{N}: v\perp e_m \Rightarrow v = 0. \]
+\paragraph{Bemerkung}
+	Später wird der Begriff "`Basis"' modifiziert, z.B. in der Funktionalanalysis würde man $ (e_m)_{m\in \mathbb{N}} $ aus dem Beispiel als "`Orthonormalbasis"' bezeichnen.
