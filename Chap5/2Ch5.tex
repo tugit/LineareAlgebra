@@ -109,7 +109,7 @@
 	für gegebene $ s_{ii}' $ (nach den $ a_i $) lösen kann. Zum Beispiel:
 \subsection{Korollar}
 \begin{Korollar}[]
-	Ist $ \sigma $ symmetrische Bilinearform auf einem $ \mathbb{C} $-VR $ V $ mit $ \dim V < \infty $, so besitzt $ V $ eine Basis $ B = (b_1,\dots,b_n) $, sodass
+	Ist $ \sigma $ symmetrische Bilinearform auf einem $ \C $-VR $ V $ mit $ \dim V < \infty $, so besitzt $ V $ eine Basis $ B = (b_1,\dots,b_n) $, sodass
 		\[ \exists r\in \mathbb{N}: s_{ij} = \sigma(b_i,b_j) = \begin{cases}
 		1 & \text{für } i = j \leq r\\
 		0 & \text{sonst}.
@@ -138,8 +138,8 @@
 \begin{Korollar}[]
 	Ist $ V $ ein $ K $-VR mit $ \dim V <\infty $ und $ \sigma $ entweder
 		\begin{itemize}
-			\item symmetrische Bilinearform, wenn $ K=\mathbb{R} $, oder
-			\item Hermitesche Sesquilinearform, wenn $ K = \mathbb{C} $,
+			\item symmetrische Bilinearform, wenn $ K=\R $, oder
+			\item Hermitesche Sesquilinearform, wenn $ K = \C $,
 		\end{itemize}
 	so besitzt $ V $ eine Basis $ B = (b_1,\dots,b_n) $, sodass
 		\[ \exists r\in \mathbb{N}: s_{ij} = \sigma(b_i,b_j) =
@@ -151,14 +151,14 @@
 \paragraph{Beweis}
 	Wie oben -- aber:
 	In diesen beiden Fällen gilt für eine diagonalisierende Basis $ B'=(b_1',\dots,b_n') $ und $ b_i = b_i'\cdot \frac{1}{a_i} $ mit $ a_i\in K $ für $ i=1,\dots,n $:
-		\[ s_{ii}' = \sigma(b_i',b_i')\in \mathbb{R} \text{ und }
+		\[ s_{ii}' = \sigma(b_i',b_i')\in \R \text{ und }
 		\begin{cases}
-			a_i^2 \geq 0 & \text{falls } K = \mathbb{R},\\
-			\overline{a_i}a_i \geq 0 & \text{falls } K =\mathbb{C}.
+			a_i^2 \geq 0 & \text{falls } K = \R,\\
+			\overline{a_i}a_i \geq 0 & \text{falls } K =\C.
 		\end{cases} \]
 	Also kann man die $ s_{ii}' $ (nur) positiv reskalieren und so $ s_{ii} = 0 $ oder $ s_{ii} = \pm 1 $ erreichen.
 \paragraph{Notation}
-	Im Folgenden bezeichnet $ \mathbb{K} $ entweder $ \mathbb{K} = \mathbb{R} $ oder $ \mathbb{K}=\mathbb{C} $.
+	Im Folgenden bezeichnet $ \K $ entweder $ \K = \R $ oder $ \K=\C $.
 \paragraph{Motivation}
 	Für die obige Basis $ B $ von $ V $ mit den Eigenschaften des Korollars gilt offenbar:
 		\[ v\perp b_1,\dots,b_r \Rightarrow v\in [\{b_{r+1},\dots,b_{n}\}] \]
@@ -170,10 +170,10 @@
 
 \subsection{Satz von Sylvester}\index{Sesquilinearform!Signatur}
 \begin{Satz}[Satz von Sylvester (Trägheitssatz von Sylvester)]	
-	Sei $ V $ ein $ \mathbb{K} $-VR, $ \dim V <\infty $, und $ \sigma $
+	Sei $ V $ ein $ \K $-VR, $ \dim V <\infty $, und $ \sigma $
 		\begin{itemize}
-			\item symmetrische Bilinearform, wenn $ \mathbb{K}=\mathbb{R} $, oder
-			\item Hermitesche Sesquilinearform, wenn $ \mathbb{K}=\mathbb{C} $.
+			\item symmetrische Bilinearform, wenn $ \K=\R $, oder
+			\item Hermitesche Sesquilinearform, wenn $ \K=\C $.
 		\end{itemize}
 	Dann gibt es eine direkte Zerlegung von $ V $ mit UVR $ V_{\pm}\subset V $,
 		\[ V= V_+ \oplus_\perp V_- \oplus_\perp V^\perp,  \]
@@ -185,7 +185,7 @@
 \end{Definition}
 \paragraph{Bemerkung \& Definition}\index{Trägheitsindex}\index{Positivitätsindex}\index{Negativitätsindex}
 \begin{Definition}[Signatur, Trägheitsindex,Positivitäts- ,Negativitätsindex  ]
-	Ist $ \sigma $ nicht-degeneriert, $ V^\perp \{0\} $, so bezeichnet man auch\footnote{Die Reihenfolge kann bei verschiedenen Autoren auch jeweils $ - $ vor $ + $ sein.}
+	Ist $ \sigma $ nicht-degeneriert, $ V^\perp = \{0\} $, so bezeichnet man auch\footnote{Die Reihenfolge kann bei verschiedenen Autoren auch jeweils $ - $ vor $ + $ sein.}
 		\begin{itemize}
 			\item das Paar $ \sgn (\sigma) =(\dim V_+,\dim V_-)$ als Signatur von $ \sigma $, und
 			\item die Differenz $ \dim V_+ - \dim V_- $ als \emph{Trägheitsindex} von $ \sigma $.
@@ -230,7 +230,7 @@
 \paragraph{Bemerkung}
 	Diese Zerlegung $ V= V_+ \oplus_\perp V_- \oplus_\perp V^\perp $ ist im Allgemeinen \emph{nicht} eindeutig!
 \paragraph{Beispiel}
-	Betrachte eine durch ihre Werte auf der Standardbasis $ E=(e_1,e_2) $ gegebene symmetrische Bilinearform $ \sigma: \mathbb{R}^2\times \mathbb{R}^2 \to \mathbb{R} $.
+	Betrachte eine durch ihre Werte auf der Standardbasis $ E=(e_1,e_2) $ gegebene symmetrische Bilinearform $ \sigma: \R^2\times \R^2 \to \R $.
 		\begin{enumerate}
 			\item $ S=(\sigma(e_i,e_j))_{i,j\in \{1,2\}} =
 			\begin{pmatrix}
@@ -245,7 +245,7 @@
 			Jeder weitere Basiswechsel
 				\[ \tilde{B}=BQ \text{ mit } Q = \begin{pmatrix}
 				\cosh(s) & \sinh(s)\\ \sinh(s)& \cosh(s) 
-				\end{pmatrix}, s\in \mathbb{R}, \]
+				\end{pmatrix}, s\in \R, \]
 			liefert eine andere Zerlegung, ohne die Gramsche Matrix zu ändern.
 			\item $ S=(\sigma(e_i,e_j))_{i,j\in \{1,2\}}= \begin{pmatrix}
 			1 & 1\\ 1 & 1
@@ -256,18 +256,18 @@
 			also die Signatur $ \sgn(\sigma) = (1,0,1) $ von $ \sigma $. Hier ist $ V^\perp = [\{b_2\}]$ durch $ \sigma $ festgelegt, aber jeder Basiswechsel
 				\[ \tilde{B} = BQ \text{ mit } Q= \begin{pmatrix}
 				1 & 0 \\ s & 1
-				\end{pmatrix}, s\in \mathbb{R} \]
+				\end{pmatrix}, s\in \R \]
 			ändert die der Basis zugeordnete Zerlegung -- wieder ohne Änderung der Gramschen Matrix.
 		\end{enumerate}
 
 % VO 03-05-2016 %
 \subsection{Bemerkung \& Definition}\index{Äquivalenz von Sesquilinearformen}
-	Zur geometrischen Analyse der Lösungsmengen von quadratischen Gleichungen (Quadriken), ist es hilfreich, eine \emph{Äquivalenz} für symmetrische Bilinearformen/Sesquilinearformen $ \sigma $ und $ \sigma' $ auf einem $ \mathbb{K} $-VR $ V $ einzuführen:
+	Zur geometrischen Analyse der Lösungsmengen von quadratischen Gleichungen (Quadriken), ist es hilfreich, eine \emph{Äquivalenz} für symmetrische Bilinearformen/Sesquilinearformen $ \sigma $ und $ \sigma' $ auf einem $ \K $-VR $ V $ einzuführen:
 		\[ \sigma' \sim \sigma :\Leftrightarrow \exists f\in Gl(V)\forall v,w\in V: \sigma'(v,w) = \sigma(f(v),f(w)). \]
 	Ist $ \dim V <\infty $, so liefert der Satz von Sylvester im Falle
 		\begin{itemize}
-			\item symmetrische Bilinearform auf $ \mathbb{R} $-VR, oder
-			\item Hermitesche Sesquilinearform auf $ \mathbb{C} $-VR:
+			\item symmetrische Bilinearform auf $ \R $-VR, oder
+			\item Hermitesche Sesquilinearform auf $ \C $-VR:
 		\end{itemize}
 \paragraph{Satz:}
 	Zwei symmetrische Sesquilinearformen sind genau dann äquivalent, wenn ihre Signaturen übereinstimmen,
@@ -286,17 +286,17 @@
 		\[ 0 = v \Rightarrow \forall i\in I: 0 = \langle e_i,v\rangle = \sum_{j\in I}\langle e_i,e_j\rangle x_j = \pm x_i \]
 	Ist $ \dim V < \infty $, so hat $ (V,\langle.,.\rangle) $ jedenfalls eine ONB, wenn
 		\begin{itemize}
-			\item symmetrische Bilinearform auf einem $ \mathbb{K} $-VR ist, oder
-			\item Hermitesche Sesquilinearform auf einem $ \mathbb{C} $-VR ist.
+			\item symmetrische Bilinearform auf einem $ \K $-VR ist, oder
+			\item Hermitesche Sesquilinearform auf einem $ \C $-VR ist.
 		\end{itemize}
-	Ist $ K\neq \mathbb{K} $, so kann die "`Normierung"' problematisch sein.
+	Ist $ K\neq \K $, so kann die "`Normierung"' problematisch sein.
 \paragraph{Beispiel}
-	Auf dem $ \mathbb{R} $-VR der beschränkten Zahlenfolgen:
-		\[ V=\{(x_n)_{n\in \mathbb{N}}\in \mathbb{R}^\mathbb{N}, \exists c\in \mathbb{R}\forall n\in \mathbb{N}: |x_n|<c \}, \]
+	Auf dem $ \R $-VR der beschränkten Zahlenfolgen:
+		\[ V=\{(x_n)_{n\in \mathbb{N}}\in \R^\mathbb{N}, \exists c\in \R\forall n\in \mathbb{N}: |x_n|<c \}, \]
 	führen wir ein Skalarprodukt, durch Angabe seiner quadratischen Form (Polarisation!) ein:
 		\[ \langle (x_n)_{n\in \mathbb{N}},(x_n)_{n\in \mathbb{N}}\rangle := \sum_{n\in \mathbb{N}}\left(\frac{x_n}{2^n}\right)^2.  \]
 	Man erhält ein ONS $ (e_n)_{n\in \mathbb{N}} $ aus skalierten Standardvektoren
-		\[ e_m:\mathbb{N}\to \mathbb{R}, n\mapsto e_m(n):= 2^n\delta_{mn}. \]
+		\[ e_m:\mathbb{N}\to \R, n\mapsto e_m(n):= 2^n\delta_{mn}. \]
 	Dieses ONS kann zu einer Basis ergänzt werden (nach BES), nicht jedoch zu einer ONB (in unserem Sinne):
 		\[ \langle e_m, v\rangle = \frac{x_m}{2^m} \text{ für } v=(x_{n})_{n\in \mathbb{N}}, \]
 	also gilt

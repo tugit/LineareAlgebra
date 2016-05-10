@@ -7,27 +7,114 @@
 	% d(a,b) = \|b-a\| = \sqrt{(y_1-x_1)^2+(y_2-x_2)^2}
 
 \paragraph{Bemerkung}
-	Die folgende Definition ist nur für Skalarprodukte $ \langle.,.\rangle $ sinnvoll, für die
-		\[ v\mapsto \langle v,v\rangle \in T \]
+	Die folgende Definition ist nur für Skalarprodukte $ \Skl{.}{.} $ sinnvoll, für die
+		\[ v\mapsto \Skl{ v}{v} \in T \]
 	mit einem angeordneten Teilkörper $ T \subset K $ des Körpers $ K $ (vgl. Abschnitt 1.2).
-	Ein nicht-triviales Beispiel, mit $ T=\mathbb{R}\subset \mathbb{C} = K $, ist ein Hermitesches Skalarprodukt:
-		\[ \forall v\in V: \langle v,v\rangle = \overline{\langle v,v\rangle} \Rightarrow \forall v\in V: \langle v,v,\rangle \in \mathbb{R}\subset \mathbb{C}. \]
+	Ein nicht-triviales Beispiel, mit $ T=\R\subset \C = K $, ist ein Hermitesches Skalarprodukt:
+		\[ \forall v\in V: \Skl{ v}{v} = \overline{\Skl{ v}{v}} \Rightarrow \forall v\in V: \Skl{ v}{v} \in \R\subset \C. \]
 \paragraph{Vereinbarung}
-	Im Folgenden beschränken wir uns bis auf Weiteres auf $ \mathbb{K} $-VR mit $ \langle.,.\rangle $ Hermitsche Sesquilinearform, falls $ \mathbb{K} = \mathbb{C} $ (vgl. Satz von Sylvester).
+	Im Folgenden beschränken wir uns bis auf Weiteres auf $ \K $-VR mit $ \Skl{.}{.} $ Hermitsche Sesquilinearform, falls $ \K = \C $ (vgl. Satz von Sylvester).
 	
 \subsection{Definition}\index{positiv definit}\index{induzierte Norm}\index{Vektorraum!Euklidischer}\index{Vektorraum!unitärer}
-	Ein Skalarprodukt $ \langle.,.\rangle $ auf einem $ \mathbb{K} $-VR $ V $ heißt \emph{positiv definit}, falls
-		\[ \forall v\in V^\times:\langle v,v\rangle >0; \]
-	die \emph{induzierte Norm} eines positiv-definiten Skalarprodukts $ \langle.,.\rangle $ ist die Abbildung
-		\[ \|.\|: V\to \mathbb{K}, v\mapsto \|v\| := \sqrt{\langle v,v\rangle}\geq 0. \]
-	Ein $ \mathbb{K} $-VR $ (V,\langle.,.\rangle ) $ mit positiv-definitem Skalarprodukt ist
+	Ein Skalarprodukt $ \Skl{.}{.} $ auf einem $ \K $-VR $ V $ heißt \emph{positiv definit}, falls
+		\[ \forall v\in V^\times:\Skl{ v}{v} >0; \]
+	die \emph{induzierte Norm} eines positiv-definiten Skalarprodukts $ \Skl{.}{.} $ ist die Abbildung
+		\[ \|.\|: V\to \R, v\mapsto \|v\| := \sqrt{\Skl{ v}{v}}\geq 0. \]
+	Ein $ \K $-VR $ (V,\Skl{.}{.} ) $ mit positiv-definitem Skalarprodukt ist
 		\begin{itemize}
-			\item ein \emph{Euklidischer Vektorraum}, falls $ \mathbb{K}=\mathbb{R} $, und
-			\item ein \emph{unitärer Vektorraum}, falls $ \mathbb{K} = \mathbb{C} $ und $ \langle.,.\rangle $ Hermitesche Sesquilinearform ist. 
+			\item ein \emph{Euklidischer Vektorraum}, falls $ \K=\R $, und
+			\item ein \emph{unitärer Vektorraum}, falls $ \K = \C $ und $ \Skl{.}{.} $ Hermitesche Sesquilinearform ist. 
 		\end{itemize}
 
 \subsection{Bemerkung \& Definition}
 	Ebenso definiert man ein Skalarprodukt als \emph{negativ definit}, falls
-		\[ \forall v\in V^\times: \langle v,v\rangle < 0; \]
-	$ \langle.,.\rangle $ heißt \emph{indefinit}, falls es weder positiv, noch negativ definit ist.
+		\[ \forall v\in V^\times: \Skl{ v}{v} < 0; \]
+	$ \Skl{.}{.} $ heißt \emph{indefinit}, falls es weder positiv, noch negativ definit ist.
 	Die Definition der induzierten Norm ist nur im positiv definiten Fall sinnvoll.
+
+% VO 10-05-2016 %
+
+\paragraph{Beispiel}	
+	Der \emph{Betrag} einer komplexen Zahl
+		$ z=x+iy\in \C\cong_\R \R^2 $
+			% Vektorraum-Isomorphismus - R^2 ist kein Körper! %
+	ist 
+		\[ |z| = \sqrt{\overline{z}z} = \sqrt{x^2+y^2} \]
+	die vom Standardskalarprodukt auf $ \R^2 $ induzierte Norm.
+	Insbesondere gilt
+		\[ \forall z\in \C: |\Re z| \leq |z| \]	
+\paragraph{Bemerkung}
+	Da $ \R\subset \C $ ein Teilkörper ist, kann jeder $ \C $-VR $ V $ auch als $ \R $-VR aufgefasst werden (Einschränkung der Skalarmultiplikation).
+	
+	Ist nun $ S\subset V $ linear unabhängig über $ \C $ (in $ V $ als $ \C $-VR), so ist
+		\[ S' := S\cup Si = S \cup \{si\mid s\in S\} \]
+	linear unabhängig über $ \R $, denn
+		\[ 0 = \sum_{s\in S}sx_s + \sum_{s\in S}siy_s = \sum_{s\in S} s (x_s+iy_s) \]
+		\[ \Rightarrow \forall s\in S: x_s + iy_s = 0\Rightarrow \forall s\in S: x_s = y_s = 0, \]
+	d.h. $ S' = S\cup S_i $ ist linear unabhängig über $ \R $.
+	Insbesondere folgt
+		\[ \dim_\R V = 2\dim_\C V.  \]
+\paragraph{Bemerkung}
+	Weiters definiert für ein Hermitesches Skalarprodukt $ \Skl{ .}{. } $ auf $ V $ (als $ \C $-VR)
+		\[ \Skl{ .}{. } :V\times V\to \R, (v,w)\mapsto \Skl{ v}{w }_\R := \Re \Skl{v}{w } \]
+	ein reelles Skalarprodukt auf $ V $ (als $ \R $-VR), das genau dann positiv definit ist, wenn $ \Skl{.}{. } $ positiv definit ist:
+		\[ \forall v\in V: \Skl{v}{v }_\R = \Skl{v}{v }. \]
+	Damit kann man jeden unitären Vektorraum als Euklidischen Vektorraum auffassen:
+		\begin{itemize}
+			\item mit verschiedenen Skalarprodukten $ \Skl{.}{.} $ bzw. $ \Skl{.}{.}_\R $, aber
+			\item mit gleichen induzierten Normen. % denn diese sind ohnehin immer reell
+		\end{itemize}
+\paragraph{Komplexifizierung}
+	Fasst man einen $ \C $-VR $ V $ als $ \R $-VR auf, so liefert Multiplikation mit $ i\in \C $ einen Endomorphismus
+		\[ J:V\to V, v\mapsto J(v):= vi \] % Skalarmultiplikation in $ V $ als $ \C $-VR.
+	mit
+		\[ J^2 = -\id_V. \]
+	Insbesondere besitzt $ J $ keine reellen Eigenwerte;
+	ist $ \dim V < \infty $, so folgt damit
+		\[ \dim V = \deg_{\chi_J}(t) = 0 \mod 2. \]
+	Umgekehrt: Ist $ V $ ein $ \R $-VR und $ J\in \End(V) $ mit $ J^2 = -\id_V $ gegeben, so erhält man eine komplexe Skalarmultiplikation
+		\[ \cdot :\C\times V \to V, (z,v)\mapsto vz := vx+J(v)y, \]
+	für $ z = x+iy $.
+	Ist weiter $ \Skl{.}{.} $ ein (reelles) Skalarprodukt auf $ V $, das von $ J $ erhalten wird, 
+		\[ \forall v,w\in V: \Skl{Jv}{Jw} = \Skl{v}{w}, \]
+	so definiert
+		\[ \Skl{v}{w}_\C := \Skl{v}{w} -i \Skl{v}{Jw} \]
+	ein Hermitesches Skalarprodukt auf dem so konstruierten $ \C $-VR.
+
+\paragraph{Beispiel}
+	Ist $ \Skl{.}{.} $ das kanonische Skalarprodukt auf $ \R^2 $, mit der Standardbasis $ (e_1,e_2) $ als ONB, so definiert (Fortsetzungssatz)
+		\[ J(e_1) = e_2 \text{ und } J(e_2) = -e_1, \]
+	einen Endomorphismus $ J\in\End(\R^2) $ mit
+		\[ J^2 = -\id_{\R^2} \text{ und } \Skl{Je_i}{Je_j} = \Skl{e_i}{e_j}. \]
+	Vermöge
+		\[ e_1i := J(e_1) = e_2\ \text{ und }\ e_2i := J(e_2) = J^2(e_1) = -e_1 = e_1 i^2 \]
+	wird $ \R^2 $ zu einem eindimensionalen $ \C $-VR, $ \R^2 = [\{e_1\}]_\C $, da
+		\[ e_1x+e_2y = e_1x+J(e_1)y = e_1 (x+iy); \]
+	und
+		\[ \Skl{e_1x+e_2y}{e_1x'+e_2y'} = \Skl{e_1(x+iy)}{e_1(x'+iy')}_\C = \overline{(x-iy)}(x'+iy') \]
+	liefert das kanonische Skalarprodukt auf $ \C $, mit dem kanonischen Euklidischen Skalarprodukt von $ \R^2 $ als Realteil.
+
+\subsection{Komplexifizierungslemma}
+	Ist $ (V,\Skl{.}{.}) $ ein Euklidischer Vektorraum, so liefert
+		\[ (v,w)(x+iy) := (vx-wy,wx+vy) \]
+	eine komplexe Skalarmultiplikation auf $ V_\C := V\times V $, und
+		\[ \SSkl{((v,w))}{(v',w')}_\C := \left(\Skl{v}{v'}+\Skl{w}{w'} \right)+i\left(\Skl{v}{w'}-\Skl{w}{v'} \right) \]
+	ein Hermitesches Skalarprodukt, das $ (V_\C,\SSkl{.}{.}_\C) $ zu einem unitären VR macht.
+\paragraph{Beweis}
+	Auf dem Euklidischen VR $ (V^2,\SSkl{.}{.}) $, wobei
+		\[ \SSkl{.}{.}:V^2\times V^2 \to \R, \left((v,w),(v',w')\right)\mapsto \SSkl{(v,w)}{(v',w')} := \Skl{v}{v'}+\Skl{w}{w'}, \]
+	definiere $ J\in \End(V^2) $ durch
+		\[ J:V^2 \to V^2, (v,w)\mapsto J\left((v,w)\right):= (-w,v). \]
+	Offenbar gilt $ J^2 = -\id_{V^2} $ und
+		\[ \SSkl{J(v,w)}{J(v',w')} = \Skl{w}{w'}+\Skl{v}{v'} = \SSkl{(v,w)}{(v',w')}, \]
+	sodass
+		\[ (v,w)(x+iy) = (v,w)x+J(v,w)y= (vx-wy,wx+vy) \]
+	und
+		\[ \SSkl{(v,w)}{(v',w')}_\C = \SSkl{(v,w)}{(v',w')}-i\SSkl{(v,w)}{J(v',w')}  \]
+		\[ = \left(\Skl{v}{v'}+\Skl{w}{w'}\right) -i\left(-\Skl{v}{w'}+\Skl{w}{v'}\right) \]
+	$ (V^2,\SSkl{.}{.}) $ zu einem unitären VR machen, wie vorher.
+\paragraph{Bemerkung}
+	Mit dem "`Komplexifizierungslemma"' kann man jeden Euklidischen VR in einen unitären VR gleicher (komplexer) Dimension einbetten:
+		\[ \dim_\C V_\C = \frac{1}{2}\dim_\R V^2 = \dim_\R V. \]
+	Wichtig für den Zusammenhang zwischen unitären und Euklidischen VR:
+	Die induzierte Norm des Hermitschen Skalarprodukts kann als die eines Euklidischen Skalarprodukts aufgefasst werden.
