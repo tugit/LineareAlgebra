@@ -14,9 +14,9 @@
 \paragraph{Bemerkung}
 	Der Skalar $ x\in K $ ist genau dann ein Eigenwert von $ f\in \End(V) $, wenn $ \ker(f-\id_Vx)\neq \{0\} $, d.h., wenn ein Eigenvektor $ v\in V^\times $ zu $ x $ existiert.
 \paragraph{Beispiel}
-	Für $ \frac{d}{ds} \in \End(C^\infty(\mathbb{R}))$ ist jedes $ x\in \mathbb{R} $ ein Eigenwert, da
-		\[ \Big(\frac{d}{ds}-\id_Vx\Big)v = 0 \text{ für } v:\mathbb{R}\to\mathbb{R},s\mapsto v(s):= e^{xs}, \]
-	wobei $ v\in C^\infty(\mathbb{R})\setminus \{0\} $, d.h. $ s\mapsto v(s)=e^{xs} $ ist ein Eigenvektor zum Eigenwert $ x\in\mathbb{R} $.
+	Für $ \frac{d}{ds} \in \End(C^\infty(\R))$ ist jedes $ x\in \R $ ein Eigenwert, da
+		\[ \Big(\frac{d}{ds}-\id_Vx\Big)v = 0 \text{ für } v:\R\to\R,s\mapsto v(s):= e^{xs}, \]
+	wobei $ v\in C^\infty(\R)\setminus \{0\} $, d.h. $ s\mapsto v(s)=e^{xs} $ ist ein Eigenvektor zum Eigenwert $ x\in\R $.
 \paragraph{Beispiel}
 	Ist $ \dim V < \infty $, so kann die Determinante zur Bestimmung von Eigenwerten von Endomorphismen $ f\in\End(V) $ benutzt werden, da
 		\[ \ker(f-\id_Vx)\neq \{0\} \Leftrightarrow (f-\id_Vx) \text{ nicht injektiv}\Leftrightarrow \det(f-\id_Vx) = 0, \]
@@ -84,7 +84,7 @@
 	hat
 		\[ \dim \ker(f-\id_V)<\dim V. \]
 \paragraph{Rechenbeispiel 2}
-	Ist $ K=\mathbb{R} $ und
+	Ist $ K=\R $ und
 		\[ \det(f-\id_Vx)=x^2+1, \]
 	so hat $ f $ keine Eigenwerte: z.B., wenn
 		$ X=\begin{pmatrix} 0&1\\-1&0 \end{pmatrix} $.
@@ -174,7 +174,7 @@
 		\[ k = 2 \text{ und } g = 1 \]
 	da
 		\[ f\neq \id_V x = \id_V \]
-	und $ \chi_f(t)=(t-x)^2 \in \mathbb{R}[t] $, da ein quadratisches Polynom zwei (relle oder komplex konjugierte) Nullstellen hat, oder aber eine doppelte reelle.
+	und $ \chi_f(t)=(t-x)^2 \in \R[t] $, da ein quadratisches Polynom zwei (relle oder komplex konjugierte) Nullstellen hat, oder aber eine doppelte reelle.
 
 \subsection{Definition \& Lemma}\index{$ f $-invarianter Unterraum}
 	Das Schlüsselargument im Beweis oben kann man verallgemeinern:
