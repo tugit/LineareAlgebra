@@ -1,0 +1,62 @@
+\section{Euklidische Geometrie}
+\subsection{Definition}\index{Euklidischer Raum}\index{Länge}\index{Abstand}\index{Winkel}
+	Ein \emph{Euklidischer Raum} ist eine affiner Raum $ (A,V,\tau) $ über einem Euklidischen Vektorraum $ (V,\Skl{.}{.}) $ mit induzierter Norm $ \|.\| $.
+		\begin{itemize}
+			\item Die \emph{Länge} eines Vektors $ v\in V $ ist seine Norm, der \emph{Abstand} zweier Punkte $ a,b\in A $ ist die Länge ihres Verbindungsvektors,
+				\[ d(a,b) := \|b-a\| = \sqrt{\Skl{b-a}{b-a}}. \]
+			\item Der \emph{Winkel} $ \alpha\in [0,\pi] $ zweier Vektoren $ v,w\in V^\times $ ist durch die Gleichung
+				\[ \Skl{v}{w} = \|v\|\cdot \|w\|\cdot \cos \alpha \]
+			definiert; der \emph{Winkel} (am Punkt $ a $) in einem nicht-degenerierten Dreieck $ \{a,b,c\} \subset A$ ist der Winkel der beiden Seitenvektoren $ v=b-a $ und $ w = c-a $.
+		\end{itemize}
+\begin{figure}[H]
+\centering	
+\definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw[->,color=black] (-1.9743290273232554,0.) -- (5.524000640987365,0.);
+\foreach \x in {-1.,1.,2.,3.,4.,5.}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+\draw[->,color=black] (0.,-1.133095836146613) -- (0.,4.526265243390068);
+\foreach \y in {-1.,1.,2.,3.,4.}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+\clip(-1.9743290273232554,-1.133095836146613) rectangle (5.524000640987365,4.526265243390068);
+\draw [shift={(1.,1.)},color=qqwuqq,fill=qqwuqq,fill opacity=0.1] (0,0) -- (13.366930696316846:0.38851449058604254) arc (13.366930696316846:70.38212059188172:0.38851449058604254) -- cycle;
+\draw [->] (1.,1.) -- (1.72,3.02);
+\draw [->] (1.,1.) -- (3.02,1.48);
+\begin{scriptsize}
+\draw [fill=qqqqff] (1.,1.) circle (2.5pt);
+\draw[color=qqqqff] (0.9654306181111331,0.848328065842202) node {$A$};
+\draw [fill=qqqqff] (1.72,3.02) circle (2.5pt);
+\draw[color=qqqqff] (1.8072120143808919,3.257117907475663) node {$B$};
+\draw [fill=qqqqff] (3.02,1.48) circle (2.5pt);
+\draw[color=qqqqff] (3.115210799353902,1.7160104281510296) node {$C$};
+\draw[color=black] (1.1726383464236891,2.130425884776141) node {$v$};
+\draw[color=black] (2.014419742693448,1.1202882092524316) node {$w$};
+\draw[color=qqwuqq] (1.5093509049315927,1.495852216818939) node {$\alpha$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{figure}
+
+\paragraph{Bemerkung}
+	Nach der Cauchy-Schwarzschen Ungleichung ist für $ v,w\in V^\times $
+		\[ \frac{\Skl{v}{w}}{\|v\|\cdot \|w\|}\in [-1,1]; \]
+	andererseits ist 
+		\[ \cos:[0,\pi]\to [-1,1]\text{ bijektiv} \]
+	Damit ist der Winkel von Vektoren bzw. im Dreieck wohldefiniert.
+
+\subsection{Definition}\index{Kongruenzabbildung}\index{Isometrie}\index{Ähnlichkeitstransformation}
+	Eine affine Transformation eines Euklidischen Raumes heißt
+		\begin{itemize}
+			\item \emph{Kongruenzabbildung} oder \emph{Isometrie}, falls sie Abstandstreu ist,
+			\item \emph{Ähnlichkeitstransformation}, falls sie winkeltreu ist.
+		\end{itemize}
+\paragraph{Bemerkung}
+	Jede Kongruenzabbildung ist Ähnlichkeitstransformation (Polarisation).
+\paragraph{Bemerkung}
+	Offenbar bilden die Kongruenz- bzw. Ähnlichkeitsabbildungen eines Euklidischen Raumes $ A $ auf $ A $ operierende (Transformations-)Gruppen.
+	
+\subsection{Definition (Geometrie)}\index{Euklidische Geometrie}\index{Ähnlichkeitsgeometrie}
+	Die auf einem Euklidischen Raum operierende Gruppe der Kongruenzabbildungen bestimmt eine Euklidische Geometrie.
+	
+	Die Gruppe der Ähnlichkeitstransformationen eines Euklidischen Raumes $ A $ bestimmt eine Ähnlichkeitsgeometrie.

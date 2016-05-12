@@ -43,7 +43,7 @@
 	die vom Standardskalarprodukt auf $ \R^2 $ induzierte Norm.
 	Insbesondere gilt
 		\[ \forall z\in \C: |\Re z| \leq |z| \]	
-\paragraph{Bemerkung}
+\subsection{Bemerkung zum Zusammenhang von reellen und komplexen VR}
 	Da $ \R\subset \C $ ein Teilkörper ist, kann jeder $ \C $-VR $ V $ auch als $ \R $-VR aufgefasst werden (Einschränkung der Skalarmultiplikation).
 	
 	Ist nun $ S\subset V $ linear unabhängig über $ \C $ (in $ V $ als $ \C $-VR), so ist
@@ -54,7 +54,7 @@
 	d.h. $ S' = S\cup S_i $ ist linear unabhängig über $ \R $.
 	Insbesondere folgt
 		\[ \dim_\R V = 2\dim_\C V.  \]
-\paragraph{Bemerkung}
+
 	Weiters definiert für ein Hermitesches Skalarprodukt $ \Skl{ .}{. } $ auf $ V $ (als $ \C $-VR)
 		\[ \Skl{ .}{. } :V\times V\to \R, (v,w)\mapsto \Skl{ v}{w }_\R := \Re \Skl{v}{w } \]
 	ein reelles Skalarprodukt auf $ V $ (als $ \R $-VR), das genau dann positiv definit ist, wenn $ \Skl{.}{. } $ positiv definit ist:
@@ -118,3 +118,63 @@
 		\[ \dim_\C V_\C = \frac{1}{2}\dim_\R V^2 = \dim_\R V. \]
 	Wichtig für den Zusammenhang zwischen unitären und Euklidischen VR:
 	Die induzierte Norm des Hermitschen Skalarprodukts kann als die eines Euklidischen Skalarprodukts aufgefasst werden.
+	
+% VO 12-05-2016 %
+\subsection{Definition}\index{Norm}
+	Eine Abbildung $ \|.\|:V\to \R $ auf einem $ \K $-VR $ V $ heißt \emph{Norm}, falls
+	\begin{enumerate}[(i)]
+		\item $ \forall v\in V^\times: \|v\| > 0 $, d.h. $ \|.\| $ ist \emph{positiv definit};
+		\item $ \forall v\in V \forall x\in \K: \|vx\| = \|v\|\cdot |x| $, d.h. $ \|.\| $ \emph{positiv homogen};
+		\item $ \forall v,w\in V: \| v+w\|\leq \|v\| + \|w\| $, d.h. $ \|.\| $ erfüllt die \emph{Dreiecksungleichung}.
+	\end{enumerate}
+	Ein Vektorraum mit Norm, $ (V,\|.\|) $ heißt \emph{normierter Vektorraum}.
+\paragraph{Bemerkung}
+	Die von einem positiv definiten Skalarprodukt $ \Skl{.}{.} $ induzierte Norm $ \|.\| $ erfüllt offenbar (i) und (ii); die Dreiecksungleichung zeigen wir unten.
+\paragraph{Cauchy-Schwarzsche Ungleichung}
+	Ist $ (V,\Skl{.}{.}) $ Euklidisch oder unitär, so gilt\footnote{Im Euklidischen Fall ist der Betrag offenbar überflüssig.}
+		\[ \forall v,w\in V: |\Skl{v}{w}|^2 \leq \Skl{v}{v}\Skl{w}{w} \]
+\paragraph{Beweis}
+	Seien $ v,w\in V $, o.B.d.A $ v\neq 0 $. Wir bestimmen das Minimum der Funktion im Euklidischen Fall (unitärer Fall in der Übung)
+		\[ \R \ni s\mapsto g(s):= \Skl{vs-w}{vs-w}. \]
+	Einsetzen des kritischen Punktes,
+		\[ 0 = g'(s) = 2\Skl{v}{v}s -(\Skl{v}{w}+\Skl{w}{v}) = 2(\Skl{v}{v}s-\Re \Skl{v}{w}) \]
+		\[ \Rightarrow s = \frac{\Skl{v}{w}}{\Skl{v}{v}} \]
+	liefert
+		\[ 0\leq g(s) = \Skl{v}{v}\frac{\Skl{v}{w}^2}{\Skl{v}{v}^2}-2\Skl{v}{w}\frac{\Skl{v}{w}}{\Skl{v}{v}}+\Skl{w}{w} \]
+		\[ = \frac{1}{\Skl{v}{v}}\left(-\Skl{v}{w}^2+\Skl{v}{v}\Skl{w}{w} \right) \Leftrightarrow 0\leq -\Skl{v}{w}^2+\Skl{v}{v}\Skl{w}{w}. \ \]
+		
+\subsection{Korollar}
+	Die induzierte Norm in $ (V,\Skl{.}{.}) $ erfüllt die Dreiecksungleichung.
+\paragraph{Beweis}
+	Ist $ (V,\Skl{.}{.}) $ Euklidischer VR, so gilt für $ v,w\in V $:
+		\begin{align*}
+		\|v+w\|^2 = \Skl{v+w}{v+w} &= \|v\|^2+2\Skl{v}{w}+\|w\|^2 \\
+		&\overset{C.S.}{\leq} \|v\|^2+2\|v\|\cdot \|w\|+\|w\|^2 = (\|v\|+\|w\|)^2.
+		\end{align*}
+\paragraph{Bemerkung}
+	Das Skalarprodukt eines Euklidischen VR $ (V,\Skl{.}{.}) $ kann (Polarisation) aus seiner induzierten Norm rekonstruiert werden.
+	
+	Nicht jede Norm ist jedoch von einem Skalarprodukt induziert (vgl. Aufgabe 56).
+	Hinreichende (Satz von Jordan-von Neumann) und notwendige Bedingung ist die Parallelogrammgleichung:
+	
+\subsection{Parallelogrammgleichung}
+	Für die induzierte Norm $ \|.\| $ von $ (V,\Skl{.}{.}) $ gilt:
+		\[ \forall v,w\in V: \|v+w\|^2+\|v-w\|^2=2\|v\|^2+2\|w\|^2 \]
+\paragraph{Beweis}
+	Rechnung, wie bei Polarisation.
+\paragraph{Beispiel}
+	Für die induzierte Norm des kanonischen Skalarprodukts auf $ \R^n $ gilt die Parallelogrammgleichung:
+		\[ \sum_{i=1}^{n}(x_i+y_i)^2 + \sum_{i=1}^{n}(x_i-y_i)^2 = 2\sum_{i=1}^{n}x_i^2+2\sum_{i=1}^{n}y_i^2. \]
+	Für die durch
+		\[ \|(x_i)_{i\in \{1,\dots,n\}}\|_1 = \sum_{i=1}^{n}|x_i| \]
+	auf $ \R^n $ definierte Norm $ \|.\|_1 $ gilt sie nicht; diese Norm ist also nicht induzierte Norm eines Euklidischen Skalarprodukts auf $ \R^n $.
+\paragraph{Beispiel}
+	Auf dem Raum $ C^0([0,1]) $ der stetigen Funktionen auf $ [0,1] $ definiert
+		\[ \|.\|_\infty: C^0([0,1]) \to \R, f\mapsto \|f\|_\infty := \max_{x\in [0,1]}|f(x)| \]
+	die \emph{Maximumsnorm} (vlg. gleichmäßige Konvergenz).
+	
+	Für $ f,g\in C^0([0,1]) $,
+		\[ f(x):= 1-x \text{ und } g(x) = x \]
+	ist dann
+		\[ \|f\|_\infty = \|g\|_\infty = \|f+g\|_\infty = \|f-g\|_\infty = 1 \]
+	womit die Parallelogrammgleichung offenbar nicht erfüllt, und die Norm keine induzierte Norm eines Skalarprodukts ist.
