@@ -2,9 +2,13 @@
 
   \item $ f $-invarianter Unterraum, \hyperpage{18}
   \item $ f $-zyklische Basis, \hyperpage{23}
+  \item \IeC {\"A}hnlichkeitsgeometrie, \hyperpage{57}
+  \item \IeC {\"A}hnlichkeitstransformation, \hyperpage{57}
+  \item \IeC {\"A}quivalenz von Sesquilinearformen, \hyperpage{48}
 
   \indexspace
 
+  \item Abstand, \hyperpage{56}
   \item Algebra, \hyperpage{5}
     \subitem -Homomorphismus, \hyperpage{6}
   \item Algebraische/geometrische Vielfachheit, \hyperpage{17}
@@ -23,6 +27,8 @@
 
   \item Eigenwert,-vektor,-raum, \hyperpage{13}
   \item Einsetzungshomomorphismus, \hyperpage{6}, \hyperpage{8}
+  \item Euklidische Geometrie, \hyperpage{57}
+  \item Euklidischer Raum, \hyperpage{56}
 
   \indexspace
 
@@ -36,9 +42,15 @@
   \indexspace
 
   \item induzierte Norm, \hyperpage{50}
+  \item Isometrie, \hyperpage{57}
 
   \indexspace
 
+  \item Kongruenzabbildung, \hyperpage{57}
+
+  \indexspace
+
+  \item L\IeC {\"a}nge, \hyperpage{56}
   \item Linearfaktorisierung, \hyperpage{11}
 
   \indexspace
@@ -48,6 +60,7 @@
   \indexspace
 
   \item Negativit\IeC {\"a}tsindex, \hyperpage{46}
+  \item Norm, \hyperpage{53}
   \item Nullstelle, \hyperpage{11}
 
   \indexspace
@@ -102,5 +115,9 @@
   \item Vektorraum
     \subitem Euklidischer, \hyperpage{50}
     \subitem unit\IeC {\"a}rer, \hyperpage{50}
+
+  \indexspace
+
+  \item Winkel, \hyperpage{56}
 
 \end{theindex}
