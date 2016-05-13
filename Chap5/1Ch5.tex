@@ -7,22 +7,22 @@ Algebraisch:
 	via Produkte (bilineare -- oder fast bilineare -- Abbildungen).
 	
 %TODO schönere Grafik...; dann auslagern.
-	\definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
-	\definecolor{qqqqff}{rgb}{0.,0.,1.}
-	\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,scale=1.8]
-	\clip(0,0) rectangle (10,3);
-	\draw [shift={(5.635,1.07)},color=qqwuqq,fill=qqwuqq,fill opacity=0.1] (0,0) -- (34.85:0.14) arc (34.85:143.6:0.14) -- cycle;
-	\draw [->] (2.58,1) -- (0.56,2.3);
-	\draw [->] (6.6,0.35) -- (4.25,2.1);
-	\draw [->] (4.5,0.26) -- (6.8,1.9);
-
-	\draw [fill=qqqqff] (2.58,1) circle (1pt);
-	\draw[color=qqqqff] (2.6,1) node[below] {$A$};
-	\draw [fill=qqqqff] (0.56,2.3) circle (1pt);
-	\draw[color=blue] (0.5,2.3) node[above] {$B$};
-	\draw (1.5,0.1) node {Abstand a bis b $ \cong $ Länge b-a};
-	\draw (5.4,0.1) node {Winkel $ \cong $ Winkel zwischen Richtungsvektoren};
-	\end{tikzpicture}
+%	\definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
+%	\definecolor{qqqqff}{rgb}{0.,0.,1.}
+%	\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,scale=1.8]
+%	\clip(0,0) rectangle (10,3);
+%	\draw [shift={(5.635,1.07)},color=qqwuqq,fill=qqwuqq,fill opacity=0.1] (0,0) -- (34.85:0.14) arc (34.85:143.6:0.14) -- cycle;
+%	\draw [->] (2.58,1) -- (0.56,2.3);
+%	\draw [->] (6.6,0.35) -- (4.25,2.1);
+%	\draw [->] (4.5,0.26) -- (6.8,1.9);
+%
+%	\draw [fill=qqqqff] (2.58,1) circle (1pt);
+%	\draw[color=qqqqff] (2.6,1) node[below] {$A$};
+%	\draw [fill=qqqqff] (0.56,2.3) circle (1pt);
+%	\draw[color=blue] (0.5,2.3) node[above] {$B$};
+%	\draw (1.5,0.1) node {Abstand a bis b $ \cong $ Länge b-a};
+%	\draw (5.4,0.1) node {Winkel $ \cong $ Winkel zwischen Richtungsvektoren};
+%	\end{tikzpicture}
 
 \section{Bilinearformen \& Sesquilinearformen}
 \paragraph{Zur Erinnerung}
@@ -225,7 +225,7 @@ Dies liefert einen weiteren Äquivalenzbegriff für quadratische Matrizen $ S\in
 	Für $ S\subset V $ kann man $ S^{\perp\perp} = \left(S^\perp\right)^\perp $ betrachten; im Allgemeinen gilt
 		\[ S\subset S^{\perp\perp} \text{ aber } S\neq S^{\perp\perp}. \]
 	Ist etwa $ \sigma = 0 $, so ist $ S^\perp = V $ für jede Menge $ \emptyset \neq S\subsetneq V $; also ist
-		\[ S^{\perp\perp} = V^\perp s = V \neq S. \]
+		\[ S^{\perp\perp} = V^\perp = V \neq S. \]
 
 \subsection{Definition}\index{Radikal!-raum}\index{Radikal!-frei}
 \begin{Definition}[Radikal(-raum),radikalfrei,nicht-degeneriert,degeneriert]
