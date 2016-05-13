@@ -1,0 +1,78 @@
+\tdplotsetmaincoords{0}{0} %-27
+ 	\begin{tikzpicture}[yscale=1,tdplot_main_coords]
+
+ 		\def\xstart{0} %x Koordinate der Startposition der Grafik
+ 		\def\ystart{0} %y Koordinate der Startposition der Grafik
+ 		\def\myscale{1.0} %ändert die Größe der Grafik (Skalierung der Grafik)
+        \def\myscalex{(\myscale)}
+        \def\myscaley{(\myscale)}
+                
+ 		\def\xstartdraw{(\xstart + 1.5)} %xKoordinate des Referenzstartpunktes (in dieser Zeichnung: a)
+ 		\def\ystartdraw{(\ystart + 1.0)}%yKoordinate des Referenzstartpunktes (in dieser Zeichnung: a)
+
+ 		\def\balkenhoehe{(4.0)}% Länge des vertikalen blauen Balkens
+ 		\def\balkenlaenge{(7)}% Länge des horizontalen blauen Balkens
+ 		\def\balkenbreite{0.4} %Balkenbreite
+
+ 		%---------Begin Balken----------
+ 		\def\drehwinkel{0}
+ 		\node (VekV) at ({\xstart+0.2*cos(\drehwinkel)-\balkenbreite*sin(\drehwinkel)},{\ystart+0.5*sin(\drehwinkel)+\balkenbreite*cos(\drehwinkel)})[right, xshift=1,color=blue] {$V$};
+ 		\node (AffA) at ({\xstart+(\balkenlaenge-1)*cos(\drehwinkel)},{\ystart+(\balkenlaenge-1)*sin(\drehwinkel)+\balkenbreite*cos(\drehwinkel)})[color=red] {$A$};
+
+ 		\path[ shade, top color=white, bottom color=blue, opacity=.6]
+ 		({\xstart},{\ystart},0)  -- ({\xstart - \balkenbreite * cos(\drehwinkel)- (-\balkenbreite+0)*sin(\drehwinkel)},{\ystart - \balkenbreite * sin(\drehwinkel)+ (-\balkenbreite+0)*cos(\drehwinkel)},0)  -- ({\xstart - \balkenbreite * cos(\drehwinkel)- (\balkenhoehe+0.5)*sin(\drehwinkel)},{\ystart - \balkenbreite * sin(\drehwinkel)+ (\balkenhoehe+0.5)*cos(\drehwinkel)},0) -- ({\xstart - 0 * cos(\drehwinkel)- (\balkenhoehe+0)*sin(\drehwinkel)},{\ystart - 0 * sin(\drehwinkel)+ (\balkenhoehe+0)*cos(\drehwinkel)},0) -- cycle;
+
+ 		\path[ shade, right color=white, left color=blue, opacity=.6]
+ 		({\xstart},{\ystart},0)  -- ({\xstart - \balkenbreite * cos(\drehwinkel)- (-\balkenbreite+0)*sin(\drehwinkel)},{\ystart - \balkenbreite * sin(\drehwinkel)+ (-\balkenbreite+0)*cos(\drehwinkel)},0) --
+ 		({\xstart + (\balkenlaenge+0.5) * cos(\drehwinkel)- (-\balkenbreite+0)*sin(\drehwinkel)},{\ystart + (\balkenlaenge+0.5) * sin(\drehwinkel)+ (-\balkenbreite+0)*cos(\drehwinkel)},0) --
+ 		({\xstart + \balkenlaenge * cos(\drehwinkel)},{\ystart + \balkenlaenge * sin(\drehwinkel)},0)--
+ 		cycle;
+ 		%---------End Balken----------
+ 		\def\lightoffset{0.2*\myscale} %offeset der Vektoren
+
+ 		% rote Punkte Definition
+ 		
+ 		\node (offsetx) at ({(3.5*\myscalex},{0.0}) {}; %just an offset
+ 		\node (offsety) at ({0.0},{2.5*\myscaley}) {}; %just an offset
+ 		
+ 		\node (pointa1) at ({\xstartdraw},{\ystartdraw}) {};
+ 		\node[ xshift=-2mm, yshift=-3mm,color=red] (labela1) at (pointa1) {$0$};
+ 		
+ 		\node (pointa2) at ($(pointa1) + 0.1*(offsetx) + 1.0*(offsety)$) {};
+ 		
+ 		\node (pointb1) at ($(pointa1) + 1.0*(offsetx) + 0.1*(offsety)$ ) {};
+ 		\node (pointb2) at ($(pointb1) + 0.1*(offsetx) + 1.0*(offsety)$) {};
+ 	
+ 		%Vektoren blau
+ 	    %waagrecht
+ 		\draw[-{>[scale=1,length=10,width=6]},shorten >=2pt, shorten <=2pt,line width=0.2pt,color=blue] (pointa1) -- (pointb1);
+ 		\draw[-{>[scale=1,length=10,width=6]},shorten >=2pt, shorten <=2pt,line width=0.2pt,color=blue,dashed] (pointa2) -- (pointb2);
+ 		
+ 		%senkrecht
+ 		\draw[-{>[scale=1,length=10,width=6]},shorten >=2pt, shorten <=2pt,line width=0.2pt,color=blue] (pointa1) -- (pointa2);
+ 		\draw[-{>[scale=1,length=10,width=6]},shorten >=2pt, shorten <=2pt,line width=0.2pt,color=blue,dashed] (pointb1) -- (pointb2);
+ 		
+ 		%diagonal
+ 		\draw[-{>[scale=1,length=10,width=6]},shorten >=2pt, shorten <=2pt,line width=0.2pt,color=blue] (pointa2) -- (pointb1);
+ 		\draw[-{>[scale=1,length=10,width=6]},shorten >=2pt, shorten <=2pt,line width=0.2pt,color=blue] (pointa1) -- (pointb2);
+ 		
+ 		%Beschriftung der Vektoren
+ 		\node [color=blue] (pointlabelvu) at ($(pointa1)!0.5!(pointb1)$) [above, xshift=0, yshift=-5mm] {$v$} ;
+ 		\node [color=blue] (pointlabelvo) at ($(pointa2)!0.5!(pointb2)$) [above, xshift=0, yshift=0mm] {$v$} ;
+ 		
+ 		\node [color=blue] (pointlabelwl) at ($(pointa1)!0.5!(pointa2)$) [above, xshift=-4mm, yshift=-5mm] {$w$} ;
+ 		\node [color=blue] (pointlabelwr) at ($(pointb1)!0.5!(pointb2)$) [above, xshift=2mm, yshift=-5mm] {$w$} ;
+ 		
+ 		%Beschriftung der Diagonalvektoren
+ 		def\drehwinkel{30}
+ 		\node [color=blue,rotate=35] (pointlabeldo) at ($(pointa1)!0.2!(pointb2)$) [above, xshift=3mm, yshift=-0.5mm] {$v+w$} ;
+        \node [color=blue,rotate=-35] (pointlabeldu) at ($(pointa2)!0.3!(pointb1)$) [above, xshift=2mm, yshift=-1mm] {$v-w$} ;
+
+
+ 		%Punkte malen
+ 		\draw[fill,color=red] (pointa1) circle [x=1cm,y=1cm,radius=0.08]node[above, xshift=0, yshift=0]{};
+ 		\draw[fill,color=red] (pointb1) circle [x=1cm,y=1cm,radius=0.08]node[above, xshift=0, yshift=0]{};
+ 		\draw[fill,color=red] (pointa2) circle [x=1cm,y=1cm,radius=0.08]node[below, xshift=5, yshift=0]{};
+ 		\draw[fill,color=red] (pointb2) circle [x=1cm,y=1cm,radius=0.08]node[below, xshift=5, yshift=0]{};
+ 		
+\end{tikzpicture}
