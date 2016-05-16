@@ -16,6 +16,7 @@
 	Im Folgenden beschränken wir uns bis auf Weiteres auf $ \K $-VR mit $ \Skl{.}{.} $ Hermitsche Sesquilinearform, falls $ \K = \C $ (vgl. Satz von Sylvester).
 	
 \subsection{Definition}\index{positiv definit}\index{induzierte Norm}\index{Vektorraum!Euklidischer}\index{Vektorraum!unitärer}
+\begin{Definition}[positiv definit, euklidischer-, unitärer Vektorraum ]
 	Ein Skalarprodukt $ \Skl{.}{.} $ auf einem $ \K $-VR $ V $ heißt \emph{positiv definit}, falls
 		\[ \forall v\in V^\times:\Skl{ v}{v} >0; \]
 	die \emph{induzierte Norm} eines positiv-definiten Skalarprodukts $ \Skl{.}{.} $ ist die Abbildung
@@ -25,12 +26,15 @@
 			\item ein \emph{Euklidischer Vektorraum}, falls $ \K=\R $, und
 			\item ein \emph{unitärer Vektorraum}, falls $ \K = \C $ und $ \Skl{.}{.} $ Hermitesche Sesquilinearform ist. 
 		\end{itemize}
+\end{Definition}
 
 \subsection{Bemerkung \& Definition}
+\begin{Definition}[negativ definit, indefinit]
 	Ebenso definiert man ein Skalarprodukt als \emph{negativ definit}, falls
 		\[ \forall v\in V^\times: \Skl{ v}{v} < 0; \]
 	$ \Skl{.}{.} $ heißt \emph{indefinit}, falls es weder positiv, noch negativ definit ist.
 	Die Definition der induzierten Norm ist nur im positiv definiten Fall sinnvoll.
+\end{Definition}
 
 % VO 10-05-2016 %
 
@@ -95,11 +99,14 @@
 	liefert das kanonische Skalarprodukt auf $ \C $, mit dem kanonischen Euklidischen Skalarprodukt von $ \R^2 $ als Realteil.
 
 \subsection{Komplexifizierungslemma}
+\begin{Lemma}[Komplexifizierungslemma]
 	Ist $ (V,\Skl{.}{.}) $ ein Euklidischer Vektorraum, so liefert
 		\[ (v,w)(x+iy) := (vx-wy,wx+vy) \]
 	eine komplexe Skalarmultiplikation auf $ V_\C := V\times V $, und
 		\[ \SSkl{((v,w))}{(v',w')}_\C := \left(\Skl{v}{v'}+\Skl{w}{w'} \right)+i\left(\Skl{v}{w'}-\Skl{w}{v'} \right) \]
 	ein Hermitesches Skalarprodukt, das $ (V_\C,\SSkl{.}{.}_\C) $ zu einem unitären VR macht.
+\end{Lemma}
+
 \paragraph{Beweis}
 	Auf dem Euklidischen VR $ (V^2,\SSkl{.}{.}) $, wobei
 		\[ \SSkl{.}{.}:V^2\times V^2 \to \R, \left((v,w),(v',w')\right)\mapsto \SSkl{(v,w)}{(v',w')} := \Skl{v}{v'}+\Skl{w}{w'}, \]
@@ -121,6 +128,7 @@
 	
 % VO 12-05-2016 %
 \subsection{Definition}\index{Norm}
+\begin{Definition}[Norm , normierter Vektorraum ]
 	Eine Abbildung $ \|.\|:V\to \R $ auf einem $ \K $-VR $ V $ heißt \emph{Norm}, falls
 	\begin{enumerate}[(i)]
 		\item $ \forall v\in V^\times: \|v\| > 0 $, d.h. $ \|.\| $ ist \emph{positiv definit};
@@ -128,11 +136,15 @@
 		\item $ \forall v,w\in V: \| v+w\|\leq \|v\| + \|w\| $, d.h. $ \|.\| $ erfüllt die \emph{Dreiecksungleichung}.
 	\end{enumerate}
 	Ein Vektorraum mit Norm, $ (V,\|.\|) $ heißt \emph{normierter Vektorraum}.
+\end{Definition}
+
 \paragraph{Bemerkung}
 	Die von einem positiv definiten Skalarprodukt $ \Skl{.}{.} $ induzierte Norm $ \|.\| $ erfüllt offenbar (i) und (ii); die Dreiecksungleichung zeigen wir unten.
 \paragraph{Cauchy-Schwarzsche Ungleichung}
+\begin{Satz}[Cauchy-Schwarzsche Ungleichung]
 	Ist $ (V,\Skl{.}{.}) $ Euklidisch oder unitär, so gilt\footnote{Im Euklidischen Fall ist der Betrag offenbar überflüssig.}
 		\[ \forall v,w\in V: |\Skl{v}{w}|^2 \leq \Skl{v}{v}\Skl{w}{w} \]
+\end{Satz}
 \paragraph{Beweis}
 	Seien $ v,w\in V $, o.B.d.A $ v\neq 0 $. Wir bestimmen das Minimum der Funktion im Euklidischen Fall (unitärer Fall in der Übung)
 		\[ \R \ni s\mapsto g(s):= \Skl{vs-w}{vs-w}. \]
@@ -144,7 +156,9 @@
 		\[ = \frac{1}{\Skl{v}{v}}\left(-\Skl{v}{w}^2+\Skl{v}{v}\Skl{w}{w} \right) \Leftrightarrow 0\leq -\Skl{v}{w}^2+\Skl{v}{v}\Skl{w}{w}. \ \]
 		
 \subsection{Korollar}
+\begin{Korollar}[]
 	Die induzierte Norm in $ (V,\Skl{.}{.}) $ erfüllt die Dreiecksungleichung.
+\end{Korollar}
 \paragraph{Beweis}
 	Ist $ (V,\Skl{.}{.}) $ Euklidischer VR, so gilt für $ v,w\in V $:
 		\begin{align*}
@@ -158,9 +172,11 @@
 	Hinreichende (Satz von Jordan-von Neumann) und notwendige Bedingung ist die Parallelogrammgleichung:
 	
 \subsection{Parallelogrammgleichung}
+\begin{Satz}[Parallelogrammgleichung]
 	Für die induzierte Norm $ \|.\| $ von $ (V,\Skl{.}{.}) $ gilt:
 		\[ \forall v,w\in V: \|v+w\|^2+\|v-w\|^2=2\|v\|^2+2\|w\|^2 \]
-		
+\end{Satz}		
+
 	%------------------ Parallelogrammgleichung ----------------
  	\begin{figure}[H]\centering
  		\include{Chap5/Parallelogrammgleichung.tikz}
