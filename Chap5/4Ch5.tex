@@ -67,3 +67,70 @@
 	
 	Die Gruppe der Ähnlichkeitstransformationen eines Euklidischen Raumes $ A $ bestimmt eine Ähnlichkeitsgeometrie.
 \end{Definition}
+
+% VO 19-05-2016 %
+
+\paragraph{Beispiel}
+	Jede Translation $ \tau_v:A\to A $ ist eine Isometrie:
+	Für $ a,b\in A $ gilt
+		\[ \exists!w\in V: b=\tau_w(a) \]
+	d.h. $ w=b-a $; also
+		\[ \tau_v(b) = \tau_v(\tau_w(a)) = \tau_{v+w}(a) = \tau_w(\tau_v (a)) \]
+	d.h. $ w = \tau_v(b)-\tau_v(a) $.
+	Damit folgt:
+		\[ \|\tau_v(b)-\tau_v(a)\| = \|w\| = \|b-a\| \]
+	d.h. $ \tau_v $ ist abstandstreu, da $ a,b\in A $ beliebig waren.
+\paragraph{Beispiel}
+	Die Streckung mit Zentrum $ o\in A $ um den Faktor $ s\in \mathbb{R}^\times $,
+		\[ o+v=a\overset{\delta_s}{\mapsto}\delta_s(a) = \delta_s(o+v):= o+vs \]
+	ist winkeltreu, denn für $ a=o+v, b=o+w $ gilt
+		\[ \delta_s(b)-\delta_s(a) = (o+ws)-(o+vs) = \dots = (w-v)s \]
+	und damit für drei paarweise verschiedene Punkte $ a,b,c\in A $
+		\[ \cos \alpha = \frac{\Skl{\delta_s(b)-\delta_s(a)}{\delta_s(c)-\delta_s(a)}}{\|\delta_s(b)-\delta_s(a)\|\|\delta_s(c)-\delta_s(a)\|} = \frac{\Skl{(b-a)s}{(c-a)s}}{\|(b-a)s\|\|(c-a)s\|} =\frac{s^2}{|s^2|} \cdot \frac{\Skl{b-a}{c-a}}{\|b-a\|\|c-a\|} \]
+	d.h. $ \delta_s $ ist winkeltreu; andererseits ist $ \delta_s $ für $ s\neq \pm 1 $ nicht abstandstreu.
+	Ist $ a \neq b $, so gilt dann
+		\[ \|\delta_s(b)-\delta_s(a)\| = \|b-a\|\cdot |s| \neq \|b-a\|. \] 
+\paragraph{Zur Erinnerung}
+	Jede affine Abbildung $ \alpha:A\to A' $ besitzt einen (eindeutigen) \emph{linearen Anteil} $ \lambda:V\to V' $, sodass
+		\[ \forall a\in A\forall v\in V: \alpha(a+v) = \alpha(a)+\lambda(v); \]
+	ist $ \alpha $ eine affine Transformation, so ist $ \lambda \in Gl(V) $.
+\paragraph{Bemerkung}
+	Jede Ähnlichkeitstransformation ist Komposition einer Streckung und einer Kongruenzabbildung.
+	
+	Nämlich: Ist $ \alpha $ Ähnlichkeitstransformation mit linearem Anteil $ \lambda\in Gl(V) $, so erhält $ \lambda $ Winkel von Vektoren, insbesondere also Orthogonalität.
+	Nun wähle $ w\in V^\times $ und setze
+		\[ s := \frac{\|w\|}{\|\lambda w\|}. \]
+	Ist dann $ v\in V $ mit $ \|v\|=\|w\| $, so folgt
+		\[ v+w \perp v-w \Rightarrow \lambda(v+w)\perp \lambda(v-w) \Rightarrow \|\lambda(v)\| = \|\lambda(w)\|, \]
+	also 
+		\[ \forall v\in V^\times: \frac{\|\lambda(v)\|}{\|v\|} = \|\lambda(v\frac{\|w\|}{\|v\|})\|\frac{1}{\|w\|} = \frac{\|\lambda (w)\|}{\|w\|} = \frac{1}{s}. \]
+	Mit einem beliebigen Streckungszentrum $ o\in A $ erhält man also eine Isometrie durch
+		\[ \delta_s\circ \alpha :A\to A. \]
+\paragraph{Beispiel}
+	Eine \emph{nicht-triviale} Scherung ist \emph{keine} Ähnlichkeitstransformation. Beweis in der Übung. % 3 Zeilen Rechnung, 5 Zeilen Begründung!
+
+\subsection{Lemma \& Definition}
+	Eine affine Transformation $ \alpha:A\to A $ eines Euklidischen Raumes $ A $ ist genau dann eine Kongruenzabbildung, wenn ihr linearer Anteil $ \lambda $ \emph{orthogonal} ist:
+		\[ \lambda\in O(V):= \{f\in Gl(V)\mid \forall v,w\in V: \Skl{f(v)}{f(w)} = \Skl{v}{w}\}. \]
+	$ O(V) $ heißt die \emph{orthonogale Gruppe} von $ (V,\Skl{.}{.}) $.
+\paragraph{Bemerkung}
+	$ O(V)\subset Gl(V) $ ist eine Gruppe. Beweis in der Übung.
+\paragraph{Bemerkung}
+	Ist $ f\in \End(V) $, so folgt die Injektivität von $ f $ aus
+		\[ \forall v,w\in V: \Skl{f(v)}{f(w)} = \Skl{v}{w}. \]
+	Aus $ f(v) = 0 $ folgt nämlich
+		\[ 0 = \|f(v)\| = 0 = \|v\| \Rightarrow v = 0, \text{ da } \Skl{.}{.}\text{ pos. definit.} \]
+	Ist $ \dim V <\infty $, so folgt mit dem Rangsatz, $ \dim V = \rg f + \dfkt f = \rg $, dass $ f\in Gl(V) $.
+	
+	Im Fall $ \dim V = \infty $ ist $ f $ nicht notwendigerweise surjektiv, wie der \emph{Shiftoperator}
+		\[ f\in \End(\R^\N), \forall n\in \N: f(e_n) = e_{n+1} \]
+	zeigt.
+\paragraph{Beweis (Lemma)}
+	Sei $ (A,V,\tau) $ Euklidischer Raum über einem Euklidischen VR $ (V,\Skl{.}{.}) $ und $\alpha:A\to A $ Affinität mit linearem Anteil $ \lambda\in Gl(V) $. Dann ist $ \alpha $ genau dann Isometrie, wenn
+		\[ \forall a,b\in A: \|\lambda(b-a)\| = \|\alpha(b)-\alpha(a)\| = \|b-a\|,  \]
+	also (Polarisation), wenn $ \lambda\in O(V) $.
+\subsection{Definition}
+	Ist $ (V,\Skl{.}{.}) $ unitärer VR, so heißt $ f\in Gl(V) $ mit
+		\[ \forall v,w\in V: \Skl{f(v)}{f(w)} = \Skl{v}{w} \]
+	\emph{unitär}; die \emph{unitäre Gruppe} von $ (V,\Skl{.}{.}) $ ist die Gruppe
+		\[ U(V) := \{f\in Gl(V)\mid \forall v,w\in V: \Skl{f(v)}{f(w)} = \Skl{v}{w} \}. \]
