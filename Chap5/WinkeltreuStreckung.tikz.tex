@@ -1,0 +1,100 @@
+\tdplotsetmaincoords{0}{0} %-27
+ 	\begin{tikzpicture}[yscale=1,tdplot_main_coords]
+
+ 		\def\xstart{0} %x Koordinate der Startposition der Grafik
+ 		\def\ystart{0} %y Koordinate der Startposition der Grafik
+ 		\def\myscale{1.0} %ändert die Größe der Grafik (Skalierung der Grafik)
+        \def\myscalex{(\myscale)}
+        \def\myscaley{(\myscale)}
+                
+ 		\def\xstartdraw{(\xstart + 2.0)} %xKoordinate des Referenzstartpunktes (in dieser Zeichnung: a)
+ 		\def\ystartdraw{(\ystart + 1.5)}%yKoordinate des Referenzstartpunktes (in dieser Zeichnung: a)
+
+ 		\def\balkenhoehe{(3.5)}% Länge des vertikalen blauen Balkens
+ 		\def\balkenlaenge{(5.5)}% Länge des horizontalen blauen Balkens
+ 		\def\balkenbreite{0.4} %Balkenbreite
+
+ 		%---------Begin Balken----------
+ 		\def\drehwinkel{0}
+ 		\node (VekV) at ({\xstart+0.2*cos(\drehwinkel)-\balkenbreite*sin(\drehwinkel)},{\ystart+0.5*sin(\drehwinkel)+\balkenbreite*cos(\drehwinkel)})[right, xshift=1,color=blue] {$V$};
+ 		\node (AffA) at ({\xstart+(\balkenlaenge-0.5)*cos(\drehwinkel)},{\ystart+(\balkenlaenge-0.5)*sin(\drehwinkel)+\balkenbreite*cos(\drehwinkel)})[color=red] {$A$};
+
+ 		\path[ shade, top color=white, bottom color=blue, opacity=.6]
+ 		({\xstart},{\ystart},0)  -- ({\xstart - \balkenbreite * cos(\drehwinkel)- (-\balkenbreite+0)*sin(\drehwinkel)},{\ystart - \balkenbreite * sin(\drehwinkel)+ (-\balkenbreite+0)*cos(\drehwinkel)},0)  -- ({\xstart - \balkenbreite * cos(\drehwinkel)- (\balkenhoehe+0.5)*sin(\drehwinkel)},{\ystart - \balkenbreite * sin(\drehwinkel)+ (\balkenhoehe+0.5)*cos(\drehwinkel)},0) -- ({\xstart - 0 * cos(\drehwinkel)- (\balkenhoehe+0)*sin(\drehwinkel)},{\ystart - 0 * sin(\drehwinkel)+ (\balkenhoehe+0)*cos(\drehwinkel)},0) -- cycle;
+
+ 		\path[ shade, right color=white, left color=blue, opacity=.6]
+ 		({\xstart},{\ystart},0)  -- ({\xstart - \balkenbreite * cos(\drehwinkel)- (-\balkenbreite+0)*sin(\drehwinkel)},{\ystart - \balkenbreite * sin(\drehwinkel)+ (-\balkenbreite+0)*cos(\drehwinkel)},0) --
+ 		({\xstart + (\balkenlaenge+0.5) * cos(\drehwinkel)- (-\balkenbreite+0)*sin(\drehwinkel)},{\ystart + (\balkenlaenge+0.5) * sin(\drehwinkel)+ (-\balkenbreite+0)*cos(\drehwinkel)},0) --
+ 		({\xstart + \balkenlaenge * cos(\drehwinkel)},{\ystart + \balkenlaenge * sin(\drehwinkel)},0)--
+ 		cycle;
+ 		%---------End Balken----------
+ 		\def\lightoffset{0.2*\myscale} %offeset der Vektoren
+
+ 		% rote Punkte Definition
+ 		
+ 		\node (offsetx) at ({(2.5*\myscalex},{0.0}) {}; %just an offset
+ 		\node (offsety) at ({0.0},{1.5*\myscaley}) {}; %just an offset
+ 		
+ 		\node (pointintersection) at ({\xstartdraw},{\ystartdraw}) {};
+ 		
+ 		
+ 	%	\draw[red] (fov) -- ++(295:2cm);
+    %\draw[red] (fov) -- ++(335:2cm);
+       %\coordinate (B) at (45:2cm) ;
+        
+        \node (pointa2) at ($(pointintersection) + (70:2.5)$) {};
+ 		\node (pointb2) at ($(pointintersection) + (25:4)$) {};
+ 		
+ 		\node (pointa1) at ($(pointintersection) + (250:1.25)$) {};
+ 		\node (pointb1) at ($(pointintersection) + (205:2)$) {};
+ 		
+ 	%	\node (pointa2) at ($(pointa1) - 0.15*(offsetx) + 1.0*(offsety)$) {};
+ 		
+ 	
+ 		\node[ xshift=3mm, yshift=0mm,color=red] (labela1) at (pointa1) {$a$};
+ 		\node[ xshift=6mm, yshift=-1mm,color=red] (labela2) at (pointa2) {$\delta_{\text{\tiny  -2}} (a)$};
+ 		\node[ xshift=1mm, yshift=4mm,color=red] (labelataub) at (pointb2) {$\delta_{\text{\tiny  -2}} (b)$};
+ 		\node[ xshift=0mm, yshift=4mm,color=red] (labelataua) at (pointb1) {$b$};
+ 	
+ 	%    \draw[name path=line 1] (0,0) -- (2,2);
+     %   \draw[name path=line 2] (2,0) -- (0,2);
+%\fill[red,name intersections={of=line 1 and line 2,total=\t}]
+ %   \foreach \s in {1,...,\t}{(intersection-\s) circle (2pt) node {\footnotesize\s}};
+    
+    
+ 		%Vektoren blau
+ 	    %waagrecht
+ 		\draw[name path=a--da,{<[scale=1,length=6,width=6]}-{>[scale=1,length=6,width=6]},shorten >=2pt, shorten <=2pt,line width=0.2pt,color=blue] (pointa1) -- (pointa2);
+ 		\draw[name path=b--db,{<[scale=1,length=6,width=6]}-{>[scale=1,length=6,width=6]},shorten >=2pt, shorten <=2pt,line width=0.2pt,color=blue] (pointb1) -- (pointb2);
+ 		
+ 		\draw[line width=0.2pt,color=red] ($(pointintersection) + (28:0.7)$) arc[radius=0.7, start angle=28, end angle=67] ($(pointintersection) + (67:0.7)$);
+ 		\draw[line width=0.2pt,color=red] ($(pointintersection) + (28:0.62)$) arc[radius=0.62, start angle=28, end angle=67] ($(pointintersection) + (67:0.62)$);
+ 		
+ 		\draw[line width=0.2pt,color=red] ($(pointintersection) + (208:0.7)$) arc[radius=0.7, start angle=208, end angle=247] ($(pointintersection) + (247:0.7)$);
+ 		\draw[line width=0.2pt,color=red] ($(pointintersection) + (208:0.62)$) arc[radius=0.62, start angle=208, end angle=247] ($(pointintersection) + (247:0.62)$);
+ 	
+ 		%\path [name intersections={of=a--da and b--db,by=E}];
+ 		
+ 	
+ 		%Beschriftung der Vektoren
+ 		\node [color=blue] (pointlabelvu) at ($(pointintersection)!0.5!(pointa1)$) [ xshift=2mm, yshift=0mm] {\small $v$} ;
+ 		\node [color=blue] (pointlabelvo) at ($(pointintersection)!0.5!(pointb1)$) [above, xshift=0, yshift=0mm] {\small $w$} ;
+ 		
+ 		\node [color=blue] (pointlabelwl) at ($(pointintersection)!0.5!(pointa2)$) [ xshift=-8mm, yshift=0mm] {\small $v \cdot (-2)$} ;
+ 		\node [color=blue] (pointlabelwr) at ($(pointintersection)!0.5!(pointb2)$) [ xshift=7mm, yshift=-2mm] {\small $w \cdot (-2)$} ;
+ 		
+ 	
+
+ 		%Punkte malen
+ 		\draw[fill,color=red] (pointa1) circle [x=1cm,y=1cm,radius=0.08]node[above, xshift=0, yshift=0]{};
+ 		\draw[fill,color=red] (pointb1) circle [x=1cm,y=1cm,radius=0.08]node[above, xshift=0, yshift=0]{};
+ 		\draw[fill,color=red] (pointa2) circle [x=1cm,y=1cm,radius=0.08]node[below, xshift=5, yshift=0]{};
+ 		\draw[fill,color=red] (pointb2) circle [x=1cm,y=1cm,radius=0.08]node[below, xshift=5, yshift=0]{};
+ 		
+ 		\draw[fill,color=white] (pointintersection) circle [x=1cm,y=1cm,radius=0.18];
+ 		
+ 		\draw[fill,color=red] (pointintersection) circle [x=1cm,y=1cm,radius=0.08]node[below, xshift=5, yshift=0]{};
+ 		
+ 		
+ 		
+\end{tikzpicture}

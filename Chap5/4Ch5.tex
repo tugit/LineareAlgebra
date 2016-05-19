@@ -71,25 +71,62 @@
 % VO 19-05-2016 %
 
 \paragraph{Beispiel}
-	Jede Translation $ \tau_v:A\to A $ ist eine Isometrie:
+Jede Translation $ \tau_v:A\to A $ ist eine Isometrie:
+
+\begin{minipage}[t]{0.55\linewidth}
 	Für $ a,b\in A $ gilt
 		\[ \exists!w\in V: b=\tau_w(a) \]
 	d.h. $ w=b-a $; also
 		\[ \tau_v(b) = \tau_v(\tau_w(a)) = \tau_{v+w}(a) = \tau_w(\tau_v (a)) \]
 	d.h. $ w = \tau_v(b)-\tau_v(a) $.
 	Damit folgt:
-		\[ \|\tau_v(b)-\tau_v(a)\| = \|w\| = \|b-a\| \]
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.4\linewidth}
+	%------------------ IsometrieTranslation ----------------
+ 	\begin{figure}[H]\centering
+ 		\include{Chap5/IsometrieTranslation.tikz}
+	\end{figure}
+	%------------------ IsometrieTranslation ----------------
+\end{minipage}
+	\[ \|\tau_v(b)-\tau_v(a)\| = \|w\| = \|b-a\| \]
 	d.h. $ \tau_v $ ist abstandstreu, da $ a,b\in A $ beliebig waren.
+
 \paragraph{Beispiel}
 	Die Streckung mit Zentrum $ o\in A $ um den Faktor $ s\in \mathbb{R}^\times $,
+	
+	\begin{minipage}[t]{0.55\linewidth}
 		\[ o+v=a\overset{\delta_s}{\mapsto}\delta_s(a) = \delta_s(o+v):= o+vs \]
 	ist winkeltreu, denn für $ a=o+v, b=o+w $ gilt
 		\[ \delta_s(b)-\delta_s(a) = (o+ws)-(o+vs) = \dots = (w-v)s \]
 	und damit für drei paarweise verschiedene Punkte $ a,b,c\in A $
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.4\linewidth}
+	%------------------ IsometrieTranslation ----------------
+ 	\begin{figure}[H]\centering
+ 		\include{Chap5/WinkeltreuStreckung.tikz}
+	\end{figure}
+	%------------------ IsometrieTranslation ----------------
+\end{minipage}
+
 		\[ \cos \alpha = \frac{\Skl{\delta_s(b)-\delta_s(a)}{\delta_s(c)-\delta_s(a)}}{\|\delta_s(b)-\delta_s(a)\|\|\delta_s(c)-\delta_s(a)\|} = \frac{\Skl{(b-a)s}{(c-a)s}}{\|(b-a)s\|\|(c-a)s\|} =\frac{s^2}{|s^2|} \cdot \frac{\Skl{b-a}{c-a}}{\|b-a\|\|c-a\|} \]
+		
+\begin{minipage}[t]{0.5\linewidth}
+    \vspace{2cm}
 	d.h. $ \delta_s $ ist winkeltreu; andererseits ist $ \delta_s $ für $ s\neq \pm 1 $ nicht abstandstreu.
 	Ist $ a \neq b $, so gilt dann
 		\[ \|\delta_s(b)-\delta_s(a)\| = \|b-a\|\cdot |s| \neq \|b-a\|. \] 
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.45\linewidth}
+	%------------------ WinkeltreuAberNichtAbstandstreu ----------------
+ 	\begin{figure}[H]\centering
+ 		\include{Chap5/WinkeltreuNichtAbstandstreu.tikz}
+	\end{figure}
+	%------------------ WinkeltreuAberNichtAbstandstreu ----------------
+\end{minipage}		
+
 \paragraph{Zur Erinnerung}
 	Jede affine Abbildung $ \alpha:A\to A' $ besitzt einen (eindeutigen) \emph{linearen Anteil} $ \lambda:V\to V' $, sodass
 		\[ \forall a\in A\forall v\in V: \alpha(a+v) = \alpha(a)+\lambda(v); \]
@@ -110,9 +147,14 @@
 	Eine \emph{nicht-triviale} Scherung ist \emph{keine} Ähnlichkeitstransformation. Beweis in der Übung. % 3 Zeilen Rechnung, 5 Zeilen Begründung!
 
 \subsection{Lemma \& Definition}
+\begin{Lemma}
 	Eine affine Transformation $ \alpha:A\to A $ eines Euklidischen Raumes $ A $ ist genau dann eine Kongruenzabbildung, wenn ihr linearer Anteil $ \lambda $ \emph{orthogonal} ist:
+\end{Lemma}
+\begin{Definition}[orthonogale Gruppe]
 		\[ \lambda\in O(V):= \{f\in Gl(V)\mid \forall v,w\in V: \Skl{f(v)}{f(w)} = \Skl{v}{w}\}. \]
 	$ O(V) $ heißt die \emph{orthonogale Gruppe} von $ (V,\Skl{.}{.}) $.
+\end{Definition}
+
 \paragraph{Bemerkung}
 	$ O(V)\subset Gl(V) $ ist eine Gruppe. Beweis in der Übung.
 \paragraph{Bemerkung}
@@ -130,7 +172,9 @@
 		\[ \forall a,b\in A: \|\lambda(b-a)\| = \|\alpha(b)-\alpha(a)\| = \|b-a\|,  \]
 	also (Polarisation), wenn $ \lambda\in O(V) $.
 \subsection{Definition}
+\begin{Definition}[unitäre Gruppe]
 	Ist $ (V,\Skl{.}{.}) $ unitärer VR, so heißt $ f\in Gl(V) $ mit
 		\[ \forall v,w\in V: \Skl{f(v)}{f(w)} = \Skl{v}{w} \]
 	\emph{unitär}; die \emph{unitäre Gruppe} von $ (V,\Skl{.}{.}) $ ist die Gruppe
 		\[ U(V) := \{f\in Gl(V)\mid \forall v,w\in V: \Skl{f(v)}{f(w)} = \Skl{v}{w} \}. \]
+\end{Definition}
