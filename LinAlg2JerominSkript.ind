@@ -4,7 +4,7 @@
   \item $ f $-zyklische Basis, \hyperpage{23}
   \item \IeC {\"A}hnlichkeitsgeometrie, \hyperpage{57}
   \item \IeC {\"A}hnlichkeitstransformation, \hyperpage{57}
-  \item \IeC {\"A}quivalenz von Sesquilinearformen, \hyperpage{48}
+  \item \IeC {\"A}quivalenz von Sesquilinearformen, \hyperpage{47}
 
   \indexspace
 
@@ -29,6 +29,7 @@
   \item Einsetzungshomomorphismus, \hyperpage{6}, \hyperpage{8}
   \item Euklidische Geometrie, \hyperpage{57}
   \item Euklidischer Raum, \hyperpage{56}
+  \item Euler-Gerade, \hyperpage{62}
 
   \indexspace
 
@@ -37,16 +38,23 @@
 
   \indexspace
 
-  \item Gramsche Matrix, \hyperpage{35}
+  \item Gramsche Matrix, \hyperpage{34}
 
   \indexspace
 
-  \item induzierte Norm, \hyperpage{50}
+  \item H\IeC {\"o}hen, \hyperpage{62}
+    \subitem -schnittpunkt, \hyperpage{62}
+
+  \indexspace
+
+  \item induzierte Norm, \hyperpage{49}
   \item Isometrie, \hyperpage{57}
 
   \indexspace
 
+  \item Kartesisches Bezugssystem, \hyperpage{63}
   \item Kongruenzabbildung, \hyperpage{57}
+  \item Kreis, \hyperpage{61}
 
   \indexspace
 
@@ -59,14 +67,14 @@
 
   \indexspace
 
-  \item Negativit\IeC {\"a}tsindex, \hyperpage{46}
+  \item Negativit\IeC {\"a}tsindex, \hyperpage{45}
   \item Norm, \hyperpage{53}
   \item Nullstelle, \hyperpage{11}
 
   \indexspace
 
-  \item Orthogonal, \hyperpage{38}
-    \subitem -raum, \hyperpage{38}
+  \item Orthogonal, \hyperpage{37}
+    \subitem -raum, \hyperpage{37}
   \item Orthonormal
     \subitem -basis, \hyperpage{48}
     \subitem -system, \hyperpage{48}
@@ -79,8 +87,8 @@
     \subitem -funktion, \hyperpage{6}
     \subitem Grad, \hyperpage{4}
     \subitem normiertes, \hyperpage{4}
-  \item positiv definit, \hyperpage{50}
-  \item Positivit\IeC {\"a}tsindex, \hyperpage{46}
+  \item positiv definit, \hyperpage{49}
+  \item Positivit\IeC {\"a}tsindex, \hyperpage{45}
   \item Primpolynome, \hyperpage{12}
 
   \indexspace
@@ -90,13 +98,13 @@
   \indexspace
 
   \item Radikal
-    \subitem -frei, \hyperpage{39}
-    \subitem -raum, \hyperpage{39}
+    \subitem -frei, \hyperpage{38}
+    \subitem -raum, \hyperpage{38}
 
   \indexspace
 
-  \item Semilinearit\IeC {\"a}t, \hyperpage{33}
-  \item Sesquilinearform, \hyperpage{33}
+  \item Semilinearit\IeC {\"a}t, \hyperpage{32}
+  \item Sesquilinearform, \hyperpage{32}
     \subitem (schief-)symmetrische, \hyperpage{36}
     \subitem assoziierte, \hyperpage{36}
     \subitem Hermitesche, \hyperpage{36}
@@ -104,17 +112,22 @@
     \subitem Signatur, \hyperpage{45}
   \item Skalarprodukt, \hyperpage{48}
   \item Spur, \hyperpage{16}
+  \item Streckensymmetrale, \hyperpage{61}
 
   \indexspace
 
-  \item Tr\IeC {\"a}gheitsindex, \hyperpage{46}
+  \item Tr\IeC {\"a}gheitsindex, \hyperpage{45}
   \item Triagonalisierbarkeit, \hyperpage{19}
 
   \indexspace
 
+  \item Umkreis, \hyperpage{61}
+
+  \indexspace
+
   \item Vektorraum
-    \subitem Euklidischer, \hyperpage{50}
-    \subitem unit\IeC {\"a}rer, \hyperpage{50}
+    \subitem Euklidischer, \hyperpage{49}
+    \subitem unit\IeC {\"a}rer, \hyperpage{49}
 
   \indexspace
 
