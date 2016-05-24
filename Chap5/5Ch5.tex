@@ -1,0 +1,16 @@
+\section{Orthogonalprojektion}
+\subsection{Definition}
+	Sei $ (A,V,\tau) $ ein Euklidischer Raum über einem Euklidischen VR $ (V, \Skl{.}{.}) $. Dann heißt
+		\begin{itemize}
+			\item $ p\in \End(V) $ \emph{Orthogonalprojektion}, falls $ p $ Projektion ist, $ p^2 = p $, mit
+				\[ \ker p \perp p(V) \]
+			\item $ \pi: A\to A $ \emph{Orthogonalprojektion}, falls $ \pi $ Parallelprojektion ist, mit einer Orthogonalprojektion $ p\in End(V) $ als linearem Anteil.
+		\end{itemize}
+\paragraph{Bemerkung}
+	Ist $ p\in \End(V) $ Orthogonalprojektion, so ist auch die komplementäre Projektion $ p' = \id_V-p $ Orthogonalprojektion, denn
+		\[ \ker p' = p(V)\perp \ker p = p'(V.) \]
+\paragraph{Bemerkung}
+	Ist $ (o;E) $ mit $ E=(e_i)_{i\in I} $ kartesisches Bezugssystem eines Euklidischen Raumes $ A $ und $ J\subset I $, so liefert
+		\[ \pi: A\to A, a = o+v \mapsto o+p(v) := o+\sum_{i\in J}e_i\Skl{e_i}{v} \]
+	eine Orthogonalprojektion von $ A $ auf
+		\[ \pi(A) = o + p(V) = o + [(e_i)_{i\in J}]. \]
