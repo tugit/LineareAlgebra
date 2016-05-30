@@ -193,20 +193,53 @@ Jede Translation $ \tau_v:A\to A $ ist eine Isometrie:
 		\end{cases} \]
 	Man bemerke: Für $ v\in \R^2\setminus \{0\} $ ist $ \{Jv\}^\perp = [v] $ und damit
 		\[ \forall w\in \R^2: w\perp Jv \Leftrightarrow w\parallel v. \]
-	So ermöglicht $ J $ einen einfachen Wechsel zwischen \emph{parametrischer} und \emph{impliziter Darstellung} (e.g. \emph{Hessesche Normalform}) einer Geraden
-		\[ g = \{p = o + vx\mid x\in \R\} \Leftrightarrow g = \{p\in A^2\mid \Skl{p-o}{Jv} = 0\} \]
+     So ermöglicht $ J $ einen einfachen Wechsel zwischen \emph{parametrischer} und \emph{impliziter Darstellung} (e.g. \emph{Hessesche Normalform}) einer Geraden
+     
+	\begin{minipage}[t]{0.5\linewidth}
+	 \vspace{1.5cm}
+   		\begin{align*}
+		    g = \{p = o + vx\mid x\in \R\} \Leftrightarrow \\
+		    g = \{p\in A^2\mid \Skl{p-o}{Jv} = 0\} 
+		\end{align*} 
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.45\linewidth}
+    	%------------------ WinkeltreuAberNichtAbstandstreu ----------------
+     	\begin{figure}[H]\centering
+     		\include{Chap5/ImpliziteDarstellungGerade.tikz}
+    	\end{figure}
+    	%------------------ WinkeltreuAberNichtAbstandstreu ----------------
+    \end{minipage}	
+
 \subsection{Definition}\index{Kreis}
-	Ein \emph{Kreis} mit \emph{Mittelpunkt} $ z\in A^2 $ und \emph{Radius} $ r\geq 0 $ ist die Menge
+\begin{Definition}[Kreis, Mittelpunkt]
+    Ein \emph{Kreis} mit \emph{Mittelpunkt} $ z\in A^2 $ und \emph{Radius} $ r\geq 0 $ ist die Menge
 		\[ k = \{p\in A^2\mid \|p-z\| = r\}. \]
+\end{Definition}
 \paragraph{Bemerkung}
 	Es ist mitunter sinnvoll, Punkte als Kreise mit Radius $ r=0 $ zu betrachten.
 	
 \subsection{Umkreissatz}\index{Umkreis}\index{Streckensymmetrale}
+\begin{Satz}[Umkreissatz]
 	Sei $ \{a,b,c\} \subset A^2 $ ein nicht-degeneriertes Dreieck. Dann gibt es genau einen Kreis $ k\subset A^2 $, den \emph{Umkreis} des Dreiecks, der die Eckpunkte $ a,b $ und $ c $ des Dreiecks enthält.
-	
+\end{Satz}	
 	Sei Mittelpunkt ist der Schnittpunkt der drei \emph{Streckensymmetralen}/\emph{Mittelsenkrechten} $ m_{ab}, m_{bc}$ und $ m_{ca} $ des Dreiecks, wobei
-		\[ m_{ab} = \{p\in A^2\mid \Skl{p-s_{ab}}{b-a} = 0\} \]
-	mit $ s_{ab} = a\frac{1}{2}+b\frac{1}{2} $ etc.
+
+    \begin{minipage}[t]{0.41\linewidth}
+        \vspace{2cm}
+    		\[ m_{ab} = \{p\in A^2\mid \Skl{p-s_{ab}}{b-a} = 0\} \]
+    	mit $ s_{ab} = a\frac{1}{2}+b\frac{1}{2} $ etc.
+    	
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.58\linewidth}
+    	%------------------ WinkeltreuAberNichtAbstandstreu ----------------
+     	\begin{figure}[H]\centering
+     		\include{Chap5/Umkreis.tikz}
+    	\end{figure}
+    	%------------------ WinkeltreuAberNichtAbstandstreu ----------------
+    \end{minipage}		
+	
 \paragraph{Beweis}
 	Definiere
 		\[ g_{ab} : A^2\to \R, p\mapsto g_{ab}(p):= 2\Skl{p-s_{ab}}{b-a} \]
@@ -228,20 +261,26 @@ Jede Translation $ \tau_v:A\to A $ ist eine Isometrie:
 	Andererseits: Wegen $ (*) $ impliziert $ (**) $, dass $ z\in m_{ab}\cap m_{bc} $, womit die Eindeutigkeit von $ z $ und damit des Umkreises folgt.
 
 \subsection{Höhensatz}\index{Höhen!-schnittpunkt}\index{Höhen}
+\begin{Satz}[Höhensatz]
 	Die \emph{Höhen} $ h_a,h_b $ und $ h_c $ eines nicht-degenerierten Dreiecks $ \{a,b,c\} \subset A^2 $ schneiden sich in einem Punkt, dem \emph{Höhenschnittpunkt}, wobei
 		\[ h_a = \{p\in A^2\mid \Skl{p-a}{b-c} = 0 \},\text{ etc.} \]
+\end{Satz}
 	Beweis in der Übung, analog zum Umkreissatz.
 
 \subsection{Euler-Gerade}\index{Euler-Gerade}
+\begin{Satz}[Euler-Gerade]
 	Seien $ s, h $ und $ z $ Schwerpunkt, Höhenschnittpunkt und Umkreismittelpunkt eines nicht-degenerierten Dreiecks $ a,b,c\subset A^2 $.
 	Dann gilt
 		\[ s=z\frac{2}{3}+h\frac{1}{3}. \]
 	Ist $ s\neq z $, so liegen die drei Punkte also auf einer eindeutig bestimmten Geraden, \emph{Euler-Geraden}, mit einem Teilverhältnis $ (zs:hs)=-\frac{1}{2} $.
+\end{Satz}
 	Beweis in der Übung.
 
 \subsection{Satz von Pythagoras}
+\begin{Satz}[Satz von Pythagoras]
 	 In einem Dreieck $ \{a,b,c\}\subset A^2 $ mit einem rechten Winkel $ \alpha = \frac{\pi}{2} $ bei $ a $ gilt stets
 		 \[ \|c-a\|^2+\|a-b\|^2 = \|c-b\|^2. \]
+\end{Satz}
 \paragraph{Beweis}
 	Offenbar gilt $ c-b = (c-a)+(a-b) $, daher
 		\[ \|c-b\|^2 = \|c-a\|^2 + 2\Skl{c-a}{a-b}+\|a-b\|^2 = \|c-a\|^2+\|a-b\|^2. \]
@@ -258,13 +297,17 @@ Jede Translation $ \tau_v:A\to A $ ist eine Isometrie:
 	Wegen seiner Translationsinvarianz kann der Abstand zwischen beliebigen Punkten genau so berechnet werden.
 	
 \subsection{Definition}\index{Kartesisches Bezugssystem}
+\begin{Definition}[Kartesisches Bezugssystem]
 	Ein \emph{kartesisches Bezugssystem} $ (o,E) $ eines Euklidischen Raumes $ (A,V,\tau) $ über einem Euklidischen VR $ (V,\Skl{.}{.}) $ besteht aus einem Ursprung $ o\in A $ und einer ONB $ E $ von $ (V,\Skl{.}{.}) $.
+\end{Definition}
 \paragraph{Bemerkung}
 	In jedem endlichdimensionalen Euklidischen Raum gibt es ein kartesisches Bezugssystem, im Allgemeinen ist dies nicht so (vgl. Abschnitt 5.2).
 	
 \subsection{Lemma}
+\begin{Lemma}[]
 	Ist $ (o;E) $ mit $ E=(e_i)_{i\in I} $ kartesisches Bezugssystem eines Euklidischen Raumes $ (A,V,\tau) $ über $ (V,\Skl{.}{.}) $, so ist 
 		\[ \forall a\in A: a = o + \sum_{i\in I} e_i \Skl{e_i}{a-o} \]
+\end{Lemma}
 \paragraph{Beweis}
 	Da $ E $ Basis ist, existiert zu $ a\in A $ eine Familie $ (x_i)_{i\in I} $ in $ \R $ mit
 		\[ a = o + \sum_{i\in I}e_ix_i, \]

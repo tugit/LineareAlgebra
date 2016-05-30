@@ -1,0 +1,122 @@
+\tikzset{
+        sum/.style={circle,draw=red,fill=red,thick, inner sep=0pt,minimum size=5pt},
+        gain/.style={regular polygon,regular polygon sides=3, draw = black, fill=white,thick, minimum size=6mm},
+        none/.style={draw=none,fill=none}}
+
+\tdplotsetmaincoords{0}{0} %-27
+ 	\begin{tikzpicture}[yscale=1,tdplot_main_coords]
+
+ 		\def\xstart{0} %x Koordinate der Startposition der Grafik
+ 		\def\ystart{0} %y Koordinate der Startposition der Grafik
+ 		\def\myscale{1.0} %ändert die Größe der Grafik (Skalierung der Grafik)
+        \def\myscalex{(\myscale)}
+        \def\myscaley{(\myscale)}
+                
+ 		\def\xstartdraw{(\xstart + 3.7)} %xKoordinate des Referenzstartpunktes (in dieser Zeichnung: a)
+ 		\def\ystartdraw{(\ystart + 2.7)}%yKoordinate des Referenzstartpunktes (in dieser Zeichnung: a)
+
+ 		\def\balkenhoehe{(5.5)}% Länge des vertikalen blauen Balkens
+ 		\def\balkenlaenge{(7.5)}% Länge des horizontalen blauen Balkens
+ 		\def\balkenbreite{0.4} %Balkenbreite
+
+ 		%---------Begin Balken----------
+ 		\def\drehwinkel{0}
+ 		\node (VekV) at ({\xstart+0.2*cos(\drehwinkel)-\balkenbreite*sin(\drehwinkel)},{\ystart+0.5*sin(\drehwinkel)+\balkenbreite*cos(\drehwinkel)})[right, xshift=1,color=blue] {$\mathbb{R}^2$};
+ 		\node (AffA) at ({\xstart+(\balkenlaenge-0.5)*cos(\drehwinkel)},{\ystart+(\balkenlaenge-0.5)*sin(\drehwinkel)+\balkenbreite*cos(\drehwinkel)})[color=red] {$A$};
+
+ 		\path[ shade, top color=white, bottom color=blue, opacity=.6]
+ 		({\xstart},{\ystart},0)  -- ({\xstart - \balkenbreite * cos(\drehwinkel)- (-\balkenbreite+0)*sin(\drehwinkel)},{\ystart - \balkenbreite * sin(\drehwinkel)+ (-\balkenbreite+0)*cos(\drehwinkel)},0)  -- ({\xstart - \balkenbreite * cos(\drehwinkel)- (\balkenhoehe+0.5)*sin(\drehwinkel)},{\ystart - \balkenbreite * sin(\drehwinkel)+ (\balkenhoehe+0.5)*cos(\drehwinkel)},0) -- ({\xstart - 0 * cos(\drehwinkel)- (\balkenhoehe+0)*sin(\drehwinkel)},{\ystart - 0 * sin(\drehwinkel)+ (\balkenhoehe+0)*cos(\drehwinkel)},0) -- cycle;
+
+ 		\path[ shade, right color=white, left color=blue, opacity=.6]
+ 		({\xstart},{\ystart},0)  -- ({\xstart - \balkenbreite * cos(\drehwinkel)- (-\balkenbreite+0)*sin(\drehwinkel)},{\ystart - \balkenbreite * sin(\drehwinkel)+ (-\balkenbreite+0)*cos(\drehwinkel)},0) --
+ 		({\xstart + (\balkenlaenge+0.5) * cos(\drehwinkel)- (-\balkenbreite+0)*sin(\drehwinkel)},{\ystart + (\balkenlaenge+0.5) * sin(\drehwinkel)+ (-\balkenbreite+0)*cos(\drehwinkel)},0) --
+ 		({\xstart + \balkenlaenge * cos(\drehwinkel)},{\ystart + \balkenlaenge * sin(\drehwinkel)},0)--
+ 		cycle;
+ 		%---------End Balken----------
+ 	
+ 		\node (pointz1) at ({\xstartdraw},{\ystartdraw}) {};
+ 		
+ 		
+        \def\cradius{2.5}
+ 		
+ 		\draw[color=green] (pointz1) circle [x=1cm,y=1cm,radius=\cradius cm]node[below, xshift=5, yshift=0]{};
+ 		
+ 		\node (pointa1) at ($(pointz1) + (210:\cradius)$) {};
+ 		%\node (pointb1) at ($(pointz1) + (140:2.5)$) {};
+ 		\node (pointb1) at ($(pointz1) + (-10:\cradius)$) {};
+ 		\node (pointc1) at ($(pointz1) + (80:\cradius)$) {};
+ 		%\node (pointb12) at ($(pointz1) + (140:3.0)$) {};
+ 		%\node (pointb2) at ($(pointz1) + (140:-2.0)$) {};
+ 		\node (pointsa1b1) at ($(pointa1)!(pointz1)!(pointb1)$) {};
+ 		\node (pointsb1c1) at ($(pointb1)!(pointz1)!(pointc1)$) {};
+ 		\node (pointsa1c1) at ($(pointa1)!(pointz1)!(pointc1)$) [] {};
+ 		
+ 		\node (offset_for_p) at ($(pointsa1b1) - (pointz1)$){};
+ 		\node (pointp) at ($(pointz1) - (offset_for_p)$){};
+ 		
+  		
+ 	
+ 		\draw[name path=a1--b1,-,shorten >=-30pt, shorten <=-30pt,line width=0.1pt,color=red] (pointa1) -- (pointb1);
+ 	    \draw[name path=c1--b1,-,shorten >=-30pt, shorten <=-30pt,line width=0.1pt,color=red] (pointc1) -- (pointb1);
+ 	    \draw[name path=a1--c1,-,shorten >=-30pt, shorten <=-30pt,line width=0.1pt,color=red] (pointa1) -- (pointc1);
+ 	    
+ 	    \draw [color=red, -, line width=0.4pt, shorten >=-30mm, shorten <=-15mm, ] (pointsa1b1) -- (pointz1);
+ 	    \draw [color=red, dotted, line width=0.3pt, shorten >=-5mm, shorten <=-13mm, ] (pointsb1c1) -- (pointz1);
+ 	    \draw [color=red, dotted, line width=0.3pt, shorten >=-5mm, shorten <=-20mm, ] (pointsa1c1) -- (pointz1);
+ 	    
+ 	    %Vektoren blau
+ 	    \draw[name path=z1--sb1c1,-{>[scale=1,length=8,width=8]},shorten >=-0pt, shorten <=0pt,line width=0.2pt,color=blue] (pointsa1b1) -- (pointsb1c1);
+ 	    
+ 	    \draw[name path=z1--sb1c1,-{>[scale=1,length=8,width=8]},shorten >=-0pt, shorten <=0pt,line width=0.2pt,color=blue] (pointsa1b1) -- (pointp);
+ 	    
+ 	     \draw[name path=z1--sb1c1,-{>[scale=1,length=8,width=8]},shorten >=4pt, shorten <=4pt,line width=0.2pt,color=blue] ($(pointa1) + 0.1*(offset_for_p)$) -- ($(pointb1) + 0.1*(offset_for_p)$);
+ 	    
+ 	    %rechter Winkel
+ 	    \draw[line width=0.2pt,color=blue] ($(pointsa1b1) + (100:0.3)$) arc[radius=0.3, start angle=100, end angle=190] ($(pointsa1b1) + (225:0.3)$);
+ 	    
+ 	    \draw[line width=0.2pt,color=blue] ($(pointsa1c1) + (60:0.3)$) arc[radius=0.3, start angle=60, end angle=140] ($(pointsa1c1) + (140:0.3)$);
+ 	    
+ 		%Punkte malen
+ 		%rechter Winkel
+ 		\node (pointrw1) at ($(pointsa1b1) + (145:0.15)$) {};
+ 		\node (pointrw2) at ($(pointsa1c1) + (100:0.15)$) {};
+ 		
+ 		
+ 		\draw[fill,color=blue] (pointrw1) circle [radius=0.02]node[above, xshift=0, yshift=0]{};
+ 		\draw[fill,color=blue] (pointrw2) circle [radius=0.02]node[above, xshift=0, yshift=0]{};
+ 		
+ 		\draw[fill,color=white] (pointp) circle [radius=0.11] node[below, xshift=5, yshift=0]{};\textbf{}
+ 		\draw[fill,color=white] (pointz1) circle [radius=0.11] node[below, xshift=5, yshift=0]{};
+ 		\draw[fill,color=white] (pointa1) circle [radius=0.11] node[below, xshift=5, yshift=0]{};
+ 		\draw[fill,color=white] (pointb1) circle [radius=0.11] node[below, xshift=5, yshift=0]{};
+ 		\draw[fill,color=white] (pointc1) circle [radius=0.11] node[below, xshift=5, yshift=0]{};
+ 		\draw[fill,color=white] (pointsb1c1) circle [radius=0.11] node[below, xshift=5, yshift=0]{};
+ 		\draw[fill,color=white] (pointsa1b1) circle [radius=0.11] node[below, xshift=5, yshift=0]{};
+ 		
+ 
+        \draw[fill,color=red] (pointp) circle [radius=0.06]node[below, xshift=5, yshift=0]{};\textbf{}
+ 		\draw[fill,color=red] (pointz1) circle [radius=0.06]node[below, xshift=5, yshift=0]{};
+ 		\draw[fill,color=red] (pointa1) circle [radius=0.06]node[below, xshift=5, yshift=0]{};
+ 		\draw[fill,color=red] (pointb1) circle [radius=0.06]node[below, xshift=5, yshift=0]{};
+ 		\draw[fill,color=red] (pointc1) circle [radius=0.06]node[below, xshift=5, yshift=0]{};
+ 		\draw[fill,color=red] (pointsb1c1) circle [radius=0.06]node[below, xshift=5, yshift=0]{};
+ 		\draw[fill,color=red] (pointsa1b1) circle [radius=0.06]node[below, xshift=5, yshift=0]{};
+ 		
+ 		%Beschriftung der Punkte
+ 		\node[ xshift=-3mm, yshift=1mm,color=red] (labela1) at (pointa1) {$a$};
+ 		\node[ xshift=2mm, yshift=3mm,color=red] (labelb1) at (pointb1) {$b$};
+ 		\node[ xshift=0mm, yshift=3.5mm,color=red] (labelc1) at (pointc1) {$c$};
+ 		\node[ xshift=2mm, yshift=-2mm,color=red] (labelz) at (pointz1) {\small $z$};
+ 		\node[ xshift=3mm, yshift=0mm,color=red] (labelz) at (pointp) {$p$};
+ 		\node[ xshift=4mm, yshift=-1mm,color=red] (labelsbc) at (pointsb1c1) {$s_{bc}$};
+ 		\node[ xshift=13mm, yshift=-4mm,color=red,rotate=-5] (labelsab) at (pointsa1b1) {\small $s_{ab} = a\frac{1}{2}+b\frac{1}{2} $};
+ 		\node[ xshift=-4mm, yshift=0mm,color=red,rotate=0] (labelsab) at ($(pointsa1b1) + 1.6*(offset_for_p) $) {{\small $m_{ab}$}};
+ 		%\node[ xshift=-4mm, yshift=0mm,color=red] (labelsab) at (pointsa1c1) {$s_{ca}$};
+ 		
+ 		%Beschriftung der Vektoren
+ 		\node[ xshift=2mm, yshift=-3mm,color=blue,rotate=10] (labelbma) at ($(pointa1)!0.3!(pointb1)$) {\small $b-a$};
+ 		\node[ xshift=7mm, yshift=-2mm,color=blue] (labelbma) at ($(pointsa1b1)!0.5!(pointsb1c1)$) {\small $\frac{1}{2}(c-a)$};
+ 		\node[ xshift=-7mm, yshift=-3mm,color=blue,rotate=0] (labelbma) at ($(pointz1)$) {\small $p-s_{ab}$};
+ 		
+ 		\node[ xshift=10mm, yshift=-1mm,color=green] (labelkreis) at (pointc1) {$k$};
+\end{tikzpicture}
