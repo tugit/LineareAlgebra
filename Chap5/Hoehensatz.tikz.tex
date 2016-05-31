@@ -70,7 +70,7 @@
         \path [name intersections={of = linehc and lineha, by=HS }];
  	    
  	    %Beschriftung der Hoehen
- 	    \node[ xshift=-3mm, yshift=0mm,color=brown!70!black,rotate=0] (label_ha) at ($(pointa1) !0.5!(HS) $) {{\small $h_{a}$}};
+ 	    \node[ xshift=-3mm, yshift=0mm,color=brown!70!black,rotate=0] (label_ha) at ($(pointa1) !0.6!(HS) $) {{\small $h_{a}$}};
  	    \node[ xshift=4mm, yshift=0mm,color=brown!70!black,rotate=0] (label_hb) at ($(pointb1) !0.4!(HS) $) {{\small $h_{b}$}};
  	    \node[ xshift=0mm, yshift=0mm,color=brown!70!black,rotate=0] (label_hc) at ($(pointha1b1) + 0.5*(offset_for_hc) $) {{\small $h_{c}$}};
  	    
@@ -80,6 +80,10 @@
  	     \draw[line width=0.2pt,color=blue] ($(pointhb1c1) + (155:0.3)$) arc[radius=0.3, start angle=155, end angle=245] ($(pointha1c1) + (245:0.3)$);
  	     
  	     \draw[line width=0.2pt,color=blue] ($(pointha1b1) + (15:0.3)$) arc[radius=0.3, start angle=15, end angle=105] ($(pointha1c1) + (105:0.3)$);
+ 	    
+ 	    %Vektoren blau
+ 	    \draw[name path=p--a,-{>[scale=1,length=8,width=8]},shorten >=4pt, shorten <=4pt,line width=0.2pt,color=blue] (pointa1)  -- ($(pointa1)!0.4!(HS)$);
+ 	    \draw[name path=p--a,-{>[scale=1,length=8,width=8]},shorten >=2pt, shorten <=2pt,line width=0.2pt,color=blue] (pointc1)  -- (pointb1);
  	    
  	   	%Punkte malen
  		%rechter Winkel
@@ -97,18 +101,27 @@
  		\draw[fill,color=white] (pointb1) circle [radius=0.11] node[below, xshift=5, yshift=0]{};
  		\draw[fill,color=white] (pointc1) circle [radius=0.11] node[below, xshift=5, yshift=0]{};
  		\draw[fill,color=white] (HS) circle [radius=0.11] node[below, xshift=5, yshift=0]{};
- 
+ 		
+ 		\draw[fill,color=white] ($(pointa1)!0.4!(HS)$) circle [radius=0.11] node[below, xshift=5, yshift=0]{};
+ 		
  		%Punkte rot
  		\draw[fill,color=red] (pointa1) circle [radius=0.06]node[below, xshift=5, yshift=0]{};
  		\draw[fill,color=red] (pointb1) circle [radius=0.06]node[below, xshift=5, yshift=0]{};
  		\draw[fill,color=red] (pointc1) circle [radius=0.06]node[below, xshift=5, yshift=0]{};
  		\draw[fill,color=brown!70!black] (HS) circle [radius=0.06]node[below, xshift=5, yshift=0]{};
  	
- 		
+ 	
+        \draw[fill,color=brown!70!black] ($(pointa1)!0.4!(HS)$) circle [radius=0.06] node[below, xshift=5, yshift=0]{};
+        
  		%Beschriftung der Punkte
  		\node[ xshift=-2mm, yshift=1mm,color=red] (labela1) at (pointa1) {$a$};
  		\node[ xshift=1mm, yshift=3mm,color=red] (labelb1) at (pointb1) {$b$};
  		\node[ xshift=0.5mm, yshift=3.5mm,color=red] (labelc1) at (pointc1) {$c$};
  		\node[ xshift=19mm, yshift=1mm,color=brown!70!black] (labelhs) at (HS) {\small Höhenschnittpunkt};
+ 	
+ 	    \node[ xshift=2.5mm, yshift=-1mm,color=brown!70!black] (labela1) at ($(pointa1)!0.4!(HS)$) {\small $p$};
+ 	     
+ 	    \node[ xshift=-5mm, yshift=1mm,color=blue] (labela1) at ($(pointa1)!0.2!(HS)$) {\small $p-a$};
+ 	    \node[ xshift=-3mm, yshift=-2mm,color=blue] (labela1) at ($(pointc1)!0.5!(pointb1)$) {\small $b-c$};
  	
 \end{tikzpicture}
