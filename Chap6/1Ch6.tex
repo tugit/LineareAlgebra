@@ -1,0 +1,19 @@
+\chapter{Struktursätze für Endomorphismen}
+\section{Adjungierte \& duale Abbildungen}
+	Zunächst: Ziel dieses Kapitels ist besseres, strukturelles Verständnis der Bedingungen für orthogonale Transformationen bzw. Orthogonalprojektionen:
+		\[ \forall v,w\in V: \Skl{f(v)}{f(w)} = \Skl{v}{w} \text{ bzw. } \Skl{p(v)}{w} = \Skl{v}{p(w)}. \]
+\paragraph{Motivation}
+	Jede Sesquilinearform $ \sigma: V\times V\to K $ liefert  eine (semi-)lineare Abbildung
+		\[ V\ni v\mapsto \sigma(v,.)\in V^*. \]
+	Ist die Sesquilinearform $ \sigma $ symmetrisch und nicht-degeneriert, d.h. ein Skalarprodukt auf $ V $, so ist die Abbildung injektiv:
+		\[ \sigma(v,.) = 0 \Rightarrow v = 0 \Rightarrow v\in V^\perp = \{0\}. \]
+	Ist die Abbildung auch surjektiv, so kann man sie benutzen, um $ V^* $ und $ V $ zu identifizieren,
+		\[ V^* \mathop{\overline{\simeq}} V. \]
+\subsection{Rieszsches Darstellungslemma}
+	Sei $ (V,\Skl{.}{.}) $ ein $ K $-VR mit Skalarprodukt. Die \emph{kanonische Injektion}
+		\[ \phi : V\to V^*, v\mapsto \phi(v):= \Skl{v}{.}. \]
+	ist semi-lineare und injektiv. Ist $ \dim V < \infty $, so ist $ \phi $ auch surjektiv; wir nennen dann
+		\begin{itemize}
+			\item $\nabla w := \phi^{-1}(w) $ den \emph{Gradienten} von $ w\in V^* $, und
+			\item $ \phi: V\to V^* $ die \emph{kanonische Identifikation} von $ (V,\Skl{.}{.}) $ mit $ V^* $.
+		\end{itemize}
