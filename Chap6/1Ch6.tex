@@ -12,8 +12,83 @@
 \subsection{Rieszsches Darstellungslemma}
 	Sei $ (V,\Skl{.}{.}) $ ein $ K $-VR mit Skalarprodukt. Die \emph{kanonische Injektion}
 		\[ \phi : V\to V^*, v\mapsto \phi(v):= \Skl{v}{.}. \]
-	ist semi-lineare und injektiv. Ist $ \dim V < \infty $, so ist $ \phi $ auch surjektiv; wir nennen dann
+	ist semi-linear und injektiv. Ist $ \dim V < \infty $, so ist $ \phi $ auch surjektiv; wir nennen dann
 		\begin{itemize}
 			\item $\nabla w := \phi^{-1}(w) $ den \emph{Gradienten} von $ w\in V^* $, und
 			\item $ \phi: V\to V^* $ die \emph{kanonische Identifikation} von $ (V,\Skl{.}{.}) $ mit $ V^* $.
 		\end{itemize}
+
+% VO 02-06-2016 %
+\paragraph{Beweis}
+	Semi-Linearität und Injektivität folgen sofort aus den Eigenschaften des Skalarprodukts.\footnote{Semi-Linearität in der linken Komponente; Nicht-Degeneriertheit impliziert Injektvität.}
+	
+	Ist $ \dim V <\infty $, so ist $ \phi:V\to V^* $ wegen $ \dim V^* = \dim V $ und der Injektivität auch surjektiv.
+\paragraph{Bemerkung}
+	Dies ist eine "`kleine"' Version des Rieszschen Darstellungssatzes
+	\[ \forall \omega\in V^*\exists! w\in V: \omega = \Skl{w}{.}. \]
+	Der "`richtige"' Satz schränkt die Dimension nicht ein, und ist ein wichtiges Hilfsmittel in der Funktional-Analysis.
+\paragraph{Bemerkung}
+	Ist $ E = (e_1,\dots,e_n) $ ONB von $ (V,\Skl{.}{.}) $, so gilt für die Vektoren der dualen Basis $ E^* = (e_1^*,\dots,e_n^*) $
+		\[ \nabla e_i^* = e_i\frac{1}{\Skl{e_i}{e_i}} = \pm e_i, \]
+	da für $ j=1,\dots,n $ gilt:
+		\[ \Skl{e_i\frac{1}{\Skl{e_i}{e_i}}}{e_j} = \delta_{ij} = e_i^*(e_j), \]
+	also
+		\[ \phi(e_i\frac{1}{\Skl{e_i}{e_i}}) = e_i^*. \]
+	Insbesondere gilt im Falle eines Euklidischen VR
+		\[ \forall i=1,\dots,n: \nabla e_i^* = e_i \Leftrightarrow \phi(e_i)= e_i^*, \]
+	d.h. $ \phi $ realisiert den früher diskutierten (vgl. Abschnitt 1.4) durch duale Basen gegebenen
+	Isomorphismus -- im Falle von ONB.
+
+\subsection{Korollar \& Definition}\index{Adjungierte}
+	Sind $ (w,\SSkl{.}{.}) $ und $ (V,\Skl{.}{.}) $ Vektorräume mit Skalarprodukten, $ \dim W < \infty $ und $ f\in \hom(W,V) $, so hat $ f $ eine eindeutige \emph{Adjungierte} $ f^* \in \hom(V,W) $;
+	dabei ist $ f^* $ \emph{adjungiert zu $ f $}, falls
+		\[ \forall v\in V\forall w\in W: \SSkl{f^*(v)}{w} = \Skl{v}{f(w)}. \]
+\paragraph{Achtung:}
+$ V $ und $ W $ sind VR über dem gleichen Körper $ K $; die Skalarprodukte sind sesquilinear bzgl. des gleichen Körperautomorphismus!
+\paragraph{Beweis}
+	Für jedes $ v\in V $ definiert
+		\[ \omega_v:W\to K, w\mapsto \omega_v(w) := \Skl{v}{f(w)} \]
+	eine Linearform $ \omega_v\in W^* $; nach Rieszschem Darstellungslemma erhält man daher eine eindeutige Abbildung 
+		\[ f^*:V\to W, v\mapsto f^*(v):= \nabla \omega_v. \]
+	Die Linearität von $ f^* $ folgt aus der dualen Abbildung, siehe unten.
+\paragraph{Bemerkung}
+	Offenbar (Symmetrie) ist $ f^{**} = f $, wenn $ f^{**} := (f^*)^* $ existiert.
+
+\subsection{Definition \& Lemma}
+	Ist $ f\in \hom(W,V) $, so heißt $ f^t\in \hom(V^*,W^*) $,
+		\[ f^t:V^*\to W^*,\nu\mapsto f^t(\nu):= \nu\circ f \]
+	zu $ f $ \emph{transponiert} oder \emph{dual}. Sind $ \SSkl{.}{.} $ und $ \Skl{.}{.} $ Skalarprodukte auf $ W $ bzw. $ V $ und
+		\[ \psi:W\to W^*\text{ und }\phi:V\to V^* \]
+	die zugehörigen kanonischen Injektionen, und ist $ f^*\in \hom(V,W) $ adjungiert zu $ f $, so gilt
+		\[ \psi \circ f^* = f^t\circ \phi. \]
+\paragraph{Beweis}
+	Für $ v\in V $ und $ w\in W $ gilt:
+		\[ \left((\psi\circ f^*)(v)\right)(w) = \SSkl{f^*(v)}{w} \]
+		\[ \left((f^t\circ \phi)(v)\right)(w) = (\phi(v)\circ f)(w) = \Skl{v}{f(w)} \]
+	und nach Definition der Adjungierten folgt die Gleichheit.
+\paragraph{Bemerkung}
+	Ist $ \dim W<\infty $, so ist $ \psi $ bijektiv und das Resultat des Lemmas kann als Definition dienen:
+		\[ f^* := \psi^{-1}\circ f^t\circ \phi. \]
+	Wegen $ f^t\in \hom(V^*,W^*) $ folgt damit auch $ f^*\in \hom(V,W) $.
+\paragraph{Bemerkung}
+	$ f\in \hom(W,V) $ hat \emph{immer} eine Transponierte, eine Adjungierte aber nur unter bestimmten Voraussetzungen, z.B. wenn $ \dim W < \infty $.
+\paragraph{Bemerkung}
+	Oft wird die Transponierte/Duale $ f^t $ auch mit $ f^* $ bezeichnet.
+\paragraph{Buchhaltung}
+	Sind $ B=(b_1,\dots,b_n) $ und $ C=(c_1,\dots,c_m) $ Basen von $ V $ bzw. $ W $ und $ f\in \hom(W,V) $, so gilt:
+		\[ \xi_{B^*}^{C^*}(f^t) = \left(\xi_C^B(f)\right)^t. \]
+	Sind $ (V,\Skl{.}{.}) $ und $ (W,\SSkl{.}{.}) $ unitär (oder Euklidisch) und $ B, C $ ONB, so gilt
+		\[ \xi_B^C(f^*) = \left(\xi_C^B(f)\right)^*, \]
+	wobei 
+		\[ X^*:= \overline{X}^t \text{ für } X\in K^{n\times m}. \]
+	In diesem Falle gilt nämlich $ b_j^*=\phi(b_j) $ und $ c_i^* = \psi(c_i) $ und damit
+		\[ x_{ij}^* = c_i^*(f^*(b_j)) = \SSkl{c_i}{f^*(b_j)} = \overline{\Skl{b_j}{f(c_i)}} = \overline{x_{ji}}. \]
+\paragraph{Bemerkung}
+	Sind $ f,g \in \hom(W,V)$ und $ x\in K $, so gilt
+		\[ (f+gx)^t = f^t+g^tx \text{ und } (f+gx)^* = f^*+g^*\overline{x}. \]
+		
+\subsection{Lemma}
+	Sind $ f\in \hom(W,V) $ und $ g\in \hom(V,U) $, so gilt
+		\[ (g\circ f)^t = f^t \circ g^t \text{ und } (g\circ f)^* = f^* \circ g^*. \]
+\paragraph{Beweis}
+	Nachrechnen/-lesen oder über Kompositionsdiagramm.
