@@ -144,9 +144,8 @@ Jede Translation $ \tau_v:A\to A $ ist eine Isometrie:
 	Mit einem beliebigen Streckungszentrum $ o\in A $ erhält man also eine Isometrie durch
 		\[ \delta_s\circ \alpha :A\to A. \]
 \paragraph{Beispiel}
-	Eine \emph{nicht-triviale} Scherung ist \emph{keine} Ähnlichkeitstransformation. Beweis in der Übung.
+	Eine \emph{nicht-triviale} Scherung ist \emph{keine} Ähnlichkeitstransformation. Beweis in der Übung. % 3 Zeilen Rechnung, 5 Zeilen Begründung!
 
-% TODO Def. orthogonal über Gruppenelement oder Invarianz des Skalarprodukts
 \subsection{Lemma \& Definition}
 \begin{Lemma}
 	Eine affine Transformation $ \alpha:A\to A $ eines Euklidischen Raumes $ A $ ist genau dann eine Kongruenzabbildung, wenn ihr linearer Anteil $ \lambda $ \emph{orthogonal} ist:
@@ -205,11 +204,11 @@ Jede Translation $ \tau_v:A\to A $ ist eine Isometrie:
     \end{minipage}
     \hfill
     \begin{minipage}[t]{0.45\linewidth}
-    	%------------------ WinkeltreuAberNichtAbstandstreu ----------------
+    	%------------------ ImpliziteDarstellungGerade ----------------
      	\begin{figure}[H]\centering
      		\include{Chap5/ImpliziteDarstellungGerade.tikz}
     	\end{figure}
-    	%------------------ WinkeltreuAberNichtAbstandstreu ----------------
+    	%------------------ ImpliziteDarstellungGerade ----------------
     \end{minipage}	
 
 \subsection{Definition}\index{Kreis}
@@ -223,8 +222,7 @@ Jede Translation $ \tau_v:A\to A $ ist eine Isometrie:
 \subsection{Umkreissatz}\index{Umkreis}\index{Streckensymmetrale}
 \begin{Satz}[Umkreissatz]
 	Sei $ \{a,b,c\} \subset A^2 $ ein nicht-degeneriertes Dreieck. Dann gibt es genau einen Kreis $ k\subset A^2 $, den \emph{Umkreis} des Dreiecks, der die Eckpunkte $ a,b $ und $ c $ des Dreiecks enthält.
-\end{Satz}
-
+\end{Satz}	
 	Sein Mittelpunkt ist der Schnittpunkt der drei \emph{Streckensymmetralen}/\emph{Mittelsenkrechten} $ m_{ab}, m_{bc}$ und $ m_{ca} $ des Dreiecks, wobei
 
     \begin{minipage}[t]{0.41\linewidth}
@@ -235,11 +233,11 @@ Jede Translation $ \tau_v:A\to A $ ist eine Isometrie:
     \end{minipage}
     \hfill
     \begin{minipage}[t]{0.58\linewidth}
-    	%------------------ WinkeltreuAberNichtAbstandstreu ----------------
+    	%------------------ Umkreis ----------------
      	\begin{figure}[H]\centering
      		\include{Chap5/Umkreis.tikz}
     	\end{figure}
-    	%------------------ WinkeltreuAberNichtAbstandstreu ----------------
+    	%------------------ Umkreis ----------------
     \end{minipage}		
 	
 \paragraph{Beweis}
@@ -267,6 +265,14 @@ Jede Translation $ \tau_v:A\to A $ ist eine Isometrie:
 	Die \emph{Höhen} $ h_a,h_b $ und $ h_c $ eines nicht-degenerierten Dreiecks $ \{a,b,c\} \subset A^2 $ schneiden sich in einem Punkt, dem \emph{Höhenschnittpunkt}, wobei
 		\[ h_a = \{p\in A^2\mid \Skl{p-a}{b-c} = 0 \},\text{ etc.} \]
 \end{Satz}
+
+	%------------------ Hoehensatz ----------------
+     	\begin{figure}[H]\centering
+     		\include{Chap5/Hoehensatz.tikz}
+    	\end{figure}
+   %------------------ Hoehensatz ----------------
+
+
 	Beweis in der Übung, analog zum Umkreissatz.
 
 \subsection{Euler-Gerade}\index{Euler-Gerade}
