@@ -1,0 +1,57 @@
+	\begin{tikzpicture}[yscale=1]
+
+ 		\def\xstart{0} %x Koordinate der Startposition der Grafik
+ 		\def\ystart{0} %y Koordinate der Startposition der Grafik
+ 		\def\myscale{1.0} %ändert die Größe der Grafik (Skalierung der Grafik)
+        \def\myscalex{(\myscale)}
+        \def\myscaley{(\myscale)}
+                
+ 		\def\xstartdraw{(\xstart + 0.0)} %xKoordinate des Referenzstartpunktes (in dieser Zeichnung: a)
+ 		\def\ystartdraw{(\ystart + 0.0)}%yKoordinate des Referenzstartpunktes (in dieser Zeichnung: a)
+ 		\def\abstandx{2.8}
+ 		\def\abstandy{2.0}
+ 		  
+        \node (pointw) at ({\xstartdraw},{\ystartdraw}) {$W$};
+        \node (pointv) at ($(pointw) + (0:\abstandx)$) {$V$};
+        \node (pointu) at ($(pointv) + (0:\abstandx)$) {$U$};
+ 		
+ 		\node (pointwst) at ($(pointw) + (270:\abstandy)$) {$W^*$};
+ 		\node (pointvst) at ($(pointwst) + (0:\abstandx)$) {$V^*$};
+        \node (pointust) at ($(pointvst) + (0:\abstandx)$) {$U^*$};
+        
+        \draw[-{>[scale=1,length=6,width=6]},shorten >=4pt, shorten <=4pt,line width=0.2pt,color=black] (pointw)  -- (pointwst);
+        \draw[-{>[scale=1,length=6,width=6]},shorten >=4pt, shorten <=4pt,line width=0.2pt,color=black] (pointv)  -- (pointvst);
+        \draw[-{>[scale=1,length=6,width=6]},shorten >=4pt, shorten <=4pt,line width=0.2pt,color=black] (pointu)  -- (pointust);
+        
+        \draw[-{>[scale=1,length=6,width=6]},shorten >=4pt, shorten <=4pt,line width=0.2pt,color=black] (pointust)  -- (pointvst);
+        \draw[-{>[scale=1,length=6,width=6]},shorten >=4pt, shorten <=4pt,line width=0.2pt,color=black] (pointvst)  -- (pointwst);
+        
+        \draw [-{>[scale=1,length=6,width=6]},shorten >=4pt, shorten <=4pt,line width=0.2pt,color=black] (pointw) to [bend right=-25] (pointv);
+        \draw [-{>[scale=1,length=6,width=6]},shorten >=4pt, shorten <=4pt,line width=0.2pt,color=black] (pointv) to [bend right=-25] (pointw);
+        
+        \draw [-{>[scale=1,length=6,width=6]},shorten >=4pt, shorten <=4pt,line width=0.2pt,color=black] (pointv) to [bend right=-25] (pointu);
+        \draw [-{>[scale=1,length=6,width=6]},shorten >=4pt, shorten <=4pt,line width=0.2pt,color=black] (pointu) to [bend right=-25] (pointv);
+        
+        \draw [-{>[scale=1,length=6,width=6]},shorten >=4pt, shorten <=4pt,line width=0.2pt,color=black] (pointust) to [bend right=-25] (pointwst);
+        
+        \draw [-{>[scale=1,length=6,width=6]},shorten >=4pt, shorten <=4pt,line width=0.2pt,color=black] (pointw.north) to [bend right=-35] (pointu.north);
+        
+        \draw [-{>[scale=1,length=6,width=6]},shorten >=4pt, shorten <=4pt,line width=0.2pt,color=black] [bend right=-35] (pointu.east) to [bend right=-46]($(pointust) + (-25:5mm)$) to [bend right=-46]($(pointwst) + (195:5mm)$) to [bend right=-45] (pointw.west);
+        
+        \node[ xshift=2mm, yshift=0mm,color=black!70!black] (labelpsi) at ($(pointw)!0.5!(pointwst)$) {$\psi$};
+        \node[ xshift=2mm, yshift=0mm,color=black!70!black] (labelphi) at ($(pointv)!0.5!(pointvst)$) {$\phi$};
+        \node[ xshift=2mm, yshift=0mm,color=black!70!black] (labelmu) at ($(pointu)!0.5!(pointust)$) {$\mu$};
+        
+        \node[ xshift=0mm, yshift=6.5mm,color=black!70!black] (labelf) at ($(pointw)!0.5!(pointv)$) {\small $f$};
+        \node[ xshift=0mm, yshift=-6.5mm,color=black!70!black] (labelfst) at ($(pointw)!0.5!(pointv)$) {\small $f^*$};
+        
+        \node[ xshift=0mm, yshift=6.5mm,color=black!70!black] (labelg) at ($(pointv)!0.5!(pointu)$) {\small $g$};
+        \node[ xshift=0mm, yshift=-6.5mm,color=black!70!black] (labelgst) at ($(pointv)!0.5!(pointu)$) {\small $g^*$};
+        
+        \node[ xshift=0mm, yshift=2.5mm,color=black!70!black] (labelfst) at ($(pointwst)!0.5!(pointvst)$) {\small $f^t$};
+        \node[ xshift=0mm, yshift=2.5mm,color=black!70!black] (labelgst) at ($(pointvst)!0.5!(pointust)$) {\small $g^t$};
+        
+        \node[ xshift=0mm, yshift=10mm,color=black!70!black] (labelgf) at ($(pointv)$) {\small $g \circ f$};
+        \node[ xshift=0mm, yshift=-10.5mm,color=black!70!black] (labelgft) at ($(pointvst)$) {\small $(g \circ f)^{t} = f^t \circ g^t$};
+        \node[ xshift=0mm, yshift=-17.5mm,color=black!70!black] (labelgft) at ($(pointvst)$) {\small $(g \circ f)^{*} = f^* \circ g^*$};
+\end{tikzpicture}
