@@ -106,3 +106,81 @@ $ V $ und $ W $ sind VR über dem gleichen Körper $ K $; die Skalarprodukte sin
     	\end{figure}
    %------------------ KommutativesDiagramm ----------------	
 
+% VO 07-06-2016 %
+
+\subsection{Lemma}
+	Sind $ f\in \hom(W,V) $ und $ f^*\in \hom(V,W) $ adjungiert, so gilt
+		\[ \ker f^* = f(W)^\perp \]
+	und $ f^* $ ist injektiv, wenn $ f $ surjektiv ist.
+\paragraph{Beweis}
+	Da die Skalarprodukte $ \SSkl{.}{.} $ und $ \Skl{.}{.} $ auf $ W $ bzw. $ V $ nicht-degeneriert sind, gilt
+		\[ v\in \ker f^* \Leftrightarrow \forall w\in W: \SSkl{f^*(v)}{w} = 0 \Leftrightarrow \forall w\in W: \Skl{v}{f(w)} = 0\Leftrightarrow f(W)^\perp, \]
+	also die erste Behauptung; ist $ f(W)  = V$, so folgt damit $ \ker f^* = f(W)^\perp = V^\perp = \{0\} $.
+
+\subsection{Korollar}
+	Sind $ (W,\SSkl{.}{.}) $ und $ (V,\Skl{.}{.}) $ Euklidisch oder unitär mit $ \dim V, \dim W < \infty $ und $ f\in \hom(W,V) $ und $ f^*\in \hom(V,W) $ adjungiert, so gilt
+		\[ \rg f^* = \rg f. \]
+\paragraph{Beweis}
+	In der Situation hier (endlich-dimensional, positiv definite Skalarprodukte) sind $ f(W) $ und $ f(W)^\perp $ komplementäre UR und damit
+		\[ V = f(W)\oplus f(W)^\perp = f(W)\oplus \ker f^*, \]
+	also
+		\[ \rg f = \dim V-\dfkt f^* = \rg f^* \]
+	nach Rangsatz für $ f^* $.
+\paragraph{Bemerkung}
+	Ist $ \dim V, \dim W <\infty $, so folgt dann mit der Gleichheit der Abbildungen über die kanonischen Injektionen auch
+		\[ \rg f^t = \rg f \text{ für } f\in \hom(V,W). \]
+	Daher gilt $ \rg f^* = \rg f $ dann ach für allgemeine Skalarprodukte auf $ \R $- oder $ \C $-VR $ V $ und $ W $.
+
+\subsection{Buchhaltung}
+	Mit den zu $ X\in K^{n\times m} $ und $ Y\in K^{k\times n} $ assoziierten Homomorphismen $ f_X\in \hom(K^m,K^n) $ und $ f_Y\in \hom(K^n,K^k) $ zeigt man also
+		\[ (YX)^t = X^tY^t \text{ und } (YX)^* = X^*Y^*. \]
+	Weiters folgt wegen $ \rg f_X^* = \rg f_X^t = \rg f_X $
+		\[ \rg X^t = \rg X^* = \rg X; \]
+	anders ausgedrückt: der Zeilenrang einer Matrix $ X\in K^{n\times m} $ stimmt mit ihrem (Spalten-)Rang überein.
+	
+	Insbesondere gilt:
+		\[ X\in Gl(n) \Rightarrow X^t \in Gl(n). \]
+		
+\subsection{Lemma}
+	Sei $ (V,\Skl{.}{.}) $ Euklidisch (unitär); $ f\in Gl(V) $ ist genau dann orthogonal (unitär), wenn $ f $ und $ f^{-1} $ adjungiert sind, $ f^{-1} = f^* $.
+\paragraph{Beweis}
+	Ist $ f^{-1}=f^* $ zu $ f $ adjungiert, so ist $ f\in O(V) $ (bzw. $ f\in U(V) $), da
+		\[ \forall v,w\in V: \Skl{f(v)}{f(w)} = \Skl{(f^*\circ f)(v)}{w} = \Skl{v}{w}; \]
+	ist umgekehrt $ f\in O(V) $ (bzw. $ U(V) $), so ist
+		\[ \forall v,w\in V: \Skl{v}{f(w)} = \Skl{f(f^{-1}(v))}{f(w)} = \Skl{f^{-1}(v)}{w}, \]
+	d.h. $ f^{-1} $ ist zu $ f $ adjungiert.
+\paragraph{Bemerkung}
+	$ f\in Gl(V) $ ist also genau dann orthogonal/unitär, wenn
+		\[ f^*\circ f = f\circ f^* = \id_V. \]
+\paragraph{Bemerkung}
+	Das Lemma lässt sich auf Isomorphismen $ f\in \Iso(W,V) $ verallgemeinern:
+	$ f $ ist genau dann \emph{isometrisch} (längentreu), wenn $ f^{-1} = f^* $.
+
+\subsection{Buchhaltung}\index{Orthogonale Gruppe}\index{Unitäre Gruppe}
+	Ist $ (V,\Skl{.}{.}) $ Euklidischer VR, $ \dim V <\infty $,
+	und $ X=\xi_B^B(f) $ Darstellungsmatrix von $ f\in \End(V) $ bzgl. einer ONB $ B $,
+	so ist
+		\[ f\in O(V)\Leftrightarrow X^*X = E_n, \]
+	und analog für einen unitären VR $ V $.
+	Daher definiert man die \emph{orthogonale (unitäre) Gruppe in $ n $ Variablen}:
+		\[ O(n) := \left\{X\in \R^{n\times n}\mid X^*X = X^tX = E_n \right\}, \]
+		\[ U(n) := \left\{X\in \C^{n\times n}\mid X^*X = \overline{X}^tX = E_n\right\}.\]
+	$ X $ ist also orthogonal/unitär, wenn die Spalten von $ X $ eine ONB von $ \K^{n\times 1} $ mit dem kanonischen Skalarprodukt bilden.
+
+\subsection{Definition}\index{selbstadjungiert}\index{schiefadjungiert}
+	Sei $ (V,\Skl{.}{.}) $ Euklidisch oder unitär; $ f\in \End(V) $ heißt dann
+		\begin{itemize}
+			\item \emph{selbstadjungiert} oder \emph{symmetrisch}, falls
+				\[ \forall v,w\in V: \Skl{f(v)}{w} = \Skl{v}{f(w)}; \]
+			\item \emph{schiefadjungiert} oder \emph{schiefsymmetrisch}, falls
+				\[ \forall v,w\in V: \Skl{f(v)}{w} + \Skl{v}{f(w)} = 0. \]
+		\end{itemize}
+\paragraph{Bemerkung}
+	$ f\in \End(V) $ ist also genau dann (schief-)symmetrisch, wenn $ f $ eine Adjungierte $ f^* \in \End(V)$ besitzt und $ f^* = \pm f $. Dies ist genau dann der Fall, wenn
+		\[ (v,w)\mapsto \SSkl{v}{w} := \Skl{v}{f(w)} \]
+	eine (schief-)symmetrische Sesquilinearform definiert.
+
+\subsection{Korollar}
+	Sei $ (V,\Skl{.}{.}) $ Euklidischer VR; eine Projektion $ p\in \End(V) $ ist genau dann Orthogonalprojektion, wenn sie selbstadjungiert ist, $ p^* = p $.
+\paragraph{Beweis}
+	Lemma Abschnitt 5.5.

@@ -9,6 +9,7 @@
   \indexspace
 
   \item Abstand, \hyperpage{57}
+  \item Adjungierte, \hyperpage{72}
   \item Algebra, \hyperpage{5}
     \subitem -Homomorphismus, \hyperpage{6}
   \item Algebraische/geometrische Vielfachheit, \hyperpage{17}
@@ -30,7 +31,7 @@
   \item Einsetzungshomomorphismus, \hyperpage{6}, \hyperpage{8}
   \item Euklidische Geometrie, \hyperpage{58}
   \item Euklidischer Raum, \hyperpage{57}
-  \item Euler-Gerade, \hyperpage{64}
+  \item Euler-Gerade, \hyperpage{65}
 
   \indexspace
 
@@ -54,7 +55,7 @@
 
   \indexspace
 
-  \item Kartesisches Bezugssystem, \hyperpage{65}
+  \item Kartesisches Bezugssystem, \hyperpage{66}
   \item Kongruenzabbildung, \hyperpage{58}
   \item Kreis, \hyperpage{63}
 
@@ -71,14 +72,16 @@
 
   \item Negativit\IeC {\"a}tsindex, \hyperpage{47}
   \item Norm, \hyperpage{54}
+  \item normal (Endomorphismen), \hyperpage{78}
   \item Nullstelle, \hyperpage{11}
 
   \indexspace
 
   \item Orthogonal, \hyperpage{38}
     \subitem -raum, \hyperpage{38}
-  \item orthogonales Komplement, \hyperpage{67}
-  \item Orthogonalprojektion, \hyperpage{66}
+  \item Orthogonale Gruppe, \hyperpage{77}
+  \item orthogonales Komplement, \hyperpage{68}
+  \item Orthogonalprojektion, \hyperpage{67}
   \item Orthonormal
     \subitem -basis, \hyperpage{49}
     \subitem -system, \hyperpage{49}
@@ -107,6 +110,8 @@
 
   \indexspace
 
+  \item schiefadjungiert, \hyperpage{77}
+  \item selbstadjungiert, \hyperpage{77}
   \item Semilinearit\IeC {\"a}t, \hyperpage{33}
   \item Sesquilinearform, \hyperpage{33}
     \subitem (schief-)symmetrische, \hyperpage{37}
@@ -115,7 +120,7 @@
     \subitem kanonische, \hyperpage{37}
     \subitem Signatur, \hyperpage{46}
   \item Skalarprodukt, \hyperpage{49}
-  \item Spiegelung, \hyperpage{68}
+  \item Spiegelung, \hyperpage{69}
   \item Spur, \hyperpage{17}
   \item Streckensymmetrale, \hyperpage{63}
 
@@ -127,6 +132,7 @@
   \indexspace
 
   \item Umkreis, \hyperpage{63}
+  \item Unit\IeC {\"a}re Gruppe, \hyperpage{77}
 
   \indexspace
 

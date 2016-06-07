@@ -1,0 +1,41 @@
+\section{Normale Endomorphismen}
+\paragraph{Motivation}
+	Für orthogonale/unitäre selbst- und schiefadjungierte Endomorphismen $ f\in \End(V) $ gilt stets
+		\[ f^*\circ f = f\circ f^*. \]
+	Dies ist eine "`gute"' Eigenschaft: sie liefert viele/wichtige strukturelle Aussagen über Endomorphismen.
+\paragraph{Generalvoraussetzung}
+	In diesem Abschnitt ist $ (V,\Skl{.}{.}) $ Euklidisch oder unitär.
+
+\subsection{Definition}\index{normal (Endomorphismen)}
+	$ f\in \End(V) $ heißt \emph{normal}, wenn $ f $ eine Adjungierte $ f^*\in \End(V) $ besitzt und 
+		\[ f^*\circ f = f\circ f^*. \]
+\subsection{Buchhaltung}
+	Ist $ \dim V < \infty $ und $ X=\xi_B^B(f) $ Darstellungsmatrix von $ f\in \End(V) $ bzgl. einer ONB $ B $ von $ (V,\Skl{.}{.}) $, so gilt
+		\[ f \text{ normal}\Leftrightarrow X^*X=XX^*, \]
+	d.h. wenn $ X\in \K^{n\times n} $ \emph{normal} ist.
+	
+\subsection{Lemma}
+	Ist $ f\in \End(V) $ normal, so gilt:
+		\begin{enumerate}[(i)]
+			\item $ \ker f = \ker f^* = f(V)^\perp $;
+			\item $ \forall v,w\in V: \Skl{f^*(v)}{f^*(w)}=\Skl{f(v)}{f(w)} $;
+			\item $ \forall x\in \K\forall v\in V: f(v) = vx \Rightarrow f^*(v) = v\overline{x} $.
+			\item Sind $ v,w\in V $ Eigenvektoren zu EW $ x,y\in \K $ von $ f $, so gilt
+				\[ x = y \text{ oder } v\perp w. \]
+		\end{enumerate}
+\paragraph{Beweis}
+	Sei $ f\in \End(V) $ normal.
+		\begin{enumerate}
+			\item[(ii)] Wegen $ f^{**} = f $ gilt für $ v,w\in V $:
+				\[ \Skl{f^*(v)}{f^*(w)-\Skl{f(v)}{f(w)}} = \Skl{(f^{**}\circ f^*)(v)}{w}-\Skl{(f^*\circ f)(v)}{w} = \Skl{(f\circ f^*-f^*\circ f)(v)}{w} = 0 \]
+			\item[(i)] Wegen (ii) gilt für $ v\in V $
+				\[ f^*(v) = 0 \Rightarrow 0 = \|f^*(v)\|^2 = \|f(v)\|^2\Rightarrow f(v) = 0 \]
+				und umgekehrt, und damit
+				\[ \ker f^* = \ker f. \]
+				Nach früherem Lemma ist
+					\[ \ker f^* = f(V)^\perp \]
+			\item[(iii)] Nach (i) ist für $ x\in \K $
+				\[ \ker(f-\id_Vx) = \ker(f-\id_Vx)^* = \ker(f^*-\id_v\overline{x}), \]
+				da $ f-\id_Vx $ mit $ f $ normal ist.
+			\item[(iv)] Mit (iii) folgt für $ v,w\in V $ mit $ f(v) = vx $ und $ f(w) = wy $	\[ (x-y)\Skl{v}{w}=\Skl{v\overline{x}}{w}-\Skl{v}{wy} = \Skl{f^*(v)}{w}-\Skl{v}{f(w)} = 0. \] 
+		\end{enumerate}
