@@ -39,3 +39,113 @@
 				da $ f-\id_Vx $ mit $ f $ normal ist.
 			\item[(iv)] Mit (iii) folgt für $ v,w\in V $ mit $ f(v) = vx $ und $ f(w) = wy $	\[ (x-y)\Skl{v}{w}=\Skl{v\overline{x}}{w}-\Skl{v}{wy} = \Skl{f^*(v)}{w}-\Skl{v}{f(w)} = 0. \] 
 		\end{enumerate}
+
+% VO 09-06-2016 %
+\subsection{Lemma}
+	Ist $ f\in \End(V) $ normal und $ U\subset V $ UVR, so gilt
+		\begin{enumerate}[(i)]
+			\item Ist $ U\ f $-invariant, so ist $ U^\perp\ f^* $-invariant;
+			\item Ist $ U\ f $- und $ f^* $-invariant, so liefert Einschränkng normale Endomorphismen
+				\[ f\big|_U \in \End(U) \text{ und } f\big|_{U^\perp}\in \End(U^\perp). \]
+		\end{enumerate}
+\paragraph{Beweis}
+	Für (i) wird nur die Existenz der Adjungierten benutzt.
+		\begin{enumerate}[(i)]
+			\item Sei $ v\in U^\perp $, dann gilt:
+				\[ \forall u\in U: \Skl{f^*(v)}{u} = \Skl{v}{f(u)} = 0 \]
+			\item Da $ U\ f $- und $ f^* $-invariant ist, ist (nach(i)) $ U^\perp\ f^*$- und $ f^{**} = f $-invariant.		
+			Damit ist es sinnvoll
+				\[ f\big|_U \in \End(U), f\big|_{U^\perp}\in \End(U^\perp) \]
+				\[ f^*\big|_U\in \End(U), f^*\big|_{U^\perp}\in \End(U^\perp) \]
+			zu betrachten. Nun gilt:
+				\[ \forall u,v\in U: \Skl{f\big|_U^*(u)}{v} = \Skl{u}{f\big|_U(v)} = \Skl{u}{f(v)} = \Skl{f^*(u)}{v} = \Skl{f^*\big|_U(u)}{v} \]
+			und analog für $ v,w\in U^\perp $. Damit folgt: $ f\big|_U^* = f^*\big|_U $ und $ f\big|^*_{U^\perp} = f^*\big|_{U^\perp}$ und also
+				\[ f\big|_U^* \circ f\big|_U = f^*\circ f\big|_U = f\circ f^*\big|_U = f\big|_U \circ f\big|_U^*. \]
+		\end{enumerate}
+\paragraph{Bemerkung \& Beispiel}
+	 Eine Orthogonalprojektion ist selbstadjungiert, $ p\in \End(V) $ mit $ p^2=p, p^*=p $ und damit normal. Ist $ p\neq \id_V, 0 $, so ist
+		 \[ V=U\oplus_\perp U^\perp \text{ mit }
+			 \begin{cases}
+			 U:= p(V),\\ U^\perp = \ker p.
+			 \end{cases} \]
+	Wir definieren:
+		\[ \pi:V\to U, v\mapsto \pi(v):= p(v) \text{ und } \iota : U\to V, u\mapsto \iota(u):= u; \]
+	man nennt die isometrische Abbildung $ \iota $ auch die \emph{Inklusion} von $ U $ in $ V $. Dann sind $ \pi $ und $ \iota $ adjungiert:
+		\[ \forall u\in U\forall v\in V: \Skl{\iota(u)}{v} = \Skl{u}{\pi(v)}\big|_U \]
+	Insbesondere ist die "`Projektionsabbildung"' $ \pi $ \emph{nicht} selbstadjungiert.
+\paragraph{Achtung:}
+	Die Adjungierte hängt von Definitions- und Wertebereich ab!
+	
+\subsection{Spektralsatz (unitärer Fall)}\index{Spektralsatz}
+	Sei $ (V,\Skl{.}{.}) $ unitär, $ \dim V<\infty $, und sei $ f\in \End(V) $ normal. Dann besitzt $ V $ eine ONB aus Eigenvektoren von $ f $.
+\paragraph{Bemerkung}
+	Es gilt auch die Umkehrung: Ist $ (e_1,\dots,e_n) $ ONB mit
+		\[ f(e_i) = e_ix_i, \text{ also } f^*(e_i) = e_i\overline{x_i},\ i=1,\dots,n, \]
+	so gilt
+		\[ (f^*\circ f)(e_i) = e_i\overline{x_i}x_i = e_ix_i\overline{x_i} = (f\circ f^*)(e_i),\ i=1,\dots,n, \]
+	d.h. $ f $ ist normal.
+\paragraph{Beweis}
+	Induktion über $ n=\dim V $.
+	
+	Für $ n=1 $ ist die Aussage trivial. Sei die Aussage für $ n\in\N $ wahr. Für $ n+1 $ gilt dann:
+	
+	$ f $ hat einen Eigenwert $ x\in \C $, da das charakteristische Polynom $ \chi_f(t)\in \C[t] $ nach Fundamentalsatz der Algebra in Linearfaktoren zerfällt.
+	
+	Sei $ e\in V^\times $ ein zugehöriger Eigenvektor,
+		\[ f(e)=ex, \text{ o.B.d.A. } \|e\| = 1. \]
+	Wegen $ f^*(e)=e\overline x $ ist $ [e] $ dann $ f $- und $ f^* $- invariant und damit
+		\[ V=[e] \oplus_\perp [e]^\perp, \]
+	wobei $ f\big|_{[e]}\in \End([e]) $ und $ f\big|_{[e]^\perp}\in \End([e]^\perp) $ normal sind (Lemma).
+	
+	Da $ \dim [e]^\perp = n$ liefert die Induktions-Annahme eine ONB $ (e_1,\dots,e_n) $ von $ [e]^\perp $ aus Eigenvektoren von $ f\big|_{[e]^\perp} $. Damit ist $ (e,e_1,\dots,e_n) $ eine ONB aus Eigenvektoren von $ f $.
+
+\subsection{Buchhaltung}
+	Ein normaler Endomorphismus $ f\in \End(V) $ eines unitären VR $ (V,\Skl{.}{.}) $ mit $ \dim V < \infty $ ist also \emph{orthogonal diagonalisierbar}, d.h. es existiert eine ONB aus Eigenvektoren von $ f $.
+	
+	Also, bezüglich einer solchen ONB $ B $ ist
+		\[ \xi_B^B(f) = \operatorname{diag}(x_1,\dots,x_n). \]
+	Da $ \xi_B^B(f^*) = (\xi_B^B(f))^* $ gilt:
+		\begin{itemize}
+			\item ist $ f $ selbstadjungiert, so sind alle Eigenwerte reell, $ x_i = \overline{x_i} $;
+			\item ist $ f $ schiefadjungiert, so sind alle Eigenwerte imaginär, $ x_i = -\overline{x_i} $
+			\item ist $ f $ unitär, so sind alle Eigenwerte \emph{unitär}, d.h. für $ j=1,\dots,n $ ist
+				\[ x_j\in S^1 := \{x\in \C:\overline{x}x = 1\} = \{e^{iy}\mid y\in \R\}. \]
+		\end{itemize}
+
+\subsection{Korollar \& Definition}	
+	Ist $ X\in \C^{n\times n} $ normal, $ X^*X = XX^* $, so gilt
+		\[ \exists P\in U(n): P^{-1}XP=\operatorname{diag}(x_1,\dots,x_n). \]
+	Dabei gilt:
+		\begin{itemize}
+			\item ist $ X $ \emph{selbstadjungiert}, $ X^*=X $, so sind $ x_1,\dots,x_n \in \R $;
+			\item ist $ X $ \emph{schiefadjungiert}, $ X^*=-X $, so sind $ x_1,\dots,x_n\in i\R $;
+			\item ist $ X $ \emph{unitär}, $ X\in U(n)= \{Y\in \C^{n\times n}\mid Y^*Y=E_n\} $, so gilt $ |x_1|,\dots,|x_n| = 1. $
+		\end{itemize}
+\paragraph{Beweis}
+	Sei $ X\in \C^{n\times n} $, betrachte $ \C^n $ als unitären VR mit Standardbasis $ E $ als ONB.
+		\[ \Gamma_E(\Skl{.}{.}) = E_n, \]
+	und den assoziierten Endomorphismus $ f_X\in \End(\C^n) $. Orthonormale Basiswechsel $ B=EP $ sind dann durch unitäre Matrizen $ P\in U(n) $ gegeben:
+		\[ E_n = \Gamma_B(\Skl{.}{.}) = P^*\Gamma_E(\Skl{.}{.})P = P^*P \Leftrightarrow P\in U(n). \]
+	Anwendung des Spektralsatzes liefert also die Behauptung.
+
+\paragraph{Beispiel}
+	Für  $ X = \begin{pmatrix}
+	\cos s & -\sin s\\ \sin s & \cos s
+	\end{pmatrix}\in \C^{2\times 2} $ mit $ s\in \R $ ist $ X^*=X^t = X^{-1} $, d.h. $ X $ ist unitär, also normal, und damit
+		\[ \exists P\in (2): P^{-1}\begin{pmatrix}
+		\cos s & -\sin s\\ \sin s & \cos s
+		\end{pmatrix}P = \begin{pmatrix}
+		x_1 & 0 \\ 0 & x_2
+		\end{pmatrix} \]
+	wobei $ x_i $ die Eigenwerte von $ f_X $ sind, d.h. Nullstellen des charakteristischen Polynoms
+		\[ \chi_X(t) = (t-\cos s)^2 + \sin^2 s = t^2-2t\cos s + 1 = (t-e^{is})(t-e^{-is}). \]
+	Bemerke: $ |e^{\pm is}| = 1 $, d.h. $ x_{1,2} $ sind unitär. Eigenvektoren bzw. P:
+		\[ P = \frac{1}{\sqrt{2}}\begin{pmatrix} i & -i \\ 1 & 1 \end{pmatrix} \]
+
+\subsection{Spektralzerlegung (unitärer Fall)}
+	Sei $ (V,\Skl{.}{.}) $ unitär, $ \dim V <\infty $, und sei $ f\in \End(V) $ normal; dann zerfällt $ V $ als orthogonale direkte Summe der Eigenräume von $ f $,
+		\[ V = \bigoplus_{x\in \chi_f(\{0\})} \ker(\id_Vx-f). \]
+\paragraph{Beweis}
+	Folgt direkt aus dem Spektralsatz
+\paragraph{Bemerkung}
+	Mit gewissen Voraussetzungen gilt der Satz auch für $ \dim V = \infty $.
