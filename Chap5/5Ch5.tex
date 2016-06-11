@@ -64,15 +64,17 @@
 	Im Falle einer Orthogonalprojektion $ p $ nennt man die zugehörige Transformation	
 		\[ \sigma: A\to A, o+v\mapsto \sigma(o+v):= o+s(v) \]
 	eines Euklidischen Raumes eine \emph{Spiegelung}: $ \sigma $ ist eine Isometrie, da
-		\[ \forall v\in V: \underset{ = \begin{cases}
-			\|v\|^2 \text{ für }+\\ \|s(v)\|^2 \text{ für } -
-			\end{cases}}{\underbrace{\|p(v)\pm p'(v)\|^2}} = \|p(v)\|^2+\|p'(v)\|^2 \pm \underset{ = 0\text{, da }p(V)\perp p'(V)}{2\underbrace{\Skl{p(v)}{p'(v)}}} \]
+		\[ \forall v\in V: \|p(v)\pm p'(v)\|^2 =
+			\begin{cases}
+				\|v\|^2 &\text{für }+\\ \|s(v)\|^2 &\text{für } -
+			\end{cases}
+			= \|p(v)\|^2+\|p'(v)\|^2 \pm \underset{ = 0\text{, da }p(V)\perp p'(V)}{2\underbrace{\Skl{p(v)}{p'(v)}}} \]
 \paragraph{Bemerkung}
 	Jede Kongruenzabbildung eines endlichdimensionalen Euklidischen Raumes ist Komposition von Spiegelungen.
 
 \subsection{Beispiel \& Definition}\index{Drehung}
 	Ist $ A^2 $ Euklidische Ebene mit kartesischem Bezugssystem $ (o;e_1,e_2) $ und $ J\in \End(\R^2) $ wie oben,
-		\[ J(e_1) = e_2 \text{ und } J(e_2) = -e_1 \]
+	$ J(e_1) = e_2 \text{ und } J(e_2) = -e_1 $
 	so liefert 
 		\[ \rho_\theta : A^2\to A^2, o+v\mapsto \rho_\vartheta(o+v):= o+v\cos \vartheta + J(v)\sin\vartheta \]
 	eine \emph{Drehung} mit \emph{Zentrum} $ o\in A^2 $ und \emph{Drehwinkel} $ \vartheta \in \R $. Die affine Abbildung $ \rho_\vartheta $ ist dann Komposition zweier Spiegelungen, 

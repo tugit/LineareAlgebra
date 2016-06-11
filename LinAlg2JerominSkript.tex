@@ -1,4 +1,4 @@
-\documentclass[a4paper, 11pt, DIV=12, parskip=half]{scrreprt}
+\documentclass[a4paper, 11pt, DIV=12]{scrreprt}
 \usepackage{microtype}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -41,16 +41,18 @@
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\K}{\mathbb{K}}
 \newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
 \renewcommand{\Re}{\operatorname{Re}}
 \newcommand{\Skl}[2]{\langle #1,#2 \rangle}
 \newcommand{\SSkl}[2]{\langle\! \Skl{#1}{#2}\! \rangle}
 
-\newenvironment*{Satz}[1][]{}{}
-\newenvironment*{Lemma}[1][]{}{}
-\newenvironment*{Definition}[1][]{}{}
-\newenvironment*{Korollar}[1][]{}{}
+\newenvironment*{Satz}[1][]{\ignorespaces}{\ignorespacesafterend}
+\newenvironment*{Lemma}[1][]{\ignorespaces}{\ignorespacesafterend}
+\newenvironment*{Definition}[1][]{\ignorespaces}{\ignorespacesafterend}
+\newenvironment*{Korollar}[1][]{\ignorespaces}{\ignorespacesafterend}
 
 \begin{document}
+
 \maketitle
 \tableofcontents
  Einbinden der Kapitel

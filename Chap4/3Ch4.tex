@@ -10,7 +10,7 @@
 		p:\ & K\to K,\ x\mapsto p(x):= 1+x+x^2\\
 		q:\ & K\to K,\ x\mapsto q(x):= 1
 		\end{align*}
-	Falls $ K=\mathbb{Z}_2 $ so gilt dann
+	Falls $ K=\Z_2 $ so gilt dann
 		\begin{align*}
 		&\forall x\in K: x(x+1)=0\\
 		\Rightarrow\ &\forall x\in K: p(x) = q(x)
@@ -45,6 +45,7 @@
 		\end{gather*}
 	Mit $ 1:= e_0,\ t:= e_1 $ und $ t^0 := 1 $, wie üblich, liefert dies:
 		\[ \sum_{k=0}^{n}t^ka_k = \sum_{k\in \mathbb{N}}e_ka_k \in [(e_k)_{k\in \mathbb{N}}]\subset K^\mathbb{N} \]
+		
 \subsection{Definition}\index{Polynom!-algebra}\index{Polynom!Grad}\index{Polynom!normiertes}
 		\begin{Definition}[Polynomalgebra]
 			\[ K[t] := ([(e_k)_{k\in \mathbb{N}}],\odot) ,\]
@@ -68,6 +69,7 @@
 	Koeffizientenvergleich funktioniert!
 \paragraph{Bemerkung}
 	Die Polynomalgebra $ K[t] $ über $ K $ ist eine assoziative und kommutative $ K $-Algebra, weiters ist $ K[t] $ unitär mit Einselement $ 1=e_0 $.
+	
 \subsection{Definition}\index{Algebra}
 	\begin{Definition}[Algebra]
 		Eine $ K $-Algebra ist ein $ K $-VR mit einer \emph{bilinearen Abbildung},
@@ -77,19 +79,15 @@
 			\item $ \forall w\in V:\ V\ni v\mapsto v\odot w\in V $ ist linear;
 			\item $ \forall v\in V: V\ni w\mapsto v\odot w\in V $ ist linear.
 		\end{enumerate}
-	
 	Eine $ K $-Algebra heißt
 		\begin{itemize}
-			\item unitär (mit Einselement 1), falls
-                              \[\exists 1\in V^\times\forall v\in V: 1\odot v = v\odot 1 = v\]
-			\item assoziativ, falls
-                              \[\forall u,v,w\in V: (u\odot v)\odot w = u\odot (v\odot w)\]
-			\item kommutativ, falls
-                              \[\forall v,w,\in V: v\odot w = w\odot v\]
+			\item unitär (mit Einselement 1), falls \hfill$ \exists 1\in V^\times\forall v\in V: 1\odot v = v\odot 1 = v $;
+			\item assoziativ, falls \hfill $ \forall u,v,w\in V: (u\odot v)\odot w = u\odot (v\odot w) $;
+			\item kommutativ, falls\hfill $\forall v,w,\in V: v\odot w = w\odot v$.
 		\end{itemize}
 	\end{Definition}
 \paragraph{Beispiel}
-	$ \End(V) $ ist (mit Komposition) eine unitäre assoziative Algebra.
+	Die additive Gruppe $ \End(V) $ ist (mit Komposition) eine unitäre assoziative Algebra.
 \paragraph{Bemerkung}
 	In jeder Algebra $ (V,\odot) $ gilt:
 		\[ \forall v\in V: 0\odot v = v\odot 0 = 0 \]
@@ -98,10 +96,11 @@
 	Ist $ (V,\odot) $ unitär, so liefert $ [1]\subset V $ wegen $ 1\odot 1 = 1 $ einen Körper:
 		\[ ([1], +\mid_{[1]\times [1]},\odot\mid_{[1]\times [1]} ) \cong K \]
 	vermöge $ K\ni x \mapsto 1 \cdot x\in [1] $ (siehe Aufgabe 5).
+	
 \subsection{Definition}\index{Algebra!-Homomorphismus}
 	\begin{Definition}[Algebra-Homomorphismus]
 		Ein \emph{Algebra-Homomorphismus} zwischen $ K $-Algebren $ (V,\odot) $ und $ (W,*) $ ist eine lineare Abbildung $ \psi\in \hom(V,W) $, für die gilt:
-		\[ \forall v,v' \in V: \psi(v\odot v')=\psi(v)*\psi(v') \]
+		\[ \forall v,v' \in V: \psi(v\odot v')=\psi(v)*\psi(v'). \]
 	\end{Definition}
 \paragraph{Bemerkung}
 	$ \hom(V,W) $ wird oft auch für den (Vektor-)Raum der Algebra-Homomorphismen verwendet. In dieser LVA bedeutet "`$ \hom(V,W) $"' immer VR-Homomorphismen, bei allen "`anderen"' Homomorphismen wird  erwähnt, was gemeint ist.
@@ -221,10 +220,10 @@
 		\Rightarrow d(t)\big(q(t)-\tilde{q}(t)\big) = \tilde{r}(t)-r(t)
 		\end{gather*}
 	erhält man
-		\begin{gather*}
-			\deg d(t) + \deg \big(q(t)-\tilde{q}(t)\big) = \deg (r(t)-\tilde{r}(t))\\
-			\leq \max \{\deg r(t), \deg \tilde{r} (t)\} < \deg d(t).
-		\end{gather*}
+		\begin{align*}
+			\deg d(t) + \deg \big(q(t)-\tilde{q}(t)\big) &= \deg (r(t)-\tilde{r}(t))\\
+			&\leq \max \{\deg r(t), \deg \tilde{r} (t)\} < \deg d(t).
+		\end{align*}
 	Also folgt
 		\[ \deg\big(q(t)-\tilde{q}(t)\big) = -\infty \Rightarrow \deg (r(t)-\tilde{r}(t)) = \deg d(t) -\infty = - \infty \]
 	und damit
@@ -263,13 +262,13 @@
 	also
 		\[ p(t) = (t-x)q(t)+r(t) = (t-x)q(t)+c_0. \]
 	Einsetzen von $ x\in K $ liefert dann
-		\[ 0 = p(x) = (x-x)q(x) + c_0 = c_0 \]
+		\[ 0 = p(x) = (x-x)q(x) + c_0 = c_0. \]
 \paragraph{Bemerkung und Beispiel}\index{Linearfaktorisierung}
 	Dies liefert eine Methode, um Polynome zu \emph{faktorisieren}: Für jede gefundene Nullstelle kann man einen \emph{Linearfaktor} abspalten.
 		\[ p(t)= t^4-t^3+t^2-t =
 			\begin{cases}
 				t(t-1)(t-i)(t+i) \in \C[t]\\
-				t(t-1)(t^2+1) \in \R[t]
+				t(t-1)(t^2+1) \in \R[t].
 			\end{cases} \]
 \subsection{Mehr zu Polynomen}
 	Dies ist der Anfang einer der Teilbarkeitstheorie der natürlichen Zahlen ähnlichen Theorie für Polynome.
@@ -296,7 +295,7 @@
 	
 \paragraph{Beweis}	
 	Existenz ist einfach zu zeigen (Induktion über $ n $), die weniger leicht zu zeigende Eindeutigkeit benutzt die Existenz des \emph{größten gemeinsamen Teilers} $ d(t) = \ggT\big(p(t),q(t)\big) $ zweier Polynome $ p(t) $ und $ q(t) $:
-	
+
 	\begin{addmargin}{1cm}
 		\textit{Zu $ p(t),q(t) \in K[t]\setminus \{0\} $ gibt es genau ein normiertes Polynom $ d(t)\in K[t] $ mit
 			\begin{align*}
@@ -324,7 +323,7 @@
 			\textit{In $ \C $ zerfällt jedes Polynom (mit Grad $ \geq 1 $) in Linearfaktoren;
 				\[ \forall p(t)\in \C[t],\ \deg \geq 1:\ \exists x_1,\dots,x_n \in \C \]
 			mit
-				\[ p(t) = a_n \prod_{j=1}^{n}(t-x_j) \]}
+				\[ p(t) = a_n \prod_{j=1}^{n}(t-x_j). \]}
 		\end{addmargin}
 		\end{Satz}
 	Ist $ K=\R $, so ist dies nicht der Fall; ein Primpolynom vom Grad $ \deg p(t) = 2 $ ist z.B.

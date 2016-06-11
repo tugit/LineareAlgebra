@@ -1,8 +1,7 @@
 % VO 14-04-2016 %
 \chapter{Längen- und Winkelmessung}
 Plan: 
-	Längen und Winkel (in "`Punkträumen"' $ \cong $ affinen Räumen) verstehen.
-	
+	Längen und Winkel (in "`Punkträumen"' $ \cong $ affinen Räumen) verstehen.\\
 Algebraisch:
 	via Produkte (bilineare -- oder fast bilineare -- Abbildungen).
 	
@@ -118,9 +117,9 @@ Seien $ V $ ein $ K $-VR und $ K\ni x\mapsto \overline{x}\in K $ ein (Körper-) 
 		\end{pmatrix} = \sum_{i=1}^{n}\overline{x_i}\sum_{j=1}^{n}s_{ij}y_j. \]
 \paragraph{Transformationsformel}
 	Ein Basiswechsel $ B' = BP $ mit $ P = \xi_{B'}^B \in Gl(n)$ liefert dann
-		\[ v = BX = (B'P^{-1})X = B'\underset{X'}{\underbrace{(P^{-1}X)}} \text{ und } w = B'\underset{Y'}{\underbrace{(P^{-1}Y)}} \]
+		\[ v = BX = (B'P^{-1})X = B' \underbrace{(P^{-1}X)}_{X'} \text{ und } w = B' \underbrace{(P^{-1}Y)}_{Y'} \]
 	und damit für $ X,Y \in K^{n\times 1} $
-		\[ \overline{X}^tSY = \overline{X'}^t\underset{S'}{\underbrace{(\overline{P}^tSP)}}Y' \]
+		\[ \overline{X}^tSY = \overline{X'}^t \underbrace{(\overline{P}^tSP)}_{S'} Y' \]
 	woraus die \emph{Transformationsformel für Gramsche Matrizen} folgt
 		\[ S' = \overline{P}^tSP, \]
 	wobei $ \overline{P}^t $ die Transponierte der Matrix mit Einträgen $ \overline{p_{ij}} $ ist.
@@ -145,12 +144,9 @@ Dies liefert einen weiteren Äquivalenzbegriff für quadratische Matrizen $ S\in
 \begin{Definition}[symmetrische, schiefsymmetrische und alternierende Sesquilinearformen]
 	Eine Sesquilinearform $ \sigma:V\times V\to K $ auf einem $ K $-VR bzgl. eines Automorphismus $ \bar{.}:K\to K $ nennen wir
 		\begin{enumerate}[(i)]
-			\item \emph{symmetrisch}, falls
-				\[ \forall v,w\in V: \sigma(w,v) = \overline{\sigma(v,w)} \]
-			\item \emph{schiefsymmetrisch}, falls
-				\[ \forall v,w\in V: \sigma(w,v) = - \overline{\sigma(v,w)} \]
-			\item \emph{alternierend}, falls
-				\[ \forall v \in V: \sigma(v,v) = 0. \]
+			\item \emph{symmetrisch}, falls \hfill $\forall v,w\in V: \sigma(w,v) = \overline{\sigma(v,w)} $;
+			\item \emph{schiefsymmetrisch}, falls \hfill $ \forall v,w\in V: \sigma(w,v) = - \overline{\sigma(v,w)}$;
+			\item \emph{alternierend}, falls \hfill $\forall v \in V: \sigma(v,v) = 0.$
 		\end{enumerate}
 \end{Definition}
 
@@ -163,7 +159,6 @@ Dies liefert einen weiteren Äquivalenzbegriff für quadratische Matrizen $ S\in
 	
 	Nämlich: Wähle $ v,w\in V $ mit $ \sigma(v,w) = 1$; dann gilt
 		\[ \forall x\in K: \overline{\overline{x}} = \overline{\sigma(vx,w)} = \pm \sigma(w,vx) = \overline{\overline{x}\sigma(v,w)} = \pm \sigma(w,v)x = \overline{\sigma(v,w)}x = x. \]
-
 % VO 21-04-2016 %
 	Ist $ \Char(K) \neq 2 $ und $ \bar{.}  $ Involution, so kann jede Sesquilinearform in einen symmetrischen und einen schiefsymmetrischen Anteil zerlegt werden:
 		\[ \forall v,w\in V: \sigma(v,w) = \frac{1}{2}\left(\sigma(v,w)+\overline{\sigma(w,v)}\right) +\frac{1}{2}\left(\sigma(v,w)-\overline{\sigma(w,v)} \right).\]

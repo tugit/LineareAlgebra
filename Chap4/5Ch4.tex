@@ -71,11 +71,12 @@
 		 Y' &= (y_1',y_2') = (y',y'') = (y',-2y'+3y)\\
 		 &= (y,y') \begin{pmatrix}
 		 	0 & 3\\ 1 & -2
-		 \end{pmatrix} = YX
-	  \end{align*}
-	mit $ X= \begin{pmatrix}
-	0 & 3\\ 1 & -2
-	\end{pmatrix}$, d.h. wir suchen eine $ \frac{d}{ds} $-zyklische Basis $ (y,\frac{d}{ds}y) = (y,y') $ eines 2-$ \dim $ UVR $ [(y,y')]\subset C^\infty(\R) $ bezüglich derer $ \frac{d}{ds}\in \End(C^\infty(\R)) $ Darstellungsmatrix $ X $ hat.
+		 \end{pmatrix} = YX	\text{ mit }
+		 X= \begin{pmatrix}
+			0 & 3\\ 1 & -2
+		\end{pmatrix},
+		\end{align*}
+	d.h. wir suchen eine $ \frac{d}{ds} $-zyklische Basis $ (y,\frac{d}{ds}y) = (y,y') $ eines 2-$ \dim $ UVR $ [(y,y')]\subset C^\infty(\R) $ bezüglich derer $ \frac{d}{ds}\in \End(C^\infty(\R)) $ Darstellungsmatrix $ X $ hat.
 	
 	Der Ansatz $ y(s) = e^{xs} (v_0,v_1)$ reduziert das AWP auf ein Eigenwertproblem.
 		\[ 0 = \left(Y'-YX\right)(s) = \left(\frac{d}{ds}Y - YX\right)(s) = \underset{Y}{\underbrace{e^{xs}(v_0,v_1)}} \{E_2x-X\}\]
@@ -115,7 +116,7 @@
 	Dann gilt
 		\[ \chi_f(f)(b_1) = \chi_f(f)(b) = \left(f^n+\sum_{k=0}^{n-1}f^ka_k\right)(b) = f^n(b)+\sum_{k=0}^{n-1}f^k(b)a_k. \]
 	Damit folgt für $ i=2,\dots,n $
-		\[ \chi_f(f)(b_i) = \chi_f(f)\left(f^{i-1}(b)\right) \overset{\footnotemark}{=} f^{i-1}\left(\chi_f(f)(b) \right) = 0. \]
+		\[ \chi_f(f)(b_i) = \chi_f(f)\left(f^{i-1}(b)\right) \stackrel{\footnotemark}{=} f^{i-1}\left(\chi_f(f)(b) \right) = 0. \]
 		\footnotetext{Aufgrund der Linearität der Endomorphismen $ \End(V) $ als unitäre Algebra.}
 	Da also $ V=[B] \subset \ker {\chi_f(f)}$, folgt $ \chi_f(f) = 0. $
 \paragraph{Bemerkung}
@@ -248,14 +249,12 @@
 		\[ \chi_f(t) := \det (\id_Vt-f) \]
 	ist "`gut"' für Polynomfunktionen, aber "`nicht korrekt"' für abstrakte Polynome; die Definition 
 		\[ \chi_f(t) := \sum_{\sigma\in S_n}\sgn(\sigma)\prod_{i=1}^{n}\left(\delta_{\sigma(j)j}-x_{\sigma(j)j} \right)\in K[t] \]
-	mithilfe der Darstellungsmatrix
-		\[ X = (x_{ij})_{i,j\in \{1,\dots,n\}} = \xi_B^B(f) \]
+	mithilfe der Darstellungsmatrix $ X = (x_{ij})_{i,j\in \{1,\dots,n\}} = \xi_B^B(f) $
 	von $ f $ bzgl. einer Basis $ B $ und der Leibniz-Formel ist nicht sehr übersichtlich. Vergleiche auch [Axler, Kap. 8] zum Thema.
 	
 	Im Gegensatz dazu: Definitionen von "`Annulatorpolynom"' und "`Minimalpolynom"' etc. sind einfach (konzeptionell).
 	
 	Frage: Braucht man das charakteristische Polynom überhaupt?
-	
 	Man kommt auch ohne das charakteristische Polynom "`recht weit"':
 		\begin{itemize}
 			\item Für $ \dim V <\infty $ folgt die Existenz eines Annulatorpolynoms, und damit des Minimalpolynoms recht einfach wegen $ \dim \End(V) <\infty $.

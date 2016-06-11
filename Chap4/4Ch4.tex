@@ -3,12 +3,9 @@
 \begin{Definition}[Eigenwert,Eigenvektor,Eigenraum]
 	Seien $ V $ ein $ K $-VR und $ f\in\End(V) $. Dann heißen
 		\begin{enumerate}[(i)]
-			\item $ x\in K $ ein Eigenwert von $ f $, falls
-				\[ \exists v\in V^\times: f(v)=vx; \]
-			\item $ v\in V^\times $ ein Eigenvektor von $ f $, falls
-				\[ \exists x\in K:f(v)=vx; \]
-			\item $ \ker(f-\id_Vx) \subset V $ ein Eigenraum, falls
-				\[ \ker(f-\id_Vx) \neq \{0\}.\]
+			\item $ x\in K $ ein Eigenwert von $ f $, falls \hfill $ \exists v\in V^\times: f(v)=vx; $
+			\item $ v\in V^\times $ ein Eigenvektor von $ f $, falls \hfill $\exists x\in K:f(v)=vx; $
+			\item $ \ker(f-\id_Vx) \subset V $ ein Eigenraum, falls\hfill $\ker(f-\id_Vx) \neq \{0\}.$
 		\end{enumerate}
 	\end{Definition}
 \paragraph{Bemerkung}
@@ -80,9 +77,7 @@
 		v_1^1\\v_1^2
 		\end{pmatrix} \]
 	d.h. der Eigenraum zum Eigenwert $ x $,
-		\[ \ker(f-\id_V) = [\{b_1+b_2\}] \]
-	hat
-		\[ \dim \ker(f-\id_V)<\dim V. \]
+		\[ \ker(f-\id_V) = [\{b_1+b_2\}]\quad \text{ hat }\quad\dim \ker(f-\id_V)<\dim V. \]
 \paragraph{Rechenbeispiel 2}
 	Ist $ K=\R $ und
 		\[ \det(f-\id_Vx)=x^2+1, \]
@@ -125,8 +120,7 @@
 	Oft wird $ \det(f-\id_Vt)=(-1)^n\chi_f(t) $ als charakteristisches Polynom definiert -- dieses Polynom ist dann nur für gerade $ n $ normiert.
 \subsection{Korollar}
 \begin{Korollar}[Eigenwerte sind Nullstellen des char. Polynoms]
-	Ein $ x\in K $ ist genau dann Eigenwert von $ f $, wenn $ \chi_f(x)=0 $.
-	
+	Ein $ x\in K $ ist genau dann Eigenwert von $ f $, wenn $ \chi_f(x)=0 $.\\
 	Also: Die Eigenwerte von $ f $ sind genau die Nullstellen des charakteristischen Polynoms $ \chi_f(t) $.
 \end{Korollar}
 \paragraph{Beweis}
@@ -147,9 +141,7 @@
 \end{Definition}
 \paragraph{Beweis}
 	Da $ x $ Eigenwert von $ f $ ist, ist die Existenz und Eindeutigkeit von $ k $ klar. Außerdem gilt analog auch $ g\geq 1 $.
-	
-	Zu zeigen bleibt: $ g\leq k $, d.h. $ (t-x)^g \mid \chi_f(t) $:
-	
+	Zu zeigen bleibt: $ g\leq k $, d.h. $ (t-x)^g \mid \chi_f(t) $:\\
 	Für eine Basis $ B = (b_1,\dots,b_n) $ von $ V $ mit
 	$ \ker (\id_v x - f) = [(b_1,\dots,b_g)]$
 	hat
@@ -170,18 +162,14 @@
 		\[ 1 = g_i = k_i, \text{ da } 1\leq g_i \leq k_i \text{ und } k_1+k_2 \leq 2; \]
 	der Eigenwert
 		\[ x=1 \text{ für } X = \begin{pmatrix} 2&-1\\1&0 \end{pmatrix} \]
-	hat algebraische und geometrische Vielfachheiten
-		\[ k = 2 \text{ und } g = 1 \]
-	da
+	hat algebraische und geometrische Vielfachheiten $ k = 2 \text{ und } g = 1 $, da
 		\[ f\neq \id_V x = \id_V \]
 	und $ \chi_f(t)=(t-x)^2 \in \R[t] $, da ein quadratisches Polynom zwei (relle oder komplex konjugierte) Nullstellen hat, oder aber eine doppelte reelle.
 
 \subsection{Definition \& Lemma}\index{$ f $-invarianter Unterraum}
-	Das Schlüsselargument im Beweis oben kann man verallgemeinern:
-
+	Das Schlüsselargument im Beweis oben kann man verallgemeinern:\\
 \begin{Definition}[$ f $-invarianter Unterraum]
 	Sei $ f\in \End(V) $ und $ U\subset V $ ein \emph{$ f $-invarianter Unterraum}, d.h. $ f(U)\subset U $. 
-
 \end{Definition}
 \begin{Lemma}[]
 	Ist dann $ V=U\oplus U' $ eine direkte Zerlegung und $ p,p'\in \End(V) $ die zugehörigen Projektionen, so gilt
@@ -238,8 +226,7 @@
 \paragraph{Bemerkung}
 	Anders gesagt: Die Summe von Eigenräumen zu paarweise verschiedenen Eigenwerten ist direkt.
 \paragraph{Beweis}
-	Zu zeigen: Ist $ \sum_{i=1}^m v_iy_i = 0 $ für Koeffizienten $ y_1,\dots,y_m\in K $, so folgt $ y_1 = \dots = y_m = 0 $.
-	
+	Zu zeigen: Ist $ \sum_{i=1}^m v_iy_i = 0 $ für Koeffizienten $ y_1,\dots,y_m\in K $, so folgt $ y_1 = \dots = y_m = 0 $.\\	
 	Seien $ y_1,\dots,y_m \in K $ und $ w_i := v_iy_i $ und $ w:= \sum_{i=1}^{m}w_i = \sum_{i=1}^{m}v_iy_i$.
 	Wiederholte Anwendung von $ f $ liefert, wegen $ f(w_i) = w_ix_i $
 	
@@ -292,10 +279,8 @@
 \paragraph{Bemerkung}
 	Da Diagonalisierbarkeit bzw. Trigonalisierbarkeit durch die Existenz einer Darstellungsmatrix in spezieller Gestalt definiert wurde, wird in den Charakterisierungen immer (implizit) $ \dim V < \infty $ angenommen.
 \paragraph{Beweis}
-	Wir wissen schon: Ist $ f $ trigonalisierbar, so zerfällt $ \chi_f(t) $ in Linearfaktoren. Umkehrung: Beweis durch vollständige Induktion über $ n=\dim V $.
-	
-	Für $ n=1 $ ist nichts zu zeigen. Sei die Behauptung für $ n-1 $ bewiesen. Für $ n $ folgt dann:
-	
+	Wir wissen schon: Ist $ f $ trigonalisierbar, so zerfällt $ \chi_f(t) $ in Linearfaktoren. Umkehrung: Beweis durch vollständige Induktion über $ n=\dim V $.\\
+	Für $ n=1 $ ist nichts zu zeigen. Sei die Behauptung für $ n-1 $ bewiesen. Für $ n $ folgt dann:\\
 	Da $ \chi_f(t) $ in Linearfaktoren zerfällt
 		\[ \chi_f(t)=\prod_{i=1}^{n}(t-x_i) \]
 	für geeignete $ x_1,\dots,x_n $, ist $ x_1 $ Eigenwert von $ f $. Nun seien

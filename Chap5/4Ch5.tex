@@ -72,57 +72,45 @@
 
 \paragraph{Beispiel}
 Jede Translation $ \tau_v:A\to A $ ist eine Isometrie:
-
-\begin{minipage}[t]{0.55\linewidth}
 	Für $ a,b\in A $ gilt
 		\[ \exists!w\in V: b=\tau_w(a) \]
 	d.h. $ w=b-a $; also
 		\[ \tau_v(b) = \tau_v(\tau_w(a)) = \tau_{v+w}(a) = \tau_w(\tau_v (a)) \]
 	d.h. $ w = \tau_v(b)-\tau_v(a) $.
 	Damit folgt:
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.4\linewidth}
-	%------------------ IsometrieTranslation ----------------
- 	\begin{figure}[H]\centering
- 		\include{Chap5/IsometrieTranslation.tikz}
-	\end{figure}
-	%------------------ IsometrieTranslation ----------------
-\end{minipage}
 	\[ \|\tau_v(b)-\tau_v(a)\| = \|w\| = \|b-a\| \]
 	d.h. $ \tau_v $ ist abstandstreu, da $ a,b\in A $ beliebig waren.
+	
+	%------------------ IsometrieTranslation ----------------
+ 	%\begin{figure}[H]\centering
+ 	%	\include{Chap5/IsometrieTranslation.tikz}
+	%\end{figure}
+	%------------------ IsometrieTranslation ----------------
+
+	
 
 \paragraph{Beispiel}
 	Die Streckung mit Zentrum $ o\in A $ um den Faktor $ s\in \mathbb{R}^\times $,
-	
-	\begin{minipage}[t]{0.55\linewidth}
 		\[ o+v=a\overset{\delta_s}{\mapsto}\delta_s(a) = \delta_s(o+v):= o+vs \]
 	ist winkeltreu, denn für $ a=o+v, b=o+w $ gilt
 		\[ \delta_s(b)-\delta_s(a) = (o+ws)-(o+vs) = \dots = (w-v)s \]
 	und damit für drei paarweise verschiedene Punkte $ a,b,c\in A $
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.4\linewidth}
+		\[ \cos \alpha = \frac{\Skl{\delta_s(b)-\delta_s(a)}{\delta_s(c)-\delta_s(a)}}{\|\delta_s(b)-\delta_s(a)\|\|\delta_s(c)-\delta_s(a)\|} = \frac{\Skl{(b-a)s}{(c-a)s}}{\|(b-a)s\|\|(c-a)s\|} =\frac{s^2}{|s^2|} \cdot \frac{\Skl{b-a}{c-a}}{\|b-a\|\|c-a\|} \]
+	d.h. $ \delta_s $ ist winkeltreu; andererseits ist $ \delta_s $ für $ s\neq \pm 1 $ nicht abstandstreu.
+	Ist $ a \neq b $, so gilt dann
+	\[ \|\delta_s(b)-\delta_s(a)\| = \|b-a\|\cdot |s| \neq \|b-a\|. \] 
+\begin{minipage}[t]{0.45\linewidth}
 	%------------------ IsometrieTranslation ----------------
  	\begin{figure}[H]\centering
  		\include{Chap5/WinkeltreuStreckung.tikz}
 	\end{figure}
 	%------------------ IsometrieTranslation ----------------
 \end{minipage}
-
-		\[ \cos \alpha = \frac{\Skl{\delta_s(b)-\delta_s(a)}{\delta_s(c)-\delta_s(a)}}{\|\delta_s(b)-\delta_s(a)\|\|\delta_s(c)-\delta_s(a)\|} = \frac{\Skl{(b-a)s}{(c-a)s}}{\|(b-a)s\|\|(c-a)s\|} =\frac{s^2}{|s^2|} \cdot \frac{\Skl{b-a}{c-a}}{\|b-a\|\|c-a\|} \]
-		
-\begin{minipage}[t]{0.5\linewidth}
-    \vspace{2cm}
-	d.h. $ \delta_s $ ist winkeltreu; andererseits ist $ \delta_s $ für $ s\neq \pm 1 $ nicht abstandstreu.
-	Ist $ a \neq b $, so gilt dann
-		\[ \|\delta_s(b)-\delta_s(a)\| = \|b-a\|\cdot |s| \neq \|b-a\|. \] 
-\end{minipage}
 \hfill
 \begin{minipage}[t]{0.45\linewidth}
 	%------------------ WinkeltreuAberNichtAbstandstreu ----------------
- 	\begin{figure}[H]\centering
- 		\include{Chap5/WinkeltreuNichtAbstandstreu.tikz}
+	\begin{figure}[H]\centering
+		\include{Chap5/WinkeltreuNichtAbstandstreu.tikz}
 	\end{figure}
 	%------------------ WinkeltreuAberNichtAbstandstreu ----------------
 \end{minipage}		
@@ -162,8 +150,7 @@ Jede Translation $ \tau_v:A\to A $ ist eine Isometrie:
 		\[ \forall v,w\in V: \Skl{f(v)}{f(w)} = \Skl{v}{w}. \]
 	Aus $ f(v) = 0 $ folgt nämlich
 		\[ 0 = \|f(v)\| = 0 = \|v\| \Rightarrow v = 0, \text{ da } \Skl{.}{.}\text{ pos. definit.} \]
-	Ist $ \dim V <\infty $, so folgt mit dem Rangsatz, $ \dim V = \rg f + \dfkt f = \rg $, dass $ f\in Gl(V) $.
-	
+	Ist $ \dim V <\infty $, so folgt mit dem Rangsatz, $ \dim V = \rg f + \dfkt f = \rg $, dass $ f\in Gl(V) $.\\
 	Im Fall $ \dim V = \infty $ ist $ f $ nicht notwendigerweise surjektiv, wie der \emph{Shiftoperator}
 		\[ f\in \End(\R^\N), \forall n\in \N: f(e_n) = e_{n+1} \]
 	zeigt.
@@ -182,34 +169,30 @@ Jede Translation $ \tau_v:A\to A $ ist eine Isometrie:
 % VO 24-05-2016 %
 
 \subsection{Schulgeometrie}
-	Betrachte eine Euklidische Ebene $ A^2 $ über Euklidischem VR $ (\R^2,\Skl{.}{.}) $ mit kanonischem Skalarprodukt
-		\[ \forall i,j\in \{1,2\}:\Skl{e_i}{e_j} = \delta_{ij}. \]
+	Betrachte eine Euklidische Ebene $ A^2 $ über Euklidischem VR $ (\R^2,\Skl{.}{.}) $ mit kanonischem Skalarprodukt $ \forall i,j\in \{1,2\}:\Skl{e_i}{e_j} = \delta_{ij}. $\\
 	Weiter (vgl. Abschnitt 5.3) bezeichne $ J\in \End(\R^2) $ den durch
 		\[ J(e_1) = e_2 \text{ und } J(e_2) = 1 \]
 	definierten Endomorphismus, also eine "`$ 90^{\circ}$-Drehung"',
 	bzw. die $ \R^2 $ mit $ \C $ identifizierende komplexe Multiplikation mit $ i $,
-		\[ v(x+iy) = vx+J(v)y \text{ für }\begin{cases}
-		v\in \R^2\\ (x+iy)\in \C.
+		\[ v(x+iy) = vx+J(v)y \text{ für }
+		\begin{cases}
+			v\in \R^2\\ (x+iy)\in \C.
 		\end{cases} \]
 	Man bemerke: Für $ v\in \R^2\setminus \{0\} $ ist $ \{Jv\}^\perp = [v] $ und damit
 		\[ \forall w\in \R^2: w\perp Jv \Leftrightarrow w\parallel v. \]
-     So ermöglicht $ J $ einen einfachen Wechsel zwischen \emph{parametrischer} und \emph{impliziter Darstellung} (e.g. \emph{Hessesche Normalform}) einer Geraden
-     
-	\begin{minipage}[t]{0.5\linewidth}
-	 \vspace{1.5cm}
+    So ermöglicht $ J $ einen einfachen Wechsel zwischen \emph{parametrischer} und \emph{impliziter Darstellung} (e.g. \emph{Hessesche Normalform}) einer Geraden
+    \begin{multicols}{2}
    		\begin{align*}
 		    g = \{p = o + vx\mid x\in \R\} \Leftrightarrow \\
 		    g = \{p\in A^2\mid \Skl{p-o}{Jv} = 0\} 
 		\end{align*} 
-    \end{minipage}
-    \hfill
-    \begin{minipage}[t]{0.45\linewidth}
+
     	%------------------ ImpliziteDarstellungGerade ----------------
      	\begin{figure}[H]\centering
      		\include{Chap5/ImpliziteDarstellungGerade.tikz}
     	\end{figure}
     	%------------------ ImpliziteDarstellungGerade ----------------
-    \end{minipage}	
+	\end{multicols}
 
 \subsection{Definition}\index{Kreis}
 \begin{Definition}[Kreis, Mittelpunkt]
@@ -224,21 +207,17 @@ Jede Translation $ \tau_v:A\to A $ ist eine Isometrie:
 	Sei $ \{a,b,c\} \subset A^2 $ ein nicht-degeneriertes Dreieck. Dann gibt es genau einen Kreis $ k\subset A^2 $, den \emph{Umkreis} des Dreiecks, der die Eckpunkte $ a,b $ und $ c $ des Dreiecks enthält.
 \end{Satz}	
 	Sein Mittelpunkt ist der Schnittpunkt der drei \emph{Streckensymmetralen}/\emph{Mittelsenkrechten} $ m_{ab}, m_{bc}$ und $ m_{ca} $ des Dreiecks, wobei
-
-    \begin{minipage}[t]{0.41\linewidth}
-        \vspace{2cm}
+    \begin{multicols}{2}
+        \vspace{1cm}
     		\[ m_{ab} = \{p\in A^2\mid \Skl{p-s_{ab}}{b-a} = 0\} \]
-    	mit $ s_{ab} = a\frac{1}{2}+b\frac{1}{2} $ etc.
-    	
-    \end{minipage}
-    \hfill
-    \begin{minipage}[t]{0.58\linewidth}
+	    	\[ \text{mit } s_{ab} = a\frac{1}{2}+b\frac{1}{2} \text{ etc}. \]
+ 
     	%------------------ Umkreis ----------------
      	\begin{figure}[H]\centering
      		\include{Chap5/Umkreis.tikz}
     	\end{figure}
     	%------------------ Umkreis ----------------
-    \end{minipage}		
+    \end{multicols}		
 	
 \paragraph{Beweis}
 	Definiere
