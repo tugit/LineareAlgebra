@@ -7,14 +7,17 @@
 	In diesem Abschnitt ist $ (V,\Skl{.}{.}) $ Euklidisch oder unitär.
 
 \subsection{Definition}\index{normal (Endomorphismen)}
+\begin{Definition}[normal]
 	$ f\in \End(V) $ heißt \emph{normal}, wenn $ f $ eine Adjungierte $ f^*\in \End(V) $ besitzt und 
 		\[ f^*\circ f = f\circ f^*. \]
+\end{Definition}
 \subsection{Buchhaltung}
 	Ist $ \dim V < \infty $ und $ X=\xi_B^B(f) $ Darstellungsmatrix von $ f\in \End(V) $ bzgl. einer ONB $ B $ von $ (V,\Skl{.}{.}) $, so gilt
 		\[ f \text{ normal}\Leftrightarrow X^*X=XX^*, \]
 	d.h. wenn $ X\in \K^{n\times n} $ \emph{normal} ist.
 	
 \subsection{Lemma}
+\begin{Lemma}[]
 	Ist $ f\in \End(V) $ normal, so gilt:
 		\begin{enumerate}[(i)]
 			\item $ \ker f = \ker f^* = f(V)^\perp $;
@@ -23,6 +26,7 @@
 			\item Sind $ v,w\in V $ Eigenvektoren zu EW $ x,y\in \K $ von $ f $, so gilt
 				\[ x = y \text{ oder } v\perp w. \]
 		\end{enumerate}
+\end{Lemma}
 \paragraph{Beweis}
 	Sei $ f\in \End(V) $ normal.
 		\begin{enumerate}
@@ -42,12 +46,14 @@
 
 % VO 09-06-2016 %
 \subsection{Lemma}
+\begin{Lemma}[]
 	Ist $ f\in \End(V) $ normal und $ U\subset V $ UVR, so gilt
 		\begin{enumerate}[(i)]
 			\item Ist $ U\ f $-invariant, so ist $ U^\perp\ f^* $-invariant;
 			\item Ist $ U\ f $- und $ f^* $-invariant, so liefert Einschränkng normale Endomorphismen
 				\[ f\big|_U \in \End(U) \text{ und } f\big|_{U^\perp}\in \End(U^\perp). \]
 		\end{enumerate}
+\end{Lemma}
 \paragraph{Beweis}
 	Für (i) wird nur die Existenz der Adjungierten benutzt.
 		\begin{enumerate}[(i)]
@@ -77,7 +83,9 @@
 	Die Adjungierte hängt von Definitions- und Wertebereich ab!
 	
 \subsection{Spektralsatz (unitärer Fall)}\index{Spektralsatz}
+\begin{Satz}[Spektralsatz]
 	Sei $ (V,\Skl{.}{.}) $ unitär, $ \dim V<\infty $, und sei $ f\in \End(V) $ normal. Dann besitzt $ V $ eine ONB aus Eigenvektoren von $ f $.
+\end{Satz}
 \paragraph{Bemerkung}
 	Es gilt auch die Umkehrung: Ist $ (e_1,\dots,e_n) $ ONB mit
 		\[ f(e_i) = e_ix_i, \text{ also } f^*(e_i) = e_i\overline{x_i},\ i=1,\dots,n, \]
@@ -113,6 +121,7 @@
 		\end{itemize}
 
 \subsection{Korollar \& Definition}	
+\begin{Korollar}[]
 	Ist $ X\in \C^{n\times n} $ normal, $ X^*X = XX^* $, so gilt
 		\[ \exists P\in U(n): P^{-1}XP=\operatorname{diag}(x_1,\dots,x_n). \]
 	Dabei gilt:
@@ -121,6 +130,7 @@
 			\item ist $ X $ \emph{schiefadjungiert}, $ X^*=-X $, so sind $ x_1,\dots,x_n\in i\R $;
 			\item ist $ X $ \emph{unitär}, $ X\in U(n)= \{Y\in \C^{n\times n}\mid Y^*Y=E_n\} $, so gilt $ |x_1|,\dots,|x_n| = 1. $
 		\end{itemize}
+\end{Korollar}
 \paragraph{Beweis}
 	Sei $ X\in \C^{n\times n} $, betrachte $ \C^n $ als unitären VR mit Standardbasis $ E $ als ONB.
 		\[ \Gamma_E(\Skl{.}{.}) = E_n, \]
@@ -143,8 +153,10 @@
 		\[ P = \frac{1}{\sqrt{2}}\begin{pmatrix} i & -i \\ 1 & 1 \end{pmatrix} \]
 
 \subsection{Spektralzerlegung (unitärer Fall)}
+\begin{Lemma}[]
 	Sei $ (V,\Skl{.}{.}) $ unitär, $ \dim V <\infty $, und sei $ f\in \End(V) $ normal; dann zerfällt $ V $ als orthogonale direkte Summe der Eigenräume von $ f $,
 		\[ V = \bigoplus_{x\in \chi_f(\{0\})} \ker(\id_Vx-f). \]
+\end{Lemma}
 \paragraph{Beweis}
 	Folgt direkt aus dem Spektralsatz
 \paragraph{Bemerkung}

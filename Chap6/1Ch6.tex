@@ -109,17 +109,21 @@ $ V $ und $ W $ sind VR über dem gleichen Körper $ K $; die Skalarprodukte sin
 % VO 07-06-2016 %
 
 \subsection{Lemma}
+\begin{Lemma}[]
 	Sind $ f\in \hom(W,V) $ und $ f^*\in \hom(V,W) $ adjungiert, so gilt
 		\[ \ker f^* = f(W)^\perp \]
 	und $ f^* $ ist injektiv, wenn $ f $ surjektiv ist.
+\end{Lemma}
 \paragraph{Beweis}
 	Da die Skalarprodukte $ \SSkl{.}{.} $ und $ \Skl{.}{.} $ auf $ W $ bzw. $ V $ nicht-degeneriert sind, gilt
 		\[ v\in \ker f^* \Leftrightarrow \forall w\in W: \SSkl{f^*(v)}{w} = 0 \Leftrightarrow \forall w\in W: \Skl{v}{f(w)} = 0\Leftrightarrow f(W)^\perp, \]
 	also die erste Behauptung; ist $ f(W)  = V$, so folgt damit $ \ker f^* = f(W)^\perp = V^\perp = \{0\} $.
 
 \subsection{Korollar}
+\begin{Korollar}[]
 	Sind $ (W,\SSkl{.}{.}) $ und $ (V,\Skl{.}{.}) $ Euklidisch oder unitär mit $ \dim V, \dim W < \infty $ und $ f\in \hom(W,V) $ und $ f^*\in \hom(V,W) $ adjungiert, so gilt
 		\[ \rg f^* = \rg f. \]
+\end{Korollar}
 \paragraph{Beweis}
 	In der Situation hier (endlich-dimensional, positiv definite Skalarprodukte) sind $ f(W) $ und $ f(W)^\perp $ komplementäre UR und damit
 		\[ V = f(W)\oplus f(W)^\perp = f(W)\oplus \ker f^*, \]
@@ -142,7 +146,9 @@ $ V $ und $ W $ sind VR über dem gleichen Körper $ K $; die Skalarprodukte sin
 		\[ X\in Gl(n) \Rightarrow X^t \in Gl(n). \]
 		
 \subsection{Lemma}
+\begin{Lemma}[]
 	Sei $ (V,\Skl{.}{.}) $ Euklidisch (unitär); $ f\in Gl(V) $ ist genau dann orthogonal (unitär), wenn $ f $ und $ f^{-1} $ adjungiert sind, $ f^{-1} = f^* $.
+\end{Lemma}
 \paragraph{Beweis}
 	Ist $ f^{-1}=f^* $ zu $ f $ adjungiert, so ist $ f\in O(V) $ (bzw. $ f\in U(V) $), da
 		\[ \forall v,w\in V: \Skl{f(v)}{f(w)} = \Skl{(f^*\circ f)(v)}{w} = \Skl{v}{w}; \]
@@ -168,6 +174,7 @@ $ V $ und $ W $ sind VR über dem gleichen Körper $ K $; die Skalarprodukte sin
 	$ X $ ist also orthogonal/unitär, wenn die Spalten von $ X $ eine ONB von $ \K^{n\times 1} $ mit dem kanonischen Skalarprodukt bilden.
 
 \subsection{Definition}\index{selbstadjungiert}\index{schiefadjungiert}
+\begin{Definition}[selbstadjungiert, symmetrisch ]
 	Sei $ (V,\Skl{.}{.}) $ Euklidisch oder unitär; $ f\in \End(V) $ heißt dann
 		\begin{itemize}
 			\item \emph{selbstadjungiert} oder \emph{symmetrisch}, falls
@@ -175,12 +182,15 @@ $ V $ und $ W $ sind VR über dem gleichen Körper $ K $; die Skalarprodukte sin
 			\item \emph{schiefadjungiert} oder \emph{schiefsymmetrisch}, falls
 				\[ \forall v,w\in V: \Skl{f(v)}{w} + \Skl{v}{f(w)} = 0. \]
 		\end{itemize}
+\end{Definition}
 \paragraph{Bemerkung}
 	$ f\in \End(V) $ ist also genau dann (schief-)symmetrisch, wenn $ f $ eine Adjungierte $ f^* \in \End(V)$ besitzt und $ f^* = \pm f $. Dies ist genau dann der Fall, wenn
 		\[ (v,w)\mapsto \SSkl{v}{w} := \Skl{v}{f(w)} \]
 	eine (schief-)symmetrische Sesquilinearform definiert.
 
 \subsection{Korollar}
+\begin{Korollar}[]
 	Sei $ (V,\Skl{.}{.}) $ Euklidischer VR; eine Projektion $ p\in \End(V) $ ist genau dann Orthogonalprojektion, wenn sie selbstadjungiert ist, $ p^* = p $.
+\end{Korollar}
 \paragraph{Beweis}
 	Lemma Abschnitt 5.5.
