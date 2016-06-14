@@ -42,7 +42,7 @@
 
 \subsection{Korollar \& Definition}\index{Adjungierte}
 \begin{Definition}[Adjungierte]
-	Sind $ (W,\SSkl{.}{.}) $ und $ (V,\Skl{.}{.}) $ Vektorräume mit Skalarprodukten, $ \dim W < \infty $ und $ f\in \hom(W,V) $, so hat $ f $ eine eindeutige \emph{Adjungierte} $ f^* \in \hom(V,W) $;
+	Sind $ (W,\SSkl{.}{.}) $ und $ (V,\Skl{.}{.}) $ Vektorräume mit Skalarprodukten, $ \dim W < \infty $ und $ f\in \Hom(W,V) $, so hat $ f $ eine eindeutige \emph{Adjungierte} $ f^* \in \Hom(V,W) $;
 	dabei ist $ f^* $ \emph{adjungiert zu $ f $}, falls
 		\[ \forall v\in V\forall w\in W: \SSkl{f^*(v)}{w} = \Skl{v}{f(w)}. \]
 \end{Definition}
@@ -59,11 +59,11 @@ $ V $ und $ W $ sind VR über dem gleichen Körper $ K $; die Skalarprodukte sin
 
 \subsection{Definition \& Lemma}
 \begin{Definition}[transponiert, dual]
-	Ist $ f\in \hom(W,V) $, so heißt $ f^t\in \hom(V^*,W^*) $,
+	Ist $ f\in \Hom(W,V) $, so heißt $ f^t\in \Hom(V^*,W^*) $,
 		\[ f^t:V^*\to W^*,\nu\mapsto f^t(\nu):= \nu\circ f \]
 	zu $ f $ \emph{transponiert} oder \emph{dual}. Sind $ \SSkl{.}{.} $ und $ \Skl{.}{.} $ Skalarprodukte auf $ W $ bzw. $ V $ und
 		\[ \psi:W\to W^*\text{ und }\phi:V\to V^* \]
-	die zugehörigen kanonischen Injektionen, und ist $ f^*\in \hom(V,W) $ adjungiert zu $ f $, so gilt
+	die zugehörigen kanonischen Injektionen, und ist $ f^*\in \Hom(V,W) $ adjungiert zu $ f $, so gilt
 		\[ \psi \circ f^* = f^t\circ \phi. \]
 \end{Definition}
 \paragraph{Beweis}
@@ -74,13 +74,13 @@ $ V $ und $ W $ sind VR über dem gleichen Körper $ K $; die Skalarprodukte sin
 \paragraph{Bemerkung}
 	Ist $ \dim W<\infty $, so ist $ \psi $ bijektiv und das Resultat des Lemmas kann als Definition dienen:
 		\[ f^* := \psi^{-1}\circ f^t\circ \phi. \]
-	Wegen $ f^t\in \hom(V^*,W^*) $ folgt damit auch $ f^*\in \hom(V,W) $.
+	Wegen $ f^t\in \Hom(V^*,W^*) $ folgt damit auch $ f^*\in \Hom(V,W) $.
 \paragraph{Bemerkung}
-	$ f\in \hom(W,V) $ hat \emph{immer} eine Transponierte, eine Adjungierte aber nur unter bestimmten Voraussetzungen, z.B. wenn $ \dim W < \infty $.
+	$ f\in \Hom(W,V) $ hat \emph{immer} eine Transponierte, eine Adjungierte aber nur unter bestimmten Voraussetzungen, z.B. wenn $ \dim W < \infty $.
 \paragraph{Bemerkung}
 	Oft wird die Transponierte/Duale $ f^t $ auch mit $ f^* $ bezeichnet.
 \paragraph{Buchhaltung}
-	Sind $ B=(b_1,\dots,b_n) $ und $ C=(c_1,\dots,c_m) $ Basen von $ V $ bzw. $ W $ und $ f\in \hom(W,V) $, so gilt:
+	Sind $ B=(b_1,\dots,b_n) $ und $ C=(c_1,\dots,c_m) $ Basen von $ V $ bzw. $ W $ und $ f\in \Hom(W,V) $, so gilt:
 		\[ \xi_{B^*}^{C^*}(f^t) = \left(\xi_C^B(f)\right)^t. \]
 	Sind $ (V,\Skl{.}{.}) $ und $ (W,\SSkl{.}{.}) $ unitär (oder Euklidisch) und $ B, C $ ONB, so gilt
 		\[ \xi_B^C(f^*) = \left(\xi_C^B(f)\right)^*, \]
@@ -89,12 +89,12 @@ $ V $ und $ W $ sind VR über dem gleichen Körper $ K $; die Skalarprodukte sin
 	In diesem Falle gilt nämlich $ b_j^*=\phi(b_j) $ und $ c_i^* = \psi(c_i) $ und damit
 		\[ x_{ij}^* = c_i^*(f^*(b_j)) = \SSkl{c_i}{f^*(b_j)} = \overline{\Skl{b_j}{f(c_i)}} = \overline{x_{ji}}. \]
 \paragraph{Bemerkung}
-	Sind $ f,g \in \hom(W,V)$ und $ x\in K $, so gilt
+	Sind $ f,g \in \Hom(W,V)$ und $ x\in K $, so gilt
 		\[ (f+gx)^t = f^t+g^tx \text{ und } (f+gx)^* = f^*+g^*\overline{x}. \]
 		
 \subsection{Lemma}
 \begin{Lemma}
-	Sind $ f\in \hom(W,V) $ und $ g\in \hom(V,U) $, so gilt
+	Sind $ f\in \Hom(W,V) $ und $ g\in \Hom(V,U) $, so gilt
 		\[ (g\circ f)^t = f^t \circ g^t \text{ und } (g\circ f)^* = f^* \circ g^*. \]
 \end{Lemma}
 \paragraph{Beweis}
@@ -110,7 +110,7 @@ $ V $ und $ W $ sind VR über dem gleichen Körper $ K $; die Skalarprodukte sin
 
 \subsection{Lemma}
 \begin{Lemma}[]
-	Sind $ f\in \hom(W,V) $ und $ f^*\in \hom(V,W) $ adjungiert, so gilt
+	Sind $ f\in \Hom(W,V) $ und $ f^*\in \Hom(V,W) $ adjungiert, so gilt
 		\[ \ker f^* = f(W)^\perp \]
 	und $ f^* $ ist injektiv, wenn $ f $ surjektiv ist.
 \end{Lemma}
@@ -121,7 +121,7 @@ $ V $ und $ W $ sind VR über dem gleichen Körper $ K $; die Skalarprodukte sin
 
 \subsection{Korollar}
 \begin{Korollar}[]
-	Sind $ (W,\SSkl{.}{.}) $ und $ (V,\Skl{.}{.}) $ Euklidisch oder unitär mit $ \dim V, \dim W < \infty $ und $ f\in \hom(W,V) $ und $ f^*\in \hom(V,W) $ adjungiert, so gilt
+	Sind $ (W,\SSkl{.}{.}) $ und $ (V,\Skl{.}{.}) $ Euklidisch oder unitär mit $ \dim V, \dim W < \infty $ und $ f\in \Hom(W,V) $ und $ f^*\in \Hom(V,W) $ adjungiert, so gilt
 		\[ \rg f^* = \rg f. \]
 \end{Korollar}
 \paragraph{Beweis}
@@ -132,11 +132,11 @@ $ V $ und $ W $ sind VR über dem gleichen Körper $ K $; die Skalarprodukte sin
 	nach Rangsatz für $ f^* $.
 \paragraph{Bemerkung}
 	Ist $ \dim V, \dim W <\infty $, so folgt dann mit der Gleichheit der Abbildungen über die kanonischen Injektionen auch
-		\[ \rg f^t = \rg f \text{ für } f\in \hom(V,W). \]
+		\[ \rg f^t = \rg f \text{ für } f\in \Hom(V,W). \]
 	Daher gilt $ \rg f^* = \rg f $ dann auch für allgemeine Skalarprodukte auf $ \R $- oder $ \C $-VR $ V $ und $ W $.
 
 \subsection{Buchhaltung}
-	Mit den zu $ X\in K^{n\times m} $ und $ Y\in K^{k\times n} $ assoziierten Homomorphismen $ f_X\in \hom(K^m,K^n) $ und $ f_Y\in \hom(K^n,K^k) $ zeigt man also
+	Mit den zu $ X\in K^{n\times m} $ und $ Y\in K^{k\times n} $ assoziierten Homomorphismen $ f_X\in \Hom(K^m,K^n) $ und $ f_Y\in \Hom(K^n,K^k) $ zeigt man also
 		\[ (YX)^t = X^tY^t \text{ und } (YX)^* = X^*Y^*. \]
 	Weiters folgt wegen $ \rg f_X^* = \rg f_X^t = \rg f_X $
 		\[ \rg X^t = \rg X^* = \rg X; \]
