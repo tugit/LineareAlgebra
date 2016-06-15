@@ -164,9 +164,13 @@
 % VO 14-06-2016 %
 
 \subsection{Definition \& Lemma}
+\begin{Definition}[komplexe Erweiterung]
 	Seien $ (V,\Skl{.}{.}) $ Euklidischer VR und $ f\in \End(V) $ normal. Die \emph{komplexe Erweiterung} 
 		\[ f_\C:V_\C \to V_\C, (v,w)\mapsto f_\C(v,w) := (f(v),f(w)) \]
+\end{Definition}
+\begin{Lemma}[]
 	von $ f $ ist dann ein normaler Endomorphismus von $ (V_\C,\SSkl{.}{.}_\C) $.
+\end{Lemma}
 \paragraph{Bemerkung}
 	Die komplexe Erweiterung für $ f\in\Hom(V,W) $ definiert man analog.
 \paragraph{Bemerkung}
@@ -196,6 +200,7 @@
 	Im zweiten Fall $ (y\neq 0) $ ist $ (v,-w) $ ebenfalls Eigenvektor zum Eigenwert $ (x+iy) $ von $ f_\C $, d.h. komplexe Eigenwerte/-vektoren treten in "`komplex konjugierten Paaren"' auf.
 	
 \subsection{Spektralzerlegung (Euklidischer Fall)}\index{Spektralzerlegung}
+\begin{Satz}[Spektralzerlegung (Euklidischer Fall)]
 	Seien $ (V,\Skl{.}{.}) $ Euklidischer VR mit $ \dim V <\infty $ und $ f\in \End(V) $ normal; dann zerfällt $ V $ als orthogonale direkte Summe $ f $- und $ f^* $-invarianter UVR $ V_i $
 		\[ V\bigoplus_{i=1}^mV_i \text{ mit } V_i\perp V_j \text{ für } i\neq j \]
 	und
@@ -204,7 +209,7 @@
 			\dim V_i = 2& \text{und } f|_{V_i} \text{Drehstreckung für }k < i\leq m,
 		\end{cases} \]
 	für geeignetes $ k\in\{0,\dots,m\} $. Beweis nach Lemma.
-
+\end{Satz}
 \subsection{Buchhaltung}
 	Zu einem normalen $ f\in \End(V) $ eines Euklidischen VR $ (V,\Skl{.}{.}) $ mit $ \dim V < \infty $
 	gibt es also eine ONB $ E $ von $ (V,\Skl{.}{.}) $, sodass 
@@ -227,7 +232,9 @@
 		\end{itemize}
 	Entsprechendes gilt für normale Matrizen. Insbesondere erhält man den Satz über die
 \subsection{Hauptachsentransformation}\index{Hauptachsentransformation}
+\begin{Satz}[Hauptachsentransformation]
 	Ist $ (V,\Skl{.}{.}) $ Euklidischer VR mit $ \dim V<\infty $ und $ f\in \End(V) $ selbstadjungiert, so ist $ f $ orthogonal diagonalisierbar.
+\end{Satz}
 \paragraph{Bemerkung}
 	Die Hauptachsentransformation kann zur Bestimmung der Signatur einer symmetrischen Bilinearform $ \sigma:V\times V\to \R $ auf einem $ \R $-VR $ V $ mit $ \dim V <\infty $ dienen:
 		\begin{itemize}
@@ -242,6 +249,7 @@
 	Ist $ E $ ONB aus Eigenvektoren von $ b $, so gilt\footnote{Gleichheit der Einträge; sonst sinnlos!}
 		\[ \Gamma_E(\sigma) = \xi_E^E(b). \]
 \subsection{Quadratwurzelsatz}
+\begin{Satz}[Quadratwurzelsatz]
 	Ist $ (V,\Skl{.}{.}) $ Euklidischer VR und $ f\in \End(V) $ selbstadjungiert, so heißt
 		\begin{enumerate}[(i)]
 			\item $ f $ \emph{positiv semi-definit} $ (f\geq 0) $, falls
@@ -253,6 +261,7 @@
 		\[ \exists! g\in \End(V): \begin{cases}
 		g\geq 0\\f = g\circ g =g^2.
 		\end{cases} \]
+\end{Satz}
 \paragraph{Beweis}
 	Mit Hauptachsentransformation: Ist $ E = (e_1,\dots,e_n) $ ONB aus Eigenvektoren von $ f $,
 		\[ f(e_i) = e_ix_i \text{ mit } x_i = \Skl{e_i}{f(e_i)}\geq 0 \]
@@ -260,8 +269,10 @@
 		\[ g\in\End(V) \text{ mit } \forall i\in \{1,\dots,n\}: g(e_i) = e_i\sqrt{x_i} \]
 	eindeutig die gesuchte "`Quadratwurzel"' von $ f $.
 \subsection{Polarzerlegung}
+\begin{Satz}[Polarzerlegung]
 	Ist $ (V,\Skl{.}{.}) $ Euklidischer VR mit $ \dim V <\infty $, so gilt
 		\[ \forall f\in Gl(V) \exists! h > 0 \exists! k\in O(V) : f = h\circ k. \]
+\end{Satz}
 \paragraph{Beweis}
 	
 	\begin{itemize}
