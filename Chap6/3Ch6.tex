@@ -1,0 +1,147 @@
+% VO 16-06-2016 %
+\section{Nilpotente Endomorphismen und Jordansche Normalform}
+\paragraph{Generalvoraussetzung}
+	In diesem Abschnitt werden nur endlichdimensionale Vektorräume behandelt.
+\subsection{Lemma}
+	Sei $ f\in \End(V) $ und $ p_1(t),p_2(t)\in K[t] $ normiert und teilerfremd.
+	Ist 
+		\[ p(f) = 0, \text{ wobei }p(t) = p_1(t)p_2(t), \]
+	so gilt für $ V_i := \ker p_i(f)\, (i=1,2)$
+		\[ V=V_1\oplus V_2 \text{ und }f(V_i)\subset V_i \]
+\paragraph{Beweis}
+	Für jedes Polynom $ q(t)\in K[t] $ ist $ \ker q(f)\subset V $ ein $ f $-invarianter UVR, da
+		\[ \forall v\in \ker q(f): q(f)(f(v)) = \left(q(f)\circ f\right)(v) \]
+		\[ =\left(f\circ q(f)\right)(v) = f\left(q(f)(v)\right) = 0 \]
+	Wegen $ p(f) = 0 $ gilt
+		\[ \{0\} = p(f)(V) = 
+		\begin{cases}
+			\Big(p_1(f)\circ p_2(f)\Big)(V) \Rightarrow p_2(f)(V)\subset \ker p_1(f)\\
+			\Big(p_2(f)\circ p_1(f)\Big)(V) \Rightarrow p_1(f)(V)\subset \ker p_2(f).
+		\end{cases} \]
+	Da $ p_1(t),p_2(t) $ teilerfremd sind, gilt nach Lemma von B\'ezont (vgl. Abschnitt \ref{Bezout})
+		\[ \exists q_1(t),q_2(t)\in K[t]: 1= q_1(t)p_1(t)+q_2(t)p_2(t), \]
+	und damit
+		\[ V= \Big(p_1(f)\circ q_1(f)+p_2(f)\circ q_2(f) \Big)(V)\subset p_1(f)(V)+p_2(f)(V)\subset V_2+V_1; \]
+	andererseits gilt für $ v\in V_1\cap V_2 $
+		\[ v=\Big(q_1(f)\circ p_1(f)+q_2(f)\circ p_2(f) \Big)(v) \]
+		\[ =q_1(f)\Big(\underbrace{p_1(f)(v)}_0\Big)+q_2(f)\Big(\underbrace{p_2(f)(v)}_0\Big) = 0 \]
+	Also ist $ V=V_1\oplus V_2 $.
+\subsection{Hauptraumzerlegung}
+	Ist das Minimalpolynom $ \mu_f(t)\in K[t] $ eines Endomorphismus $ f\in \End(V) $ Produkt von Linearfaktoren,
+		\[ \mu_f(t) = (t-x_1)^{r_1}\cdots (t-x_m)^{r_m},\, x_i\neq x_j \text{ für }i\neq j \]
+	so ist $ V $ direkte Summe der \emph{Haupträume} zu den Eigenwerten $ x_i $ von $ f $:
+		\[ V=\bigoplus_{i=1}^m V_i \text{ mit }V_i := \ker (\id_Vx_i-f)^{r_i}. \]
+\paragraph{Beweis}
+	Folgt direkt mit dem Lemma (Induktion).
+
+\paragraph{Bemerkung}
+	Der Wert $ k_i = \dim V_i $ ist die algebraische Vielfachheit des Eigenwerts $ x_i $. Formuliert man die Hauptraumzerlegung mit dem charakteristischen Polynom,
+		\[ \chi_f(t) = (t-x_1)^{k_1}\cdots (t-x_m)^{k_m},\, x_i \neq x_j \text{ für } i\neq j, \]
+	so folgt dies leicht, da wegen $ f(V_i)\subset V_i $ und $ x_i\neq x_j $ für $ i\neq j $
+		\[ \chi_{f|_{V_i}}(t) = (t-x_i)^{k_i}\Rightarrow \dim V_i = \deg \chi_{f|_{V_i}} = k_i. \]
+\subsection{Buchhaltung}
+	Ist also
+		\[ \mu_f(t) = (t-x_1)^{r_1}\cdots (t-x_m)^{r_m},\, x_i\neq x_j \text{ für }i\neq j, \]
+	so hat $ f $ eine Darstellungsmatrix in \emph{Block-Diagonalgestalt},
+		\[ \xi_B^B(f) = \begin{pmatrix}
+		X_1 & & 0 \\
+		& \ddots & \\
+		0 & & X_m
+		\end{pmatrix} \text{ mit }X_i \in K^{k_i\times k_i}, \]
+	wobei $ k_i\geq r_i $ die algebraischen Vielfachheiten der Eigenwerte $ x_i $ sind.
+	
+	Dies liefert die "`Makrostruktur"' eines Endomorphismus mit zerfallendem Minimal- oder charakteristischem Polynom -- eine weitere Strukturanalyse der $ f|_{V_i} \in \End(V_i) $ liefert dann die "`Mikrostruktur"' (mögliche Form der $ X_i $'s).
+\paragraph{Bemerkung}
+	Für $ V_i = \ker (\id_Vx_i-f)^{r_i} $ und $ g_i := (f-\id_Vx_i)|_{V_i} \in \End(V_i) $ gilt offenbar $ g_i^{r_i} = 0 $; andererseits ist $ g_i^{r_i-1}\neq 0 $, denn sonst wäre
+		\[ p(t) = (t-x_1)^{r_1}\cdots (t-x_{i-1})^{r_{i-1}}(t-x_i)^{r_i-1}(t-x_{i+1})^{r_{i+1}}\cdots (t-x_m)^{r_m} \]
+	normiertes Annulatorpolynom mit
+		\[ \deg p(t) = \deg \mu_f(t)-1 < \deg \mu_f(t). \]
+	Also wäre $ \mu_f(t) $ nicht Minimalpolynom.
+
+\subsection{Definition}
+	Eine Abbildung $ f\in \End(V) $ heißt \emph{nilpotent}, falls $ f^r=0 $ für ein $ r\in \N $.
+\paragraph{Bemerkung}
+	Die weitere Strukturanalyse eines Endomorphismus mit in Linearfaktoren zerfallendem Minimalpolynom reduziert sich also auf die nilpotenter Endomorphismen
+		\[ g_i = (f-\id_Vx_i)|_{V_i}\in \End(V_i). \]
+	Dies liefert dann die "`Mikrostruktur"'.
+\paragraph{Zur Erinnerung}
+	Ist $ U\subset V $ ein $ f $-invarianter UVR $ f(U)\subset U $, so ist $ f|_U\in \End(V) $; eine $ f $-zyklische Basis von $ U $ ist dann eine Basis der Form (vgl. \ref{fzykl})
+		\[ \left(v,f(v),\dots,f^{r-1}(v)\right). \]
+	Insbesondere besitzt für jedes $ v\in V^\times $ der von $ f $ erzeugte \emph{$ f $-zyklische Unterraum}
+		\[ \mathcal{Z}_v := \left[\left(f^k(v)\right)_{k\in \N}\right] \]
+	eine $ f $-zyklische Basis; ist für $ v\in V $ und $ r\in \N $
+		\[ f^r(v) = 0 \text{ und }f^{r-1}(v)\neq 0, \]
+	so ist $ (v,\dots,f^{r-1}(v)) $ eine $ f $-zyklische Basis von $ \mathcal{Z}_v $.
+\subsection{Lemma}
+	Seien $ f\in \End(V) $ nilpotent, $ f^r = 0 $, und $ v\in V $ so, dass $ f^{r-1}(v)\neq 0 $. Damit existiert ein UVR $ U\subset V $ mit
+		\[ f(U)\subset U \text{ und } V = \mathcal{Z}_v \oplus U. \]
+	Die Einschränkung $ f|_U \in \End(U) $ ist dann nilpotent,
+		\[ {f|_U}^q = 0 \text{ mit } q\leq r. \]
+\paragraph{Beweis} Wurde nicht in der Vorlesung geführt. % TODO fehlt!
+
+\subsection{Struktursatz für nilpotente Endomorphismen}
+	Ist $ f\in \End(V) $ nilpotent, so ist $ V $ direkte Summe $ f $-zyklischer UVR $ \mathcal{Z}_{v_j} $,
+		\[ V = \bigoplus_{j=1}^d \mathcal{Z}_{v_j} =
+		\bigoplus_{j=1}^d \left[\left(f^k(v_j)\right)_{k\in \N}\right].  \]
+	Die Familie der Dimensionen $ (r_1,\dots,r_d) $ der Dimensionen $ r_j = \dim \mathcal{Z}_{v_j} $ ist bis auf Permutationen eindeutig\footnote{Beispielsweise folgt die Eindeutigkeit, wenn man aufsteigende Dimensionen fordert.}.
+\paragraph{Bemerkung}
+	Die Zerlegung in $ f $-zyklische UVR ist \emph{nicht} eindeutig!
+\paragraph{Bemerkung}
+	Da $ \ker f\cap \mathcal{Z}_{v_j} = \left[f^{r_j-1}(v_j) \right] $ für $ j=1\dots,d $, ist $ d = \dfkt f $.
+\subsection{Buchhaltung}
+	Ist also $ f $ nilpotent, so hat $ f $ eine Darstellungsmatrix in Block-Diagonalgestalt,
+		\[ \xi_B^B(f) = \begin{pmatrix}
+		J_1 & & 0 \\
+		& \ddots & \\
+		0 & & J_d
+		\end{pmatrix} \text{ mit } J_j = \begin{pmatrix}
+		0 & & & 0\\1 & \ddots & &\\ & \ddots &\ddots &\\ 0 & & 1 & 0
+		\end{pmatrix} \]
+\paragraph{Beweis}
+	Die Existenz der Zerlegung folgt induktiv aus dem Lemma.
+	
+	Zur Eindeutigkeit der Dimensionsfamilie: Es bezeichne
+		\[ n_k := \#\{r_j = k\mid j = 1,\dots,d \} \]
+	die Anzahl der $ f $-zyklischen UR $ \mathcal{Z}_{v_j} $ mit $ \dim \mathcal{Z}_{v_j} = k $ für $ k=1,\dots,n=\dim V $. Dann gilt
+		\[ \rg f^0 = \sum_{k=1}^{n}kn_k \]
+		\[ \rg f^1 = \sum_{k=2}^{n}(k-1)n_k \]
+		\[ \vdots \]
+		\[ \rg f^s = \sum_{k=s+1}^{n}(k-s)n_k \]
+	für $ s=0,\dots,n-1 $. Also erfüllen die $ n_k $'s ein eindeutig lösbares lineares Gleichungssystem 
+		\[
+		\begin{pmatrix}
+		1 & 2 & \cdots & n \\ 
+		& 1 & \cdots & n-1 \\ 
+		&  & \ddots &  \\ 
+		0 &  &  & 1
+		\end{pmatrix} 
+		\begin{pmatrix}
+		n_1\\
+		\vdots\\
+		\vdots\\
+		n_n
+		\end{pmatrix} = \begin{pmatrix}
+		\rg f^0\\
+		\vdots\\
+		\vdots\\
+		\rg f^{n-1}
+		\end{pmatrix} \]
+\subsection{Jordansche Normalform}
+	Ist das Minimalpolynom $ \mu_f(t)\in K[t] $ eines Endomorphismus $ f\in \End(V) $ Produkt von Linearfaktoren,
+		\[ \mu_f(t) = (t-x_1)^{r_1}\cdots(t-x_m)^{r_m},\, x_i\neq x_j \text{ für }i\neq j \]
+	so besitzt $ f $ eine Darstellungsmatrix in \emph{Jordanscher Normalform}, d.h.
+		\begin{itemize}
+			\item \emph{Makrostruktur}: $ \xi_B^B = \operatorname{diag}(X_1,\dots,X_m) $, wobei $ X_i \in K^{k_i\times k_i} $ mit $ k_i\geq r_i $ die algebraischen Vielfachheiten der Eigenwerte $ x_i $ sind, und
+			\item \emph{Mikrostruktur:} jedes $ X_i = \operatorname{diag}(J_{i1}(x_i),\dots,J_{id}(x_i)) $, mit \emph{Jordanblöcken}
+				\[ J_{ij}(x) = \begin{pmatrix}
+				x &  &  &  \\ 
+				1 & x &  &  \\ 
+				& \ddots & \ddots &  \\ 
+				&  & 1 & x
+				\end{pmatrix}.  \]
+		\end{itemize}
+	Dabei ist $ \xi_B^B(f) $ eindeutig, bis auf Anordnung der Blöcke.
+\paragraph{Bemerkung}
+	Die Basis $ B $ ist \emph{nicht} eindeutig!
+\paragraph{Beweis}
+	Folgt direkt aus den vorigen beiden Sätzen.
