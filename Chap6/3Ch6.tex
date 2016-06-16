@@ -79,24 +79,22 @@
 		\[ {f|_U}^q = 0 \text{ mit } q\leq r. \]
 \paragraph{Beweis}
 	Sei $U\subset V$ ein UVR mit
-		\[f(U)\subset U \text{\quad und \quad} \{0\}=Z_v\cap U\]
+		\[f(U)\subset U \text{\quad und \quad} \{0\}=\mathcal{Z}_v\cap U\]
 	Es gibt solche Unterräume, e.g. $U=\{0\}$. Zu zeigen: Es gibt solch einen Unterraum $U$ mit
-		\[V=Z_v+U\]
-	Strategie: Wir zeigen, dass $U$ vergrößert werden kann, wenn $V\neq Z_v+U$.
-	Sei also 
-		\[V\neq Z_v+U\]
-	Da $f^r(V)=\{0\}\subset Z_v+U$ existiert $s\in\{1,\dots,r\}$ mit
-		\[f^s(V)\subset Z_v+U \text{\quad und \quad} W:=f^{s-1}(V)\not\subset Z_v+U\]
-	Wegen $Z_v\cap U  = \{0\}$ hat $f(w)$ für $w\in W$ eine eindeutige Zerlegung
-		\[f(w)=\sum_{k=0}^{r-1}f^k(v)x_k+u \in Z_v \oplus U\]
+		\[V=\mathcal{Z}_v+U\]
+	Strategie: Wir zeigen, dass $U$ vergrößert werden kann, wenn $V\neq \mathcal{Z}_v+U$, sei das also der Fall.
+	Da $f^r(V)=\{0\}\subset \mathcal{Z}_v+U$ existiert $s\in\{1,\dots,r\}$ mit
+		\[f^s(V)\subset \mathcal{Z}_v+U \text{\quad und \quad} W:=f^{s-1}(V)\not\subset \mathcal{Z}_v+U. \]
+	Wegen $\mathcal{Z}_v\cap U  = \{0\}$ hat $f(w)$ für $w\in W$ eine eindeutige Zerlegung
+		\[f(w)=\sum_{k=0}^{r-1}f^k(v)x_k+u \in \mathcal{Z}_v \oplus U\]
 	wobei
 		\[0=f^r(w)=f^{r-1}(v)x_0+f^{r-1}(u) \quad\Rightarrow x_0=0\]
 	und damit
 		\[f(u')=u\in U \quad\text{für}\quad u':=w-\sum_{k=1}^{r-1} f^{k-1}(v)x_k. \]
 	Folglich ist $U':=[u']+U$ ein $f$-invarianter Unterraum, $f(U')\subset U \subset U'$.
-	Weiters ist $u'-w\in Z_v$.
-	Wählt man also $w\in W\setminus(Z_v+U)$, so erhält man $u'\notin Z_v+U$ und damit
-		\[U'\neq U \quad\text{und}\quad Z_v\cap U'=\{0\}.\]
+	Weiters ist $u'-w\in \mathcal{Z}_v$.
+	Wählt man also $w\in W\setminus(\mathcal{Z}_v+U)$, so erhält man $u'\notin \mathcal{Z}_v+U$ und damit
+		\[U'\neq U \quad\text{und}\quad \mathcal{Z}_v\cap U'=\{0\}.\]
 	Da $f^r=0$ gilt dies offenbar auch für jede Einschränkung von $f$.
 
 \subsection{Struktursatz für nilpotente Endomorphismen}
