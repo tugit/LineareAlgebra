@@ -31,7 +31,7 @@
 	Sei $ f\in \End(V) $ normal.
 		\begin{enumerate}
 			\item[(ii)] Wegen $ f^{**} = f $ gilt für $ v,w\in V $:
-				\[ \Skl{f^*(v)}{f^*(w)-\Skl{f(v)}{f(w)}} = \Skl{(f^{**}\circ f^*)(v)}{w}-\Skl{(f^*\circ f)(v)}{w} = \Skl{(f\circ f^*-f^*\circ f)(v)}{w} = 0 \]
+				\[ \Skl{f^*(v)}{f^*(w)}-\Skl{f(v)}{f(w)} = \Skl{(f^{**}\circ f^*)(v)}{w}-\Skl{(f^*\circ f)(v)}{w} = \Skl{(f\circ f^*-f^*\circ f)(v)}{w} = 0 \]
 			\item[(i)] Wegen (ii) gilt für $ v\in V $
 				\[ f^*(v) = 0 \Rightarrow 0 = \|f^*(v)\|^2 = \|f(v)\|^2\Rightarrow f(v) = 0 \]
 				und umgekehrt, und damit
@@ -202,7 +202,7 @@
 \subsection{Spektralzerlegung (Euklidischer Fall)}\index{Spektralzerlegung}
 \begin{Satz}[Spektralzerlegung (Euklidischer Fall)]
 	Seien $ (V,\Skl{.}{.}) $ Euklidischer VR mit $ \dim V <\infty $ und $ f\in \End(V) $ normal; dann zerfällt $ V $ als orthogonale direkte Summe $ f $- und $ f^* $-invarianter UVR $ V_i $
-		\[ V\bigoplus_{i=1}^mV_i \text{ mit } V_i\perp V_j \text{ für } i\neq j \]
+		\[ V = \bigoplus_{i=1}^mV_i \text{ mit } V_i\perp V_j \text{ für } i\neq j \]
 	und
 		\[ \begin{cases}
 			\dim V_i = 1& \text{und } f|_{V_i} \text{ Streckung für } i\leq k\leq m\\
