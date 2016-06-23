@@ -2,7 +2,7 @@
 \section{Quadriken}
 \paragraph{Generalvoraussetzung}
 	In diesem Abschnitt ist $ (A,V,\tau) $ ein \emph{reeller} affiner Raum über einem $ \R $-VR $ V $; $ \Skl{.}{.} $ ist ein Euklidisches Skalarprodukt.
-\subsection{Definition}
+\subsection{Definition}\index{Quadrik}
 	Eine \emph{Quadrik} $ Q\subset A $ ist die Lösungsmenge einer quadratischen Gleichung
 		\[ Q = \{q=o+v\mid \beta(v,v)+2\lambda(v)+\rho = 0 \} \]
 	wobei $ o\in A $ ein Ursprung ist und
@@ -33,7 +33,7 @@
 	Insbesondere schließen wir $ Q=\emptyset $ aus. 
 	
 	Nach Wahl des Ursprungs $ o\in A $ bestimmt eine echte Quadrik die zugehörige Gleichung bis auf Vielfache: $ (\beta,\lambda,\rho) $ ist bis auf (gemeinsame) Skalarmultiplikation mit $ x\in\R^\times  $ eindeutig bestimmt.
-\subsection{Definition}
+\subsection{Definition}\index{Mittelpunkt}
 	Ein Punkt $ z\in A $ heißt \emph{Mittelpunkt} einer Quadrik $ Q\subset A $, falls
 		\[ \forall q=z+v\in A: q\in Q\Rightarrow z-v\in Q, \]
 	ein Mittelpunkt $ z $ einer Quadrik $ Q $ heißt \emph{Spitze}, falls $ z\in Q $.
@@ -74,7 +74,7 @@
 	Da $ Q $ echte Quadrik ist, folgt also $ \ker \lambda = V $ bzw. $ \lambda = 0 $. Die Behauptung folgt dann mit $ c=-\rho $. Umgekehrt: Ist für ein $ c\in \R $
 		\[ Q=\{q=z+v\in A\mid \beta(v,v)=c \}, \]
 	so ist $ z $ offenbar Mittelpunkt von $ Q $.
-\subsection{Bemerkung \& Definition}
+\subsection{Bemerkung \& Definition}\index{Erzeugende}
 	Ist $ Q\subset A $ ein Kegel mit Spitze $ z\in Q $, so ist für $ q\in Q\setminus\{z\} $ und $ v:= q-z $
 		\[ \forall x\in \R: \beta(vx,vx)= \beta(v,v)x^2 = 0,  \]
 	also ist mit $ q $ auch die gesamte Gerade $ [\{z,q\}] = \{z+vx\mid x\in \R\}\subset Q $. Diese in $ Q $ enthaltenen Geraden heißen auch \emph{Erzeugende} des Kegels.
@@ -85,9 +85,67 @@
 		\item $ c\in \{0,1\} $ und $ p,r\in \N $ mit $ 1\leq p\leq r \leq n $, 
 	\end{itemize}
 	sodass 
-		\[ Q=\{q=o+\sum_{i=1}^{n}e_ix_i\mid \underbrace{\sum_{i=1}^{p}x_i^2}-\sum_{i=p+1}^{r}x_i^2 = c \} \]
+		\[ Q=\left\{q=o+\sum_{i=1}^{n}e_ix_i\mid \sum_{i=1}^{p}x_i^2-\sum_{i=p+1}^{r}x_i^2 = c \right\} \]
 	und $ p $ ist der Positivitätsindex von $ \beta $, $ r-p $ der Negativitätsindex ($ n-r $ Radikaldimension). 
 \paragraph{Beweis}
 	Folgt direkt aus dem Satz von Sylvester.
 \subsection{Bemerkung \& Definition}
 	Zwei echte Mittelpunktsquadriken $ Q,Q' $ sind also genau dann \emph{affin äquivalent}, d.h. $ Q' = \alpha(Q) $ für eine Affinität $ \alpha:A\to A $, wenn $ \sgn(\beta')=\sgn(\beta) $, bzw. $ \sgn(\beta')=\sgn(\pm \beta) $ im Fall eines Kegels.
+% VO 23-06-2016 %
+\subsection{Euklidische Klassifikation der Mittelpunktsquadriken}
+	Ist $ Q\subset A $ eine echte Mittelpunktsquadrik eines Euklidischen Raumes, $ \dim A <\infty $, so existierten 
+	\begin{itemize}
+		\item ein kartesisches Bezugssystem $ (o;e_1,\dots,e_n) $ von $ A $,
+		\item $ c\in \{0,1\} $ und $ p,r\in \N $ mit $ 1\leq p\leq r\leq n $ und
+		\item $ a_i\in (0,\infty) $ für $ i=1,\dots,r $
+	\end{itemize}
+	sodass
+		\[ Q = \left\{o+\sum_{i=1}^{n}e_ix_i\in A \mid \sum_{i=1}^{p}\left(\frac{x_i}{a_i}\right)^2-\sum_{i=p+1}^{r}\left(\frac{x_i}{a_i}\right)^2 = c \right\}. \]
+\paragraph{Beweis}
+	Folgt mit der Hauptachsentransformation (daher ihr Name).
+	Sei $ b\in \End(V) $ so, dass
+		\[ \forall v,w\in V: \beta(v,w) = \Skl{v}{b(w)}, \]
+	nach Riesz existiert ein eindeutiges solches $ b $.
+	
+	Da $ \beta $ symmetrisch ist, gilt $ b^* = b $. Da $ Q $ Mittelpunktsquadrik ist, kann sie mithilfe des Mittelpunkts $ z\in A $ geschrieben werden als
+		\[ Q=\left\{z+v\in A\mid \Skl{v}{b(v)} = c \right\} \]
+	mit o.B.d.A. (Multiplikation der Gleichung mit $ c^{-1} $ im Fall $ c\neq 0 $) $ c\in \{0,1\} $. Nach Hauptachsentransformation existiert eine ONB $ (e_1,\dots,e_n) $ aus Eigenvektoren von $ b $, wobei o.B.d.A die Eigenwerte zu $ e_1,\dots,e_p $ positiv, $ e_{p+1},\dots,e_r $ negativ und zu $ e_{r+1},\dots,e_n $ gleich 0 sind, für $ 0\leq p\leq r\leq n $.
+	
+	Also existieren $ a_1,\dots,a_r\in (0,\infty) $, sodass
+		\[ b(e_i)=\begin{cases}
+			e_i\frac{1}{a_i^2} &\text{für } i = 1,\dots,p\\
+			-e_i\frac{1}{a_i^2} &\text{für } i = p+1,\dots,r\\
+			0 & \text{für } i = r+1,\dots,n.
+		\end{cases} \]
+	Damit gilt mit dem kartesischen Bezugssystem $ (z;e_1,\dots,e_n) $
+		\begin{align*}
+		Q=\left\{z+\sum_{i=1}^{n}e_ix_i\in A\mid c\right.&=\left\langle{\sum_{i=1}^{n}e_ix_i},{b\left(\sum_{j=1}^{n}e_jx_j\right)}\right\rangle \\
+		 &= \left.\sum_{i,j=1}^{n}x_i\Skl{e_i}{b(e_j)}x_j = \sum_{i=1}^{p}\left(\frac{x_i}{a_i}\right)^2-\sum_{i=p+1}^{r}\left(\frac{x_i}{a_i}\right)^2 \right\}.
+		\end{align*}
+	Da $ \#Q \leq 1 $ für $ p=0 $, muss $ p\geq 1 $ sein, denn $ Q $ war als echt vorausgesetzt.
+\paragraph{Bemerkung}
+	Diese beiden Sätze liefern "`Klassifikationen"' in den jeweiligen Geometrien, d.h. eine Einteilung der Menge der Quadriken in Äquivalenzklassen, wobei zwei Quadriken $ Q,Q'\subset A $ äquivalent sind, wenn $ Q $ durch eine Transformation der jeweiligen Geometrie auf $ Q' $ abgebildet werden kann, d.h. $ \alpha $ ist affine Transformation oder Kongruenzabbildung:
+		\[ Q\sim Q' :\Leftrightarrow \exists \alpha:A\to A\: Q' = \alpha(Q). \]
+	Also: Haben (nach Klassifikationssätzen) zwei Quadriken $ Q,Q'$ die gleiche Gleichung (bzgl. affiner/kartesischer Bezugssysteme $ (z;e_1,\dots,e_n) $ bzw. $ (z',e_1',\dots,e_n') $), so existiert eine affine Transformation $ \alpha:A\to A $, definiert durch
+		\[  \alpha(z) = z' \text{ und } \alpha(z+e_i) = z+e_i' \text{ für } i=1,\dots,n \]
+	mit $ \alpha(Q) = Q' $. Die Umkehrung folgt ähnlich (Vorsicht bei Kegeln!).
+\subsection{Beispiel \& Definition}\index{Ellipse}\index{Hyperbel}\index{Asymptotenkegel}
+	In einer Euklidischen Ebene $ E^2 $ ergeben sich als echte Mittelpunktsquadriken
+		\begin{itemize}
+			\item $ p=r=2 : c=1 $ ($ c=0 $ liefert nur einen Punkt) und
+				\[ Q=\left\{z+e_1x_1+e_2x_2\in E^2\mid \left(\frac{x_1}{a_1}\right)^2+\left(\frac{x_2}{a_2}\right)^2 = 1\right\} \]
+				liefert eine \emph{Ellipse} mit \emph{Halbachsenlängen} $ a_1,a_2 > 0$.
+			\item $ p=1 $ und $ r=2 $
+				\begin{itemize}
+					\item mit $ c=1 $ liefert
+						\[ Q=\left\{z+e_1x_1+e_2x_2\in E^2\mid \left(\frac{x_1}{a_1}\right)^2-\left(\frac{x_2}{a_2}\right)^2 = 1\right\} \]
+						eine \emph{Hyperbel} durch die Scheitel $ z=\pm e_1a_1 $ und sich in $ z $ schneidenden Asymptoten.
+					\item mit $ c=0 $ liefert
+						\[ Q=\left\{z+e_1x_1+e_2x_2\in E^2\mid \left(\frac{x_1}{a_1}\right)^2=\left(\frac{x_2}{a_2}\right)^2 \right\} \]
+						den \emph{Asymptotenkegel} der obigen Hyperbel.
+				\end{itemize}
+			\item $ p=r=1 : c=1 $ ($ c=0 $ liefert eine Gerade, also keine echte Mittelpunktsquadrik) liefert
+				\[ Q=\left\{z+e_1x_1+e_2x_2\in E^2\mid \left(\frac{x_1}{a_1}\right)^2 = 1\right\} \]
+			zwei parallele Geraden im Abstand $ 2a_1 > 0$.
+		\end{itemize}
+	
