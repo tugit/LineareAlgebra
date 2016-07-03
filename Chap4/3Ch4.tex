@@ -152,6 +152,15 @@
 	vermittels des Isomorphismus
 		\[ \beta \mapsto \big(v\mapsto\underset{\in \hom(V,W)}{\underbrace{\beta(v,.)}}\big), \]
 	d.h. durch Nacheinandereinsetzen der Argumente.
+	
+	Bew: Laut FSS für Homomorphismen existieren für alle $i\in I$ eindeutige Homomorphismen
+		\[\beta_i:V\to W \quad\text{mit}\quad \beta_i(b_j)=\beta_{ij} \qquad\forall j\in J \]
+	Dies bedeutet also $\beta(b_i,.)=\beta_i(.)$. Nun ist $(\beta_i)_{i\in I}$ eine Familie in $\Hom(V,W)$ und damit existiert wieder nach FSS für Homorphismen ein eindeutiger Homomorphismus
+		\[\beta:V\to \Hom(V,W) \quad\text{mit}\quad \beta(b_i)=\beta_i \qquad\forall i\in I\]
+	Nach Konstruktion ist der Ausdruck $\beta(b_i)(b_j)$ also sinnvoll und bildet auf ein Element $\beta_{ij}\in W$ ab. Wir können $\beta$ nun wie in der Beweisskizze oben isomorph identifizieren:
+		\[\beta: V\times V \to W,\ (v,w)\mapsto \beta(v,w):=\beta(v)(w)\]
+	Die Eindeutigkeit der bilinearen Abbildung ergibt sich aus der Kontruktion.
+	
 \paragraph{Bemerkung}
 	Die Abbildung eines Polynoms auf seine Polynomfunktion auf dem Körper,
 		\[ K[t]\ni p(t)\mapsto (x\mapsto p(x))=\psi_x(p(t))\in K^K \]
