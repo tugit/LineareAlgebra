@@ -106,7 +106,7 @@
 
 \subsection{Einsetzungssatz \& Definitionen}
 	\begin{Satz}[Einsetzungssatz]\index{Einsetzungshomomorphismus}\index{Polynom!-funktion}
-		Seien $ (V,\odot) $ eine unitäre assoziative Algebra und $ v\in V $. Dann ist\footnote{$ v^0 := 1 $ ist sinnvoll, da die Algebra unitär ist.}
+		Seien $ (V,\odot) $ eine unitäre assoziative Algebra und $ v\in V $. Dann ist\footnote{$ v^0 := 1 $ ist sinnvoll, da die Algebra unitär ist. Beachte: $1$ ist das neutrale Element des Zielraumes!}
 			\[ \psi_v: K[t]\to V,\ \sum_{k=0}^{n}t^ka_k = p(t)\mapsto \psi_v(p(t)) := \sum_{k=0}^{n}v^ka_k \]
 		ein Algebra-Homomorphismus; $ \psi_v $ heißt \emph{Einsetzungshomomorphismus}. 
 			\[ p:V\to V,\ v\mapsto p(v) := \psi_v(p(t)) \]
@@ -264,7 +264,7 @@
 	Sei $ p(t)\in K[t] $ mit $ \deg p(t)\geq 1 $. Ist $ x\in K $ eine \emph{Nullstelle} von $ p(t) $, d.h.
 		\[ p(x) = \psi_x(p(t)) = 0, \]
 	\end{Definition}
-	so folgt\footnote{Beachte: $(t-x)=(t- 1\cdot x)=(t-t^0\cdot x)$ um dem Ganzen für den Einsetzungshomomorphismus Sinn zu geben.}
+	so folgt\footnote{Beachte: $(t-x)=(t- 1\cdot x)=(t-t^0\cdot x)$ wobei $1=e_0=t^0$, durch Einsetzungshomomorphismus ändert sich $1$!}
 	\begin{Korollar}[Abspalten von Linearfaktoren mit Hilfe von Nullstellen]
 		\[ \exists! q(t)\in K[t]: p(t) = (t-x) q(t). \]
 	\end{Korollar}
