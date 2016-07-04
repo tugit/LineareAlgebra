@@ -217,15 +217,18 @@
 \paragraph{Bemerkung}
 	Ist $ \deg p(t)\leq \deg d(t) $, so ist die Aussage trivial.
 \paragraph{Beweis}
-	Eindeutigkeit folgt wie im Beispiel; mit
-		\begin{gather*}
+	\begin{itemize}
+	\item Eindeutigkeit: Folgt wie im Beispiel; mit
+		\[
 		p(t) =
 			\begin{cases}
 				d(t)q(t)+r(t)\\
 				d(t)\tilde{q}(t)+\tilde{r}(t)
-			\end{cases}\\
-		\Rightarrow d(t)\big(q(t)-\tilde{q}(t)\big) = \tilde{r}(t)-r(t)
-		\end{gather*}
+			\end{cases}
+		\]
+		\[
+			\Rightarrow d(t)\big(q(t)-\tilde{q}(t)\big) = \tilde{r}(t)-r(t)
+		\]
 	erhält man
 		\begin{align*}
 			\deg d(t) + \deg \big(q(t)-\tilde{q}(t)\big) &= \deg (r(t)-\tilde{r}(t))\\
@@ -236,14 +239,14 @@
 	und damit
 		\[ \tilde{q}(t)=q(t) \text{ und }\tilde{r}(t) = r(t). \]
 	
-	Existenz: Mit $ k := \deg d(t) \geq 0 $ und
+	\item Existenz: Mit $ k := \deg d(t) \geq 0 $ und
 		\[ K[t]_m := \{q(t)\in K[t]\mid \deg q(t)\leq m \} \text{ für }m\in \mathbb{N} \]
 	betrachte man die Abbildung
 		\[ K[t]_m \times K[t]_{k-1}\to K[t]_{k+m},\ \big(q(t), r(t)\big) \mapsto d(t)q(t)+r(t). \]
 	Diese Abbildung ist linear (klar) und injektiv, denn:
 	ist $ q(t) \neq 0 $, so folgt wegen
 		\[ \deg r(t) < k = \deg d(t)\leq \deg d(t)q(t) \]
-	dass %Anm.: da wegen des kleineren Grades der höchste Koeffizient durch die Addition nicht verschwinden kann
+	dass\footnote{$r(t)$ hat kleineren Grad als $d(t)q(t)$, der höchste Koeffizient kann also durch die Addition nicht verschwinden.}
 		\begin{gather*}
 			\deg \big(d(t)q(t) + r(t)\big) = \deg d(t)q(t)\geq k > -\infty\\
 			\Rightarrow d(t)q(t)+r(t)\neq 0,
@@ -254,6 +257,7 @@
 		\[ \dim K[t]_m \times K[t]_{k-1} = (m+1) + k = (k+m) + 1 = \dim K[t]_{k+m} \]
 	liefert diese Abbildung dann für jedes $ m\in \mathbb{N} $ einen Isomorphismus
 		\[ K[t]_m \times K[t]_{k-1} \to K[t]_{k+m}. \]
+	\end{itemize}
 \subsection{Korollar \& Definition}
 	\begin{Definition}[Nullstelle]\index{Nullstelle}
 	Sei $ p(t)\in K[t] $ mit $ \deg p(t)\geq 1 $. Ist $ x\in K $ eine \emph{Nullstelle} von $ p(t) $, d.h.
