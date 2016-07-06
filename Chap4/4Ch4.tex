@@ -206,11 +206,18 @@
 \paragraph{Bemerkung}
 	Falls $ \dim V<\infty $, so ist $ f\in\End(V) $ genau dann diagonalisierbar, wenn $ V $ eine Basis aus Eigenvektoren von $ f $ besitzt. Damit kann man "`Diagonalisierbarkeit"' auch im Falle $ \dim V=\infty $ definieren.
 	
-	Bew: Existiert eine Eigenvektorbasis $B$, so ist $\xi_B^B$ klarerweise diagonal, mit den Eigenwerten als Diagonaleinträgen. %TODO
+	%PERSONAL
+	Bew: Existiert eine Eigenvektorbasis $B$, so ist $\xi_B^B$ klarerweise diagonal, mit den Eigenwerten als Diagonaleinträgen.
+	Sei umgekehrt eine Matrix diagonalisierbar. Betrachtet man die diagonalisierte Matrix so stehen wieder die EW auf der Diagonalen.
+	
 	
 \paragraph{Bemerkung}
 	Ist $ f $ trigonalisierbar (oder gar diagonalisierbar), so zerfällt $ \chi_f (t) $ in Linearfaktoren: für geeignete $ x_1,\dots,x_n\in K $ ist
 		\[ \chi_f(t)=\prod_{j=1}^{n}(t-x_j). \]
+	
+	%PERSONAL
+	Bew: Transformiert man die Darstellungsmatrix von $f$ auf die diagonalisierte Gestalt und bildet die polynomwertige Matrix so folgt über unseren Zugang zum charakteristischen Polynom über die Leibnizformel, dass nur noch das Produkt der Diagonaleinträge stehen bleibt, analog zur Eigenschaft der Determinante für "`normale'" Matrizen.
+
 \subsection{Bemerkung \& Definition}
 \begin{Definition}[Diagonalisierbarkeit, Triagonalisierbarkeit von Matrizen]
 	Man nennt eine Matrix $ X\in K^{n\times n} $ diagonalisierbar (bzw. trigonalisierbar), falls $ f_X\in \End(K^n) $ diagonalisierbar (bzw. trigonalisierbar) ist.
