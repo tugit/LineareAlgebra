@@ -5,7 +5,7 @@ Das Skriptum deckt den Vorlesungsstoff nicht verbindlich vollständig ab!
 
 Wir sind dankbar für jede Art von konstruktiver Kritik an Form, Inhalt und Sprache. Helft uns, das Skriptum fehlerfrei zu bekommen!
 
-Um das PDF herunterzuladen: Download des ganzen Repos mit Download ZIP, im entpackten Ordner ist dann auch das Dokument enthalten.
+**Um das PDF herunterzuladen:** <https://github.com/puenka/LinAlg2JerominSkript/releases/download/1/LinAlg2JerominSkript.pdf>
 
 Grundsätzliche Formatierungsrichtlinien:
 - Struktur beginnt bei \chapter und richtet sich nach dem Vorlesungsaufbau.
