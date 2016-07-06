@@ -3,16 +3,16 @@
 \begin{Definition}[Eigenwert,Eigenvektor,Eigenraum]
 	Seien $ V $ ein $ K $-VR und $ f\in\End(V) $. Dann heißen
 		\begin{enumerate}[(i)]
-			\item $ x\in K $ ein Eigenwert von $ f $, falls \hfill $ \exists v\in V^\times: f(v)=vx; $
-			\item $ v\in V^\times $ ein Eigenvektor von $ f $, falls \hfill $\exists x\in K:f(v)=vx; $
-			\item $ \ker(f-\id_Vx) \subset V $ ein Eigenraum, falls\hfill $\ker(f-\id_Vx) \neq \{0\}.$
+			\item $ x\in K $ ein \emph{Eigenwert} von $ f $, falls  $ \exists v\in V^\times: f(v)=vx; $
+			\item $ v\in V^\times $ ein \emph{Eigenvektor} von $ f $, falls  $\exists x\in K:f(v)=vx; $
+			\item $ \ker(f-\id_Vx) \subset V $ ein \emph{Eigenraum}, falls $\ker(f-\id_Vx) \neq \{0\}.$
 		\end{enumerate}
 	\end{Definition}
 \paragraph{Bemerkung}
 	Der Skalar $ x\in K $ ist genau dann ein Eigenwert von $ f\in \End(V) $, wenn $ \ker(f-\id_Vx)\neq \{0\} $, d.h., wenn ein Eigenvektor $ v\in V^\times $ zu $ x $ existiert.
 \paragraph{Beispiel}
 	Für $ \frac{d}{ds} \in \End(C^\infty(\R))$ ist jedes $ x\in \R $ ein Eigenwert, da
-		\[ \Big(\frac{d}{ds}-\id_Vx\Big)v = 0 \text{ für } v:\R\to\R,s\mapsto v(s):= e^{xs}, \]
+		\[ \Big(\frac{d}{ds}-\id_Vx\Big)v = 0 \text{ für } v:\R\to\R,\ s\mapsto v(s):= e^{xs}, \]
 	wobei $ v\in C^\infty(\R)\setminus \{0\} $, d.h. $ s\mapsto v(s)=e^{xs} $ ist ein Eigenvektor zum Eigenwert $ x\in\R $.
 \paragraph{Beispiel}
 	Ist $ \dim V < \infty $, so kann die Determinante zur Bestimmung von Eigenwerten von Endomorphismen $ f\in\End(V) $ benutzt werden, da
