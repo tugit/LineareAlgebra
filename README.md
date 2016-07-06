@@ -1,7 +1,7 @@
 # LinAlg2JerominSkript
 Hier soll im Verlauf des SS2016 ein von Studenten erstelltes Skript zur Vorlesung Lineare Algebra & Geometrie 2/Jeromin an der TU Wien entstehen.
 
-**Um das PDF herunterzuladen:** <https://github.com/puenka/LinAlg2JerominSkript/releases/download/1/LinAlg2JerominSkript.pdf>
+**Um das PDF herunterzuladen:** <https://github.com/puenka/LinAlg2JerominSkript/releases/download/PDF/LinAlg2JerominSkript.pdf>
 
 Das Skriptum deckt den Vorlesungsstoff nicht verbindlich vollständig ab!
 
