@@ -268,8 +268,10 @@
 			\item Durch Einsetzen: Jeder Eigenwert eines Endomorphismus ist Nullstelle seines Minimalpolynoms.
 			\item Umgekehrt ist auch jede Nullstelle des Minimalpolynoms Eigenwert -- ist $ \mu_f(x) = 0 $, so existiert $ q(t)\in K[t] $ mit
 				\[ \mu_f(t) = q(t)(t-x); \]
-			wäre $ x $ kein Eigenwert, also\footnote{Zur Erinnerung: Ist ein Endomorphismus injektiv oder surjektiv so ist er bijektiv.} $ f-\id_V x \in Gl(V) $, so gälte
-				\[ (f-\id_Vx)(V) = V \Rightarrow \{0\} = \mu_f(f)(V) = q(f)(V), \]
+			wäre $ x $ kein Eigenwert, also\footnote{Zur Erinnerung: Ist ein Endomorphismus injektiv oder surjektiv so ist er bijektiv.} $ f-\id_V x \in Gl(V) $, so gälte für den Linearfaktor unter Einsetzungshomomorphismus:
+				\[ (f-\id_Vx)(V) = V \]
+			also, da $\mu_f(V)=\{0\}$, müsste
+				\[\{0\} = q(f)(V)\]
 			d.h. $ \mu_f(t) $ wäre nicht Minimal-Polynom.
 			\item Ein Endomorphismus ist diagonalisierbar, wenn sein Minimal-Polynom in paarweise verschiedene Linearfaktoren zerfällt.
 		\end{itemize}
