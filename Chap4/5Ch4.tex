@@ -164,24 +164,23 @@
 		\[ \forall v\in V:\chi_f(f)(v) = 0. \]
 	Seien also $ v\in V^\times $ und
 		\[ U := \left[\left( f^k(v)_{k\in \mathbb{N}}\right)\right]\subset V. \]
-	Mit einem zu $ U $ komplementären UVR $ U'\subset V $, $ V=U\oplus U' $, und den zugehörigen Projektionen
-	
-	\begin{multicols}{2}
-	%------------------ Projektion ----------------
- 	\begin{figure}[H]\centering
- 		\include{Chap4/Projektion.tikz}
-	\end{figure}
-	%------------------ Projektion ----------------
-	    \begin{align*}
-		    &p: V\to V, p(V) = U, \ker p = U' \text{ bzw. } \\
-		    &p':V\to V, p'(V) = U', \ker p' = U,
-	    \end{align*}
-	\end{multicols}
+	Mit einem zu $ U $ komplementären UVR $ U'\subset V $, $ V=U\oplus U' $ und den zugehörigen Projektionen
+		\[\begin{aligned}
+		&p: V\to V,\ p(V) = U, &&\ker p = U' \\
+		&p':V\to V,\ p'(V) = U', &&\ker p' = U
+		\end{aligned}\]
 	ist dann $ \chi_f(t) = \chi_{f'}(t)\cdot \chi_{f\mid_U}(t) \text{ mit } f' := p'\circ f\mid_{U'}\in \End(U') $.
 	
 	Damit folgt
 		\[ \chi_f(f)(v) = \chi_{f'}(f) \left(\chi_{f\mid_U}(f)(v) \right) = \chi_{f'}(f)(0)=0 \]
 	nach Korollar oben, da $ U $ eine $ f $-zyklische Basis besitzt und $ v\in U $.
+	
+	%------------------ Projektion ----------------
+	\begin{figure}[h]\centering
+		\include{Chap4/Projektion.tikz}
+		\caption{Geometrische Veranschaulichung der Projektionen}
+	\end{figure}\noindent
+	%------------------ Projektion ----------------#
 	
 % % VO-12-04-2016 % % 
 \subsection{Definition}\index{Annulatorpolynom}\index{Minimalpolynom}
