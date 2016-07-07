@@ -200,7 +200,7 @@
 	Nach dem Satz von Cayley-Hamilton hat jeder Endomorphismus $ f\in\End(f) $ ein Annulatorpolynom, also auch ein Minimalpolynom -- wenn $ \dim V < \infty $.
 	
 \subsection{Lemma}
-\begin{Lemma}[Jedes Minimalpolynom ist Teiler des Annulatorpolynom von $ f\in\End(V) $]
+\begin{Lemma}[Jedes Minimalpolynom ist Teiler des Annulatorpolynom von $ f\in\End(V) $] \label{minpol}
 	Ist $ p(t)\in K[t] $ Annulatorpolynom von $ f\in\End(V) $, so ist jedes Minimalpolynom $ \mu_f(t)\in K[t] $ Teiler von $ p(t) $. 
 \end{Lemma}
 
@@ -216,7 +216,7 @@
 	Das Minimalpolynom $ \mu_f(t)\in K[t] $ eines Endomorphismus $ f\in \End(V) $ ist eindeutig.
 \end{Korollar}
 \paragraph{Beweis}
-	Sind $ \mu_f(t),\tilde{\mu}_f(t)\in K[t] $ Minimalpolynome von $ f\in \End(V) $, so gilt
+	Sind $ \mu_f(t),\tilde{\mu}_f(t)\in K[t] $ Minimalpolynome von $ f\in \End(V) $, so gilt (siehe \ref{minpol})
 		\[ \exists! q(t)\in K[t] : \tilde{\mu}_f(t) = q(t)\mu_f(t) \] % Nach Lemma 4.5.7
 	wobei
 		\begin{itemize}
