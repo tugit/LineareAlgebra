@@ -48,7 +48,7 @@ Seien $ V $ ein $ K $-VR und $ K\ni x\mapsto \overline{x}\in K $ ein (Körper-) 
 			\item $ \forall w\in V: V\ni v \mapsto \sigma(v,w)\in K $ ist \emph{semilinear}, d.h.
 				\begin{enumerate}[(a)]
 					\item $ \forall v,v' \in V: \sigma(v+v',w) = \sigma(v,w)+\sigma(v',w) $ und
-					\item $ \forall v\in V\forall x\in K: \sigma(vx,w) = \overline{x}\sigma(v,w) $.
+					\item $ \forall v\in V\ \forall x\in K: \sigma(vx,w) = \overline{x}\sigma(v,w) $.
 				\end{enumerate}
 		\end{enumerate}
 \end{Definition}
@@ -61,7 +61,7 @@ Seien $ V $ ein $ K $-VR und $ K\ni x\mapsto \overline{x}\in K $ ein (Körper-) 
 	Dieses Beispiel ist unser Grund für die Einführung des Begriffs der Sesquilinearform.
 \paragraph{Bemerkung}
 	Ist $ \sigma $ Bilinearform und Sesquilinearform bezüglich $ \bar{.} $, so ist $ \sigma $ oder $ \bar{.} $ trivial:
-		\[ \forall x\in K\forall v,w\in V: 0 = \sigma(vx,w) - \sigma(vx,w) = (x-\overline{x})\sigma(v,w)  \]
+		\[ \forall x\in K\ \forall v,w\in V: 0 = \sigma(vx,w) - \sigma(vx,w) = (x-\overline{x})\sigma(v,w)  \]
 		\[ \Rightarrow \begin{cases}
 		\forall v,w\in V: \sigma(v,w) = 0 \text{ oder}\\
 		\exists v,w\in V: \sigma(v,w)\neq 0 \land \forall x\in K: \overline{x} = x.
@@ -88,8 +88,7 @@ Seien $ V $ ein $ K $-VR und $ K\ni x\mapsto \overline{x}\in K $ ein (Körper-) 
 	
 	{Existenz:}
 	Da jeder Vektor $ v\in V $ eine eindeutige Basisdarstellung $ v=\sum_{i\in I}b_ix_i $ hat, wird durch
-	\[ \sigma:V\times V \to K, (v,w)= \left(\sum_{i\in I}b_ix_i, \sum_{j\in I}b_jy_j\right) \]
-	\[ \mapsto \sigma(v,w) := \sum_{i,j\in I}\overline{x_i}s_{ij}y_j \]
+	\[ \sigma:V\times V \to K,\ (v,w)= \left(\sum_{i\in I}b_ix_i, \sum_{j\in I}b_jy_j\right) \mapsto \sigma(v,w) := \sum_{i,j\in I}\overline{x_i}s_{ij}y_j \]
 	eine Abbildung wohldefiniert. Offenbar (nachrechnen) ist $ \sigma $ dann sesquilinear. 
 
 \paragraph{Bemerkung}
@@ -101,22 +100,26 @@ Seien $ V $ ein $ K $-VR und $ K\ni x\mapsto \overline{x}\in K $ ein (Körper-) 
 \paragraph{Gramsche Matrix}
 	Ist $ n=\dim V < \infty $ und $ B=(b_1,\dots,b_n) $ Basis von $ V $, so kann man eine Sesquilinearform $ \sigma: V\times V\to K $ durch eine Matrix $ S $ beschreiben:
 	\[ \begin{array}{c|ccc}
-	\sigma & b_1 & \dots & b_n \\ \hline
-	b_1 & s_{11} &  & s_{1n} \\ 
-	\vdots &  & \ddots &  \\ 
-	b_n & s_{n1} &  & s_{nn}
+		\sigma &  b_1   & \dots  &  b_n   \\ \hline
+		 b_1   & s_{11} &        & s_{1n} \\
+		\vdots &        & \ddots &  	  \\
+		 b_n   & s_{n1} &        & s_{nn}
 	\end{array}  \]
 	Diese Matrix
 		\[ \Gamma_B(\sigma) = S = \left(\sigma(b_i,b_j)\right)_{i,j\in \{1,\dots,n\}} \]
 	heißt die Darstellungsmatrix oder \emph{Gramsche Matrix} von $ \sigma $ bezüglich $ B $. Für Vektoren
-		\[ v = \sum_{i=1}^{n}b_ix_i = BX \text{ und } w = \sum_{j=1}^{n}b_jy_j = BY \]
+		\[ v = \sum_{i=1}^{n}b_ix_i = BX \quad\text{und}\quad w = \sum_{j=1}^{n}b_jy_j = BY \quad\text{mit}\ X,Y \in K^{n\times 1} \]
 	ist dann
-		\[ \sigma(v,w) = \sum_{i,j=1}^{n}\overline{x_i}s_{ij}y_j = \overline{X}^tSY \]
-		\[ = (\overline{x_1},\dots,\overline{x_n})\begin{pmatrix}
-		\sum_{i=1}^{n}s_{1j}y_j\\ \vdots\\ \sum_{j=1}^{n}s_{nj}y_j
-		\end{pmatrix} = \sum_{i=1}^{n}\overline{x_i}\sum_{j=1}^{n}s_{ij}y_j. \]
+	\begin{align*}
+		 \sigma(v,w) = \sum_{i,j=1}^{n}\overline{x_i}s_{ij}y_j &= \overline{X}^tSY \\
+		 &= (\overline{x_1},\dots,\overline{x_n})
+			\begin{pmatrix}
+				\sum_{i=1}^{n}s_{1j}y_j\\ \vdots\\ \sum_{j=1}^{n}s_{nj}y_j
+			\end{pmatrix}\\
+		 &= \sum_{i=1}^{n}\overline{x_i}\sum_{j=1}^{n}s_{ij}y_j.
+	\end{align*}
 \paragraph{Transformationsformel}
-	Ein Basiswechsel $ B' = BP $ mit $ P = \xi_{B'}^B \in Gl(n)$ liefert dann
+	Ein Basiswechsel $ B' = BP $ mit $ P = \xi_{B'}^B(\id_V) \in Gl(n)$ liefert dann
 		\[ v = BX = (B'P^{-1})X = B' \underbrace{(P^{-1}X)}_{X'} \text{ und } w = B' \underbrace{(P^{-1}Y)}_{Y'} \]
 	und damit für $ X,Y \in K^{n\times 1} $
 		\[ \overline{X}^tSY = \overline{X'}^t \underbrace{(\overline{P}^tSP)}_{S'} Y' \]
