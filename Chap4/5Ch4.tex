@@ -141,7 +141,8 @@
 		\item $ U $ ist (als lineare Hülle einer Familie) ein UVR von $ V $;
 		\item da gilt
 			\[ \forall k\in \mathbb{N}: f\left(f^k(v)\right)=f^{k+1}(v)\in U \]
-			folgt, dass $ f(U) = f\left(\left[\left(f^k(v)\right)_{k\in{\mathbb{N}}}\right]\right) = \left[\left(f^{k+1}(v)\right)_{k\in{\mathbb{N}}}\right]\subset U. $
+		folgt, dass
+			\[f(U) = f\left(\left[\left(f^k(v)\right)_{k\in{\mathbb{N}}}\right]\right) = \left[\left(f^{k+1}(v)\right)_{k\in{\mathbb{N}}}\right]\subset U. \]
 	\end{itemize}
 	Ist $ \dim V < \infty $ und $ v\neq 0 $, so existiert $ r\in \mathbb{N} $, sodass
 		\[ \left(v,\dots,f^{r-1}(v)\right) \text{ linear unabhängig und }f^r(v)\in\left[\left(v,\dots,f^{r-1}(v)\right)\right]; \]
@@ -150,13 +151,13 @@
 		\item $ \left(v,\dots,f^{r-1}(v) \right) $ ist linear unabhängig.
 		\item $ f^r(v) \in \left[\left(v,\dots,f^{r-1}(v)\right)\right]$, damit gilt
 		\[ \forall k\in \mathbb{N}: k\geq r \Rightarrow f^k(v)\in \left[\left(v,\dots,f^{r-1}(v)\right)\right] \]
+		wie man z.B. mit Induktion sehen kann: ist
+			\[ f^{k-1}(v) = \sum_{j=0}^{r-1}f^j(v)x_j \in \left[\left(v,\dots,f^{r-1}(v)\right) \right], \]
+		so folgt
+			\[ f^k(v) = \sum_{j=1}^{r}f^j(v)x_{j-1}=f^{r}(v)x_{r-1}+\sum_{j=1}^{r-1}f^j(v)x_{j-1}\in \left[\left(v,\dots,f^{r-1}(v)\right)\right] \]
+		und damit
+			\[ U = \left[\left(f^k(v)\right)_{k\in \mathbb{N}}\right]\subset \left[\left(v,\dots,f^{r-1}(v)\right)\right]. \]
 	\end{enumerate}
-	wie man z.B. mit Induktion sehen kann: ist
-		\[ f^{k-1}(v) = \sum_{j=0}^{r-1}f^j(v)x_j \in \left[\left(v,\dots,f^{r-1}(v)\right) \right], \]
-	so folgt
-		\[ f^k(v) = \sum_{j=1}^{r}f^j(v)x_{j-1}=f^{r}(v)x_{r-1}+\sum_{j=1}^{r-1}f^j(v)x_{j-1}\in \left[\left(v,\dots,f^{r-1}(v)\right)\right] \]
-	und damit
-		\[ U = \left[\left(f^k(v)\right)_{k\in \mathbb{N}}\right]\subset \left[\left(v,\dots,f^{r-1}(v)\right)\right]. \]
 		
 \subsection{Beweis vom Satz von Cayley-Hamilton}
 	Zu zeigen: für $ f\in \End(V) $ gilt $ \chi_f(f)=0 $, d.h.
