@@ -31,29 +31,37 @@
 	Damit ist die Darstellungsmatrix von $ f $
 		\[ \xi_B^B(f) =
 		\begin{pmatrix}
-		0 & 0 & \cdots & 0 & -a_0 \\ 
-		1 & 0 & \vdots & \vdots & -a_1 \\ 
-		0 & 1 & \ddots & \vdots & \vdots \\ 
-		\vdots & \vdots & \ddots & 0 & \vdots \\ 
-		0 & \cdots & 0 & 1 & -a_{n-1}
-		\end{pmatrix} =: X\]
-	und Entwicklung von $ \chi_f(t)=\det(E_nt-\xi_B^B(f)) $ nach der ersten Zeile(nach Laplaceschem Entwicklungssatz -- dieser Satz war "`nur"' eine Methode, die Terme in der Leibniz-Formel zu sortieren) liefert
-		\[ \det(E_nt-X) = \det 
-		\begin{pmatrix}
-		t & 0 & \cdots & 0 & a_0 \\ 
-		-1 & t & \vdots & \vdots & a_1 \\ 
-		0 & -1 & \ddots & \vdots & \vdots \\ 
-		\vdots & \vdots & \ddots & t & \vdots \\ 
-		0 & \cdots & 0 & -1 & t+a_{n-1}
-		\end{pmatrix} \]
-		\[ = t \det \begin{pmatrix}
-		t & 0 & \cdots & 0 & a_1 \\ 
-		-1 & t & \vdots & \vdots & a_2 \\ 
-		0 & -1 & \ddots & \vdots & \vdots \\ 
-		\vdots & \vdots & \ddots & t & \vdots \\ 
-		0 & \cdots & 0 & -1 & t+a_{n-1}
-		\end{pmatrix} + (-1)^{n+1} a_0 \det(X_{1n}) \]
-		\[ \overset{\text{mit Ind.}}{=} t (t^{n-1}+t^{n-2}a_{n-1}+\dots+a_1)+a_0 = t^n+t^{n-1}a_{n-1}+\dots,+ta_1+a_0, \]
+			0      & \cdots & \cdots & 0      & -a_0     \\
+			1      & \ddots &        & \vdots & -a_1     \\
+			0      & 1      & \ddots & \vdots & \vdots   \\
+			\vdots & \ddots & \ddots & 0      & \vdots   \\
+			0      & \cdots & 0      & 1      & -a_{n-1}
+		\end{pmatrix} =: X
+		\]
+	und Entwicklung von $ \chi_f(t)=\det(E_nt-\xi_B^B(f)) $ nach der ersten Zeile (nach Laplaceschem Entwicklungssatz -- dieser Satz war "`nur"' eine Methode, die Terme in der Leibniz-Formel zu sortieren) liefert
+	\begin{align*}
+		\det(E_nt-X) &=\det 
+			\begin{pmatrix}
+				t      & 0      & \cdots & 0      & a_0       \\
+				-1     & t      & \ddots & \vdots & a_1       \\
+				0      & -1     & \ddots & 0	  & \vdots    \\
+				\vdots & \ddots & \ddots & t      & \vdots    \\
+				0      & \cdots & 0      & -1     & t+a_{n-1}
+			\end{pmatrix}\\
+		&= t\cdot\det
+			\begin{pmatrix}
+				t      & 0      & \cdots & 0      & a_1       \\
+				-1     & t      & \ddots & \vdots & a_2       \\
+				0      & -1     & \ddots & 0 	  & \vdots    \\
+				\vdots & \ddots & \ddots & t      & \vdots    \\
+				0      & \cdots & 0      & -1     & t+a_{n-1}
+			\end{pmatrix}
+		+ (-1)^{n+1} a_0 \underbrace{\det(X_{1n})}_{(-1)^{n-1}}\\
+		\intertext{mittels vollständiger Induktion folgt}
+		&= t (t(\dots(\underbrace{t(t+a_{n-1})+a_{n-2}}_{\det \begin{pmatrix}t&a_{n-2}\\-1&t+a_{n-1}\end{pmatrix}})\dots)+a_1)+a_0 \\
+		&= t (t^{n-1}+t^{n-2}a_{n-1}+\dots+a_1)+a_0 \\
+		&= t^n+t^{n-1}a_{n-1}+\dots,+ta_1+a_0,
+	\end{align*}
 	wie behauptet.
 	
 \paragraph{Beispiel}
