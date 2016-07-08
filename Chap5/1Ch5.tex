@@ -166,7 +166,7 @@ Dies liefert einen weiteren Äquivalenzbegriff für quadratische Matrizen $ S\in
 		\[ \forall x\in K: \overline{\overline{x}} = \overline{\sigma(vx,w)} = \pm \sigma(w,vx) = \overline{\overline{x}\sigma(v,w)} = \pm \sigma(w,v)x = \overline{\sigma(v,w)}x = x. \]
 % VO 21-04-2016 %
 	Ist $ \Char(K) \neq 2 $ und $ \bar{.}  $ Involution, so kann jede Sesquilinearform in einen symmetrischen und einen schiefsymmetrischen Anteil zerlegt werden:
-		\[ \forall v,w\in V: \sigma(v,w) = \frac{1}{2}\left(\sigma(v,w)+\overline{\sigma(w,v)}\right) +\frac{1}{2}\left(\sigma(v,w)-\overline{\sigma(w,v)} \right).\]
+		\[ \forall v,w\in V: \sigma(v,w) = \underbrace{\frac{1}{2}\left(\sigma(v,w)+\overline{\sigma(w,v)}\right)}_{\text{symm. Anteil}} +\underbrace{\frac{1}{2}\left(\sigma(v,w)-\overline{\sigma(w,v)} \right)}_{\text{schiefsymm. Anteil}}.\]
 \paragraph{Bemerkung}
 	Ist $ \Char(K)\neq 2 $ und $ \bar{.} = \id_K $, so sind "`alternierend"' und "`schiefsymmetrisch"' äquivalent für eine Sesquilinearform $ \sigma $.
 	
@@ -175,12 +175,12 @@ Dies liefert einen weiteren Äquivalenzbegriff für quadratische Matrizen $ S\in
 \paragraph{Buchhaltung}
 	Unter den folgenden Annahmen:
 		\begin{itemize}
-			\item $ \Char(K)\neq 2 $ und $ \bar{.} $ Involution;
+			\item $ \Char(K)\neq 2 $;
 			\item $ n=\dim V <\infty $ und $ B $ ist Basis von $ V $;
 		\end{itemize}
 	gilt für die Gramsche Matrix $ S = \Gamma_B(\sigma) $ einer Sesquilinearform $ \sigma $ auf $ V $:
 		\begin{itemize}
-			\item $ 0 = \overline{S}^t-S\Leftrightarrow \sigma $ symmetrisch;\footnote{bis auf Faktor 2: Gramsche Matrix des schiefsymmetrischen Anteils von $ \sigma $}
+			\item $ 0 = \overline{S}^t-S\Leftrightarrow \sigma $ symmetrisch;\footnote{bis auf Faktor 2: Gramsche Matrix des schiefsymmetrischen Anteils von $ \sigma $, wenn $ \bar{.} $ Involution}
 			\item $ 0 = S + \overline{S}^t \Leftrightarrow \sigma $ schiefsymmetrisch.
 		\end{itemize}
 	Nämlich:
@@ -213,7 +213,7 @@ Dies liefert einen weiteren Äquivalenzbegriff für quadratische Matrizen $ S\in
 	Wegen der Symmetrie von $ \sigma $ ist die \emph{Orthogonalitätsrelation} symmetrisch,
 		\[ w \perp v \Leftrightarrow v \perp w. \]
 \paragraph{Bemerkung}
-	Da $ \forall v\in V: \sigma(v,.) \in V^* $, ist der Orthogonalraum wohldefiniert und (als Schnitt von UVR) ein UVR. Offenbar gilt
+	Da $ \forall v\in V: \sigma(v,.) \in V^* $, ist der Orthogonalraum wohldefiniert und (als Schnitt von UVR) ein UVR. Offenbar gilt\footnote{Da beim Orthogonalraum von $S$ über eine größere Anzahl von Mengen geschnitten wird}
 		\[ \tilde{S} \subset S \Rightarrow \tilde{S}^\perp \supset S^\perp. \]
 	Damit folgt direkt $ S^\perp \supset [S]^\perp $, sind andererseits $ w\in S^\perp $ und $ v\in [S] $, so gilt
 		\[ v = \sum_{s\in S}sx_s \Rightarrow \sigma(v,w)= \sum_{s\in S}\overline{x_s}\sigma(s,w) = 0, \text{ da } \forall s\in S: w\perp s \]
