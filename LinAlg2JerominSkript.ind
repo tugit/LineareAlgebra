@@ -2,19 +2,19 @@
 
   \item $ f $-invarianter Unterraum, \hyperpage{17}
   \item $ f $-zyklische Basis, \hyperpage{21}
-  \item \IeC {\"A}hnlichkeitsgeometrie, \hyperpage{52}
-  \item \IeC {\"A}hnlichkeitstransformation, \hyperpage{52}
-  \item \IeC {\"A}quivalenz von Sesquilinearformen, \hyperpage{43}
+  \item \IeC {\"A}hnlichkeitsgeometrie, \hyperpage{53}
+  \item \IeC {\"A}hnlichkeitstransformation, \hyperpage{53}
+  \item \IeC {\"A}quivalenz von Sesquilinearformen, \hyperpage{44}
 
   \indexspace
 
-  \item Abstand, \hyperpage{51}
-  \item Adjungierte, \hyperpage{64}
+  \item Abstand, \hyperpage{52}
+  \item Adjungierte, \hyperpage{65}
   \item Algebra, \hyperpage{5}
     \subitem -Homomorphismus, \hyperpage{6}
   \item Algebraische/geometrische Vielfachheit, \hyperpage{16}
   \item Annulatorpolynom, \hyperpage{26}
-  \item Asymptotenkegel, \hyperpage{89}
+  \item Asymptotenkegel, \hyperpage{90}
 
   \indexspace
 
@@ -24,17 +24,17 @@
   \indexspace
 
   \item Diagonalisierbarkeit, \hyperpage{17}
-  \item Drehung, \hyperpage{62}
+  \item Drehung, \hyperpage{63}
 
   \indexspace
 
   \item Eigenwert,-vektor,-raum, \hyperpage{13}
   \item Einsetzungshomomorphismus, \hyperpage{6, 7}
-  \item Ellipse, \hyperpage{89}
-  \item Erzeugende, \hyperpage{87}
-  \item Euklidische Geometrie, \hyperpage{52}
-  \item Euklidischer Raum, \hyperpage{51}
-  \item Euler-Gerade, \hyperpage{58}
+  \item Ellipse, \hyperpage{90}
+  \item Erzeugende, \hyperpage{88}
+  \item Euklidische Geometrie, \hyperpage{53}
+  \item Euklidischer Raum, \hyperpage{52}
+  \item Euler-Gerade, \hyperpage{59}
 
   \indexspace
 
@@ -43,55 +43,55 @@
 
   \indexspace
 
-  \item Gram-Schmidtsches Orthogonalisierungsverfahren, \hyperpage{60}
-  \item Gramsche Matrix, \hyperpage{31}
+  \item Gram-Schmidtsches Orthogonalisierungsverfahren, \hyperpage{61}
+  \item Gramsche Matrix, \hyperpage{32}
 
   \indexspace
 
-  \item H\IeC {\"o}hen, \hyperpage{57}
-    \subitem -schnittpunkt, \hyperpage{57}
-  \item Hauptachsentransformation, \hyperpage{76}
-  \item Hyperbel, \hyperpage{89}
+  \item H\IeC {\"o}hen, \hyperpage{58}
+    \subitem -schnittpunkt, \hyperpage{58}
+  \item Hauptachsentransformation, \hyperpage{77}
+  \item Hyperbel, \hyperpage{90}
 
   \indexspace
 
-  \item induzierte Norm, \hyperpage{45}
-  \item Isometrie, \hyperpage{52}
+  \item induzierte Norm, \hyperpage{46}
+  \item Isometrie, \hyperpage{53}
 
   \indexspace
 
-  \item Kartesisches Bezugssystem, \hyperpage{59}
-  \item Komplexifizierung, \hyperpage{46}
-  \item Kongruenzabbildung, \hyperpage{52}
-  \item Kreis, \hyperpage{56}
+  \item Kartesisches Bezugssystem, \hyperpage{60}
+  \item Komplexifizierung, \hyperpage{47}
+  \item Kongruenzabbildung, \hyperpage{53}
+  \item Kreis, \hyperpage{57}
 
   \indexspace
 
-  \item L\IeC {\"a}nge, \hyperpage{51}
+  \item L\IeC {\"a}nge, \hyperpage{52}
   \item Linearfaktorisierung, \hyperpage{10}
 
   \indexspace
 
   \item Minimalpolynom, \hyperpage{26}
-  \item Mittelpunkt, \hyperpage{85}
+  \item Mittelpunkt, \hyperpage{86}
 
   \indexspace
 
-  \item Negativit\IeC {\"a}tsindex, \hyperpage{41}
-  \item Norm, \hyperpage{49}
-  \item normal (Endomorphismen), \hyperpage{70}
+  \item Negativit\IeC {\"a}tsindex, \hyperpage{42}
+  \item Norm, \hyperpage{50}
+  \item normal (Endomorphismen), \hyperpage{71}
   \item Nullstelle, \hyperpage{10}
 
   \indexspace
 
-  \item Orthogonal, \hyperpage{34}
-    \subitem -raum, \hyperpage{34}
-  \item Orthogonale Gruppe, \hyperpage{69}
-  \item orthogonales Komplement, \hyperpage{61}
-  \item Orthogonalprojektion, \hyperpage{59}
+  \item Orthogonal, \hyperpage{35}
+    \subitem -raum, \hyperpage{35}
+  \item Orthogonale Gruppe, \hyperpage{70}
+  \item orthogonales Komplement, \hyperpage{62}
+  \item Orthogonalprojektion, \hyperpage{60}
   \item Orthonormal
-    \subitem -basis, \hyperpage{43}
-    \subitem -system, \hyperpage{43}
+    \subitem -basis, \hyperpage{44}
+    \subitem -system, \hyperpage{44}
 
   \indexspace
 
@@ -101,57 +101,57 @@
     \subitem -funktion, \hyperpage{6}
     \subitem Grad, \hyperpage{4}
     \subitem normiertes, \hyperpage{4}
-  \item positiv definit, \hyperpage{45}
-  \item Positivit\IeC {\"a}tsindex, \hyperpage{41}
+  \item positiv definit, \hyperpage{46}
+  \item Positivit\IeC {\"a}tsindex, \hyperpage{42}
   \item Primpolynome, \hyperpage{11}
 
   \indexspace
 
-  \item quadratische Form, \hyperpage{36}
-  \item Quadrik, \hyperpage{84}
+  \item quadratische Form, \hyperpage{37}
+  \item Quadrik, \hyperpage{85}
 
   \indexspace
 
   \item Radikal
-    \subitem -frei, \hyperpage{35}
-    \subitem -raum, \hyperpage{35}
+    \subitem -frei, \hyperpage{36}
+    \subitem -raum, \hyperpage{36}
 
   \indexspace
 
-  \item schiefadjungiert, \hyperpage{69}
-  \item selbstadjungiert, \hyperpage{69}
-  \item Semilinearit\IeC {\"a}t, \hyperpage{29}
-  \item Sesquilinearform, \hyperpage{29}
-    \subitem (schief-)symmetrische, \hyperpage{32}
-    \subitem assoziierte, \hyperpage{32}
-    \subitem Hermitesche, \hyperpage{32}
-    \subitem kanonische, \hyperpage{32}
-    \subitem Signatur, \hyperpage{41}
-  \item Skalarprodukt, \hyperpage{43}
-  \item Spektralsatz, \hyperpage{72}
-  \item Spektralzerlegung, \hyperpage{76}
-  \item Spiegelung, \hyperpage{61}
+  \item schiefadjungiert, \hyperpage{70}
+  \item selbstadjungiert, \hyperpage{70}
+  \item Semilinearit\IeC {\"a}t, \hyperpage{30}
+  \item Sesquilinearform, \hyperpage{30}
+    \subitem (schief-)symmetrische, \hyperpage{33}
+    \subitem assoziierte, \hyperpage{33}
+    \subitem Hermitesche, \hyperpage{33}
+    \subitem kanonische, \hyperpage{33}
+    \subitem Signatur, \hyperpage{42}
+  \item Skalarprodukt, \hyperpage{44}
+  \item Spektralsatz, \hyperpage{73}
+  \item Spektralzerlegung, \hyperpage{77}
+  \item Spiegelung, \hyperpage{62}
   \item Spur, \hyperpage{15}
-  \item Streckensymmetrale, \hyperpage{56}
+  \item Streckensymmetrale, \hyperpage{57}
 
   \indexspace
 
-  \item Tr\IeC {\"a}gheitsindex, \hyperpage{41}
+  \item Tr\IeC {\"a}gheitsindex, \hyperpage{42}
   \item Triagonalisierbarkeit, \hyperpage{17}
 
   \indexspace
 
-  \item Umkreis, \hyperpage{56}
-  \item Unit\IeC {\"a}re Gruppe, \hyperpage{69}
+  \item Umkreis, \hyperpage{57}
+  \item Unit\IeC {\"a}re Gruppe, \hyperpage{70}
 
   \indexspace
 
   \item Vektorraum
-    \subitem Euklidischer, \hyperpage{45}
-    \subitem unit\IeC {\"a}rer, \hyperpage{45}
+    \subitem Euklidischer, \hyperpage{46}
+    \subitem unit\IeC {\"a}rer, \hyperpage{46}
 
   \indexspace
 
-  \item Winkel, \hyperpage{51}
+  \item Winkel, \hyperpage{52}
 
 \end{theindex}
