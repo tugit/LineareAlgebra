@@ -98,14 +98,19 @@ $ V $ und $ W $ sind VR über dem gleichen Körper $ K $; die Skalarprodukte sin
 		\[ (g\circ f)^t = f^t \circ g^t \text{ und } (g\circ f)^* = f^* \circ g^*. \]
 \end{Lemma}
 \paragraph{Beweis}
-	Nachrechnen/-lesen oder über ein kommutatives Diagramm.
+	Über ein kommutatives Diagramm:
 	%------------------ KommutativesDiagramm ----------------
 	% https://de.wikipedia.org/wiki/Kommutatives_Diagramm
      	\begin{figure}[H]\centering
      		\include{Chap6/KommutativesDiagramm.tikz}
     	\end{figure}
    %------------------ KommutativesDiagramm ----------------	
-
+	oder nachrechnen:
+	Für beliebige $ \nu \in U^* $ gilt
+		\[ (g\circ f)^t(\nu) = \nu \circ (g\circ f) = (\nu \circ g)\circ f = f^t(g^t(\nu)). \]	
+	damit folgt für die Adjungierten (sofern sie existieren)
+		\[ \psi \circ (g\circ f)^* = (g\circ f)^t \circ \mu = f^t\circ g^t \circ \mu = \psi \circ f^*\circ g^* \]
+	mit den kanonischen Injektionen.
 % VO 07-06-2016 %
 
 \subsection{Lemma}
@@ -116,7 +121,7 @@ $ V $ und $ W $ sind VR über dem gleichen Körper $ K $; die Skalarprodukte sin
 \end{Lemma}
 \paragraph{Beweis}
 	Da die Skalarprodukte $ \SSkl{.}{.} $ und $ \Skl{.}{.} $ auf $ W $ bzw. $ V $ nicht-degeneriert sind, gilt
-		\[ v\in \ker f^* \Leftrightarrow \forall w\in W: \SSkl{f^*(v)}{w} = 0 \Leftrightarrow \forall w\in W: \Skl{v}{f(w)} = 0\Leftrightarrow f(W)^\perp, \]
+		\[ v\in \ker f^* \Leftrightarrow \forall w\in W: \SSkl{f^*(v)}{w} = 0 \Leftrightarrow \forall w\in W: \Skl{v}{f(w)} = 0\Leftrightarrow v\in f(W)^\perp, \]
 	also die erste Behauptung; ist $ f(W)  = V$, so folgt damit $ \ker f^* = f(W)^\perp = V^\perp = \{0\} $.
 
 \subsection{Korollar}
