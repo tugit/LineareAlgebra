@@ -113,16 +113,18 @@
 
 \paragraph{Beweis}
 	Auf dem Euklidischen VR $ (V^2,\SSkl{.}{.}) $, wobei
-		\[ \SSkl{.}{.}:V^2\times V^2 \to \R, \left((v,w),(v',w')\right)\mapsto \SSkl{(v,w)}{(v',w')} := \Skl{v}{v'}+\Skl{w}{w'}, \]
+		\[ \SSkl{.}{.}:V^2\times V^2 \to \R,\ \left((v,w),(v',w')\right)\mapsto \SSkl{(v,w)}{(v',w')} := \Skl{v}{v'}+\Skl{w}{w'}, \]
 	definiere $ J\in \End(V^2) $ durch
-		\[ J:V^2 \to V^2, (v,w)\mapsto J\left((v,w)\right):= (-w,v). \]
+		\[ J:V^2 \to V^2,\ (v,w)\mapsto J\left((v,w)\right):= (-w,v). \]
 	Offenbar gilt $ J^2 = -\id_{V^2} $ und
 		\[ \SSkl{J(v,w)}{J(v',w')} = \Skl{w}{w'}+\Skl{v}{v'} = \SSkl{(v,w)}{(v',w')}, \]
 	sodass
 		\[ (v,w)(x+iy) = (v,w)x+J(v,w)y= (vx-wy,wx+vy) \]
 	und
-		\[ \SSkl{(v,w)}{(v',w')}_\C = \SSkl{(v,w)}{(v',w')}-i\SSkl{(v,w)}{J(v',w')}  \]
-		\[ = \left(\Skl{v}{v'}+\Skl{w}{w'}\right) -i\left(-\Skl{v}{w'}+\Skl{w}{v'}\right) \]
+		\begin{align*}
+			\SSkl{(v,w)}{(v',w')}_\C &= \SSkl{(v,w)}{(v',w')}-i\SSkl{(v,w)}{J(v',w')}  \\
+			&= \left(\Skl{v}{v'}+\Skl{w}{w'}\right) -i\left(-\Skl{v}{w'}+\Skl{w}{v'}\right)
+		\end{align*}
 	$ (V^2,\SSkl{.}{.}) $ zu einem unitären VR machen, wie vorher.
 \paragraph{Bemerkung}
 	Mit dem "`Komplexifizierungslemma"' kann man jeden Euklidischen VR in einen unitären VR gleicher (komplexer) Dimension einbetten:
@@ -153,11 +155,14 @@
 	Seien $ v,w\in V $, o.B.d.A $ v\neq 0 $. Wir bestimmen das Minimum der Funktion im Euklidischen Fall (unitärer Fall in der Übung)
 		\[ \R \ni s\mapsto g(s):= \Skl{vs-w}{vs-w}. \]
 	Einsetzen des kritischen Punktes,
-		\[ 0 = g'(s) = 2\Skl{v}{v}s -(\Skl{v}{w}+\Skl{w}{v}) = 2(\Skl{v}{v}s-\Re \Skl{v}{w}) \]
+		\[ 0 = g'(s) = 2\Skl{v}{v}s -(\Skl{v}{w}+\Skl{w}{v}) = 2(\Skl{v}{v}s-\Skl{v}{w}) \]
 		\[ \Rightarrow s = \frac{\Skl{v}{w}}{\Skl{v}{v}} \]
 	liefert
-		\[ 0\leq g(s) = \Skl{v}{v}\frac{\Skl{v}{w}^2}{\Skl{v}{v}^2}-2\Skl{v}{w}\frac{\Skl{v}{w}}{\Skl{v}{v}}+\Skl{w}{w} \]
-		\[ = \frac{1}{\Skl{v}{v}}\left(-\Skl{v}{w}^2+\Skl{v}{v}\Skl{w}{w} \right) \Leftrightarrow 0\leq -\Skl{v}{w}^2+\Skl{v}{v}\Skl{w}{w}. \ \]
+		\begin{align*}
+			0\leq g(s) &= \Skl{v}{v}\frac{\Skl{v}{w}^2}{\Skl{v}{v}^2}-2\Skl{v}{w}\frac{\Skl{v}{w}}{\Skl{v}{v}}+\Skl{w}{w}\\
+			&= \frac{1}{\Skl{v}{v}}\left(-\Skl{v}{w}^2+\Skl{v}{v}\Skl{w}{w} \right) \\
+			&\Leftrightarrow 0\leq -\Skl{v}{w}^2+\Skl{v}{v}\Skl{w}{w}.
+		\end{align*}
 		
 \subsection{Korollar}
 \begin{Korollar}[]
@@ -197,7 +202,7 @@
 	auf $ \R^n $ definierte Norm $ \|.\|_1 $ gilt sie nicht; diese Norm ist also nicht induzierte Norm eines Euklidischen Skalarprodukts auf $ \R^n $.
 \paragraph{Beispiel}
 	Auf dem Raum $ C^0([0,1]) $ der stetigen Funktionen auf $ [0,1] $ definiert
-		\[ \|.\|_\infty: C^0([0,1]) \to \R, f\mapsto \|f\|_\infty := \max_{x\in [0,1]}|f(x)| \]
+		\[ \|.\|_\infty: C^0([0,1]) \to \R,\ f\mapsto \|f\|_\infty := \max_{x\in [0,1]}|f(x)| \]
 	die \emph{Maximumsnorm} (vgl. gleichmäßige Konvergenz).
 	
 	Für $ f,g\in C^0([0,1]) $,
