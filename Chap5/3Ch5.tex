@@ -20,7 +20,7 @@
 	Ein Skalarprodukt $ \Skl{.}{.} $ auf einem $ \K $-VR $ V $ heißt \emph{positiv definit}, falls
 		\[ \forall v\in V^\times:\Skl{ v}{v} >0; \]
 	die \emph{induzierte Norm} eines positiv-definiten Skalarprodukts $ \Skl{.}{.} $ ist die Abbildung
-		\[ \|.\|: V\to \R, v\mapsto \|v\| := \sqrt{\Skl{ v}{v}}\geq 0. \]
+		\[ \|.\|: V\to \R,\ v\mapsto \|v\| := \sqrt{\Skl{ v}{v}}\geq 0. \]
 	Ein $ \K $-VR $ (V,\Skl{.}{.} ) $ mit positiv-definitem Skalarprodukt ist
 		\begin{itemize}
 			\item ein \emph{Euklidischer Vektorraum}, falls $ \K=\R $, und
@@ -53,14 +53,17 @@
 	Ist nun $ S\subset V $ linear unabhängig über $ \C $ (in $ V $ als $ \C $-VR), so ist
 		\[ S' := S\cup Si = S \cup \{si\mid s\in S\} \]
 	linear unabhängig über $ \R $, denn
-		\[ 0 = \sum_{s\in S}sx_s + \sum_{s\in S}siy_s = \sum_{s\in S} s (x_s+iy_s) \]
-		\[ \Rightarrow \forall s\in S: x_s + iy_s = 0\Rightarrow \forall s\in S: x_s = y_s = 0, \]
+		\begin{align*}
+			0 &= \sum_{s\in S}sx_s + \sum_{s\in S}siy_s = \sum_{s\in S} s (x_s+iy_s)\\
+			&\Rightarrow \forall s\in S: x_s + iy_s = 0\\
+			&\Rightarrow \forall s\in S: x_s = y_s = 0,
+		\end{align*}
 	d.h. $ S' = S\cup S_i $ ist linear unabhängig über $ \R $.
 	Insbesondere folgt
 		\[ \dim_\R V = 2\dim_\C V.  \]
 
 	Weiters definiert für ein Hermitesches Skalarprodukt $ \Skl{ .}{. } $ auf $ V $ (als $ \C $-VR)
-		\[ \Skl{ .}{. } :V\times V\to \R, (v,w)\mapsto \Skl{ v}{w }_\R := \Re \Skl{v}{w } \]
+		\[ \Skl{ .}{. } :V\times V\to \R,\ (v,w)\mapsto \Skl{ v}{w }_\R := \Re \Skl{v}{w } \]
 	ein reelles Skalarprodukt auf $ V $ (als $ \R $-VR), das genau dann positiv definit ist, wenn $ \Skl{.}{. } $ positiv definit ist:
 		\[ \forall v\in V: \Skl{v}{v }_\R = \Skl{v}{v }. \]
 	Damit kann man jeden unitären Vektorraum als Euklidischen Vektorraum auffassen:
@@ -71,20 +74,20 @@
 \index{Komplexifizierung}
 \paragraph{Komplexifizierung}
 	Fasst man einen $ \C $-VR $ V $ als $ \R $-VR auf, so liefert Multiplikation mit $ i\in \C $ einen Endomorphismus
-		\[ J:V\to V, v\mapsto J(v):= vi \] % Skalarmultiplikation in $ V $ als $ \C $-VR.
+		\[ J:V\to V,\ v\mapsto J(v):= vi \] % Skalarmultiplikation in $ V $ als $ \C $-VR.
 	mit
 		\[ J^2 = -\id_V. \]
 	Insbesondere besitzt $ J $ keine reellen Eigenwerte;
-	ist $ \dim V < \infty $, so folgt damit
-		\[ \dim V = \deg{\chi_J}(t) = 0 \mod 2. \]
+	ist $ \dim V < \infty $, so folgt damit\footnote{Nach dem Fundamentalsatz (siehe \ref{fund}) treten komplexe Nullstellen immer in konjugierten Paaren auf}
+		\[ \dim V = \deg{\chi_J}(t) = 0\ \text{mod}\ 2. \]
 	Umgekehrt: Ist $ V $ ein $ \R $-VR und $ J\in \End(V) $ mit $ J^2 = -\id_V $ gegeben, so erhält man eine komplexe Skalarmultiplikation
-		\[ \cdot :\C\times V \to V, (z,v)\mapsto vz := vx+J(v)y, \]
+		\[ \cdot :\C\times V \to V,\ (z,v)\mapsto vz := vx+J(v)y, \]
 	für $ z = x+iy $.
 	Ist weiter $ \Skl{.}{.} $ ein (reelles) Skalarprodukt auf $ V $, das von $ J $ erhalten wird, 
 		\[ \forall v,w\in V: \Skl{Jv}{Jw} = \Skl{v}{w}, \]
 	so definiert
 		\[ \Skl{v}{w}_\C := \Skl{v}{w} -i \Skl{v}{Jw} \]
-	ein Hermitesches Skalarprodukt auf dem so konstruierten $ \C $-VR.
+	ein Hermitesches Skalarprodukt auf dem so konstruierten $ \C $-VR (siehe Aufgabe 53).
 
 \paragraph{Beispiel}\label{JDrehung}
 	Ist $ \Skl{.}{.} $ das kanonische Skalarprodukt auf $ \R^2 $, mit der Standardbasis $ (e_1,e_2) $ als ONB, so definiert (Fortsetzungssatz)

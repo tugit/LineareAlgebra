@@ -2,7 +2,7 @@
 \section{Der Satz von Sylvester}
 \paragraph{Beispiel}
 	Ist $ \sigma $ symmetrische Sesquilinearform auf $ V=\mathbb{Z}^2_2 $ mit
-		\[ \sigma(e_1,e_1)=0, \sigma(e_1,e_2) = 1, \sigma(e_2,e_2) = 0, \]
+		\[ \sigma(e_1,e_1):=0,\ \sigma(e_1,e_2) := 1,\ \sigma(e_2,e_2) := 0, \]
 	so ist $ \sigma $ (wie vorher) nicht-degeneriert, $ V^\perp =\{0\}$; trotzdem gilt
 		\[ \forall v\in V: \sigma(v,v) = 0. \]
 	Das folgende Lemma zeigt, dass dies ein degenerierter Fall ist:
@@ -14,7 +14,7 @@
 	wobei
 \end{Lemma}
 \begin{Definition}[quadratische Form]
-		\[ q:V\to K, v\mapsto q(v):= \sigma(v,v) \]
+		\[ q:V\to K,\ v\mapsto q(v):= \sigma(v,v) \]
 	die zu $ \sigma $ gehörige \emph{quadratische Form} bezeichnet.
 \end{Definition}
 \paragraph{Beweis}
@@ -69,10 +69,9 @@
 \paragraph{Beweis}
 	Es gilt $ V = [b]+\{b\}^\perp $, da für $ v\in V $
 		\[ v = u + b\frac{\sigma(b,v)}{\sigma(b,b)} \text{ mit } u := v-b\frac{\sigma(b,v)}{\sigma(b,b)}\perp b;\footnote{denn $ \sigma(b,u) = \sigma(b,v-b\frac{\sigma(b,v)}{\sigma(b,b)}) = \sigma(b,v)-\sigma(b,b)\frac{\sigma(b,v)}{\sigma(b,b)} = 0 $} \]
-	ist $ v\in [b]\cap \{b\}^\perp $, so gilt
-		\[ v = bx \text{ für ein }x\in K \text{ und} \]
-		\[ 0 = \sigma(b,v) = \sigma(b,bx) = \sigma(b,b)x \]
-			\[ \Rightarrow x = 0 \land v = 0, \]
+	Ist außerdem $v=bx$, also $ v\in [b]\cap \{b\}^\perp $, so gilt
+		\[ 0 = \sigma(b,v) = \sigma(b,bx) = \underbrace{\sigma(b,b)}_{\neq 0}x \]
+			\[ \Rightarrow x = 0 \Rightarrow v = 0, \]
 	d.h. $ [b]\cap \{b\}^\perp = \{0\}$ und damit folgt die Behauptung.
 \paragraph{Bemerkung}
 	Ist $ \sigma(b,b) = 0 $ für $ b \in V $, so gilt
@@ -108,7 +107,7 @@
 		\[ s_{ii}' = \overline{a_i}s_{ii}a_i \]
 	für gegebene $ s_{ii}' $ (nach den $ a_i $) lösen kann. Zum Beispiel:
 \subsection{Korollar}
-\begin{Korollar}[]
+\begin{Korollar}[]\label{silkor1}
 	Ist $ \sigma $ symmetrische Bilinearform auf einem $ \C $-VR $ V $ mit $ \dim V < \infty $, so besitzt $ V $ eine Basis $ B = (b_1,\dots,b_n) $, sodass
 		\[ \exists r\in \mathbb{N}: s_{ij} = \sigma(b_i,b_j) = \begin{cases}
 		1 & \text{für } i = j \leq r\\
@@ -135,7 +134,7 @@
 		\[ \sigma(b_i,b_i) = \sigma(b_i',b_i') = 0 \text{ für } i = r+1,\dots, n. \]
 		
 \subsection{Korollar}
-\begin{Korollar}[]
+\begin{Korollar}[]\label{silkor2}
 	Ist $ V $ ein $ K $-VR mit $ \dim V <\infty $ und $ \sigma $ entweder
 		\begin{itemize}
 			\item symmetrische Bilinearform, wenn $ K=\R $, oder
@@ -194,7 +193,7 @@
 \end{Definition}	
 	Der Satz von Sylvester wird auch "`Trägheitssatz von Sylvester"' genannt.
 \paragraph{Beweis}
-	Sei $ B=(b_1,\dots,b_n) $ eine Basis von $ V $ und $ p,r\in \mathbb{N} $, sodass (siehe Korollar oben)
+	Sei $ B=(b_1,\dots,b_n) $ eine Basis von $ V $ und $ p,r\in \mathbb{N} $, sodass (siehe Korollar \ref{silkor2})
 		\[ \sigma(b_i,b_j) =
 		\begin{cases}
 			+1 & \text{ für } 0 < i=j\leq p\\
@@ -217,10 +216,10 @@
 				v\in \tilde{V}_\pm^\times.
 			\end{cases} \]
 	Nun gilt
-	\begin{align*}
-		&\forall v\in V_-^\times: \sigma(v,v)< 0 \\
-		&\Rightarrow \forall v\in V_- \oplus V^\perp: \sigma(v,v) \leq 0
-	\end{align*}
+	\begin{gather*}
+		\forall v\in V_-^\times: \sigma(v,v)< 0 \\
+		\Rightarrow \forall v\in V_- \oplus V^\perp: \sigma(v,v) \leq 0
+	\end{gather*}
 	und damit, da $ \sigma(v,v)>0 $ für $ v\in \tilde{V}_+^\times $,
 		\[ v\in (V_-\oplus V^\perp)\cap \tilde{V}_+ \Rightarrow v= 0. \]
 	Es folgt, mit dem Dimensionssatz, $ \tilde{p}\leq p $, da
@@ -243,7 +242,7 @@
 				\end{pmatrix} \]
 			die Signatur $ \sgn(\sigma) = (1,1,0)\cong (1,1) $.
 			Jeder weitere Basiswechsel
-				\[ \tilde{B}=BQ \text{ mit } Q = \begin{pmatrix}
+				\[ \tilde{B}=BQ \quad\text{mit}\quad Q = \begin{pmatrix}
 				\cosh(s) & \sinh(s)\\ \sinh(s)& \cosh(s) 
 				\end{pmatrix}, s\in \R, \]
 			liefert eine andere Zerlegung, ohne die Gramsche Matrix zu ändern.
@@ -254,7 +253,7 @@
 				4 & 0 \\ 0 & 0
 				\end{pmatrix}, \]
 			also die Signatur $ \sgn(\sigma) = (1,0,1) $ von $ \sigma $. Hier ist $ V^\perp = [\{b_2\}]$ durch $ \sigma $ festgelegt, aber jeder Basiswechsel
-				\[ \tilde{B} = BQ \text{ mit } Q= \begin{pmatrix}
+				\[ \tilde{B} = BQ \quad\text{mit}\quad Q= \begin{pmatrix}
 				1 & 0 \\ s & 1
 				\end{pmatrix}, s\in \R \]
 			ändert die der Basis zugeordnete Zerlegung -- wieder ohne Änderung der Gramschen Matrix.
@@ -275,7 +274,7 @@
 		
 \subsection{Definition}\index{Skalarprodukt}\index{Orthonormal!-system}\index{Orthonormal!-basis}
 	Ein \emph{Skalarprodukt} auf einem $ K $-VR $ V $ ist eine nicht-degenerierte symmetrische Sesquilinearform
-		\[ \langle.,.\rangle:V\times V \to K, (v,w)\mapsto \langle v,w\rangle. \]
+		\[ \langle.,.\rangle:V\times V \to K,\ (v,w)\mapsto \langle v,w\rangle. \]
 	Eine Familie $ (e_i)_{i\in I} $ in einem VR $ (V,\langle.,.\rangle) $ mit Skalarprodukt heißt \emph{Orthonormalsystem (ONS)}, falls
 		\[ \forall i,j\in I: \langle e_i,e_j\rangle = \pm \delta_{ij}; \]
 	\emph{Orthonormalbasis (ONB)}, falls $ (e_i)_{i\in I} $ zusätzlich Basis ist.
@@ -283,8 +282,8 @@
 	Ein ONS ist linear unabhängig:
 
 	Für $ v=\sum_{i\in I}e_ix_i $ gilt
-		\[ 0 = v \Rightarrow \forall i\in I: 0 = \langle e_i,v\rangle = \sum_{j\in I}\langle e_i,e_j\rangle x_j = \pm x_i \]
-	Ist $ \dim V < \infty $, so hat $ (V,\langle.,.\rangle) $ jedenfalls eine ONB, wenn das Skalarprodukt
+		\[ 0 = v \quad\Rightarrow \forall i\in I: 0 = \langle e_i,v\rangle = \sum_{j\in I}\langle e_i,e_j\rangle x_j = \pm x_i \]
+	Ist $ \dim V < \infty $, so hat $ (V,\langle.,.\rangle) $ jedenfalls eine ONB, wenn das Skalarprodukt (siehe \ref{silkor1} und \ref{silkor2})
 		\begin{itemize}
 			\item symmetrische Bilinearform auf einem $ \K $-VR ist, oder
 			\item Hermitesche Sesquilinearform auf einem $ \C $-VR ist.
@@ -295,11 +294,14 @@
 		\[ V=\{(x_n)_{n\in \mathbb{N}}\in \R^\mathbb{N}, \exists c\in \R\forall n\in \mathbb{N}: |x_n|<c \}, \]
 	führen wir ein Skalarprodukt, durch Angabe seiner quadratischen Form (Polarisation!) ein:
 		\[ \langle (x_n)_{n\in \mathbb{N}},(x_n)_{n\in \mathbb{N}}\rangle := \sum_{n\in \mathbb{N}}\left(\frac{x_n}{2^n}\right)^2.  \]
+	%PERSONAL ADDITION:
+		Mittels Polarisation ist für $(x_n)_{n \in \N},(y_n)_{n \in \N} \in V$ also
+			\[\sigma((x_n)_{n \in \N},(y_n)_{n \in \N})=\sum_{n \in \N} \frac{x_ny_n}{2^{2n}}\]
 	Man erhält ein ONS $ (e_n)_{n\in \mathbb{N}} $ aus skalierten Standardvektoren
-		\[ e_m:\mathbb{N}\to \R, n\mapsto e_m(n):= 2^n\delta_{mn}. \]
-	Dieses ONS kann zu einer Basis ergänzt werden (nach BES), nicht jedoch zu einer ONB (in unserem Sinne):
-		\[ \langle e_m, v\rangle = \frac{x_m}{2^m} \text{ für } v=(x_{n})_{n\in \mathbb{N}}, \]
-	also gilt
+		\[ e_m:\mathbb{N}\to \R,\ n\mapsto e_m(n):= 2^n\delta_{mn}. \]
+	Dieses ONS kann zu einer Basis ergänzt werden (nach BES), nicht jedoch zu einer ONB (in unserem Sinne)\footnote{$v$ bezeichnet einen Vektor mit dem wir unser ONS zu erweitern versuchen, mit der Anforderung, dass die Erweiterung durch $v$ wieder ein ONS ist!}:
+		\[ \langle e_m, v\rangle = \frac{x_m}{2^m} \quad\text{für } v=(x_{n})_{n\in \mathbb{N}}, \]
+	also gilt die Implikation
 		\[ \forall m\in \mathbb{N}: v\perp e_m \Rightarrow v = 0. \]
 \paragraph{Bemerkung}
 	Später wird der Begriff "`Basis"' modifiziert, z.B. in der Funktionalanalysis würde man $ (e_m)_{m\in \mathbb{N}} $ aus dem Beispiel als "`Orthonormalbasis"' bezeichnen.
