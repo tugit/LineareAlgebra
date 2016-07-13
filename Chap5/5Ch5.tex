@@ -13,7 +13,7 @@
 		\[ \ker p' = p(V)\perp \ker p = p'(V.) \]
 \paragraph{Bemerkung}
 	Ist $ (o;E) $ mit $ E=(e_i)_{i\in I} $ kartesisches Bezugssystem eines Euklidischen Raumes $ A $ und $ J\subset I $, so liefert
-		\[ \pi: A\to A, a = o+v \mapsto o+p(v) := o+\sum_{i\in J}e_i\Skl{e_i}{v} \]
+		\[ \pi: A\to A,\ a = o+v \mapsto o+p(v) := o+\sum_{i\in J}e_i\Skl{e_i}{v} \]
 	eine Orthogonalprojektion von $ A $ auf
 		\[ \pi(A) = o + p(V) = o + [(e_i)_{i\in J}]. \]
 
@@ -27,10 +27,10 @@
 	Ist $ (v_1,\dots,v_{n+1}) $ linear unabhängig und (nach Induktions-Annahme) $ (e_1,\dots,e_n) $ ONS mit
 		\[ V_k := [(v_1,\dots,v_k)] = [(e_1,\dots,e_k)] \text{ und } \Skl{e_k}{v_k} > 0 \text{ für } k = 1,\dots,n, \]
 	so setzen wir
-		\[ p:V\to V, v\mapsto p(v):= v-\sum_{i=1}^{n}e_i\Skl{e_i}{v}\in \{e_1,\dots,e_n\}^\perp; \]
-	da $ v_{n+1}\notin V_n $ ist
-		\[ p(v_{n+1}) \neq 0, \text{ und } e_{n+1} := p(v_{n+1})\frac{1}{\|p(v_{n+1})\|} \]
-	ergänzt dann $ (e_1,\dots,e_n) $ zum gesuchten Orthonormalsystem.
+		\[ p:V\to V,\ v\mapsto p(v):= v-\sum_{i=1}^{n}e_i\Skl{e_i}{v}\in \{e_1,\dots,e_n\}^\perp; \]
+	da $ v_{n+1}\notin V_n $ ist\footnote{da nur $e_1,\dots,e_n$ skaliert abgezogen werden!}  $p(v_{n+1}) \neq 0$ und 
+		\[e_{n+1} := p(v_{n+1})\frac{1}{\|p(v_{n+1})\|} \]
+	ergänzt dann $ (e_1,\dots,e_n) $ zum gesuchten Orthonormalsystem\footnote{da $p$ Orthogonalprojektion ist, $v_{n+1}\notin \ker p$ und $e_1,\dots,e_n\in \ker p$}.
 \paragraph{Bemerkung}
 	Das ONS $ (e_1,\dots,e_n) $ im Gram-Schmidtschen Verfahren ist durch die Bedingungen $ (*) $ eindeutig festgelegt.
 \paragraph{Bemerkung}
@@ -46,7 +46,7 @@
 \end{Definition}
 \paragraph{Beweis}
 	Für $ v\in U\cap U^\perp $ ist $ \Skl{v}{v} = 0 $, also $ v = 0 $, da das Skalarprodukt positiv definit ist. Sei $ (e_1,\dots,e_k) $ ONB von $ U $ (Gram-Schmidt) und
-		\[ p:V\to V, v\mapsto p(v) := \sum_{i=1}^{k}e_i\Skl{e_i}{v}\in U. \]
+		\[ p:V\to V,\ v\mapsto p(v) := \sum_{i=1}^{k}e_i\Skl{e_i}{v}\in U. \]
 	Wegen
 		\[ \Skl{e_j}{v-p(v)} = \Skl{e_j}{v}-\sum_{i=1}^{k}\delta_{ij}\Skl{e_i}{v} = 0 \]
 	für $ j = 1,\dots, k $ ist dann
@@ -62,7 +62,7 @@
 		\[ s := p-p' \in \End(V) \]
 % TODO Grafik %
 	Im Falle einer Orthogonalprojektion $ p $ nennt man die zugehörige Transformation	
-		\[ \sigma: A\to A, o+v\mapsto \sigma(o+v):= o+s(v) \]
+		\[ \sigma: A\to A,\ o+v\mapsto \sigma(o+v):= o+s(v) \]
 	eines Euklidischen Raumes eine \emph{Spiegelung}: $ \sigma $ ist eine Isometrie, da
 		\[ \forall v\in V: \|p(v)\pm p'(v)\|^2 =
 			\begin{cases}
@@ -76,7 +76,7 @@
 	Ist $ A^2 $ Euklidische Ebene mit kartesischem Bezugssystem $ (o;e_1,e_2) $ und $ J\in \End(\R^2) $ wie oben,
 	$ J(e_1) = e_2 \text{ und } J(e_2) = -e_1 $
 	so liefert 
-		\[ \rho_\theta : A^2\to A^2, o+v\mapsto \rho_\vartheta(o+v):= o+v\cos \vartheta + J(v)\sin\vartheta \]
+		\[ \rho_\theta : A^2\to A^2,\ o+v\mapsto \rho_\vartheta(o+v):= o+v\cos \vartheta + J(v)\sin\vartheta \]
 	eine \emph{Drehung} mit \emph{Zentrum} $ o\in A^2 $ und \emph{Drehwinkel} $ \vartheta \in \R $. Die affine Abbildung $ \rho_\vartheta $ ist dann Komposition zweier Spiegelungen, 
 		\[ \rho_\vartheta= \sigma'\circ \sigma, \]
 	die durch ihre Fixpunktgeraden festgelegt sind:
@@ -85,7 +85,7 @@
 % TODO Grafik Drehung % 
 
 \subsection{Lemma}
-\begin{Lemma}
+\begin{Lemma}\label{sadj}
 	Eine Projektion $ p\in \End(V) $ ist genau dann Orthogonalprojektion, wenn
 		\[ \forall v,w\in V: \Skl{p(v)}{w} = \Skl{v}{p(w)} \]
 \end{Lemma}
@@ -93,7 +93,7 @@
 	Sei $ p\in \End(V) $ Projektion und $ p' = \id_V - p $ die komplementäre Projektion mit
 		\[ \ker p = p'(V) \text{ und } p(V) = \ker p'. \]
 	Ist $ p $ Orthogonalprojektion, $ p(V)\perp \ker p = p'(V) $, so ist für $ v,w\in V $
-		\[ \Skl{p(v)}{w}-\Skl{v}{p(w)} = \Skl{p(v)}{p(w)}+\underset{\perp}{\underbrace{\Skl{p(v)}{p'(w)}}} - \Skl{p(v)}{p(w)}-\underset{\perp}{\underbrace{\Skl{p'(v)}{p(w)}}} = 0. \]
+		\[ \Skl{p(v)}{w}-\Skl{v}{p(w)} = \Skl{p(v)}{p(w)}+\underset{0}{\underbrace{\Skl{p(v)}{p'(w)}}} - \Skl{p(v)}{p(w)}-\underset{0}{\underbrace{\Skl{p'(v)}{p(w)}}} = 0. \]
 	Gilt andererseits für $ v,w\in V $, also insbesondere für $ v\in p(V), w\in \ker p $, stets
 		\[ 0 = \Skl{p(v)}{w}-\Skl{v}{p(w)} = \Skl{v}{w}, \]
 	so ist $ p(V)\perp \ker p $, also $ p $ Orthogonalprojektion.

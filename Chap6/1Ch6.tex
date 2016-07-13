@@ -12,7 +12,7 @@
 \subsection{Rieszsches Darstellungslemma}
 \begin{Lemma}[Rieszsches Darstellungslemma]
 	Sei $ (V,\Skl{.}{.}) $ ein $ K $-VR mit Skalarprodukt. Die \emph{kanonische Injektion}
-		\[ \phi : V\to V^*, v\mapsto \phi(v):= \Skl{v}{.}. \]
+		\[ \phi : V\to V^*,\ v\mapsto \phi(v):= \Skl{v}{.}. \]
 	ist semi-linear und injektiv. Ist $ \dim V < \infty $, so ist $ \phi $ auch surjektiv; wir nennen dann
 		\begin{itemize}
 			\item $\nabla w := \phi^{-1}(w) $ den \emph{Gradienten} von $ w\in V^* $, und
@@ -50,60 +50,73 @@
 $ V $ und $ W $ sind VR über dem gleichen Körper $ K $; die Skalarprodukte sind sesquilinear bzgl. des gleichen Körperautomorphismus!
 \paragraph{Beweis}
 	Für jedes $ v\in V $ definiert
-		\[ \omega_v:W\to K, w\mapsto \omega_v(w) := \Skl{v}{f(w)} \]
+		\[ \omega_v:W\to K,\ w\mapsto \omega_v(w) := \Skl{v}{f(w)} \]
 	eine Linearform $ \omega_v\in W^* $; nach Rieszschem Darstellungslemma erhält man daher eine eindeutige Abbildung 
-		\[ f^*:V\to W, v\mapsto f^*(v):= \nabla \omega_v. \]
-	Die Linearität von $ f^* $ folgt aus der dualen Abbildung, siehe unten.
+		\[ f^*:V\to W,\ v\mapsto f^*(v):= \nabla \omega_v. \]
+	%PERSONAL:
+	Genauer: Wir haben eine Gleichung $W^*\ni\SSkl{s}{.} = \Skl{v}{f(.)}\in W^*$ und wollen das Bild $s\in W$ der Adjungierten von $v$ bestimmen (also $s\in W$ wird unbestimmt als Bildvektor unter der Adjungierten von $v$ angesetzt).
+	Nach Rieszschen Darstellungslemma gibt es, da $\dim W<\infty$ und damit die kanonische Injektion surjektiv, einen Vektor $s\in W$ dessen kanonische Injektion die Linearform der rechten Seite ergibt.
+	Damit ist $s(v)=\nabla\Skl{v}{f(.)}$.
+	
+	Die Linearität von $ f^* $ folgt aus der dualen Abbildung, (siehe Bemerkung bei \ref{adjhom}).
 \paragraph{Bemerkung}
 	Offenbar (Symmetrie) ist $ f^{**} = f $, wenn $ f^{**} := (f^*)^* $ existiert.
 
 \subsection{Definition \& Lemma}
 \begin{Definition}[transponiert, dual]
 	Ist $ f\in \Hom(W,V) $, so heißt $ f^t\in \Hom(V^*,W^*) $,
-		\[ f^t:V^*\to W^*,\nu\mapsto f^t(\nu):= \nu\circ f \]
+		\[ f^t:V^*\to W^*,\ \nu\mapsto f^t(\nu):= \nu\circ f \]
 	zu $ f $ \emph{transponiert} oder \emph{dual}. Sind $ \SSkl{.}{.} $ und $ \Skl{.}{.} $ Skalarprodukte auf $ W $ bzw. $ V $ und
 		\[ \psi:W\to W^*\text{ und }\phi:V\to V^* \]
 	die zugehörigen kanonischen Injektionen, und ist $ f^*\in \Hom(V,W) $ adjungiert zu $ f $, so gilt
-		\[ \psi \circ f^* = f^t\circ \phi. \]
+	% TODO: Diagramm
+	\begin{equation}
+		\psi \circ f^* = f^t\circ \phi. \tag{$\star$}
+		\label{lemtrans}
+	\end{equation}
+
 \end{Definition}
 \paragraph{Beweis}
 	Für $ v\in V $ und $ w\in W $ gilt:
-		\[ \left((\psi\circ f^*)(v)\right)(w) = \SSkl{f^*(v)}{w} \]
-		\[ \left((f^t\circ \phi)(v)\right)(w) = (\phi(v)\circ f)(w) = \Skl{v}{f(w)} \]
+		\begin{align*}
+			\left((\psi\circ f^*)(v)\right)(w) &= \SSkl{f^*(v)}{w}\\
+			\left((f^t\circ \phi)(v)\right)(w) &= (\phi(v)\circ f)(w) = \Skl{v}{f(w)}
+		\end{align*}
 	und nach Definition der Adjungierten folgt die Gleichheit.
 \paragraph{Bemerkung}
-	Ist $ \dim W<\infty $, so ist $ \psi $ bijektiv und das Resultat des Lemmas kann als Definition dienen:
+	Ist $ \dim W<\infty $, so ist $ \psi $ bijektiv und (\ref{lemtrans}) kann als Definition dienen:
 		\[ f^* := \psi^{-1}\circ f^t\circ \phi. \]
-	Wegen $ f^t\in \Hom(V^*,W^*) $ folgt damit auch $ f^*\in \Hom(V,W) $.
+	Wegen $ f^t\in \Hom(V^*,W^*) $ folgt damit auch $ f^*\in \Hom(V,W) $.\label{adjhom}
 \paragraph{Bemerkung}
 	$ f\in \Hom(W,V) $ hat \emph{immer} eine Transponierte, eine Adjungierte aber nur unter bestimmten Voraussetzungen, z.B. wenn $ \dim W < \infty $.
 \paragraph{Bemerkung}
 	Oft wird die Transponierte/Duale $ f^t $ auch mit $ f^* $ bezeichnet.
 \paragraph{Buchhaltung}
-	Sind $ B=(b_1,\dots,b_n) $ und $ C=(c_1,\dots,c_m) $ Basen von $ V $ bzw. $ W $ und $ f\in \Hom(W,V) $, so gilt:
+	Sind $ B=(b_1,\dots,b_n) $ und $ C=(c_1,\dots,c_m) $ Basen von $ V $ bzw. $ W $ und $ f\in \Hom(W,V) $, so gilt (siehe Aufgabe 75):
 		\[ \xi_{B^*}^{C^*}(f^t) = \left(\xi_C^B(f)\right)^t. \]
-	Sind $ (V,\Skl{.}{.}) $ und $ (W,\SSkl{.}{.}) $ unitär (oder Euklidisch) und $ B, C $ ONB, so gilt
+	Sind $ (V,\Skl{.}{.}) $ und $ (W,\SSkl{.}{.}) $ unitär (oder Euklidisch) und $ B$ und $C $ ONB, so gilt
 		\[ \xi_B^C(f^*) = \left(\xi_C^B(f)\right)^*, \]
 	wobei 
 		\[ X^*:= \overline{X}^t \text{ für } X\in K^{n\times m}. \]
 	In diesem Falle gilt nämlich $ b_j^*=\phi(b_j) $ und $ c_i^* = \psi(c_i) $ und damit
-		\[ x_{ij}^* = c_i^*(f^*(b_j)) = \SSkl{c_i}{f^*(b_j)} = \overline{\Skl{b_j}{f(c_i)}} = \overline{x_{ji}}. \]
+		\[ x_{ij}^* = c_i^*(f^*(b_j)) = \SSkl{c_i}{f^*(b_j)} = \overline{\Skl{b_j}{f(c_i)}} =\overline{b_j^*(f(c_i))}= \overline{x_{ji}}. \]
 \paragraph{Bemerkung}
 	Sind $ f,g \in \Hom(W,V)$ und $ x\in K $, so gilt
-		\[ (f+gx)^t = f^t+g^tx \text{ und } (f+gx)^* = f^*+g^*\overline{x}. \]
+		\[ (f+gx)^t = f^t+g^tx \quad\text{und}\quad (f+gx)^* = f^*+g^*\overline{x}. \]
 		
 \subsection{Lemma}
 \begin{Lemma}
 	Sind $ f\in \Hom(W,V) $ und $ g\in \Hom(V,U) $, so gilt
-		\[ (g\circ f)^t = f^t \circ g^t \text{ und } (g\circ f)^* = f^* \circ g^*. \]
+		\[ (g\circ f)^t = f^t \circ g^t \quad\text{und}\quad (g\circ f)^* = f^* \circ g^*. \]
 \end{Lemma}
 \paragraph{Beweis}
 	Über ein kommutatives Diagramm:
 	%------------------ KommutativesDiagramm ----------------
 	% https://de.wikipedia.org/wiki/Kommutatives_Diagramm
-     	\begin{figure}[H]\centering
+     	\begin{figure}[h]\centering
      		\include{Chap6/KommutativesDiagramm.tikz}
-    	\end{figure}
+     		\caption{Kommutatives Diagramm}
+    	\end{figure}\noindent
    %------------------ KommutativesDiagramm ----------------	
 	oder nachrechnen:
 	Für beliebige $ \nu \in U^* $ gilt
@@ -121,7 +134,11 @@ $ V $ und $ W $ sind VR über dem gleichen Körper $ K $; die Skalarprodukte sin
 \end{Lemma}
 \paragraph{Beweis}
 	Da die Skalarprodukte $ \SSkl{.}{.} $ und $ \Skl{.}{.} $ auf $ W $ bzw. $ V $ nicht-degeneriert sind, gilt
-		\[ v\in \ker f^* \Leftrightarrow \forall w\in W: \SSkl{f^*(v)}{w} = 0 \Leftrightarrow \forall w\in W: \Skl{v}{f(w)} = 0\Leftrightarrow v\in f(W)^\perp, \]
+		\begin{align*}
+			v\in \ker f^* &\Leftrightarrow \forall w\in W: \SSkl{f^*(v)}{w} = 0 \\
+			&\Leftrightarrow \forall w\in W: \Skl{v}{f(w)} = 0 \\
+			&\Leftrightarrow v\in f(W)^\perp,
+		\end{align*}
 	also die erste Behauptung; ist $ f(W)  = V$, so folgt damit $ \ker f^* = f(W)^\perp = V^\perp = \{0\} $.
 
 \subsection{Korollar}
@@ -152,7 +169,7 @@ $ V $ und $ W $ sind VR über dem gleichen Körper $ K $; die Skalarprodukte sin
 		
 \subsection{Lemma}
 \begin{Lemma}[]
-	Sei $ (V,\Skl{.}{.}) $ Euklidisch (unitär); $ f\in Gl(V) $ ist genau dann orthogonal (unitär), wenn $ f $ und $ f^{-1} $ adjungiert sind, $ f^{-1} = f^* $.
+	Sei $ (V,\Skl{.}{.}) $ Euklidisch (unitär); $ f\in Gl(V) $ ist genau dann orthogonal (unitär), wenn $ f $ und $ f^{-1} $ adjungiert sind, also $  f^*=f^{-1} $.
 \end{Lemma}
 \paragraph{Beweis}
 	Ist $ f^{-1}=f^* $ zu $ f $ adjungiert, so ist $ f\in O(V) $ (bzw. $ f\in U(V) $), da
@@ -198,4 +215,4 @@ $ V $ und $ W $ sind VR über dem gleichen Körper $ K $; die Skalarprodukte sin
 	Sei $ (V,\Skl{.}{.}) $ Euklidischer VR; eine Projektion $ p\in \End(V) $ ist genau dann Orthogonalprojektion, wenn sie selbstadjungiert ist, $ p^* = p $.
 \end{Korollar}
 \paragraph{Beweis}
-	Lemma Abschnitt 5.5.
+	Lemma \ref{sadj}

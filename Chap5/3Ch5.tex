@@ -20,7 +20,7 @@
 	Ein Skalarprodukt $ \Skl{.}{.} $ auf einem $ \K $-VR $ V $ heißt \emph{positiv definit}, falls
 		\[ \forall v\in V^\times:\Skl{ v}{v} >0; \]
 	die \emph{induzierte Norm} eines positiv-definiten Skalarprodukts $ \Skl{.}{.} $ ist die Abbildung
-		\[ \|.\|: V\to \R,\ v\mapsto \|v\| := \sqrt{\Skl{ v}{v}}\geq 0. \]
+		\[ \|.\|: V\to \R, v\mapsto \|v\| := \sqrt{\Skl{ v}{v}}\geq 0. \]
 	Ein $ \K $-VR $ (V,\Skl{.}{.} ) $ mit positiv-definitem Skalarprodukt ist
 		\begin{itemize}
 			\item ein \emph{Euklidischer Vektorraum}, falls $ \K=\R $, und
@@ -53,17 +53,14 @@
 	Ist nun $ S\subset V $ linear unabhängig über $ \C $ (in $ V $ als $ \C $-VR), so ist
 		\[ S' := S\cup Si = S \cup \{si\mid s\in S\} \]
 	linear unabhängig über $ \R $, denn
-		\begin{align*}
-			0 &= \sum_{s\in S}sx_s + \sum_{s\in S}siy_s = \sum_{s\in S} s (x_s+iy_s)\\
-			&\Rightarrow \forall s\in S: x_s + iy_s = 0\\
-			&\Rightarrow \forall s\in S: x_s = y_s = 0,
-		\end{align*}
+		\[ 0 = \sum_{s\in S}sx_s + \sum_{s\in S}siy_s = \sum_{s\in S} s (x_s+iy_s) \]
+		\[ \Rightarrow \forall s\in S: x_s + iy_s = 0\Rightarrow \forall s\in S: x_s = y_s = 0, \]
 	d.h. $ S' = S\cup S_i $ ist linear unabhängig über $ \R $.
 	Insbesondere folgt
 		\[ \dim_\R V = 2\dim_\C V.  \]
 
 	Weiters definiert für ein Hermitesches Skalarprodukt $ \Skl{ .}{. } $ auf $ V $ (als $ \C $-VR)
-		\[ \Skl{ .}{. } :V\times V\to \R,\ (v,w)\mapsto \Skl{ v}{w }_\R := \Re \Skl{v}{w } \]
+		\[ \Skl{ .}{. } :V\times V\to \R, (v,w)\mapsto \Skl{ v}{w }_\R := \Re \Skl{v}{w } \]
 	ein reelles Skalarprodukt auf $ V $ (als $ \R $-VR), das genau dann positiv definit ist, wenn $ \Skl{.}{. } $ positiv definit ist:
 		\[ \forall v\in V: \Skl{v}{v }_\R = \Skl{v}{v }. \]
 	Damit kann man jeden unitären Vektorraum als Euklidischen Vektorraum auffassen:
@@ -74,20 +71,20 @@
 \index{Komplexifizierung}
 \paragraph{Komplexifizierung}
 	Fasst man einen $ \C $-VR $ V $ als $ \R $-VR auf, so liefert Multiplikation mit $ i\in \C $ einen Endomorphismus
-		\[ J:V\to V,\ v\mapsto J(v):= vi \] % Skalarmultiplikation in $ V $ als $ \C $-VR.
+		\[ J:V\to V, v\mapsto J(v):= vi \] % Skalarmultiplikation in $ V $ als $ \C $-VR.
 	mit
 		\[ J^2 = -\id_V. \]
 	Insbesondere besitzt $ J $ keine reellen Eigenwerte;
-	ist $ \dim V < \infty $, so folgt damit\footnote{Nach dem Fundamentalsatz (siehe \ref{fund}) treten komplexe Nullstellen immer in konjugierten Paaren auf}
-		\[ \dim V = \deg{\chi_J}(t) = 0\ \text{mod}\ 2. \]
+	ist $ \dim V < \infty $, so folgt damit
+		\[ \dim V = \deg{\chi_J}(t) = 0 \mod 2. \]
 	Umgekehrt: Ist $ V $ ein $ \R $-VR und $ J\in \End(V) $ mit $ J^2 = -\id_V $ gegeben, so erhält man eine komplexe Skalarmultiplikation
-		\[ \cdot :\C\times V \to V,\ (z,v)\mapsto vz := vx+J(v)y, \]
+		\[ \cdot :\C\times V \to V, (z,v)\mapsto vz := vx+J(v)y, \]
 	für $ z = x+iy $.
 	Ist weiter $ \Skl{.}{.} $ ein (reelles) Skalarprodukt auf $ V $, das von $ J $ erhalten wird, 
 		\[ \forall v,w\in V: \Skl{Jv}{Jw} = \Skl{v}{w}, \]
 	so definiert
 		\[ \Skl{v}{w}_\C := \Skl{v}{w} -i \Skl{v}{Jw} \]
-	ein Hermitesches Skalarprodukt auf dem so konstruierten $ \C $-VR (siehe Aufgabe 53).
+	ein Hermitesches Skalarprodukt auf dem so konstruierten $ \C $-VR.
 
 \paragraph{Beispiel}\label{JDrehung}
 	Ist $ \Skl{.}{.} $ das kanonische Skalarprodukt auf $ \R^2 $, mit der Standardbasis $ (e_1,e_2) $ als ONB, so definiert (Fortsetzungssatz)
@@ -98,7 +95,7 @@
 		\[ e_1i := J(e_1) = e_2\ \text{ und }\ e_2i := J(e_2) = J^2(e_1) = -e_1 = e_1 i^2 \]
 	wird $ \R^2 $ zu einem eindimensionalen $ \C $-VR, $ \R^2 = [\{e_1\}]_\C $, da
 		\[ e_1x+e_2y = e_1x+J(e_1)y = e_1 (x+iy); \]
-	und\footnote{$\Skl{e_1}{e_2}_\C = \Skl{e_1}{e_1}-i\Skl{e_1}{e_2}=1$}
+	und
 		\[ \Skl{e_1x+e_2y}{e_1x'+e_2y'}_\C = \Skl{e_1(x+iy)}{e_1(x'+iy')}_\C = \overline{(x+iy)}(x'+iy') \]
 	liefert das kanonische Skalarprodukt auf $ \C $, mit dem kanonischen Euklidischen Skalarprodukt von $ \R^2 $ als Realteil.
 
@@ -113,18 +110,16 @@
 
 \paragraph{Beweis}
 	Auf dem Euklidischen VR $ (V^2,\SSkl{.}{.}) $, wobei
-		\[ \SSkl{.}{.}:V^2\times V^2 \to \R,\ \left((v,w),(v',w')\right)\mapsto \SSkl{(v,w)}{(v',w')} := \Skl{v}{v'}+\Skl{w}{w'}, \]
+		\[ \SSkl{.}{.}:V^2\times V^2 \to \R, \left((v,w),(v',w')\right)\mapsto \SSkl{(v,w)}{(v',w')} := \Skl{v}{v'}+\Skl{w}{w'}, \]
 	definiere $ J\in \End(V^2) $ durch
-		\[ J:V^2 \to V^2,\ (v,w)\mapsto J\left((v,w)\right):= (-w,v). \]
+		\[ J:V^2 \to V^2, (v,w)\mapsto J\left((v,w)\right):= (-w,v). \]
 	Offenbar gilt $ J^2 = -\id_{V^2} $ und
 		\[ \SSkl{J(v,w)}{J(v',w')} = \Skl{w}{w'}+\Skl{v}{v'} = \SSkl{(v,w)}{(v',w')}, \]
 	sodass
 		\[ (v,w)(x+iy) = (v,w)x+J(v,w)y= (vx-wy,wx+vy) \]
 	und
-		\begin{align*}
-			\SSkl{(v,w)}{(v',w')}_\C &= \SSkl{(v,w)}{(v',w')}-i\SSkl{(v,w)}{J(v',w')}  \\
-			&= \left(\Skl{v}{v'}+\Skl{w}{w'}\right) -i\left(-\Skl{v}{w'}+\Skl{w}{v'}\right)
-		\end{align*}
+		\[ \SSkl{(v,w)}{(v',w')}_\C = \SSkl{(v,w)}{(v',w')}-i\SSkl{(v,w)}{J(v',w')}  \]
+		\[ = \left(\Skl{v}{v'}+\Skl{w}{w'}\right) -i\left(-\Skl{v}{w'}+\Skl{w}{v'}\right) \]
 	$ (V^2,\SSkl{.}{.}) $ zu einem unitären VR machen, wie vorher.
 \paragraph{Bemerkung}
 	Mit dem "`Komplexifizierungslemma"' kann man jeden Euklidischen VR in einen unitären VR gleicher (komplexer) Dimension einbetten:
@@ -155,14 +150,11 @@
 	Seien $ v,w\in V $, o.B.d.A $ v\neq 0 $. Wir bestimmen das Minimum der Funktion im Euklidischen Fall (unitärer Fall in der Übung)
 		\[ \R \ni s\mapsto g(s):= \Skl{vs-w}{vs-w}. \]
 	Einsetzen des kritischen Punktes,
-		\[ 0 = g'(s) = 2\Skl{v}{v}s -(\Skl{v}{w}+\Skl{w}{v}) = 2(\Skl{v}{v}s-\Skl{v}{w}) \]
+		\[ 0 = g'(s) = 2\Skl{v}{v}s -(\Skl{v}{w}+\Skl{w}{v}) = 2(\Skl{v}{v}s-\Re \Skl{v}{w}) \]
 		\[ \Rightarrow s = \frac{\Skl{v}{w}}{\Skl{v}{v}} \]
 	liefert
-		\begin{align*}
-			0\leq g(s) &= \Skl{v}{v}\frac{\Skl{v}{w}^2}{\Skl{v}{v}^2}-2\Skl{v}{w}\frac{\Skl{v}{w}}{\Skl{v}{v}}+\Skl{w}{w}\\
-			&= \frac{1}{\Skl{v}{v}}\left(-\Skl{v}{w}^2+\Skl{v}{v}\Skl{w}{w} \right) \\
-			&\Leftrightarrow 0\leq -\Skl{v}{w}^2+\Skl{v}{v}\Skl{w}{w}.
-		\end{align*}
+		\[ 0\leq g(s) = \Skl{v}{v}\frac{\Skl{v}{w}^2}{\Skl{v}{v}^2}-2\Skl{v}{w}\frac{\Skl{v}{w}}{\Skl{v}{v}}+\Skl{w}{w} \]
+		\[ = \frac{1}{\Skl{v}{v}}\left(-\Skl{v}{w}^2+\Skl{v}{v}\Skl{w}{w} \right) \Leftrightarrow 0\leq -\Skl{v}{w}^2+\Skl{v}{v}\Skl{w}{w}. \ \]
 		
 \subsection{Korollar}
 \begin{Korollar}[]
@@ -187,9 +179,10 @@
 \end{Satz}		
 
 	%------------------ Parallelogrammgleichung ----------------
- 	\begin{figure}[H]\centering
+ 	\begin{figure}[h]\centering
  		\include{Chap5/Parallelogrammgleichung.tikz}
-	\end{figure}
+ 		\caption{Paralellogramgleichung}
+	\end{figure}\noindent
 	%------------------ Parallelogrammgleichung ----------------
 		
 \paragraph{Beweis}
@@ -202,7 +195,7 @@
 	auf $ \R^n $ definierte Norm $ \|.\|_1 $ gilt sie nicht; diese Norm ist also nicht induzierte Norm eines Euklidischen Skalarprodukts auf $ \R^n $.
 \paragraph{Beispiel}
 	Auf dem Raum $ C^0([0,1]) $ der stetigen Funktionen auf $ [0,1] $ definiert
-		\[ \|.\|_\infty: C^0([0,1]) \to \R,\ f\mapsto \|f\|_\infty := \max_{x\in [0,1]}|f(x)| \]
+		\[ \|.\|_\infty: C^0([0,1]) \to \R, f\mapsto \|f\|_\infty := \max_{x\in [0,1]}|f(x)| \]
 	die \emph{Maximumsnorm} (vgl. gleichmäßige Konvergenz).
 	
 	Für $ f,g\in C^0([0,1]) $,
