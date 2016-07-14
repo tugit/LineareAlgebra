@@ -3,6 +3,7 @@
 \paragraph{Generalvoraussetzung}
 	In diesem Abschnitt ist $ (A,V,\tau) $ ein \emph{reeller} affiner Raum über einem $ \R $-VR $ V $; $ \Skl{.}{.} $ ist ein Euklidisches Skalarprodukt.
 \subsection{Definition}\index{Quadrik}
+\begin{Definition}[Quadrik]
 	Eine \emph{Quadrik} $ Q\subset A $ ist die Lösungsmenge einer quadratischen Gleichung
 		\[ Q = \{q=o+v\mid \beta(v,v)+2\lambda(v)+\rho = 0 \} \]
 	wobei $ o\in A $ ein Ursprung ist und
@@ -12,10 +13,13 @@
 		\item $ \rho \in \R$ sind.
 	\end{itemize}
 	Diese Definition hängt nicht vom Ursprung $ o\in A $ ab:
+\end{Definition}
 \subsection{Lemma}
+\begin{Lemma}[]
 	Ist $ Q=\{o+v\in A \mid \beta(v,v)+2\lambda(v)+\rho=0 \} $ eine Quadrik und $ o' = o+w\in A $ ein anderer Ursprung, so ist
 		\[ Q=\{o'+v\in A\mid \beta'(v,v)+2\lambda'(v)+\rho'=0 \} \]
 	mit $ \beta'=\beta $, $ \lambda'=\lambda+\beta(w,.) $, $ \rho' = \rho+2\lambda(w)+\beta(w,w) $.
+\end{Lemma}
 \paragraph{Beweis}
 	Mit $ q=o'+v=o+(w,v) $ nachrechnen, vgl. Aufgabe 91.
 \paragraph{Bemerkung}
@@ -29,21 +33,27 @@
 		\[ Q = o+\ker \lambda \]
 	eine Hyperebene (AUR mit $ \dim = \dim A-1 $).
 \subsection{Bemerkung \& Definition}
+\begin{Definition}[echte Quadriken]
 	Im Folgenden betrachten wir nur \emph{echte Quadriken}, d.h. Quadriken $ Q\subset A $, die nicht in einer affinen Hyperebene enthalten sind.
 	Insbesondere schließen wir $ Q=\emptyset $ aus. 
-	
+\end{Definition}
+
 	Nach Wahl des Ursprungs $ o\in A $ bestimmt eine echte Quadrik die zugehörige Gleichung bis auf Vielfache: $ (\beta,\lambda,\rho) $ ist bis auf (gemeinsame) Skalarmultiplikation mit $ x\in\R^\times  $ eindeutig bestimmt.
 \subsection{Definition}\index{Mittelpunkt}
+\begin{Definition}[Mittelpunkt, Spitze]
 	Ein Punkt $ z\in A $ heißt \emph{Mittelpunkt} einer Quadrik $ Q\subset A $, falls
 		\[ \forall q=z+v\in A: q\in Q\Rightarrow z-v\in Q, \]
 	ein Mittelpunkt $ z $ einer Quadrik $ Q $ heißt \emph{Spitze}, falls $ z\in Q $.
-	
+\end{Definition}	
+\begin{Definition}[Mittelpunktsquadrik, Kegel, Paraboloid]
+
 	Eine Quadrik $ Q $ heißt
 	\begin{itemize}
 		\item \emph{Mittelpunktsquadrik}, falls sie einen Mittelpunkt $ z\in A $ hat,
 		\item \emph{Kegel}, falls sie eine Spitze hat; 
 		\item \emph{Paraboloid} (oder Parabel für $ \dim A = 2 $), falls sie keinen Mittelpunkt hat.
 	\end{itemize}
+\end{Definition}	
 \paragraph{Bemerkung \& Beispiel}
 	Eine Quadrik $ Q $ kann mehr als einen Mittelpunkt oder eine Spitze haben.
 	Beispielsweise liefert für $ \lambda\in V^*\setminus\{0\} $
@@ -51,6 +61,7 @@
 	ein Paar paralleler Hyperebenen, eine Quadrik, für die jeder Punkt $ z = o+w \in o+\ker \lambda $ ein Mittelpunkt ist, da für $ o+v = (o+w)+(v-w) = z+(v-w)\in Q $ gilt
 		\[ \lambda\left((z-(v-w))-o\right) = \lambda(2w-v) = -\lambda(v)\implies o+v\in Q\Rightarrow z-(v-w)\in Q. \]
 \subsection{Lemma}
+\begin{Lemma}[]
 	Seien $ Q\subset A $ eine echte Quadrik und $ z\in A $. Dann ist
 	\begin{itemize}
 		\item $ z\in A $ Mittelpunkt von $ Q $, falls
@@ -58,6 +69,7 @@
 		\item $ z\in A $ Spitze von $ Q $, falls
 			\[ Q=\{q\in A\mid \beta(q-z,q-z) = 0\}. \]
 	\end{itemize}
+\end{Lemma}
 \paragraph{Beweis}
 	Da eine Spitze ein Mittelpunkt auf $ Q $ ist, folgt die zweite Aussage direkt aus der ersten.
 	Sei $ z\in A $ Mittelpunkt von $ Q $; mit $ z $ als Ursprung und geeigneten $ (\beta,\lambda,\rho) $ ist dann
@@ -79,6 +91,7 @@
 		\[ \forall x\in \R: \beta(vx,vx)= \beta(v,v)x^2 = 0,  \]
 	also ist mit $ q $ auch die gesamte Gerade $ [\{z,q\}] = \{z+vx\mid x\in \R\}\subset Q $. Diese in $ Q $ enthaltenen Geraden heißen auch \emph{Erzeugende} des Kegels.
 \subsection{Affine Klassifikation der Mittelpunktsquadriken}
+\begin{Lemma}[]
 	Ist $ Q\subset A $ echte Mittelpunktsquadrik eines affinen Raumes $ A $, so existieren
 	\begin{itemize}
 		\item affines Bezugssystem $ (o,e_1,\dots,e_n) $ von $ A $ und
@@ -87,12 +100,14 @@
 	sodass 
 		\[ Q=\left\{q=o+\sum_{i=1}^{n}e_ix_i\mid \sum_{i=1}^{p}x_i^2-\sum_{i=p+1}^{r}x_i^2 = c \right\} \]
 	und $ p $ ist der Positivitätsindex von $ \beta $, $ r-p $ der Negativitätsindex ($ n-r $ Radikaldimension). 
+\end{Lemma}
 \paragraph{Beweis}
 	Folgt direkt aus dem Satz von Sylvester.
 \subsection{Bemerkung \& Definition}
 	Zwei echte Mittelpunktsquadriken $ Q,Q' $ sind also genau dann \emph{affin äquivalent}, d.h. $ Q' = \alpha(Q) $ für eine Affinität $ \alpha:A\to A $, wenn $ \sgn(\beta')=\sgn(\beta) $, bzw. $ \sgn(\beta')=\sgn(\pm \beta) $ im Fall eines Kegels.
 % VO 23-06-2016 %
 \subsection{Euklidische Klassifikation der Mittelpunktsquadriken}
+\begin{Lemma}[]
 	Ist $ Q\subset A $ eine echte Mittelpunktsquadrik eines Euklidischen Raumes, $ \dim A <\infty $, so existierten 
 	\begin{itemize}
 		\item ein kartesisches Bezugssystem $ (o;e_1,\dots,e_n) $ von $ A $,
@@ -101,6 +116,7 @@
 	\end{itemize}
 	sodass
 		\[ Q = \left\{o+\sum_{i=1}^{n}e_ix_i\in A \mid \sum_{i=1}^{p}\left(\frac{x_i}{a_i}\right)^2-\sum_{i=p+1}^{r}\left(\frac{x_i}{a_i}\right)^2 = c \right\}. \]
+\end{Lemma}
 \paragraph{Beweis}
 	Folgt mit der Hauptachsentransformation (daher ihr Name).
 	Sei $ b\in \End(V) $ so, dass
@@ -140,6 +156,12 @@
 					\item mit $ c=1 $ liefert
 						\[ Q=\left\{z+e_1x_1+e_2x_2\in E^2\mid \left(\frac{x_1}{a_1}\right)^2-\left(\frac{x_2}{a_2}\right)^2 = 1\right\} \]
 						eine \emph{Hyperbel} durch die Scheitel $ z=\pm e_1a_1 $ und sich in $ z $ schneidenden Asymptoten.
+    		%------------------ Hyperbel.tikz ----------------
+	        \begin{figure}[H]\centering
+     		    \include{Chap6/Hyperbel.tikz}
+    	    \end{figure}
+            %------------------ Hyperbel.tikz ----------------
+   
 					\item mit $ c=0 $ liefert
 						\[ Q=\left\{z+e_1x_1+e_2x_2\in E^2\mid \left(\frac{x_1}{a_1}\right)^2=\left(\frac{x_2}{a_2}\right)^2 \right\} \]
 						den \emph{Asymptotenkegel} der obigen Hyperbel.
