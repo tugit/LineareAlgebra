@@ -28,7 +28,7 @@
 		\[ v=\Big(q_1(f)\circ p_1(f)+q_2(f)\circ p_2(f) \Big)(v) \]
 		\[ =q_1(f)\Big(\underbrace{p_1(f)(v)}_0\Big)+q_2(f)\Big(\underbrace{p_2(f)(v)}_0\Big) = 0 \]
 	Also ist $ V=V_1\oplus V_2 $.
-\subsection{Hauptraumzerlegung}
+\subsection{Hauptraumzerlegung}\index{Hauptraumzerlegung}
 \begin{Satz}[Hauptraumzerlegung]
 	Ist das Minimalpolynom $ \mu_f(t)\in K[t] $ eines Endomorphismus $ f\in \End(V) $ Produkt von Linearfaktoren,
 		\[ \mu_f(t) = (t-x_1)^{r_1}\cdots (t-x_m)^{r_m},\, x_i\neq x_j \text{ für }i\neq j \]
@@ -43,7 +43,7 @@
 		\[ \chi_f(t) = (t-x_1)^{k_1}\cdots (t-x_m)^{k_m},\, x_i \neq x_j \text{ für } i\neq j, \]
 	so folgt dies leicht, da wegen $ f(V_i)\subset V_i $ und $ x_i\neq x_j $ für $ i\neq j $
 		\[ \chi_{f|_{V_i}}(t) = (t-x_i)^{k_i}\Rightarrow \dim V_i = \deg \chi_{f|_{V_i}} = k_i. \]
-\subsection{Buchhaltung}
+\subsection{Buchhaltung}\index{Mikrostruktur}\index{Makrostruktur}
 	Ist also
 		\[ \mu_f(t) = (t-x_1)^{r_1}\cdots (t-x_m)^{r_m},\, x_i\neq x_j \text{ für }i\neq j, \]
 	so hat $ f $ eine Darstellungsmatrix in \emph{Block-Diagonalgestalt},
@@ -62,7 +62,7 @@
 		\[ \deg p(t) = \deg \mu_f(t)-1 < \deg \mu_f(t). \]
 	Also wäre $ \mu_f(t) $ nicht Minimalpolynom.
 
-\subsection{Definition}
+\subsection{Definition}\index{nilpotent}
 \begin{Definition}[nilpotent]
 	Eine Abbildung $ f\in \End(V) $ heißt \emph{nilpotent}, falls $ f^r=0 $ für ein $ r\in \N $.
 \end{Definition}
@@ -154,12 +154,12 @@
 		\vdots\\
 		\rg f^{n-1}
 		\end{pmatrix} \]
-\subsection{Jordansche Normalform}
+\subsection{Jordansche Normalform}\index{Jordansche Normalform}
 \begin{Satz}[Jordansche Normalform]
 	Ist das Minimalpolynom $ \mu_f(t)\in K[t] $ eines Endomorphismus $ f\in \End(V) $ Produkt von Linearfaktoren,
 		\[ \mu_f(t) = (t-x_1)^{r_1}\cdots(t-x_m)^{r_m},\, x_i\neq x_j \text{ für }i\neq j \]
 	so besitzt $ f $ eine Darstellungsmatrix in \emph{Jordanscher Normalform}, d.h.
-		\begin{itemize}
+		\begin{itemize}\index{Mikrostruktur}\index{Makrostruktur}
 			\item \emph{Makrostruktur}: $ \xi_B^B = \operatorname{diag}(X_1,\dots,X_m) $, wobei $ X_i \in K^{k_i\times k_i} $ mit $ k_i\geq r_i $ die algebraischen Vielfachheiten der Eigenwerte $ x_i $ sind, und
 			\item \emph{Mikrostruktur:} jedes $ X_i = \operatorname{diag}(J_{i1}(x_i),\dots,J_{id}(x_i)) $, mit \emph{Jordanblöcken}
 				\[ J_{ij}(x) = \begin{pmatrix}

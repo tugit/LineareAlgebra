@@ -29,17 +29,15 @@
 		\[ \beta:V\times V\to \R, (v,w)\mapsto \beta(v,w):=\lambda(v)\lambda(w) \]
 	eine symmetrische Bilinearform $ \beta\neq 0 $ und daher
 		\[ Q=\{o+v\in A\mid \lambda^2(v)=\beta(v,v) = 0 \} \]
-	eine Quadrik; andererseits ist 
-		\[ Q = o+\ker \lambda \]
-	eine Hyperebene (AUR mit $ \dim = \dim A-1 $).
+	eine Quadrik; andererseits ist $ Q = o+\ker \lambda $ eine Hyperebene (AUR mit $ \dim = \dim A-1 $).
 \subsection{Bemerkung \& Definition}
 \begin{Definition}[echte Quadriken]
 	Im Folgenden betrachten wir nur \emph{echte Quadriken}, d.h. Quadriken $ Q\subset A $, die nicht in einer affinen Hyperebene enthalten sind.
 	Insbesondere schließen wir $ Q=\emptyset $ aus. 
 \end{Definition}
 
-	Nach Wahl des Ursprungs $ o\in A $ bestimmt eine echte Quadrik die zugehörige Gleichung bis auf Vielfache: $ (\beta,\lambda,\rho) $ ist bis auf (gemeinsame) Skalarmultiplikation mit $ x\in\R^\times  $ eindeutig bestimmt.
-\subsection{Definition}\index{Mittelpunkt}
+	Nach Wahl des Ursprungs $ o\in A $ bestimmt eine echte Quadrik die zugehörige Gleichung bis auf Vielfache: Das Tupel $ (\beta,\lambda,\rho) $ ist bis auf (gemeinsame) Skalarmultiplikation mit $ x\in\R^\times  $ eindeutig bestimmt.
+\subsection{Definition}\index{Mittelpunkt}\index{Spitze}
 \begin{Definition}[Mittelpunkt, Spitze]
 	Ein Punkt $ z\in A $ heißt \emph{Mittelpunkt} einer Quadrik $ Q\subset A $, falls
 		\[ \forall q=z+v\in A: q\in Q\Rightarrow z-v\in Q, \]
@@ -49,7 +47,7 @@
 
 	Eine Quadrik $ Q $ heißt
 	\begin{itemize}
-		\item \emph{Mittelpunktsquadrik}, falls sie einen Mittelpunkt $ z\in A $ hat,
+		\item \emph{Mittelpunktsquadrik}, falls sie einen Mittelpunkt $ z\in A $ hat;
 		\item \emph{Kegel}, falls sie eine Spitze hat; 
 		\item \emph{Paraboloid} (oder Parabel für $ \dim A = 2 $), falls sie keinen Mittelpunkt hat.
 	\end{itemize}
@@ -80,10 +78,8 @@
 		0 = \beta(v,v)-2\lambda(v)+\rho
 		\end{cases} \]
 	mithin
-		\[ \forall q=z+v\in Q: \lambda(v) = 0, \]
-	also 
-		\[ Q\subset z +\ker \lambda. \]
-	Da $ Q $ echte Quadrik ist, folgt also $ \ker \lambda = V $ bzw. $ \lambda = 0 $. Die Behauptung folgt dann mit $ c=-\rho $. Umgekehrt: Ist für ein $ c\in \R $
+		\[ \forall q=z+v\in Q: \lambda(v) = 0,\quad \text{ also }\quad Q\subset z +\ker \lambda. \]
+	Da $ Q $ echte Quadrik ist, folgt also $ \ker \lambda = V $ bzw. $ \lambda = 0 $. Die Behauptung folgt dann mit der Wahl von $ c=-\rho $. Umgekehrt: Ist für ein $ c\in \R $
 		\[ Q=\{q=z+v\in A\mid \beta(v,v)=c \}, \]
 	so ist $ z $ offenbar Mittelpunkt von $ Q $.
 \subsection{Bemerkung \& Definition}\index{Erzeugende}
@@ -146,7 +142,7 @@
 		\[  \alpha(z) = z' \text{ und } \alpha(z+e_i) = z+e_i' \text{ für } i=1,\dots,n \]
 	mit $ \alpha(Q) = Q' $. Die Umkehrung folgt ähnlich (Vorsicht bei Kegeln!).
 \subsection{Beispiel \& Definition}\index{Ellipse}\index{Hyperbel}\index{Asymptotenkegel}
-	In einer Euklidischen Ebene $ E^2 $ ergeben sich als echte Mittelpunktsquadriken
+	In einer Euklidischen Ebene $ E^2 $ ergeben sich als echte Mittelpunktsquadriken:
 		\begin{itemize}
 			\item $ p=r=2 : c=1 $ ($ c=0 $ liefert nur einen Punkt) und
 				\[ Q=\left\{z+e_1x_1+e_2x_2\in E^2\mid \left(\frac{x_1}{a_1}\right)^2+\left(\frac{x_2}{a_2}\right)^2 = 1\right\} \]
