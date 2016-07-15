@@ -31,7 +31,7 @@
   \item Eigenwert,-vektor,-raum, \hyperpage{13}
   \item Einsetzungshomomorphismus, \hyperpage{6, 7}
   \item Ellipse, \hyperpage{90}
-  \item Erzeugende, \hyperpage{88}
+  \item Erzeugende, \hyperpage{87}
   \item Euklidische Geometrie, \hyperpage{53}
   \item Euklidischer Raum, \hyperpage{52}
   \item Euler-Gerade, \hyperpage{59}
@@ -51,16 +51,21 @@
   \item H\IeC {\"o}hen, \hyperpage{58}
     \subitem -schnittpunkt, \hyperpage{58}
   \item Hauptachsentransformation, \hyperpage{77}
+  \item Hauptraumzerlegung, \hyperpage{81}
   \item Hyperbel, \hyperpage{90}
 
   \indexspace
 
-  \item induzierte Norm, \hyperpage{46}
   \item Isometrie, \hyperpage{53}
 
   \indexspace
 
+  \item Jordansche Normalform, \hyperpage{84}
+
+  \indexspace
+
   \item Kartesisches Bezugssystem, \hyperpage{60}
+  \item komplexe Erweiterung, \hyperpage{76}
   \item Komplexifizierung, \hyperpage{47}
   \item Kongruenzabbildung, \hyperpage{53}
   \item Kreis, \hyperpage{57}
@@ -72,13 +77,17 @@
 
   \indexspace
 
+  \item Makrostruktur, \hyperpage{81}, \hyperpage{84}
+  \item Mikrostruktur, \hyperpage{81}, \hyperpage{84}
   \item Minimalpolynom, \hyperpage{26}
   \item Mittelpunkt, \hyperpage{86}
 
   \indexspace
 
   \item Negativit\IeC {\"a}tsindex, \hyperpage{42}
+  \item nilpotent, \hyperpage{82}
   \item Norm, \hyperpage{50}
+    \subitem induzierte, \hyperpage{46}
   \item normal (Endomorphismen), \hyperpage{71}
   \item Nullstelle, \hyperpage{10}
 
@@ -108,6 +117,7 @@
   \indexspace
 
   \item quadratische Form, \hyperpage{37}
+  \item Quadratwurzel (Endomorphismus), \hyperpage{78}
   \item Quadrik, \hyperpage{85}
 
   \indexspace
@@ -128,9 +138,12 @@
     \subitem kanonische, \hyperpage{33}
     \subitem Signatur, \hyperpage{42}
   \item Skalarprodukt, \hyperpage{44}
-  \item Spektralsatz, \hyperpage{73}
-  \item Spektralzerlegung, \hyperpage{77}
+  \item Spektral
+    \subitem -satz, \hyperpage{73}
+    \subitem -zerlegung (Euklidisch), \hyperpage{77}
+    \subitem -zerlegung (unit\IeC {\"a}r), \hyperpage{75}
   \item Spiegelung, \hyperpage{62}
+  \item Spitze, \hyperpage{86}
   \item Spur, \hyperpage{15}
   \item Streckensymmetrale, \hyperpage{57}
 

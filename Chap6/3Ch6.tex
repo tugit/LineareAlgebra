@@ -3,11 +3,13 @@
 \paragraph{Generalvoraussetzung}
 	In diesem Abschnitt werden nur endlichdimensionale Vektorräume behandelt.
 \subsection{Lemma}
+\begin{Lemma}[]
 	Sei $ f\in \End(V) $ und $ p_1(t),p_2(t)\in K[t] $ normiert und teilerfremd.
 	Ist 
 		\[ p(f) = 0, \text{ wobei }p(t) = p_1(t)p_2(t), \]
 	so gilt für $ V_i := \ker p_i(f)\, (i=1,2)$
 		\[ V=V_1\oplus V_2 \text{ und }f(V_i)\subset V_i \]
+\end{Lemma}
 \paragraph{Beweis}
 	Für jedes Polynom $ q(t)\in K[t] $ ist $ \ker q(f)\subset V $ ein $ f $-invarianter UVR, da
 		\[ \forall v\in \ker q(f): q(f)(f(v)) = \left(q(f)\circ f\right)(v) \]
@@ -26,11 +28,13 @@
 		\[ v=\Big(q_1(f)\circ p_1(f)+q_2(f)\circ p_2(f) \Big)(v) \]
 		\[ =q_1(f)\Big(\underbrace{p_1(f)(v)}_0\Big)+q_2(f)\Big(\underbrace{p_2(f)(v)}_0\Big) = 0 \]
 	Also ist $ V=V_1\oplus V_2 $.
-\subsection{Hauptraumzerlegung}
+\subsection{Hauptraumzerlegung}\index{Hauptraumzerlegung}
+\begin{Satz}[Hauptraumzerlegung]
 	Ist das Minimalpolynom $ \mu_f(t)\in K[t] $ eines Endomorphismus $ f\in \End(V) $ Produkt von Linearfaktoren,
 		\[ \mu_f(t) = (t-x_1)^{r_1}\cdots (t-x_m)^{r_m},\, x_i\neq x_j \text{ für }i\neq j \]
 	so ist $ V $ direkte Summe der \emph{Haupträume} zu den Eigenwerten $ x_i $ von $ f $:
 		\[ V=\bigoplus_{i=1}^m V_i \text{ mit }V_i := \ker (\id_Vx_i-f)^{r_i}. \]
+\end{Satz}
 \paragraph{Beweis}
 	Folgt direkt mit dem Lemma (Induktion).
 
@@ -39,7 +43,7 @@
 		\[ \chi_f(t) = (t-x_1)^{k_1}\cdots (t-x_m)^{k_m},\, x_i \neq x_j \text{ für } i\neq j, \]
 	so folgt dies leicht, da wegen $ f(V_i)\subset V_i $ und $ x_i\neq x_j $ für $ i\neq j $
 		\[ \chi_{f|_{V_i}}(t) = (t-x_i)^{k_i}\Rightarrow \dim V_i = \deg \chi_{f|_{V_i}} = k_i. \]
-\subsection{Buchhaltung}
+\subsection{Buchhaltung}\index{Mikrostruktur}\index{Makrostruktur}
 	Ist also
 		\[ \mu_f(t) = (t-x_1)^{r_1}\cdots (t-x_m)^{r_m},\, x_i\neq x_j \text{ für }i\neq j, \]
 	so hat $ f $ eine Darstellungsmatrix in \emph{Block-Diagonalgestalt},
@@ -58,8 +62,10 @@
 		\[ \deg p(t) = \deg \mu_f(t)-1 < \deg \mu_f(t). \]
 	Also wäre $ \mu_f(t) $ nicht Minimalpolynom.
 
-\subsection{Definition}
+\subsection{Definition}\index{nilpotent}
+\begin{Definition}[nilpotent]
 	Eine Abbildung $ f\in \End(V) $ heißt \emph{nilpotent}, falls $ f^r=0 $ für ein $ r\in \N $.
+\end{Definition}
 \paragraph{Bemerkung}
 	Die weitere Strukturanalyse eines Endomorphismus mit in Linearfaktoren zerfallendem Minimalpolynom reduziert sich also auf die nilpotenter Endomorphismen
 		\[ g_i = (f-\id_Vx_i)|_{V_i}\in \End(V_i). \]
@@ -73,10 +79,12 @@
 		\[ f^r(v) = 0 \text{ und }f^{r-1}(v)\neq 0, \]
 	so ist $ (v,\dots,f^{r-1}(v)) $ eine $ f $-zyklische Basis von $ \mathcal{Z}_v $.
 \subsection{Lemma}
+\begin{Lemma}[]
 	Seien $ f\in \End(V) $ nilpotent, $ f^r = 0 $, und $ v\in V $ so, dass $ f^{r-1}(v)\neq 0 $. Damit existiert ein UVR $ U\subset V $ mit
 		\[ f(U)\subset U \text{ und } V = \mathcal{Z}_v \oplus U. \]
 	Die Einschränkung $ f|_U \in \End(U) $ ist dann nilpotent,
 		\[ {f|_U}^q = 0 \text{ mit } q\leq r. \]
+\end{Lemma}
 \paragraph{Beweis}
 	Sei $U\subset V$ ein UVR mit
 		\[f(U)\subset U \text{\quad und \quad} \{0\}=\mathcal{Z}_v\cap U\]
@@ -98,10 +106,12 @@
 	Da $f^r=0$ gilt dies offenbar auch für jede Einschränkung von $f$.
 
 \subsection{Struktursatz für nilpotente Endomorphismen}
+\begin{Satz}[Struktursatz für nilpotente Endomorphismen]
 	Ist $ f\in \End(V) $ nilpotent, so ist $ V $ direkte Summe $ f $-zyklischer UVR $ \mathcal{Z}_{v_j} $,
 		\[ V = \bigoplus_{j=1}^d \mathcal{Z}_{v_j} =
 		\bigoplus_{j=1}^d \left[\left(f^k(v_j)\right)_{k\in \N}\right].  \]
 	Die Familie der Dimensionen $ (r_1,\dots,r_d) $ der Dimensionen $ r_j = \dim \mathcal{Z}_{v_j} $ ist bis auf Permutationen eindeutig\footnote{Beispielsweise folgt die Eindeutigkeit, wenn man aufsteigende Dimensionen fordert.}.
+\end{Satz}
 \paragraph{Bemerkung}
 	Die Zerlegung in $ f $-zyklische UVR ist \emph{nicht} eindeutig!
 
@@ -144,11 +154,12 @@
 		\vdots\\
 		\rg f^{n-1}
 		\end{pmatrix} \]
-\subsection{Jordansche Normalform}
+\subsection{Jordansche Normalform}\index{Jordansche Normalform}
+\begin{Satz}[Jordansche Normalform]
 	Ist das Minimalpolynom $ \mu_f(t)\in K[t] $ eines Endomorphismus $ f\in \End(V) $ Produkt von Linearfaktoren,
 		\[ \mu_f(t) = (t-x_1)^{r_1}\cdots(t-x_m)^{r_m},\, x_i\neq x_j \text{ für }i\neq j \]
 	so besitzt $ f $ eine Darstellungsmatrix in \emph{Jordanscher Normalform}, d.h.
-		\begin{itemize}
+		\begin{itemize}\index{Mikrostruktur}\index{Makrostruktur}
 			\item \emph{Makrostruktur}: $ \xi_B^B = \operatorname{diag}(X_1,\dots,X_m) $, wobei $ X_i \in K^{k_i\times k_i} $ mit $ k_i\geq r_i $ die algebraischen Vielfachheiten der Eigenwerte $ x_i $ sind, und
 			\item \emph{Mikrostruktur:} jedes $ X_i = \operatorname{diag}(J_{i1}(x_i),\dots,J_{id}(x_i)) $, mit \emph{Jordanblöcken}
 				\[ J_{ij}(x) = \begin{pmatrix}
@@ -159,6 +170,7 @@
 				\end{pmatrix}.  \]
 		\end{itemize}
 	Dabei ist $ \xi_B^B(f) $ eindeutig, bis auf Anordnung der Blöcke.
+\end{Satz}
 \paragraph{Bemerkung}
 	Die Basis $ B $ ist \emph{nicht} eindeutig!
 \paragraph{Beweis}
