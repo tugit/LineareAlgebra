@@ -2,7 +2,7 @@
 
 Hier ist im Verlauf des Studienjahres 2015/16 ein von Studenten erstelltes Skriptum zu den Vorlesungen Lineare Algebra & Geometrie 1&2/Jeromin an der TU Wien entstanden.
 
-**Um das PDF herunterzuladen:** <https://github.com/puenka/LinAlgJeromin/releases/download/PDF/LinAlgJeromin.pdf>
+**Um das PDF herunterzuladen:** <https://github.com/puenka/LinAlgJeromin/releases/download/PDF/LinAlgJerominSkript.pdf>
 
 Das Skriptum deckt den Vorlesungsstoff nicht verbindlich vollständig ab!
 
