@@ -1,4 +1,4 @@
-\documentclass[a4paper, fontsize=11pt, DIV=14, parskip=half]{scrreprt}
+\documentclass[a4paper, fontsize=11pt, DIV=12, parskip=half]{scrreprt}
 \usepackage{microtype}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -27,6 +27,9 @@
 \subtitle{Prof. Udo Hertrich-Jeromin}
 
 \setcounter{tocdepth}{1}
+\makeatletter
+\renewcommand{\@pnumwidth}{2.5em}% default is 1.55em
+\makeatother
 
 \newenvironment*{Satz}[1][]{\ignorespaces}{\ignorespacesafterend}
 \newenvironment*{Lemma}[1][]{\ignorespaces}{\ignorespacesafterend}
