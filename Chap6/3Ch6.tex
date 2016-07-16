@@ -12,8 +12,10 @@
 \end{Lemma}
 \paragraph{Beweis}
 	Für jedes Polynom $ q(t)\in K[t] $ ist $ \ker q(f)\subset V $ ein $ f $-invarianter UVR, da
-		\[ \forall v\in \ker q(f): q(f)(f(v)) = \left(q(f)\circ f\right)(v) \]
-		\[ =\left(f\circ q(f)\right)(v) = f\left(q(f)(v)\right) = 0 \]
+		\begin{align*}
+			\forall v\in \ker q(f): q(f)(f(v)) &= \left(q(f)\circ f\right)(v)\\	
+			&=\left(f\circ q(f)\right)(v) = f\big(\underbrace{q(f)(v)}_{=0}\big) = 0 
+		\end{align*}
 	Wegen $ p(f) = 0 $ gilt
 		\[ \{0\} = p(f)(V) = 
 		\begin{cases}
@@ -25,15 +27,17 @@
 	und damit
 		\[ V= \Big(p_1(f)\circ q_1(f)+p_2(f)\circ q_2(f) \Big)(V)\subset p_1(f)(V)+p_2(f)(V)\subset V_2+V_1; \]
 	andererseits gilt für $ v\in V_1\cap V_2 $
-		\[ v=\Big(q_1(f)\circ p_1(f)+q_2(f)\circ p_2(f) \Big)(v) \]
-		\[ =q_1(f)\Big(\underbrace{p_1(f)(v)}_0\Big)+q_2(f)\Big(\underbrace{p_2(f)(v)}_0\Big) = 0 \]
+		\begin{align*}
+		v&=\Big(q_1(f)\circ p_1(f)+q_2(f)\circ p_2(f) \Big)(v)\\
+		 &=q_1(f)\Big(\underbrace{p_1(f)(v)}_0\Big)+q_2(f)\Big(\underbrace{p_2(f)(v)}_0\Big) = 0
+		\end{align*}
 	Also ist $ V=V_1\oplus V_2 $.
 \subsection{Hauptraumzerlegung}\index{Hauptraumzerlegung}
 \begin{Satz}[Hauptraumzerlegung]
 	Ist das Minimalpolynom $ \mu_f(t)\in K[t] $ eines Endomorphismus $ f\in \End(V) $ Produkt von Linearfaktoren,
 		\[ \mu_f(t) = (t-x_1)^{r_1}\cdots (t-x_m)^{r_m},\, x_i\neq x_j \text{ für }i\neq j \]
 	so ist $ V $ direkte Summe der \emph{Haupträume} zu den Eigenwerten $ x_i $ von $ f $:
-		\[ V=\bigoplus_{i=1}^m V_i \text{ mit }V_i := \ker (\id_Vx_i-f)^{r_i}. \]
+		\[ V=\bigoplus_{i=1}^m V_i \quad\text{mit}\ V_i := \ker (\id_Vx_i-f)^{r_i}. \]
 \end{Satz}
 \paragraph{Beweis}
 	Folgt direkt mit dem Lemma (Induktion).
@@ -140,10 +144,10 @@
 	für $ s=0,\dots,n-1 $. Also erfüllen die $ n_k $'s ein eindeutig lösbares lineares Gleichungssystem 
 		\[
 		\begin{pmatrix}
-		1 & 2 & \cdots & n \\ 
-		& 1 & \cdots & n-1 \\ 
-		&  & \ddots &  \\ 
-		0 &  &  & 1
+			1      & 2      & \cdots & n      \\
+			0      & 1      & \cdots & n-1    \\
+			\vdots & \ddots & \ddots & \vdots \\
+			0      & \cdots & 0      & 1
 		\end{pmatrix} 
 		\begin{pmatrix}
 		n_1\\
