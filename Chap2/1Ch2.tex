@@ -25,7 +25,7 @@
 \end{tikzpicture}
 
 \subsection{Definition (Geometrie nach Klein)}
-\begin{Definition}[Geometrie]
+\begin{Definition}[Geometrie]\index{Geometrie}
 	Eine Geometrie besteht aus einer Menge $ A $ (z.B. Punktmenge) und einer darauf operierenden Gruppe $ (G,*) $, d.h.,
 	es gibt eine Gruppenoperation
 		\[ \rho: G\times A\to A,(g,a)\mapsto \rho_g(a),  \]
@@ -37,7 +37,7 @@
 \end{Definition}
 
 \subsection{Definition (Affiner Raum)}
-\begin{Definition}[Affiner Raum]
+\begin{Definition}[Affiner Raum]\index{Affiner Raum}
 	Sei $ K $ ein Körper. Ein affiner Raum (AR) $ (A,V,\tau) $ über $ K $ besteht aus einer Menge $ A $, einem $ K $-Vektorraum $ V $ und einer Gruppenoperation
 		\[ \tau:V\times A\to A,(v,a)\mapsto \tau_v(a) \]
 	von $ V $ (als additive Gruppe $ (V,+) $) auf $ A $, die einfach transitiv ist, d.h.
@@ -87,7 +87,7 @@
 	Nämlich: sind $ a,b\in A $ gegeben, so liefert $ v:=b-a $ (weil $ V $ einfach transitiv operiert) eindeutig den gesuchten Vektor.
 
 \subsection{Beispiel \& Definition (affiner Standardraum)}
-	\begin{Definition}[Affiner Standardraum]
+	\begin{Definition}[Affiner Standardraum]\index{Affiner Standardraum}
 		Jeder $ K $-VR liefert einen affinen Raum $ (V,V,\tau) $ mit der Operation
 		\[ \tau: V\times V\to V, (v,a)\mapsto \tau_v(a):= a+v \]
 	von $ V $ auf sich selbst -- die Unterscheidung zwischen Punkten und Vektoren wird dann etwas undurchsichtig.
@@ -96,7 +96,7 @@
 	\end{Definition}
 	
 \subsection{Beispiel \& Definition (Ursprung)}
-	\begin{Definition}[Ursprung]
+	\begin{Definition}[Ursprung]\index{Ursprung}
 		Sei $ (A,V,\tau) $ AR, für jede Wahl eines Ursprungs $ o\in A $ ist
 		\[ \tau(o) :V\to A,v\mapsto \tau_v(o) \]
 	eine Bijektion -- ein VR ist also ein "`AR mit Ursprung"'.
@@ -189,7 +189,7 @@
 	
 	Eine Nebenklasse $ A= v+U\subset V $ nennt man daher auch einen affinen Unterraum des VR $ V $.
 	
-	\begin{Definition}[Affiner Unterraum]
+	\begin{Definition}[Affiner Unterraum]\index{Affiner Unterraum}
 	$ A'\subset A $ ist affiner Unterraum (AUR) des affinen Raumes $ (A,V,\tau) $, falls
 		\[ \exists a\in A\exists U\subset V \text{UVR}:A' = a+U = \{\tau_u(a)\mid u\in U\}.\]
 	Ist $ \dim A' =1 $ oder $ \dim A' = 2 $, so heißt $ A' $ (affine) Gerade bzw. Ebene; ist $ \dim A' < \infty $ und $ \dim A' = \dim A-1 $, so heißt $ A' $ (affine) Hyperebene.
@@ -392,7 +392,7 @@
 	Die affine Hülle von drei verschiedenen Punkten $ a,b,c\in A $ ist eine Gerade oder Ebene, je nachdem, ob $ \dim[\{a,b,c\}] $ gleich 1 oder 2 ist. Im zweiten Fall sagen wir: das Dreieck $ \{a,b,c\} $ sei nicht-degeneriert.
 	
 \subsection{Definition (allgemeine Lage)}
-	\begin{Definition}[Allgemeine Lage]
+	\begin{Definition}[Allgemeine Lage]\index{Allgemeine Lage}
 		Eine Familie $ (a_i)_{i\in I} $ von Punkten $ a_i\in A $ eines AR $ A $ ist affin unabhängig, bzw. in allgemeiner Lage, falls
 		\[ \forall i\in I:a_i\notin [\{a_j\mid j\in I\setminus \{i\}\}], \]
 		und sonst affin abhängig; Punkte heißen kollinear bzw. koplanar, falls sie in einer Geraden oder einer Ebene liegen.
@@ -431,7 +431,7 @@
 		\end{tikzpicture}
 		\end{figure}	
 \subsection{Lemma (Eindeutigkeit der Punktdarstellung)}
-	\begin{Lemma}[Eindeutigkeit der Punktdarstellung]
+	\begin{Lemma}[Eindeutigkeit der Punktdarstellung]\index{Eindeutigkeit der Punktdarstellung}
 		Eine Familie $ (a_i)_{i\in I} $ ist genau dann affin unabhängig, wenn jeder Punkt ihrer affinen Hülle eine eindeutige Affinkombination hat:
 		\[ \forall a\in [\{a_i\mid i\in I\}]\exists!(x_i)_{i\in I}:
 			\begin{cases}

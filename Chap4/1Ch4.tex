@@ -204,7 +204,7 @@ Algebraisch: Dieses Volumen kann dann benutzt werden, um zu testen, wann ein Spa
  		\sigma: I\to I,\ i\mapsto \sigma(i),\text{ der Menge }I = \{1,\dots,m\}
  	\]
  	bilden mit der Komposition eine Gruppe: die Permutationsgruppe $ S_m $ der Menge $ I $.
- 	\begin{Definition}[Transposition]
+ 	\begin{Definition}[Transposition]\index{Transposition}
  		Eine \emph{Transposition} $ \tau_{ij} \in S_m, i\neq j $ ist eine Permutation, die zwei Indizes vertauscht,
  		\[
  			\tau_{ij}:I\to I,\ k\mapsto \tau_{ij}(k):=
@@ -232,7 +232,7 @@ Algebraisch: Dieses Volumen kann dann benutzt werden, um zu testen, wann ein Spa
  		\]
  		Frage: Was ist das Vorzeichen bzw. wie kann man es berechnen?
  \subsection{Lemma \& Definition}
- 	\begin{Definition}[Signum einer Permutation]
+ 	\begin{Definition}[Signum einer Permutation]\index{Signum einer Permutation}
  		Das Signum einer Permutation $ \sigma\in S_m $ ist die Zahl
  		\[
  			\operatorname{sgn}\sigma := \prod_{i<j} \frac{\sigma(i)-\sigma(j)}{i-j}\in \{\pm 1\};
@@ -311,7 +311,7 @@ Algebraisch: Dieses Volumen kann dann benutzt werden, um zu testen, wann ein Spa
  		\]
 
  \subsection{Buchhaltung}
- 	\begin{Definition}[Determinante]
+ 	\begin{Definition}[Determinante]\index{Determinante}
  		Mit
  		\[
  			A:= (v_1,\dots,v_m)=\underbrace{(b_1,\dots,b_m)}_{:=B}X = BX
@@ -423,7 +423,7 @@ Algebraisch: Dieses Volumen kann dann benutzt werden, um zu testen, wann ein Spa
  		  & =\sum_{\sigma^{-1}\in S_m} \sgn(\sigma^{-1})\prod_{j=1}^{m}x_{\sigma(j)j} \\
  		  & =\sum_{\sigma\in S_m} \sgn(\sigma)\prod_{j=1}^{m}x_{\sigma(j)j}
  	\end{align*}
- 	\begin{Definition}[Transponierte Matrix]
+ 	\begin{Definition}[Transponierte Matrix]\index{Transponierte Matrix}
  		gleicht die Determinante einer Matrix $ X $ der ihrer \emph{Transponierten}:
  		\[
  			\det X^t = \det X \quad\text{mit}\quad X^t := (x_{ji})_{i,j\in \{i,\dots, m \}}
@@ -442,7 +442,7 @@ Algebraisch: Dieses Volumen kann dann benutzt werden, um zu testen, wann ein Spa
 
 %VO23-2016-01-14
  \subsection{Beispiel \& Definition (Blockmatrix)}
- 	\begin{Definition}[Blockmatrix]
+ 	\begin{Definition}[Blockmatrix]\index{Blockmatrix}
  		Für eine Blockmatrix
  		\[
  			X =

@@ -1,37 +1,39 @@
-\documentclass[a4paper, fontsize=11pt, DIV=12, parskip=half]{scrreprt}
+\documentclass[a4paper, fontsize=11pt, DIV=14, parskip=half]{scrreprt}
 \usepackage{microtype}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}%schoeneres Schriftbild
 \usepackage[ngerman]{babel}%deutsche Silbentrennung
 \usepackage[onehalfspacing]{setspace}
-\usepackage{tikz}%Zeichnungen
-\usetikzlibrary{matrix}
-\usetikzlibrary{calc,arrows.meta,intersections,positioning,calc}
-\usepackage{tikz-3dplot}
-\newcommand{\equal}{=}
-\usepackage{amsmath,amsfonts,amssymb}%Mathematik-Pakete
+
 \usepackage{graphicx}
-\usepackage{enumerate}%enumerate mit roemischen Zahlen
 \usepackage{float}%fuer H Positionierung
-\usepackage[colorlinks]{hyperref} %Verlinktes Inhaltsverzeichnis
-\allowdisplaybreaks%[3]%Zeilenumbrüche in Formeln erlaubt
-\usepackage{mathtools} %für \mathrlap command
-\usepackage{makeidx} %Stichwortverzeichnis
 \usepackage{multicol}
+\usepackage{tikz}%Zeichnungen
+\usepackage{tikz-3dplot}
+\usetikzlibrary{matrix,calc,arrows.meta,intersections,positioning}
+\newcommand{\equal}{=}
+
+\usepackage{amsmath,amsfonts,amssymb}%Mathematik-Pakete
+\usepackage{mathtools} %für \mathrlap command
+\allowdisplaybreaks%[3]%Zeilenumbrüche in Formeln erlaubt
+
+\usepackage{enumerate}%enumerate mit roemischen Zahlen
+\usepackage[colorlinks]{hyperref} %Verlinktes Inhaltsverzeichnis
+\usepackage{makeidx} %Stichwortverzeichnis
+
 \makeindex
 
-\author{Studierendenmitschrift}
-\title{Lineare Algebra \& Geometrie I-II}
+\author{Studierendenmitschrift des Studienjahres 2015/16}
+\title{Lineare Algebra \& Geometrie}
 \subtitle{Prof. Udo Hertrich-Jeromin}
 
-\setcounter{chapter}{-1}%Grundlagen bei 0
 \setcounter{tocdepth}{1}
 
-\newenvironment{Satz}[1][]{\index{#1}}{\par\addvspace{\baselineskip}}
-\newenvironment{Lemma}[1][]{\index{#1}}{\par\addvspace{\baselineskip}}
-\newenvironment{Definition}[1][]{\index{#1}}{\par\addvspace{\baselineskip}}
-\newenvironment{Korollar}[1][]{\index{#1}}{\par\addvspace{\baselineskip}}
+\newenvironment*{Satz}[1][]{\ignorespaces}{\ignorespacesafterend}
+\newenvironment*{Lemma}[1][]{\ignorespaces}{\ignorespacesafterend}
+\newenvironment*{Definition}[1][]{\ignorespaces}{\ignorespacesafterend}
+\newenvironment*{Korollar}[1][]{\ignorespaces}{\ignorespacesafterend}
 
 % Eigene Operatoren:
 \let\hom\relax
@@ -62,19 +64,24 @@
 \begin{document}
 \maketitle
 \tableofcontents
+
 \input{Chap0}
-\input{Chap1/1Ch1}
-\input{Chap1/2Ch1}
-\input{Chap1/3Ch1}
-\input{Chap1/4Ch1}
-\input{Chap1/5Ch1}
-\input{Chap2/1Ch2}
-\input{Chap2/2Ch2}
-\input{Chap2/3Ch2}
-\input{Chap3/1Ch3}
-\input{Chap3/2Ch3}
-\input{Chap4/1Ch4}
-\input{Chap4/2Ch4}
+
+\input{Chap1/1Ch1.tex}
+\input{Chap1/2Ch1.tex}
+\input{Chap1/3Ch1.tex}
+\input{Chap1/4Ch1.tex}
+\input{Chap1/5Ch1.tex}
+
+\input{Chap2/1Ch2.tex}
+\input{Chap2/2Ch2.tex}
+\input{Chap2/3Ch2.tex}
+
+\input{Chap3/1Ch3.tex}
+\input{Chap3/2Ch3.tex}
+
+\input{Chap4/1Ch4.tex}
+\input{Chap4/2Ch4.tex}
 \input{Chap4/3Ch4.tex}
 \input{Chap4/4Ch4.tex}
 \input{Chap4/5Ch4.tex}
@@ -89,6 +96,7 @@
 \input{Chap6/2Ch6.tex}
 \input{Chap6/3Ch6.tex}
 \input{Chap6/4Ch6.tex}
+
 \small
 \printindex
 \end{document}

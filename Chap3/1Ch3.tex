@@ -34,7 +34,7 @@ Nachteil: Selbst durch einen Trottel ausführbar.
  	In dieser LVA: Bilder $ f(b_j) $ der Basisvektoren werden durch Spalten beschrieben.
 
 \subsection{Definition}
-	\begin{Definition}[Matrix]
+	\begin{Definition}[Matrix]\index{Matrix}
 		Eine \emph{Matrix} $ X\in K^{m\times n} $ ist eine Tabelle von Elementen $ x_{ij}\in K $ mit $ m $ Zeilen und $ n $ Spalten:
 		\[
 			X =
@@ -65,7 +65,7 @@ Nachteil: Selbst durch einen Trottel ausführbar.
 			f=\sum_{i=1}^{m}\sum_{j=1}^{n} c_ix_{ij}b_j^*.
 		\]
 \subsection{Lemma}
-	\begin{Lemma}[Matrizen als VR]
+	\begin{Lemma}[Matrizen als VR]\index{Matrizen als VR}
 		Mit der komponentenweisen Addition und Skalarmultiplikation auf $ K^{m\times n} $,
 		\[
 			(x_{ij})+(y_{ij}) := (x_{ij}+y_{ij}) \text{ und } (x_{ij})\cdot z := (x_{ij}\cdot z),
@@ -96,7 +96,7 @@ Nachteil: Selbst durch einen Trottel ausführbar.
 	\paragraph{Bemerkung}
 		Damit folgt (vgl. Kap. 1.4): $ \dim \hom(V,W) = \dim K^{m\times n} = m\cdot n $.
 \subsection{Lemma \& Definition}
-	\begin{Lemma}[Darstellungsmatrix einer Komposition]
+	\begin{Lemma}[Darstellungsmatrix einer Komposition]\index{Darstellungsmatrix einer Komposition}
 		Sind $ U,V,W \ K$-VR mit Basen $ A=(a_1,\dots,a_p),\ B=(b_1,\dots,b_n),\ C=(c_1,\dots,c_m) $, so gilt für $ g\in \hom(U,V) $ und $ f\in \hom(V,W) $
 		\[
 			\xi_A^C(f\circ g) = \xi_B^C(f)\cdot \xi_A^B(g),
@@ -251,7 +251,7 @@ Nachteil: Selbst durch einen Trottel ausführbar.
 		\]
 		Umgekehrt: gibt es eine Darstellungmatrix von $ f $ dieser Form, so ist $ \rg f = r $.
 \subsection{Beispiel \& Definition}
-	\begin{Definition}[Einheitsmatrix]
+	\begin{Definition}[Einheitsmatrix]\index{Einheitsmatrix}
 		Ist $ B=(b_1,\dots,b_n) $ Basis von $ V $, so hat der Isomorphismus
 		\[
 			\phi:V\to K^n \text{ mit } \forall j=1,\dots,n:\phi(b_j)=e_j
@@ -284,7 +284,7 @@ Nachteil: Selbst durch einen Trottel ausführbar.
 		\xi_B^C(f)\cdot \xi_C^B(f^{-1})=\xi_C^C(f\circ f^{-1}) = \xi_C^C(\id_W)=E_n.
 	\]
 
-	\begin{Definition}[Invertierbare Matrix]
+	\begin{Definition}[Invertierbare Matrix]\index{Invertierbare Matrix}
 		Eine Matrix $ X\in K^{n\times n} $ nennt man invertierbar mit Inverser $ X^{-1} $, falls
 		\[
 			\exists X^{-1}\in K^{n\times n}:X^{-1}X = E_n
@@ -304,7 +304,7 @@ Nachteil: Selbst durch einen Trottel ausführbar.
 		\xi_E^{E'}(f_X) = X.
 	\]
 
-	\begin{Definition}[Rang einer Matrix]
+	\begin{Definition}[Rang einer Matrix]\index{Rang einer Matrix}
 		Damit definiert man den Rang einer Matrix $ X\in K^{m\times n} $ als
 		\[
 			\rg X:=\rg f_X

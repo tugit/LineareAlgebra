@@ -1,7 +1,7 @@
 %VO08-2015-10-29
 \section{Homomorphismen}
  \subsection{Definition}
- 	\begin{Definition}[Homomorphismus]
+ 	\begin{Definition}[Homomorphismus]\index{Homomorphismus}
  		Sind $ V $ und $ W $ $ K $-VR, so heißt eine Abbildung $f: V \rightarrow W$ \emph{($K$-)linear} oder ein \emph{(Vektorraum-)""Homomorphismus} $f\in \hom(V,W)$, falls gilt:
 
  		\begin{enumerate}[(i)]
@@ -42,7 +42,7 @@
  		kein Homomorphismus von $\mathbb{C}$ in sich, wenn man $\mathbb{C}$ als $\mathbb{C}$-VR auffasst. Hingegen ist sie ein Homomorphismus von $\mathbb{C}$ in sich, wenn man $\mathbb{C}$ als $ \mathbb{R} $-VR auffasst.
 
  \subsection{Lemma (Linearkombinationen und Homomorphismen)}
- 	\begin{Lemma}[Linearkombinationen und Homomorphismen]
+ 	\begin{Lemma}[Linearkombinationen und Homomorphismen]\index{Linearkombinationen und Homomorphismen}
  		$f:V\to W$ ist genau dann ein Homomorphismus, wenn für jede beliebige Linearkombination gilt:
  		\begin{equation*}
  			f\Big(\sum_{i\in I}v_ix_i\Big) = \sum_{i\in I}f(v_i)x_i
@@ -53,7 +53,7 @@
  		Eine Richtung ist trivial, die andere ist mit vollständiger Induktion zu zeigen.
 
  \subsection{Fortsetzungssatz}
- 	\begin{Satz}[Fortsetzungssatz]
+ 	\begin{Satz}[Fortsetzungssatz]\index{Fortsetzungssatz}
  		Seien $ V $ und $ W $ $K$-VR, $(b_i)_{i\in I}$ eine Basis von $ V $ und $(c_i)_{i\in I}$ eine Familie in $ W $.
  		Dann gilt:
  		\begin{equation*}
@@ -90,7 +90,7 @@
  		\end{enumerate}
 
  \subsection{Beispiel und Definition (Dualraum)}
- 	\begin{Definition}[Dualraum]
+ 	\begin{Definition}[Dualraum]\index{Dualraum}
  		Der \emph{Dualraum} $V^\ast := \hom(V,K)$ eines $K$-VRs $V$ ist ein $ K $-VR $(\subset K^V)$. Ist $\dim V=:n<\infty$ so ist $\dim V^\ast=n$.
 
  		Nämlich: Ist $B=(b_1, ... ,b_n)$ eine Basis von $V$  $(\dim V < \infty)$, so definieren wir für $ i = \{1, ... ,n\} $ (nach Fortsetzungssatz):
@@ -154,7 +154,7 @@
  		Das heißt, $(x_i)_{i\in I}$ wäre eine Familie in $ K $ mit $\#\{i\in I\mid x_i\neq 0\}=\infty$, also ist $\sum_{i\in I}b_i^\ast x_i$ keine Linearkombination.
 
  \subsection{Satz (Homomorphismen als VR)}
- 	\begin{Satz}[Homomorphismen als VR]
+ 	\begin{Satz}[Homomorphismen als VR]\index{Homomorphismen als VR}
  		$ \hom (V,W) $ ist ein VR, mit $\dim\hom (V,W) = m\cdot n$, falls $m:=\dim W<\infty, n:=\dim V< \infty$.
  	\end{Satz}
  	\paragraph{Beweis}
@@ -258,7 +258,7 @@
  		Ist $ f\in \hom (V,W) $ bijektiv, so ist $ f^{-1}\in \hom (W,V) $.
 
  \subsection{Rangsatz}
- 	\begin{Satz}[Rangsatz]
+ 	\begin{Satz}[Rangsatz]\index{Rangsatz}
  		Sei $ f\in \hom (V,W) $. Ist $ \dim V = n < \infty $,  so gilt
  		\[
  			\rg f + \dfkt f = \dim V
@@ -359,7 +359,7 @@
  		Damit folgt $\dim K^\mathbb{N} =\infty$ (sonst hätte man einen Widerspruch zum Korollar).
 
  \subsection{Definition (Spezielle Homomorphismen)}
- 	\begin{Definition}[Spezielle Homomorphismen]
+ 	\begin{Definition}[Spezielle Homomorphismen]\index{Spezielle Homomorphismen}
  		Sei $f\in \hom(V,W)$ ein Homomorphismus, dann heißt $f$
  		\begin{itemize}
  			\item \emph{Endomorphismus}, $f\in \End (V)$, falls $W = V$;
@@ -388,7 +388,7 @@
  		\end{align*}
 
  \subsection{Isomorphielemma}
- 	\begin{Lemma}[Isomorphielemma]
+ 	\begin{Lemma}[Isomorphielemma]\index{Isomorphielemma}
  		Seien $V$ und $W$ $ K $-VR mit $\dim V, \dim W < \infty$.
  		Dann gilt:
  		\[

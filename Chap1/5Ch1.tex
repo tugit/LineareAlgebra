@@ -1,7 +1,7 @@
 %VO10-2015-11-10
 \section{Summen, Produkte und Quotienten}
  \subsection{Definition (Summe von UVR)}
- 	\begin{Definition}[Summe von UVR]
+ 	\begin{Definition}[Summe von UVR]\index{Summe von UVR}
  		Die \emph{Summe einer Familie} $ (U_i)_{i\in I} $ von UVR $ U_i\subset V $ eines $ K $-VR ist die Menge
  		\[
  			\sum_{i\in I} U_i := \Big\{\sum_{i \in I}u_i\mid \forall i\in I: u_i\in U_i \land \# \{i\in I\mid u_i \neq 0\}<\infty\Big\}.
@@ -43,7 +43,7 @@
  		\]
 
  \subsection{Dimensionssatz}
- 	\begin{Satz}[Dimensionssatz]
+ 	\begin{Satz}[Dimensionssatz]\index{Dimensionssatz}
  		Sind $ U_i \subset V $ UVR mit $ \dim U_i < \infty $ für $ i\in \{1,2\} $, so ist
  		\[
  			\dim (U_1+U_2) + \dim (U_1\cap U_2) = \dim U_1 + \dim U_2.
@@ -157,7 +157,7 @@
  		ist beispielsweise jeder UVR $ U' = [u']$ mit $u'_2\neq 0 $ komplementär in $ K^2 $.
 
  \subsection{Lemma \& Definition (direkte Summe)}
- 	\begin{Definition}[Direkte Summe]
+ 	\begin{Definition}[Direkte Summe]\index{Direkte Summe}
  		Sei $ U= \sum_{i\in I}U_i\subset V $ Summe einer Familie von UVR $ U_i\in V $; dann besitzt jeder Vektor $ u\in U $ eine eindeutige Zerlegung als Summe von $ u_i $, genau dann, wenn
  		\begin{equation*}
  			\forall i\in I: U_i\cap \sum_{j\in I\setminus \{i\}}U_j = \{0 \}.
@@ -235,12 +235,12 @@
  		\]
 
  \subsection{Definition (Projektion)}
- 	\begin{Definition}[Projektion]
+ 	\begin{Definition}[Projektion]\index{Projektion}
  		$ p\in \End(V) $ heißt \emph{Projektion}, falls $ p^2 = p $ (d.h. falls $ p $ idempotent ist).
  	\end{Definition}
 
  \subsection{Satz (Projektionen)}
- 	\begin{Satz}[Projektionen]
+ 	\begin{Satz}[Projektionen]\index{Projektionen}
  		Sei $ p\in \End(V) $ Projektion, dann ist
  		\[
  			p'= \id_V-p \quad\text{Projektion mit}\quad  pp' = p'p = 0.
@@ -304,7 +304,7 @@
  		\]
 
  \subsection{Beispiel und Definition (Involution)}
- 	\begin{Definition}[Definition]
+ 	\begin{Definition}[Definition]\index{Definition}
  		Sei $s\in \operatorname{End}(V)$ eine \emph{Involution} d.h. $s^2 = \id_V$  und
  		\[
  			p_\pm := \frac{1}{2}(\id_V\pm s).
@@ -317,7 +317,7 @@
  	\end{Definition}
 
  \subsection{Lemma und Definition (Produkt von VR)}
- 	\begin{Definition}[Produkt von VR]
+ 	\begin{Definition}[Produkt von VR]\index{Produkt von VR}
  		Ist $(V_i)_{i\in I}$ eine Familie von $ K $-VR $V_i$, so wird das (mengenthoretische) \emph{Produkt}:
  		\[
  			V:= \prod_{i\in I}V_i=\{(v_i)_{i\in I}\mid\forall i\in I:v_i\in V_i\}
@@ -363,7 +363,7 @@
  		\]
 
  \subsection{Lemma und Definition (Nebenklassen)}
- 	\begin{Definition}[Nebenklassen]
+ 	\begin{Definition}[Nebenklassen]\index{Nebenklassen}
  		Sei $U\subset V$ UVR. Die Menge der Nebenklassen
  		\[
  			V/U := \{v+U\mid v\in V\},
