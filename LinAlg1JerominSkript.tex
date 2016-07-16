@@ -1,0 +1,63 @@
+\documentclass[a4paper, fontsize=11pt, DIV=12, parskip=half]{scrreprt}
+\usepackage{microtype}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}%schoeneres Schriftbild
+\usepackage[ngerman]{babel}%deutsche Silbentrennung
+\usepackage[onehalfspacing]{setspace}
+\usepackage{tikz}%Zeichnungen
+\usetikzlibrary{matrix}
+\usetikzlibrary{arrows,positioning,arrows.meta}
+\usepackage{tikz-3dplot}
+\newcommand{\equal}{=}
+\usepackage{amsmath,amsfonts,amssymb}%Mathematik-Pakete
+\usepackage{graphicx}
+\usepackage{paralist}%enumerate mit roemischen Zahlen
+\usepackage{float}%fuer H Positionierung
+\usepackage[colorlinks]{hyperref} %Verlinktes Inhaltsverzeichnis
+\allowdisplaybreaks[3]%Zeilenumbrüche in Formeln erlaubt
+\usepackage{mathtools} %für \mathrlap command
+\usepackage{makeidx} %Stichwortverzeichnis
+\makeindex
+\author{Studierendenmitschrift}
+\title{Skript Lineare Algebra \& Geometrie 1, Hertrich-Jeromin}
+
+\setcounter{chapter}{-1}%Grundlagen bei 0
+\setcounter{tocdepth}{1}
+
+\newenvironment{Satz}[1][]{\index{#1}}{\par\addvspace{\baselineskip}}
+\newenvironment{Lemma}[1][]{\index{#1}}{\par\addvspace{\baselineskip}}
+\newenvironment{Definition}[1][]{\index{#1}}{\par\addvspace{\baselineskip}}
+\newenvironment{Korollar}[1][]{\index{#1}}{\par\addvspace{\baselineskip}}
+
+% Eigene Operatoren:
+\let\hom\relax
+\DeclareMathOperator{\Char}{Char}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Iso}{Iso}
+\DeclareMathOperator{\hom}{Hom}
+\DeclareMathOperator{\rg}{rg}
+\DeclareMathOperator{\dfkt}{def}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\sgn}{sgn} % Signum
+\DeclareMathOperator{\vol}{vol} % Volumen 
+\begin{document}
+\maketitle
+\tableofcontents
+\input{Chap0}
+\input{Chap1/1Ch1}
+\input{Chap1/2Ch1}
+\input{Chap1/3Ch1}
+\input{Chap1/4Ch1}
+\input{Chap1/5Ch1}
+\input{Chap2/1Ch2}
+\input{Chap2/2Ch2}
+\input{Chap2/3Ch2}
+\input{Chap3/1Ch3}
+\input{Chap3/2Ch3}
+\input{Chap4/1Ch4}
+\input{Chap4/2Ch4}
+\small
+\printindex
+\end{document}

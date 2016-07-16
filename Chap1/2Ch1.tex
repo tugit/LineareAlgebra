@@ -1,0 +1,231 @@
+%VO05-2015-10-20
+\section{Unterräume und Lineare Hülle}
+ \subsection{Definition (Untervektorraum)}
+ 	\begin{Definition}[Untervektorraum]
+ 		Eine Teilmenge $U\subset V$ eines $K$-VR $V$ heißt \emph{Unter(vektor)raum} (UVR), falls $U$ mit der eingeschränkten Addition und Skalarmultiplikation
+ 		\begin{align*}
+ 			^+    & \mid_{U\times U}: U\times U \to V,\ (v,w) \mapsto v+w \\
+ 			\cdot & \mid_{K\times U}: K\times U \to V,\ (x,v) \mapsto vx
+ 		\end{align*}
+ 		selbst ein Vektorraum ist, d.h. wenn insbesondere
+ 		\begin{align*}
+ 			  & \forall v,w \in U: v+w\in U \text{ und}  \\
+ 			  & \forall x\in K\ \forall v\in U: vx\in U.
+ 		\end{align*}
+ 	\end{Definition}
+
+ 	\paragraph{Bemerkung}
+ 		Eine nicht-leere Teilmenge $U\subset V, U\neq\emptyset$, ist genau dann ein UVR, wenn die auf $U$ eingeschränkten Operationen wohldefiniert sind, d.h. wenn $ U $ bzgl. $ + $ und $ \cdot $ abgeschlossen ist.
+
+ 		Dies kann zum \emph{Unterraumkriterium} zusammengefasst werden:
+ 		\begin{equation*}
+ 			U\subset V \text{ ist UVR }\Leftrightarrow
+ 			\begin{cases}
+ 				U\neq\emptyset                              \\
+ 				\forall v,w\in U\ \forall x\in K: vx+w\in U
+ 			\end{cases}
+ 		\end{equation*}
+
+ 	\paragraph{Beispiel}
+ 		Sei $I=\{1,...,n\}$. Für jedes (feste) $i\in I$ ist
+ 		\[
+ 			U_i := \{v:I\to K\mid v_i =0\}
+ 		\]
+ 		ein UVR von $K^n$, denn
+ 		\begin{enumerate}
+ 			\item $v = 0 \in U_i\text{, also } U_i \neq \emptyset$
+ 			\item Seien $v,w\in U_i$, d.h. $v,w\in K^n$ mit $v_i =w_i =0$, und $x\in K$; dann gilt $(vx+w)_i = v_ix+ w_i = 0\cdot x + 0 = 0$, also $vx+w\in U_i$ und damit ist $U_i$ UVR nach Unterraumkriterium.
+ 		\end{enumerate}
+ 		Kein UVR von $K^n, n\geq 2$, ist jedoch die Menge
+ 		\[
+ 			N:=\{v:I\to K\mid v_1\cdot v_2 = 0\},
+ 		\]
+ 		denn
+ 		\begin{enumerate}
+ 			\item $N$ ist zwar nicht-leer, $N\neq \emptyset$, aber
+ 			\item $^+\mid_{N\times N}: N\times N\to N$ nicht wohldefiniert: seien $v,w\in N$, so dass
+ 			      \begin{gather*}
+ 			      	v_1=0, v_2=1\text{ }(v_3 ... v_n \text{ irrelevant})\\
+ 			      	w_1=1, w_2 = 0\text{ }(w_3 ... w_n \text{ irrelevant})
+ 			      \end{gather*}
+ 		\end{enumerate}
+ 		dann gilt:
+ 		\begin{gather*}
+ 			(v+w)_1 = v_1 + w_1 = 0+1=1\\
+ 			(v+w)_2 = v_2 + w_2 = 1+0 = 1
+ 		\end{gather*}
+ 		und damit
+ 		\[
+ 			(v+w)_1(v+w)_2 = 1 \Rightarrow v+w\notin N.
+ 		\]
+
+ 	\paragraph{Bemerkung und Beispiel}
+ 		In analoger Weise definiert man die Begriffe
+ 		\begin{itemize}
+ 			\item einer \emph{Untergruppe} $H\subset G$ einer Gruppe $(G,\cdot)$, bzw.
+ 			\item eines \emph{Unter-} oder \emph{Teilkörpers} $T\subset K$ eines Körpers $(K,+,\cdot )$
+ 		\end{itemize}
+
+ 		z.B. bildet jeder UVR $U\subset V$ eines $K$-VR $V$ (mit der Addition) eine Untergruppe der Gruppe $(V,+)$.\\
+ 		In gleicher Weise bildet eine nicht-leere Teilmenge eine \emph{Untergruppe} bzw. einen \emph{Unterkörper}, falls die eingeschränkten Operationen wohldefiniert sind.
+
+ 		z.B. ist $H\subset G$ eine Untergruppe, falls (Untergruppenkriterium):
+ 		\begin{enumerate}
+ 			\item $H\neq \emptyset$
+ 			\item $\forall g,h\in H: g\circ h^{-1} \in H$
+ 		\end{enumerate}
+
+ 		Achtung: Inversenbildung muss im Kriterium explizit formuliert werden, sonst würde z.B.: $\mathbb{N}\subset\mathbb{Z}$ als Teilmenge von der Gruppe $(\mathbb{Z}, +)$ ein Gegenbeispiel liefern.
+
+ 		Weitere Beispiele:
+ 		\begin{itemize}
+ 			\item die Translationen bilden eine Untergruppe der Bewegungsgruppe
+ 			\item $\mathbb{Q}\subset\mathbb{R}$ und $\mathbb{R}\cong \{x+iy\mid y=0\}\subset\mathbb{C}$ bilden Teilkörper von $\mathbb{R}$ bzw. $\mathbb{C}$.
+ 		\end{itemize}
+
+ \subsection{Lemma (Schnitt von UVR)}
+ 	\begin{Lemma}[Schnitt von UVR]
+ 		Ist $(U_i)_{i\in I}$ eine Familie von UVR $U_i\subset V$ eines $K$-VR $V$, so ist ihr Schnitt
+ 		\[
+ 			U:= \bigcap_{i\in I}U_i =\{ u\in V\mid \forall i\in I: u\in U_i\}
+ 		\]
+ 		ein UVR von $V$. (Beweis durch UR-Krit. in Aufgabe 17)
+ 	\end{Lemma}
+
+ \subsection{Definition (Lineare Hülle)}
+ 	\begin{Definition}
+ 		Die \emph{lineare Hülle} $[S]$ einer Teilmenge $S\subset V$ eines $ K $-VR $ V $ ist der Schnitt aller $S$ enthaltenden UVR $U\subset V$:
+ 		\[
+ 			[S] := \bigcap_{S\subset U \text{ UVR}} U
+ 		\]
+ 		Die lineare Hülle einer Familie $(v_i)_{i\in I}$ von Vektoren $v_i\in V$ in einem $ K $-VR $ V $ ist
+ 		\[
+ 			[(v_i)_{i\in I}] := [\{v_i\mid i\in I\}]
+ 		\]
+ 	\end{Definition}
+
+ 	\paragraph{Bemerkung}
+ 		$[S]$ ist ein UVR (nach Lemma), der \glqq kleinste\grqq{} UVR, der $S$ enthält, d.h. ist $U\subset V$ UVR mit $S\subset U$, so gilt $[S]\subset U$; da aber $[S] = \bigcap_{S\subset \tilde{U}  \text{ UVR}}\tilde{U}\subset U$,
+ 		da $S\subset U$, also $U$ am Schnitt beteiligt ist.
+
+ 	\paragraph{Bemerkung}
+ 		$[\emptyset ] = \{0\}$ und $[V] = V$.
+
+ 	\paragraph{Beispiel}
+ 		Ist $U\subset V$ UVR, so gilt $[U] = U$.
+
+ 	\paragraph{Beispiel}
+ 		$N=\{v:I\to K\mid v_1v_2=0\} \subset K^n,\ I=\{1,...,n\},\ n\geq 2$, hat die lineare Hülle $[N]=K^n$.
+
+ 	\paragraph{Beispiel}
+ 		Für $I=\{1,...,n\}$ und $i\in I$ definiere
+ 		$e_i:I\to K ,\ j\mapsto e_i(j):= \delta_{ij}$, wobei
+ 		\begin{equation*}
+ 			\delta_{ij} :=
+ 			\begin{cases}
+ 				1, & \text{falls }i=j \\
+ 				0, & \text{sonst}
+ 			\end{cases}
+ 		\end{equation*}
+ 		das \emph{Kroneckersymbol} bezeichnet.
+
+ 		Damit ist die lineare Hülle der Familie $(e_i)_{i\in I}$
+ 		\[
+ 			[(e_i)_{i\in I}] = K^n.
+ 		\]
+ 		Nämlich: Da $[(e_i)_{i\in I}]\subset K^n$ ist, gilt für beliebige $x_1,...,x_n\in K$
+ 		\begin{gather*}
+ 			\underbrace{e_1x_1\underbrace{+...+\underbrace{e_nx_n + 0}_{\in [(e_i)_{i\in I}]}}_{\in [(e_i)_{i\in I}]}}_{\in [(e_i)_{i\in I}]}\in [(e_i)_{i\in I}]
+ 		\end{gather*}
+ 		da $[(e_i)_{i\in I}] \subset K^n$ UVR ist.
+ 		Andererseits gilt für beliebiges $v\in K^n$:
+ 		\[
+ 			v=\sum^n_{i=1}e_iv(i): I\to K,
+ 		\]
+ 		denn
+ 		\[
+ 			\forall j\in I: \bigg(\sum^n_{i=1} e_iv(i)\bigg)(j) = \sum^n_{i=1}e_i(j)v(i) = v(j)
+ 		\]
+ 		Damit ist gezeigt, dass die beiden Abbildungen übereinstimmen; da $v\in K^n$ beliebig war, folgt $K^n \subset [(e_i)_{i\in I}]$
+
+ \subsection{Definition (Linearkombination)}
+ 	\begin{Definition}
+ 		Seien $(v_i)_{i\in I}$ und $(x_i)_{i\in I}$ Familien in einem $ K $-VR bzw. dem Körper $ K $, wobei
+ 		\begin{align*}
+ 			\# & \{i\in I\mid x_i \neq 0\} < \infty\text{ , also} \\
+ 			   & \{i\in I \mid x_i \neq 0\} = \{i_1,...,i_n\}
+ 		\end{align*}
+ 		für ein geeignetes  $n\in \mathbb{N}$;
+ 		Dann heißt die endliche Summe
+ 		\[
+ 			\sum_{i\in I} v_ix_i:= \sum^n_{j=1}v_{i_j}x_{i_j}
+ 		\]
+ 		eine \emph{Linearkombination}.
+ 	\end{Definition}
+
+ 	\paragraph{Bemerkung}
+ 		Die Bedingung $\#\{i\in I \mid x_i\neq 0\} <\infty$
+ 		garantiert, dass die Summe wohldefiniert ist $\rightarrow$ vgl. Reihen in der Analysis.
+
+%VO06-2015-10-22
+ \subsection{Lemma (Lineare Hülle und Linearkombinationen)}
+ 	\begin{Lemma}[Lineare Hülle und Linearkombinationen]
+ 		Ist $(v_i)_{i\in I}$, $I \neq \emptyset$, Familie in einem $K$-VR, so gilt:
+ 		\[
+ 			[(v_i)_{i\in I}] = \bigg\{\sum_{i\in I} v_ix_i\mid x: I\to K,\ \# \{i\in I \mid x_i \neq 0\}< \infty\bigg\},
+ 		\]
+ 		d.h. die lineare Hülle der Familie ist die Menge aller Linearkombinationen der Familie.
+ 	\end{Lemma}
+
+ 	\paragraph{Beweis}
+ 		Wir zeigen (wie üblich) zwei Inklusionen:
+
+ 		"$\supseteq$":
+
+ 		Sei also $(x_i)_{i\in I}$ eine geeignete Familie in $ K $, dann gilt:
+ 		\[
+ 			\sum_{i\in I} v_i x_i = \underbrace{v_{i_1} x_{i_1} + ... + \underbrace{(v_{i_n}x_{i_n}+0)}_{\in [(v_i)_{i\in I}]}}_{\mathrlap{ \in [(v_i)_{i\in I}] \text{ nach UR-Krit. (nach $n$ Schritten)}}}
+ 		\]
+
+ 		"$\subseteq$":
+
+ 		Setze $U := \{{\sum_{i\in I} v_ix_i\mid x: I\to K \text{ mit } \#\{{i\in I\mid x_i \neq 0\}} < \infty\}}$, offenbar gilt:
+ 		\[
+ 			\forall i\in I: v_i\in U
+ 		\]
+ 		Wir zeigen, dass $U$ ein Untervektorraum ist. Das heißt:
+ 		\begin{align*}
+ 			^+    & \mid_{U\times U}: U\times U \to U \subset V  \\
+ 			\cdot & \mid_{K\times U}: K\times U \to U \subset V,
+ 		\end{align*}
+ 		also die Addition und Skalarmultiplikation vererben sich auf $ U $.
+
+ 		Zur Skalarmultiplikation:
+ 		\begin{addmargin}[25pt]{0pt}
+ 			Sind $(x_i)_{i\in I}$ mit $\#\{i\in I \mid x_i \neq 0\}<\infty$ eine Familie in $ K $ und $x\in K$, so gilt für ein geeignetes $n\in \mathbb{N}$
+ 			\[
+ 				\{i\in I\mid x_i \neq 0\} = \{i_1, ... , i_n\}
+ 			\]
+ 			und damit
+ 			\begin{equation*}
+ 				\{i\in I\mid x_ix\neq 0\} =
+ 				\begin{cases}
+ 					\{{i_1,...,i_n\}}, & \text{falls }x \neq 0 \\
+ 					\emptyset,         & \text{falls }x = 0.
+ 				\end{cases}
+ 			\end{equation*}
+ 			Also folgt
+ 			\begin{align*}
+ 				\bigg(\sum_{i\in I}v_i x_i\bigg) x & = \bigg(\sum_{j=1}^{n} v_{i_j}x_{i_j}\bigg)x                          \\
+ 				                                   & = \sum_{j=1}^{n} v_{i_j}(x_{i_j}x) = \sum_{i\in I} v_i(x_ix) \in U_i,
+ 			\end{align*}
+ 			da $\sum_{i\in I} v_i(x_ix)$ Linearkombination (mit der Familie $(x_ix)_{i\in I}$ in K) ist.
+ 		\end{addmargin}
+
+ 		Zur Addition:
+ 		\begin{addmargin}[25pt]{0pt}
+ 			Ähnlich, siehe Aufgabe.
+ 		\end{addmargin}
+
+ 	\paragraph{Bemerkung}
+ 		Um triviale Diskussionen zu vermeiden, setzt man $\sum_{i\in \emptyset} ...:=0$.

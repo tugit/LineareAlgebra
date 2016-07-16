@@ -1,0 +1,407 @@
+%VO23-2016-01-14
+\section{Äquiaffine Geometrie}
+ \subsection{Definition}
+ 	\begin{Definition}[Parallelotop im affinen Raum]
+ 		Seien $ (A,V,\tau) $ ein $ n $-dimensionaler affiner Raum und $ p_0\in A $; das von einer Familie $ (v_j)_{j\in \{1,\dots,n\}} $ in $ V $ aufgespannte \emph{Parallelotop} oder \emph{Spat} ist die (über dem \emph{abstrakten Würfel} $ \mathbb{Z}_2^n $ indizierte) Familie
+ 		\[
+ 			p: \mathbb{Z}_2^n\to A,\ \epsilon \mapsto p_\epsilon := p_0 +\sum_{j=1}^{n}v_j\epsilon_j.
+ 		\]
+ 		Ist $ \omega\in\Lambda^nV^*\setminus\{0\} $, so ist das zugehörige \emph{(Spat-)Volumen} von $ (p_\epsilon)_{\epsilon \in \mathbb{Z}_2^n} $
+ 		\[
+ 			\vol(p):= \omega(v_1,\dots,v_n).
+ 		\]
+ 	\end{Definition}
+ 	%%% Grafik Parallelogramm
+ 	\begin{figure}[H]
+ 		\centering
+ 		\definecolor{zzttqq}{rgb}{0.6,0.2,0.}
+ 		\definecolor{uuuuuu}{rgb}{0.26,0.26,0.26}
+ 		\definecolor{qqqqff}{rgb}{0.,0.,1.}
+ 		\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=5.0cm,y=3.0cm,]
+ 			\clip(0.6,0.7) rectangle (2.8,2.35);
+ 			\fill[color=zzttqq,fill=zzttqq,fill opacity=0.1] (1.,1.) -- (1.5,2.) -- (2.5,2.) -- (2.,1.) -- cycle;
+ 			\draw [->] (1.,1.) -- (1.5,2.);
+ 			\draw [->] (1.,1.) -- (2.,1.);
+
+ 			\draw [fill=qqqqff] (1.,1.) circle (2.5pt);
+ 			\draw[color=qqqqff] (0.96,0.94) node {p(0,0)};
+ 			\draw [fill=uuuuuu] (2.5,2.) circle (1.5pt);
+ 			\draw[color=uuuuuu] (2.6,2.0) node {p(1,1)};
+ 			\draw [fill=uuuuuu] (2.,1.) circle (1.5pt);
+ 			\draw[color=uuuuuu] (2.,1) node {p(1,0)};
+ 			\draw [fill=uuuuuu] (1.5,2.) circle (1.5pt);
+ 			\draw[color=uuuuuu] (1.58,2.05) node {p(0,1)};
+ 			\draw[color=black] (1.2,1.55) node {$v_2$};
+ 			\draw[color=black] (1.5,1) node {$v_1$};
+
+ 		\end{tikzpicture}
+ 	\end{figure}
+ 	%%%%% ENDE Grafik Parallelogramm %%%%%
+ \subsection{Bemerkung \& Definition}
+ 	\begin{Definition}[Parallelogramm/Flächeninhalt]
+ 		Im Falle $ n=2 $ heißt ein Parallelotop $ p $ auch \emph{Parallelogramm}, sein Spatvolumen auch sein \emph{Flächeninhalt}. Der Flächeninhalt ist \emph{orientiert}:
+ 		Mit
+ 		\[
+ 			\epsilon = (\epsilon_j)_{j\in \{1,2\}}\cong (\epsilon_1,\epsilon_2)
+ 		\]
+ 		und
+ 		\[
+ 			v_1 = p_{(1,0)}-p_{(0,0)}\text{ und } v_2 = p_{(0,1)}-p_{(0,0)}
+ 		\]
+ 		ändert der Flächeninhalt das Vorzeichen, wenn man die Kantenvektoren vertauscht:
+ 		\[
+ 			\vol(p) = \omega(v_1,v_2) = -\omega(v_2,v_1) = \vol(p')
+ 		\]
+ 		mit $ p'_\epsilon = p_{\epsilon \circ \tau_{12}} $.
+ 	\end{Definition}
+
+%VO23-2016-01-19
+ 	\paragraph{Bemerkung}
+ 		Für ein Dreieck $ \{a,b,c\} $ wählt man eine Orientierung, e.g. $ (a,b,c) $, und setzt den Flächeninhalt
+ 		\[
+ 			F(a,b,c) := \omega(b-a,c-a)\cdot\frac{1}{2}
+ 		\]
+ 		d.h. als halben Flächeninhalt des Parallelogramms
+ 		\[
+ 			p_{(0,0)} := a,\ p_{(1,0)} := b,\ p_{(0,1)} := c \text{ und } p_{(1,1)} := a(-1)+b\cdot 1+c\cdot 1.
+ 		\]
+ 		Dieser Flächeninhalt ist wohldefiniert, d.h. er hängt nur vom Dreieck und der gewählten Orientierung ab -- insbesondere ist für Permutationen $ \sigma $ von $ \{a,b,c\} $ mit $ \sgn(\sigma) = +1 $ der Flächeninhalt gleich dem ursprünglichen. (Siehe Aufgabe)
+ 	\paragraph{Bemerkung}
+ 		Ist $ A $ eine affine Ebene mit Flächenmessung $ \vol $ und $ \{a,b,c\} $ ein nicht-de"-ge"-nerier"-tes Dreieck, also ein baryzentrisches Bezugssystem, so gilt (vgl. Cramersche Regel)
+ 		\[
+ 			\forall s\in A: s=a\cdot \frac{F(s,b,c)}{F(a,b,c)}+ b\cdot\frac{F(a,s,c)}{F(a,b,c)} +c\cdot\frac{F(a,b,s)}{F(a,b,c)}
+ 		\]
+ 		Diese Flächenformel für die baryzentrischen Koordinaten eines Punktes $ s $ ist unabhängig von der (gewählten) Flächenmessung, da sich verschiedene Flächenmessungen nur um einen Faktor unterscheiden (der unabhängig vom Dreieck ist): $ \dim \Lambda^2V^*=1 $
+ 		%%% Grafik Dreieck mit Punkt s %%%%%
+ 		\begin{figure}[H]\centering
+ 			\definecolor{wwqqcc}{rgb}{0.4,0.,0.8}
+ 			\definecolor{ffzztt}{rgb}{1.,0.6,0.2}
+ 			\definecolor{qqqqff}{rgb}{0.,0.,1.}
+ 			\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=2.0cm,y=1.5cm]
+ 				\fill[color=ffzztt,fill=ffzztt,fill opacity=0.1] (1.,1.) -- (2.64,3.96) -- (3.92,0.42) -- cycle;
+ 				\fill[color=wwqqcc,fill=wwqqcc,fill opacity=0.1] (2.64,3.96) -- (2.7,1.6) -- (3.92,0.42) -- cycle;
+ 				\draw [color=wwqqcc] (2.64,3.96)-- (2.7,1.6);
+ 				\draw [color=wwqqcc] (2.7,1.6)-- (3.92,0.42);
+ 				\draw [color=wwqqcc] (3.92,0.42)-- (2.64,3.96);
+ 				\draw (1.,1.)-- (2.7,1.6);
+ 				\draw [fill=qqqqff] (1.,1.) circle (2.5pt);
+ 				\draw[color=qqqqff] (0.8,1) node {$a$};
+ 				\draw [fill=qqqqff] (2.64,3.96) circle (2.5pt);
+ 				\draw[color=qqqqff] (2.7,4.2) node {$b$};
+ 				\draw [fill=qqqqff] (3.92,0.42) circle (2.5pt);
+ 				\draw[color=qqqqff] (4.2,0.4) node {$c$};
+ 				\draw [fill=qqqqff] (2.7,1.6) circle (2.5pt);
+ 				\draw[color=qqqqff] (2.8,1.84) node {$s$};
+ 			\end{tikzpicture}
+ 		\end{figure}
+ 		%%%% Ende Grafik Dreieck mit Punkt s %%%%%
+ \subsection{Definition}
+ 	\begin{Definition}[Äquiaffine Transformation]
+ 		Eine affine Abbildung $ \alpha:A\to A' $ zwischen AR $ A $ und $ A' $ mit Volumenmessungen $ \vol $ und $ \vol' $ heißt \emph{volumentreu}, falls für alle Parallelotope $ p $ in $ A $ gilt
+ 		\[
+ 			\vol'(\alpha\circ p)=\vol(p)
+ 		\]
+ 		Eine \emph{äquiaffine Transformation} ist eine volumentreue Affinität.
+ 	\end{Definition}
+ 	\paragraph{Bemerkung}
+ 		Ist $ \alpha:A\to A' $ affin mit linearem Anteil $ \lambda:V \to V' $ und $ p $ ein von einer Familie $ (v_j)_{j\in\{1,\dots,n\}} $ von Vektoren aufgespanntes Parallelotop in $ A $, so ist
+ 		\begin{align*}
+ 			p':= \alpha\circ p:\mathbb{Z}_2^n\to A',\ \epsilon \mapsto p'_\epsilon & = \alpha(p_0)+\lambda\Big(\sum_{j=1}^{n}v_j\epsilon_j\Big) \\
+ 			                                                                       & = \alpha(p_0)+\sum_{j=1}^{n}\lambda(v_j)\epsilon_j
+ 		\end{align*}
+ 		ein von der Familie $ (\lambda(v))_{j\in \{1,\dots,n\}} $ von Vektoren in $ V' $ aufgespanntes Parallelotop in $ A' $. Damit ist $ \vol'(\alpha\circ p) $ ein sinnvoller Ausdruck, also der Begriff "`volumentreu"' sinnvoll für affine Abbildungen.
+ 	\paragraph{Bemerkung}
+ 		Offenbar bilden die volumentreuen Affinitäten eine Gruppe: eine Untergruppe der affinen Gruppe (nach Untergruppenkriterium).
+ \subsection{Äquiaffine Geometrie}
+ 	\begin{Definition}[Äquiaffine Geometrie]
+ 		Ist $ (A,V,\tau,\vol) $ ein mit einem Spatvolumen versehener Affiner Raum, so bestimmt die auf $ A $ operierende Gruppe der volumentreuen Affinitäten (der äquiaffinen Transformationen) eine \emph{äquiaffine Geometrie}.
+ 	\end{Definition}
+ \subsection{Bemerkung \& Definition}
+ 	\begin{Definition}[Volumenverzerrung]
+ 		Ist $ \alpha: A\to A $ Affinität eines AR $ A $ mit Volumenmessung $ \vol $, so gibt es genau eine Zahl $ \delta(\alpha)\in K^{\times} $, sodass für jedes Parallelotop $ p $ in $ A $ gilt
+ 		\[
+ 			\vol(\alpha\circ p) = \delta(\alpha)\vol(p),
+ 		\]
+ 		wobei $ \delta(\alpha) $ die \emph{Volumenverzerrung} genannt wird.
+
+ 		Die Volumenverzerrung $ \delta(\alpha) $ hängt nur vom linearen Anteil $ \lambda\in \End(V) $ ab: für ein von einer Basis $ (v_j)_{j\in \{1,\dots,n\}} $ von $ V $ aufgespanntes Parallelotop ist
+ 		\[
+ 			\delta(\alpha) = \frac{\omega(\lambda(v_1),\dots,\lambda(v_n))}{\omega(v_1,\dots,v_n)}
+ 		\]
+ 	\end{Definition}
+ \subsection{Definition}
+ 	\begin{Definition}[Determinante eines Endomorphismus]
+ 		Seien $ f\in\End(V) $, wobei $ \dim V=n $, und $ \omega\in \Lambda^nV^*\setminus \{0\} $. Dann heißt
+ 		\[
+ 			\det f:= \frac{f^*\omega}{\omega}
+ 		\]
+ 		die \emph{Determinante} von $ f $, wobei
+ 		\[
+ 			f^*\omega: V^n\to K,\ (v_1,\dots,v_n)\mapsto \omega(f(v_1),\dots,f(v_n)).
+ 		\]
+ 	\end{Definition}
+ 	\paragraph{Bemerkung}
+ 		Offenbar ist $ f^*\omega\in \Lambda^nV^*$; wegen $ \dim \Lambda^nV^*=1 $ ist $\Lambda^nV^* = [\omega]$, d.h.
+ 		\[
+ 			\exists! x\in K: f^*\omega = \omega \cdot x \quad\text{($(\omega) $ ist Basis von $ \Lambda^nV^* $)}
+ 		\]
+ 		dieses $ x $ ist die Determinante von $ f $, also $ \det f = x $.
+
+ 		Alternativ: Die Abbildung
+ 		\[
+ 			B\mapsto  \frac{f^*\omega(B)}{\omega(B)}\in K
+ 		\]
+ 		ist konstant ($ \equiv x $, unabhängig von der Basis $ B $).
+ 	\paragraph{Bemerkung}
+ 		Da $ f^*(\omega x) = (f^*\omega)x $ für $ x\in K $, liefert jedes $ \omega \in \Lambda^nV^*\setminus\{0\} $ die gleiche Determinante $ \det f $: die Determinante bzw. Volumenverzerrung ist unabhängig von der gewählten Volumenform $ \omega\in \Lambda^nV^*\setminus \{0\} $, d.h. der "`Referenzvolumenmessung"'.
+ \subsection{Determinantenmultiplikationssatz}
+ 	\begin{Satz}[Determinantenmultiplikationssatz]
+ 		Für $ f,g\in \End(V) $ gilt
+ 		\[
+ 			\det(f\circ g) = \det f \cdot \det g.
+ 		\]
+ 	\end{Satz}
+ 	\paragraph{Beweis}
+ 		Mit $ \omega\in\Lambda^nV^*\setminus\{0\} $ berechnet man
+ 		\[
+ 			(f\circ g)^*\omega = g^*(f^*\omega) = g^*(\omega\cdot \det f) = (g^*\omega)\det f = \omega \cdot \det g\cdot \det f
+ 		\]
+
+%VO24-2016-01-21
+ 	\paragraph{Wiederholung \& Bemerkung}
+ 		Sind $ \omega\in \Lambda^nV^*\setminus \{0\} $ und $ B $ eine Basis von $ V $, so gilt
+ 		\[
+ 			\mathrm{Gl}(V) = \{f\in \operatorname{End}(V)\mid 0\neq \omega(f(B))=f^*\omega(B)\}.
+ 		\]
+ 		Damit folgt also
+ 		\[
+ 			\mathrm{Gl}(V) = \{f\in\operatorname{End}(V)\mid \det f \neq 0\}
+ 		\]
+ 		Mit dem Determinantenmultiplikationssatz folgt dann:
+ \subsection{Korollar}
+ 	\begin{Korollar}
+ 		\[
+ 			\det : \mathrm{Gl}(V)\to (K^\times,\cdot)
+ 		\]
+ 		ist Gruppenhomomorphismus.
+ 	\end{Korollar}
+ \subsection{Korollar \& Definition}
+ 	\begin{Definition}[Spezielle lineare Gruppe]
+ 		\[
+ 			\det\text{}^{-1}(\{1\}) = \{f\in \mathrm{Gl}(V)\mid \det f = 1\} \subset \mathrm{Gl}(V)
+ 		\]
+ 		liefert eine Untergruppe von $ \mathrm{Gl}(V) $, die \emph{spezielle lineare Gruppe}
+ 		\[
+ 			\mathrm{Sl}(V):= \{f\in \mathrm{Gl}(V)\mid \det f = 1 \}
+ 		\]
+ 	\end{Definition}
+ 	\paragraph{Beweis}
+ 		Für $ g\in \mathrm{Gl}(V) $ gilt nach DMS:
+ 		\begin{gather*}
+ 			1 = \det \id_V = \det(g^{-1}\circ g) = \det g^{-1}\cdot \det g \\
+ 			\Rightarrow \det g^{-1} = (\det g)^{-1}
+ 		\end{gather*}
+ 		damit folgt
+ 		\[
+ 			g\in \mathrm{Sl}(V)\Rightarrow g^{-1} \in \mathrm{Sl}(V),
+ 		\]
+ 		also mit DMS
+ 		\[
+ 			\forall f,g\in \mathrm{Sl}(V):g^{-1}\circ f\in \mathrm{Sl}(V),
+ 		\]
+ 		d.h. $ \mathrm{Sl}(V)\subset \mathrm{Gl}(V) $ ist eine Untergruppe nach Untergruppenkriterium.
+ \subsection{Korollar}
+ 	Eine Affinität ist genau dann eine äquiaffine Transformation, wenn ihr linearer Anteil eine spezielle lineare Transformation ist.
+ 	\paragraph{Beweis}
+ 		Ist $ \lambda \in \End(V) $ linearer Anteil der Affinität $ \alpha:A\to A $ eines AR $ A  $ über $ V $, und ist $ p $ ein von einer Basis $ B=(b_j)_{j\in \{1,\dots,n\}} $ von $ V $ aufgespanntes Parallelotop, so gilt
+ 		\[
+ 			(\alpha\circ p)_\epsilon = \alpha(p_0)+\sum_{j=1}^{n}\lambda(b_j)\epsilon_j,
+ 		\]
+ 		also für eine durch $ \omega\in \Lambda^nV^*\setminus \{0\} $ gegebene Volumenmessung
+ 		\[
+ 			\frac{\vol(\alpha\circ p)}{\vol(p)} = \frac{\omega(\lambda(b_1),\dots,\lambda(b_n))}{\omega(b_1,\dots,b_n)}=\det \lambda,
+ 		\]
+ 		d.h. $ \alpha $ ist volumentreu genau dann, wenn $ \lambda \in \mathrm{Sl}(V) $. ($ \rightarrow $ vgl. Idee der Definition $ \det f $)
+ 	\paragraph{Bemerkung}
+ 		Dies liefert einen alternativen Beweis, dass die äquiaffinen Transformationen eine Gruppe (Untergruppe der Affinitäten) bilden:
+
+ 		Der lineare Anteil einer Komposition von Affinitäten ist die Komposition ihrer linearen Anteile -- und $ \mathrm{Sl}(V) $ ist eine Gruppe (Untergruppe von $ \mathrm{Gl}(V) $).
+ 	\paragraph{Beispiel}
+ 		Ist $ \lambda = \id_V + w\cdot \psi $ mit $ \psi\in V^* $ und $ w\in \ker \psi $ linearer Anteil einer Scherung
+ 		\[
+ 			\sigma:A\to A,\ o+v\mapsto \sigma(o+v) = o+\lambda(v),
+ 		\]
+ 		wobei $ w\cdot\psi\neq 0 $, so wähle eine Basis $ B = (b_j)_{j\in\{1,\dots,n\}}$ von $ V $ mit
+ 		\[
+ 			w=b_1 \text{ und }  \ker \psi = [(b_j)_{j\in \{1,\dots,n-1\}}].
+ 		\]
+ 		Dann ist
+ 		\[
+ 			\xi_B^B(\lambda) =
+ 			\begin{pmatrix}
+ 				1      & 0      & \cdots & \psi(b_n) \\
+ 				0      & 1      & \ddots & \vdots    \\
+ 				\vdots & \ddots & \ddots & 0         \\
+ 				0      & \cdots & 0      & 1
+ 			\end{pmatrix}
+ 			= S_{1n}(\psi(b_n))
+ 		\]
+ 		und mit einer Determinantenform $ \omega\in \Lambda^nV^*\setminus\{0\} $
+ 		\[
+ 			\det \lambda = \frac{\lambda^*\omega(B)}{\omega(B)} = \frac{\omega(\lambda(B))}{\omega(B)} = \frac{\omega(BS_{1n}(\psi(b_n)))}{\omega(B)} = \frac{\omega(B)}{\omega(B)} = 1.
+ 		\]
+ 		Jede Scherung ist also äquiaffine Transformation.
+
+ 		%-------------------Begin Scherung ist äquiaffine Transformation ----------------
+ 		\begin{figure}[H]\centering
+ 			\tdplotsetmaincoords{0}{0} %-27
+ 			\begin{tikzpicture}[yscale=1,tdplot_main_coords]
+
+ 				\def\xstart{0} %x Koordinate der Startposition der Grafik
+ 				\def\ystart{0} %y Koordinate der Startposition der Grafik
+ 				\def\myscale{1.1} %ändert die Größe der Grafik (Skalierung der Grafik)
+
+ 				\def\xstartdraw{(\xstart + 1.0)} %xKoordinate des Referenzstartpunktes (in dieser Zeichnung: a)
+ 				\def\ystartdraw{(\ystart + 0.6)}%yKoordinate des Referenzstartpunktes (in dieser Zeichnung: a)
+
+ 				\def\balkenhoehe{(5.3)}% Länge des vertikalen blauen Balkens
+ 				\def\balkenlaenge{(10)}% Länge des horizontalen blauen Balkens
+ 				\def\balkenbreite{0.4} %Balkenbreite
+
+ 				%---------Begin Balken----------
+ 				\def\drehwinkel{0}
+ 				\node (VekV) at ({\xstart+0.7*cos(\drehwinkel)-\balkenbreite*sin(\drehwinkel)},{\ystart+0.5*sin(\drehwinkel)+\balkenbreite*cos(\drehwinkel)})[right, xshift=-8,color=blue] {$V$};
+ 				\node (AffA) at ({\xstart+(\balkenlaenge-1)*cos(\drehwinkel)},{\ystart+(\balkenlaenge-1)*sin(\drehwinkel)+\balkenbreite*cos(\drehwinkel)})[color=red] {$A^2$};
+
+ 				\path[ shade, top color=white, bottom color=blue, opacity=.6]
+ 				({\xstart},{\ystart},0)  -- ({\xstart - \balkenbreite * cos(\drehwinkel)- (-\balkenbreite+0)*sin(\drehwinkel)},{\ystart - \balkenbreite * sin(\drehwinkel)+ (-\balkenbreite+0)*cos(\drehwinkel)},0)  -- ({\xstart - \balkenbreite * cos(\drehwinkel)- (\balkenhoehe+0.5)*sin(\drehwinkel)},{\ystart - \balkenbreite * sin(\drehwinkel)+ (\balkenhoehe+0.5)*cos(\drehwinkel)},0) -- ({\xstart - 0 * cos(\drehwinkel)- (\balkenhoehe+0)*sin(\drehwinkel)},{\ystart - 0 * sin(\drehwinkel)+ (\balkenhoehe+0)*cos(\drehwinkel)},0) -- cycle;
+
+ 				\path[ shade, right color=white, left color=blue, opacity=.6]
+ 				({\xstart},{\ystart},0)  -- ({\xstart - \balkenbreite * cos(\drehwinkel)- (-\balkenbreite+0)*sin(\drehwinkel)},{\ystart - \balkenbreite * sin(\drehwinkel)+ (-\balkenbreite+0)*cos(\drehwinkel)},0) --
+ 				({\xstart + (\balkenlaenge+0.5) * cos(\drehwinkel)- (-\balkenbreite+0)*sin(\drehwinkel)},{\ystart + (\balkenlaenge+0.5) * sin(\drehwinkel)+ (-\balkenbreite+0)*cos(\drehwinkel)},0) --
+ 				({\xstart + \balkenlaenge * cos(\drehwinkel)},{\ystart + \balkenlaenge * sin(\drehwinkel)},0)--
+ 				cycle;
+ 				%---------End Balken----------
+
+ 				%Punkte Definition
+
+ 				\node (pointol) at ({\xstartdraw},{\ystartdraw}) {};
+ 				\node (pointor) at ({\xstartdraw+(6.2 *\myscale)},{\ystartdraw+(1.8 *\myscale)}) {};
+
+ 				\node (pointo1) at ($(pointol)!0.2!(pointor)$) {};
+ 				\node (pointo2) at ($(pointol)!0.9!(pointor)$) {};
+
+ 				\node (offset) at ($(0.2*\myscale,2.5*\myscale) $) {}; %just an offset
+
+ 				\node (pointov) at ($(pointo1) + (offset) $) {};
+ 				\node (pointol2) at ($(pointol) + (offset) $) {};
+ 				\node (pointor2) at ($(pointor) + (offset) $) {};
+
+ 				\node (pointolambdav) at ($(pointov)!0.5!(pointor2)$) {};
+
+ 				\node (pointa1) at ({\xstartdraw},{\ystartdraw}) {};
+ 				\node (point02) at ({\xstartdraw},{\ystartdraw}) {};
+
+
+ 				%Gerade rot
+ 				\draw[-,line width=0.2pt,color=red,shorten <=-30pt] (pointor) -- (pointol);
+ 				\draw[-,line width=0.4pt,color=red,dotted,shorten >=-30pt] (pointor2) -- (pointol2);
+
+ 				%Vektoren blau
+ 				\draw[-{>[scale=1,length=10,width=6]},shorten >=2pt, shorten <=2pt,line width=0.5pt,color=blue] (pointo1) -- (pointo2);
+ 				\node (pointvekw) at ($(pointo1)!0.5!(pointo2)$) [below,color=blue]{$w$};
+
+ 				\draw[-{>[scale=1,length=10,width=6]},shorten >=2pt, shorten <=2pt,line width=0.5pt,color=blue] (pointo1) -- (pointov);
+ 				\node (pointvekv) at ($(pointo1)!0.5!(pointov)$) [left,color=blue]{$v$};
+
+ 				\draw[-{>[scale=1,length=10,width=6]},shorten >=2pt, shorten <=2pt,line width=0.5pt,color=blue] (pointov) -- (pointolambdav);
+ 				\node (pointvekws) at ($(pointov)!0.4!(pointolambdav)$) [above,color=blue,yshift=2]{$\stackrel{\text{mit } s=\psi(v)}{w\cdot s}$};
+
+ 				\draw[-{>[scale=1,length=10,width=6]},shorten >=2pt, shorten <=2pt,line width=0.5pt,color=blue] (pointo1) -- (pointolambdav);
+ 				\node (pointa1b1v) at ($(pointo1)!0.5!(pointolambdav)$) [right,color=blue]{$\lambda(v)$};
+
+ 				%Abbildung sigma
+ 				\draw [-{>[scale=1,length=10,width=6]},shorten >=8pt, shorten <=8pt,line width=0.4pt,color=blue!20!red!80] (pointov) to [bend right=15] (pointolambdav);
+ 				\node (pointveksigma) at ($(pointov)!0.5!(pointolambdav)$) [below,color=blue!20!red!80,yshift=-7]{$\sigma$};
+
+ 				%Punkte malen
+ 				\draw[fill,color=white] (pointo1) circle [x=1cm,y=1cm,radius=0.18];
+ 				\draw[fill,color=red] (pointo1) circle [x=1cm,y=1cm,radius=0.08]node[below, xshift=0, yshift=0]{$o$};
+ 				\draw[fill,color=red] (pointov) circle [x=1cm,y=1cm,radius=0.08]node[above, xshift=-20, yshift=-5]{$o+v$};
+
+ 				\draw[fill,color=white] (pointolambdav) circle [x=1cm,y=1cm,radius=0.18];
+ 				\draw[fill,color=red] (pointolambdav) circle [x=1cm,y=1cm,radius=0.08]node[below, xshift=55, yshift=5]{$\sigma(o+v)=o+\lambda(v)$};
+
+ 			\end{tikzpicture}
+ 		\end{figure}
+ 		%-------------------End Scherung ist äquiaffine Transformation ----------------
+
+ 	\paragraph{Bemerkung (Dreischerungssatz)}
+ 		Jede äquiaffine Transformation einer affinen Ebene (mit Flächenmessung) ist Komposition von (höchstens drei) Scherungen.
+
+ 		Mit dem Fortsetzungssatz für affine Abbildungen kann der Dreischerungssatz rein konstruktiv bewiesen werden.
+ \subsection{Lemma}
+ 	Sind $ f\in \End(V) $ und $ B $ eine Basis von $ V $, so gilt
+ 	\[
+ 		\det f = \det \xi_B^B(f)
+ 	\]
+ 	\paragraph{Beweis}
+ 		Mit Leibniz-Formel (LF): Für $ \omega\in \Lambda^nV^*\setminus\{0\} $ mit $ n=\dim V $, gilt
+ 		\[
+ 			f^*\omega(B) = \omega(f(B)) \overset{\text{Def. }\xi}{=} \omega(B\cdot \xi_B^B(f))
+ 			\overset{\text{LF}}{=} \omega(B)\cdot \det \xi_B^B(f).
+ 		\]
+ 	\paragraph{Achtung:}
+ 		Im Allgemeinen ist für unterschiedliche Basen $ B,C $ von $ V $
+ 		\[
+ 			\det f \neq \det \xi_B^C(f).
+ 		\]
+ 		Zum Beispiel: Sei $ f\in \mathrm{Gl}(V) $ und $ B $ eine beliebige Basis, dann ist $ C:=f(B) $ auch eine Basis -- und
+ 		\[
+ 			\xi_B^C(f) = E_n \Rightarrow \det \xi_B^C(f) = 1
+ 		\]
+ 		Für $ f=2\cdot \id_V $ etwa gilt also
+ 		\[
+ 			\det f = 2^n \cdot 1\neq 1
+ 		\]
+ \subsection{Buchhaltung}
+ 	Aus obigem Lemma folgt auch:
+ 	Für $ X\in K^{n\times n} $ gilt
+ 	\[
+ 		\xi_E^E(f_X) = X \Rightarrow \det X = \det \xi_E^E(f_X) = \det f_X.
+ 	\]
+ 	Der DMS für Endomorphismen liefert also einen \emph{Determinantenmultiplikationssatz für Matrizen}: Für $ X,Y\in K^{n\times n} $ gilt
+ 	\[
+ 		\det XY = \det f_{XY} = \det(f_X\circ f_Y) = \det f_X\cdot \det f_Y = \det X\cdot \det Y.
+ 	\]
+ 	Ebenso lassen sich nun andere Tatsachen auf die Determinante für Matrizen von der für Endomorphismen übertragen. Insbesondere definiert man
+ 	\[
+ 		\mathrm{Sl}(n) := \{X\in K^{n\times n}\mid \det X=1 \} = \{X\in K^{n\times n}\mid f_X\in \mathrm{Sl}(K^n)\},
+ 	\]
+ 	und nennt sie die \emph{spezielle lineare Gruppe in $n$ Variablen}. $ \mathrm{Sl}(n) $ ist Untergruppe von $ \mathrm{Gl}(n) $.
+ 	\paragraph{Neuer Begriff der Äquivalenz}
+ 		Definiert man zwei Matrizen $ X,X' \in K^{n\times n}$ als \emph{äquivalent},
+ 		\[
+ 			X\sim X' :\Leftrightarrow \exists P\in \mathrm{Gl}(n): X' =PXP^{-1},
+ 		\]
+ 		so erhält man:
+ 		\[
+ 			X\sim X' \Rightarrow \det X = \det X'
+ 		\]
+ 		Nämlich: Sind $ f\in \End(V) $ und $ B $ und $ B'=BP^{-1} $ (mit $ P\in \mathrm{Gl}(n) $) Basen von $ V $, so gilt
+ 		\[
+ 			\xi_{B'}^{B'}(f) = \xi_{B}^{B'}(\id_V)\cdot \xi_B^B(f)\cdot \xi_{B'}^{B}(\id_V) =
+ 			\xi_{B}^{B'}(\id_V)\cdot \xi_B^B(f)\cdot \left(\xi^{B'}_{B}(\id_V)\right)^{-1}
+ 		\]
+ 		mit
+ 		\[
+ 			\xi_B^{B'}(\id_V) = P \text{, da } B' = \id_V(B') = BP^{-1}
+ 		\]
+ 		Insbesondere gilt also für $ X,X' = PXP^{-1}\in K^{n\times n} $ mit $ P\in \mathrm{Gl}(n) $:
+ 		\begin{align*}
+ 			\det X' = \det f_{X'} & = \det f_P \circ f_X \circ f_{P^{-1}}                             \\
+ 			                      & =\det f_P \circ f_X \circ (f_P)^{-1}                              \\
+ 			                      & = \det f_P \cdot \det f_X \cdot \det f_P^{-1} = \det f_X = \det X
+ 		\end{align*}
+ 	\paragraph{Achtung}
+ 		Dies ist ein zweiter Begriff der Äquivalenz von Matrizen -- für Darstellungsmatrizen von Endomorphismen, im Gegensatz zur Äquivalenz für Darstellungsmatrizen von Homomorphismen (im Allgemeinen nicht quadratisch).

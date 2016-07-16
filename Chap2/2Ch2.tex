@@ -1,0 +1,486 @@
+%VO15-2015-11-26
+\section{Affine Abbildungen \& Transformationen}
+ \subsection{Definition}
+ 	\begin{Definition}[Affine Abbildung/Affinität]
+ 		Eine Abbildung $ \alpha:A\to A' $ zwischen affinen Räumen $ A $ und $ A' $ (über dem gleichen Körper $ K $) heißt affin, falls sie
+ 		\begin{enumerate}[(i)]
+ 			\item \emph{geradentreu} ist, d.h. die Bilder kollinearer Punkte sind kollinear;
+ 			\item \emph{teilverhältnistreu} ist, d.h. das Teilverhältnis kollinearer Punkte wird erhalten (solange die Punkte nicht alle zusammenfallen).
+ 		\end{enumerate}
+ 		Eine bijektive affine Abbildung $ \alpha:A\to A $ heißt Affinität oder affine Transformation.
+ 	\end{Definition}
+
+ 	\paragraph{Bemerkung}
+ 		Sei $ \alpha:A\to A' $ und $ a,b\in A $ sodass $ \alpha(a)\neq \alpha(b) $; insbesondere ist dann auch $ a\neq b $. Ist $ \alpha $ geradentreu, so gilt für jeden Punkt
+ 		\[
+ 			c_s = a(1-s)+bs;\ s=(ca:ba),
+ 		\]
+ 		dass $ c_s\in [\{a,b\}] $, d.h.
+ 		\[
+ 			\forall s\in K\exists t\in K:\alpha(c_s) = \alpha(a(1-s)+bs) = \alpha(a)(1-t)+\alpha(b)t \in [\{\alpha(a),\alpha(b)\}]
+ 		\]
+ 		Ist $ \alpha $ dann auch teilverhältnistreu, so folgt
+ 		\[
+ 			\frac{-t}{1-t} = (\alpha(a)\alpha(c_s):\alpha(b)\alpha(c_s)) = (ac_s:bc_s) = \frac{-s}{1-s} \Rightarrow t = s.
+ 		\]
+ 		Insbesondere bildet $ \alpha $ die Gerade $ [ab] $ dann bijektiv auf die Gerade $ [\alpha(a),\alpha(b)] $ durch die Bildpunkte von $ a $ und $ b $ ab, und
+ 		\[
+ 			\forall s\in K:\alpha(a(1-s)+bs)=\alpha(a)(1-s)+\alpha(b)s.
+ 		\]
+ 		Enthält die Gerade durch $ a $ und $ b $, $ a\neq b $ keine Punkte, deren Bilder verschieden sind, so wird die Gerade auf einen einzigen Punkt abgebildet -- und die vorherige Gleichung gilt ebenfalls.
+
+ 	\paragraph{Beispiel}
+ 		Die Translationen eines affinen Raumes sind Affinitäten, denn für
+ 		\[
+ 			c_s = a(1-s)+bs = a + ws, \text{ mit } w:=b-a
+ 		\]
+ 		gilt, mit Translationsvektor $ v\in V $,
+ 		\[
+ 			\tau_v(c_s) = \tau_v(a+ws) = \tau_v(\tau_{ws}(a)) = \tau_{v+ws}(a) = \tau_{ws+v}(a) = \tau_{ws}(\tau_v(a)) =  \tau_v(a) + ws,
+ 		\]
+ 		insbesondere gilt also
+ 		\[
+ 			\tau_v(b) = \tau_v(a)+w
+ 		\]
+ 		und damit
+ 		\[
+ 			\tau_v(c_s) = \tau_v(a)+ws = \tau_v(a)+(\tau_v(b)-\tau_v(a))s = \tau_v(a)(1-s)+\tau_v(b)s.
+ 		\]
+ 		Also sind $ \tau_v(a),\tau_v(b) $ und $ \tau_v(c_s) $ kollinear und erhalten das Teilverhältnis
+ 		\[
+ 			(\tau_v(a)\tau_v(c_s):\tau_v(b)\tau_v(c_s)) = (ac_s:bc_s).
+ 		\]
+
+ \subsection{Lemma}
+ 	\begin{Lemma}[]
+ 		$ \alpha:A\to A' $ ist genau dann affin, wenn für jede Affinkombination in $ A $ gilt:
+ 		\[
+ 			\alpha(\sum_{i\in I}a_ix_i) = \sum_{i\in I} \alpha(a_i)x_i.
+ 		\]
+ 	\end{Lemma}
+
+ 	\paragraph{Beweis}
+ 		Wir haben schon gesehen: $ \alpha:A\to A' $ ist affin genau dann, wenn
+ 		\[
+ 			\forall a,b,\in A\forall s\in K:\alpha(a(1-s)+bs) = \alpha(a)(1-s)+\alpha(b)s
+ 		\]
+ 		Offenbar ist die vorherige Bemerkung ein Spezialfall des Lemmas. Es bleibt die andere Richtung zu zeigen. Wir benutzen vollständige Induktion über $k = \#\{{i\in I}\mid x_i\neq 0\}<\infty $.
+
+ 		\subparagraph{Induktionsanfang}
+ 			Für $ k=1 $ trivial.
+
+ 		\subparagraph{Induktionsannahme}
+ 			Für $ a_1,...,a_k\in A $ und $ x_1,...,x_k \in K^\times$ mit $ \sum_{i=1}^{k}x_i=1 $ gelte
+ 			\[
+ 				\alpha(\sum_{i=1}^{k}a_ix_i) = \sum_{i=1}^{k}\alpha(a_i)x_i.
+ 			\]
+
+ 		\subparagraph{Induktionsschluss}
+ 			Seien $ a_1,...,a_{k+1} \in A$ und $ x_1,...,x_{k+1} \in K^\times$ Gewichte, sodass $ \sum_{i=1}^{k+1}x_i = 1 $, o.B.d.A. $ x_{k+1}\neq 1 $; dann gilt
+ 			\[
+ 				\alpha(\sum_{i=1}^{k+1}a_ix_i) = \alpha((\sum_{i=1}^{k}a_i\frac{x_i}{1-x_{k+1}})(1-x_{k+1})+a_{k+1}x_{k+1})
+ 			\]
+ 			\[
+ 				= \alpha(\sum_{i=1}^{k}a_i\frac{x_i}{1-x_{k+1}})(1-x_{k+1})+\alpha(a_k+1)x_{k+1}
+ 			\]
+ 			\[
+ 				= \sum_{i=1}^{k}\alpha(a_i)\frac{x_i}{1-x_{k+1}}(1-x_{k+1})+\alpha(a_{k+1})x_{k+1}
+ 			\]
+ 			\[
+ 				= \sum_{i=1}^{k+1}\alpha(a_i)x_i.
+ 			\]
+ 			Damit ist die Behauptung für affine Abbildungen $ \alpha $ bewiesen.
+
+%VO16-2015-12-01
+ 	\paragraph{Bemerkung}
+ 		Im Beweis wurde benutzt: für Affinkombinationen ist (falls $ x_j \neq 1$)
+ 		\[
+ 			\sum_{i\in I}a_ix_i = \left(\sum_{i\neq j}a_i\frac{x_i}{1-x_j}\right)(1-x_j)+a_jx_j
+ 		\]
+ 		%-------------------Begin affin Kombinationen Aufteilungsbeispiel----------------
+ 		\begin{figure}[H]\centering
+ 			\tdplotsetmaincoords{0}{0} %-27
+ 			\begin{tikzpicture}[yscale=1,tdplot_main_coords]
+
+ 				\def\xstart{0} %x Koordinate der Startposition der Grafik
+ 				\def\ystart{0} %y Koordinate der Startposition der Grafik
+ 				\def\myscale{0.015} %ändert die Größe der Grafik (Skalierung der Grafik)
+
+ 				\def\xstartdraw{(\xstart + 2.0)} %xKoordinate des Referenzstartpunktes (in dieser Zeichnung: a)
+ 				\def\ystartdraw{(\ystart + 1.0)}%yKoordinate des Referenzstartpunktes (in dieser Zeichnung: a)
+
+ 				\def\balkenhoehe{(4.3)}% Länge des vertikalen blauen Balkens
+ 				\def\balkenlaenge{(10)}% Länge des horizontalen blauen Balkens
+ 				\def\balkenbreite{0.4} %Balkenbreite
+
+ 				%---------Begin Balken----------
+ 				\def\drehwinkel{0}
+ 				\node (VekV) at ({\xstart+0.7*cos(\drehwinkel)-\balkenbreite*sin(\drehwinkel)},{\ystart+0.5*sin(\drehwinkel)+\balkenbreite*cos(\drehwinkel)})[color=blue] {$V$};
+ 				\node (AffA) at ({\xstart+(\balkenlaenge-1)*cos(\drehwinkel)},{\ystart+(\balkenlaenge-1)*sin(\drehwinkel)+\balkenbreite*cos(\drehwinkel)})[color=red] {$A$};
+
+ 				\path[ shade, top color=white, bottom color=blue, opacity=.6]
+ 				({\xstart},{\ystart},0)  -- ({\xstart - \balkenbreite * cos(\drehwinkel)- (-\balkenbreite+0)*sin(\drehwinkel)},{\ystart - \balkenbreite * sin(\drehwinkel)+ (-\balkenbreite+0)*cos(\drehwinkel)},0)  -- ({\xstart - \balkenbreite * cos(\drehwinkel)- (\balkenhoehe+0.5)*sin(\drehwinkel)},{\ystart - \balkenbreite * sin(\drehwinkel)+ (\balkenhoehe+0.5)*cos(\drehwinkel)},0) -- ({\xstart - 0 * cos(\drehwinkel)- (\balkenhoehe+0)*sin(\drehwinkel)},{\ystart - 0 * sin(\drehwinkel)+ (\balkenhoehe+0)*cos(\drehwinkel)},0) -- cycle;
+
+ 				\path[ shade, right color=white, left color=blue, opacity=.6]
+ 				({\xstart},{\ystart},0)  -- ({\xstart - \balkenbreite * cos(\drehwinkel)- (-\balkenbreite+0)*sin(\drehwinkel)},{\ystart - \balkenbreite * sin(\drehwinkel)+ (-\balkenbreite+0)*cos(\drehwinkel)},0) --
+ 				({\xstart + (\balkenlaenge+0.5) * cos(\drehwinkel)- (-\balkenbreite+0)*sin(\drehwinkel)},{\ystart + (\balkenlaenge+0.5) * sin(\drehwinkel)+ (-\balkenbreite+0)*cos(\drehwinkel)},0) --
+ 				({\xstart + \balkenlaenge * cos(\drehwinkel)},{\ystart + \balkenlaenge * sin(\drehwinkel)},0)--
+ 				cycle;
+ 				%---------End Balken----------
+
+ 				%Punkte Definition
+ 				\node (pointa0) at ({\xstartdraw},{\ystartdraw}) {};
+ 				\node (pointa2) at ({\xstartdraw+(-20 *\myscale)},{\ystartdraw+(200*\myscale)}) {};
+ 				\node (pointa1) at ({\xstartdraw+(270*\myscale)},{\ystartdraw+(103*\myscale)}) {};
+ 				\node (pointax) at ($(pointa0)!0.6!(pointa1)$) {};
+ 				\node (pointa) at ($(pointa2)!0.5!(pointax)$) {};
+
+ 				%Geraden
+ 				\draw[-,shorten >=-20pt, shorten <=-20pt,line width=0.2pt,color=red] (pointa0) -- (pointa1) ;
+ 				\draw[-,shorten >=-20pt, shorten <=-20pt,line width=0.2pt,color=red] (pointa2) --  (pointax) ;
+
+ 				%Punkte malen
+ 				\draw[fill,color=white] (pointa0) circle [x=1cm,y=1cm,radius=0.18];
+ 				\draw[fill,color=white] (pointa1) circle [x=1cm,y=1cm,radius=0.18];
+ 				\draw[fill,color=white] (pointa2) circle [x=1cm,y=1cm,radius=0.18];
+ 				\draw[fill,color=white] (pointax) circle [x=1cm,y=1cm,radius=0.18];
+ 				\draw[fill,color=white] (pointa) circle [x=1cm,y=1cm,radius=0.18];
+
+ 				\draw[fill,color=red] (pointa0) circle [x=1cm,y=1cm,radius=0.08]node[ xshift=1, yshift=-10]{$a_0$};
+ 				\draw[fill,color=red] (pointa1) circle [x=1cm,y=1cm,radius=0.08]node[ xshift=5, yshift=-10]{$a_1$};
+ 				\draw[fill,color=red] (pointa2) circle [x=1cm,y=1cm,radius=0.08]node[ xshift=-10]{$a_2$};
+ 				\draw[fill,color=red] ([xshift=-2pt,yshift=-2pt]pointax) rectangle ++(4pt,4pt) node[xshift=40, yshift=-20]{$\displaystyle a_s = \sum_{i=0}^{1}a_i \frac{x_i}{1-x_2}$};
+ 				\draw[fill,color=red] (pointa) circle [x=1cm,y=1cm,radius=0.08]node[above right,xshift=0, yshift=-10]{$\displaystyle a = \sum_{i=0}^{2}a_i x_i = a_s (1-x_2) + a_2 x_2 $};
+
+ 			\end{tikzpicture}
+ 		\end{figure}
+ 		%-------------------End affin Kombinationen Aufteilungsbeispiel----------------
+
+
+ 	\paragraph{Bemerkung}
+ 		Mit der Verträglichkeit affiner Abbildungen mit Affinkombinationen folgt, dass die Inverse $ \alpha^{-1}:A'\to A $ einer bijektiven affinen Abbildung $ \alpha:A\to A' $ ebenfalls affin ist:
+ 		\begin{gather*}
+ 			\alpha\left(\sum_{i\in I} \alpha^{-1}(a_i')x_i\right)=\sum_{i\in I}(\alpha\circ\alpha')(a_i')x_i = \sum_{i\in I}a_i'x_i = \alpha\left(\alpha^{-1}(\sum_{i\in I}a_i'x_i)\right) \\
+ 			\Rightarrow \sum_{i\in I} \alpha^{-1}(a_i')x_i =\alpha^{-1}(\sum_{i\in I}a_i'x_i),
+ 		\end{gather*}
+ 		da die Affinkombination $ \sum_{i\in I}a_i'x_i\in A' $ beliebig war, folgt damit die Behauptung. Insbesondere sind damit auch die Inversen von Affinitäten Affinitäten.
+ 	\paragraph{Bemerkung}
+ 		Sind $ \alpha:A \to A' $ und $ \beta:A'\to A'' $ geraden- und teilverhältnistreu, so ist auch
+ 		\[
+ 			\beta\circ\alpha:A\to A''
+ 		\]
+ 		geraden- und teilverhältnistreu, d.h. die Komposition affiner Abbildungen ist affin. Insbesondere ist damit die Menge $ G $ aller affinen Transformationen eines affinen Raumes $ A $ abgeschlossen unter der Komposition
+ 		\[
+ 			\circ: G\times G\to G;
+ 		\]
+ 		außerdem ist $ G $ abgeschlossen unter Inversenbildung. Damit folgt: $ G $ ist Untergruppe der Permutationsgruppe (der symmetrischen Gruppe) des affinen Raumes $ A $: Diese Gruppe bezeichnet man als \emph{affine Gruppe}.
+ \subsection{Definition}
+ 	\begin{Definition}[Affine Geometrie]
+ 		Die auf einem affinen Raum $ A $ operierende Gruppe $ G $ der Affinitäten von $ A $ bestimmt eine \emph{affine Geometrie}.
+ 	\end{Definition}
+
+ 	\paragraph{Bemerkung}
+ 		Die Verträglichkeit einer affinen Abbildung $ \alpha:A\to A' $ mit Affinkombinationen lässt sich auch mithilfe von Vektoren formulieren (unabhängig von der Wahl des Ursprungs $ o \in A$):
+ 		\begin{gather*}
+ 			v_i = a_i-o \Rightarrow \alpha\left(\sum_{i\in I}a_ix_i\right)=\alpha\left(o+\sum_{i\in I}v_ix_i\right)\\
+ 			\sum_{i\in I}\alpha(a_i)x_i = \sum_{i\in I}\alpha(o+v_i)x_i\\
+ 			\Rightarrow \alpha\left(o+\sum_{i\in I}v_ix_i\right)-\alpha(o) = \sum_{i\in I}\alpha(o+v_i)x_i-\alpha(o)\sum_{i\in I}x_i = \sum_{i\in I}(\alpha(o-v_i)-\alpha(o))x_i,
+ 		\end{gather*}
+ 		setzt man also
+ 		\[
+ 			\lambda:V\to V',v\mapsto \lambda(v):= \alpha(o+v)-\alpha(o),
+ 		\]
+ 		wobei $ V $ und $ V' $ die zu $ A $ bzw. $ A' $ gehörenden Richtungsvektorräume sind, so erhält man einen Homomorphismus $ \lambda\in \hom(V,V') $, da sie mit Linearkombinationen verträglich ist:
+ 		\[
+ 			\lambda\left(\sum_{i\in I}v_ix_i\right)=\alpha\left(o+\sum_{i\in I}v_ix_i\right)-\alpha(o)= \sum_{i\in I}\left(\alpha(o+v_i)-\alpha(o)\right)x_i = \sum_{i\in I}\lambda(v_i)x_i
+ 		\]
+
+ \subsection{Lemma \& Definition}
+ 	\begin{Lemma}
+ 		Seien $ A $ und $ A' $ AR mit RVR $ V $ bzw. $ V' $; dann ist eine Abbildung $ \alpha:A\to A' $ genau dann affin, wenn es $ \lambda\in\hom(V,V') $ gibt, sodass
+ 		\[
+ 			\forall a\in A\forall v\in V:\alpha(a+v)=\alpha(a)+\lambda(v).
+ 		\]
+ 	\end{Lemma}
+ 	\begin{Definition}
+ 		Wir nennen $ \lambda $ den \emph{linearen Anteil} einer affinen Abbildung $ \alpha $.
+ 	\end{Definition}
+ 	\paragraph{Beweis}
+ 		Es sind zwei Richtungen zu zeigen:
+
+ 		$ \Rightarrow: $ Sei $ \alpha:A\to A' $ affin. Zu zeigen ist nun die Existenz eines geeigneten $ \lambda \in\hom(V,V') $. Nämlich: Wähle $ o\in A $ und definiere
+ 		\[
+ 			\lambda:V\to V',v\mapsto \lambda(v):=\alpha(o+v)-\alpha(o).
+ 		\]
+ 		Wegen der Verträglichkeit von $ \alpha $ mit Affinkombinationen ist $ \lambda $ linear. Für $ a\in A,v\in V $ gilt dann mit $ w:=a-o $:
+ 		\begin{gather*}
+ 			\alpha(a+v) = \alpha(o+w+v) = \alpha(o)+\lambda(w+v) =\\ \alpha(o)+\lambda(w)+\lambda(v) = \alpha(o+w)+\lambda(v) = \alpha(a)+\lambda(v)
+ 		\end{gather*}
+ 		Insbesondere ist der lineare Anteil $ \lambda \in\hom(V,V')$ von $ \alpha $ wohldefiniert, d.h. unabhängig von der Wahl des Ursprungs.
+
+ 		$ \Leftarrow: $ Für $ \alpha:A\to A' $ gilt mit einem $ \lambda\in\hom(V,V') $
+ 		\[
+ 			\forall a\in A\forall v\in V:\alpha(a+v)=\alpha(a)+\lambda(v)
+ 		\]
+ 		Wegen der Verträglichkeit von $ \lambda $ mit Linearkombinationen ist $ \alpha $ verträglich mit Affinkombinationen (siehe oben) und damit affin.
+ 	\paragraph{Bemerkung}
+ 		Jede affine Transformation setzt sich also zusammen aus einer Translation und einem Automorphismus $ \lambda \in \Aut(V) $. Insbesondere: Ist $ \tau_w:A\to A' $ Translation eines affinen Raumes $ A $ über $ V $, so ist für $ a\in A $ und $ v\in V $
+ 		\[
+ 			\tau_w(a+v) = (a+v)+w = a+(v+w) = a+(w+v) = (a+w)+v = \tau_w(a)+v = \tau_w(a)+\id_V(v),
+ 		\]
+ 		d.h. der lineare Anteil einer Translation ist trivial -- also die Identität auf $ V $.
+ \subsection{Definition}
+ 	\begin{Definition}[Allgemeine lineare Gruppe]
+ 		Die Automorphismen eines VR $ V $ bilden seine \emph{allgemeine lineare Gruppe}
+ 		\[
+ 			\mathrm{Gl}(V):= \{\lambda\in \End(V)\mid \lambda \text{ invertierbar}\}.
+ 		\]
+ 	\end{Definition}
+ \subsection{Bemerkung \& Definition}
+ 	\begin{Definition}[Parallele Geraden]
+ 		Sind $ g_i = [a_ib_i]=a_i + [v] $ mit $ b_i = a_i + v $ für $ i = 1,2 $ zwei Geraden mit dem gleichen RVR $ [v] $, d.h. \emph{parallel}, so sind auch ihre Bilder unter einer affinen Transformation $ \alpha $ parallele Geraden,
+ 		\[
+ 			\alpha(g_i) = \alpha(a_i) + [\lambda(v)] \text{ mit } \lambda\in \mathrm{Gl}(V).
+ 		\]
+ 	\end{Definition}
+ 	%-------------------Begin parallele Geraden ----------------
+ 	\begin{figure}[H]\centering
+ 		\tdplotsetmaincoords{0}{0} %-27
+ 		\begin{tikzpicture}[yscale=1,tdplot_main_coords]
+
+ 			\def\xstart{0} %x Koordinate der Startposition der Grafik
+ 			\def\ystart{0} %y Koordinate der Startposition der Grafik
+ 			\def\myscale{0.20} %ändert die Größe der Grafik (Skalierung der Grafik)
+
+ 			\def\xstartdraw{(\xstart + 2.0)} %xKoordinate des Referenzstartpunktes (in dieser Zeichnung: a)
+ 			\def\ystartdraw{(\ystart + 1.5)}%yKoordinate des Referenzstartpunktes (in dieser Zeichnung: a)
+
+ 			\def\balkenhoehe{(5.3)}% Länge des vertikalen blauen Balkens
+ 			\def\balkenlaenge{(10)}% Länge des horizontalen blauen Balkens
+ 			\def\balkenbreite{0.4} %Balkenbreite
+
+ 			%---------Begin Balken----------
+ 			\def\drehwinkel{0}
+ 			\node (VekV) at ({\xstart+0.7*cos(\drehwinkel)-\balkenbreite*sin(\drehwinkel)},{\ystart+0.5*sin(\drehwinkel)+\balkenbreite*cos(\drehwinkel)})[color=blue] {$V$};
+ 			\node (AffA) at ({\xstart+(\balkenlaenge-1)*cos(\drehwinkel)},{\ystart+(\balkenlaenge-1)*sin(\drehwinkel)+\balkenbreite*cos(\drehwinkel)})[color=red] {$A$};
+
+ 			\path[ shade, top color=white, bottom color=blue, opacity=.6]
+ 			({\xstart},{\ystart},0)  -- ({\xstart - \balkenbreite * cos(\drehwinkel)- (-\balkenbreite+0)*sin(\drehwinkel)},{\ystart - \balkenbreite * sin(\drehwinkel)+ (-\balkenbreite+0)*cos(\drehwinkel)},0)  -- ({\xstart - \balkenbreite * cos(\drehwinkel)- (\balkenhoehe+0.5)*sin(\drehwinkel)},{\ystart - \balkenbreite * sin(\drehwinkel)+ (\balkenhoehe+0.5)*cos(\drehwinkel)},0) -- ({\xstart - 0 * cos(\drehwinkel)- (\balkenhoehe+0)*sin(\drehwinkel)},{\ystart - 0 * sin(\drehwinkel)+ (\balkenhoehe+0)*cos(\drehwinkel)},0) -- cycle;
+
+ 			\path[ shade, right color=white, left color=blue, opacity=.6]
+ 			({\xstart},{\ystart},0)  -- ({\xstart - \balkenbreite * cos(\drehwinkel)- (-\balkenbreite+0)*sin(\drehwinkel)},{\ystart - \balkenbreite * sin(\drehwinkel)+ (-\balkenbreite+0)*cos(\drehwinkel)},0) --
+ 			({\xstart + (\balkenlaenge+0.5) * cos(\drehwinkel)- (-\balkenbreite+0)*sin(\drehwinkel)},{\ystart + (\balkenlaenge+0.5) * sin(\drehwinkel)+ (-\balkenbreite+0)*cos(\drehwinkel)},0) --
+ 			({\xstart + \balkenlaenge * cos(\drehwinkel)},{\ystart + \balkenlaenge * sin(\drehwinkel)},0)--
+ 			cycle;
+ 			%---------End Balken----------
+ 			\def\lightoffset{0.2*\myscale} %offeset der Vektoren
+
+ 			%Punkte Definition
+ 			\node (pointa1) at ({\xstartdraw},{\ystartdraw}) {};
+ 			\node (pointa2) at ({\xstartdraw+(-3 *\myscale)},{\ystartdraw+(6*\myscale)}) {};
+ 			\node (pointb1) at ($(pointa1) + (7*\myscale,2.0*\myscale) $) {};
+ 			\node (pointb2) at ($(pointa2) + (7*\myscale,2.0*\myscale) $) {};
+
+ 			\node (pointaa1) at ($(pointa1) + (18*\myscale,-2*\myscale) $) {};
+ 			\node (pointaa2) at ($(pointa1) + (9*\myscale,11*\myscale) $) {};
+ 			\node (pointab1) at ($(pointaa1) + (4*\myscale,8*\myscale) $) {};
+ 			\node (pointab2) at ($(pointaa2) + (4*\myscale,8*\myscale) $) {};
+
+ 			%Geraden
+ 			\draw[-,shorten >=-60pt, shorten <=-50pt,line width=0.2pt,color=red] (pointa1) -- (pointb1) ;
+ 			\draw[-,shorten >=-80pt, shorten <=-30pt,line width=0.2pt,color=red] (pointa2) -- (pointb2) ;
+ 			\draw[-,shorten >=-90pt, shorten <=-30pt,line width=0.2pt,color=red] (pointaa1) -- (pointab1) ;
+ 			\draw[-,shorten >=-20pt, shorten <=-110pt,line width=0.2pt,color=red] (pointaa2) -- (pointab2) ;
+
+ 			\node [color=red] (pointlabelg1) at ($(pointa1)+2.2*(pointb1)-2.2*(pointa1)$) [below, xshift=0, yshift=0] {$g_1$} ;
+ 			\node [color=red] (pointlabelg2) at ($(pointa2)+2.7*(pointb2)-2.7*(pointa2)$) [below, xshift=0, yshift=0] {$g_2$} ;
+
+ 			\node [color=red] (pointlabelag1) at ($(pointaa1)+2.2*(pointab1)-2.2*(pointaa1)$) [right, xshift=0, yshift=0] {$\alpha(g_1)$} ;
+ 			\node [color=red] (pointlabelag2) at ($(pointaa2)-2.1*(pointab2)+2.1*(pointaa2)$) [right, xshift=0, yshift=0] {$\alpha(g_2)$} ;
+
+ 			%Abbildung alpha
+ 			\draw [-{>[scale=1,length=10,width=6]},shorten >=8pt, shorten <=8pt,line width=0.4pt,color=blue!70!red!50] (pointa1) to [bend right=19] (pointaa1);
+ 			\draw [-{>[scale=1,length=10,width=6]},shorten >=8pt, shorten <=8pt,line width=0.4pt,color=blue!70!red!50] (pointa2) to [bend right=-25] (pointaa2);
+ 			\node [color=blue!70!red!50] (pointlabel1) at ($(pointa1)!0.5!(pointaa1)$) [below, xshift=0, yshift=2] {$\alpha$} ;
+ 			\node [color=blue!70!red!50] (pointlabel2) at ($(pointa2)!0.5!(pointaa2)$) [above, xshift=-10, yshift=10]{$\alpha$} ;
+
+ 			%Punkte malen
+ 			\draw[fill,color=white] (pointa1) circle [x=1cm,y=1cm,radius=0.18];
+ 			\draw[fill,color=white] (pointb1) circle [x=1cm,y=1cm,radius=0.18];
+ 			\draw[fill,color=white] (pointa2) circle [x=1cm,y=1cm,radius=0.18];
+ 			\draw[fill,color=white] (pointb2) circle [x=1cm,y=1cm,radius=0.18];
+ 			\draw[fill,color=white] (pointaa1) circle [x=1cm,y=1cm,radius=0.18];
+ 			\draw[fill,color=white] (pointaa2) circle [x=1cm,y=1cm,radius=0.18];
+ 			\draw[fill,color=white] (pointab1) circle [x=1cm,y=1cm,radius=0.18];
+ 			\draw[fill,color=white] (pointab2) circle [x=1cm,y=1cm,radius=0.18];
+
+
+ 			\draw[fill,color=red] (pointa1) circle [x=1cm,y=1cm,radius=0.08]node[above, xshift=0, yshift=0]{$a_1$};
+ 			\draw[fill,color=red] (pointb1) circle [x=1cm,y=1cm,radius=0.08]node[above, xshift=0, yshift=0]{$b_1$};
+ 			\draw[fill,color=red] (pointa2) circle [x=1cm,y=1cm,radius=0.08]node[below, xshift=5, yshift=0]{$a_2$};
+ 			\draw[fill,color=red] (pointb2) circle [x=1cm,y=1cm,radius=0.08]node[below, xshift=5, yshift=0]{$b_2$};
+ 			\draw[fill,color=red] (pointaa1) circle [x=1cm,y=1cm,radius=0.08]node[right, xshift=0, yshift=0]{$\alpha(a_1)$};
+ 			\draw[fill,color=red] (pointab1) circle [x=1cm,y=1cm,radius=0.08]node[right, xshift=0, yshift=0]{$\alpha(b_1)$};
+ 			\draw[fill,color=red] (pointaa2) circle [x=1cm,y=1cm,radius=0.08]node[right, xshift=2, yshift=5]{$\alpha(a_2)$};
+ 			\draw[fill,color=red] (pointab2) circle [x=1cm,y=1cm,radius=0.08]node[right, xshift=2, yshift=5]{$\alpha(b_2)$};
+
+ 			%Richtungsvektoren
+ 			\draw [-{>[scale=1,length=10,width=6]},shorten >=5pt, shorten <=5pt,line width=0.4pt,color=blue] ($(pointa1)+(\lightoffset,\lightoffset)$) to  ($(pointb1)+(\lightoffset,\lightoffset)$);
+ 			\node (pointa1b1v) at ($(pointa1)!0.5!(pointb1)$) [above,color=blue]{$v$};
+
+ 			\draw [-{>[scale=1,length=10,width=6]},shorten >=5pt, shorten <=5pt,line width=0.4pt,color=blue] ($(pointa2)+(\lightoffset,\lightoffset)$) to  ($(pointb2)+(\lightoffset,\lightoffset)$);
+ 			\node (pointa1b1v) at ($(pointa2)!0.5!(pointb2)$) [below,color=blue]{$v$};
+
+ 			\draw [-{>[scale=1,length=10,width=6]},shorten >=5pt, shorten <=5pt,line width=0.4pt,color=blue] ($(pointaa2)+(\lightoffset,\lightoffset)$) to  ($(pointab2)+(\lightoffset,\lightoffset)$);
+ 			\node (pointa1b1v) at ($(pointaa2)!0.5!(pointab2)$) [left,color=blue]{$\lambda(v)$};
+
+ 			\draw [-{>[scale=1,length=10,width=6]},shorten >=5pt, shorten <=5pt,line width=0.4pt,color=blue] ($(pointaa1)+(\lightoffset,\lightoffset)$) to  ($(pointab1)+(\lightoffset,\lightoffset)$);
+ 			\node (pointa1b1v) at ($(pointaa1)!0.5!(pointab1)$) [right,color=blue]{$\lambda(v)$};
+
+ 		\end{tikzpicture}
+ 	\end{figure}
+ 	%-------------------End parallele Geraden ----------------
+
+ \subsection{Beispiel \& Definition}
+ 	\begin{Definition}[Streckung]
+ 		Sei $ (A,V,\tau) $ ein AR über $ K $ und $ \lambda\in\End(V) $ eine \emph{Homothetie},\hfill
+ 		$ \lambda= \id_V\cdot c \text{ für ein }c\in K. $
+
+ 		Ist die zugehörige affine Abbildung\hfill
+ 		$ \alpha:A\to A,o+v\mapsto \alpha(o+v):= o+v\cdot c $
+
+ 		eine affine Transformation, d.h.,\hfill
+ 		$ \lambda \in \mathrm{Gl}(V)\Leftrightarrow c\in K^\times, $
+
+ 		so nennt man $ \alpha $ eine \emph{Streckung} mit \emph{Zentrum} $ o\in A $. Ist $ c\neq 1 $, d.h. $ \alpha \neq \id_A $, so gilt
+ 		\[
+ 			\alpha(a) = a\Leftrightarrow a = o.
+ 		\]
+ 		also hat die Abbildung $ \alpha $ genau einen \emph{Fixpunkt} $ a = o $.
+ 	\end{Definition}
+ \subsection{Beispiel \& Definition}
+ 	\begin{Definition}[Parallelprojektion]
+ 		Sind $ p\in \End(V) $ eine Projektion ($ p^2 = p $) und $ o\in A $, so liefert
+ 		\[
+ 			\pi:A\to A,o+v\mapsto \pi(o+v):= o+p(v)
+ 		\]
+ 		eine \emph{Parallelprojektion} von $ A $ auf dem affinen Unterraum $ o+p(V) $. Ist $ p\neq \id_V $, so ist $ p\notin \mathrm{Gl}(V) $ und also $ \pi $ keine affine Transformation (sondern eine nicht bijektive affine Abbildung), so hat $ \pi $ nicht-triviale \emph{Fasern}
+ 		\[
+ 			\pi^{-1}(\{a'\})\subset A \text{ für } a'\in \pi(A),
+ 		\]
+ 		wobei $ \dim\pi^{-1}(\{a'\}) = \dfkt p \geq 1 $.
+ 	\end{Definition}
+ \subsection{Beispiel \& Definition}
+ 	\begin{Definition}[Scherung]
+ 		Seien $ \omega\in V^* $ und $ w\in \ker \omega $, sei $ o\in A $; die \emph{Scherung}
+ 		\[
+ 			\sigma:A\to A, o+v\mapsto \sigma(o+v):= o+v+w\omega(v)
+ 		\]
+ 		ist dann eine affine Transformation, denn\hfill
+ 		$ \lambda = \id_V + w\cdot \omega \in \mathrm{Gl}(V) $
+
+ 		mit\hfill
+ 		$ \lambda^{-1} = \id_v - w\cdot \omega. $
+
+ 		Ist $ w\cdot\omega\in\End(V)\setminus\{o\} $, so hat $ \sigma $ Fixpunktmenge $ \text{Fix}_\sigma = o+\ker\omega $ und jeder Punkt und sein Bild liegen auf einer zu $ o+[w] $ parallelen Geraden:
+ 		\[
+ 			\forall a\in A\setminus \text{Fix}_\sigma : [a,\sigma(a)] \parallel o+[w]
+ 		\]
+ 	\end{Definition}
+
+%VO17-2015-12-03
+ \subsection{Korollar (Fortsetzungssatz für affine Abbildungen)}
+ 	\begin{Korollar}[Fortsetzungssatz für affine Abbildungen]
+ 		Eine affine Abbildung $ \alpha:A\to A' $ ist durch die (beliebige) Angabe der Bilder $ a_i' = \alpha(a_i) $ der Punkte eines baryzentrischen Bezugssystems $ (a_i)_{i\in I} $ von $ A $ eindeutig bestimmt.
+ 	\end{Korollar}
+ 	Beweis ist analog dem des Fortsetzungssatzes für lineare Abbildungen: Mit der Verträglichkeit der gesuchten affinen Abbildung mit Affinkombinationen muss gelten:
+ 	\[
+ 		\alpha\left(\sum_{i\in I}a_ix_i\right)=\sum_{i\in I}\alpha(a_i)x_i \text{ für } a =\sum_{i\in I}a_ix_i \text{ mit } \sum_{i\in I}x_i = 1
+ 	\]
+ 	Eindeutigkeit folgt, da jeder Punkt $ a\in A $ eine Affindarstellung $ a = \sum_{i\in I}a_ix_i $ besitzt. Existenz von $ \alpha $ folgt aus der Eindeutigkeit der Affindarstellung jedes Punktes $ a\in A $ im baryzentrischen Bezugssystem $ (a_i)_{i\in I} $.
+
+ 	\paragraph{Beispiel}
+
+ 		%-------------------Begin Fortsetzungssatz für affine Abbildungen----------------
+ 		\begin{figure}[H]\centering
+ 			\tdplotsetmaincoords{0}{0} %-27
+ 			\begin{tikzpicture}[yscale=1,tdplot_main_coords]
+
+ 				\def\xstart{0} %x Koordinate der Startposition der Grafik
+ 				\def\ystart{0} %y Koordinate der Startposition der Grafik
+ 				\def\myscale{0.022} %ändert die Größe der Grafik (Skalierung der Grafik)
+
+ 				\def\xstartdraw{(\xstart + 1.5)} %xKoordinate des Referenzstartpunktes (in dieser Zeichnung: a)
+ 				\def\ystartdraw{(\ystart + 2.0)}%yKoordinate des Referenzstartpunktes (in dieser Zeichnung: a)
+
+ 				\def\balkenhoehe{(4.3)}% Länge des vertikalen blauen Balkens
+ 				\def\balkenlaenge{(10)}% Länge des horizontalen blauen Balkens
+ 				\def\balkenbreite{0.4} %Balkenbreite
+
+ 				%---------Begin Balken----------
+ 				\def\drehwinkel{0}
+ 				\node (VekV) at ({\xstart+1*cos(\drehwinkel)-\balkenbreite*sin(\drehwinkel)},{\ystart+0.5*sin(\drehwinkel)+\balkenbreite*cos(\drehwinkel)})[color=blue] {$V=K^2$};
+ 				\node (AffA) at ({\xstart+(\balkenlaenge-1)*cos(\drehwinkel)},{\ystart+(\balkenlaenge-1)*sin(\drehwinkel)+\balkenbreite*cos(\drehwinkel)})[color=red] {$A$};
+
+ 				\path[ shade, top color=white, bottom color=blue, opacity=.6]
+ 				({\xstart},{\ystart},0)  -- ({\xstart - \balkenbreite * cos(\drehwinkel)- (-\balkenbreite+0)*sin(\drehwinkel)},{\ystart - \balkenbreite * sin(\drehwinkel)+ (-\balkenbreite+0)*cos(\drehwinkel)},0)  -- ({\xstart - \balkenbreite * cos(\drehwinkel)- (\balkenhoehe+0.5)*sin(\drehwinkel)},{\ystart - \balkenbreite * sin(\drehwinkel)+ (\balkenhoehe+0.5)*cos(\drehwinkel)},0) -- ({\xstart - 0 * cos(\drehwinkel)- (\balkenhoehe+0)*sin(\drehwinkel)},{\ystart - 0 * sin(\drehwinkel)+ (\balkenhoehe+0)*cos(\drehwinkel)},0) -- cycle;
+
+ 				\path[ shade, right color=white, left color=blue, opacity=.6]
+ 				({\xstart},{\ystart},0)  -- ({\xstart - \balkenbreite * cos(\drehwinkel)- (-\balkenbreite+0)*sin(\drehwinkel)},{\ystart - \balkenbreite * sin(\drehwinkel)+ (-\balkenbreite+0)*cos(\drehwinkel)},0) --
+ 				({\xstart + (\balkenlaenge+0.5) * cos(\drehwinkel)- (-\balkenbreite+0)*sin(\drehwinkel)},{\ystart + (\balkenlaenge+0.5) * sin(\drehwinkel)+ (-\balkenbreite+0)*cos(\drehwinkel)},0) --
+ 				({\xstart + \balkenlaenge * cos(\drehwinkel)},{\ystart + \balkenlaenge * sin(\drehwinkel)},0)--
+ 				cycle;
+ 				%---------End Balken----------
+
+ 				\def\xdistanz{20} %Abstand zwischen den beiden Dreiecken
+
+ 				%Punkte Definition
+ 				\node (pointa) at ({\xstartdraw},{\ystartdraw}) {};
+ 				\node (pointc) at ({\xstartdraw+(10 *\myscale)},{\ystartdraw+(95*\myscale)}) {};
+ 				\node (pointb) at ({\xstartdraw+(90*\myscale)},{\ystartdraw-(30*\myscale)}) {};
+
+ 				\node (pointas) at ({\xstartdraw+((245+\xdistanz) *\myscale)},{\ystartdraw+(75*\myscale)}) {};
+ 				\node (pointbs) at ({\xstartdraw+((275+\xdistanz)*\myscale)},{\ystartdraw-(5*\myscale)}) {};
+ 				\node (pointcs) at ({\xstartdraw+((205+\xdistanz) *\myscale)},{\ystartdraw-(65*\myscale)}) {};
+
+ 				\node [color=blue!70!red!50] (pointlabel) at ($(pointc)!0.5!(pointas)$) {$\exists ! \alpha$} ;
+
+ 				%Geraden
+ 				\draw[-,shorten >=-20pt, shorten <=-20pt,line width=0.2pt,color=red] (pointa) -- (pointc) ;
+ 				\draw[-,shorten >=-20pt, shorten <=-20pt,line width=0.2pt,color=red] (pointa) --  (pointb) ;
+ 				\draw[-,shorten >=-20pt, shorten <=-20pt,line width=0.2pt,color=red] (pointc) -- (pointb) ;
+
+ 				\draw[-,shorten >=-20pt, shorten <=-20pt,line width=0.2pt,color=red] (pointas) -- (pointcs) ;
+ 				\draw[-,shorten >=-20pt, shorten <=-20pt,line width=0.2pt,color=red] (pointas) --  (pointbs) ;
+ 				\draw[-,shorten >=-20pt, shorten <=-20pt,line width=0.2pt,color=red] (pointcs) -- (pointbs) ;
+
+ 				%Abbildung alpha
+ 				\draw [-{>[scale=1,length=10,width=6]},shorten >=7pt, shorten <=7pt,line width=0.4pt,color=blue!70!red!50] (pointa) to [bend right=15] (pointas);
+ 				\draw [-{>[scale=1,length=10,width=6]},shorten >=7pt, shorten <=7pt,line width=0.4pt,color=blue!70!red!50] (pointb) to [bend right=-25] (pointbs);
+ 				\draw [-{>[scale=1,length=10,width=6]},shorten >=7pt, shorten <=7pt,line width=0.4pt,color=blue!70!red!50] (pointc) to [bend right=-25] (pointcs);
+
+ 				\draw [-{>[scale=1,length=10,width=6]},shorten >=7pt, shorten <=7pt,line width=0.4pt,color=blue!70!red!50] ($(pointc)!0.3!(pointas)$)  to [bend right=-25] ($(pointc)!0.7!(pointas)$) ;
+
+ 				%Punkte malen
+ 				\draw[fill,color=white] (pointa) circle [x=1cm,y=1cm,radius=0.18];
+ 				\draw[fill,color=white] (pointb) circle [x=1cm,y=1cm,radius=0.18];
+ 				\draw[fill,color=white] (pointc) circle [x=1cm,y=1cm,radius=0.18];
+
+ 				\draw[fill,color=red] (pointa) circle [x=1cm,y=1cm,radius=0.08]node[ xshift=-10, yshift=-10]{$a$};
+ 				\draw[fill,color=red] (pointb) circle [x=1cm,y=1cm,radius=0.08]node[ yshift=-10]{$b$};
+ 				\draw[fill,color=red] (pointc) circle [x=1cm,y=1cm,radius=0.08]node[ xshift=-10]{$c$};
+
+ 				\draw[fill,color=white] (pointas) circle [x=1cm,y=1cm,radius=0.18];
+ 				\draw[fill,color=white] (pointbs) circle [x=1cm,y=1cm,radius=0.18];
+ 				\draw[fill,color=white] (pointcs) circle [x=1cm,y=1cm,radius=0.18];
+
+ 				\draw[fill,color=red] (pointas) circle [x=1cm,y=1cm,radius=0.08]node[ xshift=10,yshift=5 ]{$a'$};
+ 				\draw[fill,color=red] (pointbs) circle [x=1cm,y=1cm,radius=0.08]node[ xshift=10,yshift=-2]{$b'$};
+ 				\draw[fill,color=red] (pointcs) circle [x=1cm,y=1cm,radius=0.08]node[ xshift=-10]{$c'$};
+
+ 			\end{tikzpicture}
+ 		\end{figure}
+ 		%-------------------End Fortsetzungssatz für affine Abbildungen----------------
+
+
+ 		Gegeben sind die Ecken eines nicht-degenerierten Dreiecks $ a,b,c\in A^2 := (K^2,K^2,\tau) $ und drei Punkte $ a',b',c'\in A^2 $; es existiert genau eine affine Abbildung $ \alpha:A^2\to A^2 $ mit $ (a,b,c)\mapsto (a',b',c') $. Dieses $ \alpha $ ist genau dann eine affine Transformation von $ A^2 $, wenn das Bilddreieck $ \{a',b',c'\} $ nicht-degeneriert ist, d.h. $ (a',b',c') $ ein baryzentrisches Bezugssystem ist (dann bekommt man die Inverse mittels Fortsetzungssatz durch $ (a',b',c') \overset{\alpha^{-1}}{\mapsto} (a,b,c) $).
