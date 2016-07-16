@@ -182,7 +182,10 @@
 	Nach Komplexifizierungslemma ist $ (V_\C,\SSkl{.}{.}) $ unitär, wobei
 		\[ \SSkl{(v,w)}{(v',w')} = \left(\Skl{v}{v'}+\Skl{w}{w'}\right)+i\left(\Skl{v}{w'}-\Skl{w}{v'}\right); \]
 	offenbar gilt für $ v,w,v',w'\in V_\C $
-		\[ \SSkl{\left(f^*(v),f^*(w)\right)}{(v',w')}_\C = \SSkl{(v,w)}{\left(f(v'),f(w')\right)} = \SSkl{(v,w)}{f_\C(v',w')} \]
+		\begin{align*}
+		\SSkl{\left(f^*(v),f^*(w)\right)}{(v',w')}_\C &= \SSkl{(v,w)}{\left(f(v'),f(w')\right)}_\C\\
+		&= \SSkl{(v,w)}{f_\C(v',w')}_\C
+		\end{align*}
 	also $ (f_\C)^*=(f^*)_\C $ und damit
 		\[ f_\C^* \circ f_\C = \left(f^* \circ f\right)_\C = \left(f_\C \circ f^*_\C \right), \]
 	d.h. $ f_\C $ ist normal.
