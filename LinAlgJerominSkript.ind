@@ -2,9 +2,11 @@
 
   \item $ f $-invarianter Unterraum, \hyperpage{113}
   \item $ f $-zyklische Basis, \hyperpage{118}
-  \item \IeC {\"A}hnlichkeitsgeometrie, \hyperpage{149}
-  \item \IeC {\"A}hnlichkeitstransformation, \hyperpage{149}
+  \item \IeC {\"A}hnlichkeits
+    \subitem geometrie, \hyperpage{149}
+    \subitem transformation, \hyperpage{149}
   \item \IeC {\"A}quivalenz von Sesquilinearformen, \hyperpage{140}
+  \item \IeC {\"A}quivalenzrelation, \hyperpage{43}
 
   \indexspace
 
@@ -22,32 +24,37 @@
   \item Annulatorpolynom, \hyperpage{122}
   \item Asymptotenkegel, \hyperpage{187}
   \item Austauschlemma, \hyperpage{23}
+  \item Automorphismus, \hyperpage{33}
 
   \indexspace
 
   \item Basis, \hyperpage{19}
-  \item Basislemma, \hyperpage{21}
-  \item Basissatz, \hyperpage{24}
+    \subitem -erg\IeC {\"a}nzungssatz, \hyperpage{22}
+    \subitem -lemma, \hyperpage{21}
+    \subitem -satz, \hyperpage{24}
+    \subitem duale, \hyperpage{27}
+    \subitem Standard-, \hyperpage{20}
+  \item Bild, \hyperpage{29}
   \item Blockmatrix, \hyperpage{88}
 
   \indexspace
 
   \item Cauchyprodukt, \hyperpage{100}
-  \item Charakteristik, \hyperpage{11}
   \item Charakteristisches Polynom, \hyperpage{110}
 
   \indexspace
 
   \item Darstellungsmatrix einer Komposition, \hyperpage{70}
-  \item Definition, \hyperpage{41}
+  \item Defekt, \hyperpage{29}
   \item Determinante, \hyperpage{85}
   \item Determinante eines Endomorphismus, \hyperpage{94}
   \item Determinantenmultiplikationssatz, \hyperpage{95}
   \item Diagonalisierbarkeit, \hyperpage{114}
   \item Dilatationsgruppe, \hyperpage{65}
   \item Dimension, \hyperpage{24}
-  \item Dimensionssatz, \hyperpage{35}
-  \item Direkte Summe, \hyperpage{38}
+  \item Dimensions
+    \subitem -formel, \hyperpage{39}
+    \subitem -satz, \hyperpage{35}
   \item Drehung, \hyperpage{159}
   \item Dualraum, \hyperpage{27}
 
@@ -58,8 +65,10 @@
   \item Einheitsmatrix, \hyperpage{73}
   \item Einsetzungshomomorphismus, \hyperpage{102}, \hyperpage{104}
   \item Ellipse, \hyperpage{187}
+  \item Endomorphismus, \hyperpage{33}
   \item Erweiterte Koeffizientenmatrix, \hyperpage{76}
   \item Erzeugende, \hyperpage{185}
+  \item Erzeugendensystem, \hyperpage{19}
   \item Euklidische Geometrie, \hyperpage{149}
   \item Euklidischer Raum, \hyperpage{148}
   \item Euler-Gerade, \hyperpage{155}
@@ -76,7 +85,9 @@
   \item Gram-Schmidtsches Orthogonalisierungsverfahren, \hyperpage{157}
   \item Gramsche Matrix, \hyperpage{128}
   \item Gruppe, \hyperpage{8}
-  \item Gruppenoperation, \hyperpage{8}
+    \subitem Gruppenoperation, \hyperpage{8}
+    \subitem Permutations-, \hyperpage{9}
+    \subitem Transformations-, \hyperpage{8}
 
   \indexspace
 
@@ -84,15 +95,20 @@
     \subitem -schnittpunkt, \hyperpage{154}
   \item Hauptachsentransformation, \hyperpage{174}
   \item Hauptraumzerlegung, \hyperpage{178}
-  \item Homomorphismen als VR, \hyperpage{28}
+  \item Homomorphiesatz, \hyperpage{45}
+  \item Homomorphismen
+    \subitem besondere, \hyperpage{33}
   \item Homomorphismus, \hyperpage{25}
+  \item Homothetie, \hyperpage{25}
   \item Hyperbel, \hyperpage{187}
 
   \indexspace
 
   \item Invertierbare Matrix, \hyperpage{73}
+  \item Involution, \hyperpage{41}
   \item Isometrie, \hyperpage{149}
   \item Isomorphielemma, \hyperpage{33}
+  \item Isomorphismus, \hyperpage{33}
 
   \indexspace
 
@@ -101,18 +117,23 @@
   \indexspace
 
   \item K\IeC {\"o}rper, \hyperpage{10}
+    \subitem Charakteristik, \hyperpage{11}
   \item Kartesisches Bezugssystem, \hyperpage{156}
+  \item Kern, \hyperpage{29}
   \item komplexe Erweiterung, \hyperpage{172}
   \item Komplexifizierung, \hyperpage{143}
   \item Kongruenzabbildung, \hyperpage{149}
   \item Kreis, \hyperpage{153}
+  \item Kroneckersymbol, \hyperpage{17}
 
   \indexspace
 
   \item L\IeC {\"a}nge, \hyperpage{148}
+  \item Lineare H\IeC {\"u}lle, \hyperpage{16}
+  \item Lineare Unabh\IeC {\"a}ngigkeit, \hyperpage{19}
   \item Lineares Gleichungssystem, \hyperpage{75}
   \item Linearfaktorisierung, \hyperpage{106}
-  \item Linearkombinationen und Homomorphismen, \hyperpage{26}
+  \item Linearkombination, \hyperpage{17}
 
   \indexspace
 
@@ -125,7 +146,7 @@
 
   \indexspace
 
-  \item Nebenklassen, \hyperpage{42}
+  \item Nebenklasse, \hyperpage{42}
   \item Negativit\IeC {\"a}tsindex, \hyperpage{138}
   \item nilpotent, \hyperpage{179}
   \item Norm, \hyperpage{146}
@@ -147,9 +168,9 @@
   \indexspace
 
   \item Parallele Geraden, \hyperpage{61}
+  \item Parallelenaxiom/-problem, \hyperpage{7}
   \item Parallelotop im affinen Raum, \hyperpage{91}
   \item Parallelprojektion, \hyperpage{62}
-  \item Permutationsgruppe, \hyperpage{9}
   \item Polynom, \hyperpage{100}
     \subitem -algebra, \hyperpage{100}
     \subitem -division, \hyperpage{105}
@@ -159,7 +180,6 @@
   \item positiv definit, \hyperpage{142}
   \item Positivit\IeC {\"a}tsindex, \hyperpage{138}
   \item Primpolynome, \hyperpage{107}
-  \item Produkt von VR, \hyperpage{41}
   \item Projektion, \hyperpage{39}
   \item Projektionen, \hyperpage{39}
 
@@ -168,14 +188,16 @@
   \item quadratische Form, \hyperpage{133}
   \item Quadratwurzel (Endomorphismus), \hyperpage{175}
   \item Quadrik, \hyperpage{182}
+  \item Quotientenraum, \hyperpage{42}
 
   \indexspace
 
   \item Radikal
     \subitem -frei, \hyperpage{132}
     \subitem -raum, \hyperpage{132}
+  \item Rang, \hyperpage{29}
+    \subitem -satz, \hyperpage{31}
   \item Rang einer Matrix, \hyperpage{74}
-  \item Rangsatz, \hyperpage{31}
 
   \indexspace
 
@@ -183,7 +205,6 @@
   \item Satz von Menelaos, \hyperpage{65}
   \item Scherung, \hyperpage{62}
   \item schiefadjungiert, \hyperpage{167}
-  \item Schnitt von UVR, \hyperpage{16}
   \item Schwerpunktsatz, \hyperpage{64}
   \item selbstadjungiert, \hyperpage{167}
   \item Semilinearit\IeC {\"a}t, \hyperpage{126}
@@ -199,16 +220,12 @@
     \subitem -satz, \hyperpage{170}
     \subitem -zerlegung (Euklidisch), \hyperpage{174}
     \subitem -zerlegung (unit\IeC {\"a}r), \hyperpage{172}
-  \item Spezielle Homomorphismen, \hyperpage{33}
   \item Spezielle lineare Gruppe, \hyperpage{95}
   \item Spiegelung, \hyperpage{159}
   \item Spitze, \hyperpage{183}
   \item Spur, \hyperpage{111}
-  \item Standardbasis, \hyperpage{20}
-  \item Standardvektorraum, \hyperpage{13}
   \item Streckensymmetrale, \hyperpage{153}
   \item Streckung, \hyperpage{62}
-  \item Summe von UVR, \hyperpage{34}
 
   \indexspace
 
@@ -221,14 +238,20 @@
 
   \item Umkreis, \hyperpage{153}
   \item Unit\IeC {\"a}re Gruppe, \hyperpage{167}
-  \item Untervektorraum, \hyperpage{14}
+  \item Untervektorraum
+    \subitem Direkte Summe, \hyperpage{38}
+    \subitem komplement\IeC {\"a}r, \hyperpage{37}
+    \subitem Summe, \hyperpage{34}
   \item Ursprung, \hyperpage{49}
 
   \indexspace
 
   \item Vektorraum, \hyperpage{12}
     \subitem Euklidischer, \hyperpage{142}
+    \subitem Produkt, \hyperpage{41}
+    \subitem Standard-, \hyperpage{13}
     \subitem unit\IeC {\"a}rer, \hyperpage{142}
+    \subitem Unter-, \hyperpage{14}
   \item Volumenverzerrung, \hyperpage{94}
 
   \indexspace

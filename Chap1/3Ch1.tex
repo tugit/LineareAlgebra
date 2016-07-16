@@ -1,8 +1,8 @@
 %VO06-2015-10-22
 \section{Basis und Dimensionen}
 
- \subsection{Definition (Basis)}
- 	\begin{Definition}[Basis]\index{Basis}
+ \subsection{Definition}
+ 	\begin{Definition}[Basis]\index{Basis}\index{Lineare Unabhängigkeit}\index{Erzeugendensystem}
  		Eine Teilmenge $S\subset V$ oder eine Familie $(v_i)_{i\in I}$ in $ V $ heißt
  		\begin{itemize}
  			\item \emph{Erzeugendensystem} von $ V $, falls \[
@@ -26,8 +26,8 @@
  		\]
  		Die Umkehrung gilt im Allgemeinen nicht: Eine Familie (in $ V $) enthält mehr Information als eine Teilmenge von $ V $.
 
- \subsection{Beispiel und Definition (Standardbasis)}
- 	\begin{Definition}[Standardbasis]\index{Standardbasis}
+ \subsection{Beispiel und Definition}
+ 	\begin{Definition}[Standardbasis]\index{Basis!Standard-}
  		Für $V = K^n$ ist $(e_1, ... , e_n)$,
  		\begin{equation*}
  			e_i:\{{1, ... ,n\}} =: I\to K,\ j\mapsto e_i(j)= \delta_{ij}=
@@ -99,7 +99,7 @@
 
 %VO07-2015-10-27
  \subsection{Basislemma}
- 	\begin{Lemma}[Basislemma]\index{Basislemma}
+ 	\begin{Lemma}[Basislemma]\index{Basis!-lemma}
  		Sei $S\subset V$ lin. unabh. und $E\subset V$ ein Erzeugendensystem mit $S\subset E$. Dann existiert eine Basis $B$ von $V$ mit $S\subset B\subset E$.
  	\end{Lemma}
 
@@ -150,7 +150,7 @@
  		Dass $B$ lin. unabh. folgt dann: Wäre $B$ lin. abh., so würde folgen $f_2\in [\{e_1,f_1\}]\Rightarrow [B] \subset [\{e_1,f_1\}] \neq K^3$, was nicht der Fall ist.
 
  \subsection{Basisergänzungssatz}
- 	\begin{Satz}[Basisergänzungssatz]
+ 	\begin{Satz}[Basisergänzungssatz]\index{Basis!-ergänzungssatz}
  		Jede lin. unabh. Menge $S\subset V$ kann zu einer Basis $B$ von $V$ ergänzt werden: Es existiert eine Basis $B$ von $V$ mit $S\subset B$.
  	\end{Satz}
 
@@ -198,7 +198,7 @@
  		Hier haben wir die Familienschreibweise (mit $B$ bzw. $S$ als Indexmenge) verwendet, um Linearkombinationen darzustellen.
 
  \subsection{Basissatz}
- 	\begin{Satz}[Basissatz]\index{Basissatz}
+ 	\begin{Satz}[Basissatz]\index{Basis!-satz}
  		Sei $V$ ein endlich erzeugter $K$-VR, $V=[E]$ mit $\#E < \infty$. Dann gilt:
  		\begin{enumerate}[(i)]
  			\item $V$ besitzt eine endliche Basis $B$ mit $n:= \#B \leq \#E$.
@@ -230,7 +230,7 @@
  		$\dim K^n = \#\{e_1,...,e_n\} = n$ (Standardbasis).
 
 %VO08-2015-10-29
- \subsection{Korollar (Dimension und Teilmengen)}
+ \subsection{Korollar}
  	\begin{Korollar}[Dimension und Teilmengen]
  		Sei $ V $ ein $ K $-VR mit $\dim V =: n\in \mathbb{N}$. Dann gilt:
  		\begin{enumerate}[(i)]

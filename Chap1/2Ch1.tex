@@ -1,7 +1,7 @@
 %VO05-2015-10-20
 \section{Unterräume und Lineare Hülle}
  \subsection{Definition (Untervektorraum)}
- 	\begin{Definition}[Untervektorraum]\index{Untervektorraum}
+ 	\begin{Definition}[Untervektorraum]\index{Vektorraum!Unter-}
  		Eine Teilmenge $U\subset V$ eines $K$-VR $V$ heißt \emph{Unter(vektor)raum} (UVR), falls $U$ mit der eingeschränkten Addition und Skalarmultiplikation
  		\begin{align*}
  			^+    & \mid_{U\times U}: U\times U \to V,\ (v,w) \mapsto v+w \\
@@ -83,8 +83,8 @@
  			\item $\mathbb{Q}\subset\mathbb{R}$ und $\mathbb{R}\cong \{x+iy\mid y=0\}\subset\mathbb{C}$ bilden Teilkörper von $\mathbb{R}$ bzw. $\mathbb{C}$.
  		\end{itemize}
 
- \subsection{Lemma (Schnitt von UVR)}
- 	\begin{Lemma}[Schnitt von UVR]\index{Schnitt von UVR}
+ \subsection{Lemma}
+ 	\begin{Lemma}[Schnitt von UVR]
  		Ist $(U_i)_{i\in I}$ eine Familie von UVR $U_i\subset V$ eines $K$-VR $V$, so ist ihr Schnitt
  		\[
  			U:= \bigcap_{i\in I}U_i =\{ u\in V\mid \forall i\in I: u\in U_i\}
@@ -92,8 +92,8 @@
  		ein UVR von $V$. (Beweis durch UR-Krit. in Aufgabe 17)
  	\end{Lemma}
 
- \subsection{Definition (Lineare Hülle)}
- 	\begin{Definition}
+ \subsection{Definition}
+ 	\begin{Definition}\index{Lineare Hülle}
  		Die \emph{lineare Hülle} $[S]$ einer Teilmenge $S\subset V$ eines $ K $-VR $ V $ ist der Schnitt aller $S$ enthaltenden UVR $U\subset V$:
  		\[
  			[S] := \bigcap_{S\subset U \text{ UVR}} U
@@ -127,7 +127,7 @@
  				0, & \text{sonst}
  			\end{cases}
  		\end{equation*}
- 		das \emph{Kroneckersymbol} bezeichnet.
+ 		das \emph{Kroneckersymbol} bezeichnet.\index{Kroneckersymbol}
 
  		Damit ist die lineare Hülle der Familie $(e_i)_{i\in I}$
  		\[
@@ -148,8 +148,8 @@
  		\]
  		Damit ist gezeigt, dass die beiden Abbildungen übereinstimmen; da $v\in K^n$ beliebig war, folgt $K^n \subset [(e_i)_{i\in I}]$
 
- \subsection{Definition (Linearkombination)}
- 	\begin{Definition}
+ \subsection{Definition}
+ 	\begin{Definition}\index{Linearkombination}
  		Seien $(v_i)_{i\in I}$ und $(x_i)_{i\in I}$ Familien in einem $ K $-VR bzw. dem Körper $ K $, wobei
  		\begin{align*}
  			\# & \{i\in I\mid x_i \neq 0\} < \infty\text{ , also} \\
@@ -168,7 +168,7 @@
  		garantiert, dass die Summe wohldefiniert ist $\rightarrow$ vgl. Reihen in der Analysis.
 
 %VO06-2015-10-22
- \subsection{Lemma (Lineare Hülle und Linearkombinationen)}
+ \subsection{Lemma}
  	\begin{Lemma}[Lineare Hülle und Linearkombinationen]
  		Ist $(v_i)_{i\in I}$, $I \neq \emptyset$, Familie in einem $K$-VR, so gilt:
  		\[

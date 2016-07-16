@@ -1,7 +1,7 @@
 %VO10-2015-11-10
 \section{Summen, Produkte und Quotienten}
  \subsection{Definition (Summe von UVR)}
- 	\begin{Definition}[Summe von UVR]\index{Summe von UVR}
+ 	\begin{Definition}[Summe von UVR]\index{Untervektorraum!Summe}
  		Die \emph{Summe einer Familie} $ (U_i)_{i\in I} $ von UVR $ U_i\subset V $ eines $ K $-VR ist die Menge
  		\[
  			\sum_{i\in I} U_i := \Big\{\sum_{i \in I}u_i\mid \forall i\in I: u_i\in U_i \land \# \{i\in I\mid u_i \neq 0\}<\infty\Big\}.
@@ -43,7 +43,7 @@
  		\]
 
  \subsection{Dimensionssatz}
- 	\begin{Satz}[Dimensionssatz]\index{Dimensionssatz}
+ 	\begin{Satz}[Dimensionssatz]\index{Dimensions!-satz}
  		Sind $ U_i \subset V $ UVR mit $ \dim U_i < \infty $ für $ i\in \{1,2\} $, so ist
  		\[
  			\dim (U_1+U_2) + \dim (U_1\cap U_2) = \dim U_1 + \dim U_2.
@@ -121,7 +121,7 @@
  		\]
 
  \subsection{Definition (Komplementäre UVR)}
- 	\begin{Definition}[Komplementäre UVR]
+ 	\begin{Definition}[Komplementäre UVR]\index{Untervektorraum!komplementär}
  		Zwei UVR $ U_1,U_2 \subset V $ heißen \emph{komplementär} in $ V $, falls
  		\[
  			U_1+U_2=V\text{ und } U_1\cap U_2 = \{0\}.
@@ -157,7 +157,7 @@
  		ist beispielsweise jeder UVR $ U' = [u']$ mit $u'_2\neq 0 $ komplementär in $ K^2 $.
 
  \subsection{Lemma \& Definition (direkte Summe)}
- 	\begin{Definition}[Direkte Summe]\index{Direkte Summe}
+ 	\begin{Definition}[Direkte Summe]\index{Untervektorraum!Direkte Summe}
  		Sei $ U= \sum_{i\in I}U_i\subset V $ Summe einer Familie von UVR $ U_i\in V $; dann besitzt jeder Vektor $ u\in U $ eine eindeutige Zerlegung als Summe von $ u_i $, genau dann, wenn
  		\begin{equation*}
  			\forall i\in I: U_i\cap \sum_{j\in I\setminus \{i\}}U_j = \{0 \}.
@@ -201,7 +201,7 @@
  			\forall i\in I: \dim U_i < \infty
  		\end{equation*}
 
- 		und es gilt die \emph{Dimensionsformel für direkte Summen} (Beweis: Aufgabe 35):
+ 		und es gilt die \emph{Dimensionsformel für direkte Summen} (Beweis: Aufgabe 35):\index{Dimensions!-formel}
  		\begin{equation*}
  			\dim \bigoplus_{i\in I}U_i = \sum_{i\in I} \dim U_i.
  		\end{equation*}
@@ -303,8 +303,8 @@
  			\ker p = p'(V)\text{ und }\ker p' = p(V)
  		\]
 
- \subsection{Beispiel und Definition (Involution)}
- 	\begin{Definition}[Definition]\index{Definition}
+ \subsection{Beispiel und Definition}
+ 	\begin{Definition}[]\index{Involution}
  		Sei $s\in \operatorname{End}(V)$ eine \emph{Involution} d.h. $s^2 = \id_V$  und
  		\[
  			p_\pm := \frac{1}{2}(\id_V\pm s).
@@ -316,8 +316,8 @@
  		also (Satz) sind $p_\pm\in\End(V)$ Projektionen mit komplementären Bildern bzw. Kernen.
  	\end{Definition}
 
- \subsection{Lemma und Definition (Produkt von VR)}
- 	\begin{Definition}[Produkt von VR]\index{Produkt von VR}
+ \subsection{Lemma und Definition}
+ 	\begin{Definition}[Produkt von VR]\index{Vektorraum!Produkt}
  		Ist $(V_i)_{i\in I}$ eine Familie von $ K $-VR $V_i$, so wird das (mengenthoretische) \emph{Produkt}:
  		\[
  			V:= \prod_{i\in I}V_i=\{(v_i)_{i\in I}\mid\forall i\in I:v_i\in V_i\}
@@ -362,8 +362,8 @@
  			\prod_{i\in \mathbb{N}}K=K^{\mathbb{N}}\ncong\bigoplus_{i\in \mathbb{N}}\{(x_i)_{i\in \mathbb{N}}\mid\forall j\neq i: x_j=0\}.
  		\]
 
- \subsection{Lemma und Definition (Nebenklassen)}
- 	\begin{Definition}[Nebenklassen]\index{Nebenklassen}
+ \subsection{Lemma und Definition}
+ 	\begin{Definition}[Nebenklassen]\index{Nebenklasse}
  		Sei $U\subset V$ UVR. Die Menge der Nebenklassen
  		\[
  			V/U := \{v+U\mid v\in V\},
@@ -377,7 +377,7 @@
  			+     & : V/U \times V/U \to V/U,\ ((v+U),(w+U))\mapsto (v+w)+U, \\
  			\cdot & : K\times V/U \to V/U,\ (x,(v+U))\mapsto (vx)+U,
  		\end{align*}
- 		definierten Operationen ein Vektorraum: der \emph{Quotientenraum} $V/U$.
+ 		definierten Operationen ein Vektorraum: der \emph{Quotientenraum} $V/U$.\index{Quotientenraum}
  	\end{Definition}
 
  	\paragraph{Beweis}
@@ -398,8 +398,8 @@
  		Die Vektorraumaxiome sind zu überprüfen.
 
 %VO12-2015-11-17
- \subsection{Bemerkung \& Definition (Äquivalenzrelation)}
- 	\begin{Definition}[Äquivalenzrelation]
+ \subsection{Bemerkung \& Definition}
+ 	\begin{Definition}[Äquivalenzrelation]\index{Äquivalenzrelation}
  		Der Definition von $ V/U $ liegt ein allgemeineres Prinzip zugrunde:
  		\[
  			v\sim w :\Leftrightarrow (v+U)= (w+U) \Leftrightarrow w-v \in U
@@ -473,7 +473,7 @@
  			\{0\}\not\subset\{1\}\land \{1\}\not\subset \{0\}.
  		\]
 
- \subsection{Lemma (Dimensionen von komplementären UVR)}
+ \subsection{Lemma}
  	\begin{Lemma}[Dimensionen von komplementären UVR]
  		Ist $ U\subset V $ UVR und $ U' $ komplementärer UVR zu $ U $ in $ V $, so gilt
  		\[
@@ -520,8 +520,8 @@
  			p(V)\cong V/\ker p.
  		\]
 
- \subsection{Homomorphiesatz für lineare Abbildungen: }
- 	\begin{Satz}[Homomorphiesatz für lineare Abbildungen]
+ \subsection{Homomorphiesatz für lineare Abbildungen}
+ 	\begin{Satz}[Homomorphiesatz für lineare Abbildungen]\index{Homomorphiesatz}
  		Für $ f\in \hom(V,W) $ ist $ f(V)\cong V/\ker f $ vermöge
  		\[
  			V/\ker f\ni v+\ker f \overset{\phi}{\mapsto} f(v)\in f(V).

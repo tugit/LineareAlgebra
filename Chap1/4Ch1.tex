@@ -32,7 +32,7 @@
  		\[
  			\eta_y:V\to V,\ v\mapsto \eta_y(v) := vy
  		\]
- 		ein Homomorphismus von $ V $ in sich, $\eta_y\in \hom(V,V)$. Eine Streckung nennt man auch \emph{Homothetie}.
+ 		ein Homomorphismus von $ V $ in sich, $\eta_y\in \hom(V,V)$. Eine Streckung nennt man auch \emph{Homothetie}.\index{Homothetie}
 
  	\paragraph{Beispiel}
  		Sei $V := \mathbb{C} = \{z = x+iy\mid x,y\in \mathbb{R}\}$, dann ist die komplexe Konjugation
@@ -41,8 +41,8 @@
  		\]
  		kein Homomorphismus von $\mathbb{C}$ in sich, wenn man $\mathbb{C}$ als $\mathbb{C}$-VR auffasst. Hingegen ist sie ein Homomorphismus von $\mathbb{C}$ in sich, wenn man $\mathbb{C}$ als $ \mathbb{R} $-VR auffasst.
 
- \subsection{Lemma (Linearkombinationen und Homomorphismen)}
- 	\begin{Lemma}[Linearkombinationen und Homomorphismen]\index{Linearkombinationen und Homomorphismen}
+ \subsection{Lemma}
+ 	\begin{Lemma}[Linearkombinationen und Homomorphismen]
  		$f:V\to W$ ist genau dann ein Homomorphismus, wenn für jede beliebige Linearkombination gilt:
  		\begin{equation*}
  			f\Big(\sum_{i\in I}v_ix_i\Big) = \sum_{i\in I}f(v_i)x_i
@@ -89,7 +89,7 @@
  			      Damit ist die Linearität von $ f $ gezeigt.
  		\end{enumerate}
 
- \subsection{Beispiel und Definition (Dualraum)}
+ \subsection{Beispiel und Definition}
  	\begin{Definition}[Dualraum]\index{Dualraum}
  		Der \emph{Dualraum} $V^\ast := \hom(V,K)$ eines $K$-VRs $V$ ist ein $ K $-VR $(\subset K^V)$. Ist $\dim V=:n<\infty$ so ist $\dim V^\ast=n$.
 
@@ -97,7 +97,7 @@
  		\[
  			\forall j\in \{1,...,n\}: V^* \ni b_i^*(b_j)=\delta_{ij}
  		\]
- 		eine Basis $B^*=(b^*_1,\dots,b^*_n)$ von $V^*$: die zu $B$ \emph{duale Basis} von $V^\ast$.
+ 		eine Basis $B^*=(b^*_1,\dots,b^*_n)$ von $V^*$: die zu $B$ \emph{duale Basis} von $V^\ast$.\index{Basis!duale}
  	\end{Definition}
 
 %VO09-2015-11-03
@@ -153,8 +153,8 @@
  		\]
  		Das heißt, $(x_i)_{i\in I}$ wäre eine Familie in $ K $ mit $\#\{i\in I\mid x_i\neq 0\}=\infty$, also ist $\sum_{i\in I}b_i^\ast x_i$ keine Linearkombination.
 
- \subsection{Satz (Homomorphismen als VR)}
- 	\begin{Satz}[Homomorphismen als VR]\index{Homomorphismen als VR}
+ \subsection{Satz}
+ 	\begin{Satz}[Homomorphismen als VR]
  		$ \hom (V,W) $ ist ein VR, mit $\dim\hom (V,W) = m\cdot n$, falls $m:=\dim W<\infty, n:=\dim V< \infty$.
  	\end{Satz}
  	\paragraph{Beweis}
@@ -192,8 +192,8 @@
  		Da $f\in\hom (V,W)$ beliebig war, gilt also $\hom (V,W) = [F]$. Damit ist $F$ Basis von $\hom (V,W)$ und $\dim\hom (V,W) = \# F = m\cdot n$
 
 
- \subsection{Lemma und Definition (Bild, Kern, Rang \& Defekt)}
- 	\begin{Definition}[Bild, Kern, Rang \& Defekt]
+ \subsection{Lemma und Definition}
+ 	\begin{Definition}\index{Bild}\index{Kern}\index{Rang}\index{Defekt}
  		Sei $f\in \hom (V,W)$. Dann sind \emph{Bild} und \emph{Kern} von $f$,
  		\begin{align*}
  			f(V)       & = \{f(v)\in W\mid v\in V \}\subset W \\
@@ -258,7 +258,7 @@
  		Ist $ f\in \hom (V,W) $ bijektiv, so ist $ f^{-1}\in \hom (W,V) $.
 
  \subsection{Rangsatz}
- 	\begin{Satz}[Rangsatz]\index{Rangsatz}
+ 	\begin{Satz}[Rangsatz]\index{Rang!-satz}
  		Sei $ f\in \hom (V,W) $. Ist $ \dim V = n < \infty $,  so gilt
  		\[
  			\rg f + \dfkt f = \dim V
@@ -326,7 +326,7 @@
  			\item ist $\dim V = \infty$, so ist man mit dem Beweis fertig, falls $\dfkt f = \infty$.
  		\end{enumerate}
 
- 	\paragraph{Korollar (Homomorphismen zwischen gleichdimensionalen VR)}
+ 	\paragraph{Korollar}
  		\begin{Korollar}[Homomorphismen zwischen gleichdimensionalen VR]
  			Sei $f\in \hom(V,W)$ und $\dim W$ = $\dim V$ = $n<\infty$.
  			Dann gilt: Ist $f$ injektiv oder surjektiv, so ist $f$ bijektiv.
@@ -358,8 +358,8 @@
  		ist ein injektiver Homomorphismus, $s\in \hom(K^\mathbb{N},K^\mathbb{N})$ von $K^\mathbb{N}$ in sich (damit gilt $\dim $ Definitionsbereich $= \dim K^\mathbb{N}= \dim$ Wertebereich). Aber $s$ ist nicht surjektiv, also auch nicht bijektiv.\\
  		Damit folgt $\dim K^\mathbb{N} =\infty$ (sonst hätte man einen Widerspruch zum Korollar).
 
- \subsection{Definition (Spezielle Homomorphismen)}
- 	\begin{Definition}[Spezielle Homomorphismen]\index{Spezielle Homomorphismen}
+ \subsection{Definition}
+ 	\begin{Definition}[Spezielle Homomorphismen]\index{Homomorphismen!besondere}\index{Endomorphismus}\index{Isomorphismus}\index{Automorphismus}
  		Sei $f\in \hom(V,W)$ ein Homomorphismus, dann heißt $f$
  		\begin{itemize}
  			\item \emph{Endomorphismus}, $f\in \End (V)$, falls $W = V$;
