@@ -67,21 +67,22 @@
 			Damit ist es sinnvoll
 				\[ f\big|_U \in \End(U), f\big|_{U^\perp}\in \End(U^\perp) \]
 				\[ f^*\big|_U\in \End(U), f^*\big|_{U^\perp}\in \End(U^\perp) \]
-			zu betrachten. Nun gilt:
+			zu betrachten. Nun gilt\footnote{Es ist nicht klar ob $f|_U^*$ existiert, daher ist die folgende Rechnung von hinten zu lesen}:
 				\[ \forall u,v\in U: \Skl{f\big|_U^*(u)}{v} = \Skl{u}{f\big|_U(v)} = \Skl{u}{f(v)} = \Skl{f^*(u)}{v} = \Skl{f^*\big|_U(u)}{v} \]
 			und analog für $ v,w\in U^\perp $. Damit folgt: $ f\big|_U^* = f^*\big|_U $ und $ f\big|^*_{U^\perp} = f^*\big|_{U^\perp}$ und also
 				\[ f\big|_U^* \circ f\big|_U = f^*\circ f\big|_U = f\circ f^*\big|_U = f\big|_U \circ f\big|_U^*. \]
+			und ebenso für $f|_{U^\perp}$
 		\end{enumerate}
 \paragraph{Bemerkung \& Beispiel}
 	 Eine Orthogonalprojektion ist selbstadjungiert, $ p\in \End(V) $ mit $ p^2=p, p^*=p $ und damit normal. Ist $ p\neq \id_V, 0 $, so ist
-		 \[ V=U\oplus_\perp U^\perp \text{ mit }
+		 \[ V=U\oplus_\perp U^\perp \quad\text{mit}\quad
 			 \begin{cases}
 			 U:= p(V),\\ U^\perp = \ker p.
 			 \end{cases} \]
 	Wir definieren:
-		\[ \pi:V\to U, v\mapsto \pi(v):= p(v) \text{ und } \iota : U\to V, u\mapsto \iota(u):= u; \]
+		\[ \pi:V\to U,\ v\mapsto \pi(v):= p(v) \text{ und } \iota : U\to V,\ u\mapsto \iota(u):= u; \]
 	man nennt die isometrische Abbildung $ \iota $ auch die \emph{Inklusion} von $ U $ in $ V $. Dann sind $ \pi $ und $ \iota $ adjungiert:
-		\[ \forall u\in U\forall v\in V: \Skl{\iota(u)}{v} = \Skl{u}{\pi(v)}\big|_U \]
+		\[ \forall u\in U\ \forall v\in V: \Skl{\iota(u)}{v} = \Skl{u}{\pi(v)}\big|_U \]
 	Insbesondere ist die "`Projektionsabbildung"' $ \pi $ \emph{nicht} selbstadjungiert.
 \paragraph{Achtung:}
 	Die Adjungierte hängt von Definitions- und Wertebereich ab!
@@ -136,9 +137,9 @@
 		\end{itemize}
 \end{Korollar}
 \paragraph{Beweis}
-	Sei $ X\in \C^{n\times n} $, betrachte $ \C^n $ als unitären VR mit Standardbasis $ E $ als ONB.
+	Sei $ X\in \C^{n\times n} $, betrachte $ \C^n $ als unitären VR mit Standardbasis $ E $ als ONB.\footnote{Die folgende Gleichung definiert das Skalarprodukt.}
 		\[ \Gamma_E(\Skl{.}{.}) = E_n, \]
-	und den assoziierten Endomorphismus $ f_X\in \End(\C^n) $. Orthonormale Basiswechsel $ B=EP $ sind dann durch unitäre Matrizen $ P\in U(n) $ gegeben:
+	und den assoziierten Endomorphismus $ f_X\in \End(\C^n) $. Orthonormale Basiswechsel $ B=EP $ sind dann durch unitäre Matrizen $ P\in U(n) $ gegeben:\footnote{$B$ soll ONB sein}
 		\[ E_n = \Gamma_B(\Skl{.}{.}) = P^*\Gamma_E(\Skl{.}{.})P = P^*P \Leftrightarrow P\in U(n). \]
 	Anwendung des Spektralsatzes liefert also die Behauptung.
 
@@ -170,7 +171,7 @@
 \subsection{Definition \& Lemma}\index{komplexe Erweiterung}
 \begin{Definition}[komplexe Erweiterung]
 	Seien $ (V,\Skl{.}{.}) $ Euklidischer VR und $ f\in \End(V) $ normal. Die \emph{komplexe Erweiterung} 
-		\[ f_\C:V_\C \to V_\C, (v,w)\mapsto f_\C(v,w) := (f(v),f(w)) \]
+		\[ f_\C:V_\C \to V_\C,\ (v,w)\mapsto f_\C(v,w) := (f(v),f(w)) \]
 \end{Definition}
 \begin{Lemma}[]
 	von $ f $ ist dann ein normaler Endomorphismus von $ (V_\C,\SSkl{.}{.}_\C) $.
@@ -185,7 +186,7 @@
 \paragraph{Beweis}
 	Nach Komplexifizierungslemma ist $ (V_\C,\SSkl{.}{.}) $ unitär, wobei
 		\[ \SSkl{(v,w)}{(v',w')} = \left(\Skl{v}{v'}+\Skl{w}{w'}\right)+i\left(\Skl{v}{w'}-\Skl{w}{v'}\right); \]
-	offenbar gilt für $ v,w,v',w'\in V_\C $
+	Offenbar gilt für $ v,w,v',w'\in V_\C $
 		\begin{align*}
 		\SSkl{\left(f^*(v),f^*(w)\right)}{(v',w')}_\C &= \SSkl{(v,w)}{\left(f(v'),f(w')\right)}_\C\\
 		&= \SSkl{(v,w)}{f_\C(v',w')}_\C
